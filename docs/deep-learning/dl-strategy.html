@@ -100,7 +100,7 @@
 <li>If the data comes from mixed data sources, create the <em>dev/test</em> sets with the data that you want to optimize for. For example, if you want to classify sneaker images from a phone, use a <em>dev</em> and <em>test</em> set consisting only of sneaker photos from mobile phones but feel free to use enhanced sneaker web images to train the network.</li>
 <li>Create a <em>training-dev</em> set with the same data distribution as the <em>training</em> set when you have a <em>dev/test</em> sets from different data distributions. This step helps you check if you have a variance, bias or data-mismatch problem.</li>
 </ul>
-<p><img width=500 src="/assets/im31.png"/>
+<p><img width=500 src="datadocs/assets/im31.png"/>
 <center><a href="https://yashuseth.blog/2018/03/20/what-to-do-when-we-have-mismatched-training-and-validation-set/" style="color: lightgrey">Credit</a></center></p>
 <h2><a class="anchor" aria-hidden="true" id="error-types"></a><a href="#error-types" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Error types</h2>
 <table>
@@ -108,7 +108,7 @@
 <tr><th style="text-align:center">Without data mismatch</th><th style="text-align:center">With data mismatch</th></tr>
 </thead>
 <tbody>
-<tr><td style="text-align:center"><img width=400 src="/assets/1*-PJMjoc3sPv5LZGCbXFyMg.png"/></td><td style="text-align:center"><img width=600 src="/assets/errors.png"/></td></tr>
+<tr><td style="text-align:center"><img width=400 src="datadocs/assets/1*-PJMjoc3sPv5LZGCbXFyMg.png"/></td><td style="text-align:center"><img width=600 src="datadocs/assets/errors.png"/></td></tr>
 </tbody>
 </table>
 <p><center><a href="https://medium.com/machine-learning-bites/deeplearning-series-how-to-structure-machine-learning-projects-ae484c0919c3" style="color: lightgrey">Credit</a></center></p>
@@ -127,7 +127,7 @@
 <li>If your algorithm surpasses human-level performance, it becomes very hard to judge the avoidable bias because you generally don’t know how small the Bayes error is.</li>
 </ul></li>
 </ul>
-<p><img width=500 src="/assets/1*iSygwQMVlGpyRofod_iotg.png"/>
+<p><img width=500 src="datadocs/assets/1*iSygwQMVlGpyRofod_iotg.png"/>
 <center><a href="https://towardsdatascience.com/how-to-improve-my-ml-algorithm-lessons-from-andrew-ngs-experience-ii-f66926926f88" style="color: lightgrey">Credit</a></center></p>
 <h4><a class="anchor" aria-hidden="true" id="training-error-bias"></a><a href="#training-error-bias" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Training error (Bias):</h4>
 <ul>
@@ -154,7 +154,7 @@
 <li>Switch to a different architecture.</li>
 </ul></li>
 </ul>
-<p><img width=400 src="/assets/Bias vs Variance.png"/>
+<p><img width=400 src="datadocs/assets/Bias vs Variance.png"/>
 <center><a href="https://elitedatascience.com/bias-variance-tradeoff" style="color: lightgrey">Credit</a></center></p>
 <h4><a class="anchor" aria-hidden="true" id="dev-error-data-mismatch"></a><a href="#dev-error-data-mismatch" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Dev error (Data mismatch):</h4>
 <ul>
@@ -191,7 +191,7 @@
 </ul></li>
 <li>In general, we can set learning rates to be different for each layer to find a tradeoff between freezing and fine-tuning.</li>
 </ul>
-<p><img width=500 src="/assets/1*f2_PnaPgA9iC5bpQaTroRw.png"/>
+<p><img width=500 src="datadocs/assets/1*f2_PnaPgA9iC5bpQaTroRw.png"/>
 <center><a href="https://medium.com/@subodh.malgonde/transfer-learning-using-tensorflow-52a4f6bcde3e" style="color: lightgrey">Credit</a></center></p>
 <ul>
 <li><a href="https://towardsdatascience.com/a-comprehensive-hands-on-guide-to-transfer-learning-with-real-world-applications-in-deep-learning-212bf3b2f27a">A Comprehensive Hands-on Guide to Transfer Learning with Real-World Applications in Deep Learning</a></li>
@@ -202,14 +202,14 @@
 <li>Use a single neural network to detect multiple classes in an image, e.g. traffic lights and pedestrians for an autonomous car.</li>
 <li>Again, it is useful when the neural network identifies lower-level features which are helpful for multiple classification tasks and if you have an equal distribution of class data.</li>
 </ul>
-<p><img width=600 src="/assets/1*RXWO8pWJelvFJrGEr8sRrg.png"/>
+<p><img width=600 src="datadocs/assets/1*RXWO8pWJelvFJrGEr8sRrg.png"/>
 <center><a href="https://blog.manash.me/multi-task-learning-in-keras-implementation-of-multi-task-classification-loss-f1d42da5c3f6" style="color: lightgrey">Credit</a></center></p>
 <h3><a class="anchor" aria-hidden="true" id="end-to-end-deep-learning"></a><a href="#end-to-end-deep-learning" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>End-to-end deep learning</h3>
 <ul>
 <li>Instead of using many different steps and manual feature engineering to generate a prediction, use one neural network to figure out the underlying pattern</li>
 <li>End-to-end deep learning has advantages like letting the network figure out important features itself and disadvantages like requiring lots of data, so its use really has to be judged on a case-by-case basis by how complex the task or function is that you are solving.</li>
 </ul>
-<p><img width=500 src="/assets/deep-learning_W640.jpg"/>
+<p><img width=500 src="datadocs/assets/deep-learning_W640.jpg"/>
 <center><a href="https://www.researchgate.net/publication/322325843_Deep_learning_for_smart_manufacturing_Methods_and_applications/figures?lo=1&utm_source=google&utm_medium=organic" style="color: lightgrey">Credit</a></center></p>
 <h2><a class="anchor" aria-hidden="true" id="benchmark-competitions"></a><a href="#benchmark-competitions" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Benchmark competitions</h2>
 <h3><a class="anchor" aria-hidden="true" id="ensemble-learning"></a><a href="#ensemble-learning" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Ensemble learning</h3>
