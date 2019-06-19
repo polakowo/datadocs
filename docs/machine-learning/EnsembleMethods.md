@@ -7,7 +7,7 @@ sidebar_label: Ensemble Methods
 - An ensemble method combines the predictions of many individual classifiers by majority voting.
 - Ensemble of *low-correlating* classifiers with slightly greater than 50% accuracy will outperform each of the classifiers individually.
 
-<center><img width=350 src="/img/docs/apes.jpg"/></center>
+<center><img width=350 src="assets/apes.jpg"/></center>
 <center><a href="https://www.youtube.com/watch?v=Q6TkuNX_0HA" style="color: lightgrey">Credit</a></center>
 
 - Condorcet's jury theorem: 
@@ -48,7 +48,7 @@ sidebar_label: Ensemble Methods
 - Bagging combines *strong learners* together in order to "smooth out" their predictions and reduce variance.
 - Bootstrapping allows to fit models that are roughly independent.
 
-<center><img width=350 src="/img/docs/Ozone.png"/></center>
+<center><img width=350 src="assets/Ozone.png"/></center>
 <center><a href="https://en.wikipedia.org/wiki/Bootstrap_aggregating" style="color: lightgrey">Credit</a></center>
 
 - The procedure is as follows:
@@ -165,7 +165,7 @@ sidebar_label: Ensemble Methods
 - Try [StackNet](https://github.com/h2oai/pystacknet) which resembles a feedforward neural network and uses Wolpert's stacked generalization (built iteratively one layer at a time) in multiple levels to improve accuracy  in machine learning problems.
 - Try [Heamy](https://github.com/rushter/heamy) - a set of useful tools for competitive data science (including ensembling).
 
-<center><img width=600 src="/img/docs/stacknet.png"/></center>
+<center><img width=600 src="assets/stacknet.png"/></center>
 <center><a href="https://opendatascience.com/predicting-resignation-in-the-military/" style="color: lightgrey">Credit</a></center>
 
 - Keep in mind:

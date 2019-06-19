@@ -18,7 +18,7 @@ sidebar_label: Initialization
 - Generate random sample of weights from a Gaussian distribution having mean 0 and a standard deviation of 1.
 - This serves the process of symmetry-breaking and gives much better accuracy.
 
-<img width=350 src="/img/docs/sigmoid.png"/>
+<img width=350 src="assets/sigmoid.png"/>
 <center><a href="https://mnsgrg.com/2017/12/21/xavier-initialization/" style="color: lightgrey">Credit</a></center>
 
 #### Vanishing gradients:
@@ -48,7 +48,7 @@ $$\large{\sigma(w)=\sqrt{\frac{2}{n_{\text{in}}+n_{\text{out}}}}}$$
 - The weights are still random but differ in range depending on the size of the previous layer of neurons.
 - Helps in attaining a global minimum of the cost function faster and more efficiently.
 
-<img width=700 src="/img/docs/training-losses.png"/>
+<img width=700 src="assets/training-losses.png"/>
 <center><a href="https://intoli.com/blog/neural-network-initialization/" style="color: lightgrey">Credit</a></center>
 
 - Likewise if using sigmoid/tanh activation function.

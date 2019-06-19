@@ -7,7 +7,7 @@ sidebar_label: Tree-Based Models
 - Tree-based models are models used for classifying non-linearly separable data (like neural networks). 
 - Applies a “Divide and Conquer” approach by splitting the data into sub-spaces or boxes based on probabilities of outcome.
 
-<img width=500 src="/img/docs/ml-classifiers-2.png"/>
+<img width=500 src="assets/ml-classifiers-2.png"/>
 <center><a href="https://martin-thoma.com/comparing-classifiers/" style="color: lightgrey">Credit</a></center>
 
 #### Pros:
@@ -34,7 +34,7 @@ sidebar_label: Tree-Based Models
     - Entropy is the measure of impurity, disorder or uncertainty in a bunch of examples (the opposite to information). The entropy function is at zero minimum when the probability is \\(p=1\\) or \\(p=0\\) with complete certainty. The probability \\(p\\) is the relative frequency of the outcome.
     $$\large{H=-\sum{p(x)\log_2{p(x)}}}$$
     - The procedure is repeated recursively until the entropy is zero (or some small value to account for overfitting).
-    <center><img width=230 src="/img/docs/decision-tree.svg"/></center>
+    <center><img width=230 src="assets/decision-tree.svg"/></center>
     <center><a href="https://victorzhou.com/blog/intro-to-random-forests/" style="color: lightgrey">Credit</a></center>
 - The simplest heuristics for handling numeric features in a decision tree is to sort its values in ascending order and check only those thresholds where the value of the target variable changes. The value obtained by leaves in the training data is the mean response of observation falling in that region. 
 - Criterions: In practice, Gini uncertainty and information gain work similarly.
@@ -70,12 +70,12 @@ sidebar_label: Tree-Based Models
 
 - Random forests are combined through the construction of uncorrelated trees using CART, bagging, and the random subspace method.
 
-<img width=400 src="/img/docs/cover.jpg"/>
+<img width=400 src="assets/cover.jpg"/>
 <center><a href="https://www.jpytr.com/post/random_forests_and_jackknife_variance/" style="color: lightgrey">Credit</a></center>
 
 - Bias-variance tradeoff: As random forests training use 1) bootstrap sampling (or sampling with replacement) along with 2) random selection of features for a split, the correlation between the trees (or weak learners) would be low. That means although individual trees would have high variance but the ensemble output will be appropriate (lower variance but the same bias) because the trees are loosely correlated. Thus random forests would give good performance with full depth of decision trees.
 
-<img width=500 src="/img/docs/random-forests.png"/>
+<img width=500 src="assets/random-forests.png"/>
 <center><a href="https://relguzman.blogspot.com/2018/04/random-forests-python.html" style="color: lightgrey">Credit</a></center>
 
 - When bagging with decision trees, we are less concerned about individual trees overfitting the training data. For this reason, the individual decision trees are grown deep and the trees are not pruned.
@@ -96,7 +96,7 @@ sidebar_label: Tree-Based Models
 - Handles both continuous and discrete variables equally well
 - Rarely overfits. In practice, an increase in the tree number almost always improves the composition. But, after reaching a certain number of trees, the learning curve is very close to the asymptote.
 
-<img width=400 src="/img/docs/performance_rf.png"/>
+<img width=400 src="assets/performance_rf.png"/>
 <center><a href="https://www.researchgate.net/publication/332391062_Wet_and_Dry_Snow_Detection_Using_Sentinel-1_SAR_Data_for_Mountainous_Areas_with_a_Machine_Learning_Technique/figures?lo=1&utm_source=google&utm_medium=organic" style="color: lightgrey">Credit</a></center>
 
 - There are developed methods to estimate feature importance
@@ -137,7 +137,7 @@ sidebar_label: Tree-Based Models
 - This process iterate until reached to the specified maximum number of estimators.
 - Predictions are made by majority vote of the weak learners’ predictions, weighted by their individual accuracy.
 
-<img width=450 src="/img/docs/b2b029d898f64bbbb158e15d29595969.png"/>
+<img width=450 src="assets/b2b029d898f64bbbb158e15d29595969.png"/>
 <center><a href="https://nbviewer.jupyter.org/github/Yorko/mlcourse.ai/blob/master/jupyter_english/topic10_boosting/topic10_gradient_boosting.ipynb" style="color: lightgrey">Credit</a></center>
 
 #### Pros:
@@ -201,20 +201,20 @@ $$\large{D(x)=d_{\text{tree}1}(x)+d_{\text{tree}2}(x)+...}$$
 - [Head-to-Head Comparison](https://towardsdatascience.com/catboost-vs-light-gbm-vs-xgboost-5f93620723db)
 
 #### XGBoost:
-<img width=200 src="/img/docs/xgboost-1101974912.png"/>
+<img width=200 src="assets/xgboost-1101974912.png"/>
 
 - XGBoost is the first GBMT implementation.
 - XGBoost achieves overall good results but is significantly slower than its competitors, becoming a bottleneck in iterative design and prototyping widely used on Kaggle.
 - It cannot handle categorical features by itself, it only accepts numerical values similar to Random Forest.
 
 #### LightGBM:
-<img width=200 src="/img/docs/lgbm.png"/>
+<img width=200 src="assets/lgbm.png"/>
 
 - LightGBM improves on XGBoost. The LightGBM paper uses XGBoost as a baseline and outperforms it in training speed and the dataset sizes it can handle. LightGBM is upto 6x faster than XGBoost (used to be 10x faster but XGBoost has caught up) becoming popular on Kaggle where experimentation is important. The accuracies are comparable. 
 - LGBM does not convert to one-hot coding but uses a special algorithm to find the split value of categorical features.
 
 #### CatBoost:
-<img width=200 src="/img/docs/Yandex-CatBoost.png"/>
+<img width=200 src="assets/Yandex-CatBoost.png"/>
 
 - Catboost improves over LightGBM by handling categorical features better:
     - By default, CatBoost uses one-hot encoding for features with small number of different values (`one_hot_max_size`).

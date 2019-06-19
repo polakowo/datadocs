@@ -8,7 +8,7 @@ sidebar_label: Linear Models
 - Linear models are frequently favorable due to their interpretability and often good predictive performance.
 - Linear methods split space into 2 subspaces.
 
-<center><img width=150 src="/img/docs/classifier.png"/></center>
+<center><img width=150 src="assets/classifier.png"/></center>
 <center><a href="https://33bits.wordpress.com/tag/spam/" target="_blank" style="color: lightgrey">Credit</a></center>
 
 - The most famous toy example of where classes cannot be divided by a hyperplane (or line) with no errors is "the XOR problem".
@@ -16,7 +16,7 @@ sidebar_label: Linear Models
     - Polynomial features do help, but it is computationally inefficient to build them explicitly. 
     - SVM with the kernel trick works much faster.
     
-<center><img width=300 src="/img/docs/xor.png"/></center>
+<center><img width=300 src="assets/xor.png"/></center>
 <center><a href="https://github.com/Yorko/mlcourse.ai/blob/master/jupyter_english/topic04_linear_models/topic4_linear_models_part4_good_bad_logit_movie_reviews_XOR.ipynb" target="_blank" style="color: lightgrey">Credit</a></center>
 
 #### Pros:
@@ -93,7 +93,7 @@ $$\large\min_w\|\|y-\hat{y}\|\|^2_2$$
     - be approximately normally distributed (with a mean of zero), and
     - be independent of one another.
 - The best way to assess assumptions is by using residual plots.
-<center><img width=350 src="/img/docs/index.png"/></center>
+<center><img width=350 src="assets/index.png"/></center>
 <center><a href="https://newonlinecourses.science.psu.edu/stat501/node/317/" target="_blank" style="color: lightgrey">Credit</a></center>
 - The Gauss-Markov theorem states that OLS produces best estimates when the assumptions hold true. Also, as the sample size increases to infinity, the coefficient estimates converge on the actual population parameters.
 - Many of the assumptions describe properties of the error terms.
@@ -204,7 +204,7 @@ $$\large{p=\frac{1}{1+e^{-\hat{y}}}}$$
 - The goal is to choose a hyperplane with the greatest possible margin (distance) between the hyperplane and any point.
 - Only support vectors are important whereas other training examples are ignorable.
     - Support vectors are the data points nearest to the hyperplane.
-<center><img width=500 src="/img/docs/1*Ox4UFUKHna9BjW5gfNcQlw.png"/></center>
+<center><img width=500 src="assets/1*Ox4UFUKHna9BjW5gfNcQlw.png"/></center>
 <center><a href="https://towardsdatascience.com/support-vector-machine-simply-explained-fee28eba5496" target="_blank" style="color: lightgrey">Credit</a></center>
 - By combining the soft margin (tolerance of misclassifications) and kernel trick together, SVM is able to structure the decision boundary for linear non-separable cases:
     - Soft margin tolerates one or few misclassified points.
@@ -212,7 +212,7 @@ $$\large{p=\frac{1}{1+e^{-\hat{y}}}}$$
     - Think of them as a transformer/processor to generate new features by applying the combination of all the existing features.
     - Different kernels functions for different decision boundaries.
     - The kernel trick avoids explicit transformation of raw representation into feature vector representation (without ever computing the coordinates of the data in that space), which is often computationally cheaper.
-<center><img width=400 src="/img/docs/1*zWzeMGyCc7KvGD9X8lwlnQ.png"/></center>
+<center><img width=400 src="assets/1*zWzeMGyCc7KvGD9X8lwlnQ.png"/></center>
 <center><a href="https://towardsdatascience.com/the-kernel-trick-c98cdbcaeb3f" target="_blank" style="color: lightgrey">Credit</a></center>
 - SVM is effective in high-dimensional spaces.
 - Works well on smaller cleaner datasets.
@@ -233,7 +233,7 @@ $$\large{p=\frac{1}{1+e^{-\hat{y}}}}$$
 
 ## Vowpal Wabbit
 
-<img width=200 src="/img/docs/vowpal-wabbits-github-logo@3x.png"/>
+<img width=200 src="assets/vowpal-wabbits-github-logo@3x.png"/>
 
 - Stochastic gradient descent (SGD) gives us practical guidance for training both classifiers and regressors with large amounts of data up to hundreds of GBs (depending on computational resources).
 - SGD is a type of online learning algorithm.

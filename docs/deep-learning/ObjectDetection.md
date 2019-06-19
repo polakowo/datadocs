@@ -9,7 +9,7 @@ sidebar_label: Object Detection
 
 ## YOLO
 
-<img width=200 src="/img/docs/yologo_2.png"/>
+<img width=200 src="assets/yologo_2.png"/>
 <center><a href="https://pjreddie.com/darknet/yolo/" style="color: lightgrey">Credit</a></center>
 
 - [Real-time Object Detection with YOLO, YOLOv2 and now YOLOv3](https://medium.com/@jonathan_hui/real-time-object-detection-with-yolo-yolov2-28b1b93e2088)
@@ -29,7 +29,7 @@ sidebar_label: Object Detection
 - For each object that is present on the image, one grid cell is said to be “responsible” for predicting it (that is, the cell where the center of the object falls into)
 - The division is done with the convolution sliding window, which is more efficient than classical sliding windows detection algorithm, because it shares the computations for each of the sliding windows.
 
-<img width=800 src="/img/docs/21.png"/>
+<img width=800 src="assets/21.png"/>
 <center><a href="https://www.coursera.org/learn/convolutional-neural-networks" style="color: lightgrey">Credit</a></center>
 
 - Unlike sliding window and region proposal-based techniques, YOLO sees the entire image during training and test time so it implicitly encodes contextual information about classes as well as their appearance.
@@ -43,7 +43,7 @@ sidebar_label: Object Detection
   - detects one object only regardless of the number of boxes B,
   - predicts C conditional class probabilities (one per class for the likeliness of the object class).
 
-<img width=500 src="/img/docs/1*m8p5lhWdFDdapEFa2zUtIA.jpeg"/>
+<img width=500 src="assets/1*m8p5lhWdFDdapEFa2zUtIA.jpeg"/>
 <center><a href="https://arxiv.org/pdf/1506.02640v5.pdf" style="color: lightgrey">Credit</a></center>
 
 #### Bounding boxes:
@@ -73,13 +73,13 @@ $$\text{class confidence score}=\text{box confidence score}\times\text{condition
 - The higher the IOU the better is the accuracy.
 - An IOU score \\(\text{IoU}\ge{0.5}\\) is normally considered as a true positive.
 
-<img width=500 src="/img/docs/iou.png"/>
+<img width=500 src="assets/iou.png"/>
 <center><a href="https://www.coursera.org/learn/convolutional-neural-networks" style="color: lightgrey">Credit</a></center>
 
 #### Non-maximum suppression (NMS):
 - NMS eliminates some candidates that are in fact different detections of the same object, without removing the candidates for different objects.
 
-<img width=300 src="/img/docs/nms_algo.jpg"/>
+<img width=300 src="assets/nms_algo.jpg"/>
 <center><a href="https://leonardoaraujosantos.gitbooks.io/artificial-inteligence/content/single-shot-detectors/yolo.html" style="color: lightgrey">Credit</a></center>
 
 - For each object class:
@@ -120,7 +120,7 @@ $$\text{class confidence score}=\text{box confidence score}\times\text{condition
 #### Anchor boxes:
 - After doing some clustering studies on ground truth labels, it turns out that most bounding boxes have certain height-width ratios. So instead of directly predicting a bounding box, YOLOv2 (and v3) predict off-sets from a predetermined set of boxes with particular height-width ratios - those predetermined set of boxes are the anchor boxes.
 
-<img width=250 src="/img/docs/0*SX5qJIuV44XvBXju.jpg"/>
+<img width=250 src="assets/0*SX5qJIuV44XvBXju.jpg"/>
 <center><a href="https://www.coursera.org/learn/convolutional-neural-networks" style="color: lightgrey">Credit</a></center>
 
 - Anchor box makes it possible to detect multiple objects centered in one grid cell.
@@ -128,7 +128,7 @@ $$\text{class confidence score}=\text{box confidence score}\times\text{condition
     - We move the class prediction from the cell level to the boundary box level. 
     - Now, each prediction includes 4 parameters for the boundary box, 1 box confidence score (objectness) and class probabilities.
 
-<img width=500 src="/img/docs/0*WGFK1mm-f9HF-vO3.jpg"/>
+<img width=500 src="assets/0*WGFK1mm-f9HF-vO3.jpg"/>
 
 - The anchor boxes need to be predefined either by hand or by using an algorithm such as K-Means (where distance is IOU)
 - One reason for choosing a variety of anchor box shapes is the similarity of one object’s bounding box shape to the shape of the anchor box.
@@ -142,7 +142,7 @@ $$\text{class confidence score}=\text{box confidence score}\times\text{condition
 
 ### YOLOv3
 
-<img width=700 src="/img/docs/1*d4Eg17IVJ0L41e7CTWLLSg.png"/>
+<img width=700 src="assets/1*d4Eg17IVJ0L41e7CTWLLSg.png"/>
 <center><a href="https://towardsdatascience.com/yolo-v3-object-detection-53fb7d3bfe6b" style="color: lightgrey">Credit</a></center>
 
 - [YOLOv3: An Incremental Improvement (2018)](https://arxiv.org/pdf/1804.02767.pdf)
@@ -171,5 +171,5 @@ $$\text{class confidence score}=\text{box confidence score}\times\text{condition
 #### Pros:
 - YOLOv3 performs at par with other state of art detectors like RetinaNet, while being considerably faster.
 
-<img width=450 src="/img/docs/1*YpNE9OQeshABhBgjyEXlLA.png"/>
+<img width=450 src="assets/1*YpNE9OQeshABhBgjyEXlLA.png"/>
 <center><a href="https://towardsdatascience.com/yolo-v3-object-detection-53fb7d3bfe6b" style="color: lightgrey">Credit</a></center>

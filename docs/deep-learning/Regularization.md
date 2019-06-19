@@ -13,8 +13,8 @@ sidebar_label: Regularization
 - The primary reason overfitting happens is because the model learns even the tiniest details (noise) present in the data.
 - In practice, it is always better to use regularization methods to control overfitting instead of the number of neurons.
 
-<img width=400 src="/img/docs/layer_sizes.jpeg"/>
-<img width=400 src="/img/docs/reg_strengths.jpeg"/>
+<img width=400 src="assets/layer_sizes.jpeg"/>
+<img width=400 src="assets/reg_strengths.jpeg"/>
 <center><a href="http://cs231n.github.io/neural-networks-1/" style="color: lightgrey">Credit</a></center>
 
 #### Examples of regularization:
@@ -59,7 +59,7 @@ $$L2=\large{\lambda\sum{\|\|W\|\|_2^2}}$$
 - The most frequently used regularization technique in the field of deep learning.
 - The key idea is to randomly drop units (along with their connections) from the neural network during training. This prevents units from co-adapting too much. Also divide each dropout layer by probability to keep the same expected value for the activation.
 
-<img width=500 src="/img/docs/1*IrdJ5PghD9YoOyVAQ73MJw.gif"/>
+<img width=500 src="assets/1*IrdJ5PghD9YoOyVAQ73MJw.gif"/>
 <center><a href="https://chatbotslife.com/regularization-in-deep-learning-f649a45d6e0" style="color: lightgrey">Credit</a></center>
 
 - If you have to explain drop-out to a 6-year-old, this is how: 
@@ -99,7 +99,7 @@ $$L2=\large{\lambda\sum{\|\|W\|\|_2^2}}$$
 - These can potentially help us get more training data and hence reduce overfitting.
 - Commonly data augmentation and training tasks are run on parallel CPU threads
 
-<img width=500 src="/img/docs/data-augmentation.png"/>
+<img width=500 src="assets/data-augmentation.png"/>
 <center><a href="https://www.analyticsvidhya.com/blog/2018/04/fundamentals-deep-learning-regularization-techniques/" style="color: lightgrey">Credit</a></center>
 
 #### Image size:
@@ -115,7 +115,7 @@ $$L2=\large{\lambda\sum{\|\|W\|\|_2^2}}$$
 - https://forums.fast.ai/t/tips-for-building-large-image-datasets/26688
 - https://forums.fast.ai/t/generating-image-datasets-quickly/19079
 - https://github.com/fastai/course-v3/blob/master/nbs/dl1/lesson2-download.ipynb
-- https://forums.fast.ai/t/how-to-scrape-the-web-for-/img/docs/7446
+- https://forums.fast.ai/t/how-to-scrape-the-web-for-assets/7446
 
 ## Early stopping
 

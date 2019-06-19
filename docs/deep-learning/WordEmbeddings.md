@@ -10,7 +10,7 @@ sidebar_label: Word Embeddings
 - Word embeddings are in fact a class of techniques which represent individual words as real-valued vectors in a predefined vector space, where semantically similar words are mapped to nearby points ('are embedded nearby each other').
 - A word embedding is a learned representation for text where semantically similar words have similar vectors.
 
-<img width=500 src="/img/docs/1*jpnKO5X0Ii8PVdQYFO2z1Q.png"/>
+<img width=500 src="assets/1*jpnKO5X0Ii8PVdQYFO2z1Q.png"/>
 <center><a href="https://towardsdatascience.com/word-embedding-with-word2vec-and-fasttext-a209c1d3e12c" style="color: lightgrey">Credit</a></center>
 
 - In a simplified sense each dimension represents a meaning and the word’s numerical weight on that dimension captures the closeness of its association with and to that meaning.
@@ -33,7 +33,7 @@ sidebar_label: Word Embeddings
     - For example, male-female, verb tense and even country-capital relationships between words.
 - Sometimes, the learned embeddings may have no or combined interpretable features at all.
 
-<img width=500 src="/img/docs/turian.png"/>
+<img width=500 src="assets/turian.png"/>
 <center><a href="https://lvdmaaten.github.io/tsne/" style="color: lightgrey">Credit</a></center>
 
 #### Usage:
@@ -55,7 +55,7 @@ sidebar_label: Word Embeddings
 - The distributed representation is learned based on the usage of words. This allows words that are used in similar ways to result in having similar representations, naturally capturing their meaning.
 - Word embedding methods learn a real-valued vector representation for a predefined fixed sized vocabulary from a corpus of text.
 
-<img width=300 src="/img/docs/SCOTS corpus.PNG"/>
+<img width=300 src="assets/SCOTS corpus.PNG"/>
 
 ### Embedding layer
 
@@ -63,7 +63,7 @@ sidebar_label: Word Embeddings
 - An embedding layer is a word embedding that is learned jointly with a neural network model on a specific NLP task, where one-hot encoded words are mapped to the embedding vectors.
 - For example, the network will automatically learn to encode gender in a consistent way.
 
-<img width=550 src="/img/docs/1*CVoes2yr1puyXkWT69nMlw.png"/>
+<img width=550 src="assets/1*CVoes2yr1puyXkWT69nMlw.png"/>
 <center><a href="https://chatbotnewsdaily.com/tensorflow-in-a-nutshell-part-two-hybrid-learning-98c121d35392" style="color: lightgrey">Credit</a></center>
 
 ### Word2Vec
@@ -86,7 +86,7 @@ sidebar_label: Word Embeddings
 #### Learning models:
 - Word2vec comes in two flavors, the Continuous Bag-of-Words model (CBOW) and the Skip-Gram model. 
 
-<img width=600 src="/img/docs/word2vec.png"/>
+<img width=600 src="assets/word2vec.png"/>
 <center><a href="https://www.researchgate.net/publication/326588219_Extending_Thesauri_Using_Word_Embeddings_and_the_Intersection_Method/figures?lo=1&utm_source=google&utm_medium=organic" style="color: lightgrey">Credit</a></center>
 
 - Algorithmically, these models are similar, except that:
@@ -112,7 +112,7 @@ sidebar_label: Word Embeddings
 - GloVe algorithm is an extension to the word2vec method for efficiently learning word vectors.
 - Rather than using a window to define local context, GloVe constructs an explicit word-context or word co-occurrence matrix using statistics across the whole text corpus.
 
-<img width=350 src="/img/docs/1*EaPTHymy22IW4OjnUq84jw.png"/>
+<img width=350 src="assets/1*EaPTHymy22IW4OjnUq84jw.png"/>
 <center><a href="https://towardsdatascience.com/game-of-thrones-word-embeddings-does-r-l-j-part-1-8ca70a8f1fad" style="color: lightgrey">Credit</a></center>
 
 #### Pros:

@@ -40,7 +40,7 @@ X_test = scaler.transform(X_test)
     - The target dependence on the label-encoded feature is very non-linear, i.e. values that are close to each other in the label-encoded feature correspond to target values that aren't close.
 - One-hot encoding can lead to a huge increase in the dimensionality of the feature representations. But most of the popular libraries can work with these sparse matrices directly.
 
-<img width=200 src="/img/docs/Finite_element_sparse_matrix.png"/>
+<img width=200 src="assets/Finite_element_sparse_matrix.png"/>
 <center><a href="https://en.wikipedia.org/wiki/Sparse_matrix" style="color: lightgrey">Credit</a></center>
 
 - OHE presents two problems that are more particular to tree-based models:
@@ -60,7 +60,7 @@ X_test = scaler.transform(X_test)
     - Collisions can happen, but if you choose your vector size (make it as large as possible) and hash function carefully, the odds of this happening is negligible, and even if it does, it usually doesn’t affect learning (or accuracy) that much.
     - [Don’t be tricked by the Hashing Trick](https://booking.ai/dont-be-tricked-by-the-hashing-trick-192a6aae3087): If you can choose the hashing space on a per feature basis, use \\(k^2\\) for features with less than a thousand categories and \\(20k\\) for the others. If you want to control for collisions as a proportion \\(r\\) of the features, then use \\(n=k/r\\).
 
-<center><img width=500 src="/img/docs/1*K5xAJZCzMG2dwRXj_94nIg.png"/></center>
+<center><img width=500 src="assets/1*K5xAJZCzMG2dwRXj_94nIg.png"/></center>
 <center><a href="https://blog.bradfieldcs.com/an-introduction-to-hashing-in-the-era-of-machine-learning-6039394549b0" style="color: lightgrey">Credit</a></center>
 
 #### Mean encoding:
@@ -145,7 +145,7 @@ X_test = scaler.transform(X_test)
 - Cyclical trends:
     - Periodicity or seasonality
     - Encoding cyclical continuous features into 2 dimensions via sine and cosine transformations helps linear models. Note that it distorts tree-based algorithms that split on a single dimension at a time and distance-based algorithms since splitting into two dimensions effectively double-weights the cyclic feature.
-    <center><img width=250 src="/img/docs/output_12_0.png"/></center>
+    <center><img width=250 src="assets/output_12_0.png"/></center>
     <center><a href="https://ianlondon.github.io/blog/encoding-cyclical-features-24hour-time/" style="color: lightgrey">Credit</a></center>
 - Acyclical trends and moving averages
     - Time since: Can be row-independent moment (timestamp) or row-dependent (since the last event or before the next one)

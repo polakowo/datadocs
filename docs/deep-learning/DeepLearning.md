@@ -19,12 +19,12 @@ sidebar_label: Deep Learning
 > Previously, the labeled datasets were too small, the computers were too slow, the weights were initialized poorly, and the wrong type of non-linearity was used - Geoff Hinton
 - Neural networks are extremely better than traditional methods because of the advances in hardware (mostly GPUs, now TPUs), and the exponential generation and accumulation of data.
 
-<img width=400 src="/img/docs/riseofDeeplearning.jpg"/>
+<img width=400 src="assets/riseofDeeplearning.jpg"/>
 <center><a href="http://bytes.schibsted.com/deep-learning-changing-data-science-paradigms/" style="color: lightgrey">Credit</a></center>
 
 - One reason that deep learning has taken off is because of important theoretical and algorithmic improvements, mainly in supervised learning.
 
-<img width=900 src="/img/docs/deepLearningTimeline.png"/>
+<img width=900 src="assets/deepLearningTimeline.png"/>
 <center><a href="https://towardsdatascience.com/a-weird-introduction-to-deep-learning-7828803693b0" style="color: lightgrey">Credit</a></center>
 
 ## Hierarchical learning
@@ -35,7 +35,7 @@ sidebar_label: Deep Learning
     - The world is compositional, atoms form molecules, and molecules form organisms.
 - In literature we have *letters->words->sentences->paragraph*, just as in vision we have *pixels->edges->parts->objects*.
 
-<img width=500 src="/img/docs/featureLearning.jpg"/>
+<img width=500 src="assets/featureLearning.jpg"/>
 <center><a href="https://www.picswe.com/pics/feature-learning-a0.html" style="color: lightgrey">Credit</a></center>
 
 ## Deep neural networks
@@ -44,13 +44,13 @@ sidebar_label: Deep Learning
 - Deep neural networks have more layers between input and output, which allows richer intermediate representations to be built. With those additional layers in deep learning, the idea is that more of that feature engineering can be achieved by the algorithm itself.
 - DNN architectures generate compositional models where the object is expressed as a layered composition of primitives.
 
-<img width=400 src="/img/docs/0*0mia7BQKjUAuXeqZ.jpeg"/>
+<img width=400 src="assets/0*0mia7BQKjUAuXeqZ.jpeg"/>
 <center><a href="http://cs231n.github.io/neural-networks-1/" style="color: lightgrey">Credit</a></center>
 
 #### As a universal function approximators:
 - It turns out that Neural Networks with at least one hidden layer are universal approximators. It means that they can compute and learn any function at all. Almost any process we can think of can be represented as a functional computation in neural networks.
 
-<img width=400 src="/img/docs/decisionBoundary.jpg"/>
+<img width=400 src="assets/decisionBoundary.jpg"/>
 <center><a href="https://www.learnopencv.com/understanding-feedforward-neural-networks/" style="color: lightgrey">Credit</a></center>
 
 - The fact that deeper networks (with multiple hidden layers) can work better than a single-hidden-layer networks is an empirical observation, despite the fact that their representational power is equal.
@@ -82,7 +82,7 @@ sidebar_label: Deep Learning
 - Nevertheless, the computations performed by deep learning units could be similar to those of actual neurons and neural populations. Similarly, the representations developed by deep learning models are similar to those measured in the primate visual system both at the single-unit and at the population levels.
 - Other researchers have argued that unsupervised forms of deep learning, such as those based on hierarchical generative models and deep belief networks, may be closer to biological reality.
 
-<img width=500 src="/img/docs/biologicalNeuron.png"/>
+<img width=500 src="assets/biologicalNeuron.png"/>
 <center><a href="https://www.mentalconstruction.com/mental-construction/neural-connections/neural-threshold/attachment/generic-neuron-input-output/" style="color: lightgrey">Credit</a></center>
 
 ## Architectures
@@ -92,7 +92,7 @@ sidebar_label: Deep Learning
 - Different configurations are suitable for different machine learning tasks.
 - [AI Knowledge Map: how to classify AI technologies](https://medium.com/@Francesco_AI/ai-knowledge-map-how-to-classify-ai-technologies-6c073b969020?fbclid=IwAR1mrs0KqMNST6AwqBFFZFWJmWNs34NFoADNk_LT-3o27w2nEyFfmBB9T_Q)
 
-<img width=800 src="/img/docs/knowledgeMap.jpeg"/>
+<img width=800 src="assets/knowledgeMap.jpeg"/>
 <center><a href="https://www.kdnuggets.com/2018/08/ai-knowledge-map-classify-ai-technologies.html" style="color: lightgrey">Credit</a></center>
 
 ## Challenges
@@ -101,7 +101,7 @@ sidebar_label: Deep Learning
 - DL is a tool for perceptual classification, when general intelligence involves so much more.
 - Back-propagation has trouble generalizing outside a space of training examples. Therefore, current models cannot account for those cognitive phenomena that involve universals that can be freely extended to arbitrary cases.
 
-<img width=400 src="/img/docs/confusion.jpeg"/>
+<img width=400 src="assets/confusion.jpeg"/>
 <center><a href="https://medium.com/@GaryMarcus/the-deepest-problem-with-deep-learning-91c5991f5695" style="color: lightgrey">Credit</a></center>
 
 - State-of-the-art DNNs perform image classification well but are still far from true object recognition. 

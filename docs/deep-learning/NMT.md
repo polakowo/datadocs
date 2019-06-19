@@ -15,7 +15,7 @@ sidebar_label: Neural Machine Translation
 - Decoder:
     - Decodes the vector and outputting the reconstructed/translated sequence.
 
-<img width=350 src="/img/docs/687474703a2f2f6936342e74696e797069632e636f6d2f333032617168692e706e67.png"/>
+<img width=350 src="assets/687474703a2f2f6936342e74696e797069632e636f6d2f333032617168692e706e67.png"/>
 <center><a href="https://arxiv.org/pdf/1406.1078.pdf" style="color: lightgrey">Credit</a></center>
 
 - The encoders are trained with the decoders:
@@ -26,7 +26,7 @@ sidebar_label: Neural Machine Translation
 
 - The sequence of data contains crucial information about what is coming next.
 
-<img width=400 src="/img/docs/0*SUipu9efyQeKHdlk..png"/>
+<img width=400 src="assets/0*SUipu9efyQeKHdlk..png"/>
 <center><a href="https://codeburst.io/recurrent-neural-network-4ca9fd4f242" style="color: lightgrey">Credit</a></center>
 
 - Machine translation model can be thought of as a “Conditional Language Model”, for a system that translates French to English, the model can be thought of probability of English sentence conditioned on French sentence.
@@ -59,7 +59,7 @@ $$P(\text{water})\times P(\text{is}\|\text{water})\times P(\text{clear}\|\text{w
 
 Light beam | Beam search strategy
 :-:|:-:
-<img width=300 src="/img/docs/20111215083108904.jpg"/> | <img width=500 src="/img/docs/beam.png"/>
+<img width=300 src="assets/20111215083108904.jpg"/> | <img width=500 src="assets/beam.png"/>
 <center><a href="http://www.fotoimage.org/yellow-beam/" style="color: lightgrey">Credit</a></center> | <center><a href="https://www.analyticsvidhya.com/blog/2018/03/essentials-of-deep-learning-sequence-to-sequence-modelling-with-attention-part-i/" style="color: lightgrey">Credit</a></center>
 
 - Unlike exact search algorithms like BFS (Breadth First Search) or DFS (Depth First Search), Beam Search runs faster but is not guaranteed to find the exact solution.
@@ -87,7 +87,7 @@ Light beam | Beam search strategy
 - Since, however, using individual words as the unit of comparison is not optimal, BLEU computes the same modified precision metric using n-grams.
 - It turns out that if a machine outputs a small number of words it will get a better score, so that a brevity penalty is introduced.
 
-<img width=500 src="/img/docs/bleu_score_range.png"/>
+<img width=500 src="assets/bleu_score_range.png"/>
 <center><a href="https://cloud.google.com/translate/automl/docs/evaluate" style="color: lightgrey">Credit</a></center>
 
 - It has been shown that BLEU scores correlate well with human judgment of translation quality.

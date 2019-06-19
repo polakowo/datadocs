@@ -16,7 +16,7 @@ sidebar_label: Validation Schemes
     - In most cases, data is split by rows, time, groups or combined.
     - Logic of feature engineering depends on the data splitting strategy.
     
-<center><img width=400 src="/img/docs/grid_search_workflow.png"/></center>
+<center><img width=400 src="assets/grid_search_workflow.png"/></center>
 <center><a href="https://scikit-learn.org/stable/modules/cross_validation.html#cross-validation" style="color: lightgrey">Credit</a></center>
 
 #### Validation stage:

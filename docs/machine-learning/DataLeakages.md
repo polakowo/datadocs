@@ -43,7 +43,7 @@ sidebar_label: Data Leakages
     - Two items having a similar sets of neighbors results in a higher possibility of being the duplicates.
     - Similarities of vector representations in the connectivity matrix can expose this data leakage.
 
-<center><img width=300 src="/img/docs/1200px-Cluster-2.svg.png"/></center>
+<center><img width=300 src="assets/1200px-Cluster-2.svg.png"/></center>
 <center><a href="https://en.wikipedia.org/wiki/Cluster_analysis" target="_blank" style="color: lightgrey">Credit</a></center>
 
 ## Distance-based tasks

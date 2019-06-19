@@ -16,7 +16,7 @@ sidebar_label: Optimization
 - If learning rate is set too low, training will progress very slowly as you are making very tiny updates to the weights in the network.
 - However, if learning rate is set too high, it can cause undesirable divergent behavior in the loss function.
 
-<img width=350 src="/img/docs/figure3.png"/>
+<img width=350 src="assets/figure3.png"/>
 <center><a href="http://www.cs.cornell.edu/courses/cs4780/2015fa/web/lecturenotes/lecturenote07.html" style="color: lightgrey">Credit</a></center>
 
 #### Local minima:
@@ -24,14 +24,14 @@ sidebar_label: Optimization
 - Recent research has shown that local minima is not neccasarily bad. In the loss landscape of a neural network, there are just way too many minima, and a "good" local minima might perform just as well as a global minima.
 - A desirable property of a minima should be it that it should be on the flatter side, because flat minimum are easy to converge to, given there's less chance to overshoot the minima, and be bouncing between the ridges of the minima.
 
-<img width=250 src="/img/docs/noshort.png"/>
+<img width=250 src="assets/noshort.png"/>
 <center><a href="https://www.cs.umd.edu/~tomg/projects/landscapes/" style="color: lightgrey">Credit</a></center>
 
 #### Saddle points:
 - Another key challenge of minimizing highly non-convex error functions is avoiding getting trapped in their numerous suboptimal local minima.
 - Dauphin et al. [3] argue that the difficulty arises in fact not from local minima but from saddle points, i.e. points where one dimension slopes up and another slopes down.
 
-<img width=300 src="/img/docs/0*Q_ZjKKXa9mTShbpV.png"/>
+<img width=300 src="assets/0*Q_ZjKKXa9mTShbpV.png"/>
 <center><a href="https://towardsdatascience.com/understanding-learning-rates-and-how-it-improves-performance-in-deep-learning-d0d4059c1c10" style="color: lightgrey">Credit</a></center>
 
 - These saddle points are usually surrounded by a plateau of the same error, which makes it notoriously hard for SGD to escape, as the gradient is close to zero in all dimensions.
@@ -83,7 +83,7 @@ $$\large{\theta_{t+1}=\theta_{t}-\alpha\frac{\delta{J(\theta_{t})}}{\delta\theta
 - Allows us to split our training data into mini batches which can be processed individually
 - Update your parameters accordingly to the processed mini-batch.
 
-<img width=500 src="/img/docs/Screen-Shot-2017-11-15-at-7.26.05-PM.png"/>
+<img width=500 src="assets/Screen-Shot-2017-11-15-at-7.26.05-PM.png"/>
 <center><a href="https://www.jeremyjordan.me/gradient-descent/" style="color: lightgrey">Credit</a></center>
 
 #### Shuffling:
@@ -91,7 +91,7 @@ $$\large{\theta_{t+1}=\theta_{t}-\alpha\frac{\delta{J(\theta_{t})}}{\delta\theta
 - A difference in the distributions is called the covariate shift
 - With every GD iteration, randomize the data before creating mini-batches for images to be uniformly sampled from the entire distribution
 
-<img width=550 src="/img/docs/covariate-shift.png"/>
+<img width=550 src="assets/covariate-shift.png"/>
 <center><a href="https://www.learnopencv.com/batch-normalization-in-deep-networks/" style="color: lightgrey">Credit</a></center>
 
 #### Pros:
@@ -110,7 +110,7 @@ $$\large{\theta_{t+1}=\theta_{t}-\alpha\frac{\delta{J(\theta_{t})}}{\delta\theta
 - Introduces a degree of variance into the optimization process.
 - Although we will generally still follow the direction towards the global minimum, we're no longer guarunteed that each step will bring us closer to the optimal parameter values. Advanced optimization techniques are applied here.
 
-<img width=350 src="/img/docs/0*sFYJwQCCjOnXpSoD.png"/>
+<img width=350 src="assets/0*sFYJwQCCjOnXpSoD.png"/>
 <center><a href="https://hackernoon.com/gradient-descent-aynk-7cbe95a778da" style="color: lightgrey">Credit</a></center>
 
 - Mini-batch requires the configuration of an additional “mini-batch size” hyperparameter for the learning algorithm.
@@ -138,7 +138,7 @@ $$\large{\theta_{t+1}=\theta_{t}-\alpha\frac{\delta{J(\theta_{t})}}{\delta\theta
 - Kingma et al. [14:1] show that its bias-correction helps Adam slightly outperform RMSprop towards the end of optimization as gradients become sparser. Insofar, Adam might be the best overall choice. However, it is often also worth trying SGD+Nesterov Momentum as an alternative.
 - Many recent papers use vanilla SGD without momentum and a simple learning rate annealing schedule. But it might take significantly longer than with some of the optimizers, is much more reliant on a robust initialization and annealing schedule, and may get stuck in saddle points rather than local minima.
 
-<img width=350 src="/img/docs/saddle_point_evaluation_optimizers.gif"/>
+<img width=350 src="assets/saddle_point_evaluation_optimizers.gif"/>
 <center><a href="https://giphy.com/gifs/algorithm-nJF1badJjJzW0" style="color: lightgrey">Credit</a></center>
 
 ### Momentum
@@ -148,7 +148,7 @@ $$\large{\theta_{t+1}=\theta_{t}-\alpha\frac{\delta{J(\theta_{t})}}{\delta\theta
 - An intuitive understanding of momentum can be painted by a ball rolling down the hill. Its mass is constant all the way, but because of the gravitational pull, its velocity increases over time, making momentum increase. When the directions change, we go marginally slower.
 - With Momentum update, the parameter vector will build up velocity in any direction that has consistent gradient.
 
-<img width=300 src="/img/docs/momentum.png"/>
+<img width=300 src="assets/momentum.png"/>
 <center><a href="http://www.junlulocky.com/blog/SGDoverview" style="color: lightgrey">Credit</a></center>
 
 - Momentum takes past gradients into account to smooth out the steps of gradient descent.
@@ -164,7 +164,7 @@ $$\large{v_t=\beta v_{t-1}+(1-\beta)g_t}$$
 <center>
 GD with momentum | Beta
 :-:|:-:
-<img width=300 src="/img/docs/1*fhHakQ1nWN7HK1KBNdarqw.png"/> | <img width=300 src="/img/docs/1*buj-RJg3wW6RSclnpczkzA.png"/>
+<img width=300 src="assets/1*fhHakQ1nWN7HK1KBNdarqw.png"/> | <img width=300 src="assets/1*buj-RJg3wW6RSclnpczkzA.png"/>
 <a href="https://towardsdatascience.com/stochastic-gradient-descent-with-momentum-a84097641a5d" style="color: lightgrey">Credit</a>
 </center>
 
@@ -231,7 +231,7 @@ $$\large{\theta_{t+1}=\theta_{t}-\alpha\frac{\hat{v}_t}{\sqrt{\hat{s}_t}+\epsilo
 - Even though some optimizers try and use ideas of momentum to have the ability to swing out of a local minimum, they are not always that successful. 
 - We want to encourage our model to find parts of the weight space that are both accurate and stable. Therefore, from time to time we increase the learning rate (this is the "restarts" in SGDR), which will force the model to jump to a different part of the weight space if the current area is "spikey".
 
-<img width=350 src="/img/docs/1_3kkV66xEObjWpYiGdBBivg.png"/>
+<img width=350 src="assets/1_3kkV66xEObjWpYiGdBBivg.png"/>
 <center><a href="https://blog.paperspace.com/intro-to-optimization-in-deep-learning-gradient-descent/" style="color: lightgrey">Credit</a></center>
 
 - [SGDR: STOCHASTIC GRADIENT DESCENT WITH WARM RESTARTS](https://arxiv.org/pdf/1608.03983.pdf)
