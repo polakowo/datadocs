@@ -21,8 +21,8 @@ const users = [{
 const siteConfig = {
     title: 'datadocs', // Title for your website.
     tagline: 'Documentation for data enthusiasts',
-    url: 'https://github.com/polakowo/datadocs', // Your website URL
-    baseUrl: '/', // Base URL for your project */
+    url: 'https://polakowo.github.io', // Your website URL
+    baseUrl: '/datadocs/', // Base URL for your project */
     // For github.io type URLs, you would set the url and baseUrl like:
     //   url: 'https://facebook.github.io',
     //   baseUrl: '/test-site/',
