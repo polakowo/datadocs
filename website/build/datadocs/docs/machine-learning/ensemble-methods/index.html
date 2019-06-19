@@ -1,0 +1,280 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Ensemble Methods · datadocs</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="&lt;ul&gt;
+&lt;li&gt;An ensemble method combines the predictions of many individual classifiers by majority voting.&lt;/li&gt;
+&lt;/ul&gt;
+"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Ensemble Methods · datadocs"/><meta property="og:type" content="website"/><meta property="og:url" content="https://polakowo.github.io/datadocs/"/><meta property="og:description" content="&lt;ul&gt;
+&lt;li&gt;An ensemble method combines the predictions of many individual classifiers by majority voting.&lt;/li&gt;
+&lt;/ul&gt;
+"/><meta property="og:image" content="https://polakowo.github.io/datadocs/img/undraw_online.svg"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://polakowo.github.io/datadocs/img/undraw_tweetstorm.svg"/><link rel="shortcut icon" href="/datadocs/img/favicon.ico"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/zenburn.min.css"/><link rel="stylesheet" href="/css/code-block-buttons.css"/><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script><script type="text/javascript" src="/js/code-block-buttons.js"></script><script src="/datadocs/js/scrollSpy.js"></script><link rel="stylesheet" href="/datadocs/css/prism.css"/><link rel="stylesheet" href="/datadocs/css/main.css"/><script src="/datadocs/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/datadocs/"><img class="logo" src="/datadocs/img/favicon.ico" alt="datadocs"/><h2 class="headerTitleWithLogo">datadocs</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/datadocs/docs/machine-learning/linear-models" target="_self">Docs</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Methods</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Machine Learning<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Methods</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/linear-models">Linear Models</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/tree-based-models">Tree-Based Models</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/datadocs/docs/machine-learning/ensemble-methods">Ensemble Methods</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Features</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/eda">Exploratory Data Analysis</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/feature-engineering">Feature Engineering</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/advanced-features">Advanced Features</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Optimization</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/metric-optimization">Metric Optimization</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/validation-schemes">Validation Schemes</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/hyperopt">Hyperparameter Optimization</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Competitions</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/competitive-ml">Competitive Machine Learning</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/data-leakages">Data Leakages</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Deep Learning<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">General</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/deep-learning">Deep Learning</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/dl-strategy">Deep Learning Strategy</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Fundamentals</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/backpropagation">Backpropagation</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/activation-functions">Activation Functions</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/initialization">Initialization</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/optimization">Optimization</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/regularization">Regularization</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Computer Vision</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/cnns">Convolutional Neural Networks</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/cnn-architectures">CNN Architectures</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/object-detection">Object Detection</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/face-recognition">Face Recognition</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/nst">Neural Style Transfer</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Natural Language Processing</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/rnns">Recurrect Neural Networks</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/word-embeddings">Word Embeddings</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/nmt">Neural Machine Translation</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/attention-mechanism">Attention Mechanism</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/speech-recognition">Speech Recognition</a></li></ul></div></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle">Ensemble Methods</h1></header><article><div><span><ul>
+<li>An ensemble method combines the predictions of many individual classifiers by majority voting.</li>
+<li>Ensemble of <em>low-correlating</em> classifiers with slightly greater than 50% accuracy will outperform each of the classifiers individually.</li>
+</ul>
+<p><center><img width=350 src="/datadocs/assets/apes.jpg"/></center>
+<center><a href="https://www.youtube.com/watch?v=Q6TkuNX_0HA" style="color: lightgrey">Credit</a></center></p>
+<ul>
+<li>Condorcet's jury theorem:
+<ul>
+<li>If each member of the jury (of size \(N\)) makes an <em>independent</em> judgement and the probability \(p\) of the correct decision by each juror is more than 0.5, then the probability of the correct decision \(P_N\) by the majority \(m\) tends to one. On the other hand, if \(p&lt;0.5\) for each juror, then the probability tends to zero.
+$$\large{P_N=\sum_{i=m}^{N}{\frac{N!}{(N-i)!i!}(p)^i(1-p)^{N-i}}}$$</li>
+<li>where \(m\) as a minimal number of jurors that would make a majority.</li>
+<li>But real votes are not independent, and do not have uniform probabilities.</li>
+</ul></li>
+<li>Uncorrelated submissions clearly do better when ensembled than correlated submissions.</li>
+<li>Majority votes make most sense when the evaluation metric requires hard predictions.</li>
+<li>Choose bagging for base models with high variance.</li>
+<li>Choose boosting for base models with high bias.</li>
+<li>Use averaging, voting or rank averaging on manually-selected well-performing ensembles.</li>
+<li><a href="https://mlwave.com/kaggle-ensembling-guide/">KAGGLE ENSEMBLING GUIDE</a></li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="averaging"></a><a href="#averaging" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Averaging</h2>
+<ul>
+<li>Averaging is taking the mean of individual model predictions.</li>
+<li>Averaging predictions often reduces variance (as bagging does).</li>
+<li>It’s a fairly trivial technique that results in easy, sizeable performance improvements.</li>
+<li>Averaging exactly the same linear regressions won't give any penalty.</li>
+<li>An often heard shorthand for this on Kaggle is &quot;bagging submissions&quot;.</li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="weighted-averaging"></a><a href="#weighted-averaging" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Weighted averaging:</h4>
+<ul>
+<li>Use weighted averaging to give a better model more weight in a vote.</li>
+<li>A very small number of parameters rarely lead to overfitting.</li>
+<li>It is faster to implement and to run.</li>
+<li>It does not make sense to explore weights individually (\(\alpha+\beta\neq{1})\) for:
+<ul>
+<li>AUC: For any \(\alpha\), \(\beta\), dividing the predictions by \(\alpha+\beta\) will not change AUC.</li>
+<li>Accuracy (implemented with argmax): Similarly to AUC, argmax position will not change.</li>
+</ul></li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="conditional-averaging"></a><a href="#conditional-averaging" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Conditional averaging:</h4>
+<ul>
+<li>Use conditional averaging to cancel out erroneous ranges of individual estimators.</li>
+<li>Can be automatically learned by boosting trees and stacking.</li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="bagging"></a><a href="#bagging" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Bagging</h2>
+<ul>
+<li>Bagging (bootstrap aggregating) considers <em>homogeneous</em> models, learns them independently from each other in parallel, and combines them following some kind of deterministic averaging process.</li>
+<li>Bagging combines <em>strong learners</em> together in order to &quot;smooth out&quot; their predictions and reduce variance.</li>
+<li>Bootstrapping allows to fit models that are roughly independent.</li>
+</ul>
+<p><center><img width=350 src="/datadocs/assets/Ozone.png"/></center>
+<center><a href="https://en.wikipedia.org/wiki/Bootstrap_aggregating" style="color: lightgrey">Credit</a></center></p>
+<ul>
+<li>The procedure is as follows:
+<ul>
+<li>Create \(N\) random sub-samples (with replacement) for the dataset of size \(N\).</li>
+<li>Fit a base model on each sample.</li>
+<li>Average predictions from all models.</li>
+</ul></li>
+<li>Can be used with any type of method as a base model.</li>
+<li>Bagging is effective on small datasets.</li>
+<li>Out-of-bag estimate is the mean estimate of the base algorithms on 37% of inputs that are left out of a particular bootstrap sample.
+<ul>
+<li>Helps avoid the need for an independent validation dataset.</li>
+</ul></li>
+<li>Parameters to consider:
+<ul>
+<li>Random seed</li>
+<li>Row sampling or bootstrapping</li>
+<li>Column sampling or bootstrapping</li>
+<li>Size of sample (use a much smaller sample size on a larger dataset)</li>
+<li>Shuffling</li>
+<li>Number of bags</li>
+<li>Parallelism</li>
+</ul></li>
+<li>See <a href="https://nbviewer.jupyter.org/github/polakowo/machine-learning/blob/master/ml-notes/TreeBasedModels.ipynb">Tree-Based Models</a></li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="bootstrapping"></a><a href="#bootstrapping" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Bootstrapping:</h4>
+<ul>
+<li>Bootstrapping is random sampling with replacement.</li>
+<li>With sampling with replacement, each sample unit has an equal probability of being selected.
+<ul>
+<li>Samples become approximatively independent and identically distributed (i.i.d).</li>
+<li>It is a convenient way to treat a sample like a population.</li>
+</ul></li>
+<li>This technique allows estimation of the sampling distribution of almost any statistic using random sampling methods.</li>
+<li>It is a straightforward way to derive estimates of standard errors and confidence intervals for complex estimators.</li>
+<li>For example:
+<ul>
+<li>Select a random element from the original sample of size \(N\) and do this \(B\) times.</li>
+<li>Calculate the mean of each sub-sample.</li>
+<li>Obtain a 95% confidence interval around the mean estimate for the original sample.</li>
+</ul></li>
+<li>Two important assumptions:
+<ul>
+<li>\(N\) should be large enough to capture most of the complexity of the underlying distribution (representativity).</li>
+<li>\(N\) should be large enough compared to \(B\) so that samples are not too much correlated (independence).</li>
+</ul></li>
+<li>An average bootstrap sample contains 63.2% of the original observations and omits 36.8%.</li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="boosting"></a><a href="#boosting" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Boosting</h2>
+<ul>
+<li>Boosting considers <em>homogeneous</em> models, learns them sequentially in a very adaptative way (a base model depends on the previous ones) and combines them following a deterministic strategy.</li>
+<li>This technique is called boosting because we expect an ensemble to work much better than a single estimator.</li>
+<li>Sequential methods are no longer fitted independently from each others and can't be performed in parallel.</li>
+<li>Each new model in the ensemble focuses its efforts on the most difficult observations to fit up to now.</li>
+<li>Boosting combines weak learners together in order to create a strong learner with lower bias.
+<ul>
+<li>A weak learner is defined as one whose performance is at least slightly better than random chance.</li>
+<li>These learners are also in general less computationally expensive to fit.</li>
+</ul></li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="adaptive-boosting"></a><a href="#adaptive-boosting" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Adaptive boosting:</h4>
+<ul>
+<li>At each iteration, adaptive boosting changes the sample distribution by modifying the weights of instances.
+<ul>
+<li>It increases the weights of the wrongly predicted instances.</li>
+<li>The weak learner thus focuses more on the difficult instances.</li>
+</ul></li>
+<li>The procedure is as follows:
+<ul>
+<li>Fit a weak learner \(h_t\) with the current observations weights.</li>
+<li>Estimate the learner's performance and compute its weight \(\alpha_t\) (contribution to the ensemble).</li>
+<li>Update the strong learner by adding the new weak learner multiplied by its weight.</li>
+<li>Compute new observations weights that expresse which observations to focus on.
+$$\large{H(x)=sign{\left(\sum_{t=1}^{T}{a_th_t(x)}\right)}}$$</li>
+</ul></li>
+<li>See <a href="/datadocs/docs/machine-learning/tree-based-models">Tree-Based Models</a></li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="gradient-boosting"></a><a href="#gradient-boosting" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Gradient boosting:</h4>
+<ul>
+<li>Gradient boosting doesn’t modify the sample distribution:
+<ul>
+<li>At each iteration, the weak learner trains on the remaining errors (so-called pseudo-residuals) of the strong learner.</li>
+</ul></li>
+<li>Gradient boosting doesn’t weight weak learnes according to their performance:
+<ul>
+<li>The contribution of the weak learner (so-called multiplier) to the strong one is computed using gradient descent.</li>
+<li>The computed contribution is the one minimizing the overall error of the strong learner.</li>
+</ul></li>
+<li>Allows optimization of an arbitrary differentiable loss function.</li>
+<li>The procedure is as follows:
+<ul>
+<li>Compute pseudo-residuals that indicate, for each observation, in which direction we would like to move.</li>
+<li>Fit a weak learner \(h_t\) to the pseudo-residuals (negative gradient of the loss)</li>
+<li>Add the predictions of \(h_t\) multiplied by the step size \(\alpha\) (learning rate) to the predictions of ensemble \(H_{t-1}\).
+$$\large{H_t(x)=H_{t-1}(x)+\alpha{h_t(x)}}$$</li>
+</ul></li>
+<li>See <a href="/datadocs/docs/machine-learning/tree-based-models">Tree-Based Models</a></li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="stacking"></a><a href="#stacking" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Stacking</h2>
+<ul>
+<li>Stacking considers <em>heterogeneous</em> models, learns them in parallel and combines them by training a meta-model to output a prediction based on the different weak models predictions.</li>
+<li>Stacking on a small holdout set is blending.</li>
+<li>Stacking with linear regression is sometimes the most effective way of stacking.</li>
+<li>Non-linear stacking gives surprising gains as it finds useful interactions between the original and the meta-model features.</li>
+<li>Feature-weighted linear stacking stacks engineered meta-features together with model predictions.</li>
+<li>At the end of the day you don’t know which base models will be helpful.</li>
+<li>Stacking allows you to use classifiers for regression problems and vice versa.</li>
+<li>Base models should be as diverse as possible:
+<ul>
+<li>2-3 GBMs (one with low depth, one with medium and one with high)</li>
+<li>2-3 NNs (one deeper, one shallower)</li>
+<li>1-2 ExtraTrees/RFs (again as diverse as possible)</li>
+<li>1-2 linear models such as logistic/ridge regression</li>
+<li>1 kNN model</li>
+<li>1 factorization machine</li>
+</ul></li>
+<li>Use different features for different models.</li>
+<li>Use feature engineering:
+<ul>
+<li>Pairwise distances between meta features</li>
+<li>Row-wise statistics (like mean)</li>
+<li>Standard feature selection techniques</li>
+</ul></li>
+<li>Meta models can be shallow:
+<ul>
+<li>GBMs with small depth (2-3)</li>
+<li>Linear models with high regularization</li>
+<li>ExtraTrees</li>
+<li>Shallow NNs (1 hidden layer)</li>
+<li>kNN with BrayCurtis distance</li>
+<li>A simple weighted average (find weights with bruteforce)</li>
+</ul></li>
+<li>Use automated stacking for complex cases to optimize:
+<ul>
+<li>CV-scores</li>
+<li>Standard deviation of the CV-scores (a smaller deviation is a safer choice)</li>
+<li>Complexity/memory usage and running times</li>
+<li>Correlation (uncorrelated model predictions are preferred).</li>
+</ul></li>
+<li>Greedy forward model selection:
+<ul>
+<li>Start with a base ensemble of 3 or so good models.</li>
+<li>Add a model when it increases the train set score the most.</li>
+</ul></li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="multi-level-stacking"></a><a href="#multi-level-stacking" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Multi-level stacking:</h4>
+<ul>
+<li>Always do OOF predictions: you never know when you need to train a 2nd or 3rd level meta-classifier.</li>
+<li>Try skip connections to deeper layers.</li>
+<li>For 7.5 models in previous layer add 1 meta model in next layer.</li>
+<li>Try <a href="https://github.com/h2oai/pystacknet">StackNet</a> which resembles a feedforward neural network and uses Wolpert's stacked generalization (built iteratively one layer at a time) in multiple levels to improve accuracy  in machine learning problems.</li>
+<li>Try <a href="https://github.com/rushter/heamy">Heamy</a> - a set of useful tools for competitive data science (including ensembling).</li>
+</ul>
+<p><center><img width=600 src="/datadocs/assets/stacknet.png"/></center>
+<center><a href="https://opendatascience.com/predicting-resignation-in-the-military/" style="color: lightgrey">Credit</a></center></p>
+<ul>
+<li>Keep in mind:
+<ul>
+<li>Adding levels can either be data expensive or time expensive.</li>
+<li>We cannot use backpropagation since not all models are differentiable.</li>
+<li>Performance plateauing after some number of models.</li>
+<li>Be mindful of target leakage.</li>
+</ul></li>
+</ul>
+</span></div></article></div><div class="docLastUpdate"><em>Last updated on 6/19/2019 by Oleg Polakow</em></div><div class="docs-prevnext"><a class="docs-prev button" href="/datadocs/docs/machine-learning/tree-based-models"><span class="arrow-prev">← </span><span>Tree-Based Models</span></a><a class="docs-next button" href="/datadocs/docs/machine-learning/eda"><span>Exploratory Data Analysis</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#averaging">Averaging</a></li><li><a href="#bagging">Bagging</a></li><li><a href="#boosting">Boosting</a></li><li><a href="#stacking">Stacking</a></li></ul></nav></div><footer class="nav-footer" id="footer"><a href="https://opensource.facebook.com/" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/datadocs/img/oss_logo.png" alt="Facebook Open Source" width="170" height="45"/></a><section class="copyright">Copyright © 2019 Oleg Polakow</section></footer></div></body></html>

@@ -1,0 +1,309 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Optimization · datadocs</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="&lt;h2&gt;&lt;a class=&quot;anchor&quot; aria-hidden=&quot;true&quot; id=&quot;learning-rate&quot;&gt;&lt;/a&gt;&lt;a href=&quot;#learning-rate&quot; aria-hidden=&quot;true&quot; class=&quot;hash-link&quot;&gt;&lt;svg class=&quot;hash-link-icon&quot; aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Learning rate&lt;/h2&gt;
+"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Optimization · datadocs"/><meta property="og:type" content="website"/><meta property="og:url" content="https://polakowo.github.io/datadocs/"/><meta property="og:description" content="&lt;h2&gt;&lt;a class=&quot;anchor&quot; aria-hidden=&quot;true&quot; id=&quot;learning-rate&quot;&gt;&lt;/a&gt;&lt;a href=&quot;#learning-rate&quot; aria-hidden=&quot;true&quot; class=&quot;hash-link&quot;&gt;&lt;svg class=&quot;hash-link-icon&quot; aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Learning rate&lt;/h2&gt;
+"/><meta property="og:image" content="https://polakowo.github.io/datadocs/img/undraw_online.svg"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://polakowo.github.io/datadocs/img/undraw_tweetstorm.svg"/><link rel="shortcut icon" href="/datadocs/img/favicon.ico"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/zenburn.min.css"/><link rel="stylesheet" href="/css/code-block-buttons.css"/><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script><script type="text/javascript" src="/js/code-block-buttons.js"></script><script src="/datadocs/js/scrollSpy.js"></script><link rel="stylesheet" href="/datadocs/css/prism.css"/><link rel="stylesheet" href="/datadocs/css/main.css"/><script src="/datadocs/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/datadocs/"><img class="logo" src="/datadocs/img/favicon.ico" alt="datadocs"/><h2 class="headerTitleWithLogo">datadocs</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/datadocs/docs/machine-learning/linear-models" target="_self">Docs</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Fundamentals</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Machine Learning<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Methods</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/linear-models">Linear Models</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/tree-based-models">Tree-Based Models</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/ensemble-methods">Ensemble Methods</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Features</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/eda">Exploratory Data Analysis</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/feature-engineering">Feature Engineering</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/advanced-features">Advanced Features</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Optimization</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/metric-optimization">Metric Optimization</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/validation-schemes">Validation Schemes</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/hyperopt">Hyperparameter Optimization</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Competitions</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/competitive-ml">Competitive Machine Learning</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/data-leakages">Data Leakages</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Deep Learning<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">General</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/deep-learning">Deep Learning</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/dl-strategy">Deep Learning Strategy</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Fundamentals</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/backpropagation">Backpropagation</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/activation-functions">Activation Functions</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/initialization">Initialization</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/datadocs/docs/deep-learning/optimization">Optimization</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/regularization">Regularization</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Computer Vision</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/cnns">Convolutional Neural Networks</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/cnn-architectures">CNN Architectures</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/object-detection">Object Detection</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/face-recognition">Face Recognition</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/nst">Neural Style Transfer</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Natural Language Processing</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/rnns">Recurrect Neural Networks</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/word-embeddings">Word Embeddings</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/nmt">Neural Machine Translation</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/attention-mechanism">Attention Mechanism</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/speech-recognition">Speech Recognition</a></li></ul></div></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle">Optimization</h1></header><article><div><span><h2><a class="anchor" aria-hidden="true" id="learning-rate"></a><a href="#learning-rate" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Learning rate</h2>
+<ul>
+<li>The learning rate determines how quickly or how slowly you want to update the weights (or parameters).</li>
+<li>Learning rate is one of the most difficult parameters to set:
+<ul>
+<li>It significantly affects model performance. The optimal learning rate is dependent on the topology of the loss landscape, which is in turn depends on both the model architecture and the dataset.</li>
+<li>Try to set a higher learning rate first and then gradually lower it down until the best value is found.</li>
+</ul></li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="divergence"></a><a href="#divergence" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Divergence:</h4>
+<ul>
+<li>It's a key differentiator between convergence and divergence.</li>
+<li>If learning rate is set too low, training will progress very slowly as you are making very tiny updates to the weights in the network.</li>
+<li>However, if learning rate is set too high, it can cause undesirable divergent behavior in the loss function.</li>
+</ul>
+<p><img width=350 src="/datadocs/assets/figure3.png"/>
+<center><a href="http://www.cs.cornell.edu/courses/cs4780/2015fa/web/lecturenotes/lecturenote07.html" style="color: lightgrey">Credit</a></center></p>
+<h4><a class="anchor" aria-hidden="true" id="local-minima"></a><a href="#local-minima" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Local minima:</h4>
+<ul>
+<li>The best learning rate is associated with the steepest drop in loss.</li>
+<li>Recent research has shown that local minima is not neccasarily bad. In the loss landscape of a neural network, there are just way too many minima, and a &quot;good&quot; local minima might perform just as well as a global minima.</li>
+<li>A desirable property of a minima should be it that it should be on the flatter side, because flat minimum are easy to converge to, given there's less chance to overshoot the minima, and be bouncing between the ridges of the minima.</li>
+</ul>
+<p><img width=250 src="/datadocs/assets/noshort.png"/>
+<center><a href="https://www.cs.umd.edu/~tomg/projects/landscapes/" style="color: lightgrey">Credit</a></center></p>
+<h4><a class="anchor" aria-hidden="true" id="saddle-points"></a><a href="#saddle-points" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Saddle points:</h4>
+<ul>
+<li>Another key challenge of minimizing highly non-convex error functions is avoiding getting trapped in their numerous suboptimal local minima.</li>
+<li>Dauphin et al. [3] argue that the difficulty arises in fact not from local minima but from saddle points, i.e. points where one dimension slopes up and another slopes down.</li>
+</ul>
+<p><img width=300 src="/datadocs/assets/0*Q_ZjKKXa9mTShbpV.png"/>
+<center><a href="https://towardsdatascience.com/understanding-learning-rates-and-how-it-improves-performance-in-deep-learning-d0d4059c1c10" style="color: lightgrey">Credit</a></center></p>
+<ul>
+<li>These saddle points are usually surrounded by a plateau of the same error, which makes it notoriously hard for SGD to escape, as the gradient is close to zero in all dimensions.</li>
+<li>Tipp: Change the learning rate every iteration according to some (cyclic, validation, etc.) function.</li>
+<li><a href="https://arxiv.org/pdf/1506.01186.pdf">Cyclical Learning Rates for Training Neural Networks</a></li>
+<li>A simple decay is not often used for training deep neural networks. Instead, one uses per-parameter decay rates such as RMSProp or Adam or Adamax in order to prevent parameters from languishing on cost plateaus</li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="gradient-descent"></a><a href="#gradient-descent" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Gradient descent</h2>
+<ul>
+<li>Gradient Descent is used while training a machine learning model to minimize the cost function.</li>
+<li>It is an optimization algorithm, based on a convex function, that tweaks it’s parameters iteratively to minimize a given function to its local minimum.</li>
+<li>Using calculus, we know that the slope of a function is the derivative of the function with respect to a value. This slope always points to the nearest minimum.</li>
+</ul>
+<p>$$\large{\theta_{t+1}=\theta_{t}-\alpha\frac{\delta{J(\theta_{t})}}{\delta\theta_{t}}}$$
+<center>where</center>
+<center>\(\theta_t\): vector of parameters at time \(t\),</center>
+<center>\(\alpha\): slope parameter (learning rate),</center>
+<center>\(J\): cost function</center></p>
+<h4><a class="anchor" aria-hidden="true" id="pros"></a><a href="#pros" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Pros:</h4>
+<ul>
+<li>Gradient-based method are very efficient when the search for an optimum happens in an elliptical domain.</li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="cons"></a><a href="#cons" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Cons:</h4>
+<ul>
+<li>The objective function might be discontinuous.</li>
+<li>Gradient-based methods are inefficient when the search space solution is large.</li>
+<li>The choice of a starting point conditions the search and the efficiency of a gradient-based method. Converge towards a local minimum is much likely to occur.</li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="batch-gradient-descent"></a><a href="#batch-gradient-descent" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Batch gradient descent</h3>
+<ul>
+<li>We compute the cost in one large batch computation.</li>
+<li>When computing the cost function we look at the loss associated with each training example and then sum these values together for an overall cost of the entire dataset.</li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="pros-1"></a><a href="#pros-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Pros:</h4>
+<ul>
+<li>Fewer updates to the model means this variant of gradient descent is more computationally efficient than stochastic gradient descent.</li>
+<li>The decreased update frequency results in a more stable error gradient and may result in a more stable convergence on some problems.</li>
+<li>The separation of the calculation of prediction errors and the model update lends the algorithm to parallel processing based implementations.</li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="cons-1"></a><a href="#cons-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Cons:</h4>
+<ul>
+<li>Model updates, and in turn training speed, may become very slow for large datasets.</li>
+<li>Commonly, batch gradient descent is implemented in such a way that it requires the entire training dataset in memory and available to the algorithm.</li>
+<li>Moreover, it begs the question: do we really need to see all of the data before making improvements to our parameter values?</li>
+<li>The updates at the end of the training epoch require the additional complexity of accumulating prediction errors across all training examples.</li>
+<li>The more stable error gradient may result in premature convergence of the model to a less optimal set of parameters.</li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="mini-batch-gradient-descent"></a><a href="#mini-batch-gradient-descent" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Mini-batch gradient descent</h3>
+<ul>
+<li>It is the most common implementation of gradient descent used in the field of deep learning.</li>
+<li>Mini-batch gradient descent seeks to find a balance between the robustness of stochastic gradient descent and the efficiency of batch gradient descent.</li>
+<li>Allows us to split our training data into mini batches which can be processed individually</li>
+<li>Update your parameters accordingly to the processed mini-batch.</li>
+</ul>
+<p><img width=500 src="/datadocs/assets/Screen-Shot-2017-11-15-at-7.26.05-PM.png"/>
+<center><a href="https://www.jeremyjordan.me/gradient-descent/" style="color: lightgrey">Credit</a></center></p>
+<h4><a class="anchor" aria-hidden="true" id="shuffling"></a><a href="#shuffling" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Shuffling:</h4>
+<ul>
+<li>Every mini-batch used in the training process should have the same distribution</li>
+<li>A difference in the distributions is called the covariate shift</li>
+<li>With every GD iteration, randomize the data before creating mini-batches for images to be uniformly sampled from the entire distribution</li>
+</ul>
+<p><img width=550 src="/datadocs/assets/covariate-shift.png"/>
+<center><a href="https://www.learnopencv.com/batch-normalization-in-deep-networks/" style="color: lightgrey">Credit</a></center></p>
+<h4><a class="anchor" aria-hidden="true" id="pros-2"></a><a href="#pros-2" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Pros:</h4>
+<ul>
+<li>This allows us to improve our model parameters at each mini batch iteration and take 100 steps towards the global optimum rather than just 1 step</li>
+<li>The model update frequency is higher than batch gradient descent which allows for a more robust convergence, avoiding local minima.</li>
+<li>Makes use of highly optimized matrix optimizations compared to stochastic gradient descent.</li>
+<li>The batching allows both the efficiency of not having all training data in memory and algorithm implementations.</li>
+<li>SGD reaches higher validation accuracy than adaptive learning methods while being slower.</li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="cons-2"></a><a href="#cons-2" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Cons:</h4>
+<ul>
+<li>Requires three loops:
+<ul>
+<li>Over the number of epochs</li>
+<li>Over the number of iterations</li>
+<li>Over the number of layers</li>
+</ul></li>
+<li>Vanilla mini-batch gradient descent, however, does not guarantee good convergence.</li>
+<li>Introduces a degree of variance into the optimization process.</li>
+<li>Although we will generally still follow the direction towards the global minimum, we're no longer guarunteed that each step will bring us closer to the optimal parameter values. Advanced optimization techniques are applied here.</li>
+</ul>
+<p><img width=350 src="/datadocs/assets/0*sFYJwQCCjOnXpSoD.png"/>
+<center><a href="https://hackernoon.com/gradient-descent-aynk-7cbe95a778da" style="color: lightgrey">Credit</a></center></p>
+<ul>
+<li>Mini-batch requires the configuration of an additional “mini-batch size” hyperparameter for the learning algorithm.</li>
+<li>Error information must be accumulated across mini-batches of training examples like batch gradient descent.</li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="best-practices"></a><a href="#best-practices" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Best practices:</h4>
+<ul>
+<li>Common batch sizes (\(m\)) include: 64, 128, 256, and 512.</li>
+<li>Using big batch sizes often leads to overfitting.</li>
+<li>Using small batch sizes achieves the best training stability and generalization performance, for a given computational cost, across a wide range of experiments. In all cases the best results have been obtained with batch sizes \(m=32\) or smaller.</li>
+<li>Very low batch sizes (\(m=2\) or \(m=4\)) may be too noisy and result in underfitting.</li>
+<li>Make sure that a single mini-batch fits into the CPU/GPU memory</li>
+<li>Tune batch size and learning rate after tuning all other hyperparameters.</li>
+<li>It is a good idea to review learning curves of model validation error against training time with different batch sizes when tuning the batch size.</li>
+<li>A rule of thumb: if you increase the batch size by a factor, increase the learning rate by the same factor.</li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="adaptive-learning-methods"></a><a href="#adaptive-learning-methods" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Adaptive learning methods</h2>
+<ul>
+<li>Adaptive methods allow to the model to learn and converge faster.</li>
+<li>But in practice, they often lead to overfitting.</li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="which-optimizer-to-use"></a><a href="#which-optimizer-to-use" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Which optimizer to use:</h4>
+<ul>
+<li>If your input data is sparse, then you likely achieve the best results using one of the adaptive learning-rate methods.</li>
+<li>Also, if you care about fast convergence and train a deep or complex neural network, you should choose one of the adaptive learning rate methods.</li>
+<li>RMSprop, Adadelta, and Adam are very similar algorithms that do well in similar circumstances.</li>
+<li>Kingma et al. [14:1] show that its bias-correction helps Adam slightly outperform RMSprop towards the end of optimization as gradients become sparser. Insofar, Adam might be the best overall choice. However, it is often also worth trying SGD+Nesterov Momentum as an alternative.</li>
+<li>Many recent papers use vanilla SGD without momentum and a simple learning rate annealing schedule. But it might take significantly longer than with some of the optimizers, is much more reliant on a robust initialization and annealing schedule, and may get stuck in saddle points rather than local minima.</li>
+</ul>
+<p><img width=350 src="/datadocs/assets/saddle_point_evaluation_optimizers.gif"/>
+<center><a href="https://giphy.com/gifs/algorithm-nJF1badJjJzW0" style="color: lightgrey">Credit</a></center></p>
+<h3><a class="anchor" aria-hidden="true" id="momentum"></a><a href="#momentum" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Momentum</h3>
+<ul>
+<li>When estimating on a small batch, we’re not always going in the optimal direction, because our derivatives are noisy.</li>
+<li>To prevent gradient descent from getting stuck at local optima (which may not be the global optimum), we can use a momentum term which allows our search to overcome local optima.</li>
+<li>An intuitive understanding of momentum can be painted by a ball rolling down the hill. Its mass is constant all the way, but because of the gravitational pull, its velocity increases over time, making momentum increase. When the directions change, we go marginally slower.</li>
+<li>With Momentum update, the parameter vector will build up velocity in any direction that has consistent gradient.</li>
+</ul>
+<p><img width=300 src="/datadocs/assets/momentum.png"/>
+<center><a href="http://www.junlulocky.com/blog/SGDoverview" style="color: lightgrey">Credit</a></center></p>
+<ul>
+<li>Momentum takes past gradients into account to smooth out the steps of gradient descent.</li>
+</ul>
+<p>$$\large{v_t=\beta v_{t-1}+(1-\beta)g_t}$$
+<center>where</center>
+<center>\(v_t\): exponential average of gradients along \(\theta_t\),</center>
+<center>\(g_t\): gradient at time \(t\),</center>
+<center>\(\beta\): hyperparameter</center></p>
+<ul>
+<li>Exponentially weighed averages can provide us a better estimate which is closer to the actual derivate than our noisy calculations.</li>
+</ul>
+<p><center></p>
+<table>
+<thead>
+<tr><th style="text-align:center">GD with momentum</th><th style="text-align:center">Beta</th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align:center"><img width=300 src="/datadocs/assets/1*fhHakQ1nWN7HK1KBNdarqw.png"/></td><td style="text-align:center"><img width=300 src="/datadocs/assets/1*buj-RJg3wW6RSclnpczkzA.png"/></td></tr>
+</tbody>
+</table>
+<p><a href="https://towardsdatascience.com/stochastic-gradient-descent-with-momentum-a84097641a5d" style="color: lightgrey">Credit</a>
+</center></p>
+<ul>
+<li>The first couple of iterations will provide a pretty bad averages because we don’t have enough values yet to average over.</li>
+<li>The solution is to use the bias-corrected version of velocity.</li>
+</ul>
+<p>$$\large{\hat{v}_t=\frac{v_t}{1-\beta^t}}$$</p>
+<ul>
+<li><a href="https://distill.pub/2017/momentum/">Why Momentum Really Works</a></li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="pros-3"></a><a href="#pros-3" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Pros:</h4>
+<ul>
+<li>SGD with momentum converges slower but the trained network usually generalizes better than Adam.</li>
+<li>It also seems to find more flatter minima.</li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="best-practices-1"></a><a href="#best-practices-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Best practices:</h4>
+<ul>
+<li>The velocity is initialized with zeros. So the algorithm will take a few iterations to &quot;build up&quot; velocity and start to take bigger steps.</li>
+<li>If \(\beta=0\), then this just becomes standard gradient descent without momentum.</li>
+<li>With bigger values of beta, we get much smother curve, but it’s a little bit shifted to the right</li>
+<li>Common values for \(\beta\) are in \([0.8,0.999]\). If you don't feel inclined to tune this, \(\beta=0.9\) is often a reasonable default.</li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="rmsprop"></a><a href="#rmsprop" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>RMSProp</h3>
+<ul>
+<li>RMSProp tries to dampen the oscillations, but in a different way than momentum</li>
+<li>RMSProp implicitly performs simulated annealing. Suppose if we are heading towards the minima, and we want to slow down so as to not to overshoot the minima. RMSProp automatically will decrease the size of the gradient steps towards minima when the steps are too large (Large steps make us prone to overshooting)</li>
+<li>While momentum accelerates our search in direction of minima, RMSProp impedes our search in direction of oscillations.</li>
+</ul>
+<p>$$\large{v_t=\beta v_{t-1}+(1-\beta)g_t}$$
+$$\large{\theta_{t+1}=\theta_{t}-\alpha\frac{1}{\sqrt{v_t}+\epsilon}g_t}$$
+<center>where</center>
+<center>\(\epsilon\): factor for numerical stability</center></p>
+<h4><a class="anchor" aria-hidden="true" id="pros-4"></a><a href="#pros-4" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Pros:</h4>
+<ul>
+<li>The algorithm does well on online and non-stationary problems (e.g. noisy)</li>
+<li>RMSProp is used by DeepMind</li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="adam"></a><a href="#adam" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Adam</h3>
+<ul>
+<li>Adam or Adaptive Moment Optimization algorithms combines the heuristics of both Momentum and RMSProp</li>
+<li>Adam adds bias-correction and momentum to RMSprop.</li>
+<li>Whereas momentum can be seen as a ball running down a slope, Adam behaves like a heavy ball with friction, which thus prefers flat minima in the error surface.</li>
+</ul>
+<p>$$\large{v_t=\beta_1v_{t-1}+(1-\beta_1)g_t}$$
+$$\large{s_t=\beta_2s_{t-1}+(1-\beta_2)g_t^2}$$
+$$\large{\hat{v}_t=\frac{v_t}{1-\beta_1^t}}$$
+$$\large{\hat{s}_t=\frac{s_t}{1-\beta_2^t}}$$</p>
+<p>$$\large{\theta_{t+1}=\theta_{t}-\alpha\frac{\hat{v}_t}{\sqrt{\hat{s}_t}+\epsilon}g_t}$$
+<center>where</center>
+<center>\(v_t\): exponential average of gradients along \(\theta_t\),</center>
+<center>\(s_t\): exponential average of squares of gradients along \(\theta_t\),</center>
+<center>\(\beta_1,\beta_2\): hyperparameters</center></p>
+<ul>
+<li><a href="https://arxiv.org/pdf/1412.6980.pdf">ADAM: A METHOD FOR STOCHASTIC OPTIMIZATION (2017)</a></li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="pros-5"></a><a href="#pros-5" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Pros:</h4>
+<ul>
+<li>In practice, Adam is currently recommended as the default algorithm to use, and often works slightly better than RMSProp.</li>
+<li>It has attractive benefits on non-convex optimization problems</li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="best-practices-2"></a><a href="#best-practices-2" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Best practices:</h4>
+<ul>
+<li>Good default settings for the tested machine learning problems are \(\alpha=0.001\), \(\beta_1=0.9\), \(\beta_2=0.999\) and \(\epsilon=10^{−8}\). The popular deep learning libraries generally use the default parameters recommended by the paper.</li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="sgdr"></a><a href="#sgdr" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>SGDR</h3>
+<ul>
+<li>Even though some optimizers try and use ideas of momentum to have the ability to swing out of a local minimum, they are not always that successful.</li>
+<li>We want to encourage our model to find parts of the weight space that are both accurate and stable. Therefore, from time to time we increase the learning rate (this is the &quot;restarts&quot; in SGDR), which will force the model to jump to a different part of the weight space if the current area is &quot;spikey&quot;.</li>
+</ul>
+<p><img width=350 src="/datadocs/assets/1_3kkV66xEObjWpYiGdBBivg.png"/>
+<center><a href="https://blog.paperspace.com/intro-to-optimization-in-deep-learning-gradient-descent/" style="color: lightgrey">Credit</a></center></p>
+<ul>
+<li><a href="https://arxiv.org/pdf/1608.03983.pdf">SGDR: STOCHASTIC GRADIENT DESCENT WITH WARM RESTARTS</a></li>
+</ul>
+</span></div></article></div><div class="docLastUpdate"><em>Last updated on 6/19/2019 by Oleg Polakow</em></div><div class="docs-prevnext"><a class="docs-prev button" href="/datadocs/docs/deep-learning/initialization"><span class="arrow-prev">← </span><span>Initialization</span></a><a class="docs-next button" href="/datadocs/docs/deep-learning/regularization"><span>Regularization</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#learning-rate">Learning rate</a></li><li><a href="#gradient-descent">Gradient descent</a><ul class="toc-headings"><li><a href="#batch-gradient-descent">Batch gradient descent</a></li><li><a href="#mini-batch-gradient-descent">Mini-batch gradient descent</a></li></ul></li><li><a href="#adaptive-learning-methods">Adaptive learning methods</a><ul class="toc-headings"><li><a href="#momentum">Momentum</a></li><li><a href="#rmsprop">RMSProp</a></li><li><a href="#adam">Adam</a></li><li><a href="#sgdr">SGDR</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><a href="https://opensource.facebook.com/" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/datadocs/img/oss_logo.png" alt="Facebook Open Source" width="170" height="45"/></a><section class="copyright">Copyright © 2019 Oleg Polakow</section></footer></div></body></html>
