@@ -1,0 +1,362 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Linear Models · datadocs</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="&lt;ul&gt;
+&lt;li&gt;In linear models, the relationships are modeled using linear predictor functions.&lt;/li&gt;
+&lt;/ul&gt;
+"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Linear Models · datadocs"/><meta property="og:type" content="website"/><meta property="og:url" content="https://polakowo.github.io/datadocs/"/><meta property="og:description" content="&lt;ul&gt;
+&lt;li&gt;In linear models, the relationships are modeled using linear predictor functions.&lt;/li&gt;
+&lt;/ul&gt;
+"/><meta property="og:image" content="https://polakowo.github.io/datadocs/img/undraw_online.svg"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://polakowo.github.io/datadocs/img/undraw_tweetstorm.svg"/><link rel="shortcut icon" href="/datadocs/img/favicon.ico"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/zenburn.min.css"/><link rel="stylesheet" href="/css/code-block-buttons.css"/><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script><script type="text/javascript" src="/js/code-block-buttons.js"></script><script src="/datadocs/js/scrollSpy.js"></script><link rel="stylesheet" href="/datadocs/css/prism.css"/><link rel="stylesheet" href="/datadocs/css/main.css"/><script src="/datadocs/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/datadocs/"><img class="logo" src="/datadocs/img/favicon.ico" alt="datadocs"/><h2 class="headerTitleWithLogo">datadocs</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive siteNavItemActive"><a href="/datadocs/docs/machine-learning/linear-models" target="_self">Docs</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Methods</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Machine Learning<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Methods</h4><ul><li class="navListItem navListItemActive"><a class="navItem" href="/datadocs/docs/machine-learning/linear-models">Linear Models</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/tree-based-models">Tree-Based Models</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/ensemble-methods">Ensemble Methods</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Features</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/eda">Exploratory Data Analysis</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/feature-engineering">Feature Engineering</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/advanced-features">Advanced Features</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Optimization</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/metric-optimization">Metric Optimization</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/validation-schemes">Validation Schemes</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/hyperopt">Hyperparameter Optimization</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Competitions</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/competitive-ml">Competitive Machine Learning</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/data-leakages">Data Leakages</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Deep Learning<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">General</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/deep-learning">Deep Learning</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/dl-strategy">Deep Learning Strategy</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Fundamentals</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/backpropagation">Backpropagation</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/activation-functions">Activation Functions</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/initialization">Initialization</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/optimization">Optimization</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/regularization">Regularization</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Computer Vision</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/cnns">Convolutional Neural Networks</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/cnn-architectures">CNN Architectures</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/object-detection">Object Detection</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/face-recognition">Face Recognition</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/nst">Neural Style Transfer</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Natural Language Processing</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/rnns">Recurrect Neural Networks</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/word-embeddings">Word Embeddings</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/nmt">Neural Machine Translation</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/attention-mechanism">Attention Mechanism</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/speech-recognition">Speech Recognition</a></li></ul></div></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle">Linear Models</h1></header><article><div><span><ul>
+<li>In linear models, the relationships are modeled using linear predictor functions.</li>
+<li>Linear models are frequently favorable due to their interpretability and often good predictive performance.</li>
+<li>Linear methods split space into 2 subspaces.</li>
+</ul>
+<p><center><img width=150 src="/img/docs/classifier.png"/></center>
+<center><a href="https://33bits.wordpress.com/tag/spam/" target="_blank" style="color: lightgrey">Credit</a></center></p>
+<ul>
+<li>The most famous toy example of where classes cannot be divided by a hyperplane (or line) with no errors is &quot;the XOR problem&quot;.</li>
+<li>But if one were to give polynomial features as an input, then the problem is solved.
+<ul>
+<li>Polynomial features do help, but it is computationally inefficient to build them explicitly.</li>
+<li>SVM with the kernel trick works much faster.</li>
+</ul></li>
+</ul>
+<p><center><img width=300 src="/img/docs/xor.png"/></center>
+<center><a href="https://github.com/Yorko/mlcourse.ai/blob/master/jupyter_english/topic04_linear_models/topic4_linear_models_part4_good_bad_logit_movie_reviews_XOR.ipynb" target="_blank" style="color: lightgrey">Credit</a></center></p>
+<h4><a class="anchor" aria-hidden="true" id="pros"></a><a href="#pros" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Pros:</h4>
+<ul>
+<li>Linear regression is often not computationally expensive.</li>
+<li>They are easily comprehensible and transparent in nature.</li>
+<li>Can handle a very large number of features, especially with very low signal to noise ratio.</li>
+<li>Can be used if covariate shift is likely.</li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="cons"></a><a href="#cons" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Cons:</h4>
+<ul>
+<li>They strongly rely on a linear relationship.</li>
+<li>Weaker than other algorithms in terms of reducing error rates.</li>
+<li>Rely on continuous data to build regression capabilities.</li>
+<li>Each missing value removes one data point that could optimize the regression.</li>
+<li>Outliers can significantly disrupt the outcomes.</li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="regression"></a><a href="#regression" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Regression</h2>
+<ul>
+<li>In regression analysis, the coefficients \(w\) in the regression equation are estimates of the actual population parameters.</li>
+</ul>
+<p>$$\large{y=\beta_01+\beta_1*x_1+...+\beta_px_p+\epsilon=Xw+\epsilon}$$</p>
+<ul>
+<li>Regression analysis:
+<ul>
+<li>Indicates the significant relationships between dependent variables and independent variable.</li>
+<li>Indicates the strength of impact of multiple independent variables on a dependent variable.</li>
+<li>Compares the effects of variables measured on different scales.</li>
+</ul></li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="solution-approaches"></a><a href="#solution-approaches" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Solution approaches:</h4>
+<ul>
+<li>Solving the model parameters analytically using closed-form equations (<code>LinearRegression</code>)</li>
+<li>Using an optimization algorithm such as SGD, Newton's method, etc. (<code>SGDRegressor</code>)
+<ul>
+<li>Optimization algorithms are particularly useful when the number of samples (and features) is very large.</li>
+</ul></li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="tuning"></a><a href="#tuning" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Tuning:</h4>
+<ul>
+<li>Construct validation curves to compare the results depending on the complexity of the model (<code>validation_curve</code>):
+<ul>
+<li>if the two curves are close to each other and both errors are large, it is a sign of underfitting.</li>
+<li>if the two curves are far from each other, it is a sign of overfitting.</li>
+</ul></li>
+<li>Construct learning curves to compare the results depending on the number of observations (<code>learning_curve</code>):
+<ul>
+<li>The parameters of the model are fixed in advance.</li>
+<li>if the curves converge, adding new data won't help, and it is necessary to change the complexity of the model.</li>
+<li>if the curves have not converged, adding new data can improve the result.</li>
+</ul></li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="linear-regression"></a><a href="#linear-regression" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Linear regression</h3>
+<h4><a class="anchor" aria-hidden="true" id="ols"></a><a href="#ols" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>OLS:</h4>
+<ul>
+<li>The OLS (ordinary least squares) is used to estimate the coefficients in a linear regression model by minimizing the sum of squares of the differences between fitted values and observed values regardless of the form of the distribution of the errors.</li>
+<li>To solve this optimization problem, we need to calculate derivatives with respect to the model parameters.</li>
+</ul>
+<p>$$\large\min_w||y-\hat{y}||^2_2$$</p>
+<ul>
+<li>The OLS estimator has the desired property of being unbiased. However, it can have a huge variance when
+<ul>
+<li>The predictor variables are highly correlated with each other.</li>
+<li>There are many predictors (independent variables).</li>
+</ul></li>
+<li>The OLS approach can be used to fit models that are not linear models.</li>
+<li>When the assumptions are met, OLS regression can be more powerful than other regression methods.</li>
+<li>The parametric form makes it relatively easy to interpret.</li>
+<li>Challenges:
+<ul>
+<li>OLS cannot distinguish between variables with little or no influence.</li>
+<li>These variables distract from the relevant regressors.</li>
+<li>Least squares perform badly in the presence of outliers.</li>
+<li>Redundant features may unnecessarily degrade the performance.</li>
+</ul></li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="mle"></a><a href="#mle" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>MLE:</h4>
+<ul>
+<li>Maximum likelihood estimation (MLE) can be used to estimate parameters if the form of the distribution of the errors is known.</li>
+<li>The ML estimator is identical to the OLS estimator given that errors are normally distributed.</li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="assumptions"></a><a href="#assumptions" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Assumptions:</h4>
+<ul>
+<li>We assume that
+<ul>
+<li>the relationship between dependent and independent variables is linear and additive,</li>
+<li>the observations are independent of one another (no autocorrelation),</li>
+<li>the explanatory variables are independent of each other (no multicollinearity),</li>
+<li>the errors, or residuals, are independent of time, predictions or independent variables (homoscedasticity),</li>
+<li>and the distribution of residuals is normal.</li>
+</ul></li>
+<li>If a linear model makes sense, the residuals will (using residual-by-predicted plot)
+<ul>
+<li>have a constant variance,</li>
+<li>be approximately normally distributed (with a mean of zero), and</li>
+<li>be independent of one another.</li>
+</ul></li>
+<li>The best way to assess assumptions is by using residual plots.
+<center><img width=350 src="/img/docs/index.png"/></center>
+<center><a href="https://newonlinecourses.science.psu.edu/stat501/node/317/" target="_blank" style="color: lightgrey">Credit</a></center></li>
+<li>The Gauss-Markov theorem states that OLS produces best estimates when the assumptions hold true. Also, as the sample size increases to infinity, the coefficient estimates converge on the actual population parameters.</li>
+<li>Many of the assumptions describe properties of the error terms.</li>
+<li>We use residuals of a fitted model instead, which are the sample estimate of the error for each observation.</li>
+<li>If the residuals also follow the normal distribution, we can safely use hypothesis testing to determine whether the independent variables and the entire model are statistically significant. We can also produce reliable confidence intervals and prediction intervals.</li>
+<li><a href="https://www.jmp.com/en_us/statistics-knowledge-portal/what-is-regression/simple-linear-regression-assumptions.html">Regression Model Assumptions</a></li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="regularization"></a><a href="#regularization" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Regularization</h3>
+<ul>
+<li>There are situations where we might reduce variance at the cost of introducing some bias for the sake of stability.</li>
+<li>To decrease the model complexity, one can
+<ul>
+<li>pick only a subset of all \(p\) variables which is assumed to be relevant,</li>
+<li>project \(p\) predictors into a \(d\)-dimensional subspace with \(d&lt;p\),</li>
+<li>or shrink large coefficients towards zero.</li>
+</ul></li>
+<li>Regularization methods add a penalty to the OLS formula.</li>
+<li>Cross-validation finds the best approach for a given dataset.</li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="ridge-regression"></a><a href="#ridge-regression" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Ridge regression:</h4>
+<ul>
+<li>Ridge regression decreases the complexity by keeping the variables but penalizing them if they are far from zero.</li>
+<li>Ridge penalizes sum of squared coefficients (the so-called L2 penalty).</li>
+</ul>
+<p>$$\large\alpha||w||^2_2$$</p>
+<ul>
+<li>Setting \(\alpha\) to 0 is the same as using the OLS.</li>
+<li>Ridge regression can shrink parameters close to zero.</li>
+<li>Solves the multicollinearity issue:
+<ul>
+<li>The greater the amount of shrinkage \(\alpha\), the more robust the coefficients become to collinearity.</li>
+<li>The coefficients of correlated predictors are similar.</li>
+</ul></li>
+<li>Penalization term \(\alpha\) can be chosen by performing cross-validation (<code>RidgeCV</code>).</li>
+<li>Ridge performs well when most predictors impact the response.</li>
+<li>Ridge regression assumes the predictors to be standardized.</li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="lasso-regression"></a><a href="#lasso-regression" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Lasso regression:</h4>
+<ul>
+<li>Lasso is quite similar conceptually to ridge regression.</li>
+<li>Lasso penalizes the sum of their absolute values (L1 penalty).</li>
+</ul>
+<p>$$\large\alpha||w||_1$$</p>
+<ul>
+<li>LASSO models can shrink some parameters exactly to zero.</li>
+<li>LASSO usually results into sparse models, that are easier to interpret.</li>
+<li>As the Lasso regression yields sparse models, it can thus be used to perform feature selection.</li>
+<li>Solves the multicollinearity issue:
+<ul>
+<li>One of the correlated predictors has a larger coefficient, while the rest are (nearly) zeroed.</li>
+</ul></li>
+<li>Lasso performs well when only a few predictors actually influence the response.</li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="elastic-net"></a><a href="#elastic-net" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Elastic net:</h4>
+<ul>
+<li>Neither ridge regression nor LASSO dominates one another.</li>
+<li>Elastic net combines the penalties of ridge and lasso regression.</li>
+</ul>
+<p>$$\large\alpha\rho||w||_1+\frac{\alpha(1-\rho)}{2}||w||^2_2$$</p>
+<ul>
+<li>L1 penalty helps generating a sparse model.</li>
+<li>L2 part overcomes a strict selection.</li>
+<li>Parameter \(\rho\) controls numerical stability.</li>
+<li>\(\rho=0.5\) tends to handle correlated variables as groups.</li>
+<li>Solves solve multicollinearity issue:
+<ul>
+<li>Lasso is likely to pick one of the correlated variables at random, while elastic-net is likely to pick both.</li>
+</ul></li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="logistic-regression"></a><a href="#logistic-regression" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Logistic regression</h3>
+<ul>
+<li>Instead of fitting a straight line or hyperplane, the logistic regression model uses the logistic function to squeeze the output of a linear equation between 0 and 1.</li>
+</ul>
+<p>$$\large{p=\frac{1}{1+e^{-\hat{y}}}}$$</p>
+<ul>
+<li>Logistic regression is a special case of the linear classifier with an added benefit of predicting a probability \(p\) of referring example to the class.</li>
+<li>The probability of assignment \(p\) is a very important requirement in many business problems e.g. credit scoring.</li>
+<li>Logistic regression uses log-likelihood (MLE), which is differentiated and using iterative techniques like Newton method, values of parameters that maximise the log-likelihood are determined.</li>
+<li>Logistic regression can also be extended from binary classification to multi-class classification.</li>
+<li>It struggles with its restrictive expressiveness (e.g. interactions must be added manually).</li>
+<li>If there is a feature that would perfectly separate the two classes, the logistic regression model can no longer be trained.</li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="interpreting-odds"></a><a href="#interpreting-odds" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Interpreting odds:</h4>
+<ul>
+<li>The interpretation is more difficult because the interpretation of the weights is multiplicative and not additive.</li>
+<li>The logistic regression model is just a linear model for the log odds:
+<ul>
+<li>The output is logit (log odds), which is defined as the natural logarithm of the odds (range from \(-\infty\) to \(\infty\)).
+$$\large\ln{\frac{p}{1-p}}=\hat{y}$$</li>
+<li>The independent variables are linearly related to the log odds.</li>
+<li>If you increase the value of feature \(x_j\) by one unit, the estimated log odds change by a factor of \(\beta_j\).</li>
+</ul></li>
+<li>The odds \(odds=\frac{p}{1-p}\) signifies the ratio of probability of success to probability of failure (range from \(0\) to \(\infty\)).
+<ul>
+<li>The logit can be untransformed to odds by exponentiating.</li>
+<li>If you increase the value of feature \(x_j\) by one unit, the estimated odds change by a factor of \(e^{\beta_j}\).</li>
+<li>This change is the odds ratio (OR), which can also be returned by dividing two odds.
+$$\large{\frac{odds_{x_j+1}}{odds}=e^{\hat{y}_{x_j+1}-\hat{y}}}=e^{\beta_j}$$</li>
+<li>The interpretation of the intercept weight is usually not relevant.</li>
+</ul></li>
+<li>For example, the coefficient \(\beta_{gender}=1.69\) results in the odds ratio \(e^{1.69}=5.44\) for gender, meaning the odds of being admitted for males is \(5.44\) times that of females.</li>
+<li><a href="http://www-hsc.usc.edu/~eckel/biostat2/notes/notes14.pdf">Interpreting Odd Ratios in Logistic Regression</a></li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="regularization-1"></a><a href="#regularization-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Regularization:</h4>
+<ul>
+<li>Regularization of logistic regression is almost the same as in the case of ridge/lasso regression.</li>
+<li>In the case of logistic regression, a reverse regularization coefficient \(C=\frac{1}{\alpha}\) is typically introduced.</li>
+<li>Intuitively \(C\) corresponds to the &quot;complexity&quot; of the model - model capacity.</li>
+<li>Like in SVMs, smaller values specify stronger regularization.</li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="assumptions-1"></a><a href="#assumptions-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Assumptions:</h4>
+<ul>
+<li>As compared to the assumptions of linear regression:
+<ul>
+<li>Does not require a linear relationship between the dependent and independent variables.</li>
+<li>The error terms (residuals) do not need to be normally distributed.</li>
+<li>Homoscedasticity is not required.</li>
+<li>The dependent variable in logistic regression is not measured on an interval or ratio scale.</li>
+<li>Other assumptions still apply.</li>
+</ul></li>
+<li>Binary logistic regression requires the dependent variable to be binary.</li>
+<li>LR assumes linearity of independent variables and log odds.</li>
+<li>Logistic regression typically requires a large sample size.</li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="svm"></a><a href="#svm" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>SVM</h2>
+<ul>
+<li>Support Vector Machine (SVM) is responsible for finding the decision boundary to separate different classes and maximize the margin.</li>
+<li>The goal is to choose a hyperplane with the greatest possible margin (distance) between the hyperplane and any point.</li>
+<li>Only support vectors are important whereas other training examples are ignorable.
+<ul>
+<li>Support vectors are the data points nearest to the hyperplane.
+<center><img width=500 src="/img/docs/1*Ox4UFUKHna9BjW5gfNcQlw.png"/></center>
+<center><a href="https://towardsdatascience.com/support-vector-machine-simply-explained-fee28eba5496" target="_blank" style="color: lightgrey">Credit</a></center></li>
+</ul></li>
+<li>By combining the soft margin (tolerance of misclassifications) and kernel trick together, SVM is able to structure the decision boundary for linear non-separable cases:
+<ul>
+<li>Soft margin tolerates one or few misclassified points.</li>
+<li>Kernels are functions which transform a low-dimensional space to a higher-dimensional space to make the cases separable.</li>
+<li>Think of them as a transformer/processor to generate new features by applying the combination of all the existing features.</li>
+<li>Different kernels functions for different decision boundaries.</li>
+<li>The kernel trick avoids explicit transformation of raw representation into feature vector representation (without ever computing the coordinates of the data in that space), which is often computationally cheaper.
+<center><img width=400 src="/img/docs/1*zWzeMGyCc7KvGD9X8lwlnQ.png"/></center>
+<center><a href="https://towardsdatascience.com/the-kernel-trick-c98cdbcaeb3f" target="_blank" style="color: lightgrey">Credit</a></center></li>
+</ul></li>
+<li>SVM is effective in high-dimensional spaces.</li>
+<li>Works well on smaller cleaner datasets.</li>
+<li>Memory efficient since it uses a subset of training points in the decision function.</li>
+<li>Limitations:
+<ul>
+<li>Poor performance if the number of features greater than that of samples.</li>
+<li>Isn’t suited to larger datasets as the training time with SVMs can be high.</li>
+<li>Less effective on noisier datasets with overlapping classes.</li>
+<li>SVMs do not provide probability estimates.</li>
+</ul></li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="tuning-1"></a><a href="#tuning-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Tuning:</h4>
+<ul>
+<li>SVMs do not require almost any tuning.</li>
+<li>The higher the \(C\), the more penalty, and therefore the less wiggling the decision boundary will be.</li>
+<li>The higher the \(\gamma\), the more influence on the decision boundary, thereby the more wiggling the boundary will be.</li>
+<li>SVC starts to work slower as \(C\) increases. Start with a lower \(C=10\) and multiply it each time by a factor of 10.</li>
+<li>Both <code>libLinear</code> and <code>libSVM</code> have multicore support and can be compiled for fastest speed.</li>
+<li><code>sklearn</code> wraps them both under the hood but is slower.</li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="vowpal-wabbit"></a><a href="#vowpal-wabbit" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Vowpal Wabbit</h2>
+<p><img width=200 src="/img/docs/vowpal-wabbits-github-logo@3x.png"/></p>
+<ul>
+<li>Stochastic gradient descent (SGD) gives us practical guidance for training both classifiers and regressors with large amounts of data up to hundreds of GBs (depending on computational resources).</li>
+<li>SGD is a type of online learning algorithm.
+<ul>
+<li>Online learning is a method of machine learning that stores and processes only one training example at a time sequentially.</li>
+<li>No need to load all data into memory.</li>
+</ul></li>
+<li>Since it’s based on one random data point, it’s very noisy:
+<ul>
+<li>It usually takes dozens of passes over the training set to make the loss small enough.</li>
+</ul></li>
+<li>VW is more performant than sklearn's SGD models in many aspects.
+<ul>
+<li>Compiled C++ code.</li>
+<li>Exploiting multi-core CPUs: parsing of input and learning are done in separate threads.</li>
+</ul></li>
+<li>With the hashing trick implemented, VW is a perfect choice for working with text data.</li>
+<li><a href="https://www.kaggle.com/kashnitsky/vowpal-wabbit-tutorial-blazingly-fast-learning">Vowpal Wabbit tutorial: blazingly fast learning</a></li>
+</ul>
+</span></div></article></div><div class="docLastUpdate"><em>Last updated on 6/19/2019 by Oleg Polakow</em></div><div class="docs-prevnext"><a class="docs-next button" href="/datadocs/docs/machine-learning/tree-based-models"><span>Tree-Based Models</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#regression">Regression</a><ul class="toc-headings"><li><a href="#linear-regression">Linear regression</a></li><li><a href="#regularization">Regularization</a></li><li><a href="#logistic-regression">Logistic regression</a></li></ul></li><li><a href="#svm">SVM</a></li><li><a href="#vowpal-wabbit">Vowpal Wabbit</a></li></ul></nav></div><footer class="nav-footer" id="footer"><a href="https://opensource.facebook.com/" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/datadocs/img/oss_logo.png" alt="Facebook Open Source" width="170" height="45"/></a><section class="copyright">Copyright © 2019 Oleg Polakow</section></footer></div></body></html>

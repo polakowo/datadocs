@@ -1,0 +1,263 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Validation Schemes · datadocs</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="&lt;ul&gt;
+&lt;li&gt;Never use data you train on to measure the quality of your model (resubstitution).&lt;/li&gt;
+&lt;/ul&gt;
+"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Validation Schemes · datadocs"/><meta property="og:type" content="website"/><meta property="og:url" content="https://polakowo.github.io/datadocs/"/><meta property="og:description" content="&lt;ul&gt;
+&lt;li&gt;Never use data you train on to measure the quality of your model (resubstitution).&lt;/li&gt;
+&lt;/ul&gt;
+"/><meta property="og:image" content="https://polakowo.github.io/datadocs/img/undraw_online.svg"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://polakowo.github.io/datadocs/img/undraw_tweetstorm.svg"/><link rel="shortcut icon" href="/datadocs/img/favicon.ico"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/zenburn.min.css"/><link rel="stylesheet" href="/css/code-block-buttons.css"/><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script><script type="text/javascript" src="/js/code-block-buttons.js"></script><script src="/datadocs/js/scrollSpy.js"></script><link rel="stylesheet" href="/datadocs/css/prism.css"/><link rel="stylesheet" href="/datadocs/css/main.css"/><script src="/datadocs/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/datadocs/"><img class="logo" src="/datadocs/img/favicon.ico" alt="datadocs"/><h2 class="headerTitleWithLogo">datadocs</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/datadocs/docs/machine-learning/linear-models" target="_self">Docs</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Optimization</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Machine Learning<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Methods</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/linear-models">Linear Models</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/tree-based-models">Tree-Based Models</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/ensemble-methods">Ensemble Methods</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Features</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/eda">Exploratory Data Analysis</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/feature-engineering">Feature Engineering</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/advanced-features">Advanced Features</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Optimization</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/metric-optimization">Metric Optimization</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/datadocs/docs/machine-learning/validation-schemes">Validation Schemes</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/hyperopt">Hyperparameter Optimization</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Competitions</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/competitive-ml">Competitive Machine Learning</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/data-leakages">Data Leakages</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Deep Learning<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">General</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/deep-learning">Deep Learning</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/dl-strategy">Deep Learning Strategy</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Fundamentals</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/backpropagation">Backpropagation</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/activation-functions">Activation Functions</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/initialization">Initialization</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/optimization">Optimization</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/regularization">Regularization</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Computer Vision</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/cnns">Convolutional Neural Networks</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/cnn-architectures">CNN Architectures</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/object-detection">Object Detection</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/face-recognition">Face Recognition</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/nst">Neural Style Transfer</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Natural Language Processing</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/rnns">Recurrect Neural Networks</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/word-embeddings">Word Embeddings</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/nmt">Neural Machine Translation</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/attention-mechanism">Attention Mechanism</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/speech-recognition">Speech Recognition</a></li></ul></div></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle">Validation Schemes</h1></header><article><div><span><ul>
+<li>Never use data you train on to measure the quality of your model (resubstitution).
+<ul>
+<li>As the model becomes more computational, the variance (dispersion) of the estimate increases, but bias decreases.</li>
+<li>Overfitting arises due to the fact that the training set is memorized completely instead of generalizing.</li>
+<li>This effect is only visible when the same estimator is run on similar data other than training.</li>
+</ul></li>
+<li>Hold out part of the available data as a test set.
+<ul>
+<li>There is still a risk of overfitting because the parameters can be tweaked until the estimator performs optimally.</li>
+<li>Only the final evaluation should be done on the test set.</li>
+</ul></li>
+<li>Set up validation to mimic train/test split.
+<ul>
+<li>In a competition, you need to identify the train/test split made by organizers.</li>
+<li>In most cases, data is split by rows, time, groups or combined.</li>
+<li>Logic of feature engineering depends on the data splitting strategy.</li>
+</ul></li>
+</ul>
+<p><center><img width=400 src="/img/docs/grid_search_workflow.png"/></center>
+<center><a href="https://scikit-learn.org/stable/modules/cross_validation.html#cross-validation" style="color: lightgrey">Credit</a></center></p>
+<h4><a class="anchor" aria-hidden="true" id="validation-stage"></a><a href="#validation-stage" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Validation stage:</h4>
+<ul>
+<li>We can observe that:
+<ul>
+<li>High deviation of the local CV scores.</li>
+</ul></li>
+<li>Possible causes:
+<ul>
+<li>Too little data.</li>
+<li>Data is too diverse and inconsistent (e.g., December and January for store sales).</li>
+</ul></li>
+<li>Extensive validation techniques:
+<ul>
+<li>Perform k-fold split multiple times with different seeds, and average the scores.</li>
+<li>Tune a model on one split, evaluate the model on the other.</li>
+</ul></li>
+<li>Following problems can be identified before the submission stage:
+<ul>
+<li>Different scores/optimal parameters between folds.</li>
+<li>Public leaderboard score will be unreliable because of too little data.</li>
+<li>Train and test data are from different distributions (using EDA).</li>
+</ul></li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="submission-stage"></a><a href="#submission-stage" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Submission stage:</h4>
+<ul>
+<li>We can observe that:
+<ul>
+<li>LB score is consistently lower/higher than the local score:</li>
+<li>LB score is not correlated with the local score.</li>
+</ul></li>
+<li>Possible causes:
+<ul>
+<li>We may already have a high variance of CV scores: calculate mean and std of CV scores and estimate if LB is expected.</li>
+<li>Too little data in public leaderboard: trust your local validation.</li>
+<li>Train and test are from different distributions: adjust distributions or perform leaderboard probing.</li>
+<li>Overfitting</li>
+<li>Incorrect cross-validation strategy</li>
+</ul></li>
+<li>Expect LB shuffle because of:
+<ul>
+<li>Randomness can shuffle scores on the private leaderboard.</li>
+<li>Little amount of training or/and testing data.</li>
+<li>Different public/private data or target distributions (e.g., time-based split).</li>
+</ul></li>
+<li><a href="http://www.chioka.in/how-to-select-your-final-models-in-a-kaggle-competitio/">How to Select Your Final Models in a Kaggle Competition</a></li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="base-models"></a><a href="#base-models" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Base models</h2>
+<ul>
+<li>The following validation schemes are supposed to be used to estimate quality of the model.</li>
+<li>For getting test predictions don't forget to retrain your model using all training data.</li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="holdout"></a><a href="#holdout" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Holdout:</h4>
+<ul>
+<li>Procedure (<code>train_test_split</code>):
+<ul>
+<li>Split <em>train</em> into two parts: <em>trainA</em> and <em>trainB</em> (usually 80/20).</li>
+<li>Fit the model on <em>trainA</em> and validate it on <em>trainB</em>.</li>
+</ul></li>
+<li>Use holdout if scores on each fold are roughly the same.</li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="k-fold"></a><a href="#k-fold" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>K-Fold:</h4>
+<ul>
+<li>Procedure (<code>KFold</code>):
+<ul>
+<li>Split <em>train</em> into \(K\) folds.</li>
+<li>Iterate though each fold:
+<ul>
+<li>Refit the model on all folds except the current one.</li>
+<li>Validate the model on the current fold.</li>
+</ul></li>
+</ul></li>
+<li>Assumes that the samples are i.i.d.</li>
+<li>The performance measure reported by k-fold CV is the average of the values computed in the loop.</li>
+<li>Scores deviation in KFold can help to select statistically significant change in scores while tuning a model.</li>
+<li>The value of \(K\) being large could lead to low bias and high variance (overfitting).</li>
+<li>The advantage is that entire data is used for training and validation.</li>
+<li>For classification problems that exhibit a large imbalance (<code>StratifiedKFold</code>):
+<ul>
+<li>Stratified k-fold ensures that relative class frequencies are preserved in each train and validation fold.</li>
+</ul></li>
+<li>In this case we would like to know if a model generalizes well to the unseen groups (<code>GroupKFold</code>):
+<ul>
+<li>Group k-fold ensures that the same group is not represented in both testing and training sets.</li>
+</ul></li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="loo"></a><a href="#loo" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>LOO:</h4>
+<ul>
+<li>LOO is a k-fold scheme where \(K=N\) (<code>LeaveOneOut</code>).</li>
+<li>LOO often results in high variance as an estimator for the test error.</li>
+<li>5-10 fold cross validation should be preferred to LOO.</li>
+<li>Mostly used for sparse datasets.</li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="time-based-validation"></a><a href="#time-based-validation" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Time-based validation:</h4>
+<ul>
+<li>Procedure (<code>TimeSeriesSplit</code>):
+<ul>
+<li>Split <em>train</em> into chunks of duration \(T\). Select first \(M\) chunks.</li>
+<li>Fit a model on these \(M\) chunks and predict for the chunk \(M+1\).</li>
+<li>Then repeat this procedure for the next chunk and so on (imagine a moving window).</li>
+</ul></li>
+<li>Used if the samples have been generated using a time-dependent process.</li>
+<li>Time series data is characterised by the correlation between observations (autocorrelation).</li>
+<li>Does not assume that the samples are i.i.d.</li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="meta-models"></a><a href="#meta-models" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Meta models</h2>
+<h4><a class="anchor" aria-hidden="true" id="simple-holdout-scheme"></a><a href="#simple-holdout-scheme" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Simple holdout scheme:</h4>
+<ul>
+<li>Procedure:
+<ul>
+<li>Split <em>train</em> into three parts: <em>trainA</em>, <em>trainB</em> and <em>trainC</em>.</li>
+<li>Fit \(N\) diverse models on <em>trainA</em>.</li>
+<li>Predict for <em>trainB</em>, <em>trainC</em>, and <em>test</em> (getting meta-features <em>trainB_meta</em>, <em>trainC_meta</em> and <em>test_meta</em>).</li>
+<li>Fit a meta-model on <em>trainB_meta</em> and validate it on <em>trainC_meta</em>.</li>
+<li>When the meta-model is validated, fit it to <em>[trainB_meta, trainC_meta]</em> and predict for <em>test_meta</em>.</li>
+</ul></li>
+<li>This scheme is usually preferred over the other schemes if dataset is large.</li>
+<li>Fair validation scheme (validation set of meta-models not used in any way by base models)</li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="meta-holdout-scheme-with-oof-meta-features"></a><a href="#meta-holdout-scheme-with-oof-meta-features" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Meta holdout scheme with OOF meta-features:</h4>
+<ul>
+<li>Procedure:
+<ul>
+<li>Split <em>train</em> into \(K\) folds.</li>
+<li>Iterate though each fold:
+<ul>
+<li>Refit \(N\) diverse models on all folds except the current one.</li>
+<li>Predict for the current fold.</li>
+<li>For each object in <em>train</em>, we now have \(N\) meta-features (out-of-fold predictions, OOF) (getting <em>train_meta</em>)</li>
+</ul></li>
+<li>Fit the models on <em>train</em> and predict for <em>test</em> (getting <em>test_meta</em>)</li>
+<li>Split <em>train_meta</em> into two parts: <em>train_metaA</em> and <em>train_metaB</em>.</li>
+<li>Fit a meta-model on <em>train_metaA</em> and validate it on <em>train_metaB</em>.</li>
+<li>When the meta-model is validated, fit it to <em>train_meta</em> and predict for <em>test_meta</em>.</li>
+</ul></li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="meta-kfold-scheme-with-oof-meta-features"></a><a href="#meta-kfold-scheme-with-oof-meta-features" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Meta KFold scheme with OOF meta-features:</h4>
+<ul>
+<li>Procedure:
+<ul>
+<li>Obtain OOF predictions for <em>train_meta</em> and <em>test_meta</em>.</li>
+<li>Use KFold scheme on <em>train_meta</em> to validate the meta-model (with same seed as for OOF).</li>
+<li>When the meta-model is validated, fit it to <em>train_meta</em> and predict for <em>test_meta</em>.</li>
+</ul></li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="holdout-scheme-with-oof-meta-features"></a><a href="#holdout-scheme-with-oof-meta-features" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Holdout scheme with OOF meta-features:</h4>
+<ul>
+<li>Procedure:
+<ul>
+<li>Split <em>train</em> into two parts: <em>trainA</em> and <em>trainB</em>.</li>
+<li>Fit models to <em>trainA</em> and predict for <em>trainB</em> (getting <em>trainB_meta</em>).</li>
+<li>Obtain OOF predictions for <em>trainA_meta</em>.</li>
+<li>Fit a meta-model to <em>trainA_meta</em> and validate on <em>trainB_meta</em>.</li>
+<li>Obtain OOF predictions for <em>train_meta</em> and <em>test_meta</em>.</li>
+<li>Fit the meta-model to <em>train_meta</em> and predict for <em>test_meta</em>.</li>
+</ul></li>
+<li>Fair validation scheme.</li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="kfold-scheme-with-oof-meta-features"></a><a href="#kfold-scheme-with-oof-meta-features" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>KFold scheme with OOF meta-features:</h4>
+<ul>
+<li>The same as holdout scheme with OOF meta-features but with \(K\) folds instead of <em>trainA</em> and <em>trainB</em>.</li>
+<li>This scheme gives the validation score with the least variance compared to the other schemes.</li>
+<li>But it is also the least efficient one from the computational perspective.</li>
+<li>Fair validation scheme.</li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="kfold-scheme-in-time-series"></a><a href="#kfold-scheme-in-time-series" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>KFold scheme in time series:</h4>
+<ul>
+<li>Procedure:
+<ul>
+<li>Obtain OOF meta-features using time-series split starting with \(M\) chunks.</li>
+<li>Now we have meta-features for the chunks starting from \(M+1\) (getting <em>train_meta</em>).</li>
+<li>Fit the models on <em>train</em> and predict for <em>test</em> (getting <em>test_meta</em>).</li>
+<li>Perform time-series aware cross validation on meta-features.</li>
+<li>Fit the meta-model to <em>train_meta</em> and predict for <em>test_meta</em>.</li>
+</ul></li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="kfold-scheme-in-time-series-with-limited-amount-of-data"></a><a href="#kfold-scheme-in-time-series-with-limited-amount-of-data" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>KFold scheme in time series with limited amount of data:</h4>
+<ul>
+<li>The same as meta KFold scheme with OOF meta-features but with respect to time.</li>
+</ul>
+</span></div></article></div><div class="docLastUpdate"><em>Last updated on 6/19/2019 by Oleg Polakow</em></div><div class="docs-prevnext"><a class="docs-prev button" href="/datadocs/docs/machine-learning/metric-optimization"><span class="arrow-prev">← </span><span>Metric Optimization</span></a><a class="docs-next button" href="/datadocs/docs/machine-learning/hyperopt"><span>Hyperparameter Optimization</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#base-models">Base models</a></li><li><a href="#meta-models">Meta models</a></li></ul></nav></div><footer class="nav-footer" id="footer"><a href="https://opensource.facebook.com/" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/datadocs/img/oss_logo.png" alt="Facebook Open Source" width="170" height="45"/></a><section class="copyright">Copyright © 2019 Oleg Polakow</section></footer></div></body></html>

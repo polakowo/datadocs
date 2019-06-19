@@ -1,0 +1,280 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Recurrect Neural Networks · datadocs</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="&lt;ul&gt;
+&lt;li&gt;A glaring limitation of vanilla NNs is that their API is too constrained:&lt;/li&gt;
+&lt;/ul&gt;
+"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Recurrect Neural Networks · datadocs"/><meta property="og:type" content="website"/><meta property="og:url" content="https://polakowo.github.io/datadocs/"/><meta property="og:description" content="&lt;ul&gt;
+&lt;li&gt;A glaring limitation of vanilla NNs is that their API is too constrained:&lt;/li&gt;
+&lt;/ul&gt;
+"/><meta property="og:image" content="https://polakowo.github.io/datadocs/img/undraw_online.svg"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://polakowo.github.io/datadocs/img/undraw_tweetstorm.svg"/><link rel="shortcut icon" href="/datadocs/img/favicon.ico"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/zenburn.min.css"/><link rel="stylesheet" href="/css/code-block-buttons.css"/><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script><script type="text/javascript" src="/js/code-block-buttons.js"></script><script src="/datadocs/js/scrollSpy.js"></script><link rel="stylesheet" href="/datadocs/css/prism.css"/><link rel="stylesheet" href="/datadocs/css/main.css"/><script src="/datadocs/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/datadocs/"><img class="logo" src="/datadocs/img/favicon.ico" alt="datadocs"/><h2 class="headerTitleWithLogo">datadocs</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/datadocs/docs/machine-learning/linear-models" target="_self">Docs</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Natural Language Processing</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Machine Learning<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Methods</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/linear-models">Linear Models</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/tree-based-models">Tree-Based Models</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/ensemble-methods">Ensemble Methods</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Features</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/eda">Exploratory Data Analysis</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/feature-engineering">Feature Engineering</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/advanced-features">Advanced Features</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Optimization</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/metric-optimization">Metric Optimization</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/validation-schemes">Validation Schemes</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/hyperopt">Hyperparameter Optimization</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Competitions</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/competitive-ml">Competitive Machine Learning</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/data-leakages">Data Leakages</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Deep Learning<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">General</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/deep-learning">Deep Learning</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/dl-strategy">Deep Learning Strategy</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Fundamentals</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/backpropagation">Backpropagation</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/activation-functions">Activation Functions</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/initialization">Initialization</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/optimization">Optimization</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/regularization">Regularization</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Computer Vision</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/cnns">Convolutional Neural Networks</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/cnn-architectures">CNN Architectures</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/object-detection">Object Detection</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/face-recognition">Face Recognition</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/nst">Neural Style Transfer</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Natural Language Processing</h4><ul><li class="navListItem navListItemActive"><a class="navItem" href="/datadocs/docs/deep-learning/rnns">Recurrect Neural Networks</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/word-embeddings">Word Embeddings</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/nmt">Neural Machine Translation</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/attention-mechanism">Attention Mechanism</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/speech-recognition">Speech Recognition</a></li></ul></div></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle">Recurrect Neural Networks</h1></header><article><div><span><ul>
+<li>A glaring limitation of vanilla NNs is that their API is too constrained:
+<ul>
+<li>They accept fixed-sized vectors as input and as output.</li>
+<li>These models perform this mapping using a fixed amount of computational steps (e.g. the number of layers in the model).</li>
+<li>They have no memory of the input they received previously and are therefore bad in predicting what’s coming next.</li>
+</ul></li>
+<li>If you have to explain RNNs, this is how:</li>
+</ul>
+<blockquote>
+<p>If your neighbor is cooking a dinner each evening and the receipt changes based on the previous one, a vanilla neural network will try to find patterns based on features such as time and mood, while a RNN will try to find sequence patterns and will succeed.</p>
+</blockquote>
+<ul>
+<li>Unlike feedforward neural networks, RNNs can use their internal state (memory) to process sequences of inputs.</li>
+</ul>
+<p><img width=350 src="/img/docs/mlst_1403.png"/>
+<center><a href="https://www.oreilly.com/library/view/neural-networks-and/9781492037354/ch04.html" style="color: lightgrey">Credit</a></center>
+$$\large{h_t=\sigma{(W_h\cdot{[h_{t-1},x_t]}+b_h)}}$$
+$$\large{\hat{y_t}=\tanh{(W_yh_t+b_y)}}$$
+<center>where</center>
+<center>\(W_h\): horizontally stacked (learnable) parameters \(W_{t-1}\) and \(W_x\),</center>
+<center>\([h_{t-1},x_t]\): vertically stacked input vectors \(h_{t-1}\) and \(x_t\)</center></p>
+<ul>
+<li>A recurrent neural network can be thought of as multiple copies of the same network, each passing a message to a successor.</li>
+<li>The outputs in RNNs are just the inputs shifted forward by one, making the RNN a supervised learning model.</li>
+<li><a href="http://karpathy.github.io/2015/05/21/rnn-effectiveness/">The Unreasonable Effectiveness of Recurrent Neural Networks</a></li>
+<li><a href="https://youtu.be/WCUNPb-5EYI">Recurrent Neural Networks (RNN) and Long Short-Term Memory (LSTM)</a></li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="turing-completeness"></a><a href="#turing-completeness" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Turing completeness:</h4>
+<ul>
+<li>RNNs are Turing-Complete in the sense that they can to simulate arbitrary programs (with proper weights). If training vanilla neural nets is optimization over functions, training recurrent nets is optimization over programs.</li>
+</ul>
+<p><img width=350 src="/img/docs/maxresdefault.jpg"/>
+<center><a href="https://www.youtube.com/watch?v=RPQD7-AOjMI" style="color: lightgrey">Credit</a></center></p>
+<h4><a class="anchor" aria-hidden="true" id="usage"></a><a href="#usage" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Usage:</h4>
+<ul>
+<li>Whenever there is a sequence of data and that temporal dynamics that connects the data is more important than the spatial content of each individual frame.</li>
+<li>Even if your data is not in form of sequences, you can still formulate and train powerful models that learn to process it sequentially.</li>
+<li>Evidence suggests the model is good at learning complex syntactic structures (such as XML).</li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="recurrence"></a><a href="#recurrence" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Recurrence:</h4>
+<ul>
+<li>The most important facet of the RNN is the recurrence.
+<ul>
+<li>A basic neuron has only connections from his input to his output.</li>
+<li>The recurrent neuron instead has also a connection from his output again to his input.</li>
+</ul></li>
+<li>This recurrence indicates a dependence on all the information prior to a particular time.</li>
+<li>RNNs combine the input vector with their state vector with a fixed (but learned) function to produce a new state vector and the output vector. Output vector’s contents are influenced not only by the input you just fed in, but also on the entire history of inputs you’ve fed in in the past.</li>
+<li>Nodes are either:
+<ul>
+<li>input nodes (receiving data from outside the network)</li>
+<li>output nodes (yielding results)</li>
+<li>hidden nodes (that modify the data en route from input to output)</li>
+</ul></li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="backpropagation-through-time-bptt"></a><a href="#backpropagation-through-time-bptt" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Backpropagation through time (BPTT):</h4>
+<ul>
+<li>Since the RNN consists entirely of differentiable operations we can run the backpropagation.</li>
+<li>Within BPTT the error is back-propagated from the last to the first timestep, while unrolling all the timesteps.
+<ul>
+<li>Note that BPTT can be computationally expensive for a high number of timesteps.</li>
+</ul></li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="architectures"></a><a href="#architectures" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Architectures:</h4>
+<p><img width=700 src="/img/docs/sequences.png"/>
+<center><a href="http://karpathy.github.io/2015/05/21/rnn-effectiveness/" style="color: lightgrey">Credit</a></center></p>
+<ul>
+<li>We can have bidirectional RNNs that feed in the input sequence in both directions by concatenating the outputs of two RNNs, one processing the sequence from left to right, the other one from right to left.</li>
+</ul>
+<p>$$\large{\hat{y_t}=\tanh{(W_y\cdot{[\overrightarrow{h_t},\overleftarrow{h_t}]}+b_y)}}$$
+<center>where</center>
+<center>\(\overrightarrow{h_t}\): hidden state of the network pointing right,</center>
+<center>\(\overleftarrow{h_t}\): hidden state of the network pointing left</center></p>
+<ul>
+<li>We can also stack these RNNs in layers to make deep RNNs:
+<ul>
+<li>To process the layers above we first need to iterate over the layers below.</li>
+<li>In deep RNNs stacking 3 layers is already considered deep and expensive to train.</li>
+</ul></li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="pros"></a><a href="#pros" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Pros:</h4>
+<ul>
+<li>Memorization:
+<ul>
+<li>The recurrent network can use the feedback connection to store information over time in form of activations.</li>
+<li>As the time steps increase, the unit gets influenced by larger and larger neighborhood.</li>
+<li>With that information RNNs can watch short-to-medium-sized regions in the input space.</li>
+</ul></li>
+</ul>
+<p><img width=250 src="/img/docs/shorttermmemory_300x200.jpg"/>
+<center><a href="https://www.mindgames.com/game/Short+Term+Memory" style="color: lightgrey">Credit</a></center></p>
+<ul>
+<li>Learn sequential patterns:
+<ul>
+<li>The RNN can handle sequential data of arbitrary length.</li>
+</ul></li>
+<li>Furthermore the recurrent connections increase the network depth while they keep the number of parameters low by weight sharing.</li>
+<li>Recurrent connections of neurons are biological inspired and are used for many tasks in the brain.</li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="cons"></a><a href="#cons" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Cons:</h4>
+<ul>
+<li>RNN are inefficient and not scalable:
+<ul>
+<li>If you double the size of the hidden state vector you’d quadruple the amount of FLOPS at each step due to the matrix multiplication.</li>
+</ul></li>
+<li>RNN and LSTM are memory-bandwidth limited problems:
+<ul>
+<li>It is easy to add more computational units, but hard to add more memory bandwidth.</li>
+</ul></li>
+<li>RNNs are not inductive:
+<ul>
+<li>They memorize sequences extremely well, but they don’t necessarily always show convincing signs of generalizing in the correct way.</li>
+<li>For example, the model opens a <code>\begin{proof}</code> environment but then ends it with a <code>\end{lemma}</code>.</li>
+</ul></li>
+</ul>
+<p><img width=600 src="/img/docs/Screen Shot 2019-01-06 at 00.06.35.png"/>
+<center><a href="http://karpathy.github.io/2015/05/21/rnn-effectiveness/" style="color: lightgrey">Credit</a></center></p>
+<ul>
+<li>Problems like exploding and vanishing gradients.</li>
+<li>The recurrent structures are either exploring short-term or long-term temporal structures, but not both simultaneously.</li>
+<li><a href="https://towardsdatascience.com/the-fall-of-rnn-lstm-2d1594c74ce0">The fall of RNN / LSTM</a></li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="solving-gradient-problems"></a><a href="#solving-gradient-problems" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Solving gradient problems:</h4>
+<ul>
+<li>Vanishing gradients:
+<ul>
+<li>When gradients are being propagated back in time, they can vanish because they they are continuously multiplied by numbers less than one. This is solved by LSTMs and GRUs, and if you’re using a deep feedforward network, this is solved by residual connections.</li>
+</ul></li>
+<li>Exploding gradients:
+<ul>
+<li>This is when they get exponentially large from being multiplied by numbers larger than 1. Gradient clipping will clip the gradients between two numbers to prevent them from getting too large.</li>
+</ul></li>
+</ul>
+<p><img width=400 src="/img/docs/gradient_clipping.png"/>
+<center><a href="http://nmarkou.blogspot.com/2017/07/deep-learning-why-you-should-use.html" style="color: lightgrey">Credit</a></center></p>
+<h2><a class="anchor" aria-hidden="true" id="gating-mechanisms"></a><a href="#gating-mechanisms" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Gating mechanisms</h2>
+<ul>
+<li>RNNs suffer from short-term memory:
+<ul>
+<li>A major problem with gradient descent for standard RNN architectures is that error gradients vanish exponentially quickly with the size of the time lag between important events. RNN model has many local influences, if we not address vanishing gradient problem then RNNs tend not to be very good at capturing long-range dependencies.</li>
+</ul></li>
+<li>If you are trying to process a paragraph of text to do predictions, RNN’s may leave out important information from the beginning.</li>
+<li>LSTM’s and GRU’s were created as a method to mitigate short-term memory using mechanisms called gates (pipes).</li>
+</ul>
+<p><img width=170 src="/img/docs/1*oS5taVAKcIII1qNduYnLJA.jpeg"/>
+<center><a href="https://medium.com/mlreview/understanding-lstm-and-its-diagrams-37e2f46f1714" style="color: lightgrey">Credit</a></center></p>
+<ul>
+<li>These gates can learn which data in a sequence is important to keep or throw away.</li>
+</ul>
+<blockquote>
+<p>Imagine you pick up words like “amazing” and “perfectly balanced breakfast”. You don’t care much for words like “this”, “gave“, “all”, “should”, etc. If a friend asks you the next day what the review said, you probably wouldn’t remember it word for word.</p>
+</blockquote>
+<h4><a class="anchor" aria-hidden="true" id="comparison"></a><a href="#comparison" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Comparison:</h4>
+<ul>
+<li>There isn’t a clear winner which one is better:
+<ul>
+<li>Researchers and engineers usually try both to determine which one works better for their use case.</li>
+</ul></li>
+<li>GRU has fewer tensor operations and parameters than LSTM, as it lacks an output gate.</li>
+</ul>
+<p><img width=600 src="/img/docs/1*yBXV9o5q7L_CvY7quJt3WQ.png"/>
+<center><a href="https://towardsdatascience.com/illustrated-guide-to-lstms-and-gru-s-a-step-by-step-explanation-44e9eb85bf21" style="color: lightgrey">Credit</a></center></p>
+<h3><a class="anchor" aria-hidden="true" id="long-short-term-memory-lstm"></a><a href="#long-short-term-memory-lstm" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Long short-term memory (LSTM)</h3>
+<ul>
+<li>Long short-term memory (LSTM) is a deep learning system that avoids the vanishing/exploding gradient problem.</li>
+<li>LSTM’s enable RNN’s to remember their inputs over a long period of time. This is because LSTM’s contain their information in a memory, that is much like the memory of a computer because the LSTM can read, write and delete information from its memory. An interesting analogy can be drawn between memory cells in LSTMs and memory elements in your calculators, storing the numbers you ask it to.</li>
+<li>LSTM can learn tasks that require memories of events that happened thousands or even millions of discrete time steps earlier.</li>
+<li><a href="http://colah.github.io/posts/2015-08-Understanding-LSTMs/">Understanding LSTM Networks</a></li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="gates"></a><a href="#gates" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Gates:</h4>
+<ul>
+<li>Each LSTM block consists of a forget gate, input gate and an output gate.</li>
+<li>The gates in a LSTM are analog, in the form of sigmoids, meaning that they range from 0 to 1.</li>
+<li>The weights of these connections \(W\) need to be learned during training.</li>
+<li>The input gate \(i_t\) decides what information is relevant to add from the current step.
+$$\large{i_t=\sigma{(W_i\cdot{[h_{t-1},x_t]}+b_i)}}$$</li>
+<li>The forget gate \(f_t\) decides what is relevant to keep from prior steps.
+$$\large{f_t=\sigma{(W_f\cdot{[h_{t-1},x_t]}+b_f)}}$$</li>
+<li>The output gate \(o_t\) determines what the next hidden state should be.
+$$\large{o_t=\sigma{(W_o\cdot{[h_{t-1},x_t]}+b_o)}}$$</li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="cell-state"></a><a href="#cell-state" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Cell state:</h4>
+<ul>
+<li>The cell state \(c_t\) acts as a transport highway that transfers relative information all the way down the sequence chain.</li>
+<li>You can think of it as the “memory” of the network.</li>
+<li>As the cell state goes on its journey, information get’s added or removed to the cell state via gates.
+$$\large{\tilde{c_t}=\tanh{(W_c\cdot{[h_{t-1},x_t]}+b_c)}}$$
+$$\large{c_t=f_t\odot{c_{t-1}}+i_t\odot{\tilde{c}_{t}}}$$</li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="hidden-state"></a><a href="#hidden-state" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Hidden state:</h4>
+<ul>
+<li>The hidden state is the output vector of the LSTM unit.
+$$\large{h_t=o_t\odot{\tanh(c_{t})}}$$</li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="gated-recurrent-unit-gru"></a><a href="#gated-recurrent-unit-gru" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Gated recurrent unit (GRU)</h3>
+<ul>
+<li>Gated recurrent units (GRUs) are a newer gating mechanism in recurrent neural networks.</li>
+<li>GRU’s got rid of the cell state and used the hidden state to transfer information.</li>
+<li>The forget and input gates are combined in a complimentary fashion to reduce the unnecessary complexity in model (reducing recurrent parameters by 33%).</li>
+<li>But LSTM is &quot;strictly stronger&quot; than the GRU as it can easily perform unbounded counting.</li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="gates-1"></a><a href="#gates-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Gates:</h4>
+<ul>
+<li>GRU has two gates, a reset gate and update gate.</li>
+<li>The update gate \(z_t\) decides what information to throw away and what new information to add.
+$$\large{z_t=\sigma{(W_z\cdot{[h_{t-1},x_t]}+b_z)}}$$</li>
+<li>The reset gate \(r_t\) is another gate is used to decide how much past information to forget.
+$$\large{r_t=\sigma{(W_r\cdot{[h_{t-1},x_t]}+b_r)}}$$</li>
+<li>But when you combine the 2 operations as a &quot;Coupled Input and Forget Gate&quot; there are similar results compared to the vanilla model.</li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="hidden-state-1"></a><a href="#hidden-state-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Hidden state:</h4>
+<ul>
+<li>The hidden state is the output vector of the GRU unit.
+$$\large{\tilde{h_t}=\tanh{(W_h\cdot{[r_t\odot{h_{t-1}},x_t]})}}$$
+$$\large{h_t=(1-z_t)\odot{h_{t-1}}+z_t\odot\tilde{h_t}}$$</li>
+</ul>
+</span></div></article></div><div class="docLastUpdate"><em>Last updated on 6/19/2019 by Oleg Polakow</em></div><div class="docs-prevnext"><a class="docs-prev button" href="/datadocs/docs/deep-learning/nst"><span class="arrow-prev">← </span><span>Neural Style Transfer</span></a><a class="docs-next button" href="/datadocs/docs/deep-learning/word-embeddings"><span>Word Embeddings</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#gating-mechanisms">Gating mechanisms</a><ul class="toc-headings"><li><a href="#long-short-term-memory-lstm">Long short-term memory (LSTM)</a></li><li><a href="#gated-recurrent-unit-gru">Gated recurrent unit (GRU)</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><a href="https://opensource.facebook.com/" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/datadocs/img/oss_logo.png" alt="Facebook Open Source" width="170" height="45"/></a><section class="copyright">Copyright © 2019 Oleg Polakow</section></footer></div></body></html>

@@ -1,0 +1,205 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Regularization · datadocs</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="&lt;ul&gt;
+&lt;li&gt;This is a form of regression that penalizes the weights of the nodes and shrinks them towards zero.&lt;/li&gt;
+&lt;/ul&gt;
+"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Regularization · datadocs"/><meta property="og:type" content="website"/><meta property="og:url" content="https://polakowo.github.io/datadocs/"/><meta property="og:description" content="&lt;ul&gt;
+&lt;li&gt;This is a form of regression that penalizes the weights of the nodes and shrinks them towards zero.&lt;/li&gt;
+&lt;/ul&gt;
+"/><meta property="og:image" content="https://polakowo.github.io/datadocs/img/undraw_online.svg"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://polakowo.github.io/datadocs/img/undraw_tweetstorm.svg"/><link rel="shortcut icon" href="/datadocs/img/favicon.ico"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/zenburn.min.css"/><link rel="stylesheet" href="/css/code-block-buttons.css"/><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script><script type="text/javascript" src="/js/code-block-buttons.js"></script><script src="/datadocs/js/scrollSpy.js"></script><link rel="stylesheet" href="/datadocs/css/prism.css"/><link rel="stylesheet" href="/datadocs/css/main.css"/><script src="/datadocs/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/datadocs/"><img class="logo" src="/datadocs/img/favicon.ico" alt="datadocs"/><h2 class="headerTitleWithLogo">datadocs</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/datadocs/docs/machine-learning/linear-models" target="_self">Docs</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Fundamentals</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Machine Learning<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Methods</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/linear-models">Linear Models</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/tree-based-models">Tree-Based Models</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/ensemble-methods">Ensemble Methods</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Features</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/eda">Exploratory Data Analysis</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/feature-engineering">Feature Engineering</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/advanced-features">Advanced Features</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Optimization</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/metric-optimization">Metric Optimization</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/validation-schemes">Validation Schemes</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/hyperopt">Hyperparameter Optimization</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Competitions</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/competitive-ml">Competitive Machine Learning</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/data-leakages">Data Leakages</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Deep Learning<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">General</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/deep-learning">Deep Learning</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/dl-strategy">Deep Learning Strategy</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Fundamentals</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/backpropagation">Backpropagation</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/activation-functions">Activation Functions</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/initialization">Initialization</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/optimization">Optimization</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/datadocs/docs/deep-learning/regularization">Regularization</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Computer Vision</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/cnns">Convolutional Neural Networks</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/cnn-architectures">CNN Architectures</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/object-detection">Object Detection</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/face-recognition">Face Recognition</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/nst">Neural Style Transfer</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Natural Language Processing</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/rnns">Recurrect Neural Networks</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/word-embeddings">Word Embeddings</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/nmt">Neural Machine Translation</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/attention-mechanism">Attention Mechanism</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/speech-recognition">Speech Recognition</a></li></ul></div></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle">Regularization</h1></header><article><div><span><ul>
+<li>This is a form of regression that penalizes the weights of the nodes and shrinks them towards zero.</li>
+<li>This technique discourages learning a more complex or flexible model, so as to avoid the risk of overfitting.</li>
+<li>It forces the downstream hidden units not to rely too much on the previous units by introducing noise.</li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="overfitting"></a><a href="#overfitting" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Overfitting:</h4>
+<ul>
+<li>The concept of regularization plays an important role in preventing overfitting</li>
+<li>The primary reason overfitting happens is because the model learns even the tiniest details (noise) present in the data.</li>
+<li>In practice, it is always better to use regularization methods to control overfitting instead of the number of neurons.</li>
+</ul>
+<p><img width=400 src="/img/docs/layer_sizes.jpeg"/>
+<img width=400 src="/img/docs/reg_strengths.jpeg"/>
+<center><a href="http://cs231n.github.io/neural-networks-1/" style="color: lightgrey">Credit</a></center></p>
+<h4><a class="anchor" aria-hidden="true" id="examples-of-regularization"></a><a href="#examples-of-regularization" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Examples of regularization:</h4>
+<ul>
+<li>K-means: limiting the splits to avoid redundant classes</li>
+<li>Random forests: limiting the tree depth, limiting new features (number of branches)</li>
+<li>Neural networks: limiting the model complexity (number of weights)</li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="l1-and-l2-regularization"></a><a href="#l1-and-l2-regularization" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>L1 and L2 regularization</h2>
+<ul>
+<li>If model complexity is a function of weights, a feature weight with a high absolute value is more complex.</li>
+<li>Due to the addition of a regularization term to the loss function, the values of weight matrices decrease because it assumes that a neural network with smaller weight matrices leads to simpler models.</li>
+<li>The (non-negative) parameter \(\lambda\) controls the amount of regularization applied to the model.
+<ul>
+<li>The larger \(\lambda\) is, the more the coefficients are shrunk toward zero.</li>
+</ul></li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="comparison"></a><a href="#comparison" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Comparison:</h4>
+<ul>
+<li>L1 or Lasso penalty is the sum of the weights:</li>
+</ul>
+<p>$$L1=\large{\lambda\sum{||W||_1}}$$</p>
+<ul>
+<li>L2 or Ridge penalty is the sum of the square of the weights:</li>
+</ul>
+<p>$$L2=\large{\lambda\sum{||W||_2^2}}$$</p>
+<ul>
+<li>L1-norm produces sparse coefficients.</li>
+<li>L1 norm is more robust to the outliers:
+<ul>
+<li>There is no square term to blow up the error difference of the outliers and the minimization algorithm keeps its focus on the data instead of the outliers.</li>
+</ul></li>
+<li>The fact that L1 can be used for noisy data is very appealing and is exploited a lot.</li>
+<li>The general frustration with the L1 norm is usually directed toward the fact that it is not differentiable and is not attractive to use in an optimization setting.</li>
+<li>L2 scores are usually overall better than L1.</li>
+<li>For more details, see <a href="/datadocs/docs/machine-learning/linear-models">Linear Models</a>.</li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="weight-decay"></a><a href="#weight-decay" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Weight decay</h2>
+<ul>
+<li><a href="https://bbabenko.github.io/weight-decay/">L2 regularization and weight decay are not identical</a></li>
+<li>L2 regularization is not effective in Adam.</li>
+<li>Weight decay is equally effective in both SGD and Adam.</li>
+<li>Optimal weight decay depends on the total number of batch passes/weight updates.</li>
+<li><a href="https://www.fast.ai/2018/07/02/adam-weight-decay/">AdamW and Super-convergence is now the fastest way to train neural nets</a></li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="dropout"></a><a href="#dropout" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Dropout</h2>
+<ul>
+<li>The most frequently used regularization technique in the field of deep learning.</li>
+<li>The key idea is to randomly drop units (along with their connections) from the neural network during training. This prevents units from co-adapting too much. Also divide each dropout layer by probability to keep the same expected value for the activation.</li>
+</ul>
+<p><img width=500 src="/img/docs/1*IrdJ5PghD9YoOyVAQ73MJw.gif"/>
+<center><a href="https://chatbotslife.com/regularization-in-deep-learning-f649a45d6e0" style="color: lightgrey">Credit</a></center></p>
+<ul>
+<li>If you have to explain drop-out to a 6-year-old, this is how:</li>
+</ul>
+<blockquote>
+<p>Imagine a scenario, in a classroom, a teacher asks some questions but always same two kids are answering, immediately. Now, the teacher asks them to stay quiet for some time and let other pupils participate. This way other students get to learn better. Maybe they answer wrong, but the teacher can correct them(weight updates). This way the whole class(layer) learns about a topic better.</p>
+</blockquote>
+<ul>
+<li>Dropout forces a neural network to learn more robust features that are useful in conjunction with many different random subsets of the other neurons.</li>
+<li>Dropout roughly doubles the number of iterations required to converge. However, training time for each epoch is less.</li>
+<li>With \(H\) hidden units, each of which can be dropped, we have \(2^H\) possible models.</li>
+<li>It can also be thought of as an ensemble technique in machine learning. Ensemble models usually perform better than a single model as they capture more randomness.</li>
+<li><a href="http://www.cs.toronto.edu/~hinton/absps/dropout.pdf">Improving neural networks by preventing co-adaptation of feature detectors (2012)</a></li>
+<li><a href="https://www.cs.toronto.edu/~hinton/absps/JMLRdropout.pdf">Dropout: A Simple Way to Prevent Neural Networks from Overfitting (2014)</a></li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="best-practices"></a><a href="#best-practices" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Best practices:</h4>
+<ul>
+<li>Apply dropout during both forward and backward propagation but disable it during testing.</li>
+<li>Generally, use a small dropout value of 20%-50% of neurons with 20% providing a good starting point. A probability too low has minimal effect and a value too high results in under-learning by the network.</li>
+<li>Use a larger network. You are likely to get better performance when dropout is used on a larger network, giving the model more of an opportunity to learn independent representations.</li>
+<li>Select a higher dropout rate at the (deeper) end of the network.</li>
+<li>With less extent dropout can also be used on incoming nodes.
+<ul>
+<li>For example, immediately after the data layer or on embeddings.</li>
+</ul></li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="dropconnect"></a><a href="#dropconnect" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>DropConnect</h2>
+<ul>
+<li>DropConnect is a regularization of dropout.</li>
+<li>DropConnect works similarly to dropout, except that it disables individual weights instead of nodes.</li>
+<li>It produces even more possible models, since there are almost always more connections than units.</li>
+<li>Results on a range of datasets show that DropConnect often outperforms Dropout.</li>
+<li><a href="http://yann.lecun.com/exdb/publis/pdf/wan-icml-13.pdf">Regularization of Neural Networks using DropConnect (2013)</a></li>
+<li>Static DropConnect:
+<ul>
+<li>Use a large number of units (\(1/p\)) in a hidden layer.</li>
+<li>At startup, drop weights with probability \(p\) in that layer.</li>
+<li>Use the same structure throughout all iterations (in contrast to DropConnect).</li>
+</ul></li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="data-augmentation"></a><a href="#data-augmentation" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Data augmentation</h2>
+<ul>
+<li>Suppose we are building an image classification model and are lacking the requisite data due to various reasons.</li>
+<li>Data augmentation refers to randomly changing the images in ways that shouldn't impact their interpretation, such as horizontal flipping, zooming, and rotating, to effectively create more data.</li>
+<li>These can potentially help us get more training data and hence reduce overfitting.</li>
+<li>Commonly data augmentation and training tasks are run on parallel CPU threads</li>
+</ul>
+<p><img width=500 src="/img/docs/data-augmentation.png"/>
+<center><a href="https://www.analyticsvidhya.com/blog/2018/04/fundamentals-deep-learning-regularization-techniques/" style="color: lightgrey">Credit</a></center></p>
+<h4><a class="anchor" aria-hidden="true" id="image-size"></a><a href="#image-size" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Image size:</h4>
+<ul>
+<li>One effective way to synthesize more data is to downscale/upscale images during training.</li>
+<li>Fully-convolutional networks (FCN) as well as networks with Global Average Pooling (GAP) can work regardless of the original image size, without requiring any fixed number of units at any stage, given that all connections are local.</li>
+<li>Instead of squashing images, center-crop them to a specific size. Also, do multiple crops and use these to augment your input data, so that the original image will be split into different images of correct size.</li>
+<li>Padding the images with a solid color: The padding option might introduce an additional error source to the network's prediction, as the network might (read: likely will) be biased to images that contain such a padded border.</li>
+<li>Make a spatial pyramid pooling layer and put it after your last convolution layer so that the FC layers always get constant dimensional vectors as input.</li>
+<li><a href="https://arxiv.org/abs/1406.4729">Spatial Pyramid Pooling in Deep Convolutional Networks for Visual Recognition</a></li>
+<li>When you're dealing with object detection and instance segmentation, anchor box sizes which are also hyperparameters need to adjust if you have a dataset with high variance in image sizes.</li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="generating-image-datasets"></a><a href="#generating-image-datasets" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Generating image datasets:</h4>
+<ul>
+<li><a href="https://forums.fast.ai/t/tips-for-building-large-image-datasets/26688">https://forums.fast.ai/t/tips-for-building-large-image-datasets/26688</a></li>
+<li><a href="https://forums.fast.ai/t/generating-image-datasets-quickly/19079">https://forums.fast.ai/t/generating-image-datasets-quickly/19079</a></li>
+<li><a href="https://github.com/fastai/course-v3/blob/master/nbs/dl1/lesson2-download.ipynb">https://github.com/fastai/course-v3/blob/master/nbs/dl1/lesson2-download.ipynb</a></li>
+<li><a href="https://forums.fast.ai/t/how-to-scrape-the-web-for-/img/docs/7446">https://forums.fast.ai/t/how-to-scrape-the-web-for-/img/docs/7446</a></li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="early-stopping"></a><a href="#early-stopping" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Early stopping</h2>
+<ul>
+<li>Early stopping is a kind of cross-validation strategy where we keep one part of the training set as the validation set.</li>
+<li>When we see that the performance on the validation set is getting worse, we immediately stop the training on the model.</li>
+<li><a href="http://page.mi.fu-berlin.de/prechelt/Biblio/stop_tricks1997.pdf">Early Stopping - but when􏰀 (1997)</a></li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="method"></a><a href="#method" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Method:</h4>
+<ul>
+<li>Split the training data into a training set and a validation set􏰌</li>
+<li>Train only on the training set and evaluate the per-􏰍example error on the validation set once in a while􏰌</li>
+<li>Stop training as soon as the error on the validation set is higher than it was for the last time it was checked􏰎</li>
+<li>Use the weights the network had in that previous step as the result of the training run􏰎</li>
+</ul>
+</span></div></article></div><div class="docLastUpdate"><em>Last updated on 6/19/2019 by Oleg Polakow</em></div><div class="docs-prevnext"><a class="docs-prev button" href="/datadocs/docs/deep-learning/optimization"><span class="arrow-prev">← </span><span>Optimization</span></a><a class="docs-next button" href="/datadocs/docs/deep-learning/cnns"><span>Convolutional Neural Networks</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#l1-and-l2-regularization">L1 and L2 regularization</a></li><li><a href="#weight-decay">Weight decay</a></li><li><a href="#dropout">Dropout</a></li><li><a href="#dropconnect">DropConnect</a></li><li><a href="#data-augmentation">Data augmentation</a></li><li><a href="#early-stopping">Early stopping</a></li></ul></nav></div><footer class="nav-footer" id="footer"><a href="https://opensource.facebook.com/" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/datadocs/img/oss_logo.png" alt="Facebook Open Source" width="170" height="45"/></a><section class="copyright">Copyright © 2019 Oleg Polakow</section></footer></div></body></html>

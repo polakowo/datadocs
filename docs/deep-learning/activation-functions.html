@@ -1,0 +1,200 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Activation Functions · datadocs</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="&lt;ul&gt;
+&lt;li&gt;How do we decide whether the neuron should fire or not?&lt;/li&gt;
+&lt;/ul&gt;
+"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Activation Functions · datadocs"/><meta property="og:type" content="website"/><meta property="og:url" content="https://polakowo.github.io/datadocs/"/><meta property="og:description" content="&lt;ul&gt;
+&lt;li&gt;How do we decide whether the neuron should fire or not?&lt;/li&gt;
+&lt;/ul&gt;
+"/><meta property="og:image" content="https://polakowo.github.io/datadocs/img/undraw_online.svg"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://polakowo.github.io/datadocs/img/undraw_tweetstorm.svg"/><link rel="shortcut icon" href="/datadocs/img/favicon.ico"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/zenburn.min.css"/><link rel="stylesheet" href="/css/code-block-buttons.css"/><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script><script type="text/javascript" src="/js/code-block-buttons.js"></script><script src="/datadocs/js/scrollSpy.js"></script><link rel="stylesheet" href="/datadocs/css/prism.css"/><link rel="stylesheet" href="/datadocs/css/main.css"/><script src="/datadocs/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/datadocs/"><img class="logo" src="/datadocs/img/favicon.ico" alt="datadocs"/><h2 class="headerTitleWithLogo">datadocs</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/datadocs/docs/machine-learning/linear-models" target="_self">Docs</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Fundamentals</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Machine Learning<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Methods</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/linear-models">Linear Models</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/tree-based-models">Tree-Based Models</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/ensemble-methods">Ensemble Methods</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Features</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/eda">Exploratory Data Analysis</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/feature-engineering">Feature Engineering</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/advanced-features">Advanced Features</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Optimization</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/metric-optimization">Metric Optimization</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/validation-schemes">Validation Schemes</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/hyperopt">Hyperparameter Optimization</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Competitions</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/competitive-ml">Competitive Machine Learning</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/data-leakages">Data Leakages</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Deep Learning<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">General</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/deep-learning">Deep Learning</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/dl-strategy">Deep Learning Strategy</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Fundamentals</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/backpropagation">Backpropagation</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/datadocs/docs/deep-learning/activation-functions">Activation Functions</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/initialization">Initialization</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/optimization">Optimization</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/regularization">Regularization</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Computer Vision</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/cnns">Convolutional Neural Networks</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/cnn-architectures">CNN Architectures</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/object-detection">Object Detection</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/face-recognition">Face Recognition</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/nst">Neural Style Transfer</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Natural Language Processing</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/rnns">Recurrect Neural Networks</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/word-embeddings">Word Embeddings</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/nmt">Neural Machine Translation</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/attention-mechanism">Attention Mechanism</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/speech-recognition">Speech Recognition</a></li></ul></div></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle">Activation Functions</h1></header><article><div><span><ul>
+<li>How do we decide whether the neuron should fire or not?</li>
+<li>The activation function of a node maps the resulting values into the desired range.</li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="non-linearity"></a><a href="#non-linearity" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Non-linearity:</h4>
+<ul>
+<li>Only nonlinear activation functions allow to compute nontrivial problems using only a small number of nodes, otherwise it would behave just like a single-layer perceptron.</li>
+<li>A multi-layered neural network can be regarded as a hierarchy of generalized linear models; according to this, activation functions are link functions, which in turn correspond to different distributional assumptions.</li>
+</ul>
+<p><img width=350 src="/img/docs/fitting_func.png"/>
+<center><a href="https://fossbytes.com/what-is-deep-learning-really/" style="color: lightgrey">Credit</a></center></p>
+<h4><a class="anchor" aria-hidden="true" id="comparison-of-different-functions"></a><a href="#comparison-of-different-functions" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Comparison of different functions:</h4>
+<ul>
+<li>Use ReLu which should only be applied to the hidden layers. Be careful with your learning rates and possibly monitor the fraction of “dead” units in a network.</li>
+<li>If the model suffers form dead neurons during training then use leaky ReLu or Maxout function.</li>
+<li>Other functions are discouraged for vanilla feedforward implementation. They are more useful for recurrent networks, probabilistic models, and some autoencoders have additional requirements that rule out the use of piecewise linear activation functions.</li>
+<li>For output layers use a softmax function for a multi-class classification, and sigmoid or tanh function for a multi-label classification.</li>
+<li>In practice, the tanh non-linearity is always preferred to the sigmoid nonlinearity.</li>
+<li><a href="https://arxiv.org/pdf/1804.02763.pdf">Comparison of non-linear activation functions for deep neural networks on MNIST classification task (2018)</a></li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="relu"></a><a href="#relu" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>ReLU</h2>
+<p>$$\large{f(x)=\max{(0,x)}}$$</p>
+<ul>
+<li>The Rectified Linear Unit is simply thresholded at zero.</li>
+<li>Relu is like a switch for linearity. If you don't need it (\(x&lt;0\)), you &quot;switch&quot; it off.</li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="pros"></a><a href="#pros" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Pros:</h4>
+<ul>
+<li>Fewer vanishing gradient problems compared to sigmoidal activation functions that saturate in both directions. This arises when \(x&gt;0\), where the gradient has a constant value.</li>
+<li>Sparse activation:
+<ul>
+<li>For example, in a randomly initialized network, only about 50% of hidden units are activated (having a non-zero output). This means less neurons are firing and the network is lighter and more robust to noise. Sparsity arises when \(x\leq{0}\)</li>
+</ul></li>
+<li>Efficient computation</li>
+<li>It was found to greatly accelerate the convergence of SGD compared to the sigmoid/tanh functions. It is argued that this is due to its linear, non-saturating form.</li>
+<li>Biological plausibility: One-sided, compared to the antisymmetry of tanh</li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="cons"></a><a href="#cons" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Cons:</h4>
+<ul>
+<li>It should only be used within hidden layers.</li>
+<li>Non-differentiable at zero; however it is differentiable anywhere else, and a value of 0 or 1 can be chosen arbitrarily to fill the point where the input is 0.</li>
+<li>Dying ReLU problem: If the dot product of the input to a ReLU with its weights is negative, the output is 0. The gradient of \(max(x,0)\) is 0 when the output is 0. It may be mitigated by using leaky ReLU instead, which assign a small positive slope to the left of \(x=0\).
+<ul>
+<li>With a proper setting of the learning rate this is less frequently an issue.</li>
+</ul></li>
+</ul>
+<p>$$\large{f(x)=\max{(0.1x,x)}}$$</p>
+<h4><a class="anchor" aria-hidden="true" id="sparsity"></a><a href="#sparsity" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Sparsity:</h4>
+<ul>
+<li>Inspiration from biology:
+<ul>
+<li>Biology appears to use a rule that says if the inputs sum to less than zero, don’t let the signal pass.</li>
+<li>Also, studies conducted on ‘brain energy expenditure’ suggest that biological neurons encode information in a ‘sparse and distributed way‘. This means that the percentage of neurons that are active at the same time are very low (1–4%).</li>
+<li>Ordinary artificial neural networks operate at much higher levels of activity and are less robust to small changes in input.</li>
+<li>With the use of rectifying neurons we can achieve truly sparse representations.</li>
+</ul></li>
+<li>Effect on training:
+<ul>
+<li>Generalization: Dense representations can become strongly correlated during training, and this causes the network to overtrain because the &quot;hidden information&quot;</li>
+<li>Makes internal representation linearly separable (think of Softmax classifier).</li>
+<li>Sparse set is going to be more easily distributed because there are few interactions across the network.
+<center><img width=350 src="/img/docs/sparsity.png"/></center>
+<center><a href="https://www.utc.fr/~bordesan/dokuwiki/_media/en/glorot10nipsworkshop.pdf" style="color: lightgrey">Credit</a></center></li>
+</ul></li>
+<li><a href="https://www.utc.fr/~bordesan/dokuwiki/_media/en/glorot10nipsworkshop.pdf">Deep Sparse Rectifier Neural Networks</a></li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="maxout"></a><a href="#maxout" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Maxout</h2>
+<p>$$\large{f(x)=\max{(w_1^Tx+b_1,w_2^Tx+b_2)}}$$</p>
+<ul>
+<li>The Maxout neuron generalizes the ReLU and its leaky version.</li>
+<li>where \(w\) and \(b\) are learnable parameters.</li>
+<li>An MLP with \(k=2\) maxout units can approximate any function. For ReLU we have \(𝑤1,𝑏1=0\).</li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="pros-1"></a><a href="#pros-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Pros:</h4>
+<ul>
+<li>The Maxout neuron enjoys all the benefits of a ReLU unit (linear regime of operation, no saturation) and does not have its drawbacks (dying ReLU).</li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="cons-1"></a><a href="#cons-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Cons:</h4>
+<ul>
+<li>However, unlike the ReLU neurons it doubles the number of bias parameters for every single neuron, leading to a high total number of parameters.</li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="sigmoid"></a><a href="#sigmoid" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Sigmoid</h2>
+<p>$$\large{\sigma(x)=\frac{1}{1+e^{-x}}}$$</p>
+<ul>
+<li>Sigmoid (or logistic) function \(\sigma(x)\) is used for binary classification in logistic regression model.</li>
+<li>The sigmoid non-linearity takes a real-valued number and “squashes” it into range between 0 and 1.</li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="cons-2"></a><a href="#cons-2" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Cons:</h4>
+<ul>
+<li>Saturates and kills gradients:
+<ul>
+<li>A very undesirable property of the sigmoid neuron is that when the neuron’s activation saturates at either tail of 0 or 1, the gradient at these regions is almost zero. Also, if the initial weights are too large then most neurons would become saturated and the network will barely learn.</li>
+</ul></li>
+<li>The derivative of the sigmoid maxes out at 0.25:
+<ul>
+<li>This means when you’re performing backpropagation with sigmoid units, the errors going back into the network will be shrunk by at least 75% at every layer. For layers close to the input layer, the weight updates will be tiny.</li>
+</ul></li>
+<li>Outputs are not zero-centered:
+<ul>
+<li>This could introduce undesirable zig-zagging dynamics in the gradient updates for the weights.</li>
+</ul></li>
+<li>Sigmoids have fallen out of favor as activations on hidden units.</li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="tanh"></a><a href="#tanh" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Tanh</h2>
+<p>$$\large{\text{tanh}{(x)}=2\cdot\text{sigmoid}(2x)-1}$$</p>
+<ul>
+<li>The tanh non-linearity squashes a real-valued number to the range \([-1, 1]\).</li>
+<li>Tanh neuron is simply a scaled sigmoid neuron.</li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="pros-2"></a><a href="#pros-2" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Pros:</h4>
+<ul>
+<li>Unlike the sigmoid neuron its output is zero-centered.</li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="softmax"></a><a href="#softmax" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Softmax</h2>
+<p>$$\large{\sigma(x_j)=\frac{e^{x_j}}{\sum_i{e^{x_i}}}}$$</p>
+<ul>
+<li>While sigmoid function can only handle two classes, softmax can handle an arbitrary number of classes</li>
+<li>The output of the softmax function is equivalent to a categorical probability distribution, it tells you the probability that any of the classes are true.</li>
+<li>It transforms logits into probabilities. Logits simply means that the function operates on the unscaled output of earlier layers and that the relative scale to understand the units is linear.</li>
+<li>The calculated probabilities will be in the range of 0 to 1.</li>
+<li>The sum of all the probabilities is equals to 1.</li>
+<li>Softmax sums over the \(n\) different possible values of the class label</li>
+<li>It's exponential, can enlarge differences, and so pushes one result closer to 1 while another closer to 0.</li>
+<li>Softmax function is differentiable to train by gradient descent.</li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="cross-entropy-loss"></a><a href="#cross-entropy-loss" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Cross-entropy loss:</h4>
+<ul>
+<li>We can't use MSE because our prediction function is non-linear. Squaring this prediction as we do in MSE results in a non-convex function with many local minimums. If our cost function has many local minimums, gradient descent may not find the optimal global minimum.</li>
+<li>Cross-entropy results in a convex loss function, of which the global minimum will be easy to find. Note that this is not necessarily the case anymore in multilayer neural networks.</li>
+<li>Cross entropy is often computed for output of softmax and true labels encoded in one hot encoding.</li>
+<li>What’s cool about using one-hot encoding for the label vector is that \(y_j\) is 0 except for the one true class.</li>
+</ul>
+<p><img width=600 src="/img/docs/CNN_Softmax_Img5.png"/>
+<center><a href="https://www.superdatascience.com/convolutional-neural-networks-cnn-softmax-cross-entropy/" style="color: lightgrey">Credit</a></center></p>
+<ul>
+<li><a href="https://peterroelants.github.io/posts/cross-entropy-softmax/">Softmax classification with cross-entropy</a></li>
+</ul>
+</span></div></article></div><div class="docLastUpdate"><em>Last updated on 6/19/2019 by Oleg Polakow</em></div><div class="docs-prevnext"><a class="docs-prev button" href="/datadocs/docs/deep-learning/backpropagation"><span class="arrow-prev">← </span><span>Backpropagation</span></a><a class="docs-next button" href="/datadocs/docs/deep-learning/initialization"><span>Initialization</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#relu">ReLU</a></li><li><a href="#maxout">Maxout</a></li><li><a href="#sigmoid">Sigmoid</a></li><li><a href="#tanh">Tanh</a></li><li><a href="#softmax">Softmax</a></li></ul></nav></div><footer class="nav-footer" id="footer"><a href="https://opensource.facebook.com/" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/datadocs/img/oss_logo.png" alt="Facebook Open Source" width="170" height="45"/></a><section class="copyright">Copyright © 2019 Oleg Polakow</section></footer></div></body></html>

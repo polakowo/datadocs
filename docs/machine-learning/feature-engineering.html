@@ -1,0 +1,394 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Feature Engineering · datadocs</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="&lt;ul&gt;
+&lt;li&gt;The well-known concept of &amp;quot;garbage in - garbage out&amp;quot; applies 100% to any task in machine learning.&lt;/li&gt;
+&lt;/ul&gt;
+"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Feature Engineering · datadocs"/><meta property="og:type" content="website"/><meta property="og:url" content="https://polakowo.github.io/datadocs/"/><meta property="og:description" content="&lt;ul&gt;
+&lt;li&gt;The well-known concept of &amp;quot;garbage in - garbage out&amp;quot; applies 100% to any task in machine learning.&lt;/li&gt;
+&lt;/ul&gt;
+"/><meta property="og:image" content="https://polakowo.github.io/datadocs/img/undraw_online.svg"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://polakowo.github.io/datadocs/img/undraw_tweetstorm.svg"/><link rel="shortcut icon" href="/datadocs/img/favicon.ico"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/zenburn.min.css"/><link rel="stylesheet" href="/css/code-block-buttons.css"/><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script><script type="text/javascript" src="/js/code-block-buttons.js"></script><script src="/datadocs/js/scrollSpy.js"></script><link rel="stylesheet" href="/datadocs/css/prism.css"/><link rel="stylesheet" href="/datadocs/css/main.css"/><script src="/datadocs/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/datadocs/"><img class="logo" src="/datadocs/img/favicon.ico" alt="datadocs"/><h2 class="headerTitleWithLogo">datadocs</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/datadocs/docs/machine-learning/linear-models" target="_self">Docs</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Features</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Machine Learning<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Methods</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/linear-models">Linear Models</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/tree-based-models">Tree-Based Models</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/ensemble-methods">Ensemble Methods</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Features</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/eda">Exploratory Data Analysis</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/datadocs/docs/machine-learning/feature-engineering">Feature Engineering</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/advanced-features">Advanced Features</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Optimization</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/metric-optimization">Metric Optimization</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/validation-schemes">Validation Schemes</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/hyperopt">Hyperparameter Optimization</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Competitions</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/competitive-ml">Competitive Machine Learning</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/data-leakages">Data Leakages</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Deep Learning<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">General</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/deep-learning">Deep Learning</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/dl-strategy">Deep Learning Strategy</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Fundamentals</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/backpropagation">Backpropagation</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/activation-functions">Activation Functions</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/initialization">Initialization</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/optimization">Optimization</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/regularization">Regularization</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Computer Vision</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/cnns">Convolutional Neural Networks</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/cnn-architectures">CNN Architectures</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/object-detection">Object Detection</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/face-recognition">Face Recognition</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/nst">Neural Style Transfer</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Natural Language Processing</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/rnns">Recurrect Neural Networks</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/word-embeddings">Word Embeddings</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/nmt">Neural Machine Translation</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/attention-mechanism">Attention Mechanism</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/speech-recognition">Speech Recognition</a></li></ul></div></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle">Feature Engineering</h1></header><article><div><span><ul>
+<li>The well-known concept of &quot;garbage in - garbage out&quot; applies 100% to any task in machine learning.</li>
+<li>A simple model trained on high-quality data can be better than a complicated multi-model ensemble built on dirty data.</li>
+<li>Use training set for generating learning model parameters from training data and only then transform both train and test sets according to those parameters, using the entire dataset risks information leakage.</li>
+</ul>
+<pre><code class="hljs css language-python">scaler<span class="token punctuation">.</span>fit<span class="token punctuation">(</span>X_train<span class="token punctuation">)</span>
+X_train <span class="token operator">=</span> scaler<span class="token punctuation">.</span>transform<span class="token punctuation">(</span>X_train<span class="token punctuation">)</span>
+X_test <span class="token operator">=</span> scaler<span class="token punctuation">.</span>transform<span class="token punctuation">(</span>X_test<span class="token punctuation">)</span>
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="feature-extraction"></a><a href="#feature-extraction" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Feature extraction</h2>
+<ul>
+<li>Feature extraction and feature engineering: transformation of raw data into features suitable for modeling.</li>
+<li><a href="https://scikit-learn.org/stable/modules/feature_extraction.html">Feature extraction (sklearn)</a></li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="categorical-features"></a><a href="#categorical-features" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Categorical features</h3>
+<ul>
+<li>Most machine learning algorithms require that their input is numerical and therefore categorical text data should be transformed into model-understandable numerical data.</li>
+<li>Rule of thumb: For nominal and ordinal columns try one-hot, hashing, leave-one-out, and target encoding. Avoid one-hot-encoding for high cardinality columns and tree-based algorithms. Frequency encoding works surprisingly good on many datasets. <a href="http://contrib.scikit-learn.org/categorical-encoding/index.html">Category Encoders</a> is a library of scikit-learn-compatible categorical variable encoders.</li>
+<li>Interactions of categorical features can help linear models and k-nearest neighbors.</li>
+<li><a href="https://towardsdatascience.com/smarter-ways-to-encode-categorical-data-for-machine-learning-part-1-of-3-6dca2f71b159">Smarter Ways to Encode Categorical Data for Machine Learning</a></li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="label-encoding"></a><a href="#label-encoding" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Label encoding:</h4>
+<ul>
+<li>Encode labels with value between 0 and the number of classes-1 (<code>LabelEncoder</code>)</li>
+<li>Label encoding is better than OHE when:
+<ul>
+<li>It preserves correct order of values: Label encoding is biased in a way that assumes a particular ordered relationship between categories.</li>
+<li>Assigns close labels to similar (in terms of target) categories: In this case tree will achieve the same quality with less amount of splits, and second, this encoding will help to treat rare categories.</li>
+<li>The number of categorical features in the dataset is huge: Tree-based models are able to operate on both continuous and categorical variables directly, but have to do a lot of splits to put individual categories in separate buckets to continue to improve train loss.</li>
+</ul></li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="one-hot-encoding"></a><a href="#one-hot-encoding" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>One-hot encoding:</h4>
+<ul>
+<li>The features are encoded using a one-hot (aka dummy) encoding scheme. This creates a binary column for each category and returns a dense array (<code>pandas.get_dummies</code>) or a sparse matrix (<code>OneHotEncoder</code>).</li>
+<li>One-hot encoding is better than label encoding when:
+<ul>
+<li>Non-tree-based methods are used</li>
+<li>The target dependence on the label-encoded feature is very non-linear, i.e. values that are close to each other in the label-encoded feature correspond to target values that aren't close.</li>
+</ul></li>
+<li>One-hot encoding can lead to a huge increase in the dimensionality of the feature representations. But most of the popular libraries can work with these sparse matrices directly.</li>
+</ul>
+<p><img width=200 src="/img/docs/Finite_element_sparse_matrix.png"/>
+<center><a href="https://en.wikipedia.org/wiki/Sparse_matrix" style="color: lightgrey">Credit</a></center></p>
+<ul>
+<li>OHE presents two problems that are more particular to tree-based models:
+<ul>
+<li>The resulting sparsity virtually ensures that continuous variables are assigned higher feature importance. But if the categorical variables have few levels, then the induced sparsity is less severe and the one-hot encoded versions have a chance of competing with the continuous ones.</li>
+<li>A single level of a categorical variable must meet a very high bar in order to be selected for splitting early in the tree building. This can degrade predictive performance.</li>
+</ul></li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="feature-hashing"></a><a href="#feature-hashing" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Feature hashing:</h4>
+<ul>
+<li>Addresses out-of-vocabulary issue where features are with more than a thousand categories and constantly getting new ones. OHE would consume too much (both physical and RAM) memory and require retraining after seeing new classes.</li>
+<li>Enables online learning (see Vowpal Wabbit): the model is capable of learning incrementally without restarting the entire process.</li>
+<li>Hash functions share the same common characteristics:
+<ul>
+<li>If we feed the same input to a hash function, it will always give the same output.</li>
+<li>The choice of hash function determines the range of possible outputs, i.e. the range is always fixed.</li>
+<li>Hash functions are one-way: given a hash, we can’t perform a reverse lookup to determine what the input was.</li>
+<li>Hash functions may output the same value for different inputs (collision)</li>
+</ul></li>
+<li>There are a couple of considerations:
+<ul>
+<li>Reverse lookups (output to input) aren’t possible and so the model lacks interpretability.</li>
+<li>Collisions can happen, but if you choose your vector size (make it as large as possible) and hash function carefully, the odds of this happening is negligible, and even if it does, it usually doesn’t affect learning (or accuracy) that much.</li>
+<li><a href="https://booking.ai/dont-be-tricked-by-the-hashing-trick-192a6aae3087">Don’t be tricked by the Hashing Trick</a>: If you can choose the hashing space on a per feature basis, use \(k^2\) for features with less than a thousand categories and \(20k\) for the others. If you want to control for collisions as a proportion \(r\) of the features, then use \(n=k/r\).</li>
+</ul></li>
+</ul>
+<p><center><img width=500 src="/img/docs/1*K5xAJZCzMG2dwRXj_94nIg.png"/></center>
+<center><a href="https://blog.bradfieldcs.com/an-introduction-to-hashing-in-the-era-of-machine-learning-6039394549b0" style="color: lightgrey">Credit</a></center></p>
+<h4><a class="anchor" aria-hidden="true" id="mean-encoding"></a><a href="#mean-encoding" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Mean encoding:</h4>
+<ul>
+<li>Encoding categorical variables with a mean target value (and also other statistics) is a popular method for working with high cardinality features, especially useful for tree-based models.</li>
+<li>Tackles an inability to handle high cardinality categorical variables for trees with limited depth.</li>
+<li>While label encoding gives random order and no correlation with target, mean encoding helps separating target classes.</li>
+<li>The more complicated and non-linear feature-target dependency, the more effective is mean encoding.</li>
+<li>Regularization reduces target variable leakage during the construction of mean encodings:
+<ul>
+<li>KFold scheme (implemented in H20):
+<ul>
+<li>Use just a part of examples of a category to estimate the encoding for that category. For this, split the data into \(k\) folds and for each example, estimate it's encoding using all folds except the one that the example belongs to.</li>
+<li>Usually decent results with 4-6 folds and \(\alpha=5\)</li>
+<li>Doesn't handle extreme situations like LOO well</li>
+</ul></li>
+<li>Expanding mean scheme (implemented in CatBoost):
+<ul>
+<li>Fix some random permuation of rows and for each example estimate the encoding using target mean of all the examples before the estimated one.</li>
+<li>Expanding mean regularization works well only on bigger datasets</li>
+<li>Least amount of leakage but can also add too much noise</li>
+</ul></li>
+<li>Additive smoothing (Bayesian method, used by IMDB):
+<ul>
+<li>Move encodings of rare categories closer to the global mean
+$$\large{\frac{mean(target)\times n_{rows}+globalmean\times\alpha}{n_{rows}+\alpha}}$$</li>
+<li>The hyperparameter \(\alpha\) controls the amount of regularization and is the category size we trust</li>
+<li>The main drawback: every category will be encoded with a distinct real number, that still allows the model to put any category in a distinct leaf and set an extreme target probability for the leaf.</li>
+<li>Only works together with some other regularization method</li>
+</ul></li>
+</ul></li>
+<li>Correct validation scheme: Split the data into train and validation, estimate encodings on the train, apply them to the validation, and then validate the model on that split. Always take into account time component. That way we avoid target variable leakage.</li>
+<li>Regression task is more flexible and allows us to calculate other statistics such as median, percentiles, standard deviation, and distribution bins of the target variable.</li>
+<li>Multi-class tasks require us to create \(n\) different encodings for \(n\) different classes, or treat them in one-vs-all fashion.</li>
+<li>By inspecting a random forest, we can extract candidates for interactions. We can iterate through all the trees in the model and calculate how many times each feature interaction appeared. The most frequent interactions are probably worthy of mean encoding. For example, we can concatenate two feature values and mean encode resulting interaction.</li>
+<li><a href="https://www.kaggle.com/vprokopev/mean-likelihood-encodings-a-comprehensive-study">Mean (likelihood) encoding: a comprehensive study</a></li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="text"></a><a href="#text" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Text</h3>
+<h4><a class="anchor" aria-hidden="true" id="tokenization"></a><a href="#tokenization" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Tokenization:</h4>
+<ul>
+<li>Tokenization is the act of breaking up a sequence of strings into pieces.</li>
+<li>Simply splitting by a delimeter (such as blank) can lose some of the meaning, e.g., &quot;Los Angeles&quot;.</li>
+<li><a href="https://www.ibm.com/developerworks/community/blogs/nlp/entry/tokenization?lang=en">The Art of Tokenization</a></li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="normalization"></a><a href="#normalization" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Normalization:</h4>
+<ul>
+<li>Text preprocessing is not directly transferable from task to task.</li>
+<li>Usually done with <code>nltk</code> (Natural Language ToolKit)</li>
+<li>Lowercasing:
+<ul>
+<li>While lowercasing is generally helpful, it may not be applicable for all tasks (e.g., code snippets).</li>
+</ul></li>
+<li>Stemming:
+<ul>
+<li>Stemming is the process of reducing inflection in words to their root form (&quot;troubled&quot;, &quot;troubles&quot; to &quot;trouble&quot;). The root in this case may not be a real root word, but just a canonical form of the original word (&quot;saw&quot; to &quot;s&quot;).</li>
+<li>The method is useful for dealing with sparsity issues, standardizing vocabulary, and in search applications, but only marginally helps improving classification accuracy.</li>
+</ul></li>
+<li>Lemmatization:
+<ul>
+<li>Lemmatization on the surface is very similar to stemming but actually transforms words to the actual root (&quot;saw&quot; to &quot;see&quot;).</li>
+<li>Provides no significant benefit over stemming.</li>
+</ul></li>
+<li>Stop-word removal:
+<ul>
+<li>Stop words may be removed to avoid them being used as signal for prediction (&quot;the&quot;, &quot;is&quot;)</li>
+<li>While effective in search and topic extraction, showed to be non-critical for classification.</li>
+</ul></li>
+<li>Normalization:
+<ul>
+<li>Text normalization is the process of transforming text into a standard form (“gooood”, “gud” to “good”).</li>
+<li>It is important for noisy texts such as social media comments, text messages and comments to blog posts.</li>
+<li><a href="https://sentic.net/microtext-normalization.pdf">How to improve sentiment classification accuracy by ~4%</a></li>
+</ul></li>
+<li>Noise Removal
+<ul>
+<li>This includes punctuation, special characters, numbers, html formatting, domain-specific keywords, etc.</li>
+</ul></li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="vectorization"></a><a href="#vectorization" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Vectorization:</h4>
+<ul>
+<li>As with categorical features, we first need to turn the text content into numerical feature vectors.</li>
+<li>A corpus of documents can be represented by a matrix with one row per document and one column per token (usually a sparse representation with <code>scipy.sparse</code>).</li>
+<li>Bag of words or Bag of n-grams (BoW, <code>CountVectorizer</code>):
+<ul>
+<li>Looks at the histogram of the words within the text, disregarding grammar and word order but keeping multiplicity.</li>
+<li>A collection of unigrams cannot capture phrases and multi-word expressions, so use n-grams, which can help utilize local context around each word. N-grams features are typically sparse.</li>
+<li>Even though BoW representations provide weights to different words they are are unabled to capture the word meaning.</li>
+</ul></li>
+<li>Tf-idf (<code>TfidfVectorizer</code>):
+<ul>
+<li>Transforms the output of a BoW vectorizer with the frequency of a term adjusted for how rarely it is used.</li>
+<li>This approach to scoring is called term frequency (TF) - inverse document frequency (IDF), where IDF scales features inversely proportionally to a number of word occurrences over documents.
+$$\large{w_{i,j}=tf_{i,j}\times{\log{(\frac{N}{df_i})}}}$$</li>
+<li>Just by taking the cosine between TF-IDF vectors we can retrieve relevant similar documents with higher accuracy than TF alone.</li>
+<li>But very short texts are likely to have noisy TF-IDF values so a binary BoW vectorizer is more stable.</li>
+</ul></li>
+<li>Hashing trick (<code>HashingVectorizer</code>):
+<ul>
+<li>In practice, hashing simplifies the implementation of BoW models and improves scalability.</li>
+<li>But it does not provide IDF weighting as that would introduce statefulness in the model.</li>
+</ul></li>
+<li>Distributional embeddings:
+<ul>
+<li>Each embedding vector is represented based on the mutual information it has with other words.</li>
+<li>Smaller vectors, values in vector rarely interpreted, words with similar meaning often have similar embeddings.</li>
+<li>Fixed embeddings (Word2Vec, Glove and FastText) are context-insensitive vectors trained on a large corpus directly for downstream tasks.</li>
+<li>Contextual embeddings (ELMo, BERT) require a model for generating word/sentence embeddings.</li>
+<li>Sentence vectors may be encoded through a linear weighted combination of the word vectors.</li>
+</ul></li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="date-features"></a><a href="#date-features" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Date features</h3>
+<ul>
+<li>Cyclical trends:
+<ul>
+<li>Periodicity or seasonality</li>
+<li>Encoding cyclical continuous features into 2 dimensions via sine and cosine transformations helps linear models. Note that it distorts tree-based algorithms that split on a single dimension at a time and distance-based algorithms since splitting into two dimensions effectively double-weights the cyclic feature.
+<center><img width=250 src="/img/docs/output_12_0.png"/></center>
+<center><a href="https://ianlondon.github.io/blog/encoding-cyclical-features-24hour-time/" style="color: lightgrey">Credit</a></center></li>
+</ul></li>
+<li>Acyclical trends and moving averages
+<ul>
+<li>Time since: Can be row-independent moment (timestamp) or row-dependent (since the last event or before the next one)</li>
+</ul></li>
+<li>Append external information such as state holidays</li>
+<li>Date variable interactions</li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="time-series"></a><a href="#time-series" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Time series</h3>
+<ul>
+<li>A useful library that automatically generates features for time series: <a href="https://github.com/blue-yonder/tsfresh">tsfresh</a></li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="web-data"></a><a href="#web-data" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Web data</h3>
+<ul>
+<li>Usually there is (a wealth of) information about the user's User Agent.</li>
+<li>We can extract the operating system, make a feature &quot;is_mobile&quot;, look at the browser, etc.</li>
+<li>IP-address can unveil the country, city, provider, and connection type (mobile/stationary).</li>
+<li>Extract even fancier features like suggestions for <a href="https://habr.com/en/post/216295/">using VPN</a></li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="geospatial-data"></a><a href="#geospatial-data" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Geospatial data</h3>
+<ul>
+<li>Geospatial data is often presented in the form of addresses or coordinates of (latitude, longitude).</li>
+<li>Geocoding:
+<ul>
+<li>There are two mutually-inverse operations: geocoding (address -&gt; coordinates) and reverse geocoding.</li>
+<li>There are universal libraries like <a href="https://github.com/geopy/geopy">geopy</a> that act as wrappers for external services such as Google Maps.</li>
+<li>Consider using a local version of OpenStreetMap if you have big data.</li>
+</ul></li>
+<li>Some coordinates may be erroneous:
+<ul>
+<li>The position can be incorrect due to GPS noise or bad accuracy in places like tunnels.</li>
+<li>If the data source is a mobile device, the geolocation may be determined by WiFi networks (leads to teleportation).</li>
+</ul></li>
+<li>The point is usually located among infrastructure:
+<ul>
+<li>Calculate distance to the nearest POI.</li>
+<li>Translate a map into a grid, within each square find the most interesting POI and add the distance to that point.</li>
+<li>Another major approach is to calculate aggregated statistics for objects surrounding a POI.</li>
+</ul></li>
+<li>Organize data points into clusters and use centroids as points.</li>
+<li>When training decision trees from coordinates, add slightly rotated coordinates as new features to help a model make more precise selections on the map. Ideally, the scatterplot with latitude and longitude on the axes should build a vertical line separating the values.</li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="images"></a><a href="#images" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Images</h3>
+<ul>
+<li>Image embeddings:
+<ul>
+<li>Similar to word embeddings, extract image embeddings from hidden layers of a neural network.</li>
+<li>Embeddings from later layers are better to solve tasks similar to ones the network was trained on.</li>
+</ul></li>
+<li>Fine-tuning and data augmentation are often used in competitions where there is no other data except images.</li>
+<li>Features generated by hand are still very useful, for example &quot;the average value of the pixel&quot; to account for brightness.</li>
+<li>We may also try to extract features from meta-information, such as resolution, geographic coordinates of shooting, etc.</li>
+<li>If there is text on the image, check out <a href="https://github.com/madmaze/pytesseract">pytesseract</a>.</li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="feature-transformation"></a><a href="#feature-transformation" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Feature transformation</h2>
+<ul>
+<li>Feature transformation: transformation of data to improve the accuracy of the algorithm.</li>
+<li>Advanced techniques:
+<ul>
+<li>Concatenate dataframes produced by different pre-processings, or ensembling models from different pre-processings.</li>
+</ul></li>
+<li><a href="https://scikit-learn.org/stable/modules/preprocessing.html#preprocessing-data">Preprocessing data (sklearn)</a></li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="missing-values"></a><a href="#missing-values" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Missing values</h3>
+<ul>
+<li>A hidden missing value can have types such as NaN, empty string, -1 (replacing missing values in [0, 1]), a very large number, -99999, 999. It can be investigated by browsing histograms for unusual peaks.</li>
+<li>Imputation is mostly a preferred choice over dropping variables, since it can lead to loss of important samples and a quality decrease.</li>
+<li>Different methodologies to data imputation:
+<ul>
+<li>Impute with a constant (-999, -1) outside a fixed value range (for tree-based models).</li>
+<li>Impute with the feature mean (or median) if it takes no advantage of the time series characteristics or relationship between the variables. Otherwise, perform linear interpolation and seasonal adjustment to reconstruct values based on nearby observations.</li>
+<li>Reconstruct them (for example train a model to predict the missing values)</li>
+</ul></li>
+<li>Adding new binary feature indicating the missing value can be benefial.</li>
+<li>Some models like XGBoost and CatBoost can deal with missing values out-of-box. These models have special methods to treat them and a model's quality can benefit from it.</li>
+<li>Do not fill NaNs before feature generation, as this can pollute the data and screw the model.</li>
+<li><a href="https://towardsdatascience.com/how-to-handle-missing-data-8646b18db0d4">How to Handle Missing Data</a></li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="feature-scaling"></a><a href="#feature-scaling" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Feature scaling</h3>
+<ul>
+<li>One family of algorithms that is scale-invariant encompasses tree-based learning algorithms.</li>
+<li>Some examples of algorithms where feature scaling matters are: k-nearest neighbors with an Euclidean distance measure, k-means, logistic regression, SVMs, perceptrons, neural networks if using using gradient descent/ascent-based optimization, linear discriminant analysis, principal component analysis, kernel principal component analysis.
+<ul>
+<li>We want regularization to be applied to linear models coefficients for features in equal amount</li>
+<li>Gradient descent methods can go crazy without a proper scaling</li>
+</ul></li>
+<li>When in doubt, just standardize the data, it shouldn't hurt.</li>
+<li>Also we shouldn't simply remove outliers, since it often produces a distorted view of the world in which nothing unusual ever happens, and overstates the accuracy of the findings. Better is to treat them as missing values.</li>
+<li>For KNN, we can go one step further and recall that the bigger the feature is the more important it is. So, we can optimize scaling parameter to boost features which seems to be more important.</li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="standardization"></a><a href="#standardization" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Standardization:</h4>
+<ul>
+<li>The result of standardization (or Z-score normalization) is that the features will be rescaled so that they'll have the properties of a standard normal distribution.</li>
+<li>It's a general requirement for the optimal performance of many machine learning algorithms.</li>
+<li>Required if the algorithm involves the calculation of distances between points or vectors.</li>
+<li><code>StandardScaler</code> cannot guarantee balanced feature scales in the presence of outliers.</li>
+<li>Standard Scaling does not make the distribution normal in the strict sense.
+$$\large{z=\frac{x_i-\mu}{\sigma}}$$</li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="normalization-1"></a><a href="#normalization-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Normalization:</h4>
+<ul>
+<li>In this approach, the data is scaled to a fixed range - usually 0 to 1.</li>
+<li>The cost of having this bounded range - in contrast to standardization - is that we will end up with smaller standard deviations, which can suppress the effect of outliers.</li>
+<li>As <code>StandardScaler</code>, <code>MinMaxScaler</code> is very sensitive to the presence of outliers.
+$$\large{x_{\text{scaled}}=\frac{x-x_{\text{min}}}{x_{\text{max}}-x_{\text{min}}}}$$</li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="log-normal-transformation"></a><a href="#log-normal-transformation" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Log-normal transformation:</h4>
+<ul>
+<li>Log transform helps to handle skewed data and the distribution becomes more approximate to normal (<code>np.log1p</code>).</li>
+<li>Apply a log-normal transformation to any distribution with a heavy right tail.</li>
+<li>This transformation is non-linear and will move outliers relatively closer to other samples.</li>
+<li>The optimal power transformation is found via the <a href="https://itl.nist.gov/div898/handbook/eda/section3/eda336.htm">Box-Cox Test</a></li>
+<li>Q-Q plot for the distribution after taking the logarithm should look like a smooth diagonal line.</li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="winsorization"></a><a href="#winsorization" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Winsorization:</h4>
+<ul>
+<li>The main purpose of winsorization is to remove outliers by clipping feature's values.</li>
+<li>For example, we can clip for 1st and 99th percentiles</li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="rank-transformation"></a><a href="#rank-transformation" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Rank transformation:</h4>
+<ul>
+<li>By ranking the data, the impact of outliers is mitigated: regardless of how extreme an outlier is, it receives the same rank as if it were just slightly larger than the second-largest observation (<code>scipy.stats.rankdata</code>)</li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="feature-selection"></a><a href="#feature-selection" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Feature selection</h2>
+<ul>
+<li>Feature selection: removing unnecessary features.</li>
+<li>Why would it even be necessary to select features?
+<ul>
+<li>The more data, the higher the computational complexity.</li>
+<li>Some algorithms take noise (non-informative features) as a signal and overfit.</li>
+</ul></li>
+<li>Drop duplicate columns and rows (but ask yourself why are they duplicated?)</li>
+<li>Statistical approaches:
+<ul>
+<li>Features with low variance are worse than those with high variance (<code>VarianceThreshold</code>)</li>
+<li>There are other ways that are also based on classical statistics.</li>
+</ul></li>
+<li>Another approach is to use some (simple) baseline model for feature evaluation:
+<ul>
+<li>If features are clearly useless in a simple model, there is no need to drag them to a more complex one.</li>
+</ul></li>
+<li>The most reliable but computationally complex method is grid search.</li>
+<li><a href="https://scikit-learn.org/stable/modules/feature_selection.html">Feature selection (sklearn)</a></li>
+<li><a href="https://www.kaggle.com/arsenyinfo/easy-feature-selection-pipeline-0-55-at-lb">Easy Feature Selection pipeline</a></li>
+</ul>
+</span></div></article></div><div class="docLastUpdate"><em>Last updated on 6/19/2019 by Oleg Polakow</em></div><div class="docs-prevnext"><a class="docs-prev button" href="/datadocs/docs/machine-learning/eda"><span class="arrow-prev">← </span><span>Exploratory Data Analysis</span></a><a class="docs-next button" href="/datadocs/docs/machine-learning/advanced-features"><span>Advanced Features</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#feature-extraction">Feature extraction</a><ul class="toc-headings"><li><a href="#categorical-features">Categorical features</a></li><li><a href="#text">Text</a></li><li><a href="#date-features">Date features</a></li><li><a href="#time-series">Time series</a></li><li><a href="#web-data">Web data</a></li><li><a href="#geospatial-data">Geospatial data</a></li><li><a href="#images">Images</a></li></ul></li><li><a href="#feature-transformation">Feature transformation</a><ul class="toc-headings"><li><a href="#missing-values">Missing values</a></li><li><a href="#feature-scaling">Feature scaling</a></li></ul></li><li><a href="#feature-selection">Feature selection</a></li></ul></nav></div><footer class="nav-footer" id="footer"><a href="https://opensource.facebook.com/" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/datadocs/img/oss_logo.png" alt="Facebook Open Source" width="170" height="45"/></a><section class="copyright">Copyright © 2019 Oleg Polakow</section></footer></div></body></html>
