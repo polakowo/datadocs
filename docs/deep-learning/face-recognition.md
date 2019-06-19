@@ -2,6 +2,7 @@
 id: face-recognition
 title: Face Recognition
 sidebar_label: Face Recognition
+custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/deep-learning/face-recognition.md
 ---
 
 <img width=400 src="/datadocs/assets/t01a5ed8aab97b460c9.jpg"/>

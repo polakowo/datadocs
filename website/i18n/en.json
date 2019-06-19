@@ -127,7 +127,8 @@
       }
     },
     "links": {
-      "Docs": "Docs"
+      "Docs": "Docs",
+      "GitHub": "GitHub"
     },
     "categories": {
       "Machine Learning": "Machine Learning",

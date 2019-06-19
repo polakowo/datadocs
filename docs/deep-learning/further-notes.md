@@ -2,6 +2,7 @@
 id: further-notes
 title: Further Notes
 sidebar_label: Further Notes
+custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/deep-learning/further-notes.md
 ---
 
 ### Webinar with Andrew Ng 04.12.2018:

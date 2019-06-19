@@ -2,6 +2,7 @@
 id: validation-schemes
 title: Validation Schemes
 sidebar_label: Validation Schemes
+custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/machine-learning/validation-schemes.md
 ---
 
 - Never use data you train on to measure the quality of your model (resubstitution).

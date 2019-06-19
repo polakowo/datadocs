@@ -2,6 +2,7 @@
 id: data-leakages
 title: Data Leakages
 sidebar_label: Data Leakages
+custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/machine-learning/data-leakages.md
 ---
 
 - Data leakage is an unexpected information in the data that adds ground truths into the test data.

@@ -2,6 +2,7 @@
 id: metric-optimization
 title: Metric Optimization
 sidebar_label: Metric Optimization
+custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/machine-learning/metric-optimization.md
 ---
 
 - A metric is used to measure the algorithm's performance.

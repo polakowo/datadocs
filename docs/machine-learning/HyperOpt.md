@@ -2,6 +2,7 @@
 id: hyperopt
 title: Hyperparameter Optimization
 sidebar_label: Hyperparameter Optimization
+custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/machine-learning/hyperopt.md
 ---
 
 - Hyperparameters are model-specific properties that are not learned (as parameters) but fixed.

@@ -2,6 +2,7 @@
 id: attention-mechanism
 title: Attention Mechanism
 sidebar_label: Attention Mechanism
+custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/deep-learning/attention-mechanism.md
 ---
 
 - At any given moment, our minds concentrate on a subset of the total information available to them. This is important, because the field of sensation is wide, and the mind’s bandwidth to process information is narrow, and some inputs are indeed more important that others, with regard to any given goal.
@@ -13,7 +14,7 @@ sidebar_label: Attention Mechanism
     - It distributes attention over several inputs or encoded hidden states. 
     - And just as importantly, it accords different weights, or degrees of importance, to those inputs which are highly correlated with the current output.
 - To make attention differentiable, the network has to focus on each input, just to different extents. 
-- In neural networks, attention is a memory-access mechanism, where memory is an abstract layer defining the context for each incoming time step. 
+- In neural networks, attention is a memory-access mechanism, where memory is an abstract layer defining the context for each incoming time step.
 - Attention mechanisms are components of memory networks, which focus their attention on external memory storage.
 - Attention is used for machine translation, speech recognition, reasoning, image captioning, summarization, and the visual identification of objects.
 - [Attention? Attention!](https://lilianweng.github.io/lil-log/2018/06/24/attention-attention.html)

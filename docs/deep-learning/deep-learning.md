@@ -2,6 +2,7 @@
 id: deep-learning
 title: Deep Learning
 sidebar_label: Deep Learning
+custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/deep-learning/deep-learning.md
 ---
 
 - DL is a branch of machine learning that covers the set of algorithms that model complex patterns by feeding data through multiple non-linear transformations causing each level to capture a different level of abstraction.

@@ -5,7 +5,8 @@
             "label": "Methods",
             "ids": [
                 "machine-learning/linear-models",
-                "machine-learning/tree-based-models"
+                "machine-learning/tree-based-models",
+                "machine-learning/ensemble-methods"
             ]
         }, {
             "type": "subcategory",

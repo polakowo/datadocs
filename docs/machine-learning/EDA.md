@@ -2,6 +2,7 @@
 id: eda
 title: Exploratory Data Analysis
 sidebar_label: Exploratory Data Analysis
+custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/machine-learning/eda.md
 ---
 
 - EDA encompasses initial data analysis (IDA), which focuses more narrowly on checking assumptions required for model fitting and hypothesis testing, and handling missing values and making transformations of variables as needed.

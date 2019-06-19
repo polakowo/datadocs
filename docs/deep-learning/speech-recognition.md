@@ -2,6 +2,7 @@
 id: speech-recognition
 title: Speech Recognition
 sidebar_label: Speech Recognition
+custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/deep-learning/speech-recognition.md
 ---
 
 - The deep acoustic model extracts higher-level representations of speech features and computes the probability that in that particular frame, a phoneme is pronounced.

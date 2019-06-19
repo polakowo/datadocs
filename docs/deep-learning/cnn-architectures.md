@@ -2,6 +2,7 @@
 id: cnn-architectures
 title: CNN Architectures
 sidebar_label: CNN Architectures
+custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/deep-learning/cnn-architectures.md
 ---
 
 - According to the universal approximation theorem, given enough capacity, we know that a feedforward network with a single layer is sufficient to represent any function. However, the layer might be massive and the network is prone to overfitting the data. Therefore, there is a common trend in the research community that our network architecture needs to go deeper.

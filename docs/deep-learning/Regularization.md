@@ -2,6 +2,7 @@
 id: regularization
 title: Regularization
 sidebar_label: Regularization
+custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/deep-learning/regularization.md
 ---
 
 - This is a form of regression that penalizes the weights of the nodes and shrinks them towards zero. 

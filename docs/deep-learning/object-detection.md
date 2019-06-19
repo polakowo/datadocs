@@ -2,6 +2,7 @@
 id: object-detection
 title: Object Detection
 sidebar_label: Object Detection
+custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/deep-learning/object-detection.md
 ---
 
 - The object detection task consists in determining the location on the image where certain objects are present, as well as classifying those objects.

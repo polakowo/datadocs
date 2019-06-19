@@ -38,6 +38,9 @@ const siteConfig = {
     headerLinks: [{
         doc: 'machine-learning/linear-models',
         label: 'Docs'
+    }, { 
+        href: 'https://github.com/polakowo/datadocs', 
+        label: 'GitHub' 
     }],
     docsSideNavCollapsible: true,
     usePrism: ['python'],

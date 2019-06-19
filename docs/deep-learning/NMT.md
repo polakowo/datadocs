@@ -2,6 +2,7 @@
 id: nmt
 title: Neural Machine Translation
 sidebar_label: Neural Machine Translation
+custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/deep-learning/nmt.md
 ---
 
 - Neural machine translation (NMT) is the use of neural network models to learn a statistical model for machine translation.

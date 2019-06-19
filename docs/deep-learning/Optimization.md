@@ -2,6 +2,7 @@
 id: optimization
 title: Optimization
 sidebar_label: Optimization
+custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/deep-learning/optimization.md
 ---
 
 ## Learning rate

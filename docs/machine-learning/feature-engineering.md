@@ -2,6 +2,7 @@
 id: feature-engineering
 title: Feature Engineering
 sidebar_label: Feature Engineering
+custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/machine-learning/feature-engineering.md
 ---
 
 - The well-known concept of "garbage in - garbage out" applies 100% to any task in machine learning. 

@@ -2,6 +2,7 @@
 id: nst
 title: Neural Style Transfer
 sidebar_label: Neural Style Transfer
+custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/deep-learning/nst.md
 ---
 
 - Neural style transfer (NST) is a technique used to generate images in the style of another image.

@@ -2,6 +2,7 @@
 id: normalization
 title: Normalization
 sidebar_label: Normalization
+custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/deep-learning/normalization.md
 ---
 
 ## Input normalization

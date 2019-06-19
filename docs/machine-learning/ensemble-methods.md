@@ -2,6 +2,7 @@
 id: ensemble-methods
 title: Ensemble Methods
 sidebar_label: Ensemble Methods
+custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/machine-learning/ensemble-methods.md
 ---
 
 - An ensemble method combines the predictions of many individual classifiers by majority voting.

@@ -2,6 +2,7 @@
 id: backpropagation
 title: Backpropagation
 sidebar_label: Backpropagation
+custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/deep-learning/backpropagation.md
 ---
 
 - Backpropagation is an efficient method of computing gradients in directed graphs of computations.

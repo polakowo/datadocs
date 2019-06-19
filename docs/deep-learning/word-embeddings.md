@@ -2,6 +2,7 @@
 id: word-embeddings
 title: Word Embeddings
 sidebar_label: Word Embeddings
+custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/deep-learning/word-embeddings.md
 ---
 
 - Humans treat words as discrete atomic symbols:

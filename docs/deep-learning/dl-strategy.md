@@ -2,6 +2,7 @@
 id: dl-strategy
 title: Deep Learning Strategy
 sidebar_label: Deep Learning Strategy
+custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/deep-learning/dl-strategy.md
 ---
 
 - Machine learning strategy is useful to iterate through ideas quickly and efficiently reach the project outcome.

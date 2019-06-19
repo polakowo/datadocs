@@ -2,6 +2,7 @@
 id: rnns
 title: Recurrect Neural Networks
 sidebar_label: Recurrect Neural Networks
+custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/deep-learning/rnns.md
 ---
 
 - A glaring limitation of vanilla NNs is that their API is too constrained:

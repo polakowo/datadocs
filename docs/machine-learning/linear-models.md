@@ -2,6 +2,7 @@
 id: linear-models
 title: Linear Models
 sidebar_label: Linear Models
+custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/machine-learning/linear-models.md
 ---
 
 - In linear models, the relationships are modeled using linear predictor functions.

@@ -2,6 +2,7 @@
 id: initialization
 title: Initialization
 sidebar_label: Initialization
+custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/deep-learning/initialization.md
 ---
 
 - For deep networks, we can use a heuristic to initialize the weights depending on the non-linear activation function.

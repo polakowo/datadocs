@@ -2,6 +2,7 @@
 id: cnns
 title: Convolutional Neural Networks
 sidebar_label: Convolutional Neural Networks
+custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/deep-learning/cnns.md
 ---
 
 - Convolutional networks make explicit assumptions on the structure of the input that allow them to encode certain properties in their architecture. These choices make them efficient to implement and vastly reduce the amount of parameters in the network.

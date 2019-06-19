@@ -2,6 +2,7 @@
 id: activation-functions
 title: Activation Functions
 sidebar_label: Activation Functions
+custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/deep-learning/activation-functions.md
 ---
 
 - How do we decide whether the neuron should fire or not?

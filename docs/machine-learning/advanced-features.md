@@ -2,6 +2,7 @@
 id: advanced-features
 title: Advanced Features
 sidebar_label: Advanced Features
+custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/machine-learning/advanced-features.md
 ---
 
 ## Group-based features

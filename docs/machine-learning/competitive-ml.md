@@ -2,6 +2,7 @@
 id: competitive-ml
 title: Competitive Machine Learning
 sidebar_label: Competitive Machine Learning
+custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/machine-learning/competitive-ml.md
 ---
 
 ## Goal definition

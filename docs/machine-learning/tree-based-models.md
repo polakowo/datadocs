@@ -2,6 +2,7 @@
 id: tree-based-models
 title: Tree-Based Models
 sidebar_label: Tree-Based Models
+custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/machine-learning/tree-based-models.md
 ---
 
 - Tree-based models are models used for classifying non-linearly separable data (like neural networks). 
