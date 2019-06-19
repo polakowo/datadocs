@@ -11,7 +11,7 @@ sidebar_label: Activation Functions
 - Only nonlinear activation functions allow to compute nontrivial problems using only a small number of nodes, otherwise it would behave just like a single-layer perceptron.
 - A multi-layered neural network can be regarded as a hierarchy of generalized linear models; according to this, activation functions are link functions, which in turn correspond to different distributional assumptions.
 
-<img width=350 src="assets/fitting_func.png"/>
+<img width=350 src="/datadocs/assets/fitting_func.png"/>
 <center><a href="https://fossbytes.com/what-is-deep-learning-really/" style="color: lightgrey">Credit</a></center>
 
 #### Comparison of different functions:
@@ -55,7 +55,7 @@ $$\large{f(x)=\max{(0.1x,x)}}$$
     - Generalization: Dense representations can become strongly correlated during training, and this causes the network to overtrain because the "hidden information"
     - Makes internal representation linearly separable (think of Softmax classifier).
     - Sparse set is going to be more easily distributed because there are few interactions across the network.
-    <center><img width=350 src="assets/sparsity.png"/></center>
+    <center><img width=350 src="/datadocs/assets/sparsity.png"/></center>
     <center><a href="https://www.utc.fr/~bordesan/dokuwiki/_media/en/glorot10nipsworkshop.pdf" style="color: lightgrey">Credit</a></center>
 - [Deep Sparse Rectifier Neural Networks](https://www.utc.fr/~bordesan/dokuwiki/_media/en/glorot10nipsworkshop.pdf)
 
@@ -118,7 +118,7 @@ $$\large{\sigma(x_j)=\frac{e^{x_j}}{\sum_i{e^{x_i}}}}$$
 - Cross entropy is often computed for output of softmax and true labels encoded in one hot encoding.
 - What’s cool about using one-hot encoding for the label vector is that \\(y_j\\) is 0 except for the one true class.
 
-<img width=600 src="assets/CNN_Softmax_Img5.png"/>
+<img width=600 src="/datadocs/assets/CNN_Softmax_Img5.png"/>
 <center><a href="https://www.superdatascience.com/convolutional-neural-networks-cnn-softmax-cross-entropy/" style="color: lightgrey">Credit</a></center>
 
 - [Softmax classification with cross-entropy](https://peterroelants.github.io/posts/cross-entropy-softmax/)

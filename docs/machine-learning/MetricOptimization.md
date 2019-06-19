@@ -62,7 +62,7 @@ $$MSLE(30000, 20000)=0.03100$$
 
 - Used in cases where the range of the target value is large (e.g., in forecasting).
 
-<center><img width=200 src="assets/1m_small.gif.png"/></center>
+<center><img width=200 src="/datadocs/assets/1m_small.gif.png"/></center>
 
 - The targets are usually non-negative but can equal to 0 - add a tiny constant before applying log.
 - RMSLE is considered as a better metric than MAPE, since it is less biased towards smaller targets.
@@ -119,7 +119,7 @@ $$\large{MAE=\frac{\sum_{i=1}^{n}{\|y_i-\hat{y}_i\|}}{n}}$$
     - [Comparing the performance using L1 loss and L2 loss](http://rishy.github.io/ml/2015/07/28/l1-vs-l2-loss/)
     - As option: Huber loss combines good properties from both MSE and MAE.
     - As another option: Log-Cosh loss has all the advantages of Huber loss, and it’s twice differentiable everywhere (which is more favorable for models using Newton’s method), unlike Huber loss.
-    <center><img width=400 src="assets/vXMgz.png"/></center>
+    <center><img width=400 src="/datadocs/assets/vXMgz.png"/></center>
     <center><a href="https://heartbeat.fritz.ai/5-regression-loss-functions-all-machine-learners-should-know-4fb140e9d4b0" style="color: lightgrey">Credit</a></center>
 
 #### MAPE:
@@ -157,7 +157,7 @@ $$\large{Accuracy=\frac{1}{n}\sum_{i=1}^{n}{[y_i=\hat{y}_i]}}$$
 - Loss function:
     - The loss function is not differentable since gradients are zero almost always.
     - Zero-one loss may be approximated with a proxy loss such as logloss or Hinge loss.
-    <center><img width=400 src="assets/RUIJ4.png"/></center>
+    <center><img width=400 src="/datadocs/assets/RUIJ4.png"/></center>
     <center><a href="https://stackoverflow.com/questions/47716601/classification-modified-huber-loss-how-is-it-more-tolerant-to-outliers" style="color: lightgrey">Credit</a></center>
 
 #### Dealing with imbalanced data:
@@ -191,7 +191,7 @@ $$\large{LogLoss=-\frac{1}{n}\sum_{i=1}^{n}\sum_{j=1}^{n}{y_{i,j}\log{\hat{y}_{i
 - Area under the ROC Curve (AUC) of a classifier is a performance measurement for classification problem at various thresholds settings.
 - AUC tells how much model is capable of distinguishing between classes 0 and 1.
 
-<center><img width=350 src="assets/glucosedistn.png"/></center>
+<center><img width=350 src="/datadocs/assets/glucosedistn.png"/></center>
 <center><a href="http://corysimon.github.io/articles/what-is-an-roc-curve/" style="color: lightgrey">Credit</a></center>
     
 - AUC is a rank-based metric (depends on ordering of predictions, not on absolute values)

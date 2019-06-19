@@ -22,7 +22,7 @@ sidebar_label: Advanced Features
 - More flexible but harder to implement:
     - (optional) Mean encode all variables to create a homogeneous feature space.
     - Calculate \\(N\\) nearest neighbors with some distance metric (e.g., Bray-Curtis).
-    <center><img width=200 src="assets/knn3.png"/></center>
+    <center><img width=200 src="/datadocs/assets/knn3.png"/></center>
     <center><a href="https://www.analyticsvidhya.com/blog/2018/03/introduction-k-neighbours-algorithm-clustering/" style="color: lightgrey">Credit</a></center>
     - Calculate various statistics based on the nearest \\(K\\) neighbors.
     - Examples:
@@ -84,7 +84,7 @@ sidebar_label: Advanced Features
 - Automatically extracts sparse and meaningful features from a set of nonnegative data vectors (counts-like data).
 - NMF decomposes a data matrix \\(V\\) into the product of two lower rank matrices \\(W\\) and \\(H\\) so that \\(V\approx{W*H}\\).
 
-<center><img width=550 src="assets/holdout.png"/></center>
+<center><img width=550 src="/datadocs/assets/holdout.png"/></center>
 <center><a href="http://alexhwilliams.info/itsneuronalblog/2018/02/26/crossval/" style="color: lightgrey">Credit</a></center>
 
 - Primarily used for recommender systems and text mining.
@@ -103,7 +103,7 @@ sidebar_label: Advanced Features
 - t-SNE (t-Distributed Stochastic Neighbor Embedding) is a tool to visualize high-dimensional data.
 - Unlike PCA, is not a linear projection but allows to capture a non-linear structure.
 
-<center><img width=250 src="assets/PCASwiss.png"/></center>
+<center><img width=250 src="/datadocs/assets/PCASwiss.png"/></center>
 <center><a href="https://www.biostars.org/p/295174/" style="color: lightgrey">Credit</a></center>
 
 - Projects points from high to low-dimensional space by preserving the relative distance between them.

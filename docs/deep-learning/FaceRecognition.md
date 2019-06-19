@@ -4,7 +4,7 @@ title: Face Recognition
 sidebar_label: Face Recognition
 ---
 
-<img width=400 src="assets/t01a5ed8aab97b460c9.jpg"/>
+<img width=400 src="/datadocs/assets/t01a5ed8aab97b460c9.jpg"/>
 <center><a href="https://hackernoon.com/building-a-facial-recognition-pipeline-with-deep-learning-in-tensorflow-66e7645015b8" style="color: lightgrey">Credit</a></center>
 
 #### Verification vs. recognition:
@@ -29,7 +29,7 @@ sidebar_label: Face Recognition
 - Instead of a model learning to classify its inputs, the neural networks learn to differentiate between two inputs. They learn the similarity between them.
 - Siamese networks are best-suited for cases where we can have only a few examples per class.
 
-<img width=300 src="assets/Futurama.png"/>
+<img width=300 src="/datadocs/assets/Futurama.png"/>
 <center><a href="https://sorenbouma.github.io/blog/oneshot/" style="color: lightgrey">Credit</a></center>
 
 - Siamese neural network is a class of neural network architectures that contain two or more identical subnetworks (identical here means they have the same configuration with the same parameters and weights)
@@ -37,7 +37,7 @@ sidebar_label: Face Recognition
 - The last layers of the two networks are fed to a loss function, which calculates the similarity between the embeddings. 
 - You can also learn the similarity function by letting the network adjust the weights and biases of the logistic regression.
 
-<img width=550 src="assets/Siamese-network.jpg"/>
+<img width=550 src="/datadocs/assets/Siamese-network.jpg"/>
 <center><a href="https://www.researchgate.net/publication/328376369_Partial_Discharge_Recognition_with_a_Multi-Resolution_Convolutional_Neural_Network" style="color: lightgrey">Credit</a></center>
 
 - [Siamese Neural Networks for One-shot Image Recognition (2015)](https://www.cs.cmu.edu/~rsalakhu/papers/oneshot1.pdf)
@@ -50,7 +50,7 @@ sidebar_label: Face Recognition
 - Furthermore, an SVM classifier or any other simple multi-class classifier can be trained to cluster vector embeddings effectively.
 - For further details, see [Word Embeddings](deep-learning/WordEmbeddings.md)
 
-<img width=350 src="assets/olivetti_tsne.jpg"/>
+<img width=350 src="/datadocs/assets/olivetti_tsne.jpg"/>
 <center><a href="https://lvdmaaten.github.io/tsne/" style="color: lightgrey">Credit</a></center>
 
 #### Pros:
@@ -93,7 +93,7 @@ $$\large{L(X_1,X_2)=(1-Y)\frac{1}{2}d(X_1,X_2)^2+Y\frac{1}{2}\{\max{(0,m-d(X_1,X
 - Each training sample is actually composed of a "triplet" of examples: anchor \\(A\\), a positive of the same class as the anchor \\(P\\), and a negative of a different class \\(N\\).
 - The contrastive loss, on the other hand, only considers pairwise examples at a time.
 
-<img width=550 src="assets/main-qimg-e09a3ebbb08ee14ef4301170fe6649c8.png"/>
+<img width=550 src="/datadocs/assets/main-qimg-e09a3ebbb08ee14ef4301170fe6649c8.png"/>
 <center><a href="https://arxiv.org/pdf/1503.03832v3.pdf" style="color: lightgrey">Credit</a></center>
 
 - Implementation:
@@ -115,7 +115,7 @@ $$\large{L(A,P,N)=\frac{1}{n}\left(\sum_{i=1}^{n}{\max{(d(A_i,P_i)-d(A_i,N_i)+m,
 #### Binary classification:
 - Binary classification is another way to learn the similarity function, e.g., using Manhattan distance and sigmoid layer
 
-<img width=900 src="assets/Siamese_diagram_2.png"/>
+<img width=900 src="/datadocs/assets/Siamese_diagram_2.png"/>
 <center><a href="https://sorenbouma.github.io/blog/oneshot/" style="color: lightgrey">Credit</a></center>
 
 ## FaceNet

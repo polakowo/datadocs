@@ -6,7 +6,7 @@ sidebar_label: Attention Mechanism
 
 - At any given moment, our minds concentrate on a subset of the total information available to them. This is important, because the field of sensation is wide, and the mind’s bandwidth to process information is narrow, and some inputs are indeed more important that others, with regard to any given goal.
 
-<img width=300 src="assets/visual_attention.png"/>
+<img width=300 src="/datadocs/assets/visual_attention.png"/>
 <center><a href="http://proceedings.mlr.press/v37/xuc15.pdf" style="color: lightgrey">Credit</a></center>
 
 - Neural networks can achieve this same behavior using an attention mechanism:
@@ -26,14 +26,14 @@ sidebar_label: Attention Mechanism
 - A potential issue with a traditional encoder–decoder approach is that a neural network needs to be able to compress all the necessary information of a source sentence into a fixed-length vector (also known as sentence embedding, “thought” vector).
 - By utilizing the attention mechanism, it is possible for decoder to capture global information rather than solely to infer based on one hidden state.
 
-<img width=500 src="assets/1*75Jb0q3sX1GDYmJSfl-gOw.gif"/>
+<img width=500 src="/datadocs/assets/1*75Jb0q3sX1GDYmJSfl-gOw.gif"/>
 <center><a href="https://medium.com/@umerfarooq_26378/neural-machine-translation-with-code-68c425044bbd" style="color: lightgrey">Credit</a></center>
 
 - The encoder is a bidirectional RNN with forward and backward hidden states combined into one vector.
 - The decoder is a RNN with a forward hidden state for the output word at some position. 
 - This hidden state is calculated based on the previous state and the context vector.
 
-<img width=300 src="assets/0*Jpp6WALMjZbjUFjP.png"/>
+<img width=300 src="/datadocs/assets/0*Jpp6WALMjZbjUFjP.png"/>
 <center><a href="https://hackernoon.com/attention-mechanism-in-neural-network-30aaf5e39512" style="color: lightgrey">Credit</a></center>
 
 - The context vector is a sum of hidden states (also called annotations) of the input sequence, weighted by alignment scores, which define how much of each hidden state in encoder should be considered for each output in decoder.
@@ -47,7 +47,7 @@ sidebar_label: Attention Mechanism
 
 - The matrix of alignment scores is a nice byproduct to explicitly show the correlation between source and target words.
 
-<img width=400 src="assets/bahdanau-fig3.png"/>
+<img width=400 src="/datadocs/assets/bahdanau-fig3.png"/>
 <center><a href="https://arxiv.org/pdf/1508.04025.pdf" style="color: lightgrey">Credit</a></center>
 
 - Finally, the context vector becomes a weighted sum of the annotations (hidden states) \\(h\\) and normalized alignment scores \\(\alpha\\).
