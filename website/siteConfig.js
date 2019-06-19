@@ -38,9 +38,9 @@ const siteConfig = {
     headerLinks: [{
         doc: 'machine-learning/linear-models',
         label: 'Docs'
-    }, { 
-        href: 'https://github.com/polakowo/datadocs', 
-        label: 'GitHub' 
+    }, {
+        href: 'https://github.com/polakowo/datadocs',
+        label: 'GitHub'
     }],
     docsSideNavCollapsible: true,
     usePrism: ['python'],
@@ -85,9 +85,9 @@ const siteConfig = {
         'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML',
         'https://buttons.github.io/buttons.js',
         'https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js',
-        '/js/code-block-buttons.js'
+        '/datadocs/js/code-block-buttons.js',
     ],
-    stylesheets: ['/css/code-block-buttons.css'],
+    stylesheets: [],
 
     // On page navigation for the current documentation page.
     onPageNav: 'separate',

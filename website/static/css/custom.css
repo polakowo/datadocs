@@ -23,3 +23,16 @@ a:hover {
 ul>li {
     margin-top: 0.25em;
 }
+
+.container.paddingTop {
+    padding-top: 10px;
+}
+
+.blockContent {
+    color: #605f5e;
+}
+
+.container .gridBlock .blockContent p:not(h2 div p) {
+    line-height: 1.7;
+    font-size: 16px;
+}
