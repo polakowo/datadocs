@@ -64,7 +64,7 @@
 <li>Neural style transfer (NST) is a technique used to generate images in the style of another image.</li>
 <li>VGG network is more well-suited for NST than Inception.</li>
 </ul>
-<p><img width=600 src="/img/docs/perspolis_vangogh.png"/>
+<p><img width=600 src="assets/perspolis_vangogh.png"/>
 <center><a href="https://github.com/tejaslodaya/neural-style-transfer" style="color: lightgrey">Credit</a></center></p>
 <ul>
 <li><a href="https://arxiv.org/pdf/1508.06576">A Neural Algorithm of Artistic Style (2015)</a></li>
@@ -77,7 +77,7 @@
 <li>A better technique is to take three images: (1) a content image, (2) a style reference image (artwork), and (3) the input image to style. Blend them together such that the input image looks like the content image and &quot;painted&quot; like the style image.</li>
 <li>CNNs have been learned to encode perceptual and semantic information, so they can be repurposed for the style transfer problem.</li>
 </ul>
-<p><img width=500 src="/img/docs/1*-bEkHF328n-S59iFnjTzag.png"/>
+<p><img width=500 src="assets/1*-bEkHF328n-S59iFnjTzag.png"/>
 <center><a href="https://medium.com/data-science-group-iitr/artistic-style-transfer-with-convolutional-neural-network-7ce2476039fd" style="color: lightgrey">Credit</a></center></p>
 <ul>
 <li>Use the outputs of various intermediate layers to compute two types of losses:
@@ -88,8 +88,8 @@
 <li>Those losses are then minimized by directly changing the pastiche image.</li>
 <li>Losses are based not on per-pixel differences between images, but instead on more perceptual differences between them, which are captured in deeper layers.</li>
 </ul>
-<p><img width=300 src="/img/docs/content-loss.png"/>
-<img width=300 src="/img/docs/style-loss.png"/>
+<p><img width=300 src="assets/content-loss.png"/>
+<img width=300 src="assets/style-loss.png"/>
 <center><a href="https://harishnarayanan.org/writing/artistic-style-transfer/" style="color: lightgrey">Credit</a></center></p>
 <ul>
 <li>The relative importance of these terms is determined by a set of scalar weights \(\alpha\) and \(\beta\).</li>
@@ -99,7 +99,7 @@
 <li>Applying this to early layers results in finer textures whereas applying this to deeper layers capture smore higher-level elements of the image’s style.</li>
 <li>The best results are achieved by a combination of many different layers from the network.</li>
 </ul>
-<p><img width=600 src="/img/docs/1*YHpizJPE2QzXLPUVbD28Tg.png"/>
+<p><img width=600 src="assets/1*YHpizJPE2QzXLPUVbD28Tg.png"/>
 <center><a href="https://medium.com/data-science-group-iitr/artistic-style-transfer-with-convolutional-neural-network-7ce2476039fd" style="color: lightgrey">Credit</a></center></p>
 <h4><a class="anchor" aria-hidden="true" id="content-loss"></a><a href="#content-loss" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Content loss:</h4>
 <ul>
