@@ -4,7 +4,7 @@
 <ul>
 <li>By normalizing all of our inputs to a standard scale, we're allowing the network to more quickly learn the optimal parameters for each input node.</li>
 </ul>
-<p><img width=700 src="datadocs/assets/20180128.png"/>
+<p><img width=700 src="/datadocs/assets/20180128.png"/>
 <center><a href="https://jsideas.net/batch_normalization/" style="color: lightgrey">Credit</a></center></p>
 <ul>
 <li>You want to transform your input into the regions that can utilize the non-linearity of your activation function, and not suffer saturation.</li>
@@ -38,7 +38,7 @@
 <li>The basic idea behind batch normalization is to limit covariate shift by normalizing the activations of each layer</li>
 <li>By normalizing each layer, we're introducing a level of orthogonality between layers</li>
 </ul>
-<p><img width=600 src="datadocs/assets/prepro1.jpeg"/>
+<p><img width=600 src="/datadocs/assets/prepro1.jpeg"/>
 <center><a href="http://cs231n.github.io/neural-networks-2/" style="color: lightgrey">Credit</a></center></p>
 <ul>
 <li><a href="http://cs231n.github.io/neural-networks-2/">Setting up the data and the model</a></li>
@@ -48,7 +48,7 @@
 <li>In practice, restricting the activations of each layer to be strictly 0 mean and unit variance can limit the expressive power of the network. Therefore, in practice, batch normalization allows the network to learn parameters $\gamma$  and $\beta$ that can convert the mean and variance to any value that the network desires.</li>
 <li>This extra flexibility helps to represent identity transformation and preserve the network capacity.</li>
 </ul>
-<p><img width=600 src="datadocs/assets/Screenshot from 2017-03-23 21-50-33.png"/>
+<p><img width=600 src="/datadocs/assets/Screenshot from 2017-03-23 21-50-33.png"/>
 <center><a href="http://tzutalin.blogspot.com/2017/07/deep-learning-batch-normalization-note.html" style="color: lightgrey">Credit</a></center></p>
 <ul>
 <li><a href="https://arxiv.org/pdf/1502.03167v3.pdf">Batch Normalization: Accelerating Deep Network Training by Reducing Internal Covariate Shift (2015)</a></li>
@@ -62,7 +62,7 @@
 <li>Simplifies the creation of deeper networks</li>
 <li>You can consider batch normalisation as a bit of extra regularization, allowing you to reduce some of the dropout you might add to a network. Similar to dropout, it adds some noise to each hidden layer’s activations.</li>
 </ul>
-<p><img width=400 src="datadocs/assets/ModelAccuracy.png"/>
+<p><img width=400 src="/datadocs/assets/ModelAccuracy.png"/>
 <center><a href="https://www.learnopencv.com/batch-normalization-in-deep-networks/" style="color: lightgrey">Credit</a></center></p>
 <h4><a class="anchor" aria-hidden="true" id="best-practices"></a><a href="#best-practices" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Best practices:</h4>
 <ul>

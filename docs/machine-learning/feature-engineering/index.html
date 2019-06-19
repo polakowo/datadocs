@@ -101,7 +101,7 @@ X_test <span class="token operator">=</span> scaler<span class="token punctuatio
 </ul></li>
 <li>One-hot encoding can lead to a huge increase in the dimensionality of the feature representations. But most of the popular libraries can work with these sparse matrices directly.</li>
 </ul>
-<p><img width=200 src="datadocs/assets/Finite_element_sparse_matrix.png"/>
+<p><img width=200 src="/datadocs/assets/Finite_element_sparse_matrix.png"/>
 <center><a href="https://en.wikipedia.org/wiki/Sparse_matrix" style="color: lightgrey">Credit</a></center></p>
 <ul>
 <li>OHE presents two problems that are more particular to tree-based models:
@@ -128,7 +128,7 @@ X_test <span class="token operator">=</span> scaler<span class="token punctuatio
 <li><a href="https://booking.ai/dont-be-tricked-by-the-hashing-trick-192a6aae3087">Don’t be tricked by the Hashing Trick</a>: If you can choose the hashing space on a per feature basis, use \(k^2\) for features with less than a thousand categories and \(20k\) for the others. If you want to control for collisions as a proportion \(r\) of the features, then use \(n=k/r\).</li>
 </ul></li>
 </ul>
-<p><center><img width=500 src="datadocs/assets/1*K5xAJZCzMG2dwRXj_94nIg.png"/></center>
+<p><center><img width=500 src="/datadocs/assets/1*K5xAJZCzMG2dwRXj_94nIg.png"/></center>
 <center><a href="https://blog.bradfieldcs.com/an-introduction-to-hashing-in-the-era-of-machine-learning-6039394549b0" style="color: lightgrey">Credit</a></center></p>
 <h4><a class="anchor" aria-hidden="true" id="mean-encoding"></a><a href="#mean-encoding" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Mean encoding:</h4>
 <ul>
@@ -244,7 +244,7 @@ $$\large{w_{i,j}=tf_{i,j}\times{\log{(\frac{N}{df_i})}}}$$</li>
 <ul>
 <li>Periodicity or seasonality</li>
 <li>Encoding cyclical continuous features into 2 dimensions via sine and cosine transformations helps linear models. Note that it distorts tree-based algorithms that split on a single dimension at a time and distance-based algorithms since splitting into two dimensions effectively double-weights the cyclic feature.
-<center><img width=250 src="datadocs/assets/output_12_0.png"/></center>
+<center><img width=250 src="/datadocs/assets/output_12_0.png"/></center>
 <center><a href="https://ianlondon.github.io/blog/encoding-cyclical-features-24hour-time/" style="color: lightgrey">Credit</a></center></li>
 </ul></li>
 <li>Acyclical trends and moving averages

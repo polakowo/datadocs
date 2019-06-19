@@ -65,7 +65,7 @@
 <li>Some of the most important elements that are now staple in most of state-of-the art algorithms include inception and residual blocks, skip connections and upsampling.</li>
 </ul>
 <h2><a class="anchor" aria-hidden="true" id="yolo"></a><a href="#yolo" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>YOLO</h2>
-<p><img width=200 src="datadocs/assets/yologo_2.png"/>
+<p><img width=200 src="/datadocs/assets/yologo_2.png"/>
 <center><a href="https://pjreddie.com/darknet/yolo/" style="color: lightgrey">Credit</a></center></p>
 <ul>
 <li><a href="https://medium.com/@jonathan_hui/real-time-object-detection-with-yolo-yolov2-28b1b93e2088">Real-time Object Detection with YOLO, YOLOv2 and now YOLOv3</a></li>
@@ -86,7 +86,7 @@
 <li>For each object that is present on the image, one grid cell is said to be “responsible” for predicting it (that is, the cell where the center of the object falls into)</li>
 <li>The division is done with the convolution sliding window, which is more efficient than classical sliding windows detection algorithm, because it shares the computations for each of the sliding windows.</li>
 </ul>
-<p><img width=800 src="datadocs/assets/21.png"/>
+<p><img width=800 src="/datadocs/assets/21.png"/>
 <center><a href="https://www.coursera.org/learn/convolutional-neural-networks" style="color: lightgrey">Credit</a></center></p>
 <ul>
 <li>Unlike sliding window and region proposal-based techniques, YOLO sees the entire image during training and test time so it implicitly encodes contextual information about classes as well as their appearance.</li>
@@ -103,7 +103,7 @@
 <li>predicts C conditional class probabilities (one per class for the likeliness of the object class).</li>
 </ul></li>
 </ul>
-<p><img width=500 src="datadocs/assets/1*m8p5lhWdFDdapEFa2zUtIA.jpeg"/>
+<p><img width=500 src="/datadocs/assets/1*m8p5lhWdFDdapEFa2zUtIA.jpeg"/>
 <center><a href="https://arxiv.org/pdf/1506.02640v5.pdf" style="color: lightgrey">Credit</a></center></p>
 <h4><a class="anchor" aria-hidden="true" id="bounding-boxes"></a><a href="#bounding-boxes" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Bounding boxes:</h4>
 <ul>
@@ -139,13 +139,13 @@ $$\text{class confidence score}=\text{box confidence score}\times\text{condition
 <li>The higher the IOU the better is the accuracy.</li>
 <li>An IOU score \(\text{IoU}\ge{0.5}\) is normally considered as a true positive.</li>
 </ul>
-<p><img width=500 src="datadocs/assets/iou.png"/>
+<p><img width=500 src="/datadocs/assets/iou.png"/>
 <center><a href="https://www.coursera.org/learn/convolutional-neural-networks" style="color: lightgrey">Credit</a></center></p>
 <h4><a class="anchor" aria-hidden="true" id="non-maximum-suppression-nms"></a><a href="#non-maximum-suppression-nms" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Non-maximum suppression (NMS):</h4>
 <ul>
 <li>NMS eliminates some candidates that are in fact different detections of the same object, without removing the candidates for different objects.</li>
 </ul>
-<p><img width=300 src="datadocs/assets/nms_algo.jpg"/>
+<p><img width=300 src="/datadocs/assets/nms_algo.jpg"/>
 <center><a href="https://leonardoaraujosantos.gitbooks.io/artificial-inteligence/content/single-shot-detectors/yolo.html" style="color: lightgrey">Credit</a></center></p>
 <ul>
 <li>For each object class:
@@ -203,7 +203,7 @@ $$\text{class confidence score}=\text{box confidence score}\times\text{condition
 <ul>
 <li>After doing some clustering studies on ground truth labels, it turns out that most bounding boxes have certain height-width ratios. So instead of directly predicting a bounding box, YOLOv2 (and v3) predict off-sets from a predetermined set of boxes with particular height-width ratios - those predetermined set of boxes are the anchor boxes.</li>
 </ul>
-<p><img width=250 src="datadocs/assets/0*SX5qJIuV44XvBXju.jpg"/>
+<p><img width=250 src="/datadocs/assets/0*SX5qJIuV44XvBXju.jpg"/>
 <center><a href="https://www.coursera.org/learn/convolutional-neural-networks" style="color: lightgrey">Credit</a></center></p>
 <ul>
 <li>Anchor box makes it possible to detect multiple objects centered in one grid cell.</li>
@@ -213,7 +213,7 @@ $$\text{class confidence score}=\text{box confidence score}\times\text{condition
 <li>Now, each prediction includes 4 parameters for the boundary box, 1 box confidence score (objectness) and class probabilities.</li>
 </ul></li>
 </ul>
-<p><img width=500 src="datadocs/assets/0*WGFK1mm-f9HF-vO3.jpg"/></p>
+<p><img width=500 src="/datadocs/assets/0*WGFK1mm-f9HF-vO3.jpg"/></p>
 <ul>
 <li>The anchor boxes need to be predefined either by hand or by using an algorithm such as K-Means (where distance is IOU)</li>
 <li>One reason for choosing a variety of anchor box shapes is the similarity of one object’s bounding box shape to the shape of the anchor box.</li>
@@ -227,7 +227,7 @@ $$\text{class confidence score}=\text{box confidence score}\times\text{condition
 <li>Can detect up to 9000 classes (20 before)</li>
 </ul>
 <h3><a class="anchor" aria-hidden="true" id="yolov3"></a><a href="#yolov3" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>YOLOv3</h3>
-<p><img width=700 src="datadocs/assets/1*d4Eg17IVJ0L41e7CTWLLSg.png"/>
+<p><img width=700 src="/datadocs/assets/1*d4Eg17IVJ0L41e7CTWLLSg.png"/>
 <center><a href="https://towardsdatascience.com/yolo-v3-object-detection-53fb7d3bfe6b" style="color: lightgrey">Credit</a></center></p>
 <ul>
 <li><a href="https://arxiv.org/pdf/1804.02767.pdf">YOLOv3: An Incremental Improvement (2018)</a></li>
@@ -264,6 +264,6 @@ $$\text{class confidence score}=\text{box confidence score}\times\text{condition
 <ul>
 <li>YOLOv3 performs at par with other state of art detectors like RetinaNet, while being considerably faster.</li>
 </ul>
-<p><img width=450 src="datadocs/assets/1*YpNE9OQeshABhBgjyEXlLA.png"/>
+<p><img width=450 src="/datadocs/assets/1*YpNE9OQeshABhBgjyEXlLA.png"/>
 <center><a href="https://towardsdatascience.com/yolo-v3-object-detection-53fb7d3bfe6b" style="color: lightgrey">Credit</a></center></p>
 </span></div></article></div><div class="docLastUpdate"><em>Last updated on 6/19/2019 by Oleg Polakow</em></div><div class="docs-prevnext"><a class="docs-prev button" href="/datadocs/docs/deep-learning/cnn-architectures"><span class="arrow-prev">← </span><span>CNN Architectures</span></a><a class="docs-next button" href="/datadocs/docs/deep-learning/face-recognition"><span>Face Recognition</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#yolo">YOLO</a><ul class="toc-headings"><li><a href="#yolov1">YOLOv1</a></li><li><a href="#yolov2">YOLOv2</a></li><li><a href="#yolov3">YOLOv3</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><a href="https://opensource.facebook.com/" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/datadocs/img/oss_logo.png" alt="Facebook Open Source" width="170" height="45"/></a><section class="copyright">Copyright © 2019 Oleg Polakow</section></footer></div></body></html>
