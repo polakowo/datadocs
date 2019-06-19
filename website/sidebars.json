@@ -1,0 +1,74 @@
+{
+    "docs": {
+        "Machine Learning": [{
+            "type": "subcategory",
+            "label": "Methods",
+            "ids": [
+                "machine-learning/linear-models",
+                "machine-learning/tree-based-models",
+                "machine-learning/ensemble-methods"
+            ]
+        }, {
+            "type": "subcategory",
+            "label": "Features",
+            "ids": [
+                "machine-learning/eda",
+                "machine-learning/feature-engineering",
+                "machine-learning/advanced-features"
+            ]
+        }, {
+            "type": "subcategory",
+            "label": "Optimization",
+            "ids": [
+                "machine-learning/metric-optimization",
+                "machine-learning/validation-schemes",
+                "machine-learning/hyperopt"
+            ]
+        }, {
+            "type": "subcategory",
+            "label": "Competitions",
+            "ids": [
+                "machine-learning/competitive-ml",
+                "machine-learning/data-leakages"
+            ]
+        }],
+        "Deep Learning": [{
+            "type": "subcategory",
+            "label": "General",
+            "ids": [
+                "deep-learning/deep-learning",
+                "deep-learning/dl-strategy"
+            ]
+        }, {
+            "type": "subcategory",
+            "label": "Fundamentals",
+            "ids": [
+                "deep-learning/backpropagation",
+                "deep-learning/activation-functions",
+                "deep-learning/initialization",
+                "deep-learning/optimization",
+                "deep-learning/regularization"
+            ]
+        }, {
+            "type": "subcategory",
+            "label": "Computer Vision",
+            "ids": [
+                "deep-learning/cnns",
+                "deep-learning/cnn-architectures",
+                "deep-learning/object-detection",
+                "deep-learning/face-recognition",
+                "deep-learning/nst"
+            ]
+        }, {
+            "type": "subcategory",
+            "label": "Natural Language Processing",
+            "ids": [
+                "deep-learning/rnns",
+                "deep-learning/word-embeddings",
+                "deep-learning/nmt",
+                "deep-learning/attention-mechanism",
+                "deep-learning/speech-recognition"
+            ]
+        }]
+    }
+}

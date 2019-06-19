@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg id="svg5353" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" height="300" width="300" version="1.1" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" viewBox="0 0 300 300.00001">
+ <g id="layer1" transform="translate(0 -752.36)">
+  <g id="g6360" transform="translate(0,-15)">
+   <circle id="path5939" stroke-width="3" stroke="#000" cy="814.86" cx="150" r="36" fill="none"/>
+   <circle id="circle4275" cy="828.55" cx="156.75" r="3.75" fill="#0f9640"/>
+   <g fill="#164bc5">
+    <circle id="circle6108" cy="824.33" cx="128.02" r="3.75"/>
+    <circle id="circle6110" cy="816.11" cx="143.25" r="3.75"/>
+    <circle id="circle6112" cy="798.16" cx="143.25" r="3.75"/>
+    <circle id="circle6114" cy="806.21" cx="128.3" r="3.75"/>
+    <circle id="circle6116" cy="836" cx="143.25" r="3.75"/>
+   </g>
+   <g fill="#0f9640">
+    <circle id="circle6118" cy="806.77" cx="156.75" r="3.75"/>
+    <circle id="circle6120" cy="801.72" cx="172.1" r="3.75"/>
+    <circle id="circle6124" cy="791.82" cx="156.75" r="3.75"/>
+    <circle id="circle6126" cy="821.9" cx="171.73" r="3.75"/>
+   </g>
+  </g>
+  <path id="path6337" d="m130 830.36-60 114" stroke="#000" stroke-width="2" fill="none"/>
+  <path id="path6339" d="m170 830.36 60 114" stroke="#000" stroke-width="2" fill="none"/>
+  <text id="text6341" style="word-spacing:0px;letter-spacing:0px" xml:space="preserve" font-size="40px" y="867.36218" x="36.821918" font-family="sans-serif" line-height="125%" fill="#000000"><tspan id="tspan6343" font-size="22.5px" y="867.36218" x="36.821918">x &lt; 2</tspan></text>
+  <text id="text6345" style="word-spacing:0px;letter-spacing:0px" line-height="125%" font-size="40px" y="867.36218" x="208.27979" font-family="sans-serif" xml:space="preserve" fill="#000000"><tspan id="tspan6347" font-size="22.5px" y="867.36218" x="208.27979">x ≥ 2</tspan></text>
+  <circle id="circle6375" stroke-width="3" stroke="#000" cy="974.86" cx="50" r="36" fill="none"/>
+  <g fill="#164bc5">
+   <circle id="circle6379" cy="984.33" cx="28.017" r="3.75"/>
+   <circle id="circle6381" cy="976.11" cx="43.25" r="3.75"/>
+   <circle id="circle6385" cy="966.21" cx="28.297" r="3.75"/>
+   <circle id="circle6387" cy="996" cx="43.25" r="3.75"/>
+  </g>
+  <circle id="circle6399" stroke-width="3" stroke="#000" cy="974.86" cx="250" r="36" fill="none"/>
+  <g fill="#0f9640">
+   <circle id="circle6401" cy="988.55" cx="256.75" r="3.75"/>
+   <circle id="circle6413" cy="966.77" cx="256.75" r="3.75"/>
+   <circle id="circle6415" cy="961.72" cx="272.1" r="3.75"/>
+   <circle id="circle6417" cy="951.82" cx="256.75" r="3.75"/>
+   <circle id="circle6419" cy="981.9" cx="271.73" r="3.75"/>
+  </g>
+  <text id="text7232" style="word-spacing:0px;letter-spacing:0px" xml:space="preserve" font-size="40px" y="1040.6038" x="24.599609" font-family="sans-serif" line-height="125%" fill="#164bc5"><tspan id="tspan7234" font-size="22.5px" y="1040.6038" x="24.599609" fill="#164bc5">Blue</tspan></text>
+  <text id="text7240" style="word-spacing:0px;letter-spacing:0px" line-height="125%" font-size="40px" y="1040.6038" x="216.25549" font-family="sans-serif" xml:space="preserve" fill="#0f9640"><tspan id="tspan7242" font-size="22.5px" y="1040.6038" x="216.25549" fill="#0f9640">Green</tspan></text>
+  <circle id="circle75056" cy="958.41" cx="43.25" r="3.75" fill="#164bc5"/>
+ </g>
+</svg>
