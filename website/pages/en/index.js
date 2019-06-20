@@ -59,8 +59,8 @@ class HomeSplash extends React.Component {
     );
 
     const GitHubButton = () => (
-        <section class="github-section">
-            <a class="github-button" href="https://github.com/polakowo/datadocs" data-show-count="true">datadocs</a>
+        <section className="github-section">
+            <a className="github-button" href="https://github.com/polakowo/datadocs" data-show-count="true">datadocs</a>
         </section>
     )
 

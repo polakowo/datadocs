@@ -24,8 +24,8 @@ class Footer extends React.Component {
     render() {
         return (
             <footer className="nav-footer" id="footer">
-                <div class="brand-box">
-                    <div class="brand">
+                <div className="brand-box">
+                    <div className="brand">
                         <a
                             href="https://www.tum.de/nc/en/"
                             target="_blank"
@@ -38,7 +38,7 @@ class Footer extends React.Component {
                             />
                         </a>
                     </div>
-                    <div class="brand">
+                    <div className="brand">
                         <a
                             href="https://opensource.facebook.com/"
                             target="_blank"

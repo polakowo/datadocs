@@ -45,7 +45,7 @@ $$L2=\large{\lambda\sum{\|\|W\|\|_2^2}}$$
 - The fact that L1 can be used for noisy data is very appealing and is exploited a lot.
 - The general frustration with the L1 norm is usually directed toward the fact that it is not differentiable and is not attractive to use in an optimization setting.
 - L2 scores are usually overall better than L1.
-- For more details, see [Linear Models](machine-learning/LinearModels.md).
+- For more details, see [Linear Models](machine-learning/linear-models.md).
 
 ## Weight decay
 

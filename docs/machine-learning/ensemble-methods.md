@@ -106,7 +106,7 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/machine-l
     - Update the strong learner by adding the new weak learner multiplied by its weight.
     - Compute new observations weights that expresse which observations to focus on.
     $$\large{H(x)=sign{\left(\sum_{t=1}^{T}{a_th_t(x)}\right)}}$$
-- See [Tree-Based Models](TreeBasedModels.md)
+- See [Tree-Based Models](machine-learning/tree-based-models.md)
 
 #### Gradient boosting:
 - Gradient boosting doesn’t modify the sample distribution:
@@ -120,7 +120,7 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/machine-l
     - Fit a weak learner \\(h_t\\) to the pseudo-residuals (negative gradient of the loss)
     - Add the predictions of \\(h_t\\) multiplied by the step size \\(\alpha\\) (learning rate) to the predictions of ensemble \\(H_{t-1}\\).
     $$\large{H_t(x)=H_{t-1}(x)+\alpha{h_t(x)}}$$
-- See [Tree-Based Models](TreeBasedModels.md)
+- See [Tree-Based Models](machine-learning/tree-based-models.md)
 
 ## Stacking
 

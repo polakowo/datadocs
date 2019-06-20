@@ -49,7 +49,7 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/deep-lear
 - It means converting data to a feature representation where certain properties can be represented by notions of distance (such as semantic similarity)
 - In the embedding space, similar features should be close together and form well-separated clusters.
 - Furthermore, an SVM classifier or any other simple multi-class classifier can be trained to cluster vector embeddings effectively.
-- For further details, see [Word Embeddings](deep-learning/WordEmbeddings.md)
+- For further details, see [Word Embeddings](deep-learning/word-embeddings.md)
 
 <img width=350 src="/datadocs/assets/olivetti_tsne.jpg"/>
 <center><a href="https://lvdmaaten.github.io/tsne/" style="color: lightgrey">Credit</a></center>
