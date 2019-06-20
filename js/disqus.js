@@ -22,14 +22,20 @@ function loadDisqus() {
 }
 
 function maybeLoadDisqus() {
-    const hr = document.createElement("hr");
-    const disqusContainer = document.createElement("disqus");
-    disqusContainer.id = "disqus_thread";
-    const postContainer = document.querySelectorAll(".post article")[0];
     const isDocsPage = PAGE_IDENTIFIER.indexOf("/docs") !== -1;
-    if (postContainer && isDocsPage) {
-        postContainer.appendChild(hr);
-        postContainer.appendChild(disqusContainer);
+    if (isDocsPage) {
+        const hr = document.createElement("hr");
+        const disqusContainer = document.createElement("disqus");
+        disqusContainer.id = "disqus_thread";
+        const postContainer = document.querySelectorAll(".docs-prevnext")[0];
+        if (!postContainer) {
+            postContainer = document.querySelectorAll(".docLastUpdate")[0];
+        }
+        if (!postContainer) {
+            postContainer = document.querySelectorAll(".post")[0];
+        }
+        postContainer.parentElement.appendChild(hr);
+        postContainer.parentElement.appendChild(disqusContainer);
         loadDisqus();
     }
 }
