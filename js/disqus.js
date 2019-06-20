@@ -27,14 +27,7 @@ function maybeLoadDisqus() {
         const hr = document.createElement("hr");
         const disqusContainer = document.createElement("disqus");
         disqusContainer.id = "disqus_thread";
-        const postContainer = document.querySelectorAll(".docs-prevnext")[0];
-        if (!postContainer) {
-            postContainer = document.querySelectorAll(".docLastUpdate")[0];
-        }
-        if (!postContainer) {
-            postContainer = document.querySelectorAll(".post")[0];
-        }
-        postContainer.parentElement.appendChild(hr);
+        const postContainer = document.querySelectorAll(".post")[-1];
         postContainer.parentElement.appendChild(disqusContainer);
         loadDisqus();
     }
