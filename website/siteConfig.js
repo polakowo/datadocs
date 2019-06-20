@@ -93,7 +93,9 @@ const siteConfig = {
         'https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js',
         '/datadocs/js/code-block-buttons.js',
         '/datadocs/js/disqus.js',
-        'https://buttons.github.io/buttons.js'
+        'https://buttons.github.io/buttons.js',
+        'https://www.googletagmanager.com/gtag/js?id=UA-142521178-1',
+        '/datadocs/js/gtag.js'
     ],
     stylesheets: [],
 
