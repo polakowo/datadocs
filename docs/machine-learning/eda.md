@@ -18,7 +18,7 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/machine-l
 - Never make a conclusion based on one single plot.
 - Find an explanation for all extraordinary things you observe.
 
-#### Anonymized data:
+#### Anonymized data
 
 - Guess the type of the columns (which is requirement for modelling):
     - Integer features (with a large number of unique values) are likely to be counts.
@@ -34,7 +34,8 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/machine-l
 
 ## Univariate analysis
 
-#### Histogram and density plot:
+#### Histogram and density plot
+
 - A histogram groups values into bins of equal value range.
 - Histograms are best suited for looking at the distribution of numerical variables.
 - The shape of the histogram may contain clues about the underlying distribution type.
@@ -44,7 +45,8 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/machine-l
 - Kernel density plots can be considered a smoothed version of the histogram.
 - Choice of number and width of bins techniques can heavily influence the appearance of a histogram, and choice of bandwidth can heavily influence the appearance of a kernel density estimate.
 
-#### Box plot:
+#### Box plot
+
 - A box plot is a visual representation of numerical data through their quartiles (a five-number summary).
 - They can indicate the degree of dispersion (spread) and skewness in the data, and show outliers.
 - They take up less space and hence are useful for comparing distributions.
@@ -53,14 +55,16 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/machine-l
     - Box plot may produce the same results for symmetric peaks and a uniform distribution.
     - Always use in conjunction with a histogram.
 
-#### Bar plot:
+#### Bar plot
+
 - The bar plots are usually used for categorical features and counts.
 - The bar plot is a graphical representation of the frequency table.
 - Useful for plotting multiple features side by side.
 
 ## Multivariate analysis
 
-#### Scatter plot:
+#### Scatter plot
+
 - The scatter plot displays values of two numerical variables as Cartesian coordinates in 2D space.
 - We can incorporate a third (categorical) variable by using colors or size of the points.
     - Numeric values can be displayed by a color map.
@@ -78,16 +82,19 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/machine-l
     - Smoothing can help to discover the pattern.
 - Can be used in conjunction with histograms on both sides (`jointplot`)
 
-#### Scatterplot matrix:
+#### Scatterplot matrix
+
 - The diagonal contains the histograms while the scatter plots for each pair of variables fill the rest of the matrix.
 - Helps draw quick conclusions about the data.
 
-#### Correlation matrix:
+#### Correlation matrix
+
 - Generate new features based on feature groups (visible as blocks in the correlation matrix)
 - Reorder columns and rows for better interpretation.
     - [Biclustering algorithms for sorting corrplots](http://scikit-learn.org/stable/auto_examples/bicluster/plot_spectral_biclustering.html)
 
-#### Dimensionality reduction:
+#### Dimensionality reduction
+
 - Create a t-SNE representation of the (normalized) data.
 - Observe whether points are concentrated in a few areas of the lower dimensional feature space.
 - Color by target to approximate the separation.

@@ -25,7 +25,8 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/machine-l
 
 ### MSE-based metrics
 
-#### MSE:
+#### MSE
+
 $$\large{MSE=\frac{1}{n}\sum_{i=1}^{n}{(y_i-\hat{y}_i)^2}}$$
 
 - Mean Squared Error (MSE) measures the average squared difference between the estimated values and what is estimated. 
@@ -44,7 +45,8 @@ $$\large{MSE=\frac{1}{n}\sum_{i=1}^{n}{(y_i-\hat{y}_i)^2}}$$
     - MSE can be directly optimized and is implemented by most libraries.
     - Synonyms: *L2 Loss*
 
-#### RMSE:
+#### RMSE
+
 $$\large{RMSE=\sqrt{\frac{1}{n}\sum_{i=1}^{n}{(y_i-\hat{y}_i)^2}}}$$
 
 - Root Mean Square Error (RMSE) is introduced to make scale of the errors to be the same as the scale of targets.
@@ -52,7 +54,8 @@ $$\large{RMSE=\sqrt{\frac{1}{n}\sum_{i=1}^{n}{(y_i-\hat{y}_i)^2}}}$$
 - Every minimizer of MSE is also a minimizer for RMSE and vice versa, since the square root is an non-decreasing function.
 - Even though RMSE and MSE are similar in terms of optimization, they are not interchangeable for gradient-based methods: Travelling along RMSE gradient is equivalent to traveling along MSE gradient but with a different flowing rate.
 
-#### (R)MSLE:
+#### (R)MSLE
+
 $$\large{L(y,\hat{y})=\frac{1}{n}\sum_{i=0}^{n}{(\log{(y_i+1)}-\log{(\hat{y}_i+1)})^2}}$$
 
 - Mean Squared Logarithmic Error (MSLE) is MSE calculated on logarithmic scale.
@@ -73,7 +76,8 @@ $$MSLE(30000, 20000)=0.03100$$
     - Fit a model with MSE loss
     - Transform predictions back with \\(\hat{y_i}=\exp{\hat{z_i}}-1\\)
 
-#### R squared:
+#### R squared
+
 $$\large{R^2=1-\frac{SS_{\text{RES}}}{SS_{\text{TOT}}}=\frac{\sum_i{(y_i-\hat{y}_i)^2}}{\sum_i{(y_i-\overline{y}_i)^2}}}$$
 
 - The coefficient of determination, or \\(R^2\\) measures how much the model is better than the naive MSE baseline.
@@ -90,7 +94,8 @@ $$\large{R^2=1-\frac{SS_{\text{RES}}}{SS_{\text{TOT}}}=\frac{\sum_i{(y_i-\hat{y}
 
 ### MAE-based metrics
 
-#### MAE:
+#### MAE
+
 $$\large{MAE=\frac{\sum_{i=1}^{n}{\|y_i-\hat{y}_i\|}}{n}}$$
 
 - MAE measures the average magnitude of the errors in a set of predictions, without considering their direction.
@@ -109,7 +114,8 @@ $$\large{MAE=\frac{\sum_{i=1}^{n}{\|y_i-\hat{y}_i\|}}{n}}$$
     - MAE criterion is slower than MSE criterion
     - Synonyms: *L1 Loss, Median regression*
 
-#### MAE vs. RMSE:
+#### MAE vs. RMSE
+
 - RMSE has a tendency to be increasingly larger than MAE as the test sample size increases.
 - RMSE has the benefit of penalizing large errors more.
 - MAE is the most robust choice in respect to outliers.
@@ -123,7 +129,8 @@ $$\large{MAE=\frac{\sum_{i=1}^{n}{\|y_i-\hat{y}_i\|}}{n}}$$
     <center><img width=400 src="/datadocs/assets/vXMgz.png"/></center>
     <center><a href="https://heartbeat.fritz.ai/5-regression-loss-functions-all-machine-learners-should-know-4fb140e9d4b0" style="color: lightgrey">Credit</a></center>
 
-#### MAPE:
+#### MAPE
+
 $$\large{MAPE=100\frac{1}{n}\sum_{i=1}^{n}{\frac{\|y_i-\hat{y}_i\|}{y_i}}}$$
 
 - Mean Absolute Percentage Error (MAPE) or Mean Absolute Deviation (MAD) is relative MAE (in %).
@@ -161,7 +168,8 @@ $$\large{Accuracy=\frac{1}{n}\sum_{i=1}^{n}{[y_i=\hat{y}_i]}}$$
     <center><img width=400 src="/datadocs/assets/RUIJ4.png"/></center>
     <center><a href="https://stackoverflow.com/questions/47716601/classification-modified-huber-loss-how-is-it-more-tolerant-to-outliers" style="color: lightgrey">Credit</a></center>
 
-#### Dealing with imbalanced data:
+#### Dealing with imbalanced data
+
 - Resampling:
     - Undersampling: sample from the majority class
     - Oversampling: replicate points from the minority class

@@ -44,14 +44,16 @@ $$\large{L_{\text{total}}(S,C,G)=\alpha L_{\text{content}}(C,G)+\beta L_{\text{s
 <img width=600 src="/datadocs/assets/1*YHpizJPE2QzXLPUVbD28Tg.png"/>
 <center><a href="https://medium.com/data-science-group-iitr/artistic-style-transfer-with-convolutional-neural-network-7ce2476039fd" style="color: lightgrey">Credit</a></center>
 
-#### Content loss:
+#### Content loss
+
 - Pass both the pastiche image and the content image through some layers of the network and find the Euclidean distance between the intermediate representations of those images.
 
 $$\large{L_{\text{content}}(C,G)=\frac{1}{2}\sum_{l}^L{\sum_{ij}{(C_{ij}-G_{ij})^2}}}$$
 <center>where</center>
 <center>\\(L\\): number of layers</center>
 
-#### Style loss:
+#### Style loss
+
 - The style loss is the distance between the Gram matrices of the pastiche and style.
 - A Gram matrix results from multiplying a matrix with the transpose of itself.
 - The terms of the Gram matrix are proportional to the covariances of corresponding sets of features (channels), and thus captures information about which features tend to activate together.

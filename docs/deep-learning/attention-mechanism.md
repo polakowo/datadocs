@@ -57,10 +57,12 @@ $$\large{c_t=\sum_{i=1}{\alpha_{ti}h_i}}$$
 
 - Each decoder output now depends not just on the last decoder state, but on a weighted combination of all the input states. While the context vector has access to the entire input sequence, we don’t need to worry about forgetting.
 
-#### Pros:
+#### Pros
+
 - Attention overcomes the information bottleneck in CNNs and RNNs by accessing the whole input.
 - Attention weights help us visualize what the model deems important. 
     - We can render attention as a heat map over input data such as words and pixels, and thus communicate to human operators how a neural network made a decision.
 
-#### Cons:
+#### Cons
+
 - That advance, like many increases in accuracy, comes at the cost of increased computational demands.

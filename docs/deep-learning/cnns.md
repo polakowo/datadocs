@@ -50,7 +50,8 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/deep-lear
 <a href="https://neurohive.io/en/popular-networks/alexnet-imagenet-classification-with-deep-convolutional-neural-networks/" style="color: lightgrey">Credit</a>
 </center>
 
-#### Common patterns:
+#### Common patterns
+
 - As you go deeper, the height and width of matrices decrease and the number of channels (depth) increases, because each layer extracts a feature from the matrix and stores it in a separate channel
 - Usually, the CONV layers preserve the spatial size of their input, while the POOL layers alone are in charge of down-sampling the volumes spatially.
 - Activation size tends to go down gradually.
@@ -71,7 +72,8 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/deep-lear
     - In NLP you could have a channel for the same sentence represented in different languages, or phrased in different ways.
 - Generally, the number of channels can be in the hundreds, rather than just RGB or RGBA.
 
-#### Sizing pattern:
+#### Sizing pattern
+
 - The input layer (that contains the image) should be divisible by 2 many times:
     - Common numbers include 32 (e.g. CIFAR-10), 64, 96 (e.g. STL-10), or 224 (e.g. common ImageNet ConvNets), 384, and 512.
 
@@ -108,7 +110,8 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/deep-lear
 
 - During the training phase, a CNN automatically learns the values of its kernels.
 
-#### Pros:
+#### Pros
+
 - Location Invariance: 
     - Let’s say you want to classify whether or not there’s an elephant in an image. Because you are sliding your filters over the whole image you don’t really care where the elephant occurs.
 - Compositionality: 
@@ -124,7 +127,8 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/deep-lear
     - In each layer, each output value depends only on a small number of inputs
 - Convolutions are a central part of computer graphics and implemented on a hardware level on GPUs.
 
-#### Sizing pattern:
+#### Sizing pattern
+
 - The conv layers should use small filters (e.g. 3x3 or at most 5x5), use a stride of \\(S=1\\), and crucially, padding the input volume with zeros in such way that the conv layer does not alter the spatial dimensions of the input.
 - A larger kernel is preferred for information that is distributed more globally, and a smaller kernel is preferred for information that is distributed more locally.
 
@@ -145,16 +149,19 @@ $$\large{\text{output height}=\frac{H-F_h+2P}{S_h}+1}$$
 <center>\\(P\\): padding,</center>
 <center>\\(S\\): stride size</center>
 
-#### Depth:
+#### Depth
+
 - The number of filters to use for the convolution operation.
 - We refer to a set of neurons that are all looking at the same region of the input as a depth column.
 - The more number of filters we have, the more image features get extracted.
 
-#### Stride:
+#### Stride
+
 - Stride defines by how much to shift the filter at each step.
 - A larger stride size leads to fewer applications of the filter and produce smaller output volumes spatially.
 
-#### Zero-padding:
+#### Zero-padding
+
 - Sometimes, it is convenient to pad the input matrix with zeros around the border, so that we can apply the filter to bordering elements of our input image matrix. 
 - The nice feature of zero padding is that it will allow us to control the spatial size of the output volumes.
 - Adding zero-padding is also called wide convolution, and not using zero-padding would be a narrow convolution.
@@ -176,17 +183,20 @@ $$\large{\text{output height}=\frac{H-F_h+2P}{S_h}+1}$$
 
 - Spatial pooling can be of different types. Max pooling used much more often than other types.
 
-#### Pros:
+#### Pros
+
 - Makes the input representations (feature dimension) smaller and more manageable.
 - Reduces the number of parameters and computations in the network, therefore, controlling overfitting.
 - Makes the network invariant to small transformations, distortions and translations in the input image.
 
-#### Cons:
+#### Cons
+
 - A larger stride in CONV layers can be used to discard pooling layers. 
 - Discarding pooling layers has also been found to be important in training good generative models, such as variational autoencoders (VAEs) or generative adversarial networks (GANs). 
 - It seems likely that future architectures will feature very few to no pooling layers.
 
-#### Sizing pattern:
+#### Sizing pattern
+
 - The most common setting is to use max-pooling with 2x2 receptive fields (i.e. \\(F=2\\)), and with a stride of 2 (i.e. \\(S=2\\)). 
     - Note that this discards exactly 75% of the activations in an input volume. 
 - It is very uncommon to see receptive field sizes for max pooling that are larger than 3 because the pooling is then too lossy and aggressive - this usually leads to worse performance.
@@ -196,7 +206,8 @@ $$\large{\text{output height}=\frac{H-F_h+2P}{S_h}+1}$$
 - The purpose of the fully-connected layer is to perform classification (or regression) tasks.
 - Apart from classification, adding a fully-connected layer is also a (usually) cheap way of learning non-linear combinations of these features.
 
-#### CONV vs FC:
+#### CONV vs FC
+
 - It is worth noting that the only difference between FC and CONV layers is that the neurons in the CONV layer are connected only to a local region in the input, and that many of the neurons in a CONV volume share parameters. 
 - It turns out that it’s possible to convert between FC and CONV layers:
     - For any CONV layer there is an FC layer that implements the same forward function. 

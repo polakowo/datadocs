@@ -13,7 +13,8 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/deep-lear
 - [How to do Speech Recognition with Deep Learning](https://medium.com/@ageitgey/machine-learning-is-fun-part-6-how-to-do-speech-recognition-with-deep-learning-28293c162f7a)
 - [Combining CNN and RNN for spoken language identification](https://yerevann.github.io/2016/06/26/combining-cnn-and-rnn-for-spoken-language-identification/)
 
-#### Challenges:
+#### Challenges
+
 - The big problem is that speech varies in speed:
     - Automatically aligning audio files of various lengths to a fixed-length piece of text turns out to be hard.
 - Accented speech and noisy speech (with heavy environmental noise) are still very challenging.
@@ -28,13 +29,15 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/deep-lear
     - But it turns out that the human ear is more sensitive to variations in low frequencies than in high frequencies (Mel-filterbanks logarithmic scale can be applied here).
 - Using a spectrogram and optionally a 1D conv layer is a common pre-processing step prior to passing audio data to an RNN, GRU or LSTM.
 
-#### Digital sampling:
+#### Digital sampling
+
 - According to the [Nyquist theorem](https://en.wikipedia.org/wiki/Nyquist–Shannon_sampling_theorem), we can use math to perfectly reconstruct the original sound wave from the spaced-out samples - as long as we sample at least twice as fast as the highest frequency we want to record.
 
 <img width=400 src="/datadocs/assets/Signal_Sampling.png"/>
 <center><a href="https://en.wikipedia.org/wiki/Sampling_(signal_processing)" style="color: lightgrey">Credit</a></center>
 
-#### Spectrogram:
+#### Spectrogram
+
 - Trying to recognize speech patterns by processing raw samples directly is difficult: 
     - There are some low sounds, mid-range sounds, and high-pitched sounds sprinkled in. For example, a piano music is as a combination of musical notes mixed together into one complex sound. 
     - Also, even human ear doesn't process raw wave forms, but different frequencies.

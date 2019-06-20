@@ -22,14 +22,16 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/deep-lear
 <img width=350 src="/datadocs/assets/sigmoid.png"/>
 <center><a href="https://mnsgrg.com/2017/12/21/xavier-initialization/" style="color: lightgrey">Credit</a></center>
 
-#### Vanishing gradients:
+#### Vanishing gradients
+
 - The weight update is minor and results in slower convergence:
     - This makes the optimization of the loss function slow. 
     - In the worst case, this may completely stop the neural network from training further.
     - In case of sigmoid and tanh, if weights are large then the gradients will be vanishingly small.
 - With ReLU vanishing gradients are generally not a problem.
 
-#### Exploding gradients:
+#### Exploding gradients
+
 - This may result in oscillating around the minima or even overshooting the optimum again and again and the model will never learn. 
 - Another impact of exploding gradients is that huge values of the gradients may cause number overflow resulting in incorrect computations or introductions of NaN’s. 
     - This might also lead to the loss taking the value NaN.

@@ -25,7 +25,8 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/deep-lear
 - YOLO uses a single CNN network for both classification and localizing the object using bounding boxes.
 - [You Only Look Once: Unified, Real-Time Object Detection (2015)](https://arxiv.org/pdf/1506.02640.pdf)
 
-#### Segmentation:
+#### Segmentation
+
 - The input image is divided into an SxS grid of cells.
 - For each object that is present on the image, one grid cell is said to be “responsible” for predicting it (that is, the cell where the center of the object falls into)
 - The division is done with the convolution sliding window, which is more efficient than classical sliding windows detection algorithm, because it shares the computations for each of the sliding windows.
@@ -36,7 +37,8 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/deep-lear
 - Unlike sliding window and region proposal-based techniques, YOLO sees the entire image during training and test time so it implicitly encodes contextual information about classes as well as their appearance.
 - The (effective) receptive field of those output neurons is much larger than the cell and actually cover the entire image.
 
-#### Prediction:
+#### Prediction
+
 - YOLO predicts multiple bounding boxes per grid cell.
 - A bounding box describes the rectangle that encloses an object.
 - For each grid cell:
@@ -47,7 +49,8 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/deep-lear
 <img width=500 src="/datadocs/assets/1*m8p5lhWdFDdapEFa2zUtIA.jpeg"/>
 <center><a href="https://arxiv.org/pdf/1506.02640v5.pdf" style="color: lightgrey">Credit</a></center>
 
-#### Bounding boxes:
+#### Bounding boxes
+
 - Each bounding box contains 5 elements: \\((x, y, w, h)\\) and a box confidence score.
 - The \\((x, y)\\) coordinates represent the center of the box, relative to the grid cell location. 
     - These coordinates are normalized to fall between zero and one. 
@@ -55,10 +58,12 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/deep-lear
 - The confidence score reflects how likely the box contains an object (objectness) and how accurate is the bounding box. 
     - If no object exists in that cell, the confidence score should be zero.
 
-#### Conditional class probabilities:
+#### Conditional class probabilities
+
 - The conditional class probability is the probability that the detected object belongs to a particular class (one probability per category for each cell)
 
-#### Evaluation:
+#### Evaluation
+
 - The class confidence score for each prediction box measures the confidence on both the classification and the localization.
 - If no object exists in that cell, the confidence score should be zero. 
 - Otherwise we want the confidence score to equal the intersection over union (IOU) between the predicted box and the ground truth.
@@ -68,7 +73,8 @@ $$\text{conditional class probability}=P_r(\text{class}_i\|\text{object})$$
 $$\text{class confidence score}=P_r(\text{class}_i)\cdot{\text{IoU}}$$
 $$\text{class confidence score}=\text{box confidence score}\times\text{conditional class probability}$$
 
-#### Intersection over union (IOU):
+#### Intersection over union (IOU)
+
 - Intersection over Union, or Jaccard index, is an evaluation metric used to measure the accuracy of an object detector.
 - It computes size of intersection and divide it by the union. More generally, IOU is a measure of the overlap between two bounding boxes.
 - The higher the IOU the better is the accuracy.
@@ -77,7 +83,8 @@ $$\text{class confidence score}=\text{box confidence score}\times\text{condition
 <img width=500 src="/datadocs/assets/iou.png"/>
 <center><a href="https://www.coursera.org/learn/convolutional-neural-networks" style="color: lightgrey">Credit</a></center>
 
-#### Non-maximum suppression (NMS):
+#### Non-maximum suppression (NMS)
+
 - NMS eliminates some candidates that are in fact different detections of the same object, without removing the candidates for different objects.
 
 <img width=300 src="/datadocs/assets/nms_algo.jpg"/>
@@ -89,7 +96,8 @@ $$\text{class confidence score}=\text{box confidence score}\times\text{condition
   - discard any remaining bounding boxes with IOU value above some threshold (0.5)
 - Non-maximal suppression adds 2-3% in mAP.
 
-#### Loss function:
+#### Loss function
+
 - YOLO uses sum-squared error between the predictions and the ground truth to calculate loss. 
 - The loss function is composed of
   - the classification loss,
@@ -97,7 +105,8 @@ $$\text{class confidence score}=\text{box confidence score}\times\text{condition
   - and the confidence loss (the objectness of the box).
 - We can put more emphasis on any of the terms by multiplying it with a factor.
 
-#### Pros:
+#### Pros
+
 - Fast:
     - Good for real-time processing.
 - Predictions (object locations and classes) are made from one single network:
@@ -118,7 +127,8 @@ $$\text{class confidence score}=\text{box confidence score}\times\text{condition
 - Combine labels in different datasets to form a tree-like structure WordTree.
 - [YOLO9000: Better, Faster, Stronger (2016)](https://arxiv.org/pdf/1612.08242.pdf)
 
-#### Anchor boxes:
+#### Anchor boxes
+
 - After doing some clustering studies on ground truth labels, it turns out that most bounding boxes have certain height-width ratios. So instead of directly predicting a bounding box, YOLOv2 (and v3) predict off-sets from a predetermined set of boxes with particular height-width ratios - those predetermined set of boxes are the anchor boxes.
 
 <img width=250 src="/datadocs/assets/0*SX5qJIuV44XvBXju.jpg"/>
@@ -136,7 +146,8 @@ $$\text{class confidence score}=\text{box confidence score}\times\text{condition
 - Another reason is to allow the model to specialize better.
 - Anchor boxes decrease mAP slightly from 69.5 to 69.2 but the recall improves from 81% to 88%. i.e. even the accuracy is slightly decreased but it increases the chances of detecting all the ground truth objects.
 
-#### Pros:
+#### Pros
+
 - Faster
 - More Accurate (73.4 mAP on Pascal dataset)
 - Can detect up to 9000 classes (20 before)
@@ -148,28 +159,34 @@ $$\text{class confidence score}=\text{box confidence score}\times\text{condition
 
 - [YOLOv3: An Incremental Improvement (2018)](https://arxiv.org/pdf/1804.02767.pdf)
 
-#### Detection at three scales:
+#### Detection at three scales
+
 - The most salient feature of v3 is that it makes prediction at three scales, which are precisely given by downsampling the dimensions of the input image by 32, 16 and 8 respectively. 
 - The detection is done by applying 1x1 detection kernels on feature maps of three different sizes at three different places in the network.
 
-#### Detecting smaller objects:
+#### Detecting smaller objects
+
 - Detections at different layers helps address the issue of detecting small objects, a frequent complaint with YOLOv2.
 - The upsampled layers concatenated with the previous layers help preserve the fine grained features which help in detecting small objects.
 
-#### More anchor boxes:
+#### More anchor boxes
+
 - YOLOv3, in total uses 9 anchor boxes:
     - Three for each scale. 
     - If you’re training YOLO on your own dataset, you should go about using K-Means clustering to generate 9 anchors.
 - YOLOv3 predicts 10x the number of boxes predicted by YOLOv2.
 
-#### Logistic regression:
+#### Logistic regression
+
 - Squared errors have been replaced by cross-entropy error terms. In other words, object confidence and class predictions are now predicted through logistic regression.
 
-#### Multilabel classification:
+#### Multilabel classification
+
 - YOLOv3 now performs multilabel classification for objects detected in images.
 - Softmaxing classes rests on the assumption that classes are mutually exclusive, or in simple words, if an object belongs to one class, then it cannot belong to the other. However, when we have classes like Person and Women in a dataset, then the above assumption fails.
 
-#### Pros:
+#### Pros
+
 - YOLOv3 performs at par with other state of art detectors like RetinaNet, while being considerably faster.
 
 <img width=450 src="/datadocs/assets/1*YpNE9OQeshABhBgjyEXlLA.png"/>

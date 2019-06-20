@@ -20,10 +20,12 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/deep-lear
 
 -  In the context of learning, backpropagation is commonly used by the gradient descent optimization algorithm to adjust the weight of neurons by calculating the gradient of the loss function.
 
-#### Pros:
+#### Pros
+
 - The backpropagation algorithm is more accurate and cheaper than estimating gradients numerically.
 
-#### Best practices:
+#### Best practices
+
 - Backpropagation is computing gradients with respect to the cost, so anything in any layer that influences the ultimate cost should have a non-zero gradient.
 
 ## Gradient checking
@@ -33,7 +35,8 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/deep-lear
 - Gradient checking verifies closeness between the gradients from backpropagation and the numerical approximation of the gradient (computed using forward propagation).
 - [Debugging: Gradient Checking](http://ufldl.stanford.edu/tutorial/supervised/DebuggingGradientChecking/)
 
-#### Procedure:
+#### Procedure
+
 - Use two-sided Taylor approximation which is 2x more precise than one-sided
 - Assuming \\(\epsilon=10^{−4}\\), you’ll usually find that the left- and right-hand sides of the above will agree to at least 4 significant digits (and often many more).
 
@@ -45,7 +48,8 @@ $$\large{g(\theta)\approx\frac{J(\theta+\epsilon)-J(\theta-\epsilon)}{2\times\ep
 
 - If ever we are optimizing over several variables or over matrices, we can always pack these parameters into a long vector and use the same method here to check our derivatives. Then to check i-th parameter, increase/decrease i-th element of the vector by \\(\epsilon\\).
 
-#### Best practices:
+#### Best practices
+
 - There’s a large range of values of \\(\epsilon\\) that should work well, but we don’t set \\(\epsilon\\) to be “extremely” small, say \\(10^{−20}\\), as that would lead to numerical roundoff errors.
 - Gradient checking is slow, so we don't run it in every iteration of training. You would usually run it only to make sure your code is correct, then turn it off and use backprop for the actual learning process.
 - Mostly gradient checking doesn't work with dropout.

@@ -6,6 +6,7 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/machine-l
 ---
 
 ## Goal definition
+
 - To learn more about an interesting problem: 
     - You may want the competition to have a wide discussion on the forums. 
     - For example, if you are interested in data science with application to medicine, try to predict [lung cancer in the Data Science Bowl 2017](https://www.kaggle.com/c/data-science-bowl-2017) or [seizures in long-term human intracranial EEG recordings]((https://www.kaggle.com/c/melbourne-university-seizure-prediction)).
@@ -18,18 +19,21 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/machine-l
     - On the other hand, if there are people with few submissions in the top, that usually means there should be a non-trivial approach to this competition or it's discovered only by few people. 
     - If leaderboard mostly consists of teams with only one participant, you'll probably have enough chances if you gather a good team.
 
-#### Research papers:
+#### Research papers
+
 - Read scientific articles on the topic of the competition.
 - This can get you ideas about ML-related things (for example, how to optimize AUC).
 - Way to get familiar with problem domain (especially useful for feature generation).
 
-#### Past solutions:
+#### Past solutions
+
 - http://ndres.me/kaggle-past-solutions/
 - https://www.kaggle.com/wiki/PastSolutions
 - http://www.chioka.in/kaggle-competition-solutions/
 - https://github.com/ShuaiW/kaggle-classification/
 
 ## Pipeline
+
 - Never join a competition at its very beginning:
     - It happens that a competition starts and someone finds a bug in the data.
 - Understand the problem:
@@ -64,6 +68,7 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/machine-l
 - Select the best on LB and the best submission locally (or the most diverse one).
 
 ### Working with ideas
+
 - Organize ideas in some structure: 
     - What things could work here? What approaches you may want to take? 
 - After you're done, read forums and highlight interesting posts and topics.
@@ -75,6 +80,7 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/machine-l
     - Is there some hidden data structure we didn't notice before? The ability to analyze the work and derive conclusions will get you on the right track to reveal hidden data patterns and leaks.
 
 ### Data loading
+
 - Pay attention to optimal usage of computational resources to save a lot of time later.
 - Running an experiment often requires a lot of kernel restarts which leads to reloading data: 
     - Do basic preprocessing and convert *csv* files into *hdf5* (`pandas`) or *npy* (`numpy`) for faster loading.
@@ -86,6 +92,7 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/machine-l
     - Allows performing feature engineering on each category separately.
 
 ### Feature engineering
+
 - The type of problem defines the type of feature engineering:
     - Image classification: Scaling, resizing, smoothing, data augmentation ([Previous Data Science Bowls](https://www.kaggle.com/c/data-science-bowl-2018))
     - Sound classification: Fourier transform, MFCC, spectograms, scaling ([TensorFlow Speech Recognition Challenge](https://www.kaggle.com/c/tensorflow-speech-recognition-challenge))
@@ -106,6 +113,7 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/machine-l
     - Apply some statistical tests.
 
 ### Modeling
+
 - For tabular datasets GBMs work best, while for unstructured data DL work better.
 - The type of problem defines the type of modeling:
     - Image classification: CNNs
@@ -118,6 +126,7 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/machine-l
     - Recommenders: GBMs, Collaborative filtering, NNs, Factorization machines
 
 ### Evaluation
+
 - Extensive evaluation is not always needed: 
     - Even for medium-sized datasets like 100,000 rows you can validate your models with a simple holdout strategy. 
 - Switch to CV only when it is really required:
@@ -129,6 +138,7 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/machine-l
     - Rent a larger server if you're uncomfortable with your computational resources.
 
 ### Ensembling
+
 - Save predictions on internal validation and test sets.
     - From all the models trained before, make sure you save their predictions.
     - *Sometimes team collaboration is just sending csv files.*
@@ -139,6 +149,7 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/machine-l
 - Most of the times ensembling leads only to a marginal score improvement.
 
 ## Code organization
+
 - Set up a separate environment for each competition.
 - If your code is hard to read, you will definitely have problems sooner or later:
     - Keep important code clean.
@@ -164,6 +175,7 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/machine-l
     - [28 Jupyter Notebook tips, tricks and shortcuts](https://www.dataquest.io/blog/jupyter-notebook-tips-tricks-shortcuts/)
 
 ## Collaboration
+
 - Advantages:
     - Collaboration makes more fun.
     - You learn more by sharing knowledge with other participants.

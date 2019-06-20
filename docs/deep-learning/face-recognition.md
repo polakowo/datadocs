@@ -8,12 +8,14 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/deep-lear
 <img width=400 src="/datadocs/assets/t01a5ed8aab97b460c9.jpg"/>
 <center><a href="https://hackernoon.com/building-a-facial-recognition-pipeline-with-deep-learning-in-tensorflow-66e7645015b8" style="color: lightgrey">Credit</a></center>
 
-#### Verification vs. recognition:
+#### Verification vs. recognition
+
 - Facial recognition is a biometric solution that measures unique characteristics about one’s face.
 - Face verification is concerned with validating a claimed identity based on the image of a face, and either accepting or rejecting the identity claim (one-to-one matching)
 - The goal of face identification is to identify a person based on the image of a face (one-to-many matching)
 
-#### Difficulties:
+#### Difficulties
+
 - We cannot use plain classification for face recognition for two reasons: 
     - CNN doesn’t work on a small training sets, since a vanilla cross-entropy-loss softmax classifier severely overfits to the limited data,
     - It is not convenient to retrain the model every time we add a picture of a new person to the system.
@@ -44,7 +46,8 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/deep-lear
 - [Siamese Neural Networks for One-shot Image Recognition (2015)](https://www.cs.cmu.edu/~rsalakhu/papers/oneshot1.pdf)
 - [One Shot Learning and Siamese Networks in Keras](https://sorenbouma.github.io/blog/oneshot/)
 
-#### Embeddings:
+#### Embeddings
+
 - Embedding is projecting input features to a some higher-dimensional space.
 - It means converting data to a feature representation where certain properties can be represented by notions of distance (such as semantic similarity)
 - In the embedding space, similar features should be close together and form well-separated clusters.
@@ -54,7 +57,8 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/deep-lear
 <img width=350 src="/datadocs/assets/olivetti_tsne.jpg"/>
 <center><a href="https://lvdmaaten.github.io/tsne/" style="color: lightgrey">Credit</a></center>
 
-#### Pros:
+#### Pros
+
 - Sharing weights across subnetworks means fewer parameters to train for.
 - Robustness to class imbalance:
     - If the model has learnt well what makes any classes the same, one example of an another class in training may be sufficient to predict this class in the future.
@@ -63,14 +67,16 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/deep-lear
 - Better embeddings:
     - Siamese focus on learning embeddings (in deeper layer) that place same classes close together. Hence, it can learn semantic similarity.
 
-#### Cons:
+#### Cons
+
 - Training involves pairwise learning and thus slower than classification (pointwise learning)
 - Prediction can be slightly slower:
     - It does not readily output class probabilities, but distances from each class.
 
 ### Similarity functions
 
-#### Contrastive loss:
+#### Contrastive loss
+
 - Contrastive loss is a distance-based loss function (as opposed to prediction error-based loss functions)
 - Takes a pair of images and trains the embeddings so that the distance between them is minimized if they're from the same class and is greater than some margin value if they represent different classes.
 
@@ -88,7 +94,8 @@ $$\large{L(X_1,X_2)=(1-Y)\frac{1}{2}d(X_1,X_2)^2+Y\frac{1}{2}\{\max{(0,m-d(X_1,X
     - Or just normalize features using L2 before using contrastive loss and use a constant.
 - [Dimensionality Reduction by Learning an Invariant Mapping (2005)](http://yann.lecun.com/exdb/publis/pdf/hadsell-chopra-lecun-06.pdf)
 
-#### Triplet loss:
+#### Triplet loss
+
 - Triplet loss is one of the loss functions we can use to solve the similarity distance in a Siamese network.
 - The goal of the triplet loss is to make sure that two examples with the same label have their embeddings close together in the embedding space, while two examples with different labels have their embeddings far away.
 - Each training sample is actually composed of a "triplet" of examples: anchor \\(A\\), a positive of the same class as the anchor \\(P\\), and a negative of a different class \\(N\\).
@@ -113,7 +120,8 @@ $$\large{L(A,P,N)=\frac{1}{n}\left(\sum_{i=1}^{n}{\max{(d(A_i,P_i)-d(A_i,N_i)+m,
 - [Triplet Loss and Online Triplet Mining in TensorFlow](https://omoindrot.github.io/triplet-loss)
 - [Siamese and triplet learning with online pair/triplet mining](https://github.com/adambielski/siamese-triplet)
 
-#### Binary classification:
+#### Binary classification
+
 - Binary classification is another way to learn the similarity function, e.g., using Manhattan distance and sigmoid layer
 
 <img width=900 src="/datadocs/assets/Siamese_diagram_2.png"/>

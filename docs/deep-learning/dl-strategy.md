@@ -26,13 +26,15 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/deep-lear
 - Validation/development set: After training the model, validate it on the *dev* set.
 - Test set: When we have the final model, evaluate it on the *test* set in order to get an unbiased estimate of how well our algorithm is doing.
 
-#### Same distribution:
+#### Same distribution
+
 - Make sure that the *dev/test* sets come from the same distribution.
 - Make sure that the *dev/test* sets represent the target accurately that you try to optimize for.
 - Size of the *dev* and *test* sets: Use as much data as possible for *training* and use 1%/1% for the *dev/test* sets, given that your *training* is in the millions.
 - Divide the *training* and *dev/test* sets in such a way that their distributions are similar.
 
 ### Different distributions
+
 - If the data comes from mixed data sources, create the *dev/test* sets with the data that you want to optimize for. For example, if you want to classify sneaker images from a phone, use a *dev* and *test* set consisting only of sneaker photos from mobile phones but feel free to use enhanced sneaker web images to train the network.
 - Create a *training-dev* set with the same data distribution as the *training* set when you have a *dev/test* sets from different data distributions. This step helps you check if you have a variance, bias or data-mismatch problem.
 
@@ -46,10 +48,12 @@ Without data mismatch | With data mismatch
 <img width=400 src="/datadocs/assets/1*-PJMjoc3sPv5LZGCbXFyMg.png"/> | <img width=600 src="/datadocs/assets/errors.png"/>
 <center><a href="https://medium.com/machine-learning-bites/deeplearning-series-how-to-structure-machine-learning-projects-ae484c0919c3" style="color: lightgrey">Credit</a></center>
 
-#### Bayes error:
+#### Bayes error
+
 - Bayes error is the best performance that a classifier can achieve and by definition better than human-level performance.
 
-#### Human-level error:
+#### Human-level error
+
 - Human-level error is important metric to evaluate whether the *training* set suffers from bias.
 - If a group of experts is able to achieve an error rate of 0.7% and a single human achieves 1% error rate, chose 0.7% as the best human-level performance and a value <0.7% as the Bayes error to test the model performance.
 - Surpassing human-level performance:
@@ -60,7 +64,8 @@ Without data mismatch | With data mismatch
 <img width=500 src="/datadocs/assets/1*iSygwQMVlGpyRofod_iotg.png"/>
 <center><a href="https://towardsdatascience.com/how-to-improve-my-ml-algorithm-lessons-from-andrew-ngs-experience-ii-f66926926f88" style="color: lightgrey">Credit</a></center>
 
-#### Training error (Bias):
+#### Training error (Bias)
+
 - High bias means undefitting to the *training* set.
 - When tackling a machine learning project, the first thing we want is good performance on the *training* set.
 - Avoidable bias: Describes the gap between *training* set error and human-level performance.
@@ -83,7 +88,8 @@ Without data mismatch | With data mismatch
 <img width=400 src="/datadocs/assets/Bias vs Variance.png"/>
 <center><a href="https://elitedatascience.com/bias-variance-tradeoff" style="color: lightgrey">Credit</a></center>
 
-#### Dev error (Data mismatch):
+#### Dev error (Data mismatch)
+
 - Carry out manual error analysis and understand the difference between *training* and *dev/test* sets:
     - Analyze 100 misclassifies examples and batch them by reason for misclassification. 
     - To improve the model, it might make sense to train the network to eliminate the reason why it misclassifies a certain type of input, e.g. feed it with more foggy pictures.
@@ -92,7 +98,8 @@ Without data mismatch | With data mismatch
 - While it may be painful to manually engineer training examples, the relative gain in performance you obtain once the parameters and the model fit well are huge and worth your while.
 - Also try a new architecture.
 
-#### Test error:
+#### Test error
+
 - Test error is the degree of overfitting to the *dev* set.
 - Reserve more data for the *dev* set.
 
@@ -139,7 +146,8 @@ Without data mismatch | With data mismatch
 - In order for ensemble methods to be more accurate than any of its individual members, the base learners have to be as accurate as possible and as diverse as possible.
 - [Ensemble Learning to Improve Machine Learning Results](https://blog.statsbot.co/ensemble-learning-d1dcd548e936)
 
-#### Snapshot ensembles:
+#### Snapshot ensembles
+
 - One of the most effective methods is to train a single neural network, converging to several local minima along its optimization path, and save the model parameters. This way, we obtain the seemingly contradictory goal of ensembling multiple neural networks at no additional training cost.
 - [Snapshot Ensembles: Train 1, get M for free](https://arxiv.org/abs/1704.00109)
 

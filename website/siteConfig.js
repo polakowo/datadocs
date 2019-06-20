@@ -72,6 +72,12 @@ const siteConfig = {
     },
     */
 
+    algolia: {
+        apiKey: '6642fca03d716a543ac4428d7d20b842',
+        indexName: 'polakowo-datadocs',
+        algoliaOptions: {} // Optional, if provided by Algolia
+    },
+
     // This copyright info is used in /core/Footer.js and blog RSS/Atom feeds.
     copyright: `Copyright © ${new Date().getFullYear()} Oleg Polakow`,
 

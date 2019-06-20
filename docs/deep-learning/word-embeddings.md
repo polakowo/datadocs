@@ -19,7 +19,8 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/deep-lear
 - [What Are Word Embeddings for Text?](https://machinelearningmastery.com/what-are-word-embeddings/)
 - [Word vectors for non-NLP data and research people](https://towardsdatascience.com/word-vectors-for-non-nlp-data-and-research-people-8d689c692353)
 
-#### Dense representation:
+#### Dense representation
+
 -  The number of features is much smaller than the size of the vocabulary: 
     - Each word is represented by a real-valued vector, often tens or hundreds of dimensions. 
     - This is contrasted to the thousands or millions of dimensions required for sparse word representations, such as a one-hot encoding.
@@ -27,7 +28,8 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/deep-lear
     - The majority of neural network toolkits do not play well with very high-dimensional, sparse vectors.
 - The other benefit of the dense representations is generalization power.
 
-#### Interpretability:
+#### Interpretability
+
 - We can visualize the learned vectors by projecting them down with t-SNE.
 - We can also use cosine similarity or Euclidean distance to calculate the similarity between embeddings.
 - Certain directions in the induced vector space specialize towards certain semantic relationships.
@@ -37,7 +39,8 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/deep-lear
 <img width=500 src="/datadocs/assets/turian.png"/>
 <center><a href="https://lvdmaaten.github.io/tsne/" style="color: lightgrey">Credit</a></center>
 
-#### Usage:
+#### Usage
+
 - Because word embeddings are very computationally expensive to train, most ML practitioners will load a pre-trained set of embeddings.
 - Learn embeddings:
     - Standalone: a model is trained to learn the embedding, which is saved and used as a part of another model.
@@ -76,7 +79,8 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/deep-lear
 - Another place you may have seen this trick is in unsupervised feature learning:
     - You train an auto-encoder to compress an input vector in the hidden layer, and decompress it back to the original in the output layer. After training it, you strip off the output layer (the decompression step) and just use the hidden layer - it's a trick for learning good image features without having labeled training data.
 
-#### Negative sampling:
+#### Negative sampling
+
 - Neural probabilistic language models are traditionally trained using softmax, which is very expensive. 
     - Every time at computing loss we need to carry out the sum over all words in the vocabulary.
 - Negative sampling allows to do something similar to the skip-gram model, but with a much more efficient learning algorithm.
@@ -84,7 +88,8 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/deep-lear
     - The samples can be picked according to empirical frequencies in words corpus which means according to how often different words appears.
 - Then it is trained using a binary classification objective, which is less expensive than softmax. This objective is maximized when the model assigns high probabilities to the real words, and low probabilities to noise words.
 
-#### Learning models:
+#### Learning models
+
 - Word2vec comes in two flavors, the Continuous Bag-of-Words model (CBOW) and the Skip-Gram model. 
 
 <img width=600 src="/datadocs/assets/word2vec.png"/>
@@ -99,12 +104,14 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/deep-lear
     - Smaller windows tend to produce more functional and syntactic similarities.
 - [Word2Vec Tutorial - The Skip-Gram Model](http://mccormickml.com/2016/04/19/word2vec-tutorial-the-skip-gram-model/)
 
-#### Applications:
+#### Applications
+
 - Text classification & chatbots
 - Recommender systems and ad targeting: 
     - Instead of learning vectors from a sequence of words, you can learn vectors from a sequence of user actions, or sequence of songs in a playlist, etc.
 
-#### Pros:
+#### Pros
+
 - The resulting representations are surprisingly good at capturing syntactic and semantic regularities in language, and that each relationship is characterized by a relation-specific vector offset. This allows vector-oriented reasoning based on the offsets between words. For example, the male/female relationship is automatically learned.
 - High-quality word embeddings can be learned efficiently (low space and time complexity), allowing larger embeddings to be learned (more dimensions) from much larger corpora of text (billions of words).
 
@@ -116,5 +123,6 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/deep-lear
 <img width=350 src="/datadocs/assets/1*EaPTHymy22IW4OjnUq84jw.png"/>
 <center><a href="https://towardsdatascience.com/game-of-thrones-word-embeddings-does-r-l-j-part-1-8ca70a8f1fad" style="color: lightgrey">Credit</a></center>
 
-#### Pros:
+#### Pros
+
 - GloVe, is a global log-bilinear regression model for the unsupervised learning of word representations that outperforms previous models on word analogy, word similarity, and named entity recognition tasks.

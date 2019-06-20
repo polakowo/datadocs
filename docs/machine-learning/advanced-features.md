@@ -64,7 +64,8 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/machine-l
 - The same parameters should be used throughout the dataset as it's a trainable transformation.
 - [Overview of Matrix Decomposition methods (sklearn)](http://scikit-learn.org/stable/modules/decomposition.html)
 
-#### PCA:
+#### PCA
+
 - PCA (Principal Component Analysis) performs a linear mapping of the data to a lower-dimensional space in such a way that the variance of the data in the low-dimensional representation is maximized. It does so by calculating the eigenvectors from the covariance matrix.
 - Can drop the least important feature while still retaining the most valuable parts.
 - In practice, we would choose the number of principal components such that we can explain 90% of the initial data dispersion (via the `explained_variance_ratio`)
@@ -75,12 +76,14 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/machine-l
     - Visualization and interpretation difficulties.
     - Strongly focused on variance which may not correlate with predictive power.
 
-#### SVD:
+#### SVD
+
 - SVD (Singular Value Decomposition) is a factorization of a matrix.
 - Same advantages and limitations as for PCA but faster.
 - `TruncatedSVD` can be applied to sparse matrices.
 
-#### NMF:
+#### NMF
+
 - NMF (Nonnegative Matrix Factorization) is a state of the art feature extraction algorithm.
 - Automatically extracts sparse and meaningful features from a set of nonnegative data vectors (counts-like data).
 - NMF decomposes a data matrix \\(V\\) into the product of two lower rank matrices \\(W\\) and \\(H\\) so that \\(V\approx{W*H}\\).
@@ -100,7 +103,8 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/machine-l
     - It’s hard to know how to choose the factorisation rank \\(r\\). 
         - Some approaches include trial and error.
 
-#### t-SNE:
+#### t-SNE
+
 - t-SNE (t-Distributed Stochastic Neighbor Embedding) is a tool to visualize high-dimensional data.
 - Unlike PCA, is not a linear projection but allows to capture a non-linear structure.
 

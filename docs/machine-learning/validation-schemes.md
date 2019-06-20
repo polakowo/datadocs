@@ -20,7 +20,8 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/machine-l
 <center><img width=400 src="/datadocs/assets/grid_search_workflow.png"/></center>
 <center><a href="https://scikit-learn.org/stable/modules/cross_validation.html#cross-validation" style="color: lightgrey">Credit</a></center>
 
-#### Validation stage:
+#### Validation stage
+
 - We can observe that:
     - High deviation of the local CV scores.
 - Possible causes:
@@ -34,7 +35,8 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/machine-l
     - Public leaderboard score will be unreliable because of too little data.
     - Train and test data are from different distributions (using EDA).
 
-#### Submission stage:
+#### Submission stage
+
 - We can observe that:
     - LB score is consistently lower/higher than the local score:
     - LB score is not correlated with the local score.
@@ -55,13 +57,15 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/machine-l
 - The following validation schemes are supposed to be used to estimate quality of the model. 
 - For getting test predictions don't forget to retrain your model using all training data.
 
-#### Holdout:
+#### Holdout
+
 - Procedure (`train_test_split`):
     - Split *train* into two parts: *trainA* and *trainB* (usually 80/20).
     - Fit the model on *trainA* and validate it on *trainB*.
 - Use holdout if scores on each fold are roughly the same.
 
-#### K-Fold:
+#### K-Fold
+
 - Procedure (`KFold`):
     - Split *train* into \\(K\\) folds.
     - Iterate though each fold: 
@@ -77,13 +81,15 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/machine-l
 - In this case we would like to know if a model generalizes well to the unseen groups (`GroupKFold`):
     - Group k-fold ensures that the same group is not represented in both testing and training sets.
 
-#### LOO:
+#### LOO
+
 - LOO is a k-fold scheme where \\(K=N\\) (`LeaveOneOut`).
 - LOO often results in high variance as an estimator for the test error.
 - 5-10 fold cross validation should be preferred to LOO.
 - Mostly used for sparse datasets.
 
-#### Time-based validation:
+#### Time-based validation
+
 - Procedure (`TimeSeriesSplit`):
     - Split *train* into chunks of duration \\(T\\). Select first \\(M\\) chunks.
     - Fit a model on these \\(M\\) chunks and predict for the chunk \\(M+1\\). 
@@ -94,7 +100,8 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/machine-l
 
 ## Meta models
 
-#### Simple holdout scheme:
+#### Simple holdout scheme
+
 - Procedure:
     - Split *train* into three parts: *trainA*, *trainB* and *trainC*.
     - Fit \\(N\\) diverse models on *trainA*.
@@ -104,7 +111,8 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/machine-l
 - This scheme is usually preferred over the other schemes if dataset is large.
 - Fair validation scheme (validation set of meta-models not used in any way by base models)
 
-#### Meta holdout scheme with OOF meta-features:
+#### Meta holdout scheme with OOF meta-features
+
 - Procedure:
     - Split *train* into \\(K\\) folds. 
     - Iterate though each fold:
@@ -116,13 +124,15 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/machine-l
     - Fit a meta-model on *train_metaA* and validate it on *train_metaB*.
     - When the meta-model is validated, fit it to *train_meta* and predict for *test_meta*.
 
-#### Meta KFold scheme with OOF meta-features:
+#### Meta KFold scheme with OOF meta-features
+
 - Procedure:
     - Obtain OOF predictions for *train_meta* and *test_meta*.
     - Use KFold scheme on *train_meta* to validate the meta-model (with same seed as for OOF).
     - When the meta-model is validated, fit it to *train_meta* and predict for *test_meta*.
 
-#### Holdout scheme with OOF meta-features:
+#### Holdout scheme with OOF meta-features
+
 - Procedure:
     - Split *train* into two parts: *trainA* and *trainB*.
     - Fit models to *trainA* and predict for *trainB* (getting *trainB_meta*).
@@ -132,13 +142,15 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/machine-l
     - Fit the meta-model to *train_meta* and predict for *test_meta*.
 - Fair validation scheme.
 
-####  KFold scheme with OOF meta-features:
+####  KFold scheme with OOF meta-features
+
 - The same as holdout scheme with OOF meta-features but with \\(K\\) folds instead of *trainA* and *trainB*.
 - This scheme gives the validation score with the least variance compared to the other schemes.
 - But it is also the least efficient one from the computational perspective.
 - Fair validation scheme.
 
-#### KFold scheme in time series:
+#### KFold scheme in time series
+
 - Procedure:
     - Obtain OOF meta-features using time-series split starting with \\(M\\) chunks.
     - Now we have meta-features for the chunks starting from \\(M+1\\) (getting *train_meta*).
@@ -146,5 +158,6 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/machine-l
     - Perform time-series aware cross validation on meta-features.
     - Fit the meta-model to *train_meta* and predict for *test_meta*.
 
-#### KFold scheme in time series with limited amount of data:
+#### KFold scheme in time series with limited amount of data
+
 - The same as meta KFold scheme with OOF meta-features but with respect to time.

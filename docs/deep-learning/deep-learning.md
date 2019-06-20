@@ -48,7 +48,8 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/deep-lear
 <img width=400 src="/datadocs/assets/0*0mia7BQKjUAuXeqZ.jpeg"/>
 <center><a href="http://cs231n.github.io/neural-networks-1/" style="color: lightgrey">Credit</a></center>
 
-#### As a universal function approximators:
+#### Universal function approximators
+
 - It turns out that Neural Networks with at least one hidden layer are universal approximators. It means that they can compute and learn any function at all. Almost any process we can think of can be represented as a functional computation in neural networks.
 
 <img width=400 src="/datadocs/assets/decisionBoundary.jpg"/>
@@ -57,7 +58,8 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/deep-lear
 - The fact that deeper networks (with multiple hidden layers) can work better than a single-hidden-layer networks is an empirical observation, despite the fact that their representational power is equal.
 - [A visual proof that neural nets can compute any function](http://neuralnetworksanddeeplearning.com/chap4.html)
 
-#### Pros:
+#### Pros
+
 - The scalability of neural networks indicating that results get better with more data and larger models.
 - Ability to perform automatic feature extraction from raw data, also called feature learning.
 - Relatively simple learning algorithm (SGD and backprop).
@@ -66,7 +68,8 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/deep-lear
 - The disappearance of a few pieces of information in one place does not prevent the network from functioning (think of brain damage)
 - Parallel processing capability
 
-#### Cons:
+#### Cons
+
 - DNNs are prone to overfitting because of the added layers of abstraction, which allow them to learn noise.
 - Hard to interpret the model. NNs are a black box once they are trained.
 - Don't perform as well on small data sets. The Bayesian approaches do have an advantage here.

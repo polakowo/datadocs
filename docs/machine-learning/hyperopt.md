@@ -12,7 +12,8 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/machine-l
 - [Tuning the hyper-parameters of an estimator (sklearn)](http://scikit-learn.org/stable/modules/grid_search.html)
 - [A list of open-source software](https://en.wikipedia.org/wiki/Hyperparameter_optimization#Open-source_software)
 
-#### Best practices:
+#### Best practices
+
 - Select a subset of the most influential hyperparameters:
     - There are tons of hyperparameters and there is no time to tune them all.
     - [Multiple comparisons problem](https://en.wikipedia.org/wiki/Multiple_comparisons_problem#cite_note-2): The more inferences are made, the more likely erroneous inferences are to occur, because of the sheer size of the parameter space to be searched.
@@ -60,7 +61,8 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/machine-l
 - Makes sense only if the evaluation procedure takes much longer than the sampling process.
 - Smart search algorithms contain hyperparameters of their own.
 
-#### Bayesian optimization:
+#### Bayesian optimization
+
 - Bayesian Optimization uses all of the information from previous evaluations and determines the next point to try.
 - Builds a probabilistic model of the function mapping from the hyperparameters to the objective.
 
@@ -78,12 +80,14 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/machine-l
 - Using Tree-based Parzen Estimators: [Hyperopt](http://hyperopt.github.io/hyperopt/)
     - [Optimizing hyperparams with hyperopt](http://fastml.com/optimizing-hyperparams-with-hyperopt/)
 
-#### SMAC (Sequential Model-based Algorithm Configuration):
-- Trains a random forest of regression trees to approximate the response surface.
+#### SMAC
+
+- SMAC (Sequential Model-based Algorithm Configuration) trains a random forest of regression trees to approximate the response surface.
 - This method may work better than Gaussian processes for categorical hyperparameters.
 - Random forest tuning: [SMAC](http://bit.ly/SMAC-proj)
 
-#### Derivative-free optimization:
+#### Derivative-free optimization
+
 - Try a bunch of random points, approximate the gradient, and find the most likely search direction.
 - Derivative-free methods include genetic algorithms and the Nelder-Mead method.
 - Easy to implement and no less efficient that Bayesian optimization.

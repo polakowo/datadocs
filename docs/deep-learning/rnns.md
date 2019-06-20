@@ -26,18 +26,21 @@ $$\large{\hat{y_t}=\tanh{(W_yh_t+b_y)}}$$
 - [The Unreasonable Effectiveness of Recurrent Neural Networks](http://karpathy.github.io/2015/05/21/rnn-effectiveness/)
 - [Recurrent Neural Networks (RNN) and Long Short-Term Memory (LSTM)](https://youtu.be/WCUNPb-5EYI)
 
-#### Turing completeness:
+#### Turing completeness
+
 - RNNs are Turing-Complete in the sense that they can to simulate arbitrary programs (with proper weights). If training vanilla neural nets is optimization over functions, training recurrent nets is optimization over programs.
 
 <img width=350 src="/datadocs/assets/maxresdefault.jpg"/>
 <center><a href="https://www.youtube.com/watch?v=RPQD7-AOjMI" style="color: lightgrey">Credit</a></center>
 
-#### Usage:
+#### Usage
+
 - Whenever there is a sequence of data and that temporal dynamics that connects the data is more important than the spatial content of each individual frame.
 - Even if your data is not in form of sequences, you can still formulate and train powerful models that learn to process it sequentially.
 - Evidence suggests the model is good at learning complex syntactic structures (such as XML).
 
-#### Recurrence:
+#### Recurrence
+
 - The most important facet of the RNN is the recurrence. 
     - A basic neuron has only connections from his input to his output.
     - The recurrent neuron instead has also a connection from his output again to his input.
@@ -48,12 +51,14 @@ $$\large{\hat{y_t}=\tanh{(W_yh_t+b_y)}}$$
     - output nodes (yielding results)
     - hidden nodes (that modify the data en route from input to output)
 
-#### Backpropagation through time (BPTT):
+#### Backpropagation through time (BPTT)
+
 - Since the RNN consists entirely of differentiable operations we can run the backpropagation.
 - Within BPTT the error is back-propagated from the last to the first timestep, while unrolling all the timesteps.
     - Note that BPTT can be computationally expensive for a high number of timesteps.
 
-#### Architectures:
+#### Architectures
+
 <img width=700 src="/datadocs/assets/sequences.png"/>
 <center><a href="http://karpathy.github.io/2015/05/21/rnn-effectiveness/" style="color: lightgrey">Credit</a></center>
 
@@ -68,7 +73,8 @@ $$\large{\hat{y_t}=\tanh{(W_y\cdot{[\overrightarrow{h_t},\overleftarrow{h_t}]}+b
     - To process the layers above we first need to iterate over the layers below.
     - In deep RNNs stacking 3 layers is already considered deep and expensive to train.
 
-#### Pros:
+#### Pros
+
 - Memorization: 
     - The recurrent network can use the feedback connection to store information over time in form of activations.
     - As the time steps increase, the unit gets influenced by larger and larger neighborhood.
@@ -82,7 +88,8 @@ $$\large{\hat{y_t}=\tanh{(W_y\cdot{[\overrightarrow{h_t},\overleftarrow{h_t}]}+b
 - Furthermore the recurrent connections increase the network depth while they keep the number of parameters low by weight sharing.
 - Recurrent connections of neurons are biological inspired and are used for many tasks in the brain.
 
-#### Cons:
+#### Cons
+
 - RNN are inefficient and not scalable:
     - If you double the size of the hidden state vector you’d quadruple the amount of FLOPS at each step due to the matrix multiplication. 
 - RNN and LSTM are memory-bandwidth limited problems:
@@ -98,7 +105,8 @@ $$\large{\hat{y_t}=\tanh{(W_y\cdot{[\overrightarrow{h_t},\overleftarrow{h_t}]}+b
 - The recurrent structures are either exploring short-term or long-term temporal structures, but not both simultaneously.
 - [The fall of RNN / LSTM](https://towardsdatascience.com/the-fall-of-rnn-lstm-2d1594c74ce0)
 
-#### Solving gradient problems:
+#### Solving gradient problems
+
 - Vanishing gradients: 
     - When gradients are being propagated back in time, they can vanish because they they are continuously multiplied by numbers less than one. This is solved by LSTMs and GRUs, and if you’re using a deep feedforward network, this is solved by residual connections.
 - Exploding gradients: 
@@ -120,7 +128,8 @@ $$\large{\hat{y_t}=\tanh{(W_y\cdot{[\overrightarrow{h_t},\overleftarrow{h_t}]}+b
 - These gates can learn which data in a sequence is important to keep or throw away.
 > Imagine you pick up words like “amazing” and “perfectly balanced breakfast”. You don’t care much for words like “this”, “gave“, “all”, “should”, etc. If a friend asks you the next day what the review said, you probably wouldn’t remember it word for word.
 
-#### Comparison:
+#### Comparison
+
 - There isn’t a clear winner which one is better: 
     - Researchers and engineers usually try both to determine which one works better for their use case.
 - GRU has fewer tensor operations and parameters than LSTM, as it lacks an output gate.
@@ -135,7 +144,8 @@ $$\large{\hat{y_t}=\tanh{(W_y\cdot{[\overrightarrow{h_t},\overleftarrow{h_t}]}+b
 - LSTM can learn tasks that require memories of events that happened thousands or even millions of discrete time steps earlier.
 - [Understanding LSTM Networks](http://colah.github.io/posts/2015-08-Understanding-LSTMs/)
 
-#### Gates:
+#### Gates
+
 - Each LSTM block consists of a forget gate, input gate and an output gate.
 - The gates in a LSTM are analog, in the form of sigmoids, meaning that they range from 0 to 1.
 - The weights of these connections \\(W\\) need to be learned during training.
@@ -146,14 +156,16 @@ $$\large{f_t=\sigma{(W_f\cdot{[h_{t-1},x_t]}+b_f)}}$$
 - The output gate \\(o_t\\) determines what the next hidden state should be.
 $$\large{o_t=\sigma{(W_o\cdot{[h_{t-1},x_t]}+b_o)}}$$
 
-#### Cell state:
+#### Cell state
+
 - The cell state \\(c_t\\) acts as a transport highway that transfers relative information all the way down the sequence chain.
 - You can think of it as the “memory” of the network.
 - As the cell state goes on its journey, information get’s added or removed to the cell state via gates.
 $$\large{\tilde{c_t}=\tanh{(W_c\cdot{[h_{t-1},x_t]}+b_c)}}$$
 $$\large{c_t=f_t\odot{c_{t-1}}+i_t\odot{\tilde{c}_{t}}}$$
 
-#### Hidden state:
+#### Hidden state
+
 - The hidden state is the output vector of the LSTM unit.
 $$\large{h_t=o_t\odot{\tanh(c_{t})}}$$
 
@@ -163,7 +175,9 @@ $$\large{h_t=o_t\odot{\tanh(c_{t})}}$$
 - GRU’s got rid of the cell state and used the hidden state to transfer information. 
 - The forget and input gates are combined in a complimentary fashion to reduce the unnecessary complexity in model (reducing recurrent parameters by 33%).
 - But LSTM is "strictly stronger" than the GRU as it can easily perform unbounded counting.
-#### Gates:
+
+#### Gates
+
 - GRU has two gates, a reset gate and update gate.
 - The update gate \\(z_t\\) decides what information to throw away and what new information to add.
 $$\large{z_t=\sigma{(W_z\cdot{[h_{t-1},x_t]}+b_z)}}$$
@@ -171,7 +185,8 @@ $$\large{z_t=\sigma{(W_z\cdot{[h_{t-1},x_t]}+b_z)}}$$
 $$\large{r_t=\sigma{(W_r\cdot{[h_{t-1},x_t]}+b_r)}}$$
 - But when you combine the 2 operations as a "Coupled Input and Forget Gate" there are similar results compared to the vanilla model.
 
-#### Hidden state:
+#### Hidden state
+
 - The hidden state is the output vector of the GRU unit.
 $$\large{\tilde{h_t}=\tanh{(W_h\cdot{[r_t\odot{h_{t-1}},x_t]})}}$$
 $$\large{h_t=(1-z_t)\odot{h_{t-1}}+z_t\odot\tilde{h_t}}$$

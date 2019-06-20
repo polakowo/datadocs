@@ -11,14 +11,16 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/machine-l
 <img width=500 src="/datadocs/assets/ml-classifiers-2.png"/>
 <center><a href="https://martin-thoma.com/comparing-classifiers/" style="color: lightgrey">Credit</a></center>
 
-#### Pros:
+#### Pros
+
 - They are very powerful for tabular data.
 - Bring in the capability to handle a dataset with a high degree of errors and missing values.
 - Can handle data with both numeric and nominal input attributes.
 - Well-known for making no assumptions about spatial distribution.
 - Extensively used by banks for loan approvals just because of their extreme transparency.
 
-#### Cons:
+#### Cons
+
 - They are weak to capture linear dependencies as it requires a lot of splits.
 - Decision trees cannot easily model arbitrary decision boundaries.
 - Can only interpolate but not extrapolate.
@@ -42,7 +44,8 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/machine-l
 - [Introduction to Decision Trees](https://medium.com/greyatom/decision-trees-a-simple-way-to-visualize-a-decision-dc506a403aeb)
 - [A Simple Guide to Entropy-Based Discretization](https://natmeurer.com/a-simple-guide-to-entropy-based-discretization/)
 
-#### Pros:
+#### Pros
+
 - Graphical representation is very intuitive and users can easily relate their hypothesis
 - Decision tree is one of the fastest way to identify most significant variables and relation between two or more variables
 - Decision trees implicitly perform variable screening or feature selection
@@ -51,7 +54,8 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/machine-l
 - Fast training and forecasting
 - Small number of hyper-parameters
 
-#### Cons:
+#### Cons
+
 - Overfitting: Decision-tree learners can create over-complex trees that do not generalize the data well.
 - Not fit for continuous variables: While working with continuous numerical variables, decision tree loses information, when it categorizes variables in different categories.
 - Small changes to the data can significantly change the decision tree. Decision trees can be unstable because small variations in the data might result in a completely different tree being generated. This is called variance, which needs to be lowered by methods like bagging and boosting.
@@ -59,7 +63,8 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/machine-l
 - The optimal decision tree search problem is NP-complete
 - Generally, it gives low prediction accuracy for a dataset as compared to other machine learning algorithms.
 
-#### Tuning:
+#### Tuning
+
 - A higher value leads to overfitting:
     - `max_depth`: the maximum depth of the tree.
     - `max_features`: the maximum number of features with which to search for the best partition (this is necessary with a large number of features because it would be "expensive" to search for partitions for all features).
@@ -88,7 +93,8 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/machine-l
 - [Ensembles and Random Forests: A series of notebooks](https://github.com/Yorko/mlcourse.ai/tree/master/jupyter_english/topic05_ensembles_random_forests)
 - [Feature Selection Using Random Forests](https://towardsdatascience.com/feature-selection-using-random-forest-26d7b747597f)
 
-#### Pros:
+#### Pros
+
 - High prediction accuracy; will perform better than linear algorithms in most problems
 - Robust to outliers, thanks to random sampling
 - Insensitive to the scaling of features as well as any other monotonic transformations due to the random subspace selection
@@ -104,7 +110,8 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/machine-l
 - Works well with missing data and maintains good accuracy levels even when a large part of data is missing
 - Easily parallelized and highly scalable.
 
-#### Cons:
+#### Cons
+
 - The main limitation of Random Forest is that a large number of trees can make the algorithm to slow and ineffective for real-time predictions.
 - There are no formal \\(p\\)-values for feature significance estimation
 - Performs worse than linear methods in the case of sparse data: text inputs, bag of words, etc - bagging and suboptimal selection of splits may waste most of the model insight on zero-only areas.
@@ -114,7 +121,8 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/machine-l
     - Prone to overfitting in some problems, especially, when dealing with noisy data.
     - In the case of categorical variables with varying level numbers, random forests favor variables with a greater number of levels. The tree will fit more towards a feature with many levels because this gains greater accuracy.
 
-#### Tuning:
+#### Tuning
+
 - `n_estimators`: the number of trees in the forest (the higher the better). A sufficient number of trees can be found by plotting the out-of-bag error (controlled by `oob_score`) against the number of trees. OOB error is the mean prediction error on each training sample, using only the trees that did not have it in their bootstrap sample.
 - A higher value leads to overfitting:
     - `max_depth`: the maximum depth of the tree. Usually, depth for random forest is higher than for gradient booster.
@@ -141,13 +149,15 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/machine-l
 <img width=450 src="/datadocs/assets/b2b029d898f64bbbb158e15d29595969.png"/>
 <center><a href="https://nbviewer.jupyter.org/github/Yorko/mlcourse.ai/blob/master/jupyter_english/topic10_boosting/topic10_gradient_boosting.ipynb" style="color: lightgrey">Credit</a></center>
 
-#### Pros:
+#### Pros
+
 - Simple and easy to program
 - Few parameters to tune
 - No prior knowledge needed about a weak learner
 - Provably effective given Weak Learning Assumption
 
-#### Cons:
+#### Cons
+
 - AdaBoost works well, but the lack of explanation for why the algorithm is successful sewed the seeds of doubt
 - Weak classifiers too complex leads to overfitting when data has strong outliers
 - Weak classifiers too weak can lead to low margins, and can also lead to overfitting
@@ -172,16 +182,19 @@ $$\large{D(x)=d_{\text{tree}1}(x)+d_{\text{tree}2}(x)+...}$$
 - [Introduction to Boosted Trees](https://xgboost.readthedocs.io/en/latest/tutorials/model.html)
 - [Gradient Boosting Interactive Playground](http://arogozhnikov.github.io/2016/07/05/gradient_boosting_playground.html)
 
-#### Pros:
+#### Pros
+
 - Gradient boosting works for generic loss functions, while AdaBoost is derived mainly for classification with exponential loss.
 - Can effortlessly return to any point of training process after the ensemble has been already built.
 
-#### Cons:
+#### Cons
+
 - AdaBoost can be interepted from a much more intuitive perspective and can be implemented without the reference to gradients by reweighting the training samples based on classifications from previous learners.
 - A small change in the feature set or training set can create radical changes in the model
 - Not easy to understand predictions
 
-#### Tuning:
+#### Tuning
+
 - A higher value leads to overfitting:
     - `max_depth`: the maximum depth of a tree. Increasing it will lead to a faster fitting the dataset but a longer learning time. If the dataset cannot be overfit, there are a lot more of important features and interactions to extract from the data.
     - `num_leaves`: the number of splits in a tree is very dependent on `num_leaves`. In fact, higher `num_leaves` more complex trees GBM can build. The resulting tree can be very deep but have a small number of leaves.
@@ -201,20 +214,23 @@ $$\large{D(x)=d_{\text{tree}1}(x)+d_{\text{tree}2}(x)+...}$$
 
 - [Head-to-Head Comparison](https://towardsdatascience.com/catboost-vs-light-gbm-vs-xgboost-5f93620723db)
 
-#### XGBoost:
+#### XGBoost
+
 <img width=200 src="/datadocs/assets/xgboost-1101974912.png"/>
 
 - XGBoost is the first GBMT implementation.
 - XGBoost achieves overall good results but is significantly slower than its competitors, becoming a bottleneck in iterative design and prototyping widely used on Kaggle.
 - It cannot handle categorical features by itself, it only accepts numerical values similar to Random Forest.
 
-#### LightGBM:
+#### LightGBM
+
 <img width=200 src="/datadocs/assets/lgbm.png"/>
 
 - LightGBM improves on XGBoost. The LightGBM paper uses XGBoost as a baseline and outperforms it in training speed and the dataset sizes it can handle. LightGBM is upto 6x faster than XGBoost (used to be 10x faster but XGBoost has caught up) becoming popular on Kaggle where experimentation is important. The accuracies are comparable. 
 - LGBM does not convert to one-hot coding but uses a special algorithm to find the split value of categorical features.
 
-#### CatBoost:
+#### CatBoost
+
 <img width=200 src="/datadocs/assets/Yandex-CatBoost.png"/>
 
 - Catboost improves over LightGBM by handling categorical features better:

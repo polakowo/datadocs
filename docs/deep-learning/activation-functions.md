@@ -8,14 +8,16 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/deep-lear
 - How do we decide whether the neuron should fire or not?
 - The activation function of a node maps the resulting values into the desired range.
 
-#### Non-linearity:
+#### Non-linearity
+
 - Only nonlinear activation functions allow to compute nontrivial problems using only a small number of nodes, otherwise it would behave just like a single-layer perceptron.
 - A multi-layered neural network can be regarded as a hierarchy of generalized linear models; according to this, activation functions are link functions, which in turn correspond to different distributional assumptions.
 
 <img width=350 src="/datadocs/assets/fitting_func.png"/>
 <center><a href="https://fossbytes.com/what-is-deep-learning-really/" style="color: lightgrey">Credit</a></center>
 
-#### Comparison of different functions:
+#### Comparison of different functions
+
 - Use ReLu which should only be applied to the hidden layers. Be careful with your learning rates and possibly monitor the fraction of “dead” units in a network.
 - If the model suffers form dead neurons during training then use leaky ReLu or Maxout function.
 - Other functions are discouraged for vanilla feedforward implementation. They are more useful for recurrent networks, probabilistic models, and some autoencoders have additional requirements that rule out the use of piecewise linear activation functions.
@@ -30,7 +32,8 @@ $$\large{f(x)=\max{(0,x)}}$$
 - The Rectified Linear Unit is simply thresholded at zero.
 - Relu is like a switch for linearity. If you don't need it (\\(x<0\\)), you "switch" it off.
 
-#### Pros:
+#### Pros
+
 - Fewer vanishing gradient problems compared to sigmoidal activation functions that saturate in both directions. This arises when \\(x>0\\), where the gradient has a constant value.
 - Sparse activation:
     - For example, in a randomly initialized network, only about 50% of hidden units are activated (having a non-zero output). This means less neurons are firing and the network is lighter and more robust to noise. Sparsity arises when \\(x\leq{0}\\)
@@ -38,7 +41,8 @@ $$\large{f(x)=\max{(0,x)}}$$
 - It was found to greatly accelerate the convergence of SGD compared to the sigmoid/tanh functions. It is argued that this is due to its linear, non-saturating form.
 - Biological plausibility: One-sided, compared to the antisymmetry of tanh
 
-#### Cons:
+#### Cons
+
 - It should only be used within hidden layers.
 - Non-differentiable at zero; however it is differentiable anywhere else, and a value of 0 or 1 can be chosen arbitrarily to fill the point where the input is 0.
 - Dying ReLU problem: If the dot product of the input to a ReLU with its weights is negative, the output is 0. The gradient of \\(max(x,0)\\) is 0 when the output is 0. It may be mitigated by using leaky ReLU instead, which assign a small positive slope to the left of \\(x=0\\).
@@ -46,7 +50,8 @@ $$\large{f(x)=\max{(0,x)}}$$
 
 $$\large{f(x)=\max{(0.1x,x)}}$$
 
-#### Sparsity:
+#### Sparsity
+
 - Inspiration from biology:
     - Biology appears to use a rule that says if the inputs sum to less than zero, don’t let the signal pass.
     - Also, studies conducted on ‘brain energy expenditure’ suggest that biological neurons encode information in a ‘sparse and distributed way‘. This means that the percentage of neurons that are active at the same time are very low (1–4%).
@@ -68,10 +73,12 @@ $$\large{f(x)=\max{(w_1^Tx+b_1,w_2^Tx+b_2)}}$$
 - where \\(w\\) and \\(b\\) are learnable parameters. 
 - An MLP with \\(k=2\\) maxout units can approximate any function. For ReLU we have \\(𝑤1,𝑏1=0\\).
 
-#### Pros:
+#### Pros
+
 - The Maxout neuron enjoys all the benefits of a ReLU unit (linear regime of operation, no saturation) and does not have its drawbacks (dying ReLU).
 
-#### Cons:
+#### Cons
+
 - However, unlike the ReLU neurons it doubles the number of bias parameters for every single neuron, leading to a high total number of parameters.
 
 ## Sigmoid
@@ -81,7 +88,8 @@ $$\large{\sigma(x)=\frac{1}{1+e^{-x}}}$$
 - Sigmoid (or logistic) function \\(\sigma(x)\\) is used for binary classification in logistic regression model.
 - The sigmoid non-linearity takes a real-valued number and “squashes” it into range between 0 and 1.
 
-#### Cons:
+#### Cons
+
 - Saturates and kills gradients: 
     - A very undesirable property of the sigmoid neuron is that when the neuron’s activation saturates at either tail of 0 or 1, the gradient at these regions is almost zero. Also, if the initial weights are too large then most neurons would become saturated and the network will barely learn.
 - The derivative of the sigmoid maxes out at 0.25: 
@@ -97,7 +105,8 @@ $$\large{\text{tanh}{(x)}=2\cdot\text{sigmoid}(2x)-1}$$
 - The tanh non-linearity squashes a real-valued number to the range \\([-1, 1]\\).
 - Tanh neuron is simply a scaled sigmoid neuron.
 
-#### Pros:
+#### Pros
+
 - Unlike the sigmoid neuron its output is zero-centered.
 
 ## Softmax
@@ -113,7 +122,8 @@ $$\large{\sigma(x_j)=\frac{e^{x_j}}{\sum_i{e^{x_i}}}}$$
 - It's exponential, can enlarge differences, and so pushes one result closer to 1 while another closer to 0.
 - Softmax function is differentiable to train by gradient descent.
 
-#### Cross-entropy loss:
+#### Cross-entropy loss
+
 - We can't use MSE because our prediction function is non-linear. Squaring this prediction as we do in MSE results in a non-convex function with many local minimums. If our cost function has many local minimums, gradient descent may not find the optimal global minimum.
 - Cross-entropy results in a convex loss function, of which the global minimum will be easy to find. Note that this is not necessarily the case anymore in multilayer neural networks.
 - Cross entropy is often computed for output of softmax and true labels encoded in one hot encoding.

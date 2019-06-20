@@ -92,3 +92,7 @@ ul>li {
 .fixedHeaderContainer a:hover {
     color: white;
 }
+
+.projectLogo {
+    opacity: 0.1;
+}

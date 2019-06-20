@@ -9,7 +9,8 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/deep-lear
 - This technique discourages learning a more complex or flexible model, so as to avoid the risk of overfitting.
 - It forces the downstream hidden units not to rely too much on the previous units by introducing noise.
 
-#### Overfitting:
+#### Overfitting
+
 - The concept of regularization plays an important role in preventing overfitting
 - The primary reason overfitting happens is because the model learns even the tiniest details (noise) present in the data.
 - In practice, it is always better to use regularization methods to control overfitting instead of the number of neurons.
@@ -18,7 +19,8 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/deep-lear
 <img width=400 src="/datadocs/assets/reg_strengths.jpeg"/>
 <center><a href="http://cs231n.github.io/neural-networks-1/" style="color: lightgrey">Credit</a></center>
 
-#### Examples of regularization:
+#### Examples of regularization
+
 - K-means: limiting the splits to avoid redundant classes
 - Random forests: limiting the tree depth, limiting new features (number of branches)
 - Neural networks: limiting the model complexity (number of weights)
@@ -30,7 +32,8 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/deep-lear
 - The (non-negative) parameter \\(\lambda\\) controls the amount of regularization applied to the model.
     - The larger \\(\lambda\\) is, the more the coefficients are shrunk toward zero.
 
-#### Comparison:
+#### Comparison
+
 - L1 or Lasso penalty is the sum of the weights:
 
 $$L1=\large{\lambda\sum{\|\|W\|\|_1}}$$
@@ -73,7 +76,8 @@ $$L2=\large{\lambda\sum{\|\|W\|\|_2^2}}$$
 - [Improving neural networks by preventing co-adaptation of feature detectors (2012)](http://www.cs.toronto.edu/~hinton/absps/dropout.pdf)
 - [Dropout: A Simple Way to Prevent Neural Networks from Overfitting (2014)](https://www.cs.toronto.edu/~hinton/absps/JMLRdropout.pdf)
 
-#### Best practices:
+#### Best practices
+
 - Apply dropout during both forward and backward propagation but disable it during testing.
 - Generally, use a small dropout value of 20%-50% of neurons with 20% providing a good starting point. A probability too low has minimal effect and a value too high results in under-learning by the network.
 - Use a larger network. You are likely to get better performance when dropout is used on a larger network, giving the model more of an opportunity to learn independent representations.
@@ -103,7 +107,8 @@ $$L2=\large{\lambda\sum{\|\|W\|\|_2^2}}$$
 <img width=500 src="/datadocs/assets/data-augmentation.png"/>
 <center><a href="https://www.analyticsvidhya.com/blog/2018/04/fundamentals-deep-learning-regularization-techniques/" style="color: lightgrey">Credit</a></center>
 
-#### Image size:
+#### Image size
+
 - One effective way to synthesize more data is to downscale/upscale images during training.
 - Fully-convolutional networks (FCN) as well as networks with Global Average Pooling (GAP) can work regardless of the original image size, without requiring any fixed number of units at any stage, given that all connections are local.
 - Instead of squashing images, center-crop them to a specific size. Also, do multiple crops and use these to augment your input data, so that the original image will be split into different images of correct size.
@@ -112,7 +117,8 @@ $$L2=\large{\lambda\sum{\|\|W\|\|_2^2}}$$
 - [Spatial Pyramid Pooling in Deep Convolutional Networks for Visual Recognition](https://arxiv.org/abs/1406.4729)
 - When you're dealing with object detection and instance segmentation, anchor box sizes which are also hyperparameters need to adjust if you have a dataset with high variance in image sizes.
 
-#### Generating image datasets:
+#### Generating image datasets
+
 - https://forums.fast.ai/t/tips-for-building-large-image-datasets/26688
 - https://forums.fast.ai/t/generating-image-datasets-quickly/19079
 - https://github.com/fastai/course-v3/blob/master/nbs/dl1/lesson2-download.ipynb
@@ -124,7 +130,8 @@ $$L2=\large{\lambda\sum{\|\|W\|\|_2^2}}$$
 - When we see that the performance on the validation set is getting worse, we immediately stop the training on the model.
 - [Early Stopping - but when􏰀 (1997)](http://page.mi.fu-berlin.de/prechelt/Biblio/stop_tricks1997.pdf)
 
-#### Method:
+#### Method
+
 - Split the training data into a training set and a validation set􏰌
 - Train only on the training set and evaluate the per-􏰍example error on the validation set once in a while􏰌
 - Stop training as soon as the error on the validation set is higher than it was for the last time it was checked􏰎

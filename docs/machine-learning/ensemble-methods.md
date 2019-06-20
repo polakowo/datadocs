@@ -31,7 +31,8 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/machine-l
 - Averaging exactly the same linear regressions won't give any penalty.
 - An often heard shorthand for this on Kaggle is "bagging submissions".
 
-#### Weighted averaging:
+#### Weighted averaging
+
 - Use weighted averaging to give a better model more weight in a vote.
 - A very small number of parameters rarely lead to overfitting.
 - It is faster to implement and to run.
@@ -39,7 +40,8 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/machine-l
     - AUC: For any \\(\alpha\\), \\(\beta\\), dividing the predictions by \\(\alpha+\beta\\) will not change AUC.
     - Accuracy (implemented with argmax): Similarly to AUC, argmax position will not change.
 
-#### Conditional averaging:
+#### Conditional averaging
+
 - Use conditional averaging to cancel out erroneous ranges of individual estimators.
 - Can be automatically learned by boosting trees and stacking.
 
@@ -70,7 +72,8 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/machine-l
     - Parallelism
 - See [Tree-Based Models](https://nbviewer.jupyter.org/github/polakowo/machine-learning/blob/master/ml-notes/TreeBasedModels.ipynb)
 
-#### Bootstrapping:
+#### Bootstrapping
+
 - Bootstrapping is random sampling with replacement.
 - With sampling with replacement, each sample unit has an equal probability of being selected.
     - Samples become approximatively independent and identically distributed (i.i.d).
@@ -96,7 +99,8 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/machine-l
     - A weak learner is defined as one whose performance is at least slightly better than random chance.
     - These learners are also in general less computationally expensive to fit.
 
-#### Adaptive boosting:
+#### Adaptive boosting
+
 - At each iteration, adaptive boosting changes the sample distribution by modifying the weights of instances. 
     - It increases the weights of the wrongly predicted instances. 
     - The weak learner thus focuses more on the difficult instances. 
@@ -108,7 +112,8 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/machine-l
     $$\large{H(x)=sign{\left(\sum_{t=1}^{T}{a_th_t(x)}\right)}}$$
 - See [Tree-Based Models](machine-learning/tree-based-models.md)
 
-#### Gradient boosting:
+#### Gradient boosting
+
 - Gradient boosting doesn’t modify the sample distribution:
     - At each iteration, the weak learner trains on the remaining errors (so-called pseudo-residuals) of the strong learner.
 - Gradient boosting doesn’t weight weak learnes according to their performance:
@@ -159,7 +164,8 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/machine-l
     - Start with a base ensemble of 3 or so good models.
     - Add a model when it increases the train set score the most.
 
-#### Multi-level stacking:
+#### Multi-level stacking
+
 - Always do OOF predictions: you never know when you need to train a 2nd or 3rd level meta-classifier.
 - Try skip connections to deeper layers.
 - For 7.5 models in previous layer add 1 meta model in next layer.

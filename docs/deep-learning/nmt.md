@@ -69,7 +69,8 @@ Light beam | Beam search strategy
 - [Beam search](http://opennmt.net/OpenNMT/translation/beam_search/)
 - [Seq2Seq with Attention and Beam Search](https://guillaumegenthial.github.io/sequence-to-sequence.html)
 
-#### Length normalization:
+#### Length normalization
+
 - Multiplying conditional probabilities may cause a numerical underflow.
     - In practice, we are summing their logarithms.
 - The other problem is the preference of smaller sequences over the longer ones: 

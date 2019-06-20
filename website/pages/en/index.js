@@ -29,6 +29,12 @@ class HomeSplash extends React.Component {
       </div>
     );
 
+    const Logo = props => (
+        <div className="projectLogo">
+          <img src={props.img_src} alt="Project Logo" width="200" height="200" />
+        </div>
+      );
+
     const ProjectTitle = () => (
       <h2 className="projectTitle">
         {siteConfig.title}
@@ -66,6 +72,7 @@ class HomeSplash extends React.Component {
 
     return (
       <SplashContainer>
+        <Logo img_src={`${baseUrl}img/logo.svg`} />
         <div className="inner">
           <ProjectTitle siteConfig={siteConfig} />
           <ProjectDescription>Share your knowledge on concepts and phenomena of data science.</ProjectDescription>
@@ -110,7 +117,7 @@ class Index extends React.Component {
                 title: 'Organized',
             },
             {
-                content: "`datadocs` is a collaborative workspace in which information can be easily shared. Writing documentation doesn’t require any software skills, just a plain Markdown.",
+                content: "`datadocs` is a collaborative workspace in which information can be easily shared. Writing documentation doesn’t require any software skills, just plain Markdown.",
                 title: 'Collaborative',
             },
           ]}

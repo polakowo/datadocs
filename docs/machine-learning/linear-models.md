@@ -20,13 +20,15 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/machine-l
 <center><img width=300 src="/datadocs/assets/xor.png"/></center>
 <center><a href="https://github.com/Yorko/mlcourse.ai/blob/master/jupyter_english/topic04_linear_models/topic4_linear_models_part4_good_bad_logit_movie_reviews_XOR.ipynb" target="_blank" style="color: lightgrey">Credit</a></center>
 
-#### Pros:
+#### Pros
+
 - Linear regression is often not computationally expensive.
 - They are easily comprehensible and transparent in nature.
 - Can handle a very large number of features, especially with very low signal to noise ratio.
 - Can be used if covariate shift is likely.
 
-#### Cons:
+#### Cons
+
 - They strongly rely on a linear relationship.
 - Weaker than other algorithms in terms of reducing error rates.
 - Rely on continuous data to build regression capabilities.
@@ -44,12 +46,14 @@ $$\large{y=\beta_01+\beta_1*x_1+...+\beta_px_p+\epsilon=Xw+\epsilon}$$
     - Indicates the strength of impact of multiple independent variables on a dependent variable.
     - Compares the effects of variables measured on different scales.
 
-#### Solution approaches:
+#### Solution approaches
+
 - Solving the model parameters analytically using closed-form equations (`LinearRegression`)
 - Using an optimization algorithm such as SGD, Newton's method, etc. (`SGDRegressor`)
     - Optimization algorithms are particularly useful when the number of samples (and features) is very large.
 
-#### Tuning:
+#### Tuning
+
 - Construct validation curves to compare the results depending on the complexity of the model (`validation_curve`):
     - if the two curves are close to each other and both errors are large, it is a sign of underfitting.
     - if the two curves are far from each other, it is a sign of overfitting.
@@ -60,7 +64,8 @@ $$\large{y=\beta_01+\beta_1*x_1+...+\beta_px_p+\epsilon=Xw+\epsilon}$$
 
 ### Linear regression
 
-#### OLS:
+#### OLS
+
 - The OLS (ordinary least squares) is used to estimate the coefficients in a linear regression model by minimizing the sum of squares of the differences between fitted values and observed values regardless of the form of the distribution of the errors.
 - To solve this optimization problem, we need to calculate derivatives with respect to the model parameters.
 
@@ -78,11 +83,13 @@ $$\large\min_w\|\|y-\hat{y}\|\|^2_2$$
     - Least squares perform badly in the presence of outliers.
     - Redundant features may unnecessarily degrade the performance.
 
-#### MLE:
+#### MLE
+
 - Maximum likelihood estimation (MLE) can be used to estimate parameters if the form of the distribution of the errors is known.
 - The ML estimator is identical to the OLS estimator given that errors are normally distributed.
 
-#### Assumptions:
+#### Assumptions
+
 - We assume that 
     - the relationship between dependent and independent variables is linear and additive,
     - the observations are independent of one another (no autocorrelation),
@@ -112,7 +119,8 @@ $$\large\min_w\|\|y-\hat{y}\|\|^2_2$$
 - Regularization methods add a penalty to the OLS formula.
 - Cross-validation finds the best approach for a given dataset.
 
-#### Ridge regression:
+#### Ridge regression
+
 - Ridge regression decreases the complexity by keeping the variables but penalizing them if they are far from zero.
 - Ridge penalizes sum of squared coefficients (the so-called L2 penalty).
 
@@ -127,7 +135,8 @@ $$\large\alpha\|\|w\|\|^2_2$$
 - Ridge performs well when most predictors impact the response.
 - Ridge regression assumes the predictors to be standardized.
 
-#### Lasso regression:
+#### Lasso regression
+
 - Lasso is quite similar conceptually to ridge regression.
 - Lasso penalizes the sum of their absolute values (L1 penalty).
 
@@ -140,7 +149,8 @@ $$\large\alpha\|\|w\|\|_1$$
     - One of the correlated predictors has a larger coefficient, while the rest are (nearly) zeroed.
 - Lasso performs well when only a few predictors actually influence the response.
 
-#### Elastic net:
+#### Elastic net
+
 - Neither ridge regression nor LASSO dominates one another.
 - Elastic net combines the penalties of ridge and lasso regression.
 
@@ -166,7 +176,8 @@ $$\large{p=\frac{1}{1+e^{-\hat{y}}}}$$
 - It struggles with its restrictive expressiveness (e.g. interactions must be added manually).
 - If there is a feature that would perfectly separate the two classes, the logistic regression model can no longer be trained.
 
-#### Interpreting odds:
+#### Interpreting odds
+
 - The interpretation is more difficult because the interpretation of the weights is multiplicative and not additive.
 - The logistic regression model is just a linear model for the log odds:
     - The output is logit (log odds), which is defined as the natural logarithm of the odds (range from \\(-\infty\\) to \\(\infty\\)).
@@ -182,13 +193,15 @@ $$\large{p=\frac{1}{1+e^{-\hat{y}}}}$$
 - For example, the coefficient \\(\beta_{gender}=1.69\\) results in the odds ratio \\(e^{1.69}=5.44\\) for gender, meaning the odds of being admitted for males is \\(5.44\\) times that of females.
 - [Interpreting Odd Ratios in Logistic Regression](http://www-hsc.usc.edu/~eckel/biostat2/notes/notes14.pdf)
 
-#### Regularization:
+#### Regularization
+
 - Regularization of logistic regression is almost the same as in the case of ridge/lasso regression.
 - In the case of logistic regression, a reverse regularization coefficient \\(C=\frac{1}{\alpha}\\) is typically introduced.
 - Intuitively \\(C\\) corresponds to the "complexity" of the model - model capacity.
 - Like in SVMs, smaller values specify stronger regularization.
 
-#### Assumptions:
+#### Assumptions
+
 - As compared to the assumptions of linear regression:
     - Does not require a linear relationship between the dependent and independent variables.
     - The error terms (residuals) do not need to be normally distributed.
@@ -224,7 +237,8 @@ $$\large{p=\frac{1}{1+e^{-\hat{y}}}}$$
     - Less effective on noisier datasets with overlapping classes.
     - SVMs do not provide probability estimates.
 
-#### Tuning:
+#### Tuning
+
 - SVMs do not require almost any tuning.
 - The higher the \\(C\\), the more penalty, and therefore the less wiggling the decision boundary will be.
 - The higher the \\(\gamma\\), the more influence on the decision boundary, thereby the more wiggling the boundary will be.

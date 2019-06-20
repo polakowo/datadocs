@@ -12,7 +12,8 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/deep-lear
     - It significantly affects model performance. The optimal learning rate is dependent on the topology of the loss landscape, which is in turn depends on both the model architecture and the dataset.
     - Try to set a higher learning rate first and then gradually lower it down until the best value is found.
 
-#### Divergence:
+#### Divergence
+
 - It's a key differentiator between convergence and divergence.
 - If learning rate is set too low, training will progress very slowly as you are making very tiny updates to the weights in the network.
 - However, if learning rate is set too high, it can cause undesirable divergent behavior in the loss function.
@@ -20,7 +21,8 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/deep-lear
 <img width=350 src="/datadocs/assets/figure3.png"/>
 <center><a href="http://www.cs.cornell.edu/courses/cs4780/2015fa/web/lecturenotes/lecturenote07.html" style="color: lightgrey">Credit</a></center>
 
-#### Local minima:
+#### Local minima
+
 - The best learning rate is associated with the steepest drop in loss.
 - Recent research has shown that local minima is not neccasarily bad. In the loss landscape of a neural network, there are just way too many minima, and a "good" local minima might perform just as well as a global minima.
 - A desirable property of a minima should be it that it should be on the flatter side, because flat minimum are easy to converge to, given there's less chance to overshoot the minima, and be bouncing between the ridges of the minima.
@@ -28,7 +30,8 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/deep-lear
 <img width=250 src="/datadocs/assets/noshort.png"/>
 <center><a href="https://www.cs.umd.edu/~tomg/projects/landscapes/" style="color: lightgrey">Credit</a></center>
 
-#### Saddle points:
+#### Saddle points
+
 - Another key challenge of minimizing highly non-convex error functions is avoiding getting trapped in their numerous suboptimal local minima.
 - Dauphin et al. [3] argue that the difficulty arises in fact not from local minima but from saddle points, i.e. points where one dimension slopes up and another slopes down.
 
@@ -52,10 +55,12 @@ $$\large{\theta_{t+1}=\theta_{t}-\alpha\frac{\delta{J(\theta_{t})}}{\delta\theta
 <center>\\(\alpha\\): slope parameter (learning rate),</center>
 <center>\\(J\\): cost function</center>
 
-#### Pros:
+#### Pros
+
 - Gradient-based method are very efficient when the search for an optimum happens in an elliptical domain.
 
-#### Cons:
+#### Cons
+
 - The objective function might be discontinuous.
 - Gradient-based methods are inefficient when the search space solution is large.
 - The choice of a starting point conditions the search and the efficiency of a gradient-based method. Converge towards a local minimum is much likely to occur.
@@ -65,12 +70,14 @@ $$\large{\theta_{t+1}=\theta_{t}-\alpha\frac{\delta{J(\theta_{t})}}{\delta\theta
 - We compute the cost in one large batch computation.
 - When computing the cost function we look at the loss associated with each training example and then sum these values together for an overall cost of the entire dataset.
 
-#### Pros:
+#### Pros
+
 - Fewer updates to the model means this variant of gradient descent is more computationally efficient than stochastic gradient descent.
 - The decreased update frequency results in a more stable error gradient and may result in a more stable convergence on some problems.
 - The separation of the calculation of prediction errors and the model update lends the algorithm to parallel processing based implementations.
 
-#### Cons:
+#### Cons
+
 - Model updates, and in turn training speed, may become very slow for large datasets.
 - Commonly, batch gradient descent is implemented in such a way that it requires the entire training dataset in memory and available to the algorithm.
 - Moreover, it begs the question: do we really need to see all of the data before making improvements to our parameter values?
@@ -87,7 +94,8 @@ $$\large{\theta_{t+1}=\theta_{t}-\alpha\frac{\delta{J(\theta_{t})}}{\delta\theta
 <img width=500 src="/datadocs/assets/Screen-Shot-2017-11-15-at-7.26.05-PM.png"/>
 <center><a href="https://www.jeremyjordan.me/gradient-descent/" style="color: lightgrey">Credit</a></center>
 
-#### Shuffling:
+#### Shuffling
+
 - Every mini-batch used in the training process should have the same distribution
 - A difference in the distributions is called the covariate shift
 - With every GD iteration, randomize the data before creating mini-batches for images to be uniformly sampled from the entire distribution
@@ -95,14 +103,16 @@ $$\large{\theta_{t+1}=\theta_{t}-\alpha\frac{\delta{J(\theta_{t})}}{\delta\theta
 <img width=550 src="/datadocs/assets/covariate-shift.png"/>
 <center><a href="https://www.learnopencv.com/batch-normalization-in-deep-networks/" style="color: lightgrey">Credit</a></center>
 
-#### Pros:
+#### Pros
+
 - This allows us to improve our model parameters at each mini batch iteration and take 100 steps towards the global optimum rather than just 1 step
 - The model update frequency is higher than batch gradient descent which allows for a more robust convergence, avoiding local minima.
 - Makes use of highly optimized matrix optimizations compared to stochastic gradient descent.
 - The batching allows both the efficiency of not having all training data in memory and algorithm implementations.
 - SGD reaches higher validation accuracy than adaptive learning methods while being slower.
 
-#### Cons:
+#### Cons
+
 - Requires three loops:
   - Over the number of epochs
   - Over the number of iterations
@@ -117,7 +127,8 @@ $$\large{\theta_{t+1}=\theta_{t}-\alpha\frac{\delta{J(\theta_{t})}}{\delta\theta
 - Mini-batch requires the configuration of an additional “mini-batch size” hyperparameter for the learning algorithm.
 - Error information must be accumulated across mini-batches of training examples like batch gradient descent.
 
-#### Best practices:
+#### Best practices
+
 - Common batch sizes (\\(m\\)) include: 64, 128, 256, and 512.
 - Using big batch sizes often leads to overfitting.
 - Using small batch sizes achieves the best training stability and generalization performance, for a given computational cost, across a wide range of experiments. In all cases the best results have been obtained with batch sizes \\(m=32\\) or smaller.
@@ -132,7 +143,8 @@ $$\large{\theta_{t+1}=\theta_{t}-\alpha\frac{\delta{J(\theta_{t})}}{\delta\theta
 - Adaptive methods allow to the model to learn and converge faster.
 - But in practice, they often lead to overfitting.
 
-#### Which optimizer to use:
+#### Which optimizer to use
+
 - If your input data is sparse, then you likely achieve the best results using one of the adaptive learning-rate methods.
 - Also, if you care about fast convergence and train a deep or complex neural network, you should choose one of the adaptive learning rate methods.
 - RMSprop, Adadelta, and Adam are very similar algorithms that do well in similar circumstances.
@@ -176,11 +188,13 @@ $$\large{\hat{v}_t=\frac{v_t}{1-\beta^t}}$$
 
 - [Why Momentum Really Works](https://distill.pub/2017/momentum/)
 
-#### Pros:
+#### Pros
+
 - SGD with momentum converges slower but the trained network usually generalizes better than Adam.
 - It also seems to find more flatter minima.
 
-#### Best practices:
+#### Best practices
+
 - The velocity is initialized with zeros. So the algorithm will take a few iterations to "build up" velocity and start to take bigger steps.
 - If \\(\beta=0\\), then this just becomes standard gradient descent without momentum.
 - With bigger values of beta, we get much smother curve, but it’s a little bit shifted to the right
@@ -197,7 +211,8 @@ $$\large{\theta_{t+1}=\theta_{t}-\alpha\frac{1}{\sqrt{v_t}+\epsilon}g_t}$$
 <center>where</center>
 <center>\\(\epsilon\\): factor for numerical stability</center>
 
-#### Pros:
+#### Pros
+
 - The algorithm does well on online and non-stationary problems (e.g. noisy)
 - RMSProp is used by DeepMind
 
@@ -220,11 +235,13 @@ $$\large{\theta_{t+1}=\theta_{t}-\alpha\frac{\hat{v}_t}{\sqrt{\hat{s}_t}+\epsilo
 
 - [ADAM: A METHOD FOR STOCHASTIC OPTIMIZATION (2017)](https://arxiv.org/pdf/1412.6980.pdf)
 
-#### Pros:
+#### Pros
+
 - In practice, Adam is currently recommended as the default algorithm to use, and often works slightly better than RMSProp.
 - It has attractive benefits on non-convex optimization problems
 
-#### Best practices:
+#### Best practices
+
 - Good default settings for the tested machine learning problems are \\(\alpha=0.001\\), \\(\beta_1=0.9\\), \\(\beta_2=0.999\\) and \\(\epsilon=10^{−8}\\). The popular deep learning libraries generally use the default parameters recommended by the paper.
 
 ### SGDR

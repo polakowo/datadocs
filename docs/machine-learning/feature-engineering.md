@@ -27,14 +27,16 @@ X_test = scaler.transform(X_test)
 - Interactions of categorical features can help linear models and k-nearest neighbors.
 - [Smarter Ways to Encode Categorical Data for Machine Learning](https://towardsdatascience.com/smarter-ways-to-encode-categorical-data-for-machine-learning-part-1-of-3-6dca2f71b159)
 
-#### Label encoding:
+#### Label encoding
+
 - Encode labels with value between 0 and the number of classes-1 (`LabelEncoder`)
 - Label encoding is better than OHE when:
     - It preserves correct order of values: Label encoding is biased in a way that assumes a particular ordered relationship between categories.
     - Assigns close labels to similar (in terms of target) categories: In this case tree will achieve the same quality with less amount of splits, and second, this encoding will help to treat rare categories.
     - The number of categorical features in the dataset is huge: Tree-based models are able to operate on both continuous and categorical variables directly, but have to do a lot of splits to put individual categories in separate buckets to continue to improve train loss.
 
-#### One-hot encoding:
+#### One-hot encoding
+
 - The features are encoded using a one-hot (aka dummy) encoding scheme. This creates a binary column for each category and returns a dense array (`pandas.get_dummies`) or a sparse matrix (`OneHotEncoder`). 
 - One-hot encoding is better than label encoding when:
     - Non-tree-based methods are used
@@ -48,7 +50,8 @@ X_test = scaler.transform(X_test)
     - The resulting sparsity virtually ensures that continuous variables are assigned higher feature importance. But if the categorical variables have few levels, then the induced sparsity is less severe and the one-hot encoded versions have a chance of competing with the continuous ones.
     - A single level of a categorical variable must meet a very high bar in order to be selected for splitting early in the tree building. This can degrade predictive performance.
 
-#### Feature hashing:
+#### Feature hashing
+
 - Addresses out-of-vocabulary issue where features are with more than a thousand categories and constantly getting new ones. OHE would consume too much (both physical and RAM) memory and require retraining after seeing new classes.
 - Enables online learning (see Vowpal Wabbit): the model is capable of learning incrementally without restarting the entire process.
 - Hash functions share the same common characteristics:
@@ -64,7 +67,8 @@ X_test = scaler.transform(X_test)
 <center><img width=500 src="/datadocs/assets/1*K5xAJZCzMG2dwRXj_94nIg.png"/></center>
 <center><a href="https://blog.bradfieldcs.com/an-introduction-to-hashing-in-the-era-of-machine-learning-6039394549b0" style="color: lightgrey">Credit</a></center>
 
-#### Mean encoding:
+#### Mean encoding
+
 - Encoding categorical variables with a mean target value (and also other statistics) is a popular method for working with high cardinality features, especially useful for tree-based models.
 - Tackles an inability to handle high cardinality categorical variables for trees with limited depth.
 - While label encoding gives random order and no correlation with target, mean encoding helps separating target classes.
@@ -92,12 +96,14 @@ X_test = scaler.transform(X_test)
 
 ### Text
 
-#### Tokenization:
+#### Tokenization
+
 - Tokenization is the act of breaking up a sequence of strings into pieces.
 - Simply splitting by a delimeter (such as blank) can lose some of the meaning, e.g., "Los Angeles".
 - [The Art of Tokenization](https://www.ibm.com/developerworks/community/blogs/nlp/entry/tokenization?lang=en)
 
-#### Normalization:
+#### Normalization
+
 - Text preprocessing is not directly transferable from task to task.
 - Usually done with `nltk` (Natural Language ToolKit)
 - Lowercasing: 
@@ -118,7 +124,8 @@ X_test = scaler.transform(X_test)
 - Noise Removal
     - This includes punctuation, special characters, numbers, html formatting, domain-specific keywords, etc.
 
-#### Vectorization:
+#### Vectorization
+
 - As with categorical features, we first need to turn the text content into numerical feature vectors.
 - A corpus of documents can be represented by a matrix with one row per document and one column per token (usually a sparse representation with `scipy.sparse`).
 - Bag of words or Bag of n-grams (BoW, `CountVectorizer`): 
@@ -221,7 +228,8 @@ X_test = scaler.transform(X_test)
 - Also we shouldn't simply remove outliers, since it often produces a distorted view of the world in which nothing unusual ever happens, and overstates the accuracy of the findings. Better is to treat them as missing values.
 - For KNN, we can go one step further and recall that the bigger the feature is the more important it is. So, we can optimize scaling parameter to boost features which seems to be more important.
 
-#### Standardization:
+#### Standardization
+
 - The result of standardization (or Z-score normalization) is that the features will be rescaled so that they'll have the properties of a standard normal distribution.
 - It's a general requirement for the optimal performance of many machine learning algorithms.
 - Required if the algorithm involves the calculation of distances between points or vectors.
@@ -229,24 +237,28 @@ X_test = scaler.transform(X_test)
 - Standard Scaling does not make the distribution normal in the strict sense.
 $$\large{z=\frac{x_i-\mu}{\sigma}}$$
 
-#### Normalization: 
+#### Normalization
+
 - In this approach, the data is scaled to a fixed range - usually 0 to 1. 
 - The cost of having this bounded range - in contrast to standardization - is that we will end up with smaller standard deviations, which can suppress the effect of outliers.
 - As `StandardScaler`, `MinMaxScaler` is very sensitive to the presence of outliers.
 $$\large{x_{\text{scaled}}=\frac{x-x_{\text{min}}}{x_{\text{max}}-x_{\text{min}}}}$$
 
-#### Log-normal transformation:
+#### Log-normal transformation
+
 - Log transform helps to handle skewed data and the distribution becomes more approximate to normal (`np.log1p`).
 - Apply a log-normal transformation to any distribution with a heavy right tail.
 - This transformation is non-linear and will move outliers relatively closer to other samples.
 - The optimal power transformation is found via the [Box-Cox Test](https://itl.nist.gov/div898/handbook/eda/section3/eda336.htm)
 - Q-Q plot for the distribution after taking the logarithm should look like a smooth diagonal line.
 
-#### Winsorization:
+#### Winsorization
+
 - The main purpose of winsorization is to remove outliers by clipping feature's values.
 - For example, we can clip for 1st and 99th percentiles
 
-#### Rank transformation:
+#### Rank transformation
+
 - By ranking the data, the impact of outliers is mitigated: regardless of how extreme an outlier is, it receives the same rank as if it were just slightly larger than the second-largest observation (`scipy.stats.rankdata`)
 
 ## Feature selection
