@@ -58,6 +58,12 @@ class HomeSplash extends React.Component {
       </div>
     );
 
+    const GitHubButton = () => (
+        <section class="github-section">
+            <a class="github-button" href="https://github.com/polakowo/datadocs" data-show-count="true">datadocs</a>
+        </section>
+    )
+
     return (
       <SplashContainer>
         <div className="inner">
@@ -67,6 +73,7 @@ class HomeSplash extends React.Component {
             <Button href={docUrl('machine-learning/linear-models')}>Machine Learning</Button>
             <Button href={docUrl('deep-learning/deep-learning')}>Deep Learning</Button>
           </PromoSection>
+          <GitHubButton/>
         </div>
       </SplashContainer>
     );
@@ -92,10 +99,10 @@ class Index extends React.Component {
       );
   
       const Features = () => (
-        <Block layout="threeColumn" background="light">
+        <Block layout="threeColumn">
           {[
             {
-                content: "`datadocs` is a documentation platform from data scientists for data scientists. It’s goal is to summarize the vast amount of information available on data science.",
+                content: "`datadocs` is a documentation platform from data scientists for data scientists. It’s goal is to provide summaries of the vast amount of topics available on data science.",
                 title: 'Educational',
             },
             {
@@ -103,7 +110,7 @@ class Index extends React.Component {
                 title: 'Organized',
             },
             {
-                content: "`datadocs` is a collaborative workspace in which information can be easily shared. Writing documentation doesn’t require any technical expertise, just a simple Markdown.",
+                content: "`datadocs` is a collaborative workspace in which information can be easily shared. Writing documentation doesn’t require any software skills, just a plain Markdown.",
                 title: 'Collaborative',
             },
           ]}

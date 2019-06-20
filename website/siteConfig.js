@@ -54,8 +54,7 @@ const siteConfig = {
 
     /* Colors for website */
     colors: {
-        primaryColor: '#413737',
-        secondaryColor: '#2d2626',
+        primaryColor: '#609732'
     },
 
     /* Custom fonts for website */
@@ -86,6 +85,8 @@ const siteConfig = {
         'https://buttons.github.io/buttons.js',
         'https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js',
         '/datadocs/js/code-block-buttons.js',
+        '/datadocs/js/disqus.js',
+        'https://buttons.github.io/buttons.js'
     ],
     stylesheets: [],
 

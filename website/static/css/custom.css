@@ -11,13 +11,17 @@
 @media only screen and (min-width: 1500px) {}
 
 a {
-    color: #2e8555;
+    color: #609732;
     text-decoration: none;
 }
 
 a:hover {
-    color: #2e8555;
+    color: #609732;
     text-decoration: none;
+}
+
+.toc .toggleNav ul li.navListItemActive a {
+    color: #609732;
 }
 
 ul>li {
@@ -28,11 +32,63 @@ ul>li {
     padding-top: 10px;
 }
 
-.blockContent {
-    color: #605f5e;
+.container .gridBlock .blockContent h2 div p {
+    font-weight: 300;
 }
 
 .container .gridBlock .blockContent p:not(h2 div p) {
     line-height: 1.7;
     font-size: 16px;
+    color: #605f5e;
+}
+
+.projectTitle {
+    color: white;
+}
+
+.homeSplashFade {
+    background: #609732;
+    color: white;
+}
+
+.pluginWrapper.buttonWrapper .button {
+    border: 1px solid white;
+    color: white;
+}
+
+.pluginWrapper.buttonWrapper .button:hover {
+    background: white;
+    color: #609732;
+}
+
+.projectTitle small {
+    font-style: italic;
+}
+
+.brand-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.brand {
+    display: inline-block;
+    margin: 10px;
+}
+
+.brand-link {
+    margin: 1em auto;
+    opacity: 0.4;
+    transition: opacity 0.15s ease-in-out;
+}
+
+.brand-link:hover {
+    opacity: 1;
+}
+
+.github-section {
+    text-align: center;
+}
+.fixedHeaderContainer a:hover {
+    color: white;
 }
