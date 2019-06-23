@@ -11,17 +11,17 @@
 @media only screen and (min-width: 1500px) {}
 
 a {
-    color: #609732;
+    color: #659D7A;
     text-decoration: none;
 }
 
 a:hover {
-    color: #609732;
+    color: #659D7A;
     text-decoration: none;
 }
 
 .toc .toggleNav ul li.navListItemActive a {
-    color: #609732;
+    color: #659D7A;
 }
 
 ul>li {
@@ -47,7 +47,7 @@ ul>li {
 }
 
 .homeSplashFade {
-    background: #609732;
+    background: #659D7A;
     color: white;
 }
 
@@ -58,7 +58,7 @@ ul>li {
 
 .pluginWrapper.buttonWrapper .button:hover {
     background: white;
-    color: #609732;
+    color: #659D7A;
 }
 
 .projectTitle small {
