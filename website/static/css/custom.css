@@ -11,17 +11,17 @@
 @media only screen and (min-width: 1500px) {}
 
 a {
-    color: #659D7A;
+    color: #5F79BA;
     text-decoration: none;
 }
 
 a:hover {
-    color: #659D7A;
+    color: #5F79BA;
     text-decoration: none;
 }
 
 .toc .toggleNav ul li.navListItemActive a {
-    color: #659D7A;
+    color: #5F79BA;
 }
 
 ul>li {
@@ -43,22 +43,12 @@ ul>li {
 }
 
 .projectTitle {
-    color: white;
+    color: #605f5e;
 }
 
 .homeSplashFade {
-    background: #659D7A;
-    color: white;
-}
-
-.pluginWrapper.buttonWrapper .button {
-    border: 1px solid white;
-    color: white;
-}
-
-.pluginWrapper.buttonWrapper .button:hover {
-    background: white;
-    color: #659D7A;
+    background: whitesmoke;
+    color: #605f5e;
 }
 
 .projectTitle small {
@@ -89,10 +79,11 @@ ul>li {
 .github-section {
     text-align: center;
 }
+
 .fixedHeaderContainer a:hover {
     color: white;
 }
 
 .projectLogo {
-    opacity: 0.1;
+    opacity: 1;
 }

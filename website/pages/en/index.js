@@ -42,12 +42,6 @@ class HomeSplash extends React.Component {
       </h2>
     );
 
-    const ProjectDescription = props => (
-        <p>
-            <MarkdownBlock>{props.children}</MarkdownBlock>
-        </p>
-      );
-
     const PromoSection = props => (
       <div className="section promoSection">
         <div className="promoRow">
@@ -75,7 +69,6 @@ class HomeSplash extends React.Component {
         <Logo img_src={`${baseUrl}img/logo.svg`} />
         <div className="inner">
           <ProjectTitle siteConfig={siteConfig} />
-          <ProjectDescription>Share your knowledge on concepts and phenomena of data science.</ProjectDescription>
           <PromoSection>
             <Button href={docUrl('machine-learning/linear-models')}>Machine Learning</Button>
             <Button href={docUrl('deep-learning/deep-learning')}>Deep Learning</Button>
@@ -117,7 +110,7 @@ class Index extends React.Component {
                 title: 'Organized',
             },
             {
-                content: "`datadocs` is a collaborative workspace in which information can be easily shared. Writing documentation doesn’t require any software skills, just plain Markdown.",
+                content: "`datadocs` is a collaborative workspace in which information can be easily shared. Writing documentation is as easy as writing Markdown.",
                 title: 'Collaborative',
             },
           ]}
