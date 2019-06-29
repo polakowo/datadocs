@@ -10,18 +10,16 @@
 
 @media only screen and (min-width: 1500px) {}
 
-a {
-    color: #5F79BA;
-    text-decoration: none;
+.post a {
+    text-decoration: underline;
 }
 
-a:hover {
-    color: #5F79BA;
-    text-decoration: none;
+.post a:hover {
+    text-decoration: underline;
 }
 
 .toc .toggleNav ul li.navListItemActive a {
-    color: #5F79BA;
+    color: #393939;
 }
 
 ul>li {
