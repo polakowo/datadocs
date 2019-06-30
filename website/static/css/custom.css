@@ -10,16 +10,29 @@
 
 @media only screen and (min-width: 1500px) {}
 
+.fixedHeaderContainer {
+    background: yellowgreen;
+}
+
+.navigationSlider .slidingNav ul li > a:focus,
+.navigationSlider .slidingNav ul li > a:hover,
+.navigationSlider .slidingNav ul li.siteNavItemActive > a,
+.navigationSlider .slidingNav ul li.siteNavGroupActive > a {
+  background-color: yellowgreen;
+}
+
+.anchor {
+    top: -30px;
+}
+
 .post a {
+    color: #393939;
     text-decoration: underline;
 }
 
 .post a:hover {
-    text-decoration: underline;
-}
-
-.toc .toggleNav ul li.navListItemActive a {
     color: #393939;
+    text-decoration: underline;
 }
 
 ul>li {
