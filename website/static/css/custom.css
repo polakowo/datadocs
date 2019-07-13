@@ -73,3 +73,14 @@ ul>li {
 .projectLogo {
     opacity: 1;
 }
+
+.toc .toggleNav ul li.navListItemActive a,
+.toc .toggleNav ul li a:focus,
+.toc .toggleNav ul li a:hover {
+    color: #393939;
+}
+
+article a,
+article a:hover {
+    text-decoration: underline;
+}
