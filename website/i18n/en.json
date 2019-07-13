@@ -5,6 +5,26 @@
     "previous": "Previous",
     "tagline": "Documentation for data enthusiasts",
     "docs": {
+      "big-data/data-ingestion": {
+        "title": "Data Ingestion",
+        "sidebar_label": "Data Ingestion"
+      },
+      "big-data/data-processing": {
+        "title": "Data Processing",
+        "sidebar_label": "Data Processing"
+      },
+      "big-data/data-storage": {
+        "title": "Data Storage",
+        "sidebar_label": "Data Storage"
+      },
+      "big-data/hadoop": {
+        "title": "Hadoop Ecosystem",
+        "sidebar_label": "Hadoop Ecosystem"
+      },
+      "big-data/orchestration": {
+        "title": "Orchestration",
+        "sidebar_label": "Orchestration"
+      },
       "deep-learning/activation-functions": {
         "title": "Activation Functions",
         "sidebar_label": "Activation Functions"
@@ -132,7 +152,8 @@
     },
     "categories": {
       "Machine Learning": "Machine Learning",
-      "Deep Learning": "Deep Learning"
+      "Deep Learning": "Deep Learning",
+      "Big Data": "Big Data"
     }
   },
   "pages-strings": {

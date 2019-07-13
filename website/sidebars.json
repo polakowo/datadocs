@@ -69,6 +69,17 @@
                 "deep-learning/attention-mechanism",
                 "deep-learning/speech-recognition"
             ]
+        }],
+        "Big Data": [{
+            "type": "subcategory",
+            "label": "Hadoop",
+            "ids": [
+                "big-data/hadoop",
+                "big-data/data-ingestion",
+                "big-data/data-storage",
+                "big-data/data-processing",
+                "big-data/orchestration"
+            ]
         }]
     }
 }
