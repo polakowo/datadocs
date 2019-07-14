@@ -128,4 +128,6 @@ class Index extends React.Component {
     }
   }
 
+Index.description = "Share your knowledge on concepts and phenomena of data science";
+
 module.exports = Index;
