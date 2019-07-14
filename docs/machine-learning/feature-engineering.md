@@ -9,7 +9,7 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/machine-l
 - A simple model trained on high-quality data can be better than a complicated multi-model ensemble built on dirty data.
 - Use training set for generating learning model parameters from training data and only then transform both train and test sets according to those parameters, using the entire dataset risks information leakage.
 
-```python
+```py
 scaler.fit(X_train)
 X_train = scaler.transform(X_train)
 X_test = scaler.transform(X_test)

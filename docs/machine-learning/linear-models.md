@@ -6,22 +6,14 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/machine-l
 ---
 
 - In linear models, the relationships are modeled using linear predictor functions.
-- Linear models are frequently favorable due to their interpretability and often good predictive performance.
 - Linear methods split space into 2 subspaces.
 
 <center><img width=150 src="/datadocs/assets/classifier.png"/></center>
 <center><a href="https://33bits.wordpress.com/tag/spam/" target="_blank" style="color: lightgrey">Credit</a></center>
 
-- The most famous toy example of where classes cannot be divided by a hyperplane (or line) with no errors is "the XOR problem".
-- But if one were to give polynomial features as an input, then the problem is solved.
-    - Polynomial features do help, but it is computationally inefficient to build them explicitly. 
-    - SVM with the kernel trick works much faster.
-    
-<center><img width=300 src="/datadocs/assets/xor.png"/></center>
-<center><a href="https://github.com/Yorko/mlcourse.ai/blob/master/jupyter_english/topic04_linear_models/topic4_linear_models_part4_good_bad_logit_movie_reviews_XOR.ipynb" target="_blank" style="color: lightgrey">Credit</a></center>
-
 #### Pros
 
+- Linear models are frequently favorable due to their interpretability and often good predictive performance.
 - Linear regression is often not computationally expensive.
 - They are easily comprehensible and transparent in nature.
 - Can handle a very large number of features, especially with very low signal to noise ratio.
@@ -30,6 +22,11 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/machine-l
 #### Cons
 
 - They strongly rely on a linear relationship.
+- The most famous toy example of where classes cannot be divided by a hyperplane (or line) with no errors is "the XOR problem". But if one were to give polynomial features as an input, then the problem can be solved.
+
+<center><img width=300 src="/datadocs/assets/xor.png"/></center>
+<center><a href="https://github.com/Yorko/mlcourse.ai/blob/master/jupyter_english/topic04_linear_models/topic4_linear_models_part4_good_bad_logit_movie_reviews_XOR.ipynb" target="_blank" style="color: lightgrey">Credit</a></center>
+
 - Weaker than other algorithms in terms of reducing error rates.
 - Rely on continuous data to build regression capabilities.
 - Each missing value removes one data point that could optimize the regression.
