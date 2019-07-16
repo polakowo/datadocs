@@ -25,6 +25,10 @@
         "title": "Orchestration",
         "sidebar_label": "Orchestration"
       },
+      "big-data/query-engines": {
+        "title": "Query Engines",
+        "sidebar_label": "Query Engines"
+      },
       "deep-learning/activation-functions": {
         "title": "Activation Functions",
         "sidebar_label": "Activation Functions"

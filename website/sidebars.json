@@ -75,10 +75,11 @@
             "label": "Hadoop",
             "ids": [
                 "big-data/hadoop",
+                "big-data/orchestration",
                 "big-data/data-ingestion",
                 "big-data/data-storage",
                 "big-data/data-processing",
-                "big-data/orchestration"
+                "big-data/query-engines"
             ]
         }]
     }

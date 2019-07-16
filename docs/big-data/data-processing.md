@@ -9,7 +9,7 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/big-data/
 
 ### MapReduce
 
-<center><img width=300 src="/datadocs/assets/mapreduce-logo.jpg"/></center>
+<center><img width=250 src="/datadocs/assets/mapreducelogo.png"/></center>
 
 - MapReduce is a programming model and runtime for processing large data-sets (in clusters).
 - Divides the data up into partitions that are MAPPED (transformed) and REDUCED (aggregated).
@@ -99,10 +99,15 @@ if __name__ == '__main__':
 
 - Sits either on top of YARN or MESOS.
 
-### TEZ
+### Tez
 
-- Uses directed acyclic graph to optimize queries.
-- Used in conjunction with Hive to accelerate it.
+<center><img width=200 src="/datadocs/assets/ApacheTezLogo_lowres.png.jpeg"/></center>
+
+- Apache Tez expresses complex computations in MapReduce programs as directed acyclic graphs (DAG), permitting dynamic performance optimizations.
+- Improves the MapReduce paradigm by dramatically improving its speed.
+- Integrates well with Pig, Hive and other engines (can be selected via checkbox)
+- Builds upon YARN.
+- [Apache Tez](https://hortonworks.com/apache/tez/#section_1)
 
 ## Streaming
 
