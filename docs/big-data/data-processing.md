@@ -9,7 +9,7 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/big-data/
 
 ### MapReduce
 
-<center><img width=250 src="/datadocs/assets/mapreducelogo.png"/></center>
+<center><img width=250 src="/datadocs/assets/Apache-MapReduce-logo-Hadoop-Ecosystem-Edureka.jpg"/></center>
 
 - MapReduce is a programming model and runtime for processing large data-sets (in clusters).
 - Divides the data up into partitions that are MAPPED (transformed) and REDUCED (aggregated).

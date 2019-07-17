@@ -22,13 +22,13 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/big-data/
 #### POSIX
 
 - POSIX is a family of IEEE standards, specified by the , to clarify and make uniform the API provided by UNIX operating systems. 
-- Programs relying on POSIX standards can be easily ported among a large family of UNIX derivatives.
+- Programs can read and write to the distributed data store as if the data were mounted locally.
 - Limited POSIX compliance also extended to various versions of Windows.
 - [Most important things POSIX 7 defines](https://stackoverflow.com/a/31865755)
 
 ### HDFS
 
-<center><img width=300 src="/datadocs/assets/41502d489ace02f2857ca90d1d78cc76.png"/></center>
+<center><img width=250 src="/datadocs/assets/41502d489ace02f2857ca90d1d78cc76.png"/></center>
 
 - The Hadoop Distributed File System (HDFS) is a distributed file system designed to run on commodity hardware (GNU/Linux).
 - Originally built as infrastructure for the Apache Nutch web search engine.
