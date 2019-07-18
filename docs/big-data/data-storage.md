@@ -110,12 +110,45 @@ bin/hadoop dfs -mkdir /foodir
 
 #### CAP Theorem
 
+### MySQL
+
+<center><img width=200 src="/datadocs/assets/1200px-MySQL.svg.png"/></center>
+
+- MySQL is the most popular Open Source RDBMS.
+    - The logical model includes objects such as databases, tables, views, rows, and columns.
+    - The database structures are organized into physical files optimized for speed.
+- It is developed, distributed, and supported by Oracle.
+    - MySQL is Open Source and part of LAMP (Linux, Apache, MySQL, PHP/Perl/Python) environment.
+- Given that the server hardware is optimal, MySQL runs very fast. 
+    - Supports clustered servers for demanding applications.
+- MySQL is faster, more reliable and cheaper because of its unique storage engine architecture.
+    - Written in C and C++
+    - Tested with a broad range of different compilers.
+    - Uses multi-layered server design with independent modules.
+    - Designed to be fully multithreaded using kernel threads, to easily use multiple CPUs.
+    - Uses a very fast thread-based memory allocation system.
+- MySQL is a relatively simple database system.
+- Understands standards based SQL (Structured Query Language).
+    - SQL is the most common standardized language used to access databases. 
+    - The SQL standard has been evolving since 1986.
+- Consists of a solid data security layer that protects sensitive data from intruders.
+- Follows a client/server architecture consisting of a database server and arbitrarily many clients.
+    - MySQL Server is a multithreaded SQL server.
+    - It can also be provided as an embedded multithreaded library.
+- The default file size limit is about 4GB, but can be increased to a theoretical limit of 8TB.
+- Supports a large number of platforms, client programs and libraries, administrative tools and APIs.
+    - Supports JDBC and JDBC
+    - Provides transactional and nontransactional storage engines.
+    - Designed to make it relatively easy to add other storage engines.
+- Other features:
+    - Roll-backs, commit and crash recovery
+    - Triggers, stored procedures and views
+- [The Main Features of MySQL](https://dev.mysql.com/doc/refman/8.0/en/features.html)
+
 ### HBase
 
 - Exposing data to transactional platform.
 - Very fast way to expose results of Spark to other systems.
-
-### MySQL
 
 ### Cassandra
 

@@ -34,10 +34,11 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/big-data/
     - Hive can take ownership of the data with `LOAD DATA` command or a managed table.
     - Partitioning is a huge optimization if queries are only on certain partitions (e.g. country)
 - Faster execution of HiveQL or SQL on top of Hadoop:
-    - The Hive metastore can be used with Spark SQL and HiveQL can run on the Spark execution engine.
+    - Spark SQL can be used with the Hive metastore.
+    - HiveQL can run on the Spark execution engine.
     - Apache Drill provides the ability to leverage the metadata in the Hive metastore for querying.
     - Hive can run on Tez, allowing queries to run significantly faster.
-    - Impala leverages Hive’s query language (HiveQL) and metastore to bring interactive SQL to Hadoop.
+    - Impala leverages HiveQL and metastore to bring interactive SQL to Hadoop.
 - Provides ease of use and compatibility with existing business applications through JDBC/ODBC.
 - Users are able to connect with Hive using a command-line tool and a JDBC driver.
 
