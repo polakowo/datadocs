@@ -72,6 +72,13 @@
         }],
         "Big Data": [{
             "type": "subcategory",
+            "label": "General",
+            "ids": [
+                "big-data/data-engineering",
+                "big-data/data-modeling"
+            ]
+        }, {
+            "type": "subcategory",
             "label": "Hadoop",
             "ids": [
                 "big-data/hadoop",

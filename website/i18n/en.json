@@ -5,9 +5,17 @@
     "previous": "Previous",
     "tagline": "Documentation for data enthusiasts",
     "docs": {
+      "big-data/data-engineering": {
+        "title": "Data Engineering",
+        "sidebar_label": "Data Engineering"
+      },
       "big-data/data-ingestion": {
         "title": "Data Ingestion",
         "sidebar_label": "Data Ingestion"
+      },
+      "big-data/data-modeling": {
+        "title": "Data Modeling",
+        "sidebar_label": "Data Modeling"
       },
       "big-data/data-processing": {
         "title": "Data Processing",
