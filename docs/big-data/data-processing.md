@@ -7,7 +7,7 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/big-data/
 
 ## Batch processing
 
-### MapReduce
+### Hadoop MapReduce
 
 <center><img width=250 src="/datadocs/assets/Apache-MapReduce-logo-Hadoop-Ecosystem-Edureka.jpg"/></center>
 
@@ -95,11 +95,11 @@ if __name__ == '__main__':
     RatingsBreakdown.run()
 ```
 
-### Spark
+### Apache Spark
 
 - Sits either on top of YARN or MESOS.
 
-### Tez
+### Apache Tez
 
 <center><img width=200 src="/datadocs/assets/ApacheTezLogo_lowres.png.jpeg"/></center>
 
@@ -111,6 +111,6 @@ if __name__ == '__main__':
 
 ## Streaming
 
-### STORM
+### Apache Storm
 
 - Processing streaming data.

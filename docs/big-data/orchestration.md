@@ -5,7 +5,7 @@ sidebar_label: Orchestration
 custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/big-data/orchestration.md
 ---
 
-## YARN
+## Hadoop YARN
 
 - YARN (Yet Another Resource Negotiator) is responsible for allocating system resources to the various applications running in a Hadoop cluster and scheduling tasks to be executed on different cluster nodes.
 - YARN sits between HDFS and the processing engines being used to run applications.

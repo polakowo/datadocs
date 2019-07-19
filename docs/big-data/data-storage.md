@@ -5,9 +5,7 @@ sidebar_label: Data Storage
 custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/big-data/data-storage.md
 ---
 
-## Distributed file systems
-
-### NFS
+## NFS
 
 - Transparent remote file access using the virtual file system.
     - Each file is hosted at a server, and accesed by clients.
@@ -26,7 +24,7 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/big-data/
 - Limited POSIX compliance also extended to various versions of Windows.
 - [Most important things POSIX 7 defines](https://stackoverflow.com/a/31865755)
 
-### HDFS
+## HDFS
 
 <center><img width=250 src="/datadocs/assets/41502d489ace02f2857ca90d1d78cc76.png"/></center>
 
@@ -105,51 +103,3 @@ bin/hadoop dfs -mkdir /foodir
 - Compute: Separation of cloud storage and compute allows for new Spark applications.
 - [HDFS vs. Cloud Storage: Pros, cons and migration tips](https://cloud.google.com/blog/products/storage-data-transfer/hdfs-vs-cloud-storage-pros-cons-and-migration-tips)
 - [Top 5 Reasons for Choosing S3 over HDFS](https://databricks.com/blog/2017/05/31/top-5-reasons-for-choosing-s3-over-hdfs.html)
-
-## Databases
-
-#### CAP Theorem
-
-### MySQL
-
-<center><img width=200 src="/datadocs/assets/1200px-MySQL.svg.png"/></center>
-
-- MySQL is the most popular Open Source RDBMS.
-    - The logical model includes objects such as databases, tables, views, rows, and columns.
-    - The database structures are organized into physical files optimized for speed.
-- It is developed, distributed, and supported by Oracle.
-    - MySQL is Open Source and part of LAMP (Linux, Apache, MySQL, PHP/Perl/Python) environment.
-- Given that the server hardware is optimal, MySQL runs very fast. 
-    - Supports clustered servers for demanding applications.
-- MySQL is faster, more reliable and cheaper because of its unique storage engine architecture.
-    - Written in C and C++
-    - Tested with a broad range of different compilers.
-    - Uses multi-layered server design with independent modules.
-    - Designed to be fully multithreaded using kernel threads, to easily use multiple CPUs.
-    - Uses a very fast thread-based memory allocation system.
-- MySQL is a relatively simple database system.
-- Understands standards based SQL (Structured Query Language).
-    - SQL is the most common standardized language used to access databases. 
-    - The SQL standard has been evolving since 1986.
-- Consists of a solid data security layer that protects sensitive data from intruders.
-- Follows a client/server architecture consisting of a database server and arbitrarily many clients.
-    - MySQL Server is a multithreaded SQL server.
-    - It can also be provided as an embedded multithreaded library.
-- The default file size limit is about 4GB, but can be increased to a theoretical limit of 8TB.
-- Supports a large number of platforms, client programs and libraries, administrative tools and APIs.
-    - Supports JDBC and JDBC
-    - Provides transactional and nontransactional storage engines.
-    - Designed to make it relatively easy to add other storage engines.
-- Other features:
-    - Roll-backs, commit and crash recovery
-    - Triggers, stored procedures and views
-- [The Main Features of MySQL](https://dev.mysql.com/doc/refman/8.0/en/features.html)
-
-### HBase
-
-- Exposing data to transactional platform.
-- Very fast way to expose results of Spark to other systems.
-
-### Cassandra
-
-### MongoDB
