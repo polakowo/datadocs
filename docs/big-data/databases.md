@@ -5,6 +5,18 @@ sidebar_label: Databases
 custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/big-data/databases.md
 ---
 
+- Database is a set of related data and the way it is organized.
+- Database Management System (DBMS) is a software for storage, retrieval, and updating of data.
+- Database is often used to refer to both the database and the DBMS.
+
+#### OLAP vs OLTP
+
+- Online Analytical Processing (OLAP):
+    - OLTP queries are read heavy and focus primarily on analytics.
+- Online Transactional Processing (OLTP):
+    - Databases optimized for these workloads allow for less complex queries in large volume.
+    - The types of queries for these databases are read, insert, update, and delete.
+
 ## SQL databases
 
 - Data is placed in tables and data schema is carefully designed before the database is built.
@@ -41,6 +53,7 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/big-data/
 - Easier to change to business requirements.
     - Modeling the data, not modeling queries.
     - Have better support, product suites and add-ons to manage these databases.
+- No need to do queries first, run them based on the schemas and ERD.
 
 #### Cons
 
