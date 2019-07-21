@@ -6,26 +6,83 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/big-data/
 ---
 
 - Data model is an abstraction that organizes elements of data and how they will relate to each other.
-- Data modeling is the process of creating data models for information systems.
-- It can easily translate to database modeling, as this is the essential end state.
-- Process to support business and user applications:
-    - Gather requirements
-    - Conceptual data modeling (entity mapping)
-    - Logical data modeling (tables, schemas, columns)
-    - Physical data modeling (DDLs)
-- Data modeling is an important skill for anyone involved in the process of using and analyzing data.
-- Does modeling is an iterative process:
-    - It is iterative as new requirements and data are introduced.
-    - Data engineers continually reorganize, restructure, and optimize data models to fit the needs.
-    - Having flexibility will help.
-- Data organization is critical:
-    - Organized data determines later use.
+- Data modeling helps in the visual representation of data and enforces business rules, regulatory compliances, and government policies on the data.
+    - The process of creating data models for information systems.
+    - An important skill for anyone involved in the process of using and analyzing data.
+    - More about how to structure data to be used by different stakeholders.
+    - Do not join four tables just to send one email.
+- Advantages:
+    - Helps common understanding of business data elements and requirements.
+    - Provides foundation for designing a database.
+    - Facilitates avoidance of data redundancy and data & business transaction inconsistency.
+    - Facilitates data re-use and sharing.
+    - Decreases development and maintenance time and cost.
+    - Confirms a logical process model and helps impact analysis.
+- Data model provides a clear picture of the data organization:
     - Simple queries might become complicated if data modeling isn't well thought out.
     - Begin prior to building out application, business logic, and analytical models.
-- Data modeling is more about how to structure data to be used by different stakeholders.
-> Do not join four tables just to send one email.
+- Data modeling is an iterative process:
+    - Data engineers continually reorganize, restructure, and optimize data models to fit the needs.
+    - The process is iterative as new requirements and data are introduced.
+- [Conceptual, logical and physical data model](https://en.wikipedia.org/wiki/Logical_schema#Conceptual,_logical_and_physical_data_model)
 
-## Relational model
+<center><img width=550 src="/datadocs/assets/data-modeling.png"/></center>
+<center><a href="https://www.sap.com/hana" style="color: lightgrey">Credit</a></center>
+
+<center><img width=350 src="/datadocs/assets/data-modeling-features.png"/></center>
+<center><a href="https://www.1keydata.com/datawarehousing/data-modeling-levels.html" style="color: lightgrey">Credit</a></center>
+
+#### Conceptional schema
+
+- The data requirements are initially recorded as a conceptual data model which is essentially a set of technology independent specifications about the data and is used to discuss initial requirements with the business stakeholders.
+- Defines WHAT the system should contain.
+    - High-level, static business structures and concepts
+- Conceptual ERD models reflect information gathered from business requirements.
+- Typically created by Data Architects, Business Analysts and stakeholders with ERD or other UML.
+- [Learn more about Conceptual Modeling](https://www.sciencedirect.com/topics/computer-science/conceptual-modeling)
+
+#### Logical schema
+
+- The conceptual model is then translated into a logical data model, which documents structures of the data that can be implemented in databases.
+    - One conceptual data model may require multiple logical data models.
+    - Conceptional and logical schemas are sometimes implemented as one and the same.
+- Logical Data Models (LDMs) define HOW the system should be implemented regardless of the DBMS.
+    - Entity types, data attributes and relationships between entities
+    - Has to aid business analysis, not the database creation.
+- Typically created by Data Architects and Business Analysts with ERD or other UML.
+
+#### Physical schema
+
+- The last step in data modeling is transforming the logical data model to a physical data model that organizes the data into tables, and accounts for access, performance and storage details.
+- Physical Data Models (PDMs) define HOW the system should be implemented using a specific DBMS system.
+    - The internal schema database design
+- The target implementation technology may be a RDBMS, an XML document, or a NoSQL database.
+- Can use DDL statements to deploy the database server.
+- Typically created by DBA and developers.
+
+## Relational modeling
+
+- The relational data model allows to create a consistent, logical representation of information.
+    - Consistency is achieved by including declared constraints (logical schema)
+
+#### Keys
+
+- SUPERKEY is a set of attributes whose values can be used to uniquely identify a tuple.
+- CANDIDATE KEY is a minimal set of attributes necessary to identify a tuple.
+    - Also called a MINIMAL SUPERKEY.
+    - Usually one CANDIDATE KEY is chosen to be called the PRIMARY KEY.
+    - Other CANDIDATE KEYS are called ALTERNATE KEYS.
+- PRIMARY KEY ensures that the column(s) has no NULL values, and that every value is unique.
+    - Must be unique for each record.
+    - Must apply uniform rules for all records.
+    - Must stand the test of time.
+    - Must be read-only (to avoid typos and varying formats).
+    - Physically, implemented as a unique index.
+- SURROGATE KEY is a key which is not natural.
+    - A natural key is a key that has contextual or business meaning (STORE, SALES).
+    - For example, an increasing sequential integer or “counter” value.
+    - Can be extremely useful for analytical purposes.
+- FOREIGN KEY is a column in one table that refers to the PRIMARY KEY in other table.
 
 ### Normalization
 
@@ -92,6 +149,8 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/big-data/
 - Fact table consists of the measurements, metrics or facts of a business process (e.g. transactions)
     - Generally consist of numeric values and foreign keys to dimensional data.
     - A measure is a numeric attribute of a fact, representing the performance.
+    - An attribute is a unique level within a dimension.
+    - A hierarchy represents relationship between different attributes (Year → Quarter → Month → Day)
 - Dimension is a structure that categorizes facts and measures in order to enable users to answer business questions (e.g. people, products, place and time)
     - Usually have a relatively small number of records compared to fact tables.
     - But each record may have a very large number of attributes.
@@ -135,3 +194,7 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/big-data/
 - Cons:
     - Adds complexity to source query joins.
     - Data loads must be highly controlled and managed to avoid update and insert anomalies.
+- Use cases:
+    - No frequent queries of some dimension data for needing it for information purposes.
+    - A reporting or cube architecture that needs hierarchies or slicing feature. 
+    - Having fact tables that have different level of granularity.

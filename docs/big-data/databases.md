@@ -17,6 +17,32 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/big-data/
     - Databases optimized for these workloads allow for less complex queries in large volume.
     - The types of queries for these databases are read, insert, update, and delete.
 
+## CAP Theorem
+- States that it is impossible for a distributed data store to simultaneously provide more than two out of the following three guarantees:
+    - Consistency (C, ACID guarantees): All read requests should receive the latest value (or error)
+    - Availability (A, BASE philosophy): All requests should return successfully.
+    - Partition tolerance (P): The system can tolerate arbitrary number of communication failures.
+- Since no distributed system is safe from network failures, partition tolerance is mandatory.
+    - Consistency: Return an error if particular version cannot be guaranteed to be up to date.
+    - Availability: Always process the query and return the most recent available version.
+- When there are no network partitions, every system can behave like CA. 
+> All systems are, in fact, CAP, but tunes how much C and A are provided during P.
+
+<center><img width=450 src="/datadocs/assets/56858813-35362180-699e-11e9-8e9d-a7be8b2b83e4.png"/></center>
+<center><a href="https://blog.grio.com/tag/nosql" style="color: lightgrey">Credit</a></center>
+
+#### PACELC
+- Extended model which considers normal operation and latency.
+- Availability comes at the expense of latency.
+- PA/EL: Give up consistency at all times for availability and lower latency.
+    - Dynamo, Cassandra (tuneable), Riak, web cache
+- PA/EC: Give up consistency when partition occurs, otherwise provide consistency.
+    - BigTable, Hbase, VoltDB/H-Store
+- PC/EL: Give up availability when partition occurs, otherwise provide latency.
+    - MongoDB
+- PC/EC: Refuse to give up consistency, pay the cost in availability and latency.
+    - Yahoo! PNUTS
+
 ## SQL databases
 
 - Data is placed in tables and data schema is carefully designed before the database is built.
@@ -28,8 +54,8 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/big-data/
 - Use cases:
     - You need ACID compliancy.
     - Your data is structured and unchanging.
+    - Large-scale web organizations such as Google and Amazon employ relational databases as adjuncts where high-grade data consistency is necessary.
     - [SQL Vs NoSQL: The Differences Explained](https://blog.panoply.io/sql-or-nosql-that-is-the-question)
-- Large-scale web organizations such as Google and Amazon employ relational databases as adjuncts where high-grade data consistency is necessary.
 
 #### ACID transactions
 
@@ -58,11 +84,10 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/big-data/
 #### Cons
 
 - Not suited for large amounts of data as they cannot scale horizontally.
-    - Not highly available because of a single point of failure.
-    - Usually don't provide high throughput and fast reads.
+- Not highly available because of a single point of failure.
 - Not designed to handle unstructured and hierarchical data.
-- ACID transactions slow down the process of reading and writing data.
-    - The atomicity of the operations plays a crucial part in the database’s performance.
+- The atomicity of the operations plays a crucial part in the database’s performance.
+    - ACID transactions slow down the process of reading and writing data.
 - Have a predefined (not flexible) schema.
 
 #### Scaling up relational databases
@@ -111,7 +136,7 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/big-data/
 
 ## NoSQL databases
 
-- To deal with big data, companies require more agile, flexible, and scalable tools.
+- To deal with big data, companies require high scalability, high speed, and continuous availability.
 - NoSQL databases are non-relational databases that can accomodate a wide variety of data models.
     - Key-value, document, columnar and graph formats
 - NoSQL stands for "not only SQL"
@@ -122,6 +147,7 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/big-data/
 - Geared toward managing varied and frequently updated data.
 - Built for specific data models and have flexible schemas for building modern applications.
 - NoSQL databases have become very popular among application developers.
+    - Developers do not need to convert in-memory structure to relational structure.
 - [RDBMs and NoSQL types and use cases](http://www.cbs1.com.my/WebLITE/Applications/news/uploaded/docs/IBM_POWER8%20Linux%20-%20OpenDB%20V1.0.pdf)
 
 <center><img width=700 src="/datadocs/assets/nosql-databases.png"/></center>
@@ -130,10 +156,12 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/big-data/
 #### Pros
 
 - Huge volumes of structured, semi-structured, and unstructured data.
-- Efficient, scale-out architecture instead of expensive, monolithic architecture.
-    - Ability to scale horizontally on commodity hardware.
-    - High availability, high throughput and low latency.
+- Ability to scale horizontally on commodity hardware.
+    - Efficient, scale-out architecture instead of expensive, monolithic architecture.
+- High availability and location independence.
     - For example, if users are distributed geographically.
+- High throughput and low latency.
+    - Fast reads and writes
 - Ability to handle change over time (schema agnostic nature)
 - Agile sprints, quick iteration, and frequent code pushes.
     - There are no complicated connections.
@@ -145,11 +173,6 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/big-data/
 - Limited support for JOINS as this will result in a full table scan.
 - Not designed for aggregations and analytics.
 - Queries need to be known in advance (e.g. to specify partition keys)
-
-### Apache HBase
-
-- Exposing data to transactional platform.
-- Very fast way to expose results of Spark to other systems.
 
 ### Apache Cassandra
 

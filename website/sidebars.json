@@ -75,7 +75,8 @@
             "label": "General",
             "ids": [
                 "big-data/data-engineering",
-                "big-data/data-modeling"
+                "big-data/data-modeling",
+                "big-data/databases"
             ]
         }, {
             "type": "subcategory",
@@ -85,7 +86,6 @@
                 "big-data/orchestration",
                 "big-data/data-ingestion",
                 "big-data/data-storage",
-                "big-data/databases",
                 "big-data/data-processing",
                 "big-data/query-engines"
             ]

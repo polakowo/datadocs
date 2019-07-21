@@ -103,3 +103,8 @@ bin/hadoop dfs -mkdir /foodir
 - Compute: Separation of cloud storage and compute allows for new Spark applications.
 - [HDFS vs. Cloud Storage: Pros, cons and migration tips](https://cloud.google.com/blog/products/storage-data-transfer/hdfs-vs-cloud-storage-pros-cons-and-migration-tips)
 - [Top 5 Reasons for Choosing S3 over HDFS](https://databricks.com/blog/2017/05/31/top-5-reasons-for-choosing-s3-over-hdfs.html)
+
+## Apache HBase
+
+- Exposing data to transactional platform.
+- Very fast way to expose results of Spark to other systems.
