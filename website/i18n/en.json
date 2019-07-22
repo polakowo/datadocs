@@ -13,9 +13,9 @@
         "title": "Data Ingestion",
         "sidebar_label": "Data Ingestion"
       },
-      "big-data/data-modeling": {
-        "title": "Data Modeling",
-        "sidebar_label": "Data Modeling"
+      "big-data/database-design": {
+        "title": "Database Design",
+        "sidebar_label": "Database Design"
       },
       "big-data/data-processing": {
         "title": "Data Processing",
@@ -25,13 +25,21 @@
         "title": "Data Storage",
         "sidebar_label": "Data Storage"
       },
-      "big-data/databases": {
-        "title": "Databases",
-        "sidebar_label": "Databases"
+      "big-data/document-stores": {
+        "title": "Document Stores",
+        "sidebar_label": "Document Stores"
+      },
+      "big-data/graph-stores": {
+        "title": "Graph Stores",
+        "sidebar_label": "Graph Stores"
       },
       "big-data/hadoop": {
         "title": "Hadoop Ecosystem",
         "sidebar_label": "Hadoop Ecosystem"
+      },
+      "big-data/key-value-stores": {
+        "title": "Key Value Stores",
+        "sidebar_label": "Key Value Stores"
       },
       "big-data/orchestration": {
         "title": "Orchestration",
@@ -40,6 +48,14 @@
       "big-data/query-engines": {
         "title": "Query Engines",
         "sidebar_label": "Query Engines"
+      },
+      "big-data/sql-databases": {
+        "title": "SQL Databases",
+        "sidebar_label": "SQL Databases"
+      },
+      "big-data/wide-column-stores": {
+        "title": "Wide Column Stores",
+        "sidebar_label": "Wide Column Stores"
       },
       "deep-learning/activation-functions": {
         "title": "Activation Functions",

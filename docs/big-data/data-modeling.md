@@ -1,9 +1,11 @@
 ---
-id: data-modeling
-title: Data Modeling
-sidebar_label: Data Modeling
-custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/big-data/data-modeling.md
+id: database-design
+title: Database Design
+sidebar_label: Database Design
+custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/big-data/database-design.md
 ---
+
+## Data modeling
 
 - Data model is an abstraction that organizes elements of data and how they will relate to each other.
 - Data modeling helps in the visual representation of data and enforces business rules, regulatory compliances, and government policies on the data.
@@ -25,6 +27,7 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/big-data/
     - Data engineers continually reorganize, restructure, and optimize data models to fit the needs.
     - The process is iterative as new requirements and data are introduced.
 - [Conceptual, logical and physical data model](https://en.wikipedia.org/wiki/Logical_schema#Conceptual,_logical_and_physical_data_model)
+- [Data Modeling vs. Database Design (1996, but it's gold)](http://www.dwelleart.com/aisintl/case/library/R-Theory_vs_ER/r-theory_vs_er.html)
 
 <center><img width=550 src="/datadocs/assets/data-modeling.png"/></center>
 <center><a href="https://www.sap.com/hana" style="color: lightgrey">Credit</a></center>
@@ -60,141 +63,139 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/big-data/
 - Can use DDL statements to deploy the database server.
 - Typically created by DBA and developers.
 
-## Relational modeling
+## Databases
 
-- The relational data model allows to create a consistent, logical representation of information.
-    - Consistency is achieved by including declared constraints (logical schema)
+- Database is a set of related data and the way it is organized.
+- Database Management System (DBMS) is a software for storage, retrieval, and updating of data.
+- Database is often used to refer to both the database and the DBMS.
 
-#### Keys
+#### OLAP vs OLTP
 
-- SUPERKEY is a set of attributes whose values can be used to uniquely identify a tuple.
-- CANDIDATE KEY is a minimal set of attributes necessary to identify a tuple.
-    - Also called a MINIMAL SUPERKEY.
-    - Usually one CANDIDATE KEY is chosen to be called the PRIMARY KEY.
-    - Other CANDIDATE KEYS are called ALTERNATE KEYS.
-- PRIMARY KEY ensures that the column(s) has no NULL values, and that every value is unique.
-    - Must be unique for each record.
-    - Must apply uniform rules for all records.
-    - Must stand the test of time.
-    - Must be read-only (to avoid typos and varying formats).
-    - Physically, implemented as a unique index.
-- SURROGATE KEY is a key which is not natural.
-    - A natural key is a key that has contextual or business meaning (STORE, SALES).
-    - For example, an increasing sequential integer or “counter” value.
-    - Can be extremely useful for analytical purposes.
-- FOREIGN KEY is a column in one table that refers to the PRIMARY KEY in other table.
+- Online Analytical Processing (OLAP):
+    - OLTP queries are read heavy and focus primarily on analytics.
+- Online Transactional Processing (OLTP):
+    - Databases optimized for these workloads allow for less complex queries in large volume.
+    - The types of queries for these databases are read, insert, update, and delete.
 
-### Normalization
+#### CAP Theorem
 
-- Normalization means organizing tables in a manner that reduces redundancy and dependency of data.
-    - Redundant data wastes disk space and creates maintenance problems.
-    - If data exists in more than one place, it must be changed in all locations.
-- The process is progressive (a higher level cannot be achieved before the previous levels)
-- Divides larger tables to smaller tables and links them using relationships.
-    - The end result should feel natural.
-- Objectives of normalization:
-    - Free the database from unwanted insertions, updates & deletion dependencies.
-    - Reduce the need for refactoring the database as new types of data are introduced.
-    - Make the relational model more informative to users.
-    - Make the database neutral to the query statistics (do not model queries beforehand!)
+- States that it is impossible for a distributed data store to simultaneously provide more than two out of the following three guarantees:
+    - Consistency (C, ACID guarantees): All read requests should receive the latest value (or error)
+    - Availability (A, BASE philosophy): All requests should return successfully.
+    - Partition tolerance (P): The system can tolerate arbitrary number of communication failures.
+- Since no distributed system is safe from network failures, partition tolerance is mandatory.
+    - Consistency: Return an error if particular version cannot be guaranteed to be up to date.
+    - Availability: Always process the query and return the most recent available version.
+- When there are no network partitions, every system can behave like CA. 
+> All systems are, in fact, CAP, but tunes how much C and A are provided during P.
 
-#### Normal Forms
+<center><img width=450 src="/datadocs/assets/56858813-35362180-699e-11e9-8e9d-a7be8b2b83e4.png"/></center>
+<center><a href="https://blog.grio.com/tag/nosql" style="color: lightgrey">Credit</a></center>
 
-<center><img width=400 src="/datadocs/assets/codds-law.jpg"/></center>
-<center><a href="https://slideplayer.com/slide/6860017/" style="color: lightgrey">Credit</a></center>
+#### PACELC
 
-- [First Normal Form (1NF)](https://www.techopedia.com/definition/25955/first-normal-form-1nf):
-    - Make the columns atomic: cells have a single value.
-    - Define the primary key: no repeating groups in individual tables.
-    - Columns must contain values of the same type.
-    - The order in which data is stored does not matter.
-    - May still contain partial and/or transitive dependencies.
-- [Second Normal Form (2NF)](https://www.techopedia.com/definition/21980/second-normal-form-2nf):
-    - Have reached 1NF
-    - Split up all data resulting in many-to-many relationships.
-    - Create relationships between tables by use of foreign keys.
-    - Is the identifier comprised of more than one attribute?
-    - If so, are any attribute values dependent on just part of the key?
-    - Remove partial dependencies: every non-key attribute must depend on the whole key.
-    - May still contain transitive dependencies.
-- [Third Normal Form (3NF)](https://www.techopedia.com/definition/22561/third-normal-form-3nf):
-    - Have reached 2NF
-    - Do any attribute values depend on an attribute that is not the key?
-    - Remove transitive dependencies: non-prime attributes are independent of one another.
-    - However, many small tables may degrade performance.
-- [Boyce-Codd Normal Form (BCNF)](https://www.techopedia.com/definition/5642/boyce-codd-normal-form-bcnf):
-    - Have reached 3NF
-    - Remove non-trivial functional dependencies.
-    - Happens if there are two or more overlapping composite candidate keys.
-    - Sometimes referred to as 3.5NF
-- In most practical applications, normalization achieves its best in 3NF.
-- [Normal forms - Wikipedia](https://en.wikipedia.org/wiki/Database_normalization#Normal_forms)
+- Extended model which considers normal operation and latency.
+- Availability comes at the expense of latency.
+- PA/EL: Give up consistency at all times for availability and lower latency.
+    - Dynamo, Cassandra (tuneable), Riak, web cache
+- PA/EC: Give up consistency when partition occurs, otherwise provide consistency.
+    - BigTable, Hbase, VoltDB/H-Store
+- PC/EL: Give up availability when partition occurs, otherwise provide latency.
+    - MongoDB
+- PC/EC: Refuse to give up consistency, pay the cost in availability and latency.
+    - Yahoo! PNUTS
 
-#### Denormalization
+### SQL databases
 
-- JOINS on the database allow for outstanding flexibility but are extremely slow.
-- Adding redundant data improves read performance at the expense of write performance.
-
-<center><img width=550 src="/datadocs/assets/denormalization.jpg"/></center>
-<center><a href="https://www.slideserve.com/walter-clay/chapter-11-enterprise-resource-planning-systems" style="color: lightgrey">Credit</a></center>
-
-- Requires more space on the system since there are more copies of the data.
-    - Not really a limiting factor as storage has become less expensive.
-- Denormalized data model is not the same as a data model that has not been normalized:
-    - Denormalization should only take place after normalization.
-- With denormalization we want to think about the queries beforehand.
-
-### Dimensional modeling
-- Dimensional modeling is primarily used to support OLAP and decision making while ER modeling is best fit for OLTP where results consist of detailed information of entities rather an aggregated view.
-- Fact table consists of the measurements, metrics or facts of a business process (e.g. transactions)
-    - Generally consist of numeric values and foreign keys to dimensional data.
-    - A measure is a numeric attribute of a fact, representing the performance.
-    - An attribute is a unique level within a dimension.
-    - A hierarchy represents relationship between different attributes (Year → Quarter → Month → Day)
-- Dimension is a structure that categorizes facts and measures in order to enable users to answer business questions (e.g. people, products, place and time)
-    - Usually have a relatively small number of records compared to fact tables.
-    - But each record may have a very large number of attributes.
-- Work together to create an organized data model.
-- [Deep Diving in the World of Data Warehousing](https://medium.com/@BluePi_In/deep-diving-in-the-world-of-data-warehousing-78c0d52f49a)
-
-#### Star schema
-
-<center><img width=500 src="/datadocs/assets/cubeschemaa_v2.gif"/></center>
-<center><a href="http://publib.boulder.ibm.com/db2blox/82/en/cube/cube13.htm" style="color: lightgrey">Credit</a></center>
-
-- The star schema separates the data into facts and dimensions as descriptive attributes of the facts.
-    - Gets its name from the physical data model resembling a star shape.
-- The star schema is the simplest style of data mart schema.
-    - It is a special, simplified case of the snowflake schema.
-- Star schemas are denormalized.
-    - Star schemas tend to be more purpose-built for a particular view of the data.
-- Pros:
-    - Simplifies queries
-    - Simplifies common business reporting logic (such as period-over-period and as-of reporting)
-    - Faster read-only reporting applications
-    - Faster aggregation
-    - Used by all OLAP systems to build proprietary OLAP cubes efficiently.
-- Cons:
-    - Data integrity is not enforced well since it is in a highly de-normalized state.
-    - Must be loaded in a highly controlled fashion.
-    - Not as flexible as normalized data model.
-    - Does not support many-to-many relationships between business entities.
-- Most widely used to develop data warehouses and dimensional data marts.
-
-#### Snowflake schema
-
-<center><img width=500 src="/datadocs/assets/cubeschemaa3_v2.gif"/></center>
-<center><a href="http://publib.boulder.ibm.com/db2blox/82/en/cube/cube13.htm" style="color: lightgrey">Credit</a></center>
-
-- In the snowflake schema, the dimension tables are normalized into multiple related tables.
-- Pros
-    - Results in storage savings
-    - Reduces the number of places where the data needs to be updated.
-    - Some OLAP tools are optimized for snowflake schemas.
-- Cons:
-    - Adds complexity to source query joins.
-    - Data loads must be highly controlled and managed to avoid update and insert anomalies.
+- Data is placed in tables and data schema is carefully designed before the database is built.
+- Relational database management system (RDBMS) is used to maintain relational databases. 
+    - Invented by E. F. Codd in 1970.
+    - Oracle (banking), Teradata, MySQL, PostgreSQL, SQLite (simplex tasks, development)
+- Structured Query Language (SQL) is the language for querying and maintaining relational databases.
+    - Virtually every RDBMS uses SQL.
 - Use cases:
-    - No frequent queries of some dimension data for needing it for information purposes.
-    - A reporting or cube architecture that needs hierarchies or slicing feature. 
-    - Having fact tables that have different level of granularity.
+    - You need ACID compliancy.
+    - Your data is structured and unchanging.
+    - Large-scale web organizations such as Google and Amazon employ relational databases as adjuncts where high-grade data consistency is necessary.
+    - [SQL Vs NoSQL: The Differences Explained](https://blog.panoply.io/sql-or-nosql-that-is-the-question)
+
+#### ACID transactions
+
+- Atomicity: The whole transaction is processed or nothing is processed.
+    - For example, debit and credit operations cannot occur partially.
+- Consistency: Any data written to the database must be valid according to all defined rules.
+    - For example, a column of type integer does not accept boolean values.
+- Isolation: Transactions are processed independently and securely, order does not matter.
+    - But complete isolation uses more system resources and transactions blocking each other.
+- Durability: Committed transactions remain committed even in case of system failure.
+    - For example, a flight seat remains booked even after a crash.
+
+#### Pros
+
+- Small to medium sized data volumes.
+- Complex query intensive environment:
+    - Support for JOINS, aggregations and analytics.
+    - Support for secondary indexes to help with quick searching.
+- ACID transactions guarantee accuracy, completeness, and data integrity.
+    - Stable enough in high load and for complex transactional applications.
+- Easier to change to business requirements.
+    - Modeling the data, not modeling queries.
+    - Have better support, product suites and add-ons to manage these databases.
+- No need to do queries first, run them based on the schemas and ERD.
+
+#### Cons
+
+- Not suited for large amounts of data as they cannot scale horizontally.
+- Not highly available because of a single point of failure.
+- Not designed to handle unstructured and hierarchical data.
+- The atomicity of the operations plays a crucial part in the database’s performance.
+    - ACID transactions slow down the process of reading and writing data.
+- Have a predefined (not flexible) schema.
+
+#### Scaling up relational databases
+
+- Denormalization: Add redundant copies of data or by grouping data to get faster reads.
+- Caching layers (memcached): Distributed memory cache sitting on top of the database.
+- Sharding: Split up the database into range partitions.
+- Materialized views: Materialize views to serve the services in the format they expect and faster.
+- Removing stored procedures: Remove expensive logic.
+
+### NoSQL databases
+
+- To deal with big data, companies require high scalability, high speed, and continuous availability.
+- NoSQL databases are non-relational databases that can accomodate a wide variety of data models.
+    - Key-value, document, columnar and graph formats
+- NoSQL stands for "not only SQL"
+- Especially useful for working with large sets of distributed data.
+    - Often in distributed systems or the cloud.
+    - Large-scale web organizations use NoSQL databases to focus on narrow operational goals.
+    - Built for big data and have become popular with Hadoop.
+- Geared toward managing varied and frequently updated data.
+- Built for specific data models and have flexible schemas for building modern applications.
+- NoSQL databases have become very popular among application developers.
+    - Developers do not need to convert in-memory structure to relational structure.
+- [RDBMs and NoSQL types and use cases](http://www.cbs1.com.my/WebLITE/Applications/news/uploaded/docs/IBM_POWER8%20Linux%20-%20OpenDB%20V1.0.pdf)
+
+<center><img width=700 src="/datadocs/assets/nosql-databases.png"/></center>
+<center><a href="http://www.cbs1.com.my/WebLITE/Applications/news/uploaded/docs/IBM_POWER8%20Linux%20-%20OpenDB%20V1.0.pdf" style="color: lightgrey">Credit</a></center>
+
+#### Pros
+
+- Huge volumes of structured, semi-structured, and unstructured data.
+- Ability to scale horizontally on commodity hardware.
+    - Efficient, scale-out architecture instead of expensive, monolithic architecture.
+- High availability and location independence.
+    - For example, if users are distributed geographically.
+- High throughput and low latency.
+    - Fast reads and writes
+- Ability to handle change over time (schema agnostic nature)
+- Agile sprints, quick iteration, and frequent code pushes.
+    - There are no complicated connections.
+    - Executing code next to the data.
+
+#### Cons
+
+- There are only few NoSQL databases that offer some form of ACID transactions.
+- Limited support for JOINS as this will result in a full table scan.
+- Not designed for aggregations and analytics.
+- Queries need to be known in advance (e.g. to specify partition keys)

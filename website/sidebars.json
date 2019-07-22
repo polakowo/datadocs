@@ -74,9 +74,18 @@
             "type": "subcategory",
             "label": "General",
             "ids": [
-                "big-data/data-engineering",
-                "big-data/data-modeling",
-                "big-data/databases"
+                "big-data/data-engineering"
+            ]
+        }, {
+            "type": "subcategory",
+            "label": "Databases",
+            "ids": [
+                "big-data/database-design",
+                "big-data/sql-databases",
+                "big-data/wide-column-stores",
+                "big-data/key-value-stores",
+                "big-data/document-stores",
+                "big-data/graph-stores"
             ]
         }, {
             "type": "subcategory",
