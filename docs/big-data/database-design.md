@@ -138,7 +138,8 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/big-data/
     - Support for secondary indexes to help with quick searching.
 - ACID transactions guarantee accuracy, completeness, and data integrity.
     - Stable enough in high load and for complex transactional applications.
-- Easier to change to business requirements.
+    - Remember, financial systems are built on trust.
+- Easier to change to business requirements:
     - Modeling the data, not modeling queries.
     - Have better support, product suites and add-ons to manage these databases.
 - No need to do queries first, run them based on the schemas and ERD.
@@ -165,6 +166,10 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/big-data/
 - To deal with big data, companies require high scalability, high speed, and continuous availability.
 - NoSQL databases are non-relational databases that can accomodate a wide variety of data models.
     - Key-value, document, columnar and graph formats
+
+<center><img width=700 src="/datadocs/assets/nosql-databases.png"/></center>
+<center><a href="http://www.cbs1.com.my/WebLITE/Applications/news/uploaded/docs/IBM_POWER8%20Linux%20-%20OpenDB%20V1.0.pdf" style="color: lightgrey">Credit</a></center>
+
 - NoSQL stands for "not only SQL"
 - Especially useful for working with large sets of distributed data.
     - Often in distributed systems or the cloud.
@@ -174,28 +179,30 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/big-data/
 - Built for specific data models and have flexible schemas for building modern applications.
 - NoSQL databases have become very popular among application developers.
     - Developers do not need to convert in-memory structure to relational structure.
+- [NoSQL Databases Explained](https://www.mongodb.com/nosql-explained)
+- [What is a NoSQL (Not Only SQL) Database?](https://academy.datastax.com/planet-cassandra/what-is-nosql)
 - [RDBMs and NoSQL types and use cases](http://www.cbs1.com.my/WebLITE/Applications/news/uploaded/docs/IBM_POWER8%20Linux%20-%20OpenDB%20V1.0.pdf)
 
-<center><img width=700 src="/datadocs/assets/nosql-databases.png"/></center>
-<center><a href="http://www.cbs1.com.my/WebLITE/Applications/news/uploaded/docs/IBM_POWER8%20Linux%20-%20OpenDB%20V1.0.pdf" style="color: lightgrey">Credit</a></center>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/xQnIN9bW0og" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 #### Pros
 
 - Huge volumes of structured, semi-structured, and unstructured data.
-- Ability to scale horizontally on commodity hardware.
+- Ability to scale horizontally on commodity hardware:
     - Efficient, scale-out architecture instead of expensive, monolithic architecture.
-- High availability and location independence.
+- High availability and location independence:
     - For example, if users are distributed geographically.
-- High throughput and low latency.
+- High throughput and low latency:
     - Fast reads and writes
-- Ability to handle change over time (schema agnostic nature)
-- Agile sprints, quick iteration, and frequent code pushes.
+- Schema is easily changeble.
+- Agile sprints, quick iteration, and frequent code pushes:
     - There are no complicated connections.
     - Executing code next to the data.
 
 #### Cons
 
-- There are only few NoSQL databases that offer some form of ACID transactions.
+- Only few NoSQL databases that offer some form of ACID transactions.
+- Limited support for relations
 - Limited support for JOINS as this will result in a full table scan.
-- Not designed for aggregations and analytics.
+- Limited support for aggregations and analytics.
 - Queries need to be known in advance (e.g. to specify partition keys)

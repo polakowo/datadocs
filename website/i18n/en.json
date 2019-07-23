@@ -13,10 +13,6 @@
         "title": "Data Ingestion",
         "sidebar_label": "Data Ingestion"
       },
-      "big-data/database-design": {
-        "title": "Database Design",
-        "sidebar_label": "Database Design"
-      },
       "big-data/data-processing": {
         "title": "Data Processing",
         "sidebar_label": "Data Processing"
@@ -24,6 +20,10 @@
       "big-data/data-storage": {
         "title": "Data Storage",
         "sidebar_label": "Data Storage"
+      },
+      "big-data/database-design": {
+        "title": "Database Design",
+        "sidebar_label": "Database Design"
       },
       "big-data/document-stores": {
         "title": "Document Stores",
