@@ -72,12 +72,12 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/big-data/
 #### OLAP vs OLTP
 
 - Online Analytical Processing (OLAP):
-    - OLTP queries are read heavy and focus primarily on analytics.
+    - OLAP queries are read heavy and focus primarily on analytics.
 - Online Transactional Processing (OLTP):
     - Databases optimized for these workloads allow for less complex queries in large volume.
     - The types of queries for these databases are read, insert, update, and delete.
 
-#### CAP Theorem
+### CAP Theorem
 
 - States that it is impossible for a distributed data store to simultaneously provide more than two out of the following three guarantees:
     - Consistency (C, ACID guarantees): All read requests should receive the latest value (or error)

@@ -5,14 +5,117 @@ sidebar_label: Wide Column Stores
 custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/big-data/wide-column-stores.md
 ---
 
+- Google's BigTable is considered to be the origin of this class of databases.
+
+<center><img width=100 src="/datadocs/assets/Cloud_Bigtable.png"/></center>
+
 - Wide column stores use tables, rows, and columns.
-    - Basically a hybrid between a key-value store and RDBMS.
+    - Seem to store data in rows, but actually serialize the data into columns.
     - The names and format of the columns can vary from row to row.
+    - Basically a hybrid between a key-value store and RDBMS.
     - They can be seen as two-dimensional key-value stores.
 - Should not be confused with the column-oriented storage.
     - Cassandra is column family but not column-oriented (when column is stored separately on disk).
     - Hbase is column family as well as stores column families in column-oriented fashion.
 - Often support the notion of column families (similar to RDBMS tables)
+    - This allows storing somewhat related data together.
+- Column stores handle wide, sparse tables very well (since NULLs are not stored)
+
+## Apache HBase
+
+<center><img width=250 src="/datadocs/assets/hbase_logo_with_orca_large.png"/></center>
+
+- Apache HBase is an open-source, distributed, versioned, column-oriented database.
+- Modeled after Google's [Bigtable: A Distributed Storage System for Structured Data](https://research.google.com/archive/bigtable.html)
+- Designed to provide random access to high volume of structured or unstructured data.
+- Sits on top of HDFS:
+    - Achieves fast lookups on HDFS.
+    - Leverages the fault tolerance feature of HDFS.
+- Main features:
+    - Linear and modular scalability
+    - Strictly consistent reads and writes
+    - Automatic and configurable sharding of tables
+    - Automatic failover support between RegionServers
+    - Easy to use Java API for client access
+    - Block cache and Bloom Filters for real-time queries
+    - Very fast way to expose results of Spark to other systems
+- [HBase: The Definitive Guide by Lars George](https://www.oreilly.com/library/view/hbase-the-definitive/9781449314682/ch01.html)
+
+#### Compared to HDFS
+
+- HDFS is optimized for batch processing and streaming in a sequential manner.
+    - The entire dataset must be searched even for the simplest of jobs.
+    - HBase can access any point of data in a single unit of time.
+- HDFS follows write-once read-many ideology.
+    - HBase allows for real-time changes and random reads and writes.
+- HBase:
+    - Stores key/value pairs in columnar fashion.
+    - Provides low latency access to small amounts of data.
+    - Provides flexible data model.
+
+### Architecture
+
+- HBase has a master/slave type of architecture.
+    - Region servers serve data for reads and writes.
+    - HBase Master process handles region assignment and DDL (create, delete tables) operations.
+    - Zookeeper, which is part of HDFS, maintains a live cluster state.
+- The HDFS DataNode stores the data that the Region Server is managing.
+    - Region Servers are collocated with the HDFS DataNodes for data locality.
+    - A region server can serve about 1,000 regions.
+    - A region contains all rows in the table between the start and end keys.
+- The HDFS NameNode maintains metadata information.
+- [An In-Depth Look at the HBase Architecture](https://mapr.com/blog/in-depth-look-hbase-architecture/)
+
+<img width=600 src="/datadocs/assets/HBaseArchitecture-Blog-Fig1.png"/>
+<center><a href="https://mapr.com/blog/in-depth-look-hbase-architecture/" style="color: lightgrey">Credit</a></center>
+
+#### Write path
+
+- The first step is to write the data to the write-ahead log, the WAL.
+    - The WAL is used to recover not-yet-persisted data in case a server crashes.
+    - Updates are appended sequentially.
+- The data is then placed in the MemStore.
+    - The MemStore is the write cache (compared to BlockCache, the read cache)
+    - Stores new data the same as it would be stored in an HFile.
+    - There is one MemStore per column family per region.
+- Then, the put request acknowledgement returns to the client.
+- After a limit, the entire MemStore is flushed to a new HFile in HDFS.
+    - HFile contains sorted key/values.
+    - This is a sequential write and thus very fast.
+
+### Data modeling
+
+- Similar to Apache Cassandra, you will have to denormalize your schemas.
+- The main principle is Denormalization, Duplication, and Intelligent Keys (DDI)
+
+#### HBase's model
+
+- An HBase table consists of multiple rows.
+- Row in HBase consists of a row key (PRIMARY KEY) and one or more columns.
+    - Row key can be any arbitrary array of bytes.
+    - Rows are always sorted lexicographically by their row key.
+- The goal is to store data in such a way that related rows are near each other.
+    - For example, if row keys are domains, store them in reverse (`org.apache.www`)
+- Columns in HBase are grouped into column families.
+    - All columns in a column family are stored together in HFile.
+    - A column family must be string.
+    - Each column family has a set of storage properties (compression etc.)
+    - Column families are fixed at table creation.
+- Columns are often referenced as `family:qualifier` (for example, `content:pdf`)
+    - Column qualifiers can be any arbitrary array of bytes.
+    - Mutable and may differ greatly between rows.
+    - One could have millions of columns in a particular column family.
+
+<img width=600 src="/datadocs/assets/httpatomoreillycomsourceoreillyimages889236.png"/>
+<center><a href="https://www.oreilly.com/library/view/hbase-the-definitive/9781449314682/ch01.html" style="color: lightgrey">Credit</a></center>
+
+- HBase model is a sparse, distributed, persistent, multidimensional map, which is indexed by row key, column key, and a timestamp.
+    - NULLs are free of any cost: they do not occupy any storage space.
+    - Timestamp is the identifier for a given version of a value.
+
+```
+(Table, RowKey, Family, Column, Timestamp) → Value
+```
 
 ## Apache Cassandra
 
@@ -50,10 +153,32 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/big-data/
     - Internet of Things (IoT)
     - Time series data
     - Any workload that is heavy on writes to the database.
+    - If you can’t afford any downtimes, Cassandra is your choice.
 - Cassandra is in use at Comcast, eBay, GitHub, GoDaddy, Hulu, Instagram, Netflix, Reddit.
     - Apple uses Cassandra with over 75,000 nodes for storing over 10PB of data.
 
-#### Architecture
+#### Compared to HBase
+
+- Cassandra is AP while HBase is CP.
+- Cassandra has a masterless architecture and is always available.
+    - HBase has a master-based one and a single point of failure.
+- Cassandra replicates and duplicates data, which leads to consistency problems.
+    - HBase is strongly consistent.
+- Cassandra’s architecture supports both data management and storage.
+    - HBase’s architecture is designed for data management only.
+    - HDFS for storage, Apache Zookeeper for server status management and metadata.
+> To maintain HBase, you must maintain three or four pieces of software together, whereas with Cassandra, we have just one simple process running on every single node.
+- Cassandra is good at writes, whereas HBase is good at intensive reads:
+    - HBase doesn’t write to the log and cache simultaneously (makes writes slower)
+    - HBase is better at scanning huge volumes of data.
+- Data model:
+    - Cassandra’s column is more like a cell in HBase.
+    - Column family in Cassandra is more like an HBase table.
+    - Column qualifier in HBase reminds of a super column in Cassandra.
+    - HBase, unlike Cassandra, has only 1-column row key.
+- [Cassandra vs. HBase: twins or just strangers with similar looks?](https://www.scnsoft.com/blog/cassandra-vs-hbase)
+
+### Architecture
 
 - Decentralized peer-to-peer architecture (no master assignment)
     - Employs a peer-to-peer distributed system across homogeneous nodes.
@@ -113,7 +238,7 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/big-data/
     - Mainly due to efficiency reasons.
     - For example, JOINS, GROUP BY and subqueries are not supported.
 
-#### Keys
+#### Cassandra's model
 
 - PRIMARY KEY identifies the location and order of stored data.
     - SIMPLE PRIMARY KEY is made up of a single column.
@@ -158,8 +283,6 @@ CREATE TABLE IF NOT EXISTS hello
     }
 }
 ```
-
-#### Queries
 
 - Must know your queries and model the tables to your queries.
 - By using the WHERE statement we know which node to go to.

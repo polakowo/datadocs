@@ -5,9 +5,7 @@ sidebar_label: Data Processing
 custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/big-data/data-processing.md
 ---
 
-## Batch processing
-
-### Hadoop MapReduce
+## Hadoop MapReduce
 
 <center><img width=250 src="/datadocs/assets/Apache-MapReduce-logo-Hadoop-Ecosystem-Edureka.jpg"/></center>
 
@@ -44,7 +42,7 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/big-data/
     - Low per node performance: Due to replication, data transfer, shuffle, and a lot of I/O to DFS.
     - Not designed for incremental/streaming tasks.
 
-#### Stages
+### Stages
 
 - The MapReduce framework operates exclusively on key/value pairs.
 
@@ -95,11 +93,11 @@ if __name__ == '__main__':
     RatingsBreakdown.run()
 ```
 
-### Apache Spark
+## Apache Spark
 
 - Sits either on top of YARN or MESOS.
 
-### Apache Tez
+## Apache Tez
 
 <center><img width=200 src="/datadocs/assets/ApacheTezLogo_lowres.png.jpeg"/></center>
 
@@ -108,9 +106,3 @@ if __name__ == '__main__':
 - Integrates well with Pig, Hive and other engines (can be selected via checkbox)
 - Builds upon YARN.
 - [Apache Tez](https://hortonworks.com/apache/tez/#section_1)
-
-## Streaming
-
-### Apache Storm
-
-- Processing streaming data.
