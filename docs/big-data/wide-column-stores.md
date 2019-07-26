@@ -29,16 +29,18 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/big-data/
 - Modeled after Google's [Bigtable: A Distributed Storage System for Structured Data](https://research.google.com/archive/bigtable.html)
 - Designed to provide random access to high volume of structured or unstructured data.
 - Sits on top of HDFS:
-    - Achieves fast lookups on HDFS.
-    - Leverages the fault tolerance feature of HDFS.
+    - Achieves fast lookups on HDFS
+    - Leverages the fault tolerance feature of HDFS
+    - But has a single point of failure
 - Main features:
     - Linear and modular scalability
-    - Strictly consistent reads and writes
+    - Strictly consistent reads and writes (CP)
     - Automatic and configurable sharding of tables
     - Automatic failover support between RegionServers
     - Easy to use Java API for client access
     - Block cache and Bloom Filters for real-time queries
     - Very fast way to expose results of Spark to other systems
+- There is no query language, just CRUD APIs.
 - [HBase: The Definitive Guide by Lars George](https://www.oreilly.com/library/view/hbase-the-definitive/9781449314682/ch01.html)
 
 #### Compared to HDFS
@@ -110,8 +112,8 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/big-data/
 <center><a href="https://www.oreilly.com/library/view/hbase-the-definitive/9781449314682/ch01.html" style="color: lightgrey">Credit</a></center>
 
 - HBase model is a sparse, distributed, persistent, multidimensional map, which is indexed by row key, column key, and a timestamp.
-    - NULLs are free of any cost: they do not occupy any storage space.
     - Timestamp is the identifier for a given version of a value.
+    - NULLs are free of any cost: they do not occupy any storage space.
 
 ```
 (Table, RowKey, Family, Column, Timestamp) → Value
@@ -121,11 +123,14 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/big-data/
 
 <center><img width=200 src="/datadocs/assets/2000px-Cassandra_logo.svg.png"/></center>
 
+- NoSQL with a twist
 - Cassandra is a peer-to-peer, read/write anywhere architecture.
-    - Any user can connect to any node in any data center and read/write the data they need.
-    - With all writes being partitioned and replicated automatically throughout the cluster.
+    - No master node
+    - Any user can connect to any node in any data center.
+    - Partitions and replicates all writes automatically throughout the cluster.
 - Cassandra is designed to handle big data across multiple nodes with no single point of failure.
-    - Provides scalability and high availability
+    - Provides scalability and high availability (AP)
+    - Provides tunable consistency (AP -> CP)
     - Good choice for mission-critical data
 - Developed by Facebook
     - Based on Google Bigtable (2006) and Amazon Dynamo (2007), but open-source.
@@ -137,6 +142,7 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/big-data/
     - A hash function is applied on the primary key to (evenly) distribute the data.
 
 <center><img width=500 src="/datadocs/assets/ring-architecture-2.png"/></center>
+<center><a href="https://docs.scylladb.com/architecture/ringarchitecture/" style="color: lightgrey">Credit</a></center>
 
 - Main features:
     - Decentralized load balancing and scalability.
@@ -148,6 +154,7 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/big-data/
     - Tunable write and read consistency (choice between CP and AP)
     - Supports secondary indexes
 - Uses its own query language CQL similar to SQL (took over Thrift).
+    - Very limited to what it can do though.
 - Good use cases for Apache Cassandra:
     - Transaction logging (retail, health care)
     - Internet of Things (IoT)
@@ -156,6 +163,13 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/big-data/
     - If you can’t afford any downtimes, Cassandra is your choice.
 - Cassandra is in use at Comcast, eBay, GitHub, GoDaddy, Hulu, Instagram, Netflix, Reddit.
     - Apple uses Cassandra with over 75,000 nodes for storing over 10PB of data.
+- You can replicate the whole Cassandra ring to another ring for analytics and Spark integration.
+    - DataStax offers a Spark-Cassandra connector.
+    - Allows you to read and write Cassandra tables as DataFrames.
+    - For example, to do analytics or data preprocessing for transactional use.
+
+<center><img width=400 src="/datadocs/assets/Picture1-1.png"/></center>
+<center><a href="https://www.instaclustr.com/multi-data-center-sparkcassandra-benchmark-round-2/" style="color: lightgrey">Credit</a></center>
 
 #### Compared to HBase
 
@@ -183,7 +197,7 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/big-data/
 - Decentralized peer-to-peer architecture (no master assignment)
     - Employs a peer-to-peer distributed system across homogeneous nodes.
     - The data is distributed among all nodes in the cluster.
-- A cluster contains one or more datacenters.
+- A cluster contains one or more datacenters (e.g. AWS-EAST vs AWS-WEST)
 - Datacenter is a virtual or physical collection of related nodes.
     - Replication is set by datacenter.
 - Node is where the data is stored.
@@ -204,6 +218,7 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/big-data/
 - Cassandra can be configured to prefer consistency (CP) over availability (AP):
     - Consistency level controls the minimum number of nodes that must acknowledge the write.
     - A consistency level of ONE means that two of the three replicas can miss the write.
+    - On the other hand, read consistency is controlled by the number of agreements.
 
 <center><img width=400 src="/datadocs/assets/arc_write-singleDCConOne.png"/></center>
 <center><a href="https://docs.datastax.com/en/ddac/doc/datastax_enterprise/dbInternals/dbIntClientRequestsWrite.html" style="color: lightgrey">Credit</a></center>
@@ -240,6 +255,8 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/big-data/
 
 #### Cassandra's model
 
+- Each table is a distributed multi-dimensional map indexed by the PRIMARY KEY.
+- All tables must be in a keyspace - keyspaces are like databases.
 - PRIMARY KEY identifies the location and order of stored data.
     - SIMPLE PRIMARY KEY is made up of a single column.
 - The first element of the PRIMARY KEY is the PARTITION KEY.
@@ -257,7 +274,6 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/big-data/
     - Retrieving data from a partition is then more efficient.
     - Grouping data in tables using clustering columns is the equivalent of JOINs.
     - [Clustering columns](https://docs.datastax.com/en/dse/5.1/cql/cql/cql_using/whereClustering.html)
-- Each table is just a distributed multi-dimensional map indexed by a key.
 - [Creating a table - DataStax](https://docs.datastax.com/en/archived/cql/3.3/cql/cql_using/useAboutCQL.html)
 
 ```sql

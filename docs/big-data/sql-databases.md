@@ -10,8 +10,13 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/big-data/
 - The relational data model allows to create a consistent, logical representation of information.
     - Consistency is achieved by including declared constraints (logical schema)
 
-#### Keys
+#### Relational model
 
+- The data is stored in relations (tables)
+    - Each relation consists of tuples (rows) and attributes (columns).
+- Relational model also lays down a set of rules to enforce data integrity.
+    - Key, domain, and referential integrity constraints.
+- Also defines how the data are to be manipulated (relational calculus)
 - SUPERKEY is a set of attributes whose values can be used to uniquely identify a tuple.
 - CANDIDATE KEY is a minimal set of attributes necessary to identify a tuple.
     - Also called a MINIMAL SUPERKEY.
@@ -88,61 +93,6 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/big-data/
 - Denormalized data model is not the same as a data model that has not been normalized:
     - Denormalization should only take place after normalization.
 - With denormalization we want to think about the queries beforehand.
-
-### Dimensional modeling
-- Dimensional modeling is primarily used to support OLAP and decision making while ER modeling is best fit for OLTP where results consist of detailed information of entities rather an aggregated view.
-- Fact table consists of the measurements, metrics or facts of a business process (e.g. transactions)
-    - Generally consist of numeric values and foreign keys to dimensional data.
-    - A measure is a numeric attribute of a fact, representing the performance.
-    - An attribute is a unique level within a dimension.
-    - A hierarchy represents relationship between different attributes (Year → Quarter → Month → Day)
-- Dimension is a structure that categorizes facts and measures in order to enable users to answer business questions (e.g. people, products, place and time)
-    - Usually have a relatively small number of records compared to fact tables.
-    - But each record may have a very large number of attributes.
-- Work together to create an organized data model.
-- [Deep Diving in the World of Data Warehousing](https://medium.com/@BluePi_In/deep-diving-in-the-world-of-data-warehousing-78c0d52f49a)
-
-#### Star schema
-
-<center><img width=500 src="/datadocs/assets/cubeschemaa_v2.gif"/></center>
-<center><a href="http://publib.boulder.ibm.com/db2blox/82/en/cube/cube13.htm" style="color: lightgrey">Credit</a></center>
-
-- The star schema separates the data into facts and dimensions as descriptive attributes of the facts.
-    - Gets its name from the physical data model resembling a star shape.
-- The star schema is the simplest style of data mart schema.
-    - It is a special, simplified case of the snowflake schema.
-- Star schemas are denormalized.
-    - Star schemas tend to be more purpose-built for a particular view of the data.
-- Pros:
-    - Simplifies queries
-    - Simplifies common business reporting logic (such as period-over-period and as-of reporting)
-    - Faster read-only reporting applications
-    - Faster aggregation
-    - Used by all OLAP systems to build proprietary OLAP cubes efficiently.
-- Cons:
-    - Data integrity is not enforced well since it is in a highly de-normalized state.
-    - Must be loaded in a highly controlled fashion.
-    - Not as flexible as normalized data model.
-    - Does not support many-to-many relationships between business entities.
-- Most widely used to develop data warehouses and dimensional data marts.
-
-#### Snowflake schema
-
-<center><img width=500 src="/datadocs/assets/cubeschemaa3_v2.gif"/></center>
-<center><a href="http://publib.boulder.ibm.com/db2blox/82/en/cube/cube13.htm" style="color: lightgrey">Credit</a></center>
-
-- In the snowflake schema, the dimension tables are normalized into multiple related tables.
-- Pros
-    - Results in storage savings
-    - Reduces the number of places where the data needs to be updated.
-    - Some OLAP tools are optimized for snowflake schemas.
-- Cons:
-    - Adds complexity to source query joins.
-    - Data loads must be highly controlled and managed to avoid update and insert anomalies.
-- Use cases:
-    - No frequent queries of some dimension data for needing it for information purposes.
-    - A reporting or cube architecture that needs hierarchies or slicing feature. 
-    - Having fact tables that have different level of granularity.
 
 ## MySQL
 

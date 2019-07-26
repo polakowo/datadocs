@@ -21,6 +21,10 @@
         "title": "Data Storage",
         "sidebar_label": "Data Storage"
       },
+      "big-data/data-warehouses": {
+        "title": "Data Warehouses",
+        "sidebar_label": "Data Warehouses"
+      },
       "big-data/database-design": {
         "title": "Database Design",
         "sidebar_label": "Database Design"

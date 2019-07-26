@@ -82,6 +82,7 @@
             "ids": [
                 "big-data/database-design",
                 "big-data/sql-databases",
+                "big-data/data-warehouses",
                 "big-data/wide-column-stores",
                 "big-data/key-value-stores",
                 "big-data/document-stores",

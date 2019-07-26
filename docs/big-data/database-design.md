@@ -69,14 +69,6 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/big-data/
 - Database Management System (DBMS) is a software for storage, retrieval, and updating of data.
 - Database is often used to refer to both the database and the DBMS.
 
-#### OLAP vs OLTP
-
-- Online Analytical Processing (OLAP):
-    - OLAP queries are read heavy and focus primarily on analytics.
-- Online Transactional Processing (OLTP):
-    - Databases optimized for these workloads allow for less complex queries in large volume.
-    - The types of queries for these databases are read, insert, update, and delete.
-
 ### CAP Theorem
 
 - States that it is impossible for a distributed data store to simultaneously provide more than two out of the following three guarantees:
@@ -163,20 +155,28 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/big-data/
 
 ### NoSQL databases
 
+- NoSQL stands for "not only SQL"
+- Enable random access to planet-size data.
+
+<center><img width=150 src="/datadocs/assets/internet_earth.png"/></center>
+
 - To deal with big data, companies require high scalability, high speed, and continuous availability.
-- NoSQL databases are non-relational databases that can accomodate a wide variety of data models.
+- Especially useful for working with large sets of distributed data.
+    - Often in distributed systems or the cloud
+    - Large-scale web organizations use NoSQL databases to focus on narrow operational goals.
+    - Built for big data and have become popular with Hadoop.
+- NoSQL databases scale horizontally:
+    - Each stored object is pretty much self-contained and independent.
+    - Lack of structure of the data enables horizontal scaling.
+- Geared toward managing varied and frequently updated data.
+- Designed for simple high-transaction queries.
+    - For example, *"Give me all songs of a given artist"*
+- Built for specific data models and have flexible schemas for building modern applications.
     - Key-value, document, columnar and graph formats
 
 <center><img width=700 src="/datadocs/assets/nosql-databases.png"/></center>
 <center><a href="http://www.cbs1.com.my/WebLITE/Applications/news/uploaded/docs/IBM_POWER8%20Linux%20-%20OpenDB%20V1.0.pdf" style="color: lightgrey">Credit</a></center>
 
-- NoSQL stands for "not only SQL"
-- Especially useful for working with large sets of distributed data.
-    - Often in distributed systems or the cloud.
-    - Large-scale web organizations use NoSQL databases to focus on narrow operational goals.
-    - Built for big data and have become popular with Hadoop.
-- Geared toward managing varied and frequently updated data.
-- Built for specific data models and have flexible schemas for building modern applications.
 - NoSQL databases have become very popular among application developers.
     - Developers do not need to convert in-memory structure to relational structure.
 - [NoSQL Databases Explained](https://www.mongodb.com/nosql-explained)
@@ -184,6 +184,12 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/big-data/
 - [RDBMs and NoSQL types and use cases](http://www.cbs1.com.my/WebLITE/Applications/news/uploaded/docs/IBM_POWER8%20Linux%20-%20OpenDB%20V1.0.pdf)
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/xQnIN9bW0og" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+#### BASE
+- The BASE model favors availability over consistency of replicated data at write time.
+    - Basic availability: While the database guarantees the availability of the data, the database may fail to obtain the requested data or the data may be in a changing or inconsistent state.
+    - Soft state: Stores don’t have to be write-consistent, nor do different replicas have to be mutually consistent all the time.
+    - Eventual consistency: The database will eventually become consistent, and data will propagate everywhere at some point in the future.
 
 #### Pros
 
@@ -201,8 +207,10 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/big-data/
 
 #### Cons
 
-- Only few NoSQL databases that offer some form of ACID transactions.
-- Limited support for relations
-- Limited support for JOINS as this will result in a full table scan.
+- Only a few NoSQL databases offer some form of ACID transactions.
+    - MongoDB, DynamoDB
+- Limited support for relations:
+    - JOINS would be inefficient as this will result in a full table scan.
 - Limited support for aggregations and analytics.
+- You will have to perform extra processing on the data for query efficiency.
 - Queries need to be known in advance (e.g. to specify partition keys)
