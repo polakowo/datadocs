@@ -7,8 +7,23 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/big-data/
 
 - A data warehouse (DWH) is a centralized database system that retrieves and consolidates data from multiple applications and sources into one location for BI and other analytical activities.
     - Subject-oriented, integrated, non-volatile, and time-variant
+- Use case: Queries that need to incorporate data from multiple data sources across the organization.
+- SQL databases are not sufficient on their own:
+    - Retailer has a nation-wide presence → Scale?
+    - Acquired smaller retailers, brick & mortar shops, online store → Single database? Complexity?
+    - Has support call center & social media accounts → Tabular data?
+    - Customers, Inventory Staff and Delivery staff expect the system to be fast & stable → Performance
+    - HR, Marketing & Sales Reports want a lot information but have not decided yet on everything they need → Clear Requirements?
+- Data is available:
+    - In an understandable & performant dimensional model.
+    - With conformed dimensions or separate data marts.
+    - For users to report and visualize by interacting directly with the model or, in most cases, through a BI application.
+- [Deep Diving in the World of Data Warehousing](https://medium.com/@BluePi_In/deep-diving-in-the-world-of-data-warehousing-78c0d52f49a)
+
+#### Pros
+
 - Enhanced business intelligence:
-    - Solves the problem of analyzing separate data and converting it into akctions.
+    - Solves the problem of analyzing separate data and converting it into actions.
     - Allows for decision making based on complete information.
     - Makes it easier for business users to analyze and report on data relevant to their initiatives.
 - Timely access to data: 
@@ -17,22 +32,15 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/big-data/
     - Allows for storing large amounts of data and rapidly querying it.
 - Enhanced quality and consistency: 
     - Data from multiple sources is standardized and consistent.
-- Use case: Queries that need to incorporate data from multiple data sources across the organization.
-- SQL databases are not sufficient on their own:
-    - Retailer has a nation-wide presence → Scale?
-    - Acquired smaller retailers, brick & mortar shops, online store → Single database? Complexity?
-    - Has support call center & social media accounts → Tabular data?
-    - Customers, Inventory Staff and Delivery staff expect the system to be fast & stable → Performance
-    - HR, Marketing & Sales Reports want a lot information but have not decided yet on everything they need → Clear Requirements?
-- [Deep Diving in the World of Data Warehousing](https://medium.com/@BluePi_In/deep-diving-in-the-world-of-data-warehousing-78c0d52f49a)
 
-#### Data marts
+## Components
 
-- A data mart is a subset of a DWH oriented to a specific business line.
-- Intended for analysis on a specific business section or unit (e.g. sales department)
-- Use case: Queries that do not require enterprise-wide data.
+- Data sources: Different types, skill sets, upgrades, locations (high heterogeneity)
+- ETL: Usually a "grid" of machines with different schedules and pipeline complexities.
+- DWH: Different resource needs and workloads (scalability & elasticity)
+- BI apps and visualizations: Hybrid environment of tools for interaction, reporting and visualizations.
 
-#### OLTP vs OLAP systems
+#### OLTP and OLAP systems
 
 - OLTP systems provide source data to data warehouses, whereas OLAP systems help to analyze it.
 
@@ -78,6 +86,14 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/big-data/
     - The data is structured and loaded into the target DWH.
     - The load process should be optimized for performance.
     - Recover mechanisms should be configured to restart from the point of failure.
+- For example, an ETL server does SELECT on the source DB servers, stores the results in CSV files, and does INSERT/COPY to the destination server.
+    - You will need a lot of storage in the middle for that.
+
+#### Data marts
+
+- A data mart is a subset of a DWH oriented to a specific business line.
+- Intended for analysis on a specific business section or unit (e.g. sales department)
+- Use case: Queries that do not require enterprise-wide data.
 
 ## Architectures
 
@@ -193,18 +209,28 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/big-data/
 <center><img width=250 src="/datadocs/assets/IntroOLAP_01.png"/></center>
 <center><a href="https://devnet.logianalytics.com/rdPage.aspx?rdReport=Article&dnDocID=1053" style="color: lightgrey">Credit</a></center>
 
-- OLAP cube is a multi-dimensional array of data (spreadsheet)
+- OLAP cube is a multi-dimensional table.
     - Also called a hypercube if the number of dimensions is greater than 3.
 - Each cell of the cube holds a number that represents some measure.
     - The measure (from fact table) is categorized by dimensions (from dimension tables) of the cube.
     - For example, summarize financial data by product, time period, and by city.
-- Should store the finest grain of data (atomic data)
-- Easy to communicate to business users.
-- Query optimization:
-    - Each operation on the cube will potentially go through the facts table (suboptimal)
-    - Materializing all dimension combinations is usually enough to answer all forthcoming queries.
-    - The `CUBE` operator computes a union of GROUP BY’s on every subset of the dimensions.
+    - Should store the finest grain of data (atomic data)
+- Data cubes can be easily built from the star schema.
+- Often the final step in the deployment of a dimensional DW/BI system.
+- Pros:
+    - A very convenient way for slicing, dicing and drilling down.
+    - Improves query performance.
+    - Easy to communicate to business users.
+
+### Operations
+
+#### Query optimization
+
+- Each operation on the cube will potentially go through the facts table (suboptimal)
+- Materializing all dimension combinations is usually enough to answer all forthcoming queries.
+- The `CUBE` operator computes `GROUPING SETS` on every subset of the dimensions.
     - The statement will create \\(2^N\\) subtotal combinations for \\(N\\) dimensions.
+- Make sure that the original data doesn't have any None's.
 
 ```sql
 SELECT c1, c2, aggregate_function(c3)
@@ -219,7 +245,7 @@ GROUP BY CUBE(c1, c2);
 
 #### Slice
 
-- Reducing \\(N\\) dimensions to \\(N-1\\) dimensions by restricting one dimension to a single value.
+- Reduce \\(N\\) dimensions to \\(N-1\\) dimensions by restricting one dimension to a single value.
 
 ```sql
 SELECT c2, c3
@@ -229,7 +255,7 @@ WHERE c1 = 1;
 
 #### Dice
 
-- Same dimensions but computing a sub-cube by restricting some of the values of the dimensions.
+- Compute a sub-cube by restricting some dimensions, same dimensionality, less values.
 
 ```sql
 SELECT c1, c2, c3
@@ -239,10 +265,10 @@ WHERE c1 IN (1, 2) AND c2 IN (2, 3);
 
 #### Roll-up
 
-- Aggregates or combines values and reduces number of rows or columns.
-- For example, street → city → province → country
-- Most efficient operations in OLAP are COUNT, MAX, MIN, and SUM.
+- Aggregate or combine values and reduces number of rows or columns.
+    - For example, street → city → province → country
 - Query optimization:
+    - Most efficient operations in OLAP are COUNT, MAX, MIN, and SUM.
     - The `ROLLUP` operator creates progressively higher-level subtotals.
     - Moves from right to left through the list of grouping dimensions.
 
@@ -259,15 +285,47 @@ GROUP BY ROLLUP(c1, c2);
 #### Drill-down
 
 - The reverse operation of roll up.
-- For example, country → province → city → street
+    - For example, country → province → city → street
 
 #### Pivot
 
-- The whole cube is rotated, giving another perspective on the data.
-- For example, replace products with time periods to see data across time for a single product.
+- Rotate the whole cube, giving another perspective on the data.
+    - For example, replace products with time periods to see data across time for a single product.
 
 ```sql
 SELECT 'TotalSalary' AS TotalSalaryByDept, [30], [45]
 FROM (SELECT dept_id, salary FROM employees) AS SourceTable
 PIVOT (SUM(salary) FOR dept_id IN ([30], [45])) AS PivotTable;
 ```
+
+### Types
+
+#### MOLAP
+
+- Pre-aggregate the OLAP cubes and save them on a special purpose non-relational database.
+- Pros:
+    - Fast query performance due to indexing and storage optimizations.
+    - Smaller on-disk size due to compression.
+    - Very compact for low dimension datasets.
+- Cons:
+    - The processing step can be quite lengthy, especially on large data volumes.
+    - Database explosion if high number of dimensions or sparse multidimensional data.
+
+#### ROLAP
+
+- Compute the OLAP cubes on the fly from the existing relational databases.
+- The source database must still be carefully designed for ROLAP use (e.g. columnar storage)
+- Pros:
+    - Have the ability to ask any question.
+    - More scalable in handling large data volumes and many dimensions.
+    - Load times are generally much shorter than for MOLAP.
+    - The data can be accessed by any SQL reporting tool.
+- Cons:
+    - Slower query performance as opposed to MOLAP.
+    - The load task must be managed by custom ETL code.
+    - Relies on the source databases for querying and caching.
+
+#### HOLAP
+
+- Divide data between relational and specialized storage.
+- Benefits from greater scalability of ROLAP and faster computation of MOLAP.

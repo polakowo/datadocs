@@ -105,6 +105,8 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/big-data/
     - Oracle (banking), Teradata, MySQL, PostgreSQL, SQLite (simplex tasks, development)
 - Structured Query Language (SQL) is the language for querying and maintaining relational databases.
     - Virtually every RDBMS uses SQL.
+    - SQL is the most common standardized language used to access databases. 
+    - The SQL standard has been evolving since 1986.
 - Use cases:
     - You need ACID compliancy.
     - Your data is structured and unchanging.

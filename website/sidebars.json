@@ -99,6 +99,13 @@
                 "big-data/data-processing",
                 "big-data/query-engines"
             ]
+        }, {
+            "type": "subcategory",
+            "label": "Cloud",
+            "ids": [
+                "big-data/cloud-computing",
+                "big-data/amazon-redshift"
+            ]
         }]
     }
 }

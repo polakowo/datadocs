@@ -5,6 +5,14 @@
     "previous": "Previous",
     "tagline": "Documentation for data enthusiasts",
     "docs": {
+      "big-data/amazon-redshift": {
+        "title": "Amazon Redshift",
+        "sidebar_label": "Amazon Redshift"
+      },
+      "big-data/cloud-computing": {
+        "title": "Cloud Computing",
+        "sidebar_label": "Cloud Computing"
+      },
       "big-data/data-engineering": {
         "title": "Data Engineering",
         "sidebar_label": "Data Engineering"

@@ -5,18 +5,98 @@ sidebar_label: SQL Databases
 custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/big-data/sql-databases.md
 ---
 
+- [Database Design: SQL databases](database-design#sql-databases)
+- To operate efficiently and accurately, RDBMS must use ACID transactions.
+- The programming within a RDBMS is usually accomplished using stored procedures (SPs)
+    - Those are sets of SQL statements which are stored as a group, reused and shared.
+- Relational databases typically provide indexing.
+    - The use of efficient indexes can dramatically improve query performance
+    - Indices are usually implemented via B+ trees, R-trees, and bitmaps.
+
+#### Column-oriented databases
+
+- A columnar DBMS stores data tables by column rather than by row.
+    - Stores each column in one or more contiguous blocks.
+    - Basically a row-store with an index on every column.
+- Most column oriented databases are relational.
+    - Some relational databases can use columnar storage, such as PostgreSQL with cstore_fdw.
+- Optimized for fast retrieval of columns of data, typically in OLAP applications.
+- Pros:
+    - High-speed searching, scanning, and aggregation capabilities.
+    - Ability to scale out easily.
+    - Drastically reduce the overall disk I/O operations.
+    - Most columnar databases compress similar data to reduce storage.
+- Cons:
+    - Operations that retrieve the entire row are slower (but rare)
+    - INSERTs must be separated into columns and compressed as they are stored.
+- OLTP constraints can be mediated using in-memory data storage.
+
+```sql
+-- Example: Block in columnar storage
+
+10:001,12:002,11:003,22:004;
+Smith:001,Jones:002,Johnson:003,Jones:004;
+goodreads.com:001,google.com:002,gamerassaultweekly.com:003
+```
+
+#### Object-oriented databases
+
+<center><img width=100 src="/datadocs/assets/220px-Postgresql_elephant.svg.png"/></center>
+
+- An object-relational database (ORD) is composed of both RDBMS and OODBMS.
+- Supports sets and lists, arbitrary user-defined datatypes as well as nested objects.
+    - Allows developers to build and innovate their own data types and methods.
+- Supports object-oriented database model: objects, classes and inheritance.
+    - Very similar to objects used in object-oriented programming.
+- Supports relationships between objects to easily collect related records.
+
+```sql
+-- Example: Custom data types and methods
+
+CREATE TABLE Customers (
+    Id    Cust_Id     NOT NULL PRIMARY KEY,
+    Name  PersonName  NOT NULL,
+    DOB   DATE        NOT NULL
+);
+SELECT Formal(C.Id)
+FROM Customers C
+WHERE BirthDay(C.DOB) = TODAY;
+```
+
+- One of the most popular and advanced solutions is PostgreSQL.
+- PostgreSQL is an enterprise-class open source object-relational database management system.
+    - Not owned by any organization.
+- Some most prominent features:
+    - Supports both SQL for relational and JSON for non-relational queries.
+    - Backed by an experienced community of developers who have made tremendous contribution.
+    - Supports advanced data types and advance performance optimization.
+    - The first database to implement multi-version concurrency control (MVCC)
+    - Compliant with the ANSI SQL standard (160/179 functions as of 2018)
+    - Completely ACID compliant (in contrast to MySQL)
+    - Highly extensible with custom data types, functions, and even code.
+    - Supports synchronous and asynchronous replication for high availability.
+- More suited for complex queries, data warehousing and fast read-write speeds.
+- [Performance Tuning Queries in PostgreSQL](https://www.geekytidbits.com/performance-tuning-postgres/)
+- [SQLite vs MySQL vs PostgreSQL: A Comparison Of Relational Database Management Systems](https://www.digitalocean.com/community/tutorials/sqlite-vs-mysql-vs-postgresql-a-comparison-of-relational-database-management-systems)
+
 ## Data modeling
 
+### Relational model
+
 - The relational data model allows to create a consistent, logical representation of information.
-    - Consistency is achieved by including declared constraints (logical schema)
-
-#### Relational model
-
 - The data is stored in relations (tables)
-    - Each relation consists of tuples (rows) and attributes (columns).
-- Relational model also lays down a set of rules to enforce data integrity.
-    - Key, domain, and referential integrity constraints.
-- Also defines how the data are to be manipulated (relational calculus)
+    - Each relation consists of tuples (rows, records) and attributes (columns, fields).
+    - Tables that are not stored but computed on the fly are called views or queries.
+- Consistency is achieved by including declared constraints (logical schema)
+    - Constraints provide one method of implementing business rules in the database.
+    - Constraints can apply to attributes, tuples or to an entire relation.
+    - There are key, domain, and referential integrity constraints.
+    - A domain describes the set of possible values for a given attribute.
+- Relationships are a logical connection between different tables.
+- Defines how the data are to be manipulated (relational calculus)
+
+#### Keys
+
 - SUPERKEY is a set of attributes whose values can be used to uniquely identify a tuple.
 - CANDIDATE KEY is a minimal set of attributes necessary to identify a tuple.
     - Also called a MINIMAL SUPERKEY.
@@ -93,39 +173,3 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/big-data/
 - Denormalized data model is not the same as a data model that has not been normalized:
     - Denormalization should only take place after normalization.
 - With denormalization we want to think about the queries beforehand.
-
-## MySQL
-
-<center><img width=200 src="/datadocs/assets/1200px-MySQL.svg.png"/></center>
-
-- MySQL is the most popular Open Source RDBMS.
-    - The logical model includes objects such as databases, tables, views, rows, and columns.
-    - The database structures are organized into physical files optimized for speed.
-- It is developed, distributed, and supported by Oracle.
-    - MySQL is Open Source and part of LAMP (Linux, Apache, MySQL, PHP/Perl/Python) environment.
-    - It has a huge community, extensive testing and quite a bit of stability.
-- Given that the server hardware is optimal, MySQL runs very fast. 
-- Supports sharding and can be replicated across multiple nodes for more scalability and availability.
-- MySQL is faster, more reliable and cheaper because of its unique storage engine architecture.
-    - Written in C and C++
-    - Tested with a broad range of different compilers.
-    - Uses multi-layered server design with independent modules.
-    - Designed to be fully multithreaded using kernel threads, to easily use multiple CPUs.
-    - Uses a very fast thread-based memory allocation system.
-- MySQL is a relatively simple database system.
-- Understands standards based SQL (Structured Query Language).
-    - SQL is the most common standardized language used to access databases. 
-    - The SQL standard has been evolving since 1986.
-- Consists of a solid data security layer that protects sensitive data from intruders.
-- Follows a client/server architecture consisting of a database server and arbitrarily many clients.
-    - MySQL Server is a multithreaded SQL server.
-    - It can also be provided as an embedded multithreaded library.
-- The default file size limit is about 4GB, but can be increased to a theoretical limit of 8TB.
-- Supports a large number of platforms, client programs and libraries, administrative tools and APIs.
-    - Supports JDBC and JDBC
-    - Provides transactional and nontransactional storage engines.
-    - Designed to make it relatively easy to add other storage engines.
-- Other features:
-    - Roll-backs, commit and crash recovery
-    - Triggers, stored procedures and views
-- [The Main Features of MySQL](https://dev.mysql.com/doc/refman/8.0/en/features.html)
