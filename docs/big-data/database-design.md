@@ -99,61 +99,7 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/big-data/
 
 ### SQL databases
 
-- Data is placed in tables and data schema is carefully designed before the database is built.
-- Relational database management system (RDBMS) is used to maintain relational databases. 
-    - Invented by E. F. Codd in 1970.
-    - Oracle (banking), Teradata, MySQL, PostgreSQL, SQLite (simplex tasks, development)
-- Structured Query Language (SQL) is the language for querying and maintaining relational databases.
-    - Virtually every RDBMS uses SQL.
-    - SQL is the most common standardized language used to access databases. 
-    - The SQL standard has been evolving since 1986.
-- Use cases:
-    - You need ACID compliancy.
-    - Your data is structured and unchanging.
-    - Large-scale web organizations such as Google and Amazon employ relational databases as adjuncts where high-grade data consistency is necessary.
-    - [SQL Vs NoSQL: The Differences Explained](https://blog.panoply.io/sql-or-nosql-that-is-the-question)
-
-#### ACID transactions
-
-- Atomicity: The whole transaction is processed or nothing is processed.
-    - For example, debit and credit operations cannot occur partially.
-- Consistency: Any data written to the database must be valid according to all defined rules.
-    - For example, a column of type integer does not accept boolean values.
-- Isolation: Transactions are processed independently and securely, order does not matter.
-    - But complete isolation uses more system resources and transactions blocking each other.
-- Durability: Committed transactions remain committed even in case of system failure.
-    - For example, a flight seat remains booked even after a crash.
-
-#### Pros
-
-- Small to medium sized data volumes.
-- Complex query intensive environment:
-    - Support for JOINS, aggregations and analytics.
-    - Support for secondary indexes to help with quick searching.
-- ACID transactions guarantee accuracy, completeness, and data integrity.
-    - Stable enough in high load and for complex transactional applications.
-    - Remember, financial systems are built on trust.
-- Easier to change to business requirements:
-    - Modeling the data, not modeling queries.
-    - Have better support, product suites and add-ons to manage these databases.
-- No need to do queries first, run them based on the schemas and ERD.
-
-#### Cons
-
-- Not suited for large amounts of data as they cannot scale horizontally.
-- Not highly available because of a single point of failure.
-- Not designed to handle unstructured and hierarchical data.
-- The atomicity of the operations plays a crucial part in the database’s performance.
-    - ACID transactions slow down the process of reading and writing data.
-- Have a predefined (not flexible) schema.
-
-#### Scaling up relational databases
-
-- Denormalization: Add redundant copies of data or by grouping data to get faster reads.
-- Caching layers (memcached): Distributed memory cache sitting on top of the database.
-- Sharding: Split up the database into range partitions.
-- Materialized views: Materialize views to serve the services in the format they expect and faster.
-- Removing stored procedures: Remove expensive logic.
+- [SQL Databases](sql-databases)
 
 ### NoSQL databases
 
@@ -188,6 +134,7 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/big-data/
 <iframe width="560" height="315" src="https://www.youtube.com/embed/xQnIN9bW0og" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 #### BASE
+
 - The BASE model favors availability over consistency of replicated data at write time.
     - Basic availability: While the database guarantees the availability of the data, the database may fail to obtain the requested data or the data may be in a changing or inconsistent state.
     - Soft state: Stores don’t have to be write-consistent, nor do different replicas have to be mutually consistent all the time.

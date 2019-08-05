@@ -5,78 +5,126 @@ sidebar_label: Amazon Redshift
 custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/big-data/amazon-redshift.md
 ---
 
-<center><img width=700 src="/datadocs/assets/redshift-etl.png"/></center>
-<center><a href="https://youtu.be/JQEAYabMr20" style="color: lightgrey">Credit</a></center>
+<center><img width=250 src="/datadocs/assets/aws-redshift-connector.png"/></center>
 
-- Data sources can be a jungle of databases, EC2 machines and flat files.
-- ETL machines are a class of products that do calls.
-    - Issue commands to the sources to copy data to the staging area.
-    - Issue commands to Redshift to pick up the data.
-    - EC2 usually do not store any data.
-- S3 staging bucket transform the data before insertion into DWH.
-    - S3 offers a very reliable, scalable and worry-free storage solution.
-    - Only offers storage not processing power.
-- The data in Redshift can be directly fed into BI apps.
-    - But most of the times, pre-aggregations (to OLAP cubes) are required.
-    - The data can be pre-aggregated and materialized into in-memory storage or elsewhere.
+- Amazon Redshift is a fully managed, column-oriented, petabyte-scale data warehouse in the cloud.
+    - Can build a central data warehouse unifying data from many sources.
+    - Can run big, complex analytic queries against that data with SQL.
+    - Can report and pass on the results to dashboards or other apps.
+- Behind the scenes, Redshift stores relational data in column format.
+    - Based on industry-standard PostgreSQL.
+    - Supports high compression and in-memory operations.
+    - Columnar storage reduces the number of disk I/O requests and the amount of data.
+- Integrates with various data loading and ETL tools and BI reporting, data mining, and analytics tools.
+    - Also provides its own Query Editor.
+    - Accessible, like any relational database, via JDBC/ODBC.
+- Designed to crunch data, i.e. running “big” or “heavy” queries against large datasets.
+- Can ingest huge structured, semi-structured and unstructured datasets (via S3 or DynamoDB)
+    - It's a database, so it can store raw data AND the results of transformations.
+- Can run analytic queries against data stored Amazon S3 data lake.
+    - Redshift Spectrum: Run queries against data in Amazon S3 without moving it.
+    - Can query open file formats, such as CSV, JSON, Parquet, and more.
+    - [Amazon Redshift Spectrum - No Loading Required](https://aws.amazon.com/blogs/big-data/amazon-redshift-spectrum-extends-data-warehousing-out-to-exabytes-no-loading-required/)
+- Massively parallel processing (MPP) architecture distributes and parallelizes queries.
+    - Based on ParAccel's MPP technology.
+    - Distributes the rows of a table to the compute nodes for parallel processing.
+    - Parallelizes execution of one query on multiple CPUs/machines.
+    - Other examples include Teradata Aster, Oracle ExaData and Azure SQL.
 
-#### Ingesting at scale
+<center><img width=700 src="/datadocs/assets/mpp2.jpg"/></center>
+<center><a href="https://techxplicit.com/2016/09/26/first-encounter-with-massively-parallel-processing-aws-redshift/" style="color: lightgrey">Credit</a></center>
 
-- Use the `COPY` command for bulk insertion from an S3 staging area to Redshift.
-    - The `INSERT` command inserts record by record and might be very slow.
-- If the file is large, break it up into multiple files.
-    - Either using a common prefix or a manifest file.
-    - Each Redshift slice will act as a separate worker.
-- Better to ingest from the same region.
-- Automatic compression optimization:
-    - The optimal compression strategy for each column type is different.
-    - Redshift gives the user control over the compression.
-    - The `COPY` command make automatic best-effort compression decisions.
-- One can also specify the delimiter to be used.
-- It is also possible to ingest directly using ssh from EC2 machines.
+- Other performance features:
+     - Incorporates a query optimizer that is MPP-aware.
+     - Caches the results of complex queries in memory to reduce query execution time.
+     - [Performance Features](https://docs.aws.amazon.com/redshift/latest/dg/c_challenges_achieving_high_performance_queries.html)
+     - [Top 14 Performance Tuning Techniques for Amazon Redshift](https://www.intermix.io/blog/top-14-performance-tuning-techniques-for-amazon-redshift/)
+- Two node types available:
+    - Dense Compute (DC): fast CPUs, large amounts of RAM, and solid-state disks (SSDs).
+    - Dense Storage (DS): cost-effective, lots of storage, a very low price point.
+    - Can scale out easily by changing the number or type of nodes.
+- Redshift is a fully managed service on AWS.
+    - Redshift automatically provisions the infrastructure with just a few clicks.
+    - Most administrative tasks are automated, such as backups and replication.
+    - Ensures fault tolerance of the cluster.
+- Can use SSL to secure data in transit and run within Amazon VPC.
+- Has a price-point that is unheard of in the world of data warehousing ($935/TB annually)
+    - Offers On-Demand pricing with no up-front costs.
 
-## Amazon Redshift
+#### Compared to Amazon RDS
 
-- Amazon Redshift is a cloud-managed, column-oriented, MPP database.
-- Best suited for storing OLAP workloads and summing over a long history.
-- Internally, it's PostgreSQL extended with columnar storage.
-- Accessible, like any relational database, via JDBC/ODBC.
+- RDS is Amazon's relational databases as a service offering.
+    - Supports engines such as Amazon Aurora, Oracle, PostgreSQL, MySQL, and many others.
+- RDS meant to be used as the main or a supporting data store and transactional (OLTP) database.
+- Both services can be used together very effectively: RDS as a source, Redshift as a target.
+- Amazon RDS is primarily used by end customers, while Redshift by internal users (data scientists)
 
-#### MPP
 
-- Most relational databases run each query on maximum one CPU per machine.
-    - Acceptable for OLTP, mostly updates and few rows retrieval.
-- Massively Parallel Processing (MPP) database parallelize the execution of one query on multiple CPUs/machines.
-- A table is partitioned and partitions are processed in parallel. 
-- Other examples include Teradata Aster, Oracle ExaData and Azure SQL.
+## Architecture
 
-#### Architecture
-
-- LeaderNode:
-    - Coordinates compute nodes
-    - Handles external communication
-    - Optimizes query execution
-- The total number of nodes in a Redshift cluster is equal to the number of EC2 instances.
-- ComputeNodes:
-    - Each having it's own configuration (CPU#, memory, disk size)
-    - Scale up: get more powerful nodes
-    - Scale out: get more nodes
-- NodeSlices:
-    - Each compute node is logically divided into a number of slices.
-    - Each slice is at least 1 CPU with dedicated storage and memory.
+- The core component is a cluster, which is composed of one or more compute nodes.
+- Leader node coordinates the compute nodes and handles external communication.
+    - Client interacts only with the leader node, but compute nodes remain transparent.
+    - Develops execution plans to carry out database operations.
+    - Optimizes query execution.
+    - Distributes SQL statements to the compute nodes (only if they have relevant partition)
+- Compute nodes (EC2 instances) execute the compiled code and send intermediate results back.
+    - Each compute node has its own dedicated CPU, memory, and disk storage.
+    - One can increase the number of nodes (scale out) or upgrade the node type (scale up)
+- Each compute node is logically partitioned into slices:
+    - Each slice is allocated 1 CPU, a portion of the node's memory and disk space.
     - A cluster with \\(N\\) slices can process \\(N\\) partitions simultaneously.
-    - The total number of slices in a cluster is the unit of parallelism.
-    - For example, 4 nodes x 8 slices = 32 partitions.
+    - For example, 4 compute nodes x 8 slices = maximum 32 partitions.
+    - One can optionally specify one column as the distribution key.
 
-#### Optimizing table design
+## Data modeling
 
-- When a table is partitioned up into many pieces and distributed across slices on different machines, this is done blindly.
-- Choose a more clever strategy if the frequent access pattern of the table is known.
-- Distribution style:
-    - EVEN: Round-robin over all slices to achieve load-balancing. Partitions a table on slices such that each slice would have an almost equal number of records. Done to achieve load balancing. Good if the table won't be joined. Slow because records will have to be shuffled for putting together the JOIN result.
-    - ALL: Small tables could be replicated on all slices to speed up joins. Replicates a (small) table on all slices (also known as broadcasting). Speeds up the JOIN operation, which is then done in parallel without shuffling. Used frequently for dimension tables. 
-    - AUTO: Allows Redshift to determine distribution style. Leaves the decision to Redshift. Small enough tables are broadcasted, while large tables are distributed evenly.
-    - KEY: Rows having similar values are placed in the same slice. This can lead to a skewed distribution if some values are more frequent than others. However, very useful if the dimension table is too large to be broadcasted. If two tables are distributed on the joining keys, Redshift collocates the rows from both tables. Specified with `DISTKEY`.
-- Sorting key:
-    - Upon loading, rows are sorted before being distributed to slices.
+- A `COPY` command is the most efficient way to load a table.
+    - Leverages MPP to read from multiple data files or streams simultaneously.
+- On contrary, the `INSERT` command inserts record by record and can be slow.
+- For better load performance, split data into multiple files:
+    - The number of files should be a multiple of the number of slices in the cluster.
+    - The files should be roughly the same size (1MB-1GB)
+    - Specify a common prefix or a manifest file.
+
+```js
+// Example: venue.txt split into files
+
+venue.txt.1
+venue.txt.2
+venue.txt.3
+venue.txt.4
+```
+
+- By default, Redshift (blindly) distributes the workload uniformly among the nodes in the cluster.
+- For better execution performance, set distribution keys on tables:
+    - To minimize data movement during query execution.
+    - To ensure that every row is collocated for every join that the table participates in.
+- Distribution styles:
+    - `EVEN`: Appropriate for load balancing and when a table does not participate in joins.
+    - `ALL`: A copy of the entire table is distributed to every node (broadcasting). For small tables.
+    - `KEY`: The rows are distributed according to the values in one column. The leader node collocates the rows on the slices according to the values in the joining columns so that matching values from the common columns are physically stored together. For large tables.
+    - `AUTO`: Automatic assignment based on the size of the table data.
+- Sorting enables efficient handling of range-restricted predicates.
+    - Define one or more of its columns as sort keys.
+    - Allows exploitation of the way that the data is sorted.
     - Useful for columns that are frequently used in `ORDER BY` like dates.
+
+```sql
+-- Example: 2x speed improvement using distribution and sort keys
+
+create table activity (
+  id         integer     primary key,
+  created_at date        sortkey distkey,
+  device     varchar(30)
+);
+```
+
+- Defining constraints:
+    - Uniqueness, primary key, and foreign key constraints are not enforced.
+    - But declare constraints anyway when you know that they are valid.
+    - Redshift enforces `NOT NULL` column constraints.
+- One can apply a compression type, or encoding, to the columns in a table.
+    - Reduces the amount of disk I/O and therefore improves query performance.
+    - Use the `COPY` command to apply compression automatically.
+- [Designing Tables](https://docs.aws.amazon.com/redshift/latest/dg/t_Creating_tables.html)

@@ -21,23 +21,8 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/big-data/
     - Use hosted services offered by Amazon or Databricks.
     - Get support from companies like Cloudera or Hortonworks.
 
-## Big Data
-- Volume:
-    - The sheer volume of data that is produced each day (petabytes, exabytes, zettabytes)
-    - Cannot no longer be saved or analyzed using conventional data processing methods.
-- Velocity:
-    - Speed with which the data is generated, analyzed and reprocessed.
-- Variety:
-    - Diversity of data types and data sources.
-    - 80% of the data in the world today is unstructured.
-- Veracity:
-    - “garbage in, garbage out”
-    - For big data systems to be reliable and usable, the data has to be also accurate.
-- Value:
-    - Added value for companies.
-    - It's a question of generating business value from their investments.
+## Evolution of data engineering
 
-## Evolution of Data Engineering
 - [Data Engineering Introduction and Epochs](https://learn.panoply.io/hubfs/Data%20Engineering%20-%20Introduction%20and%20Epochs.pdf)
 - Hadoop:
     - With Hadoop open-sourced in 2006, it became easier and cheaper to store large amount of data.
@@ -67,3 +52,42 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/big-data/
     - But it came at the cost of having to manage infrastructure and the scaling process through code.
     - Lambda function (2014) kicked off the serverless movement.
     - Data now could be easily ingested without managing infrastructure.
+
+## Big data
+
+#### Hardware
+
+- CPU is the brains of a computer:
+    - Directs other components as well as runs mathematical calculations.
+    - Registers hold data that the CPU is working with at the moment (e.g. cumulative sum)
+    - Registers avoid having to send data back and forth between memory (RAM) and the CPU.
+    - 2.5 billion operations per second x 8 bytes per operation = 20 billion bytes per second.
+    - Most of the time, CPU is sitting idle while waiting for input data from RAM.
+- Memory takes 200x longer than the CPU:
+    - Known to be "efficient, expensive, and ephemeral (volatile)"
+    - Data stored in RAM gets erased once the computer shuts down.
+    - RAM is relatively expensive.
+- Magnetic disks can be 200x slower and SSDs can be 15x slower than RAM.
+- Network transfer takes 20x longer than SSDs.
+    - Transferring data across a network is the biggest bottleneck when working with big data.
+    - Distributed systems try to minimize shuffling data back and forth between nodes.
+- [Latency Numbers Every Programmer Should Know](http://people.eecs.berkeley.edu/~rcs/research/interactive_latency.html)
+- Even if the entire dataset cannot fit into the RAM, it can still be processed chunk wise.
+    - [Iterating through files chunk by chunk](https://pandas.pydata.org/pandas-docs/stable/user_guide/io.html#io-chunking)
+
+#### The V's of big data
+
+- Volume:
+    - The sheer volume of data that is produced each day (petabytes, exabytes, zettabytes)
+    - Cannot no longer be saved or analyzed using conventional data processing methods.
+- Velocity:
+    - Speed with which the data is generated, analyzed and reprocessed.
+- Variety:
+    - Diversity of data types and data sources.
+    - 80% of the data in the world today is unstructured.
+- Veracity:
+    - “garbage in, garbage out”
+    - For big data systems to be reliable and usable, the data has to be also accurate.
+- Value:
+    - Added value for companies.
+    - It's a question of generating business value from their investments.

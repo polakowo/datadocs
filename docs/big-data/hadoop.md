@@ -12,6 +12,8 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/big-data/
 - Hadoop is written in Java and is supported on all major platforms.
 - [Will Kubernetes Sink the Hadoop Ship?](https://thenewstack.io/will-kubernetes-sink-the-hadoop-ship/)
 - [Hadoop’s star dims in the era of cloud object data storage and stream computing](https://siliconangle.com/2018/07/09/hadoops-star-dims-era-cloud-object-data-storage-stream-computing/)
+- At a high level, distributed computing implies multiple CPUs each with its own memory. 
+- Parallel computing uses multiple CPUs sharing the same memory.
 
 #### History
 

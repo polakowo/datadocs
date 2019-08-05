@@ -6,6 +6,7 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/big-data/
 ---
 
 ## Apache Hive
+
 <img width=150 src="/datadocs/assets/Apache_Hive_logo.svg.png"/>
 
 - Apache Hive is a data warehouse system built on top of Apache Hadoop that facilitates easy data summarization, ad-hoc queries, and the analysis of large datasets stored in various databases and file systems that integrate with Hadoop.
@@ -66,6 +67,7 @@ FROM topMovieIDs t JOIN names n ON t.movieID = n.movieID;
 
 
 ## Apache Pig
+
 <center><img width=150 src="/datadocs/assets/pig-image.png"/></center>
 
 - Pig is an abstraction built on top of MapReduce for rapid iteration and easy development.
@@ -96,6 +98,9 @@ DUMP oldestFiveStarMovies;
 ```
 
 #### Compared to Hive
+
 - Main focus of Pig is on bringing data into Apache Hadoop and getting it into the form for querying.
 - Both Pig and Hive are feature complete.
 - Hive is used more by researchers and programmers.
+
+## Distributed SQL engines like Impala and Presto

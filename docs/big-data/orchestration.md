@@ -16,6 +16,7 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/big-data/
 - [Nomad vs. Yarn vs. Kubernetes vs. Borg vs. Mesos vs… you name it!](https://medium.com/@arseny.chernov/nomad-vs-yarn-vs-kubernetes-vs-borg-vs-mesos-vs-you-name-it-7f15a907ece2)
 
 ### Components
+
 - YARN decentralizes execution and monitoring of processing jobs.
 
 <img width=700 src="/datadocs/assets/yarn.png"/>

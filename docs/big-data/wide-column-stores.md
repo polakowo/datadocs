@@ -38,8 +38,11 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/big-data/
     - Automatic and configurable sharding of tables
     - Automatic failover support between RegionServers
     - Easy to use Java API for client access
-    - Block cache and Bloom Filters for real-time queries
+    - Block cache and Bloom Filters (whether an element is present in a set) for real-time queries
     - Very fast way to expose results of Spark to other systems
+- Has made strong consistency of reads and writes a core design tenet:
+    - All accesses are seen by all parallel processes in the same order, sequentially.
+    - Only one consistent state can be observed, as opposed to weak consistency.
 - There is no query language, just CRUD APIs.
 - [HBase: The Definitive Guide by Lars George](https://www.oreilly.com/library/view/hbase-the-definitive/9781449314682/ch01.html)
 

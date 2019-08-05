@@ -21,6 +21,7 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/big-data/
     - More configurable and customizable.
 
 #### Infrastructure-as-Code (IaC)
+
 - IaC lets you automate, maintain, deploy, replicate and share complex infrastructures as easily as you maintain the code.
     - Undreamt-of in on-premise deployment.
     - Creating a machine is as easy as opening a file.
