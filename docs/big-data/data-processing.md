@@ -7,18 +7,68 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/big-data/
 
 ## Functional programming
 
-- The PySpark API is written with functional programming principles in mind.
-- The PySpark API uses the py4j library to make calls directly to the JVM.
-- In distributed systems, functions should not have any side effects on variables outside of their scope.
-    - A pure function is a function where the return value is only determined by its input values.
-- Lazy evaluation: Spark builds DAGs
-    - Waits to streamline and combine all operations into a single stage.
-    - RDDs are fault-tolerant datasets distributed across a cluster.
-    - To get Spark to actually run the map step, you need to use an "action", such as `collect`.
-- Spark is not changing the original data set: Spark is merely making a copy.
-- Imperative programming: How? Python
-- Declarative programming: What? SQL
-    - Declarative systems are usually an abstract layer of imperative systems.
+- Problem with OOP:
+    - The object's methods are supposed to mutate its internal state (variables)
+    - Shared state can lead to bottlenecks, deadlocks, complexity in parallel computing.
+- FP treats computation as the evaluation of functions and avoids changing-state and mutable data.
+- In pure functional programming, everything is immutable, to allow laziness and purity.
+    - Purity: no side effects
+    - Immutability: state cannot be modified once created
+    - First-class & high-order functions: functions passed around
+- Pure functions (or expressions) have no side effects (memory or I/O).
+    - The value of a variable in a functional program never changes once defined.
+
+```py
+# Example: Purity
+
+a = 1
+b = 1
+sum = None
+
+def impure_function():
+    sum = a + b
+
+def pure_function(a, b):
+    return a + b
+```
+
+- Immutability: State of objects cannot be modified after it is created.
+    - Iteration (looping) in functional languages is usually accomplished via recursion.
+
+```py
+# Example: Immutability
+
+def sum(arr):
+    if len(arr) == 1:
+        return arr[0]
+    else:
+        return arr[0] + sum(arr[1:])
+```
+
+- High-order functions are functions that can either take other functions as arguments or return them.
+    - Function is just like all other values like integer, float, double.
+
+```py
+# Example: High-order functions
+
+def add(a, b):
+    return a + b
+
+def sum(arr):
+    reduce(add, arr)
+```
+
+- Functional programming offers advantages for distributed computing:
+    - Immutable data can be copied to any node in distributed system.
+    - It can be passed around without worrying about side effects.
+    - Functions can be combined, sent remotely and applied locally on distributed data.
+- It is a declarative programming paradigm.
+    - Functional code is idempotent: a function's return value depends only on its arguments.
+    - In imperative programming, global program state can affect a function's resulting value.
+- Functional languages can be categorized by whether they use eager or lazy evaluation.
+    - The usual implementation strategy for lazy evaluation in functional languages is graph reduction.
+- Most of traditional languages can be written in functional style.
+    - FP language is language designed with FP in mind: Lips, Haskell, Erlang, Scala (?)
 - [The Lambda Calculus for Absolute Dummies (like myself)](http://palmstroem.blogspot.com/2012/05/lambda-calculus-for-absolute-dummies.html)
 
 ## Hadoop MapReduce
@@ -83,6 +133,7 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/big-data/
     - If some workers are slow (Straggler problem), start redundant workers and take the fastest one.
     - Runs in parallel.
 - [MapReduce Tutorial](https://hadoop.apache.org/docs/r1.2.1/mapred_tutorial.html)
+
 ```py
 # Example: Break down movie ratings by rating score
 from mrjob.job import MRJob
@@ -261,7 +312,7 @@ model.transform(df).show()
     - Resilient: Fault tolerant and transformations can be repeated in the event of data loss.
     - Distributed: Distributed data among the multiple nodes in a cluster.
     - Dataset: Collection of partitioned data with values.
-- Distributed collection:
+- MapReduce operations:
     - RDD uses MapReduce operations which are widely adopted for processing.
 - Immutable:
     - RDDs composed of a collection of records which are partitioned.
@@ -288,6 +339,7 @@ model.transform(df).show()
 - Remain in memory, greatly increasing the performance of the cluster.
     - Only spilling to disk when required by memory limitations.
     - Supports persisting in memory or on disk, or replicating across multiple nodes.
+    - Persisting in memory with `persist` allows future actions to be (often 10x) faster.
 - Cons:
     - Does not support compile-time safety for both syntax and analysis errors.
     - RDDs don’t infer the schema of the ingested data.
@@ -339,3 +391,27 @@ model.transform(df).show()
 - Both DataFrames and Datasets internally do final execution on RDDs.
 - Since Spark 2.0, DataFrame and Datasets APIs are unified into a single Datasets API.
 - [A Tale of Three Apache Spark APIs: RDDs, DataFrames, and Datasets](https://databricks.com/blog/2016/07/14/a-tale-of-three-apache-spark-apis-rdds-dataframes-and-datasets.html)
+
+### Addressing issues
+
+- Insufficient resources:
+    - Different stages of a Spark job can differ greatly in their resource needs. Some stages might require a lot of memory, others might need a lot of CPU. Use the Spark UI and logs to collect information on these metrics.
+    - If running into out-of-memory errors, consider increasing the number of partitions.
+    - If memory errors occur over time, look into why the size of some objects is increasing.
+    - Look for ways of freeing up resources if garbage collection metrics are high.
+    - ML algorithms: The driver stores the data the workers share and update; check if the algorithm is pushing too much data there.
+    - Too much data to process? Compressed file formats can be tricky to interpret.
+- Data skew:
+    - Data skew is very specific to the dataset.
+    - Drill down Spark UI to the task level to see if certain partitions process significantly more data than others and if they are lagging behind.
+    - Add an intermediate data processing step with an alternative key.
+    - Adjust the `spark.sql.shuffle.partitions` parameter if necessary.
+- Inefficient queries:
+    - Use the Spark UI to check the DAG and the jobs and stages it’s built of.
+    - Catalyst will push filters as early as possible but won’t move them across stages. Make sure to do these optimizations manually without compromising the business logic.
+    - Catalyst can’t decide on its own how much data will shuffle across the cluster. Make sure to perform joins and grouped aggregations as late as possible.
+    - For joins, if one of dataframes is small, consider using broadcasting.
+- [Monitoring and Instrumentation](https://spark.apache.org/docs/latest/monitoring.html)
+- [Configuring Logging](https://spark.apache.org/docs/latest/configuration.html#configuring-logging)
+- [Tuning Spark](https://spark.apache.org/docs/latest/tuning.html)
+- [Performance Tuning](https://spark.apache.org/docs/latest/sql-performance-tuning.html)
