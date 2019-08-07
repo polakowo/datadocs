@@ -9,7 +9,7 @@ https://polakowo.github.io/datadocs/
 <img src="https://github.com/polakowo/datadocs/blob/master/website/static/img/favicon.ico"/>
 
 #### Motivation
-We've all experienced a problem of forgetting most of what we’ve learned in the past. Especially in complex fields such as data science, it's hard to keep an overview of all concepts. When taking MOOCs to advance education in data science and engineering, you can often encounter situations of being lost in all the topics and details, so we decided to combine students' efforts in organizing knowledge. That's how datadocs emerged.
+When taking MOOCs on data science and engineering, you can often encounter situations of being lost in all the topics and details, so we decided to combine students' efforts in organizing knowledge. That's how datadocs emerged.
 
 #### What's the use case?
 datadocs differs from other platforms: Medium articles are usually lengthy and not fit for short attention spans. Google doesn't help much, because you need to know what to search for. Wikipedia, let's be honest, is sometimes too hard to read. That's why we created a documentation platform where everyone can learn by writing. 
