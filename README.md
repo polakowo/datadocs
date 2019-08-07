@@ -20,7 +20,7 @@ The datadocs platform differs from other resources: Medium articles are usually 
 The platform is based on Facebook's Docusaurus. Docusarus is mainly used for quickly building documentation websites for software (such as React). But since any knowledge is some form of documentation, we repurposed it for our use case. The documentation is written in Markdown and deployed via Github Pages. Since datadocs is Open Source and hosted on Github, every Github user can create and edit pages, which makes the platform collaborative and allows for version control. Furthermore, we extended it to support search (DocSearch), math equations and comment section (Disqus). At the end, datadocs has become very powerful while remaining easy to use.
 
 #### Current status
-Currently, datadocs covers many topics from machine learning, deep learning and big data:
+Currently, datadocs covers topics from the following courses:
 - [Deep Learning Specialization](https://www.deeplearning.ai/deep-learning-specialization/) (deeplearning.ai, 2018)
 - [Practical Deep Learning for Coders](https://course.fast.ai) (fast.ai, 2019)
 - [Open Machine Learning Course](https://mlcourse.ai) (mlcourse.ai, 2019)
