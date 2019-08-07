@@ -28,4 +28,4 @@ Currently, datadocs covers topics from the following courses:
 - [The Ultimate Hands-On Hadoop](https://www.udemy.com/the-ultimate-hands-on-hadoop-tame-your-big-data/) (Udemy, 2019)
 - [Data Engineering Nanodegree Program](https://eu.udacity.com/course/data-engineer-nanodegree--nd027) (Udacity, 2019)
 
-Since the project is new, we've got many reads but few contributions, so feel free to do that! What we'd like to do next is to embed React components within documents for richer learning experience.
+Since the project is new, we've got many reads but few contributions, so feel free to do that!
