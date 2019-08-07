@@ -14,7 +14,7 @@ We've all experienced a problem of forgetting most of what we’ve learned in th
 #### What's the use case?
 datadocs differs from other platforms: Medium articles are usually lengthy and not fit for short attention spans. Google doesn't help much, because you need to know what to search for. Wikipedia, let's be honest, is sometimes too hard to read. That's why we created a documentation platform where everyone can learn by writing. 
 
-This like a collaborative e-book for data enthusiasts.
+*This like a collaborative e-book for data enthusiasts.*
 
 #### How it works?
 The platform is based on Facebook's Docusaurus. Docusarus is mainly used for quickly building documentation websites for software (such as React). But since any knowledge is some form of documentation, we repurposed it for our use case. The documentation is written in Markdown and deployed via Github Pages. Since datadocs is Open Source and hosted on Github, every Github user can create and edit pages, which makes the platform collaborative and allows for version control. Furthermore, we extended it to support search (DocSearch), math equations and comment section (Disqus). At the end, datadocs has become very powerful while remaining easy to use.
