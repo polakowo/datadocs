@@ -2,7 +2,7 @@
 ![Website](https://img.shields.io/website/https/polakowo.github.io/datadocs.svg)
 
 # datadocs
-Share your knowledge on concepts and phenomena of data science.
+Share your knowledge on concepts and phenomena of data science & engineering.
 
 https://polakowo.github.io/datadocs/
 
@@ -17,7 +17,7 @@ The datadocs platform differs from other resources: Medium articles are usually 
 *This like a collaborative e-book for data enthusiasts.*
 
 #### How it works?
-The platform is based on [Facebook's Docusaurus](https://docusaurus.io). Docusarus is mainly used for quickly building documentation websites for software (such as React). But since any knowledge is some form of documentation, we repurposed it for our use case. The documentation is written in Markdown and deployed via Github Pages. Since datadocs is Open Source and hosted on Github, every Github user can create and edit pages, which makes the platform collaborative and allows for version control. Furthermore, we extended it to support search (DocSearch), math equations and comment section (Disqus). At the end, datadocs has become very powerful while remaining easy to use.
+The platform is based on [Facebook's Docusaurus](https://docusaurus.io). Docusarus is mainly used for quickly building documentation websites for software (such as React). But since any knowledge is some form of documentation, we repurposed it for our use case. The documentation is written in Markdown and deployed via Github Pages. Since datadocs is Open Source and hosted on Github, every Github user can create and edit pages, which makes the platform collaborative and allows for version control. Furthermore, we extended it to support search ([DocSearch](https://community.algolia.com/docsearch/)), math equations and comment section ([Disqus](https://disqus.com)). At the end, datadocs has become very powerful while remaining easy to use.
 
 #### Current status
 Currently, datadocs covers topics from the following courses:
