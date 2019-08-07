@@ -2,11 +2,12 @@
 ![Website](https://img.shields.io/website/https/polakowo.github.io/datadocs.svg)
 
 # datadocs
+
+<img src="https://github.com/polakowo/datadocs/blob/master/website/static/img/favicon.ico"/>
+
 Share your knowledge on concepts and phenomena of data science & engineering.
 
 https://polakowo.github.io/datadocs/
-
-<img src="https://github.com/polakowo/datadocs/blob/master/website/static/img/favicon.ico"/>
 
 #### Motivation
 When taking MOOCs on data science and engineering, you can often encounter situations of being lost in all the topics and details, so we decided to combine students' efforts in organizing knowledge.
