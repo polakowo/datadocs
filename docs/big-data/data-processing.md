@@ -279,6 +279,7 @@ model.transform(df).show()
     - Stores the computation results data in memory, on disk or off-heap.
     - Interacts with the storage systems.
 - [Cluster Mode Overview](https://spark.apache.org/docs/latest/cluster-overview.html)
+- [Apache Spark: Differences between client and cluster deploy modes](https://stackoverflow.com/questions/37027732/apache-spark-differences-between-client-and-cluster-deploy-modes)
 - [Apache Spark: core concepts, architecture and internals](http://datastrophic.io/core-concepts-architecture-and-internals-of-apache-spark/)
 
 <center><img width=800 src="/datadocs/assets/Spark-Overview--1-.png"/></center>

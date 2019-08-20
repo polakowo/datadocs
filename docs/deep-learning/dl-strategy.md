@@ -76,7 +76,7 @@ Without data mismatch | With data mismatch
     - Use a better optimization algorithm.
     - Switch to a different architecture.
 
-### Train-dev error (Variance)
+#### Train-dev error (Variance)
 
 - High variance means overfitting to the *training* set.
 - Variance is error variability, or by how much error will vary if we train the model on different sets of data.

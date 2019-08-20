@@ -5,10 +5,6 @@
     "previous": "Previous",
     "tagline": "Documentation for data enthusiasts",
     "docs": {
-      "big-data/amazon-redshift": {
-        "title": "Amazon Redshift",
-        "sidebar_label": "Amazon Redshift"
-      },
       "big-data/cloud-computing": {
         "title": "Cloud Computing",
         "sidebar_label": "Cloud Computing"
@@ -21,6 +17,14 @@
         "title": "Data Ingestion",
         "sidebar_label": "Data Ingestion"
       },
+      "big-data/data-lakes": {
+        "title": "Data Lakes",
+        "sidebar_label": "Data Lakes"
+      },
+      "big-data/data-pipelines": {
+        "title": "Data Pipelines",
+        "sidebar_label": "Data Pipelines"
+      },
       "big-data/data-processing": {
         "title": "Data Processing",
         "sidebar_label": "Data Processing"
@@ -28,6 +32,10 @@
       "big-data/data-storage": {
         "title": "Data Storage",
         "sidebar_label": "Data Storage"
+      },
+      "big-data/data-streaming": {
+        "title": "Data Streaming",
+        "sidebar_label": "Data Streaming"
       },
       "big-data/data-warehouses": {
         "title": "Data Warehouses",
