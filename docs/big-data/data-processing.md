@@ -161,10 +161,13 @@ if __name__ == '__main__':
 
 <center><img width=200 src="/datadocs/assets/ApacheTezLogo_lowres.png.jpeg"/></center>
 
-- Apache Tez expresses complex computations in MapReduce programs as directed acyclic graphs (DAG), permitting dynamic performance optimizations.
+- Apache Tez expresses complex computations in MapReduce programs as DAGs. 
 - Improves the MapReduce paradigm by dramatically improving its speed.
-- Apache Tez can only perform interactive processing.
+- Permits dynamic performance optimizations:
+    - Eliminates unnecessary steps and dependencies.
+    - Optimizes physical data flows and resource usage.
 - Integrates well with Pig, Hive and other engines (can be selected via checkbox)
+- Apache Tez can only perform interactive processing.
 - [Apache Tez: Overview](https://hortonworks.com/apache/tez/#section_1)
 
 ## Apache Spark

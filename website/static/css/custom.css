@@ -97,3 +97,7 @@ table tr:nth-child(2n) {
     flex: 50%;
     padding: 5px;
 }
+
+pre .btnIcon {
+    color: inherit;
+}
