@@ -175,7 +175,7 @@ if __name__ == '__main__':
     - Originally developed at the University of California and donated the Apache Software Foundation.
     - Provides an interface for programming clusters with implicit data parallelism and fault tolerance.
     - Can perform batch, stream, interactive and graph processing.
-- Runs applications on Hadoop up to 100 times faster in memory and 10x faster on disk.
+- Runs applications on Hadoop up to 100x faster in memory and 10x faster on disk.
     - Offers real-time computation and low latency because of in-memory computation.
     - Makes accessing stored data quickly by keeping data in servers' RAM.
     - Achieves high performance using DAGScheduler, query optimizer, and physical execution engine.
@@ -268,7 +268,7 @@ model.transform(df).show()
 - Apache Spark Framework uses a master–slave architecture.
 - Master node:
     - Driver: Schedules the job execution and negotiates with the cluster manager.
-    - SparkContext: Represents the connection to the Spark cluster.
+    - SparkContext (`sc` variable): Represents the connection to the Spark cluster. Creates RDDs. After Spark 2.0, SparkSession (`spark` variable) combines SparkContext, SQLContext, and HiveContext. Creates DataFrames.
     - DAGScheduler: Computes a DAG of stages for each job and submits them to TaskScheduler.
     - TaskScheduler: Sends tasks to the cluster, runs them, and retries if there are failures.
     - SchedulerBackend: Allows plugging in different implementations (Mesos, YARN, Standalone)
@@ -331,9 +331,9 @@ model.transform(df).show()
 - Lazy evaluations:
     - The transformations are only computed when an action requires a result to be returned.
 - Support two types of operations: 
-    - Transformations: Create a new dataset from an existing one.
-    - Actions: Return a value to the driver program after running a computation on the dataset.
-    - They apply to the whole dataset not on a single element.
+    - Transformations: Create a new RDD from an existing RDD.
+    - Actions: Return a value to the driver program after running a computation on the RDD.
+    - They apply to the whole RDD not on a single element.
     - The original RDD remains unchanged throughout.
 - Can easily and efficiently process data which is structured as well as unstructured data.
 - Can be created by parallelizing a collection or referencing a dataset in an external storage system.
@@ -351,6 +351,7 @@ model.transform(df).show()
 - Spark introduced DataFrames in Spark 1.3 release.
 - A DataFrame is organized into named columns.
     - It is conceptually equivalent to a table in a relational database.
+    - Allows running SQL queries.
 - DataFrame is a distributed collection of Row objects:
     - DataFrame is simply a type alias of Dataset[Row].
     - Row is a generic untyped JVM object.
@@ -366,6 +367,9 @@ model.transform(df).show()
     - Expression-based operations and UDFs
     - Logical plans and optimizer
     - Fast/efficient internal representation
+    - Well-defined schema leads to a more efficient storage
+    - Read and write to JSON, Hive, Parquet
+    - Communicates with JDBC/ODBC, Tableau
 - Cons:
     - Does not support compile-time safety for analysis errors (only syntax errors)
     - Cannot recover domain object (e.g. Person) once transformed into DataFrame (Row)

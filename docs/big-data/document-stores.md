@@ -28,8 +28,8 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/big-data/
     - Ability to add additional metadata outside of the content of the document.
 - Enable flexible indexing, powerful ad hoc queries, and analytics over collections of documents.
 - Uses cases: 
-    - Where documents evolve over time.
-    - For example, catalogs, user profiles, and content management systems.
+    - Where documents evolve over time (catalogs, user profiles, content management)
+    - When prototyping (web apps)
 
 ## MongoDB
 
@@ -128,8 +128,8 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/big-data/
     - Many-to-many relationships between entities.
     - Modeling large hierarchical data structures.
     - There is a clear separation of reads and writes.
-    - Related data needs regular updating and be up-to-date.
-    - The related data is always going to exceed the 16MB BSON limit.
+    - Related data needs regular updating.
+    - The related data is going to exceed the 16MB BSON limit.
 - Pros:
     - Makes data compact, easy to store and easy to achieve consistency.
 - Cons:

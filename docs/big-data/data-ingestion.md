@@ -7,7 +7,7 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/big-data/
 
 ## Apache Sqoop
 
-<center><img width=250 src="/datadocs/assets/sqoop-intro-pic-e1530647597717.png"/></center>
+<center><img width=200 src="/datadocs/assets/sqoop-intro-pic-e1530647597717.png"/></center>
 
 - Apache Sqoop is designed for transferring bulk data between Hadoop (HDFS, Hive, HBase) and RDBMS.
 - In sqoop HDFS is the destination for importing data.

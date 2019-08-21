@@ -72,7 +72,7 @@ df.schema
 
 ## Amazon S3
 
-<center><img width=250 src="/datadocs/assets/amazon-s3.png"/></center>
+<center><img width=300 src="/datadocs/assets/amazon-s3.png"/></center>
 
 - [Amazon Simple Storage Service (Amazon S3)](https://aws.amazon.com/s3/) is an object storage service.
 - Gives any developer access to the same highly scalable, reliable, fast, inexpensive data storage.
@@ -100,7 +100,7 @@ df.schema
 
 ## Amazon EMR
 
-<center><img width=150 src="/datadocs/assets/word-image.png"/></center>
+<center><img width=200 src="/datadocs/assets/word-image.png"/></center>
 
 - [Amazon EMR](https://aws.amazon.com/emr/) is a service that uses Apache Spark and Hadoop.
     - Supports tools such as Spark, Hive, HBase, Flink, and Presto.
@@ -162,12 +162,15 @@ df.schema
 ## Amazon Athena
 
 
-<center><img width=150 src="/datadocs/assets/QueryServiceLogsAthena1.png"/></center>
+<center><img width=200 src="/datadocs/assets/QueryServiceLogsAthena1.png"/></center>
 
 - [Amazon Athena](https://aws.amazon.com/athena/) is an interactive query service to analyze data in Amazon S3 using SQL.
 - Athena is serverless, so there is no infrastructure to manage.
 - The technology is based on the open-source Facebook Presto or PrestoDB software.
     - See the [Facebook Presto function documentation](http://docs.aws.amazon.com/athena/latest/ug/language-reference.html#functions) for a full list of functions.
+
+<center><img width=100 src="/datadocs/assets/presto-og.png"/></center>
+
 - Pay by execution time, not by machine up-time.
 - Supports many file formats such as ORC, JSON, CSV, and Parquet.
     - Hint: Compress, partition, or convert data to a Parquet format to get cost savings.
