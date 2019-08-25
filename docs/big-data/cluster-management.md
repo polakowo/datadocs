@@ -1,8 +1,8 @@
 ---
-id: orchestration
-title: Orchestration
-sidebar_label: Orchestration
-custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/big-data/orchestration.md
+id: cluster-management
+title: Cluster Management
+sidebar_label: Cluster Management
+custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/big-data/cluster-management.md
 ---
 
 ## Hadoop YARN
@@ -101,3 +101,90 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/big-data/
     - Mesos provides the fine-grained resource allocations for pods across nodes in a cluster.
 - Mesos is being adapted to add a lot of the Kubernetes concepts.
 - [Docker vs. Kubernetes vs. Apache Mesos](https://d2iq.com/blog/docker-vs-kubernetes-vs-apache-mesos)
+
+## Apache ZooKeeper
+
+<img width=250 src="/datadocs/assets/1200px-Apache_ZooKeeper_Logo.svg.png"/>
+
+- [ZooKeeper](https://zookeeper.apache.org) is a service for distributed systems to store configuration information.
+    - ZooKeeper was once a sub-project of Hadoop.
+    - ZooKeeper is an integral part of HBase, Apache Drill, Storm and more.
+    - For example, Mesos uses ZooKeeper for cluster membership and leader election.
+- Used where some data needs to be carefully synchronized between client nodes.
+    - Which node is the master?
+    - Which tasks are assigned to which workers?
+    - Which workers are currently available?
+- Feature-light: The mechanisms such as leader election and locks are not already present, but can be written above the ZooKeeper primitives.
+- Offers a hierarchical key-value store, which is used for maintaining configuration information, naming, providing distributed synchronization, and providing group services.
+    - Really a little distributed file system with strong consistency guarantees (CP).
+    - A shared hierarchical name space of data registers (znodes)
+    - A name is a sequence of path elements separated by a slash ("/")
+    - Every znode can have data associated with it. For example, a znode can contain information on who the current master is.
+    - Persistent znodes remain stored even if master crashes.
+    - Ephemeral znodes are destroyed as soon as the client that created it disconnects.
+    - Avoids continuous polling by letting the client subscribe for notifications on a znode.
+    - ZooKeeper's API: `create`, `delete`, `exists`, `setData`, `getData`, `getChildren`
+
+<img width=600 src="/datadocs/assets/Zookeeper-1.png"/>
+<center><a href="https://www.3pillarglobal.com/insights/test-execution-distributed-environment-using-zookeeper-poc" style="color: lightgrey">Credit</a></center>
+
+- Offers high throughput, low latency, highly available, strictly ordered access to the znodes.
+    - Prevents becoming the single point of failure in big systems. 
+    - It's an atomic broadcast system, through which updates are totally ordered.
+    - As long as a majority of the servers are available, the ZooKeeper service will be available.
+- Who watches the watcher?
+    - Ensemble is nothing but a cluster of Zookeeper servers.
+    - Quorum defines the rule to form a healthy ensemble. Quorum is defined using a formula \\(Q=2N+1\\) where \\(Q\\) defines number of nodes required to form a healthy ensemble which can allow \\(N\\) failure nodes. Three nodes are required to tolerate a single failure.
+    - Healthy ensemble is a cluster with only one active leader at any point of time.
+- Pros:
+    - This system is very reliable as it keeps working even if a node fails.
+    - The architecture of ZooKeeper is quite simple as there is a shared hierarchical namespace which helps coordinating the processes.
+    - ZooKeeper is especially fast in "read-dominant" workloads (because of the guarantee of linear writes it does not perform well for write-dominant workloads)
+    - The performance of ZooKeeper can be improved by adding nodes.
+    - Can be used in large distributed systems.
+
+## Apache Oozie
+
+<img width=250 src="/datadocs/assets/oozie_282x1178.png"/>
+
+- [Apache Oozie](https://oozie.apache.org) is a workflow scheduler system to manage Apache Hadoop jobs.
+- Oozie is a scalable, reliable and extensible system.
+- Oozie is a Java Web-Application that runs in a Java servlet-container.
+- Workflow is a collection of Hadoop actions arranged in a control dependency DAG.
+    - The second action can’t run until the first action has completed.
+    - Can chain together MapReduce, Hive, Pig, etc. but also Java programs and shell scripts.
+    - Other systems are available via add-ons (e.g. Spark)
+    - Workflow definitions are written in hPDL (a XML Process Definition Language)
+- Steps to set up a workflow:
+    - Make sure each action works on its own.
+    - Make a directory on HDFS.
+    - Create `workflow.xml` file and put it inside of this directory.
+    - Create `job.properties` defining the variables that `workflow.xml` needs.
+
+```bash
+oozie job --oozie http://localhost:11000/oozie -config /home/maria_dev/job.properties -run
+# Monitor the progress at http://localhost:11000/oozie
+```
+
+- Coordinator allows to define and execute recurrent and interdependent workflow jobs.
+    - Schedules workflow execution.
+    - Launches workflows based on a given start time and frequency.
+    - Will also wait for required input data to become available.
+    - Runs in exactly the same way as workflows.
+- Bundle is a higher-level abstraction that will batch a set of coordinator applications.
+    - There is no explicit dependency among the coordinator applications in a bundle.
+    - But there is a data dependency: For example, by grouping a bunch of coordinators into a bundle, one could suspend them all if there is any problem with the input data.
+
+## Apache Zeppelin
+
+<img width=150 src="/datadocs/assets/zeppelin_classic_logo.png"/>
+
+- [Apache Zeppelin](https://zeppelin.apache.org) is a web-based notebook that enables data-driven, interactive data analytics and collaborative documents on Hadoop.
+- Similar to the Jupyter Notebook that has been extremely popular in the Python community.
+- Supports 20+ different interpreters such as Spark, Python, Scala, Hive, shell and markdown. 
+    - Allows any language and data processing backend to be plugged in.
+    - Allows them to be mixed in the same notebook.
+
+<img width=600 src="/datadocs/assets/zeppelin-04-d646c299.png"/>
+<center><a href="https://predictionio.apache.org/datacollection/analytics-zeppelin/" style="color: lightgrey">Credit</a></center>
+    

@@ -2,6 +2,12 @@
     "docs": {
         "Machine Learning": [{
             "type": "subcategory",
+            "label": "General",
+            "ids": [
+                "machine-learning/machine-learning"
+            ]
+        }, {
+            "type": "subcategory",
             "label": "Methods",
             "ids": [
                 "machine-learning/linear-models",
@@ -96,12 +102,11 @@
             "label": "Hadoop",
             "ids": [
                 "big-data/hadoop",
-                "big-data/orchestration",
                 "big-data/data-ingestion",
                 "big-data/data-storage",
                 "big-data/data-processing",
-                "big-data/data-streaming",
-                "big-data/query-engines"
+                "big-data/query-engines",
+                "big-data/cluster-management"
             ]
         }]
     }

@@ -9,6 +9,10 @@
         "title": "Cloud Computing",
         "sidebar_label": "Cloud Computing"
       },
+      "big-data/cluster-management": {
+        "title": "Cluster Management",
+        "sidebar_label": "Cluster Management"
+      },
       "big-data/data-engineering": {
         "title": "Data Engineering",
         "sidebar_label": "Data Engineering"
@@ -33,10 +37,6 @@
         "title": "Data Storage",
         "sidebar_label": "Data Storage"
       },
-      "big-data/data-streaming": {
-        "title": "Data Streaming",
-        "sidebar_label": "Data Streaming"
-      },
       "big-data/data-warehouses": {
         "title": "Data Warehouses",
         "sidebar_label": "Data Warehouses"
@@ -60,10 +60,6 @@
       "big-data/key-value-stores": {
         "title": "Key Value Stores",
         "sidebar_label": "Key Value Stores"
-      },
-      "big-data/orchestration": {
-        "title": "Orchestration",
-        "sidebar_label": "Orchestration"
       },
       "big-data/query-engines": {
         "title": "Query Engines",
@@ -184,6 +180,10 @@
       "machine-learning/linear-models": {
         "title": "Linear Models",
         "sidebar_label": "Linear Models"
+      },
+      "machine-learning/machine-learning": {
+        "title": "Machine Learning",
+        "sidebar_label": "Machine Learning"
       },
       "machine-learning/metric-optimization": {
         "title": "Metric Optimization",
