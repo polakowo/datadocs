@@ -5,9 +5,7 @@ sidebar_label: Data Ingestion
 custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/big-data/data-ingestion.md
 ---
 
-## Bulk data
-
-### Apache Sqoop
+## Apache Sqoop
 
 <center><img width=200 src="/datadocs/assets/sqoop-intro-pic-e1530647597717.png"/></center>
 
@@ -36,9 +34,51 @@ sqoop import --connect jdbc:mysql://localhost/movielens --driver com.mysql.jdbc.
 sqoop export --connect jdbc:mysql://localhost/movielens --driver com.mysql.jdbc.Driver --table movies --export-dir /apps/hive/warehouse/movies --input-fields-terminated-by '\0001'
 ```
 
-## Streaming data
+## Apache Flume
 
-### Apache Kafka
+<center><img width=200 src="/datadocs/assets/1*PECy2wFJ-oyHaEXnbiYE_g.png"/></center>
+
+- Apache Flume is a distributed, reliable, and available system for efficiently collecting, aggregating and moving large amounts of log data from many different sources to a centralized data store.
+- The main design goal is to ingest huge log data into Hadoop at a higher speed.
+    - Acts as a mediator between data producers and the centralized stores.
+    - Flume is mainly used for moving bulk streaming data into HDFS or HBase.
+    - YARN coordinates data ingest from Apache Flume.
+- Features:
+    - Highly distributed in nature: agents can be installed on many machines.
+    - Able to collect data in both real-time and batch modes.
+    - Provides a feature of contextual routing.
+    - Guarantees reliable message delivery.
+    - Can be scaled horizontally.
+- Tunable reliability mechanisms for failover and recovery:
+    - Best-effort delivery does not tolerate any Flume node failure.
+    - End-to-end delivery guarantees delivery even in the event of multiple node failures.
+
+### Architecture
+
+- The transactions in Flume are channel-based where two transactions (one sender and one receiver) are maintained for each message.
+- Agent is a JVM process which comprises of a Flume source, channel and sink.
+
+<img width=500 src="/datadocs/assets/061114_1038_Introductio2.png"/>
+<center><a href="https://www.guru99.com/create-your-first-flume-program.html" style="color: lightgrey">Credit</a></center>
+
+- Source:
+    - Receives an event and stores it into one or more channels.
+    - Gathering of data can either be scheduled or event-driven.
+    - Can optionally have channel selectors and interceptors.
+    - Supports spooling directory, Avro, Kafka, HTTP, and more.
+- Channel:
+    - Acts as a store which keeps the event until it is consumed by a sink.
+    - Transfer via memory is faster while transfer via files is more durable.
+    - Has its own query processing engine to transform each new batch of data before sink.
+- Sink:
+    - Removes the event from a channel and stores it into an external repository.
+    - Can be organized into sink groups.
+    - Supports HDFS, Hive, HBase, Elasticsearch, and more.
+- Sink can only connect to one channel.
+    - The channel is notified to delete the message once the sink processes it.
+- Using Avro, agents can connect to one another.
+
+## Apache Kafka
 
 <center><img width=200 src="/datadocs/assets/kafka-logo-wide.png"/></center>
 
@@ -53,7 +93,7 @@ sqoop export --connect jdbc:mysql://localhost/movielens --driver com.mysql.jdbc.
     - Can deliver in-order, persistent, scalable messaging.
     - Capable of supporting message throughput of thousands of messages per second.
     - Can handle these messages with very low latency of the range of milliseconds.
-    - Resistant to node failures within a cluster.
+    - Resilient to node failures and supports automatic recovery (using ZooKeeper)
     - Kafka's performance is effectively constant with respect to data size.
 - APIs:
     - Producer API: allows an application to publish a stream of records to one or more topics.
@@ -63,22 +103,41 @@ sqoop export --connect jdbc:mysql://localhost/movielens --driver com.mysql.jdbc.
 
 ```bash
 # Create a topic
-bin/kafka-topics.sh --create --bootstrap-server localhost:9092 --replication-factor 1 --partitions 1 --topic test
+> bin/kafka-topics.sh --create --bootstrap-server localhost:9092 --replication-factor 1 --partitions 1 --topic test
+
 # Send some messages
-bin/kafka-console-producer.sh --broker-list localhost:9092 --topic test
+> bin/kafka-console-producer.sh --broker-list localhost:9092 --topic test
+This is a message
+This is another message
+
 # Start a consumer
-bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic test --from-beginning
+> bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic test --from-beginning
+This is a message
+This is another message
 ```
 
+- Kafka Connect is a framework for connecting Kafka with external systems such as databases, key-value stores, search indexes, and file systems. Directly competes with Apache Flume.
 - Use cases:
-    - High throughput, built-in partitioning, replication, and fault-tolerance makes it a good solution for large scale message processing applications.
+    - Ideal for communication and integration between components of large-scale data systems in real-world data systems.
     - To track website activity (page views, searches, or other actions users may take)
     - To produce centralized feeds of operational data from distributed applications.
     - To collect physical log files off servers and put them in a central place.
     - To aggregate, enrich, or otherwise transform topics into new topics for further consumption.
     - [Use cases](https://kafka.apache.org/uses)
 
-#### Architecture
+#### Compared to Apache Flume
+
+- Apache Flume:
+    - Flume is a push system: Data is directly pushed to the the destination.
+    - Built around the Hadoop ecosystem.
+    - Does not replicate events.
+- Apache Kafka:
+    - Kafka is a pull system: Data is pushed from producer to broker and pulled from broker to consumer.
+    - A general-purpose, distributed publish-subscribe messaging system.
+    - Can be used to connect systems that require enterprise level messaging.
+    - Events are available and recoverable in case of failures.
+
+### Architecture
 
 - Runs as a cluster on one or more servers that can span multiple data centers.
     - Stores streams of records in categories called topics.
@@ -111,6 +170,3 @@ bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic test --f
     - No record IDs: records are addressed by their offset in the log.
     - No tracking of the consumers who have consumed what records.
 
-### Apache Flume
-
-- Transporting web logs at large scale.
