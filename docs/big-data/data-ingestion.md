@@ -27,11 +27,16 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/big-data/
     - Slow because it still uses MapReduce in backend processing.
     - Failures need special handling in case of partial import or export.
 
+#### Example
+
+- Move tables between MySQL and Hive.
+
 ```bash
 # Import table from MySQL to Hive
-sqoop import --connect jdbc:mysql://localhost/movielens --driver com.mysql.jdbc.Driver --table movies --hive-import
+$ sqoop import --connect jdbc:mysql://localhost/movielens --driver com.mysql.jdbc.Driver --table movies --hive-import
+
 # Export table from Hive back to MySQL
-sqoop export --connect jdbc:mysql://localhost/movielens --driver com.mysql.jdbc.Driver --table movies --export-dir /apps/hive/warehouse/movies --input-fields-terminated-by '\0001'
+$ sqoop export --connect jdbc:mysql://localhost/movielens --driver com.mysql.jdbc.Driver --table movies --export-dir /apps/hive/warehouse movies --input-fields-terminated-by '\0001'
 ```
 
 ## Apache Flume
@@ -52,6 +57,50 @@ sqoop export --connect jdbc:mysql://localhost/movielens --driver com.mysql.jdbc.
 - Tunable reliability mechanisms for failover and recovery:
     - Best-effort delivery does not tolerate any Flume node failure.
     - End-to-end delivery guarantees delivery even in the event of multiple node failures.
+
+#### Example
+
+- Set up Flume to stream messages from one console to another.
+
+```conf
+# example.conf: A single-node Flume configuration
+
+# Name the components on this agent
+a1.sources = r1
+a1.sinks = k1
+a1.channels = c1
+
+# Describe/configure the source
+a1.sources.r1.type = netcat
+a1.sources.r1.bind = localhost
+a1.sources.r1.port = 44444
+
+# Describe the sink
+a1.sinks.k1.type = logger
+
+# Use a channel which buffers events in memory
+a1.channels.c1.type = memory
+a1.channels.c1.capacity = 1000
+a1.channels.c1.transactionCapacity = 100
+
+# Bind the source and sink to the channel
+a1.sources.r1.channels = c1
+a1.sinks.k1.channel = c1
+```    
+
+```bash
+# Set up Flume in the first console
+$ bin/flume-ng agent --conf conf --conf-file ~/example.conf --name a1 -Dflume.root.logger=INFO,console
+
+# In the second console type
+$ telnet localhost 44444
+This is a message
+This is another message
+
+# The messsages typed appear then in the first console
+This is a message
+This is another message
+```
 
 ### Architecture
 
@@ -100,22 +149,6 @@ sqoop export --connect jdbc:mysql://localhost/movielens --driver com.mysql.jdbc.
     - Consumer API: allows an application to subscribe to one or more topics and process them.
     - Stream API: allows effectively transforming the input streams to output streams.
     - Connector API: allows connecting topics to existing applications or data systems.
-
-```bash
-# Create a topic
-> bin/kafka-topics.sh --create --bootstrap-server localhost:9092 --replication-factor 1 --partitions 1 --topic test
-
-# Send some messages
-> bin/kafka-console-producer.sh --broker-list localhost:9092 --topic test
-This is a message
-This is another message
-
-# Start a consumer
-> bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic test --from-beginning
-This is a message
-This is another message
-```
-
 - Kafka Connect is a framework for connecting Kafka with external systems such as databases, key-value stores, search indexes, and file systems. Directly competes with Apache Flume.
 - Use cases:
     - Ideal for communication and integration between components of large-scale data systems in real-world data systems.
@@ -124,6 +157,25 @@ This is another message
     - To collect physical log files off servers and put them in a central place.
     - To aggregate, enrich, or otherwise transform topics into new topics for further consumption.
     - [Use cases](https://kafka.apache.org/uses)
+
+#### Example
+
+- Set up Kafka to stream messages from console and consume them later.
+
+```bash
+# Create a topic
+$ bin/kafka-topics.sh --create --bootstrap-server localhost:9092 --replication-factor 1 --partitions 1 --topic test
+
+# Start a producer and throw some messages
+$ bin/kafka-console-producer.sh --broker-list localhost:9092 --topic test
+This is a message
+This is another message
+
+# Start a consumer and print the messages typed previously
+$ bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic test --from-beginning
+This is a message
+This is another message
+```
 
 #### Compared to Apache Flume
 

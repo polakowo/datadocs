@@ -31,11 +31,6 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/big-data/
 - Portability:
     - HDFS is designed to be portable across multiple hardware platforms.
     - Built using the Java language.
-
-```bash
-# Create a directory named /foodir
-bin/hadoop dfs -mkdir /foodir
-```
 - Use cases:
     - MapReduce kind of workloads, similar to GFS.
     - Ideally suited for write-once and read-many times use cases.
@@ -45,6 +40,12 @@ bin/hadoop dfs -mkdir /foodir
 - With Apache Hadoop 2.0 (2013), YARN resource manager was added, and MapReduce and HDFS were effectively decoupled.
 - With Apache Hadoop 3.0 (2017), HDFS supports additional NameNodes, erasure coding facilities and greater data compression.
 - [HDFS Architecture Guide](https://hadoop.apache.org/docs/r1.2.1/hdfs_design.html)
+
+```bash
+# Example: Create a directory named /foodir
+
+$ bin/hadoop dfs -mkdir /foodir
+```
 
 #### POSIX
 

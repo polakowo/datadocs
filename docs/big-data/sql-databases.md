@@ -211,6 +211,7 @@ SELECT Formal(C.Id)
 FROM Customers C
 WHERE BirthDay(C.DOB) = TODAY;
 ```
+
 ### PostgreSQL
 
 <center><img width=100 src="/datadocs/assets/220px-Postgresql_elephant.svg.png"/></center>

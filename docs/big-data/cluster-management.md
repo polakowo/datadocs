@@ -162,7 +162,7 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/big-data/
     - Create `job.properties` defining the variables that `workflow.xml` needs.
 
 ```bash
-oozie job --oozie http://localhost:11000/oozie -config /home/maria_dev/job.properties -run
+$ oozie job --oozie http://localhost:11000/oozie -config /home/maria_dev/job.properties -run
 # Monitor the progress at http://localhost:11000/oozie
 ```
 
