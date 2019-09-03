@@ -14,6 +14,7 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/big-data/
 - [Hadoop’s star dims in the era of cloud object data storage and stream computing](https://siliconangle.com/2018/07/09/hadoops-star-dims-era-cloud-object-data-storage-stream-computing/)
 - At a high level, distributed computing implies multiple CPUs each with its own memory. 
 - Parallel computing uses multiple CPUs sharing the same memory.
+- Confusion arises because people often make little distinction between Hadoop’s MapReduce and the larger ecosystem of Hadoop-related technologies.
 
 #### History
 

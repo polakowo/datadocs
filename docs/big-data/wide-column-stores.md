@@ -58,6 +58,15 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/big-data/
     - Provides low latency access to small amounts of data.
     - Provides flexible data model.
 
+#### Compared to Apache Accumulo
+
+- [Apache Accumulo](https://accumulo.apache.org) is a highly scalable sorted, distributed key-value store based on Google's Bigtable.
+    - Another BigTable clone like HBase.
+    - Built on top of Apache Hadoop, Apache ZooKeeper, and Apache Thrift.
+    - Offers a better security model (cell-based access control)
+    - Offers server-side programming.
+- Consider Accumulo if you have complex security requirements.
+
 ### Architecture
 
 - HBase has a master/slave type of architecture.

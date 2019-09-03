@@ -65,6 +65,14 @@ SELECT n.title, ratingCount
 FROM topMovieIDs t JOIN names n ON t.movieID = n.movieID;
 ```
 
+#### Compared to Apache Impala
+
+- [Apache Impala](https://impala.apache.org) is a massively parallel SQL engine on Hadoop.
+    - It's Cloudera's alternative to Hive.
+    - Consider using Impala instead of Hive if you're using Cloudera.
+- It's often faster than Hive, but Hive offers more versatility and connectivity.
+- Impala's always running thus avoiding start-up costs.
+
 
 ## Apache Pig
 
