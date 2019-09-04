@@ -110,6 +110,7 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/big-data/
     - ZooKeeper was once a sub-project of Hadoop.
     - ZooKeeper is an integral part of HBase, Apache Drill, Storm and more.
     - For example, Mesos uses ZooKeeper for cluster membership and leader election.
+- Based on Paxos algorithm variant called Zab. 
 - Used where some data needs to be carefully synchronized between client nodes.
     - Which node is the master?
     - Which tasks are assigned to which workers?

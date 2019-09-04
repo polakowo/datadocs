@@ -5,23 +5,29 @@ sidebar_label: Data Engineering
 custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/big-data/data-engineering.md
 ---
 
-- Data engineering field is a superset of BI and data warehousing that brings more elements from SE.
-- For data, the two primary staffing segments are data scientists and data engineers.
+- Companies today need to be able to reliably store, process and query its huge inflows. 
+- As a result, the data infrastructure needs to be distributed, scalable (petabytes) and reliable.
+
+#### Data engineers
+
+- Data engineers are highly specialized software engineers who create and maintain robust big data pipelines. 
+- Together with data scientists who analyze the data, they form the basis of the data teams.
     - Data engineers are the experts on which data scientists depend in order to be able to work.
     - They are in charge of pulling, cleaning and loading the data into data stores.
     - Over the years though, terminology and roles have become harder to separate.
     - Data engineering is much closer to software engineering than it is to a data science.
+- Data engineers are one of the most in- demand job roles at today’s leading companies.
 - The tool set of a data engineer includes:
     - Hadoop, Spark, Python, Scala, Java, C++, SQL, AWS/Redshift, Azure
     - To stay marketable, keeping up to date is more important than ever.
     - [A Turbulent Year: The 2019 Data & AI Landscape](https://mattturck.com/data2019/)
     - [The Rise of the Data Engineer](https://www.freecodecamp.org/news/the-rise-of-the-data-engineer-91be18f1e603/)
-- In smaller envirnoments:
+- In smaller environments:
     - Data engineers usually set up and operate platforms like Hadoop/Hive/HBase, Spark, and the like.
     - Use hosted services offered by Amazon or Databricks.
     - Get support from companies like Cloudera or Hortonworks.
 
-## Evolution of data engineering
+#### Evolution of data engineering
 
 - [Data Engineering Introduction and Epochs](https://learn.panoply.io/hubfs/Data%20Engineering%20-%20Introduction%20and%20Epochs.pdf)
 - Hadoop:
@@ -54,6 +60,12 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/big-data/
     - Data now could be easily ingested without managing infrastructure.
 
 ## Big data
+
+- Handling and analyzing very large amounts of data is an urgent problem in many business areas. 
+- The trend towards "Big Data" is caused by a host of developments:
+    - The creation and storage of large data sets becomes feasible and economically viable.
+    - Technical advances for example in multi-core systems and cloud computing make it possible.
+    - Such amounts of data are now are created in many areas of life (e.g. sensor data)
 
 #### Hardware
 
@@ -91,3 +103,75 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/big-data/
 - Value:
     - Added value for companies.
     - It's a question of generating business value from their investments.
+
+## Designing systems
+
+#### Thinking about requirements
+
+- Always approach the problem from the standpoint of your end user.
+- Start with the end user's needs and **work backwards** towards where the data is coming from.
+    - Sometimes you need to meet in the middle.
+- What sort of access patterns do you anticipate from your end users?
+    - Analytical queries that span large time ranges?
+    - Huge amounts of small transactions for very specific rows of data?
+- What availability do these users demand?
+    - How quickly does a response need to be?
+    - Milliseconds? HBase, Cassandra.
+- What consistency do these users demand?
+- Just how big is your big data?
+    - Do you really need a cluster?
+- Timeliness:
+    - Can queries be based on day-old data? Minute-old? Scheduled jobs.
+    - Or must they be (near) real-time? Spark Streaming, Storm or Flink with Kafka or Flume.
+- How much internal infrastructure and expertise is available?
+    - Do systems you already know fit the bill?
+    - Should you use proprietary solutions or the cloud technology?
+    - Think carefully, since moving it will be difficult later on.
+    - If relaxing a "requirement" saves money and time - at least ask the manager.
+- Does your organization have existing components you can use?
+    - What's the least amount of infrastructure you need to build?
+    - Don't build a new DWH if you already have one.
+    - Rebuilding existing solution may have a negative business value.
+- What about data retention?
+    - Do you need to keep the data around forever, for example, for auditing?
+    - Or do you need to purge it often, for example, for privacy?
+- What about security?
+    - Make sure you're in compliance with any regulations in the countries you'll operate in.
+
+
+#### Example
+
+- A system to track and display the top 10 best-selling items on an e-commerce website.
+- What are the requirements? Work backwards!
+- There are millions of end users, generating thousands of queries per second.
+    - Page latency is important so it must be fast. 
+    - Some distributed NoSQL solution would fit here (such as Apache Cassandra)
+    - Access patten is simple: *"Give me the current top N sellers in category X"*
+    - Hourly updates are probably good enough.
+    - Consistency is not important.
+    - Must be highly available (customers don't like broken websites)
+
+<center><img width=100 src="/datadocs/assets/2000px-Cassandra_logo.svg.png"/></center>
+
+- How does the data get into Cassandra?
+    - Apache Spark can talk to Cassandra. 
+    - And Spark can add things up over windows.
+
+<center><img width=100 src="/datadocs/assets/1200px-Apache_Spark_Logo.svg.png"/></center>
+
+- How does the data get into Spark?
+    - Kafka or Flume - either work.
+    - Flume is purpose-built for HDFS, which may or may not need.
+    - But Flume is also purpose-built for log ingestion.
+    - There may be already a [Log4j](https://logging.apache.org/log4j/2.x/) interceptor on the servers that process purchases available.
+
+<center><img width=100 src="/datadocs/assets/1*PECy2wFJ-oyHaEXnbiYE_g.png"/></center>
+
+- Maybe you already have an existing purchase database.
+    - Instead of streaming, hourly batch jobs may also do the trick.
+- Purchase data is sensitive - get a security review.
+    - Blasting around raw logs that include PII is a bad idea.
+    - Strip out data you don't need at the source.
+    - Some database or publisher may be involved where PII is scrubbed.
+- Security considerations may even force you into a totally different design.
+    
