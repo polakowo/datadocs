@@ -1,0 +1,521 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Wide Column Stores · datadocs</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="- Google&#x27;s BigTable is considered to be the origin of this class of databases."/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Wide Column Stores · datadocs"/><meta property="og:type" content="website"/><meta property="og:url" content="https://polakowo.github.io/datadocs/"/><meta property="og:description" content="- Google&#x27;s BigTable is considered to be the origin of this class of databases."/><meta property="og:image" content="https://polakowo.github.io/datadocs/img/undraw_online.svg"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://polakowo.github.io/datadocs/img/undraw_tweetstorm.svg"/><link rel="shortcut icon" href="/datadocs/img/favicon.ico"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-142521178-1"></script><script>
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments); }
+              gtag('js', new Date());
+              gtag('config', 'UA-142521178-1');
+            </script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script><script type="text/javascript" src="/datadocs/js/code-block-buttons.js"></script><script type="text/javascript" src="/datadocs/js/disqus.js"></script><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script src="/datadocs/js/scrollSpy.js"></script><link rel="stylesheet" href="/datadocs/css/prism.css"/><link rel="stylesheet" href="/datadocs/css/main.css"/><script src="/datadocs/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/datadocs/"><img class="logo" src="/datadocs/img/headerIcon.ico" alt="datadocs"/><h2 class="headerTitleWithLogo">datadocs</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/datadocs/docs/machine-learning/linear-models" target="_self">Docs</a></li><li class=""><a href="https://github.com/polakowo/datadocs" target="_self">GitHub</a></li><li class="navSearchWrapper reactNavSearchWrapper"><input type="text" id="search_input_react" placeholder="Search" title="Search"/></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Databases</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Machine Learning<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">General</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/machine-learning">Machine Learning</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Methods</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/linear-models">Linear Models</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/tree-based-models">Tree-Based Models</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/ensemble-methods">Ensemble Methods</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Features</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/eda">Exploratory Data Analysis</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/feature-engineering">Feature Engineering</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/advanced-features">Advanced Features</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Optimization</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/metric-optimization">Metric Optimization</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/validation-schemes">Validation Schemes</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/hyperopt">Hyperparameter Optimization</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Competitions</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/competitive-ml">Competitive Machine Learning</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/data-leakages">Data Leakages</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Deep Learning<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">General</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/deep-learning">Deep Learning</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/dl-strategy">Deep Learning Strategy</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Fundamentals</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/backpropagation">Backpropagation</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/activation-functions">Activation Functions</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/initialization">Initialization</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/optimization">Optimization</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/regularization">Regularization</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Computer Vision</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/cnns">Convolutional Neural Networks</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/cnn-architectures">CNN Architectures</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/object-detection">Object Detection</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/face-recognition">Face Recognition</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/nst">Neural Style Transfer</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Natural Language Processing</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/rnns">Recurrect Neural Networks</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/word-embeddings">Word Embeddings</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/nmt">Neural Machine Translation</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/attention-mechanism">Attention Mechanism</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/speech-recognition">Speech Recognition</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Big Data<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">General</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/data-engineering">Data Engineering</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/cloud-computing">Cloud Computing</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/data-warehouses">Data Warehouses</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/data-lakes">Data Lakes</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/data-pipelines">Data Pipelines</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Databases</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/database-design">Database Design</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/sql-databases">SQL Databases</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/datadocs/docs/big-data/wide-column-stores">Wide Column Stores</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/key-value-stores">Key Value Stores</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/document-stores">Document Stores</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/graph-stores">Graph Stores</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Hadoop</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/hadoop">Hadoop Ecosystem</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/data-ingestion">Data Ingestion</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/data-storage">Data Storage</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/data-processing">Data Processing</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/query-engines">Query Engines</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/cluster-management">Cluster Management</a></li></ul></div></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://github.com/polakowo/datadocs/edit/master/docs/big-data/wide-column-stores.md" target="_blank" rel="noreferrer noopener">Edit</a><h1 class="postHeaderTitle">Wide Column Stores</h1></header><article><div><span><ul>
+<li>Google's BigTable is considered to be the origin of this class of databases.</li>
+</ul>
+<p><center><img width=100 src="/datadocs/assets/Cloud_Bigtable.png"/></center></p>
+<ul>
+<li>Wide column stores use tables, rows, and columns.
+<ul>
+<li>Seem to store data in rows, but actually serialize the data into columns.</li>
+<li>The names and format of the columns can vary from row to row.</li>
+<li>Basically a hybrid between a key-value store and RDBMS.</li>
+<li>They can be seen as two-dimensional key-value stores.</li>
+</ul></li>
+<li>Should not be confused with the column-oriented storage.
+<ul>
+<li>Cassandra is column family but not column-oriented (when column is stored separately on disk).</li>
+<li>Hbase is column family as well as stores column families in column-oriented fashion.</li>
+</ul></li>
+<li>Often support the notion of column families (similar to RDBMS tables)
+<ul>
+<li>This allows storing somewhat related data together.</li>
+</ul></li>
+<li>Column stores handle wide, sparse tables very well (since NULLs are not stored)</li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="apache-hbase"></a><a href="#apache-hbase" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Apache HBase</h2>
+<p><center><img width=250 src="/datadocs/assets/hbase_logo_with_orca_large.png"/></center></p>
+<ul>
+<li>Apache HBase is an open-source, distributed, versioned, column-oriented database.</li>
+<li>Modeled after Google's <a href="https://research.google.com/archive/bigtable.html">Bigtable: A Distributed Storage System for Structured Data</a></li>
+<li>Designed to provide random access to high volume of structured or unstructured data.</li>
+<li>Sits on top of HDFS:
+<ul>
+<li>Achieves fast lookups on HDFS</li>
+<li>Leverages the fault tolerance feature of HDFS</li>
+<li>But has a single point of failure</li>
+</ul></li>
+<li>Main features:
+<ul>
+<li>Linear and modular scalability</li>
+<li>Strictly consistent reads and writes (CP)</li>
+<li>Automatic and configurable sharding of tables</li>
+<li>Automatic failover support between RegionServers</li>
+<li>Easy to use Java API for client access</li>
+<li>Block cache and Bloom Filters (whether an element is present in a set) for real-time queries</li>
+<li>Very fast way to expose results of Spark to other systems</li>
+</ul></li>
+<li>Has made strong consistency of reads and writes a core design tenet:
+<ul>
+<li>All accesses are seen by all parallel processes in the same order, sequentially.</li>
+<li>Only one consistent state can be observed, as opposed to weak consistency.</li>
+</ul></li>
+<li>There is no query language, just CRUD APIs.</li>
+<li><a href="https://www.oreilly.com/library/view/hbase-the-definitive/9781449314682/ch01.html">HBase: The Definitive Guide by Lars George</a></li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="compared-to-hdfs"></a><a href="#compared-to-hdfs" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Compared to HDFS</h4>
+<ul>
+<li>HDFS is optimized for batch processing and streaming in a sequential manner.
+<ul>
+<li>The entire dataset must be searched even for the simplest of jobs.</li>
+<li>HBase can access any point of data in a single unit of time.</li>
+</ul></li>
+<li>HDFS follows write-once read-many ideology.
+<ul>
+<li>HBase allows for real-time changes and random reads and writes.</li>
+</ul></li>
+<li>HBase:
+<ul>
+<li>Stores key/value pairs in columnar fashion.</li>
+<li>Provides low latency access to small amounts of data.</li>
+<li>Provides flexible data model.</li>
+</ul></li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="compared-to-apache-accumulo"></a><a href="#compared-to-apache-accumulo" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Compared to Apache Accumulo</h4>
+<ul>
+<li><a href="https://accumulo.apache.org">Apache Accumulo</a> is a highly scalable sorted, distributed key-value store based on Google's Bigtable.
+<ul>
+<li>Another BigTable clone like HBase.</li>
+<li>Built on top of Apache Hadoop, Apache ZooKeeper, and Apache Thrift.</li>
+<li>Offers a better security model (cell-based access control)</li>
+<li>Offers server-side programming.</li>
+</ul></li>
+<li>Consider Accumulo if you have complex security requirements.</li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="architecture"></a><a href="#architecture" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Architecture</h3>
+<ul>
+<li>HBase has a master/slave type of architecture.
+<ul>
+<li>Region servers serve data for reads and writes.</li>
+<li>HBase Master process handles region assignment and DDL (create, delete tables) operations.</li>
+<li>Zookeeper, which is part of HDFS, maintains a live cluster state.</li>
+</ul></li>
+<li>The HDFS DataNode stores the data that the Region Server is managing.
+<ul>
+<li>Region Servers are collocated with the HDFS DataNodes for data locality.</li>
+<li>A region server can serve about 1,000 regions.</li>
+<li>A region contains all rows in the table between the start and end keys.</li>
+</ul></li>
+<li>The HDFS NameNode maintains metadata information.</li>
+<li><a href="https://mapr.com/blog/in-depth-look-hbase-architecture/">An In-Depth Look at the HBase Architecture</a></li>
+</ul>
+<p><img width=600 src="/datadocs/assets/HBaseArchitecture-Blog-Fig1.png"/>
+<center><a href="https://mapr.com/blog/in-depth-look-hbase-architecture/" style="color: lightgrey">Credit</a></center></p>
+<h4><a class="anchor" aria-hidden="true" id="write-path"></a><a href="#write-path" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Write path</h4>
+<ul>
+<li>The first step is to write the data to the write-ahead log, the WAL.
+<ul>
+<li>The WAL is used to recover not-yet-persisted data in case a server crashes.</li>
+<li>Updates are appended sequentially.</li>
+</ul></li>
+<li>The data is then placed in the MemStore.
+<ul>
+<li>The MemStore is the write cache (compared to BlockCache, the read cache)</li>
+<li>Stores new data the same as it would be stored in an HFile.</li>
+<li>There is one MemStore per column family per region.</li>
+</ul></li>
+<li>Then, the put request acknowledgement returns to the client.</li>
+<li>After a limit, the entire MemStore is flushed to a new HFile in HDFS.
+<ul>
+<li>HFile contains sorted key/values.</li>
+<li>This is a sequential write and thus very fast.</li>
+</ul></li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="data-modeling"></a><a href="#data-modeling" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Data modeling</h3>
+<ul>
+<li>Similar to Apache Cassandra, you will have to denormalize your schemas.</li>
+<li>The main principle is Denormalization, Duplication, and Intelligent Keys (DDI)</li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="hbases-model"></a><a href="#hbases-model" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>HBase's model</h4>
+<ul>
+<li>An HBase table consists of multiple rows.</li>
+<li>Row in HBase consists of a row key (PRIMARY KEY) and one or more columns.
+<ul>
+<li>Row key can be any arbitrary array of bytes.</li>
+<li>Rows are always sorted lexicographically by their row key.</li>
+</ul></li>
+<li>The goal is to store data in such a way that related rows are near each other.
+<ul>
+<li>For example, if row keys are domains, store them in reverse (<code>org.apache.www</code>)</li>
+</ul></li>
+<li>Columns in HBase are grouped into column families.
+<ul>
+<li>All columns in a column family are stored together in HFile.</li>
+<li>A column family must be string.</li>
+<li>Each column family has a set of storage properties (compression etc.)</li>
+<li>Column families are fixed at table creation.</li>
+</ul></li>
+<li>Columns are often referenced as <code>family:qualifier</code> (for example, <code>content:pdf</code>)
+<ul>
+<li>Column qualifiers can be any arbitrary array of bytes.</li>
+<li>Mutable and may differ greatly between rows.</li>
+<li>One could have millions of columns in a particular column family.</li>
+</ul></li>
+</ul>
+<p><img width=600 src="/datadocs/assets/httpatomoreillycomsourceoreillyimages889236.png"/>
+<center><a href="https://www.oreilly.com/library/view/hbase-the-definitive/9781449314682/ch01.html" style="color: lightgrey">Credit</a></center></p>
+<ul>
+<li>HBase model is a sparse, distributed, persistent, multidimensional map, which is indexed by row key, column key, and a timestamp.
+<ul>
+<li>Timestamp is the identifier for a given version of a value.</li>
+<li>NULLs are free of any cost: they do not occupy any storage space.</li>
+</ul></li>
+</ul>
+<pre><code class="hljs">(<span class="hljs-keyword">Table</span>, RowKey, <span class="hljs-keyword">Family</span>, <span class="hljs-keyword">Column</span>, <span class="hljs-type">Timestamp</span>) → <span class="hljs-keyword">Value</span>
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="apache-cassandra"></a><a href="#apache-cassandra" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Apache Cassandra</h2>
+<p><center><img width=200 src="/datadocs/assets/2000px-Cassandra_logo.svg.png"/></center></p>
+<ul>
+<li>NoSQL with a twist</li>
+<li>Cassandra is a peer-to-peer, read/write anywhere architecture.
+<ul>
+<li>No master node</li>
+<li>Any user can connect to any node in any data center.</li>
+<li>Partitions and replicates all writes automatically throughout the cluster.</li>
+</ul></li>
+<li>Cassandra is designed to handle big data across multiple nodes with no single point of failure.
+<ul>
+<li>Provides scalability and high availability (AP)</li>
+<li>Provides tunable consistency (AP -&gt; CP)</li>
+<li>Good choice for mission-critical data</li>
+</ul></li>
+<li>Developed by Facebook
+<ul>
+<li>Based on Google Bigtable (2006) and Amazon Dynamo (2007), but open-source.</li>
+<li>Uses architecture of Dynamo and data model of BigTable.</li>
+<li><a href="https://blog.insightdatascience.com/cassandra-daughter-of-dynamo-and-bigtable-1b57b16229b9">Cassandra: Daughter of Dynamo and BigTable</a></li>
+</ul></li>
+<li>Cassandra is a partitioned row and column-family store.
+<ul>
+<li>Cassandra is schema-full, all the way (= fixed columns)</li>
+<li>Rows are organized into tables with a required primary key.</li>
+<li>A hash function is applied on the primary key to (evenly) distribute the data.</li>
+</ul></li>
+</ul>
+<p><center><img width=500 src="/datadocs/assets/ring-architecture-2.png"/></center>
+<center><a href="https://docs.scylladb.com/architecture/ringarchitecture/" style="color: lightgrey">Credit</a></center></p>
+<ul>
+<li>Main features:
+<ul>
+<li>Decentralized load balancing and scalability.</li>
+<li>Data is automatically replicated to multiple nodes for fault-tolerance.</li>
+<li>There are no single points of failure because every node in the cluster is identical.</li>
+<li>Read and write throughput both increase linearly as new machines are added.</li>
+<li>Apache Cassandra is optimized for high write throughput.</li>
+<li>Even when an entire data center goes down, the data is safe.</li>
+<li>Tunable write and read consistency (choice between CP and AP)</li>
+<li>Supports secondary indexes</li>
+</ul></li>
+<li>Uses its own query language CQL similar to SQL (took over Thrift).
+<ul>
+<li>Very limited to what it can do though.</li>
+</ul></li>
+<li>Good use cases for Apache Cassandra:
+<ul>
+<li>Transaction logging (retail, health care)</li>
+<li>Internet of Things (IoT)</li>
+<li>Time series data</li>
+<li>Any workload that is heavy on writes to the database.</li>
+<li>If you can’t afford any downtimes, Cassandra is your choice.</li>
+</ul></li>
+<li>Cassandra is in use at Comcast, eBay, GitHub, GoDaddy, Hulu, Instagram, Netflix, Reddit.
+<ul>
+<li>Apple uses Cassandra with over 75,000 nodes for storing over 10PB of data.</li>
+</ul></li>
+<li>You can replicate the whole Cassandra ring to another ring for analytics and Spark integration.
+<ul>
+<li>DataStax offers a Spark-Cassandra connector.</li>
+<li>Allows you to read and write Cassandra tables as DataFrames.</li>
+<li>For example, to do analytics or data preprocessing for transactional use.</li>
+</ul></li>
+</ul>
+<p><center><img width=400 src="/datadocs/assets/Picture1-1.png"/></center>
+<center><a href="https://www.instaclustr.com/multi-data-center-sparkcassandra-benchmark-round-2/" style="color: lightgrey">Credit</a></center></p>
+<h4><a class="anchor" aria-hidden="true" id="compared-to-hbase"></a><a href="#compared-to-hbase" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Compared to HBase</h4>
+<ul>
+<li>Cassandra is AP while HBase is CP.</li>
+<li>Cassandra has a masterless architecture and is always available.
+<ul>
+<li>HBase has a master-based one and a single point of failure.</li>
+</ul></li>
+<li>Cassandra replicates and duplicates data, which leads to consistency problems.
+<ul>
+<li>HBase is strongly consistent.</li>
+</ul></li>
+<li>Cassandra’s architecture supports both data management and storage.
+<ul>
+<li>HBase’s architecture is designed for data management only.</li>
+<li>HDFS for storage, Apache Zookeeper for server status management and metadata.</li>
+</ul></li>
+</ul>
+<blockquote>
+<p>To maintain HBase, you must maintain three or four pieces of software together, whereas with Cassandra, we have just one simple process running on every single node.</p>
+</blockquote>
+<ul>
+<li>Cassandra is good at writes, whereas HBase is good at intensive reads:
+<ul>
+<li>HBase doesn’t write to the log and cache simultaneously (makes writes slower)</li>
+<li>HBase is better at scanning huge volumes of data.</li>
+</ul></li>
+<li>Data model:
+<ul>
+<li>Cassandra’s column is more like a cell in HBase.</li>
+<li>Column family in Cassandra is more like an HBase table.</li>
+<li>Column qualifier in HBase reminds of a super column in Cassandra.</li>
+<li>HBase, unlike Cassandra, has only 1-column row key.</li>
+</ul></li>
+<li><a href="https://www.scnsoft.com/blog/cassandra-vs-hbase">Cassandra vs. HBase: twins or just strangers with similar looks?</a></li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="architecture-1"></a><a href="#architecture-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Architecture</h3>
+<ul>
+<li>Decentralized peer-to-peer architecture (no master assignment)
+<ul>
+<li>Employs a peer-to-peer distributed system across homogeneous nodes.</li>
+<li>The data is distributed among all nodes in the cluster.</li>
+</ul></li>
+<li>A cluster contains one or more datacenters (e.g. AWS-EAST vs AWS-WEST)</li>
+<li>Datacenter is a virtual or physical collection of related nodes.
+<ul>
+<li>Replication is set by datacenter.</li>
+</ul></li>
+<li>Node is where the data is stored.
+<ul>
+<li>Each node is responsible for the region between it and its predecessor on the ring.</li>
+<li>The region is a range of hash values.</li>
+</ul></li>
+<li>Handles inter-node communication through the Gossip protocol.
+<ul>
+<li>So all nodes quickly learn about all other nodes in the cluster.</li>
+</ul></li>
+<li><a href="https://docs.datastax.com/en/archived/cassandra/3.0/cassandra/architecture/archIntro.html">Architecture in brief</a></li>
+<li><a href="https://www.jorgeacetozi.com/single-post/cassandra-architecture-and-write-path-anatomy">Cassandra Architecture and Write Path Anatomy</a></li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="write-path-1"></a><a href="#write-path-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Write path</h4>
+<ul>
+<li>Client read or write requests can be sent to any node in the cluster.
+<ul>
+<li>That node acts as a coordinator (proxy) between the application and the cluster.</li>
+</ul></li>
+<li>The coordinator uses a partitioner to find the responsible replicas.
+<ul>
+<li>A partitioner is a hash function that determines which node receives the row.</li>
+</ul></li>
+<li>The coordinator sends the write requests.</li>
+<li>Cassandra can be configured to prefer consistency (CP) over availability (AP):
+<ul>
+<li>Consistency level controls the minimum number of nodes that must acknowledge the write.</li>
+<li>A consistency level of ONE means that two of the three replicas can miss the write.</li>
+<li>On the other hand, read consistency is controlled by the number of agreements.</li>
+</ul></li>
+</ul>
+<p><center><img width=400 src="/datadocs/assets/arc_write-singleDCConOne.png"/></center>
+<center><a href="https://docs.datastax.com/en/ddac/doc/datastax_enterprise/dbInternals/dbIntClientRequestsWrite.html" style="color: lightgrey">Credit</a></center></p>
+<ul>
+<li>Success means data was written to the node's commit log and the memtable.
+<ul>
+<li>The commit log guarantees durability in case of a node restart or failure.</li>
+<li>The memtable (append-only cache) guarantees fast writes.</li>
+<li>After a limit, the memtable is flushed to SSTables on disk.</li>
+<li><a href="https://docs.datastax.com/en/ddac/doc/datastax_enterprise/dbInternals/dbIntHowDataWritten.html">How is data written?</a></li>
+</ul></li>
+<li>SSTables (Sorted String Tables, coming from BigTable) are immutable:
+<ul>
+<li>This means that all updates are kept and take a lot of space.</li>
+<li>Can be compressed by using Compaction (just a MergeSort)</li>
+<li>Similarly to BigTable, Cassandra uses timestamps for version control.</li>
+</ul></li>
+<li>The coordinator responds to the client after receiving write acknowledgements.</li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="data-modeling-1"></a><a href="#data-modeling-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Data modeling</h3>
+<ul>
+<li>Requires a paradigm shift from thinking about queries in relational databases.</li>
+<li>Primary goals:
+<ul>
+<li>Spread data evenly around the cluster.</li>
+<li>Minimize the number of partition reads.</li>
+<li>Satisfy a query by reading a single partition.</li>
+</ul></li>
+<li>Apache Cassandra does not allow for JOINs between tables.
+<ul>
+<li>Denormalization is not just okay - it's a must for fast reads.</li>
+<li>One table per query is a great strategy.</li>
+<li>Data duplication is encouraged.</li>
+</ul></li>
+<li>Data modeling in Apache Cassandra is query focused:
+<ul>
+<li>That focus needs to be on the WHERE clause.</li>
+<li>Ad-hoc queries are not a strength of Cassandra.</li>
+</ul></li>
+<li>In CQL, data is stored in tables containing rows of columns, similar to SQL definitions.</li>
+<li>Still, there are lots of differences between CQL and SQL.
+<ul>
+<li>Mainly due to efficiency reasons.</li>
+<li>For example, JOINS, GROUP BY and subqueries are not supported.</li>
+</ul></li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="cassandras-model"></a><a href="#cassandras-model" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Cassandra's model</h4>
+<ul>
+<li>Each table is a distributed multi-dimensional map indexed by the PRIMARY KEY.</li>
+<li>All tables must be in a keyspace - keyspaces are like databases.</li>
+<li>PRIMARY KEY identifies the location and order of stored data.
+<ul>
+<li>SIMPLE PRIMARY KEY is made up of a single column.</li>
+</ul></li>
+<li>The first element of the PRIMARY KEY is the PARTITION KEY.
+<ul>
+<li>Distributes rows across nodes using hash function (ideally evenly)</li>
+<li>Each node is responsible for a range of partitions.</li>
+</ul></li>
+<li>COMPOSITE PARTITION KEY is a PARTITION KEY made up of more than one column.
+<ul>
+<li>Used when the data stored is too large for one partition.</li>
+<li>This breaks data into chunks (or buckets)</li>
+<li>Solves hotspotting issues.</li>
+</ul></li>
+<li>PRIMARY KEY may also include CLUSTERING COLUMNS.
+<ul>
+<li>Distributes rows across partitions.</li>
+<li>Ensures that the row is unique.</li>
+<li>Sorts rows within the partition and allows filtering on them.</li>
+<li>Sorting is in order of appearance in PRIMARY KEY and ascending.</li>
+<li>Retrieving data from a partition is then more efficient.</li>
+<li>Grouping data in tables using clustering columns is the equivalent of JOINs.</li>
+<li><a href="https://docs.datastax.com/en/dse/5.1/cql/cql/cql_using/whereClustering.html">Clustering columns</a></li>
+</ul></li>
+<li><a href="https://docs.datastax.com/en/archived/cql/3.3/cql/cql_using/useAboutCQL.html">Creating a table - DataStax</a></li>
+</ul>
+<pre><code class="hljs css language-sql"><span class="hljs-comment">-- Example: Table creation in CQL</span>
+
+<span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> <span class="hljs-keyword">IF</span> <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">EXISTS</span> hello
+(a <span class="hljs-built_in">int</span>, b <span class="hljs-built_in">int</span>, c <span class="hljs-built_in">int</span>, d <span class="hljs-built_in">int</span>, e <span class="hljs-built_in">int</span>, PRIMARY <span class="hljs-keyword">KEY</span> ((a, b), c, d));
+<span class="hljs-comment">-- (a, b) is a composite partition key</span>
+<span class="hljs-comment">-- (c, d) is a composite clustering key</span>
+<span class="hljs-comment">-- e is a normal column</span>
+</code></pre>
+<pre><code class="hljs css language-js"><span class="hljs-comment">// So, a and b are used to distribute rows among nodes,</span>
+<span class="hljs-comment">// then each partition is sorted by c and then d.</span>
+<span class="hljs-comment">// To get the value of e, one has first to specify the values of a, b, c and d.</span>
+<span class="hljs-comment">// This is similar to a map&lt;(a, b), c, d&gt;</span>
+{
+    <span class="hljs-string">"key=(a1,b1)"</span>: {
+        <span class="hljs-string">"c=c1"</span>: {
+            <span class="hljs-string">"d=d1"</span>: [<span class="hljs-string">"e=e1"</span>, <span class="hljs-string">"e=e2"</span>, <span class="hljs-string">"e=e3"</span>]
+        }
+    }
+}
+</code></pre>
+<ul>
+<li>Must know your queries and model the tables to your queries.</li>
+<li>By using the WHERE statement we know which node to go to.</li>
+<li>It is recommended that partitions are queried one at a time for performance implications.
+<ul>
+<li><code>SELECT *</code> is highly discouraged, but possible with <code>ALLOW FILTERING</code> configuration.</li>
+<li><a href="https://www.datastax.com/dev/blog/allow-filtering-explained-2">ALLOW FILTERING explained</a></li>
+</ul></li>
+<li>Failure to specify a correct WHERE clause will result in an error.
+<ul>
+<li>For example, we have to use all clustering columns in order.</li>
+<li><a href="https://www.datastax.com/dev/blog/a-deep-look-to-the-cql-where-clause">A deep look at the CQL WHERE clause</a></li>
+</ul></li>
+</ul>
+<pre><code class="hljs css language-sql"><span class="hljs-comment">-- Example: Using WHERE clause in a wrong way</span>
+
+<span class="hljs-keyword">SELECT</span> * <span class="hljs-keyword">FROM</span> hello
+
+<span class="hljs-comment">-- You must restrict all partition key columns (to find the hash value)</span>
+<span class="hljs-comment">-- With only two operators: = and IN</span>
+<span class="hljs-comment">-- Incorrect</span>
+<span class="hljs-keyword">WHERE</span> a = a1
+<span class="hljs-keyword">WHERE</span> a = a1 <span class="hljs-keyword">AND</span> b &gt; b1
+
+<span class="hljs-comment">-- You must specify every successive clustering key up until the key you're looking for</span>
+<span class="hljs-comment">-- With only two operators: = and IN</span>
+<span class="hljs-comment">-- Only the last level can use range operators</span>
+<span class="hljs-comment">-- Incorrect</span>
+<span class="hljs-keyword">WHERE</span> a = a1 <span class="hljs-keyword">AND</span> b = b1 <span class="hljs-keyword">AND</span> d &gt; d1
+<span class="hljs-keyword">WHERE</span> a = a1 <span class="hljs-keyword">AND</span> b = b1 <span class="hljs-keyword">AND</span> c &gt; c1 <span class="hljs-keyword">AND</span> d &gt; d1
+
+<span class="hljs-comment">-- You cannot filter normal columns</span>
+<span class="hljs-keyword">WHERE</span> a = a1 <span class="hljs-keyword">AND</span> b = b1 <span class="hljs-keyword">AND</span> c = c1 <span class="hljs-keyword">AND</span> d = d1 <span class="hljs-keyword">AND</span> e = e1
+
+<span class="hljs-comment">-- Support those queries with additional tables designed as such</span>
+</code></pre>
+</span></div></article></div><div class="docLastUpdate"><em>Last updated on 2019-9-3 by Oleg Polakow</em></div><div class="docs-prevnext"><a class="docs-prev button" href="/datadocs/docs/big-data/sql-databases"><span class="arrow-prev">← </span><span>SQL Databases</span></a><a class="docs-next button" href="/datadocs/docs/big-data/key-value-stores"><span>Key Value Stores</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#apache-hbase">Apache HBase</a><ul class="toc-headings"><li><a href="#architecture">Architecture</a></li><li><a href="#data-modeling">Data modeling</a></li></ul></li><li><a href="#apache-cassandra">Apache Cassandra</a><ul class="toc-headings"><li><a href="#architecture-1">Architecture</a></li><li><a href="#data-modeling-1">Data modeling</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><div class="brand-box"><div class="brand"><a href="https://www.tum.de/nc/en/" target="_blank" rel="noreferrer noopener" class="brand-link"><img src="/datadocs/img/tum_logo.png" alt="Technical University of Munich" height="45"/></a></div><div class="brand"><a href="https://opensource.facebook.com/" target="_blank" rel="noreferrer noopener" class="brand-link"><img src="/datadocs/img/oss_logo.png" alt="Facebook Open Source" width="170" height="45"/></a></div></div><section class="copyright">Copyright © 2019 Oleg Polakow</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
+                document.addEventListener('keyup', function(e) {
+                  if (e.target !== document.body) {
+                    return;
+                  }
+                  // keyCode for '/' (slash)
+                  if (e.keyCode === 191) {
+                    const search = document.getElementById('search_input_react');
+                    search && search.focus();
+                  }
+                });
+              </script><script>
+              var search = docsearch({
+                
+                apiKey: '6642fca03d716a543ac4428d7d20b842',
+                indexName: 'polakowo-datadocs',
+                inputSelector: '#search_input_react',
+                algoliaOptions: {}
+              });
+            </script></body></html>

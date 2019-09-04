@@ -1,0 +1,337 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Data Ingestion · datadocs</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="## Apache Sqoop"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Data Ingestion · datadocs"/><meta property="og:type" content="website"/><meta property="og:url" content="https://polakowo.github.io/datadocs/"/><meta property="og:description" content="## Apache Sqoop"/><meta property="og:image" content="https://polakowo.github.io/datadocs/img/undraw_online.svg"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://polakowo.github.io/datadocs/img/undraw_tweetstorm.svg"/><link rel="shortcut icon" href="/datadocs/img/favicon.ico"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-142521178-1"></script><script>
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments); }
+              gtag('js', new Date());
+              gtag('config', 'UA-142521178-1');
+            </script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script><script type="text/javascript" src="/datadocs/js/code-block-buttons.js"></script><script type="text/javascript" src="/datadocs/js/disqus.js"></script><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script src="/datadocs/js/scrollSpy.js"></script><link rel="stylesheet" href="/datadocs/css/prism.css"/><link rel="stylesheet" href="/datadocs/css/main.css"/><script src="/datadocs/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/datadocs/"><img class="logo" src="/datadocs/img/headerIcon.ico" alt="datadocs"/><h2 class="headerTitleWithLogo">datadocs</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/datadocs/docs/machine-learning/linear-models" target="_self">Docs</a></li><li class=""><a href="https://github.com/polakowo/datadocs" target="_self">GitHub</a></li><li class="navSearchWrapper reactNavSearchWrapper"><input type="text" id="search_input_react" placeholder="Search" title="Search"/></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Hadoop</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Machine Learning<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">General</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/machine-learning">Machine Learning</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Methods</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/linear-models">Linear Models</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/tree-based-models">Tree-Based Models</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/ensemble-methods">Ensemble Methods</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Features</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/eda">Exploratory Data Analysis</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/feature-engineering">Feature Engineering</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/advanced-features">Advanced Features</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Optimization</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/metric-optimization">Metric Optimization</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/validation-schemes">Validation Schemes</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/hyperopt">Hyperparameter Optimization</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Competitions</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/competitive-ml">Competitive Machine Learning</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/data-leakages">Data Leakages</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Deep Learning<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">General</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/deep-learning">Deep Learning</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/dl-strategy">Deep Learning Strategy</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Fundamentals</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/backpropagation">Backpropagation</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/activation-functions">Activation Functions</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/initialization">Initialization</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/optimization">Optimization</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/regularization">Regularization</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Computer Vision</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/cnns">Convolutional Neural Networks</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/cnn-architectures">CNN Architectures</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/object-detection">Object Detection</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/face-recognition">Face Recognition</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/nst">Neural Style Transfer</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Natural Language Processing</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/rnns">Recurrect Neural Networks</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/word-embeddings">Word Embeddings</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/nmt">Neural Machine Translation</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/attention-mechanism">Attention Mechanism</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/speech-recognition">Speech Recognition</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Big Data<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">General</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/data-engineering">Data Engineering</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/cloud-computing">Cloud Computing</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/data-warehouses">Data Warehouses</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/data-lakes">Data Lakes</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/data-pipelines">Data Pipelines</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Databases</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/database-design">Database Design</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/sql-databases">SQL Databases</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/wide-column-stores">Wide Column Stores</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/key-value-stores">Key Value Stores</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/document-stores">Document Stores</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/graph-stores">Graph Stores</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Hadoop</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/hadoop">Hadoop Ecosystem</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/datadocs/docs/big-data/data-ingestion">Data Ingestion</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/data-storage">Data Storage</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/data-processing">Data Processing</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/query-engines">Query Engines</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/cluster-management">Cluster Management</a></li></ul></div></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://github.com/polakowo/datadocs/edit/master/docs/big-data/data-ingestion.md" target="_blank" rel="noreferrer noopener">Edit</a><h1 class="postHeaderTitle">Data Ingestion</h1></header><article><div><span><h2><a class="anchor" aria-hidden="true" id="apache-sqoop"></a><a href="#apache-sqoop" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Apache Sqoop</h2>
+<p><center><img width=200 src="/datadocs/assets/sqoop-intro-pic-e1530647597717.png"/></center></p>
+<ul>
+<li>Apache Sqoop is designed for transferring bulk data between Hadoop (HDFS, Hive, HBase) and RDBMS.</li>
+<li>In sqoop HDFS is the destination for importing data.
+<ul>
+<li>Can import the result returned from an SQL query in HDFS.</li>
+<li>Data can be loaded directly into Hive for data analysis and also dump data into HBase.</li>
+</ul></li>
+<li>Kicks off MapReduce jobs to handle import and export.</li>
+<li>Sqoop is mainly used for parallel data transfers.
+<ul>
+<li>Provides fault tolerance by using YARN framework in parallel import and export the data.</li>
+</ul></li>
+<li>Offers the facility of the incremental load (loading parts of table whenever it is updated)</li>
+<li>Can compress huge datasets using snappy method.</li>
+<li>Apache Sqoop is connector based architecture.
+<ul>
+<li>Sqoop offers many connectors, covering almost the entire circumference of RDBMS.</li>
+<li>For few databases Sqoop provides bulk connector which has faster performance.</li>
+</ul></li>
+<li>Apache Sqoop load is not driven by events.</li>
+<li>Limitations:
+<ul>
+<li>Scoop is atomic, meaning it cannot be paused and resumed.</li>
+<li>Slow because it still uses MapReduce in backend processing.</li>
+<li>Failures need special handling in case of partial import or export.</li>
+</ul></li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="example"></a><a href="#example" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example</h4>
+<ul>
+<li>Move tables between MySQL and Hive.</li>
+</ul>
+<pre><code class="hljs css language-bash"><span class="hljs-comment"># Import table from MySQL to Hive</span>
+$ sqoop import --connect jdbc:mysql://localhost/movielens --driver com.mysql.jdbc.Driver --table movies --hive-import
+
+<span class="hljs-comment"># Export table from Hive back to MySQL</span>
+$ sqoop <span class="hljs-built_in">export</span> --connect jdbc:mysql://localhost/movielens --driver com.mysql.jdbc.Driver --table movies --<span class="hljs-built_in">export</span>-dir /apps/hive/warehouse movies --input-fields-terminated-by <span class="hljs-string">'\0001'</span>
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="apache-flume"></a><a href="#apache-flume" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Apache Flume</h2>
+<p><center><img width=200 src="/datadocs/assets/1*PECy2wFJ-oyHaEXnbiYE_g.png"/></center></p>
+<ul>
+<li>Apache Flume is a distributed, reliable, and available system for efficiently collecting, aggregating and moving large amounts of log data from many different sources to a centralized data store.</li>
+<li>The main design goal is to ingest huge log data into Hadoop at a higher speed.
+<ul>
+<li>Acts as a mediator between data producers and the centralized stores.</li>
+<li>Flume is mainly used for moving bulk streaming data into HDFS or HBase.</li>
+<li>YARN coordinates data ingest from Apache Flume.</li>
+</ul></li>
+<li>Features:
+<ul>
+<li>Highly distributed in nature: agents can be installed on many machines.</li>
+<li>Able to collect data in both real-time and batch modes.</li>
+<li>Provides a feature of contextual routing.</li>
+<li>Guarantees reliable message delivery.</li>
+<li>Can be scaled horizontally.</li>
+</ul></li>
+<li>Tunable reliability mechanisms for failover and recovery:
+<ul>
+<li>Best-effort delivery does not tolerate any Flume node failure.</li>
+<li>End-to-end delivery guarantees delivery even in the event of multiple node failures.</li>
+</ul></li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="example-1"></a><a href="#example-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example</h4>
+<ul>
+<li>Set up Flume to stream messages from one console to another.</li>
+</ul>
+<pre><code class="hljs css language-conf"><span class="hljs-comment"># example.conf: A single-node Flume configuration</span>
+
+<span class="hljs-comment"># Name the components on this agent</span>
+<span class="hljs-attr">a1.sources</span> = r1
+<span class="hljs-attr">a1.sinks</span> = k1
+<span class="hljs-attr">a1.channels</span> = c1
+
+<span class="hljs-comment"># Describe/configure the source</span>
+<span class="hljs-attr">a1.sources.r1.type</span> = netcat
+<span class="hljs-attr">a1.sources.r1.bind</span> = localhost
+<span class="hljs-attr">a1.sources.r1.port</span> = <span class="hljs-number">44444</span>
+
+<span class="hljs-comment"># Describe the sink</span>
+<span class="hljs-attr">a1.sinks.k1.type</span> = logger
+
+<span class="hljs-comment"># Use a channel which buffers events in memory</span>
+<span class="hljs-attr">a1.channels.c1.type</span> = memory
+<span class="hljs-attr">a1.channels.c1.capacity</span> = <span class="hljs-number">1000</span>
+<span class="hljs-attr">a1.channels.c1.transactionCapacity</span> = <span class="hljs-number">100</span>
+
+<span class="hljs-comment"># Bind the source and sink to the channel</span>
+<span class="hljs-attr">a1.sources.r1.channels</span> = c1
+<span class="hljs-attr">a1.sinks.k1.channel</span> = c1
+</code></pre>
+<pre><code class="hljs css language-bash"><span class="hljs-comment"># Set up Flume in the first console</span>
+$ bin/flume-ng agent --conf conf --conf-file ~/example.conf --name a1 -Dflume.root.logger=INFO,console
+
+<span class="hljs-comment"># In the second console type</span>
+$ telnet localhost 44444
+This is a message
+This is another message
+
+<span class="hljs-comment"># The messsages typed appear then in the first console</span>
+This is a message
+This is another message
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="architecture"></a><a href="#architecture" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Architecture</h3>
+<ul>
+<li>The transactions in Flume are channel-based where two transactions (one sender and one receiver) are maintained for each message.</li>
+<li>Agent is a JVM process which comprises of a Flume source, channel and sink.</li>
+</ul>
+<p><img width=500 src="/datadocs/assets/061114_1038_Introductio2.png"/>
+<center><a href="https://www.guru99.com/create-your-first-flume-program.html" style="color: lightgrey">Credit</a></center></p>
+<ul>
+<li>Source:
+<ul>
+<li>Receives an event and stores it into one or more channels.</li>
+<li>Gathering of data can either be scheduled or event-driven.</li>
+<li>Can optionally have channel selectors and interceptors.</li>
+<li>Supports spooling directory, Avro, Kafka, HTTP, and more.</li>
+</ul></li>
+<li>Channel:
+<ul>
+<li>Acts as a store which keeps the event until it is consumed by a sink.</li>
+<li>Transfer via memory is faster while transfer via files is more durable.</li>
+<li>Has its own query processing engine to transform each new batch of data before sink.</li>
+</ul></li>
+<li>Sink:
+<ul>
+<li>Removes the event from a channel and stores it into an external repository.</li>
+<li>Can be organized into sink groups.</li>
+<li>Supports HDFS, Hive, HBase, Elasticsearch, and more.</li>
+</ul></li>
+<li>Sink can only connect to one channel.
+<ul>
+<li>The channel is notified to delete the message once the sink processes it.</li>
+</ul></li>
+<li>Using Avro, agents can connect to one another.</li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="apache-kafka"></a><a href="#apache-kafka" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Apache Kafka</h2>
+<p><center><img width=200 src="/datadocs/assets/kafka-logo-wide.png"/></center></p>
+<ul>
+<li><a href="https://kafka.apache.org">Apache Kafka</a> is a distributed streaming platform.
+<ul>
+<li>Kafka was developed in 2010 at LinkedIn.</li>
+<li>Not just for Hadoop.</li>
+</ul></li>
+<li>Key features:
+<ul>
+<li>Publish and subscribe to streams of records.</li>
+<li>Store streams of records on a Kafka cluster in a fault-tolerant way.</li>
+<li>Process streams of records as they occur.</li>
+</ul></li>
+<li>A fast, scalable, fault-tolerant, publish-subscribe messaging system.
+<ul>
+<li>Can deliver in-order, persistent, scalable messaging.</li>
+<li>Capable of supporting message throughput of thousands of messages per second.</li>
+<li>Can handle these messages with very low latency of the range of milliseconds.</li>
+<li>Resilient to node failures and supports automatic recovery (using ZooKeeper)</li>
+<li>Kafka's performance is effectively constant with respect to data size.</li>
+</ul></li>
+<li>APIs:
+<ul>
+<li>Producer API: allows an application to publish a stream of records to one or more topics.</li>
+<li>Consumer API: allows an application to subscribe to one or more topics and process them.</li>
+<li>Stream API: allows effectively transforming the input streams to output streams.</li>
+<li>Connector API: allows connecting topics to existing applications or data systems.</li>
+</ul></li>
+<li>Kafka Connect is a framework for connecting Kafka with external systems such as databases, key-value stores, search indexes, and file systems. Directly competes with Apache Flume.</li>
+<li>Use cases:
+<ul>
+<li>Ideal for communication and integration between components of large-scale data systems in real-world data systems.</li>
+<li>To track website activity (page views, searches, or other actions users may take)</li>
+<li>To produce centralized feeds of operational data from distributed applications.</li>
+<li>To collect physical log files off servers and put them in a central place.</li>
+<li>To aggregate, enrich, or otherwise transform topics into new topics for further consumption.</li>
+<li><a href="https://kafka.apache.org/uses">Use cases</a></li>
+</ul></li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="example-2"></a><a href="#example-2" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example</h4>
+<ul>
+<li>Set up Kafka to stream messages from console and consume them later.</li>
+</ul>
+<pre><code class="hljs css language-bash"><span class="hljs-comment"># Create a topic</span>
+$ bin/kafka-topics.sh --create --bootstrap-server localhost:9092 --replication-factor 1 --partitions 1 --topic <span class="hljs-built_in">test</span>
+
+<span class="hljs-comment"># Start a producer and throw some messages</span>
+$ bin/kafka-console-producer.sh --broker-list localhost:9092 --topic <span class="hljs-built_in">test</span>
+This is a message
+This is another message
+
+<span class="hljs-comment"># Start a consumer and print the messages typed previously</span>
+$ bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic <span class="hljs-built_in">test</span> --from-beginning
+This is a message
+This is another message
+</code></pre>
+<h4><a class="anchor" aria-hidden="true" id="compared-to-apache-flume"></a><a href="#compared-to-apache-flume" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Compared to Apache Flume</h4>
+<ul>
+<li>Apache Flume:
+<ul>
+<li>Flume is a push system: Data is directly pushed to the the destination.</li>
+<li>Built around the Hadoop ecosystem.</li>
+<li>Does not replicate events.</li>
+</ul></li>
+<li>Apache Kafka:
+<ul>
+<li>Kafka is a pull system: Data is pushed from producer to broker and pulled from broker to consumer.</li>
+<li>A general-purpose, distributed publish-subscribe messaging system.</li>
+<li>Can be used to connect systems that require enterprise level messaging.</li>
+<li>Events are available and recoverable in case of failures.</li>
+</ul></li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="architecture-1"></a><a href="#architecture-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Architecture</h3>
+<ul>
+<li>Runs as a cluster on one or more servers that can span multiple data centers.
+<ul>
+<li>Stores streams of records in categories called topics.</li>
+<li>Persists all published records — whether or not they have been consumed — using a configurable retention period (for example, discard data after 2 days to free up space)</li>
+</ul></li>
+<li>Producers publish data to the topics of their choice.</li>
+<li>Consumers subscribe to one or more topics and process them.
+<ul>
+<li>Consumer instances can be in separate processes or on separate machines.</li>
+<li>Consumers must label themselves with a consumer group name.</li>
+<li>A topic is delivered to one consumer instance within each subscribing consumer group.</li>
+<li>For example, records are load-balanced over the consumers in the same group.</li>
+</ul></li>
+</ul>
+<p><img width=400 src="/datadocs/assets/consumer-groups.png"/>
+<center><a href="https://kafka.apache.org/intro" style="color: lightgrey">Credit</a></center></p>
+<ul>
+<li>A topic is a category or feed name to which records are published.
+<ul>
+<li>A topic can have zero, one, or many consumers.</li>
+<li>Each record consists of a key, a value, and a timestamp.</li>
+</ul></li>
+<li>Each topic maintains a log (or multiple logs — one for each partition)
+<ul>
+<li>The log is simply a data structure: time-ordered, append-only sequence of data inserts.</li>
+<li>The data inside of the log can be anything.</li>
+</ul></li>
+<li>An offset is the position of a consumer in the log:
+<ul>
+<li>The offset is controlled by the consumer.</li>
+<li>Consumer can consume records in any order it likes.</li>
+</ul></li>
+<li>A partition acts as the unit of parallelism and must fit on the servers that host it.
+<ul>
+<li>The partitioning is controlled by the producer.</li>
+<li>The partitions of the log are distributed over the servers.</li>
+<li>Each consumer has a &quot;fair share&quot; of partitions at any point in time.</li>
+<li>Each partition is replicated across a configurable number of servers for fault tolerance.</li>
+</ul></li>
+<li>Limitations:
+<ul>
+<li>No record IDs: records are addressed by their offset in the log.</li>
+<li>No tracking of the consumers who have consumed what records.</li>
+</ul></li>
+</ul>
+</span></div></article></div><div class="docLastUpdate"><em>Last updated on 2019-8-30 by Oleg Polakow</em></div><div class="docs-prevnext"><a class="docs-prev button" href="/datadocs/docs/big-data/hadoop"><span class="arrow-prev">← </span><span>Hadoop Ecosystem</span></a><a class="docs-next button" href="/datadocs/docs/big-data/data-storage"><span>Data Storage</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#apache-sqoop">Apache Sqoop</a></li><li><a href="#apache-flume">Apache Flume</a><ul class="toc-headings"><li><a href="#architecture">Architecture</a></li></ul></li><li><a href="#apache-kafka">Apache Kafka</a><ul class="toc-headings"><li><a href="#architecture-1">Architecture</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><div class="brand-box"><div class="brand"><a href="https://www.tum.de/nc/en/" target="_blank" rel="noreferrer noopener" class="brand-link"><img src="/datadocs/img/tum_logo.png" alt="Technical University of Munich" height="45"/></a></div><div class="brand"><a href="https://opensource.facebook.com/" target="_blank" rel="noreferrer noopener" class="brand-link"><img src="/datadocs/img/oss_logo.png" alt="Facebook Open Source" width="170" height="45"/></a></div></div><section class="copyright">Copyright © 2019 Oleg Polakow</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
+                document.addEventListener('keyup', function(e) {
+                  if (e.target !== document.body) {
+                    return;
+                  }
+                  // keyCode for '/' (slash)
+                  if (e.keyCode === 191) {
+                    const search = document.getElementById('search_input_react');
+                    search && search.focus();
+                  }
+                });
+              </script><script>
+              var search = docsearch({
+                
+                apiKey: '6642fca03d716a543ac4428d7d20b842',
+                indexName: 'polakowo-datadocs',
+                inputSelector: '#search_input_react',
+                algoliaOptions: {}
+              });
+            </script></body></html>

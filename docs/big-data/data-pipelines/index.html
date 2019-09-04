@@ -1,0 +1,353 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Data Pipelines · datadocs</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="- Data pipeline is a series of steps in which data is processed."/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Data Pipelines · datadocs"/><meta property="og:type" content="website"/><meta property="og:url" content="https://polakowo.github.io/datadocs/"/><meta property="og:description" content="- Data pipeline is a series of steps in which data is processed."/><meta property="og:image" content="https://polakowo.github.io/datadocs/img/undraw_online.svg"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://polakowo.github.io/datadocs/img/undraw_tweetstorm.svg"/><link rel="shortcut icon" href="/datadocs/img/favicon.ico"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-142521178-1"></script><script>
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments); }
+              gtag('js', new Date());
+              gtag('config', 'UA-142521178-1');
+            </script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script><script type="text/javascript" src="/datadocs/js/code-block-buttons.js"></script><script type="text/javascript" src="/datadocs/js/disqus.js"></script><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script src="/datadocs/js/scrollSpy.js"></script><link rel="stylesheet" href="/datadocs/css/prism.css"/><link rel="stylesheet" href="/datadocs/css/main.css"/><script src="/datadocs/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/datadocs/"><img class="logo" src="/datadocs/img/headerIcon.ico" alt="datadocs"/><h2 class="headerTitleWithLogo">datadocs</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/datadocs/docs/machine-learning/linear-models" target="_self">Docs</a></li><li class=""><a href="https://github.com/polakowo/datadocs" target="_self">GitHub</a></li><li class="navSearchWrapper reactNavSearchWrapper"><input type="text" id="search_input_react" placeholder="Search" title="Search"/></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>General</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Machine Learning<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">General</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/machine-learning">Machine Learning</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Methods</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/linear-models">Linear Models</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/tree-based-models">Tree-Based Models</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/ensemble-methods">Ensemble Methods</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Features</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/eda">Exploratory Data Analysis</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/feature-engineering">Feature Engineering</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/advanced-features">Advanced Features</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Optimization</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/metric-optimization">Metric Optimization</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/validation-schemes">Validation Schemes</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/hyperopt">Hyperparameter Optimization</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Competitions</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/competitive-ml">Competitive Machine Learning</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/data-leakages">Data Leakages</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Deep Learning<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">General</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/deep-learning">Deep Learning</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/dl-strategy">Deep Learning Strategy</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Fundamentals</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/backpropagation">Backpropagation</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/activation-functions">Activation Functions</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/initialization">Initialization</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/optimization">Optimization</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/regularization">Regularization</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Computer Vision</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/cnns">Convolutional Neural Networks</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/cnn-architectures">CNN Architectures</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/object-detection">Object Detection</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/face-recognition">Face Recognition</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/nst">Neural Style Transfer</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Natural Language Processing</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/rnns">Recurrect Neural Networks</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/word-embeddings">Word Embeddings</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/nmt">Neural Machine Translation</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/attention-mechanism">Attention Mechanism</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/speech-recognition">Speech Recognition</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Big Data<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">General</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/data-engineering">Data Engineering</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/cloud-computing">Cloud Computing</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/data-warehouses">Data Warehouses</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/data-lakes">Data Lakes</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/datadocs/docs/big-data/data-pipelines">Data Pipelines</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Databases</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/database-design">Database Design</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/sql-databases">SQL Databases</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/wide-column-stores">Wide Column Stores</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/key-value-stores">Key Value Stores</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/document-stores">Document Stores</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/graph-stores">Graph Stores</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Hadoop</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/hadoop">Hadoop Ecosystem</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/data-ingestion">Data Ingestion</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/data-storage">Data Storage</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/data-processing">Data Processing</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/query-engines">Query Engines</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/cluster-management">Cluster Management</a></li></ul></div></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://github.com/polakowo/datadocs/edit/master/docs/big-data/data-pipelines.md" target="_blank" rel="noreferrer noopener">Edit</a><h1 class="postHeaderTitle">Data Pipelines</h1></header><article><div><span><ul>
+<li>Data pipeline is a series of steps in which data is processed.</li>
+<li>It's typically using either ETL or ELT, or a subset of them.
+<ul>
+<li>ETL is normally a continuous, ongoing process with a well-defined workflow. ETL first extracts data from homogeneous or heterogeneous data sources. Then, data is cleansed, enriched, transformed, and stored either back in the lake or in a DWH.</li>
+<li>ELT (Extract, Load, Transform) is a variant of ETL wherein the extracted data is first loaded into the target system. Transformations are performed after the data is loaded into the data warehouse. ELT typically works well when the target system is powerful enough to handle transformations. Analytical databases like Amazon Redshift and Google BigQ.</li>
+<li><a href="https://blog.panoply.io/etl-vs-elt-the-difference-is-in-the-how">ETL Vs ELT: The Difference Is In The How</a></li>
+</ul></li>
+<li>Ensuring the quality of data through automated validation checks is a critical step.
+<ul>
+<li>Data validation is the process of ensuring that data is present, correct &amp; meaningful.</li>
+<li>For example: Ensuring that the number of rows in Redshift match the number of records in S3.</li>
+</ul></li>
+<li>Data pipelines provide a set of logical guidelines and a common set of terminology.
+<ul>
+<li>A conceptual framework can help in better organizing day-to-day data engineering tasks.</li>
+</ul></li>
+<li>Data lineage describes the discrete steps involved in the creation, movement, and calculation of that dataset.
+<ul>
+<li>Enables data engineers and architects to track the flow of this large web of data.</li>
+<li>Builds confidence in users that the data pipelines is designed properly.</li>
+<li>Helps organizations surface and agree on dataset definitions.</li>
+<li>Makes locating errors more obvious.</li>
+</ul></li>
+<li><a href="https://github.com/pditommaso/awesome-pipeline">A curated list of awesome pipeline toolkits inspired by Awesome Sysadmin</a></li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="apache-airflow"></a><a href="#apache-airflow" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Apache Airflow</h2>
+<p><center><img width=100 src="/datadocs/assets/1*6jjSw8IqGbsPZp7L_43YyQ.png"/></center></p>
+<ul>
+<li>Apache Airflow is an open-source, DAG-based, schedulable, data-pipeline framework that can run in mission-critical environments.
+<ul>
+<li>Airflow was developed at Airbnb in 2014 and later open-sourced to Apache Software Foundation.</li>
+</ul></li>
+<li>Hundreds of companies have successfully integrated Airflow.
+<ul>
+<li>A few highlights include HBO, Spotify, Lyft, Paypal, Google and Stripe.</li>
+</ul></li>
+<li>Has a rich and vibrant open source community.</li>
+<li>Airflow pipelines are defined as code and that tasks are instantiated dynamically.
+<ul>
+<li>Allows to write DAGs in Python that run on a schedule and/or from an external trigger.</li>
+</ul></li>
+<li>Has a simple API for integrating third-party tools.
+<ul>
+<li>Operators and hooks for common data tools like Apache Spark can be found in <a href="https://github.com/apache/airflow/tree/master/airflow/contrib">Airflow contrib</a></li>
+</ul></li>
+<li>Provides a web-based UI to visualize and interact with data pipelines.
+<ul>
+<li>Data consumers can use the UI to see how and when their data was produced.</li>
+</ul></li>
+<li>The following components can be used to track data lineage:
+<ul>
+<li>Rendered code tab for a task, graph view for a DAG, and historical runs under the tree view.</li>
+<li>But note: Airflow does not keep a record of historical code changes. For each change, it's better to create a new DAG to not be confused as history changes over time.</li>
+</ul></li>
+<li>Monitoring:
+<ul>
+<li>Airflow can be configured to send emails on DAG and task state changes.</li>
+<li>Notifications can be sent individually for both entire DAGs or tasks.</li>
+<li>Airflow can send system metrics using a metrics aggregator called <a href="https://github.com/statsd/statsd">statsd</a></li>
+<li>Statsd can be coupled with metrics visualization tools like <a href="https://grafana.com/">Grafana</a></li>
+<li>These systems can be integrated into your alerting system, such as <a href="https://www.pagerduty.com">pagerduty</a></li>
+</ul></li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="compared-to-luigi"></a><a href="#compared-to-luigi" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Compared to Luigi</h4>
+<ul>
+<li><a href="https://www.quora.com/Which-is-a-better-data-pipeline-scheduling-platform-Airflow-or-Luigi">Which is a better data pipeline scheduling platform: Airflow or Luigi?</a></li>
+<li><a href="https://xunnanxu.github.io/2018/04/13/Workflow-Processing-Engine-Overview-2018-Airflow-vs-Azkaban-vs-Conductor-vs-Oozie-vs-Amazon-Step-Functions/">Workflow Processing Engine Overview 2018</a></li>
+<li><a href="https://medium.com/@cyrusv/luigi-vs-airflow-vs-zope-wfmc-comparison-of-open-source-workflow-engines-de5209e6dac1">Luigi vs Airflow vs zope.wfmc: Comparison of Open-Source Workflow Engines</a></li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="architecture"></a><a href="#architecture" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Architecture</h3>
+<ul>
+<li>The five main components are the scheduler, workers, web server, queue, and database.</li>
+<li>Scheduler monitors all DAGs and tasks, and triggers the tasks whose dependencies have been met.
+<ul>
+<li>Tasks without incoming dependencies are started first.</li>
+<li>Monitors and stays in synchronization with a folder for all DAG objects.</li>
+<li>Periodically inspects tasks to see if they can be triggered.</li>
+</ul></li>
+<li>Workers are daemons that run and record the outcome of individual pipeline tasks.
+<ul>
+<li>Workers pull from the work queue when it is ready to process a task.</li>
+<li>Once the worker has finished the task, its status is recorded by the scheduler.</li>
+<li>Once all tasks have been completed, the DAG is complete.</li>
+</ul></li>
+<li>The metadata database stores the state of tasks and workflows.
+<ul>
+<li>Also stores credentials, connections, history, and configuration.</li>
+<li>Airflow components interact with the database with the Python ORM, SQLAlchemy.</li>
+</ul></li>
+<li>Web interface provides a control dashboard for users and maintainers.
+<ul>
+<li>The web interface is built using the Flask web-development micro-framework.</li>
+</ul></li>
+</ul>
+<p><center><img width=600 src="/datadocs/assets/multi-node-architecture.png"/></center>
+<center><a href="https://drivy.engineering/airflow-architecture/" style="color: lightgrey">Credit</a></center></p>
+<ul>
+<li>An Airflow cluster has a number of daemons: a web server, a scheduler and one or several workers.</li>
+<li>Single-node architecture:
+<ul>
+<li>There is a single node.</li>
+<li>Widely used in case there is a moderate amount of DAGs.</li>
+</ul></li>
+<li>Multi-node architecture:
+<ul>
+<li>There are several nodes which can execute tasks in parallel.</li>
+<li>To scale out to multiple servers, the Celery executor mode has to be used.</li>
+<li>Celery executor uses Celery to distribute the load on a pool of workers.</li>
+<li>Celery is an asynchronous queue based on distributed message passing.</li>
+<li>Offers higher availability, dedicated workers for specific tasks, and scaling horizontally.</li>
+<li><a href="https://drivy.engineering/airflow-architecture/">Airflow Architecture at Drivy</a></li>
+</ul></li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="main-principles"></a><a href="#main-principles" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Main principles</h3>
+<h4><a class="anchor" aria-hidden="true" id="dags"></a><a href="#dags" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>DAGs</h4>
+<ul>
+<li>Directed Acyclic Graphs (DAGs) are a special subset of graphs in which the edges between nodes have a direction, and no cycles exist (nodes can't create a path back to themselves).</li>
+<li>Data pipelines are well expressed with DAGs.
+<ul>
+<li>Nodes are the tasks in the data pipeline process.</li>
+<li>Edges are the dependencies or other relationships between nodes.</li>
+</ul></li>
+<li>Task dependencies can be specified programmatically using <code>a &gt;&gt; b</code> or <code>b &lt;&lt; a</code></li>
+</ul>
+<pre><code class="hljs css language-py"><span class="hljs-comment">#            -&gt; b_task</span>
+<span class="hljs-comment">#          /           \</span>
+<span class="hljs-comment">#   a_task               -&gt; d_task</span>
+<span class="hljs-comment">#          \           /</span>
+<span class="hljs-comment">#            -&gt; c_task</span>
+
+a_task  &gt;&gt; b_task
+a_task  &gt;&gt; c_task
+b_task  &gt;&gt; d_task
+c_task  &gt;&gt; d_task
+</code></pre>
+<ul>
+<li>Commonly repeated series of tasks within DAGs can be captured as reusable SubDAGs.
+<ul>
+<li>Reduce duplicated code in DAGs.</li>
+<li>Allow for simple reusability of commonly occurring task patterns.</li>
+<li>Easier to understand the high level goals of a DAG.</li>
+<li>Bug fixes, speedups, and other enhancements can be made more quickly and distributed to all DAGs that use that subDAG.</li>
+</ul></li>
+<li>Drawbacks of subDAGs:
+<ul>
+<li>Limit the visibility within the Airflow UI.</li>
+<li>Abstraction makes understanding what the DAG is doing more difficult.</li>
+<li>Encourage premature optimization.</li>
+</ul></li>
+<li>Generally, subDAGs are not necessary at all, let alone subDAGs within subDAGs.</li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="tasks"></a><a href="#tasks" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Tasks</h4>
+<ul>
+<li>Task is an instantiated step in a pipeline fully parameterized for execution.</li>
+<li>Tasks can have two flavors:
+<ul>
+<li>Operators: execute some explicit operation.</li>
+<li>Sensors: check for the state of a process or a data structure.</li>
+</ul></li>
+<li>Boundaries between tasks should be clear and well-defined:
+<ul>
+<li>Tasks should be atomic and have a single purpose: The more work a task performs, the less clear its purpose becomes. Big tasks are detrimental to maintainability, data lineage, and speed.</li>
+<li>Tasks should maximize parallelism: Properly scoped tasks minimize dependencies and are easier parallelized. This parallelization can offer a significant speedup in the execution of our DAGs.</li>
+<li>Tasks should make failure states obvious: Debugging errors is simpler if a &quot;task&quot; performs one task. By simply looking at Airflow UI one can pinpoint the source of error.</li>
+</ul></li>
+</ul>
+<blockquote>
+<p>“Write programs that do one thing and do it well.” - Ken Thompson’s Unix Philosophy</p>
+</blockquote>
+<ul>
+<li>No information is shared between tasks - we want to parallelize as much as possible.
+<ul>
+<li>But also no powerful mechanism to communicate between tasks.</li>
+</ul></li>
+<li>Connections can be accessed in code via hooks (e.g. S3Hook):
+<ul>
+<li>Hooks provide a reusable interface to external systems and databases (e.g. S3)</li>
+<li>Avoids storing sensible connection strings and secrets in code.</li>
+</ul></li>
+<li>Airflow leverages templating to allow to “fill in the blank” with important runtime variables.
+<ul>
+<li><a href="https://airflow.apache.org/macros.html">Macros reference</a></li>
+</ul></li>
+<li><a href="https://blog.godatadriven.com/zen-of-python-and-apache-airflow">The Zen of Python and Apache Airflow</a></li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="schedules"></a><a href="#schedules" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Schedules</h4>
+<ul>
+<li>Schedules determine what data should be analyzed and when.</li>
+<li>Benefits:
+<ul>
+<li>Can reduce the amount of data that needs to be processed in a given run.</li>
+<li>Helps scoping the job to only run the data for the time period since the data pipeline last ran.</li>
+<li>Improves the quality and accuracy of the analysis by limiting the scope.</li>
+</ul></li>
+<li>The appropriate time period can be determined by:
+<ul>
+<li>How big is the dataset?</li>
+<li>How frequently is the data arriving?</li>
+<li>How often does the analysis need to be performed?</li>
+<li>Which dataset requires the most frequent analysis?</li>
+</ul></li>
+<li>Airflow automatically schedules DAGs to satisfy each one of intervals between two dates.</li>
+<li>Airflow backfills for every period defined by <code>schedule_interval</code> between the <code>start_date</code> and now.
+<ul>
+<li>Useful for years of data that may need to be retroactively analyzed.</li>
+<li>Should be exploited to make pipelines more robust.</li>
+</ul></li>
+<li>DAGs may also have an <code>end_date</code>
+<ul>
+<li>Useful or marking DAGs as end-of-life or handling data bound by two points in time.</li>
+<li>Useful when performing an overhaul or redesign of an existing pipeline: update the old pipeline with an <code>end_date</code> and then have the new pipeline start with the <code>end_date</code></li>
+</ul></li>
+<li>To disable DAG run parallelization, set <code>max_active_runs</code> (task parallelization is still on)
+<ul>
+<li>Useful when future tasks depend upon results of previous tasks.</li>
+</ul></li>
+<li>Used appropriately, schedules are also a form of data partitioning, which can substantially increase the speed of pipeline runs.</li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="data-partitioning"></a><a href="#data-partitioning" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Data partitioning</h4>
+<ul>
+<li>Data partitioning is the process of isolating data to be analyzed by one or more attributes.
+<ul>
+<li>Pipelines fail more gracefully for smaller datasets and time periods.</li>
+<li>Makes debugging and rerunning failed tasks much simpler.</li>
+<li>Enables easier redos of work, reducing cost and time.</li>
+<li>Tasks will naturally have fewer dependencies on each other.</li>
+<li>Airflow will be able to parallelize execution of DAGs.</li>
+</ul></li>
+<li>Time partitioning: Processing data based on a schedule or when it was created.
+<ul>
+<li>Great for reducing the amount of data to process.</li>
+<li>Also guarantee meeting timing guarantees that data consumers may need.</li>
+</ul></li>
+<li>Logical partitioning: Breaking conceptually related data into discrete groups for processing.
+<ul>
+<li>Unrelated things belong in separate steps.</li>
+</ul></li>
+<li>Location partitioning: Processing data based on its location in a datastore.
+<ul>
+<li>For example: <code>s3://&lt;bucket&gt;/&lt;year&gt;/&lt;month&gt;/&lt;day</code></li>
+</ul></li>
+<li>Size partitioning: Separating data for processing based on desired or required storage limits.
+<ul>
+<li>Critical to understand when working with large datasets.</li>
+</ul></li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="data-quality"></a><a href="#data-quality" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Data quality</h4>
+<ul>
+<li>Data quality is the measure of how well a dataset satisfies its intended use.</li>
+<li>Adherence to a set of requirements is a good starting point.
+<ul>
+<li>Requirements are how we can set and measure quality.</li>
+<li>Requirements allow both engineering and non-engineering roles to agree on the high-level method for preparing the output.</li>
+<li>Requirements tell engineers what the output of their data pipelines should be.</li>
+<li>Requirements should be defined before building the data pipeline.</li>
+</ul></li>
+<li>Examples of data quality requirements:
+<ul>
+<li>Data must be a certain size (the number of rows in target = source)</li>
+<li>Data must be accurate to some margin of error.</li>
+<li>Data must arrive within a given timeframe from the start of execution (SLAa)</li>
+<li>Pipelines must run on a particular schedule.</li>
+<li>Data must not contain any sensitive information (e.g. GDPR compliance)</li>
+</ul></li>
+<li>Service Level Agreements, or SLAs, tell Airflow when a DAG must be completed by.
+<ul>
+<li>For example, generate analytics that the executive team receives via email every morning.</li>
+<li>Slipping SLAs can be early indicators of performance problems.</li>
+<li>Workers might need to be scaled up if SLAs are routinely missed.</li>
+</ul></li>
+</ul>
+</span></div></article></div><div class="docLastUpdate"><em>Last updated on 2019-8-20 by Oleg Polakow</em></div><div class="docs-prevnext"><a class="docs-prev button" href="/datadocs/docs/big-data/data-lakes"><span class="arrow-prev">← </span><span>Data Lakes</span></a><a class="docs-next button" href="/datadocs/docs/big-data/database-design"><span>Database Design</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#apache-airflow">Apache Airflow</a><ul class="toc-headings"><li><a href="#architecture">Architecture</a></li><li><a href="#main-principles">Main principles</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><div class="brand-box"><div class="brand"><a href="https://www.tum.de/nc/en/" target="_blank" rel="noreferrer noopener" class="brand-link"><img src="/datadocs/img/tum_logo.png" alt="Technical University of Munich" height="45"/></a></div><div class="brand"><a href="https://opensource.facebook.com/" target="_blank" rel="noreferrer noopener" class="brand-link"><img src="/datadocs/img/oss_logo.png" alt="Facebook Open Source" width="170" height="45"/></a></div></div><section class="copyright">Copyright © 2019 Oleg Polakow</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
+                document.addEventListener('keyup', function(e) {
+                  if (e.target !== document.body) {
+                    return;
+                  }
+                  // keyCode for '/' (slash)
+                  if (e.keyCode === 191) {
+                    const search = document.getElementById('search_input_react');
+                    search && search.focus();
+                  }
+                });
+              </script><script>
+              var search = docsearch({
+                
+                apiKey: '6642fca03d716a543ac4428d7d20b842',
+                indexName: 'polakowo-datadocs',
+                inputSelector: '#search_input_react',
+                algoliaOptions: {}
+              });
+            </script></body></html>

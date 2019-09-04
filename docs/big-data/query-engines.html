@@ -1,0 +1,330 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Query Engines · datadocs</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="## Apache Hive"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Query Engines · datadocs"/><meta property="og:type" content="website"/><meta property="og:url" content="https://polakowo.github.io/datadocs/"/><meta property="og:description" content="## Apache Hive"/><meta property="og:image" content="https://polakowo.github.io/datadocs/img/undraw_online.svg"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://polakowo.github.io/datadocs/img/undraw_tweetstorm.svg"/><link rel="shortcut icon" href="/datadocs/img/favicon.ico"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-142521178-1"></script><script>
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments); }
+              gtag('js', new Date());
+              gtag('config', 'UA-142521178-1');
+            </script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script><script type="text/javascript" src="/datadocs/js/code-block-buttons.js"></script><script type="text/javascript" src="/datadocs/js/disqus.js"></script><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script src="/datadocs/js/scrollSpy.js"></script><link rel="stylesheet" href="/datadocs/css/prism.css"/><link rel="stylesheet" href="/datadocs/css/main.css"/><script src="/datadocs/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/datadocs/"><img class="logo" src="/datadocs/img/headerIcon.ico" alt="datadocs"/><h2 class="headerTitleWithLogo">datadocs</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/datadocs/docs/machine-learning/linear-models" target="_self">Docs</a></li><li class=""><a href="https://github.com/polakowo/datadocs" target="_self">GitHub</a></li><li class="navSearchWrapper reactNavSearchWrapper"><input type="text" id="search_input_react" placeholder="Search" title="Search"/></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Hadoop</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Machine Learning<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">General</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/machine-learning">Machine Learning</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Methods</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/linear-models">Linear Models</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/tree-based-models">Tree-Based Models</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/ensemble-methods">Ensemble Methods</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Features</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/eda">Exploratory Data Analysis</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/feature-engineering">Feature Engineering</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/advanced-features">Advanced Features</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Optimization</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/metric-optimization">Metric Optimization</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/validation-schemes">Validation Schemes</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/hyperopt">Hyperparameter Optimization</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Competitions</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/competitive-ml">Competitive Machine Learning</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/data-leakages">Data Leakages</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Deep Learning<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">General</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/deep-learning">Deep Learning</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/dl-strategy">Deep Learning Strategy</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Fundamentals</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/backpropagation">Backpropagation</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/activation-functions">Activation Functions</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/initialization">Initialization</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/optimization">Optimization</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/regularization">Regularization</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Computer Vision</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/cnns">Convolutional Neural Networks</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/cnn-architectures">CNN Architectures</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/object-detection">Object Detection</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/face-recognition">Face Recognition</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/nst">Neural Style Transfer</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Natural Language Processing</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/rnns">Recurrect Neural Networks</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/word-embeddings">Word Embeddings</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/nmt">Neural Machine Translation</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/attention-mechanism">Attention Mechanism</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/speech-recognition">Speech Recognition</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Big Data<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">General</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/data-engineering">Data Engineering</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/cloud-computing">Cloud Computing</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/data-warehouses">Data Warehouses</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/data-lakes">Data Lakes</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/data-pipelines">Data Pipelines</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Databases</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/database-design">Database Design</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/sql-databases">SQL Databases</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/wide-column-stores">Wide Column Stores</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/key-value-stores">Key Value Stores</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/document-stores">Document Stores</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/graph-stores">Graph Stores</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Hadoop</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/hadoop">Hadoop Ecosystem</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/data-ingestion">Data Ingestion</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/data-storage">Data Storage</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/data-processing">Data Processing</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/datadocs/docs/big-data/query-engines">Query Engines</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/cluster-management">Cluster Management</a></li></ul></div></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://github.com/polakowo/datadocs/edit/master/docs/big-data/query-engines.md" target="_blank" rel="noreferrer noopener">Edit</a><h1 class="postHeaderTitle">Query Engines</h1></header><article><div><span><h2><a class="anchor" aria-hidden="true" id="apache-hive"></a><a href="#apache-hive" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Apache Hive</h2>
+<p><img width=150 src="/datadocs/assets/Apache_Hive_logo.svg.png"/></p>
+<ul>
+<li>Apache Hive is a data warehouse system built on top of Apache Hadoop that facilitates easy data summarization, ad-hoc queries, and the analysis of large datasets stored in various databases and file systems that integrate with Hadoop.</li>
+<li>Data warehouse refers to a system used for reporting and data analysis.</li>
+<li>Hive was initially developed at Facebook.</li>
+<li>Offers a simple way to apply structure to unstructured data to perform SQL-like queries.
+<ul>
+<li>Takes unstructured data and applies a schema to it when the data is read.</li>
+<li>Data remains untouched.</li>
+</ul></li>
+<li>Hive maintains a &quot;metastore&quot; (HCatalog) that stores information such as data location and schema.
+<ul>
+<li>Once a a Hive table is created, columns, rows, data types, etc., are stored in the metastore.</li>
+<li>Other tools such as Spark, Pig and Tableau can then access the data in the metastore.</li>
+<li>Hive enables data serialization/deserialization and increases flexibility in schema.</li>
+</ul></li>
+<li>Hive looks like traditional database code with SQL access but has to adhere to the rules of Hadoop framework.</li>
+</ul>
+<p><img width=400 src="/datadocs/assets/image1.png"/>
+<center><a href="https://mapr.com/products/apache-hive/" style="color: lightgrey">Credit</a></center></p>
+<ul>
+<li>Hive features an SQL-like programming interface called HiveQL:
+<ul>
+<li>Pretty much MySQL with extensions (for example views)</li>
+<li>HiveQL automatically translates SQL-like queries into batch MapReduce jobs.</li>
+<li>In addition, HiveQL supported custom MapReduce scripts to plug into queries.</li>
+<li>It is possible to have full ACID properties in HiveQL.</li>
+<li>Only basic support for indexes.</li>
+<li>HiveQL does not provide support for OLTP and view materialization</li>
+</ul></li>
+<li>Hive has many user-defined functions (UDFs) that offer effective ways of solving problems.
+<ul>
+<li>Hive can take ownership of the data with <code>LOAD DATA</code> command or a managed table.</li>
+<li>Partitioning is a huge optimization if queries are only on certain partitions (e.g. country)</li>
+</ul></li>
+<li>Faster execution of HiveQL or SQL on top of Hadoop:
+<ul>
+<li>Spark SQL can be used with the Hive metastore.</li>
+<li>HiveQL can run on the Spark execution engine.</li>
+<li>Apache Drill provides the ability to leverage the metadata in the Hive metastore for querying.</li>
+<li>Hive can run on Tez, allowing queries to run significantly faster.</li>
+<li>Impala leverages HiveQL and metastore to bring interactive SQL to Hadoop.</li>
+</ul></li>
+<li>Provides ease of use and compatibility with existing business applications through JDBC/ODBC.</li>
+<li>Users are able to connect with Hive using a command-line tool and a JDBC driver.</li>
+</ul>
+<p><img width=600 src="/datadocs/assets/4.jpg"/>
+<center><a href="http://www.bigintellects.com/2018/08/hive-tutorial-hive-architecture-and.html" style="color: lightgrey">Credit</a></center></p>
+<ul>
+<li>Limitations:
+<ul>
+<li>Hive is best suited for batch jobs, rather than working with web log data and append-only data.</li>
+<li>High latency: No fit for online transaction processing (OLTP) systems.</li>
+</ul></li>
+<li>Among highlights in release 3.0 in 2018 were support for ACID operations. Work also began on materialized views and automatic query rewriting capabilities familiar to traditional data warehouse users.</li>
+<li><a href="https://hortonworks.com/tutorial/how-to-process-data-with-apache-hive/">How to Process Data with Apache Hive</a></li>
+</ul>
+<pre><code class="hljs css language-sql"><span class="hljs-comment">-- Example: Find the most popular movie</span>
+
+<span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">VIEW</span> <span class="hljs-keyword">IF</span> <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">EXISTS</span> topMovieIDs <span class="hljs-keyword">AS</span>
+<span class="hljs-keyword">SELECT</span> movieID, <span class="hljs-keyword">count</span>(movieID) <span class="hljs-keyword">as</span> ratingCount
+<span class="hljs-keyword">FROM</span> ratings
+<span class="hljs-keyword">GROUP</span> <span class="hljs-keyword">BY</span> movieID
+<span class="hljs-keyword">ORDER</span> <span class="hljs-keyword">BY</span> ratingCount <span class="hljs-keyword">DESC</span>;
+
+<span class="hljs-keyword">SELECT</span> n.title, ratingCount
+<span class="hljs-keyword">FROM</span> topMovieIDs t <span class="hljs-keyword">JOIN</span> <span class="hljs-keyword">names</span> n <span class="hljs-keyword">ON</span> t.movieID = n.movieID;
+</code></pre>
+<h4><a class="anchor" aria-hidden="true" id="compared-to-apache-impala"></a><a href="#compared-to-apache-impala" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Compared to Apache Impala</h4>
+<ul>
+<li><a href="https://impala.apache.org">Apache Impala</a> is a massively parallel SQL engine on Hadoop.
+<ul>
+<li>It's Cloudera's alternative to Hive.</li>
+<li>Consider using Impala instead of Hive if you're using Cloudera.</li>
+</ul></li>
+<li>It's often faster than Hive, but Hive offers more versatility and connectivity.</li>
+<li>Impala's always running thus avoiding start-up costs.</li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="apache-pig"></a><a href="#apache-pig" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Apache Pig</h2>
+<p><center><img width=150 src="/datadocs/assets/pig-image.png"/></center></p>
+<ul>
+<li>Pig is an abstraction built on top of MapReduce for rapid iteration and easy development.
+<ul>
+<li>Can be run in local mode for small datasets.</li>
+<li>Can be run on top of TEZ (up to 10x faster)</li>
+</ul></li>
+<li>Pig consists of two components:
+<ul>
+<li>Pig Latin, which is a language.</li>
+<li>A runtime environment, for running Pig Latin programs.</li>
+</ul></li>
+<li>Data transformations are explicitly encoded as data flow sequences, making them easy to write, understand, and maintain.</li>
+<li>Both, logical and physical plans are created to execute the Pig script.</li>
+<li>Pig is highly-extensible with user-defined functions (UDFs)</li>
+</ul>
+<pre><code class="hljs css language-pig"><span class="hljs-comment">-- Example: Find old 5-star movies</span>
+
+<span class="hljs-comment">-- Load relations</span>
+ratings              = <span class="hljs-keyword">LOAD</span> <span class="hljs-string">'/user/maria_dev/ml-100k/u.data'</span> <span class="hljs-keyword">AS</span> (userID:<span class="hljs-type">int</span>, movieID:<span class="hljs-type">int</span>, rating:<span class="hljs-type">int</span>, ratingTime:<span class="hljs-type">int</span>);
+metadata             = <span class="hljs-keyword">LOAD</span> <span class="hljs-string">'/user/maria_dev/ml-100k/u.item'</span> <span class="hljs-keyword">USING</span> PigStorage(<span class="hljs-string">'|'</span>) <span class="hljs-keyword">AS</span> (movieID:<span class="hljs-type">int</span>, movieTitle:chararray, releaseDate:chararray, videoRelease:chararray, imdbLink:chararray);
+
+<span class="hljs-comment">-- Get the average rating of each movie, filter, and order by the release date</span>
+nameLookup           = <span class="hljs-keyword">FOREACH</span> metadata GENERATE movieID, movieTitle, ToUnixTime(ToDate(releaseDate, <span class="hljs-string">'dd-MMM-yyyy'</span>)) <span class="hljs-keyword">AS</span> releaseTime;
+ratingsByMovie       = <span class="hljs-keyword">GROUP</span> ratings <span class="hljs-keyword">BY</span> movieID;
+avgRatings           = <span class="hljs-keyword">FOREACH</span> ratingsByMovie GENERATE <span class="hljs-keyword">group</span> <span class="hljs-keyword">AS</span> movieID, AVG(ratings.rating) <span class="hljs-keyword">AS</span> avgRating;
+fiveStarMovies       = <span class="hljs-keyword">FILTER</span> avgRatings <span class="hljs-keyword">BY</span> avgRating &gt; <span class="hljs-number">4.0</span>;
+fiveStarsWithData    = <span class="hljs-keyword">JOIN</span> fiveStarMovies <span class="hljs-keyword">BY</span> movieID, nameLookup <span class="hljs-keyword">BY</span> movieID;
+oldestFiveStarMovies = <span class="hljs-keyword">ORDER</span> fiveStarsWithData <span class="hljs-keyword">BY</span> nameLookup::releaseTime;
+
+DUMP oldestFiveStarMovies;
+</code></pre>
+<h4><a class="anchor" aria-hidden="true" id="compared-to-hive"></a><a href="#compared-to-hive" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Compared to Hive</h4>
+<ul>
+<li>Main focus of Pig is on bringing data into Apache Hadoop and getting it into the form for querying.</li>
+<li>Both Pig and Hive are feature complete.</li>
+<li>Hive is used more by researchers and programmers.</li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="distributed-query-engines"></a><a href="#distributed-query-engines" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Distributed query engines</h2>
+<h3><a class="anchor" aria-hidden="true" id="apache-drill"></a><a href="#apache-drill" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Apache Drill</h3>
+<p><center><img width=250 src="/datadocs/assets/1200px-Apache_Drill_logo.svg.png"/></center></p>
+<ul>
+<li><a href="https://drill.apache.org">Apache Drill</a> is a schema-free SQL Query Engine for Hadoop, NoSQL and Cloud Storage.
+<ul>
+<li>Drill is the open source version of Google's Dremel.</li>
+<li>Extremely user and developer friendly.</li>
+</ul></li>
+<li>Designed to scale to several thousands of nodes and query petabytes of data interactively.
+<ul>
+<li>Not tied to Hadoop and can run in any distributed cluster environment.</li>
+</ul></li>
+<li>Allows analysis of multi-structured and nested data in non-relational data stores.
+<ul>
+<li>Supports a variety of NoSQL databases and file systems, including HBase, MongoDB, MapR-DB, HDFS, MapR-FS, Amazon S3, Azure Blob Storage, Google Cloud Storage, Swift, NAS and local files.</li>
+<li>One can join a user profile collection in MongoDB with a directory of event logs in Hadoop.</li>
+<li>A new datastore can be added by developing a storage plugin.</li>
+</ul></li>
+<li>Integrates desperate data sources without data loading, schema creation, and transformations.</li>
+<li>Leverages advanced query compilation and re-compilation techniques to maximize performance.</li>
+<li>Internally data is represented as JSON to enable queries on complex/nested data.
+<ul>
+<li>Schema-free JSON document model similar to MongoDB and Elasticsearch.</li>
+<li>Drill operators are designed to reconfigure themselves when schemas change.</li>
+<li>Does not have a centralized metadata requirement.</li>
+<li>One can use SQL DDL statements to create metadata within Drill.</li>
+</ul></li>
+<li>Features an in-memory shredded columnar representation for complex data.</li>
+<li>Supports ANSI SQL, ODBC/JDBC, RESTful APIs.
+<ul>
+<li>Also supports dynamic UDFs.</li>
+</ul></li>
+<li><a href="https://drill.apache.org/docs/architecture-introduction/">Architecture Introduction</a></li>
+</ul>
+<pre><code class="hljs css language-sql"><span class="hljs-comment">-- Example: Joining tables from Hive and MongoDB</span>
+
+<span class="hljs-keyword">SELECT</span> u.occupation, <span class="hljs-keyword">COUNT</span>(*)
+<span class="hljs-keyword">FROM</span> hive.movielens.ratings r <span class="hljs-keyword">JOIN</span> mongo.movielens.users u <span class="hljs-keyword">ON</span> r.user_id = u.user_id
+<span class="hljs-keyword">GROUP</span> <span class="hljs-keyword">BY</span> u.occupation;
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="apache-phoenix"></a><a href="#apache-phoenix" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Apache Phoenix</h3>
+<p><center><img width=200 src="/datadocs/assets/phoenix-logo-small.png"/></center></p>
+<ul>
+<li><a href="https://phoenix.apache.org">Apache Phoenix</a> is an open source, massively parallel, relational database engine supporting OLTP for Hadoop using Apache HBase as its backing store.</li>
+<li>Originally developed by Salesforce, then open-sourced.</li>
+<li>Offers flexibility of late-bound, schema-on-read capabilities from the NoSQL world.</li>
+<li>Supports SQL and JDBC APIs with full ACID transaction capabilities.
+<ul>
+<li>Compiles SQL queries and other statements into native HBase APIs.</li>
+<li>Supports secondary indexes and UDFs.</li>
+<li>Integrates with MapReduce, Spark, Hive, Pig, and Flume.</li>
+</ul></li>
+<li>Why Phoenix and not HBase's native APIs?
+<ul>
+<li>Apps and analysts may find SQL easier to work with.</li>
+<li>Can do the work of optimizing more complex queries.</li>
+</ul></li>
+</ul>
+<pre><code class="hljs css language-sql"><span class="hljs-comment">-- Example: Populating HBase with Phoenix</span>
+
+<span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> <span class="hljs-keyword">IF</span> <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">EXISTS</span> us_population(
+    state <span class="hljs-built_in">CHAR</span>(<span class="hljs-number">2</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>,
+    city <span class="hljs-built_in">VARCHAR</span> <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>,
+    population <span class="hljs-built_in">BIGINT</span>,
+    <span class="hljs-keyword">CONSTRAINT</span> my_pk PRIMARY <span class="hljs-keyword">KEY</span>(state, city)
+);
+UPSERT INTO us_population <span class="hljs-keyword">VALUES</span> (<span class="hljs-string">'NY'</span>, <span class="hljs-string">'New York'</span>, <span class="hljs-number">8143197</span>);
+UPSERT INTO us_population <span class="hljs-keyword">VALUES</span> (<span class="hljs-string">'CA'</span>, <span class="hljs-string">'Los Angeles'</span>, <span class="hljs-number">3844829</span>);
+<span class="hljs-keyword">SELECT</span> * <span class="hljs-keyword">FROM</span> us_population <span class="hljs-keyword">WHERE</span> state = <span class="hljs-string">'CA'</span>;
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="presto"></a><a href="#presto" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Presto</h3>
+<p><center><img width=150 src="/datadocs/assets/presto-og.png"/></center></p>
+<ul>
+<li><a href="https://prestosql.io">Presto</a> is a distributed SQL query engine optimized for ad-hoc analysis at interactive speed.</li>
+<li>Allows users to query a variety of heterogeneous data sources:
+<ul>
+<li>Optimized for both on-premise and cloud environments.</li>
+<li>Can natively query data in Hadoop, S3, Cassandra, MySQL, and many others.</li>
+<li>A single Presto query can combine data from multiple sources.</li>
+<li>For example, join historic log data in S3 with real-time customer data in MySQL.</li>
+</ul></li>
+<li>Was originally designed and developed at Facebook for their data analysts to run interactive queries.
+<ul>
+<li>Presto was invented to fill the gap of Hive to run fast queries on petabyte DWH.</li>
+<li>PrestoDB is maintained by Facebook, while PrestoSQL is maintained by the Software Foundation.</li>
+<li>Facebook, Dropbox, and more use Presto for their huge bid data complex analytics.</li>
+</ul></li>
+</ul>
+<blockquote>
+<p>Facebook uses Presto for interactive queries against several internal data stores, including their 300PB data warehouse. Over 1,000 Facebook employees use Presto daily to run more than 30,000 queries that in total scan over a petabyte each per day.</p>
+</blockquote>
+<ul>
+<li>Supports standard ANSI SQL, including complex queries, aggregations, joins, and window functions.</li>
+<li>Similar to a classic database management system using cluster computing (MPP).
+<ul>
+<li>Optimized for OLAP - data warehousing and analytic. Was not designed for OLTP.</li>
+<li>Used for for critical business operations.</li>
+<li>Built with Java - for faster development.</li>
+</ul></li>
+<li>Exposes JDBC/ODBC, command-line, and industry BI interfaces.</li>
+<li>Presto provides a (sexy) web interface for monitoring and managing queries.</li>
+</ul>
+<p><img width=700 src="/datadocs/assets/1*A1x1lzEtI5SUkUjn_hjCWw.png"/>
+<center><a href="https://medium.com/walmartlabs/exploring-presto-and-zeppelin-for-fast-data-analytics-and-visualization-9cb4dca91c3d" style="color: lightgrey">Credit</a></center></p>
+<ul>
+<li>As compared to Hive:
+<ul>
+<li>Presto is an alternative to tools that query HDFS using pipelines of MapReduce jobs.</li>
+<li>Uses a more custom engine designed to support SQL semantics.</li>
+<li>Does not write intermediate results to disk.</li>
+</ul></li>
+<li>As compared to Apache Drill:
+<ul>
+<li>Comes up with more support and technologies (e.g. Cassandra)</li>
+<li>Requires a schema to query data.</li>
+<li>Requires a more complex configuration.</li>
+</ul></li>
+<li>As compared to Apache Spark:
+<ul>
+<li>Spark and Spark SQL have a greater and more mature ecosystem, more features, and used by many more organizations with more diverse requirements.</li>
+<li><a href="https://www.quora.com/What-is-the-difference-between-Spark-and-Presto">What is the difference between Spark and Presto?</a></li>
+</ul></li>
+<li><a href="https://prestosql.io/docs/current/overview/concepts.html">1.2. Presto Concepts</a></li>
+</ul>
+<pre><code class="hljs css language-sql"><span class="hljs-comment">-- Example: Joining tables from Hive and Cassandra</span>
+
+<span class="hljs-keyword">SELECT</span> u.occupation, <span class="hljs-keyword">COUNT</span>(*)
+<span class="hljs-keyword">FROM</span> hive.movielens.ratings r <span class="hljs-keyword">JOIN</span> cassandra.movielens.users u <span class="hljs-keyword">ON</span> r.user_id = u.user_id
+<span class="hljs-keyword">GROUP</span> <span class="hljs-keyword">BY</span> u.occupation;
+</code></pre>
+</span></div></article></div><div class="docLastUpdate"><em>Last updated on 2019-9-3 by Oleg Polakow</em></div><div class="docs-prevnext"><a class="docs-prev button" href="/datadocs/docs/big-data/data-processing"><span class="arrow-prev">← </span><span>Data Processing</span></a><a class="docs-next button" href="/datadocs/docs/big-data/cluster-management"><span>Cluster Management</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#apache-hive">Apache Hive</a></li><li><a href="#apache-pig">Apache Pig</a></li><li><a href="#distributed-query-engines">Distributed query engines</a><ul class="toc-headings"><li><a href="#apache-drill">Apache Drill</a></li><li><a href="#apache-phoenix">Apache Phoenix</a></li><li><a href="#presto">Presto</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><div class="brand-box"><div class="brand"><a href="https://www.tum.de/nc/en/" target="_blank" rel="noreferrer noopener" class="brand-link"><img src="/datadocs/img/tum_logo.png" alt="Technical University of Munich" height="45"/></a></div><div class="brand"><a href="https://opensource.facebook.com/" target="_blank" rel="noreferrer noopener" class="brand-link"><img src="/datadocs/img/oss_logo.png" alt="Facebook Open Source" width="170" height="45"/></a></div></div><section class="copyright">Copyright © 2019 Oleg Polakow</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
+                document.addEventListener('keyup', function(e) {
+                  if (e.target !== document.body) {
+                    return;
+                  }
+                  // keyCode for '/' (slash)
+                  if (e.keyCode === 191) {
+                    const search = document.getElementById('search_input_react');
+                    search && search.focus();
+                  }
+                });
+              </script><script>
+              var search = docsearch({
+                
+                apiKey: '6642fca03d716a543ac4428d7d20b842',
+                indexName: 'polakowo-datadocs',
+                inputSelector: '#search_input_react',
+                algoliaOptions: {}
+              });
+            </script></body></html>

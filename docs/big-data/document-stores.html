@@ -1,0 +1,276 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Document Stores · datadocs</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="- Document stores are designed for storing, retrieving and managing semi-structured data."/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Document Stores · datadocs"/><meta property="og:type" content="website"/><meta property="og:url" content="https://polakowo.github.io/datadocs/"/><meta property="og:description" content="- Document stores are designed for storing, retrieving and managing semi-structured data."/><meta property="og:image" content="https://polakowo.github.io/datadocs/img/undraw_online.svg"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://polakowo.github.io/datadocs/img/undraw_tweetstorm.svg"/><link rel="shortcut icon" href="/datadocs/img/favicon.ico"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-142521178-1"></script><script>
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments); }
+              gtag('js', new Date());
+              gtag('config', 'UA-142521178-1');
+            </script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script><script type="text/javascript" src="/datadocs/js/code-block-buttons.js"></script><script type="text/javascript" src="/datadocs/js/disqus.js"></script><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script src="/datadocs/js/scrollSpy.js"></script><link rel="stylesheet" href="/datadocs/css/prism.css"/><link rel="stylesheet" href="/datadocs/css/main.css"/><script src="/datadocs/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/datadocs/"><img class="logo" src="/datadocs/img/headerIcon.ico" alt="datadocs"/><h2 class="headerTitleWithLogo">datadocs</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/datadocs/docs/machine-learning/linear-models" target="_self">Docs</a></li><li class=""><a href="https://github.com/polakowo/datadocs" target="_self">GitHub</a></li><li class="navSearchWrapper reactNavSearchWrapper"><input type="text" id="search_input_react" placeholder="Search" title="Search"/></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Databases</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Machine Learning<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">General</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/machine-learning">Machine Learning</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Methods</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/linear-models">Linear Models</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/tree-based-models">Tree-Based Models</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/ensemble-methods">Ensemble Methods</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Features</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/eda">Exploratory Data Analysis</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/feature-engineering">Feature Engineering</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/advanced-features">Advanced Features</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Optimization</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/metric-optimization">Metric Optimization</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/validation-schemes">Validation Schemes</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/hyperopt">Hyperparameter Optimization</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Competitions</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/competitive-ml">Competitive Machine Learning</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/data-leakages">Data Leakages</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Deep Learning<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">General</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/deep-learning">Deep Learning</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/dl-strategy">Deep Learning Strategy</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Fundamentals</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/backpropagation">Backpropagation</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/activation-functions">Activation Functions</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/initialization">Initialization</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/optimization">Optimization</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/regularization">Regularization</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Computer Vision</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/cnns">Convolutional Neural Networks</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/cnn-architectures">CNN Architectures</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/object-detection">Object Detection</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/face-recognition">Face Recognition</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/nst">Neural Style Transfer</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Natural Language Processing</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/rnns">Recurrect Neural Networks</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/word-embeddings">Word Embeddings</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/nmt">Neural Machine Translation</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/attention-mechanism">Attention Mechanism</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/speech-recognition">Speech Recognition</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Big Data<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">General</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/data-engineering">Data Engineering</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/cloud-computing">Cloud Computing</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/data-warehouses">Data Warehouses</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/data-lakes">Data Lakes</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/data-pipelines">Data Pipelines</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Databases</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/database-design">Database Design</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/sql-databases">SQL Databases</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/wide-column-stores">Wide Column Stores</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/key-value-stores">Key Value Stores</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/datadocs/docs/big-data/document-stores">Document Stores</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/graph-stores">Graph Stores</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Hadoop</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/hadoop">Hadoop Ecosystem</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/data-ingestion">Data Ingestion</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/data-storage">Data Storage</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/data-processing">Data Processing</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/query-engines">Query Engines</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/cluster-management">Cluster Management</a></li></ul></div></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://github.com/polakowo/datadocs/edit/master/docs/big-data/document-stores.md" target="_blank" rel="noreferrer noopener">Edit</a><h1 class="postHeaderTitle">Document Stores</h1></header><article><div><span><ul>
+<li>Document stores are designed for storing, retrieving and managing semi-structured data.</li>
+<li>Store all information for a given object in a single instance in the database (= document)</li>
+<li>Documents are inherently a subclass of the key-value store.
+<ul>
+<li>The values in a key-value store are black boxes.</li>
+<li>The values in a document store are transparent and organized.</li>
+<li>This provides an ability to query based on the internal structure of the document.</li>
+</ul></li>
+<li>Documents are equivalent to the programming concept of an object.
+<ul>
+<li>Can be encoded with XML, YAML, JSON, BSON, and more.</li>
+<li>Enable developers to use the same format they use in their application code.</li>
+</ul></li>
+</ul>
+<p><center><img width=500 src="/datadocs/assets/mongobeans_screenshot.png"/></center>
+<center><a href="http://pingax.com/mongodb-schema-design/" style="color: lightgrey">Credit</a></center></p>
+<ul>
+<li>Support CRUD operations:
+<ul>
+<li>Documents are addressed in the database via a (indexed) unique key.</li>
+<li>Enable retrieving documents based on content, not only keys.</li>
+</ul></li>
+<li>Schema-free organization of data:
+<ul>
+<li>Documents are flexible, semistructured, and have a hierarchical nature.</li>
+<li>Any sort of document can be stored, and those documents can change in form at any time.</li>
+<li>No schema update is required and no database downtime is necessary.</li>
+<li>Ability to add additional metadata outside of the content of the document.</li>
+</ul></li>
+<li>Enable flexible indexing, powerful ad hoc queries, and analytics over collections of documents.</li>
+<li>Uses cases:
+<ul>
+<li>Where documents evolve over time (catalogs, user profiles, content management)</li>
+<li>When prototyping (web apps)</li>
+</ul></li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="mongodb"></a><a href="#mongodb" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>MongoDB</h2>
+<p><center><img width=250 src="/datadocs/assets/mongodb-logo-rgb-j6w271g1xn.jpg"/></center></p>
+<ul>
+<li>MongoDB is an open-source, NoSQL database that provides support for JSON-like storage systems.</li>
+<li>MongoDB is available under General Public license for free.
+<ul>
+<li>Also available under Commercial license from the manufacturer.</li>
+</ul></li>
+<li>Supports a flexible data model for storing data of any structure:
+<ul>
+<li>For example, hierarchical relationships, arrays, and other complex structures.</li>
+<li>BSON format adds support for data types like date that aren’t supported in JSON.</li>
+</ul></li>
+<li>Provides high-performance data persistence.</li>
+<li>Indexes are created to improve the performance of searches.
+<ul>
+<li>Supports primary and secondary indexes for faster queries.</li>
+<li>They support faster queries and can include keys from embedded documents and arrays.</li>
+</ul></li>
+<li>Ad hoc queries:
+<ul>
+<li>Supports a rich query language to support CRUD operations (like SQL)</li>
+<li>Supports field, range queries, regular expression searches.</li>
+<li>Provides a framework for data aggregation modeled on the concept of MapReduce.</li>
+<li>Supports query operations that perform a text search of string content.</li>
+<li>Allows for geospatial indexing to efficiently execute spatial queries.</li>
+</ul></li>
+<li>Replica set (group of servers) provides automatic failover and data redundancy:
+<ul>
+<li>The primary replica interacts with the client and performs CRUD operations.</li>
+<li>The secondary replicas maintain a copy of the data of the primary replica.</li>
+<li>This is one of the major key features that make MongoDB production-ready.</li>
+</ul></li>
+<li>Uses the concept of sharding to scale horizontally:
+<ul>
+<li>Sharding distributes data across a cluster of machines.</li>
+<li>Load balancing: Supports creating zones of data based on the shard key.</li>
+</ul></li>
+<li>Multiple clients can read and write the same data and it has locking feature to ensure concurrency.</li>
+<li>Uses internal memory for storing the (windowed) working set, enabling faster access of data.</li>
+<li>Supports multiple storage engines.</li>
+<li>Has BI connector for SQL tools.</li>
+<li>Atlas Data Lake allows users to query data, using the MongoDB Query Language, on AWS S3, no matter their format, including JSON, BSON, CSV, TSV, Parquet and Avro.</li>
+<li><a href="https://www.mongodb.com">The database for modern applications</a></li>
+<li><a href="https://www.mongodb.com/collateral/mongodb-architecture-guide">MongoDB Architecture Guide</a></li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="data-modeling"></a><a href="#data-modeling" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Data modeling</h3>
+<ul>
+<li>Documents (i.e. objects) correspond to native data types in many programming languages.</li>
+<li>Documents are stored in collections:
+<ul>
+<li>Collections are analogous to tables in relational databases.</li>
+<li>But they do not enforce any document structure.</li>
+</ul></li>
+<li>Data modeling should be done based data retrieval patterns.
+<ul>
+<li>For example, heavy query usage benefits from the use of indexes.</li>
+</ul></li>
+<li>A write operation is atomic on the level of a single document, even with embedded documents.
+<ul>
+<li>Operation on multiple documents is not atomic though.</li>
+<li>But latest version supports multi-document ACID transactions.</li>
+</ul></li>
+<li>Dynamic schema supports fluent polymorphism.
+<ul>
+<li>To make schema stricter, define validation rules (on a per-collection basis)</li>
+</ul></li>
+<li>Design your database in a way that the most common queries can be satisfied by querying a single collection, even when this means that you will have some redundancy in your database.</li>
+<li><a href="https://docs.mongodb.com/manual/core/data-modeling-introduction/">Data Modeling Introduction</a></li>
+<li><a href="https://www.mongodb.com/blog/post/6-rules-of-thumb-for-mongodb-schema-design-part-1">6 Rules of Thumb for MongoDB Schema Design: Part 1</a></li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="denormalization-embedding"></a><a href="#denormalization-embedding" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Denormalization (embedding)</h4>
+<ul>
+<li>Denormalization will make data reading efficient.
+<ul>
+<li>Combines all related data in a single document.</li>
+<li>Allows to avoid application-level joins at the expense of more complex and expensive updates.</li>
+</ul></li>
+<li>The core design principle is &quot;embedded&quot; means &quot;already there&quot; as opposed to &quot;fetching from somewhere else&quot;</li>
+<li>Use cases:
+<ul>
+<li>“Contains” and one-to-many relationships between entities.</li>
+<li>Data that is embedded does generally not require frequent changes.</li>
+<li>The user could live with &quot;duplication&quot; in favor of faster reads.</li>
+<li>Related data is frequently used in association with the parent.</li>
+</ul></li>
+<li>Pros:
+<ul>
+<li>Embedded documents and arrays reduce need for expensive joins.</li>
+<li>Provides better performance for read operations.</li>
+<li>Makes possible updating related data in a single atomic write operation.</li>
+</ul></li>
+<li>Cons:
+<ul>
+<li>May cause data inconsistency.</li>
+<li>Documents must be smaller than 16MB.</li>
+</ul></li>
+</ul>
+<pre><code class="hljs css language-js"><span class="hljs-comment">// Example: Denormalized documents</span>
+
+<span class="hljs-comment">// persons</span>
+{
+    <span class="hljs-attr">_id</span>: ObjectID(<span class="hljs-string">"AAF1"</span>),
+    <span class="hljs-attr">name</span>: <span class="hljs-string">"Kate Monster"</span>,
+    <span class="hljs-attr">addresses</span>: [
+        { <span class="hljs-attr">street</span>: <span class="hljs-string">'123 Sesame St'</span>, <span class="hljs-attr">city</span>: <span class="hljs-string">'Anytown'</span>, <span class="hljs-attr">cc</span>: <span class="hljs-string">'USA'</span> }, 
+        { <span class="hljs-attr">street</span>: <span class="hljs-string">'123 Avenue Q'</span>, <span class="hljs-attr">city</span>: <span class="hljs-string">'New York'</span>, <span class="hljs-attr">cc</span>: <span class="hljs-string">'USA'</span> }
+    ]
+}
+</code></pre>
+<h4><a class="anchor" aria-hidden="true" id="normalization-referencing"></a><a href="#normalization-referencing" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Normalization (referencing)</h4>
+<ul>
+<li>Normalization will provide an update efficient data representation.
+<ul>
+<li>References store the relationships between data by including links or references.</li>
+<li>Applications can resolve these references to access the related data.</li>
+</ul></li>
+<li>To join collections, MongoDB has <code>$lookup</code> and Mongoose's <code>populate()</code> functionality.
+<ul>
+<li>But there is no single round trip to the database anymore to retrieve the data.</li>
+</ul></li>
+<li>Use cases:
+<ul>
+<li>When embedding would result in duplication of data.</li>
+<li>Many-to-many relationships between entities.</li>
+<li>Modeling large hierarchical data structures.</li>
+<li>There is a clear separation of reads and writes.</li>
+<li>Related data needs regular updating.</li>
+<li>The related data is going to exceed the 16MB BSON limit.</li>
+</ul></li>
+<li>Pros:
+<ul>
+<li>Makes data compact, easy to store and easy to achieve consistency.</li>
+</ul></li>
+<li>Cons:
+<ul>
+<li>JOINs between tables are not as cheap as in RDBMS.</li>
+<li>Hard to scale horizontally.</li>
+</ul></li>
+<li><a href="https://stackoverflow.com/questions/24096546/mongoose-populate-vs-object-nesting#answer-24096822">Mongoose populate vs object nesting</a></li>
+</ul>
+<pre><code class="hljs css language-js"><span class="hljs-comment">// Example: Normalized documents</span>
+
+<span class="hljs-comment">// persons</span>
+{
+    <span class="hljs-attr">_id</span>: ObjectID(<span class="hljs-string">"AAF1"</span>),
+    <span class="hljs-attr">name</span>: <span class="hljs-string">"Kate Monster"</span>,
+    <span class="hljs-attr">tasks</span>: [
+        ObjectID(<span class="hljs-string">"ADF9"</span>), 
+        ObjectID(<span class="hljs-string">"AE02"</span>)
+    ]
+}
+<span class="hljs-comment">// tasks</span>
+[
+    { <span class="hljs-attr">_id</span>: ObjectID(<span class="hljs-string">"ADF9"</span>), <span class="hljs-attr">street</span>: <span class="hljs-string">'123 Sesame St'</span>, <span class="hljs-attr">city</span>: <span class="hljs-string">'Anytown'</span>, <span class="hljs-attr">cc</span>: <span class="hljs-string">'USA'</span> }, 
+    { <span class="hljs-attr">_id</span>: ObjectID(<span class="hljs-string">"AE02"</span>), <span class="hljs-attr">street</span>: <span class="hljs-string">'123 Avenue Q'</span>, <span class="hljs-attr">city</span>: <span class="hljs-string">'New York'</span>, <span class="hljs-attr">cc</span>: <span class="hljs-string">'USA'</span> }
+]
+</code></pre>
+</span></div></article></div><div class="docLastUpdate"><em>Last updated on 2019-8-21 by Oleg Polakow</em></div><div class="docs-prevnext"><a class="docs-prev button" href="/datadocs/docs/big-data/key-value-stores"><span class="arrow-prev">← </span><span>Key Value Stores</span></a><a class="docs-next button" href="/datadocs/docs/big-data/graph-stores"><span>Graph Stores</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#mongodb">MongoDB</a><ul class="toc-headings"><li><a href="#data-modeling">Data modeling</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><div class="brand-box"><div class="brand"><a href="https://www.tum.de/nc/en/" target="_blank" rel="noreferrer noopener" class="brand-link"><img src="/datadocs/img/tum_logo.png" alt="Technical University of Munich" height="45"/></a></div><div class="brand"><a href="https://opensource.facebook.com/" target="_blank" rel="noreferrer noopener" class="brand-link"><img src="/datadocs/img/oss_logo.png" alt="Facebook Open Source" width="170" height="45"/></a></div></div><section class="copyright">Copyright © 2019 Oleg Polakow</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
+                document.addEventListener('keyup', function(e) {
+                  if (e.target !== document.body) {
+                    return;
+                  }
+                  // keyCode for '/' (slash)
+                  if (e.keyCode === 191) {
+                    const search = document.getElementById('search_input_react');
+                    search && search.focus();
+                  }
+                });
+              </script><script>
+              var search = docsearch({
+                
+                apiKey: '6642fca03d716a543ac4428d7d20b842',
+                indexName: 'polakowo-datadocs',
+                inputSelector: '#search_input_react',
+                algoliaOptions: {}
+              });
+            </script></body></html>

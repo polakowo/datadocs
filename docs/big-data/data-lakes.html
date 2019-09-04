@@ -1,0 +1,298 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Data Lakes · datadocs</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="&lt;center&gt;&lt;img width=250 src=&quot;/datadocs/assets/datalake_embed_0.jpg&quot;/&gt;&lt;/center&gt;"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Data Lakes · datadocs"/><meta property="og:type" content="website"/><meta property="og:url" content="https://polakowo.github.io/datadocs/"/><meta property="og:description" content="&lt;center&gt;&lt;img width=250 src=&quot;/datadocs/assets/datalake_embed_0.jpg&quot;/&gt;&lt;/center&gt;"/><meta property="og:image" content="https://polakowo.github.io/datadocs/img/undraw_online.svg"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://polakowo.github.io/datadocs/img/undraw_tweetstorm.svg"/><link rel="shortcut icon" href="/datadocs/img/favicon.ico"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-142521178-1"></script><script>
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments); }
+              gtag('js', new Date());
+              gtag('config', 'UA-142521178-1');
+            </script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script><script type="text/javascript" src="/datadocs/js/code-block-buttons.js"></script><script type="text/javascript" src="/datadocs/js/disqus.js"></script><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script src="/datadocs/js/scrollSpy.js"></script><link rel="stylesheet" href="/datadocs/css/prism.css"/><link rel="stylesheet" href="/datadocs/css/main.css"/><script src="/datadocs/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/datadocs/"><img class="logo" src="/datadocs/img/headerIcon.ico" alt="datadocs"/><h2 class="headerTitleWithLogo">datadocs</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/datadocs/docs/machine-learning/linear-models" target="_self">Docs</a></li><li class=""><a href="https://github.com/polakowo/datadocs" target="_self">GitHub</a></li><li class="navSearchWrapper reactNavSearchWrapper"><input type="text" id="search_input_react" placeholder="Search" title="Search"/></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>General</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Machine Learning<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">General</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/machine-learning">Machine Learning</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Methods</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/linear-models">Linear Models</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/tree-based-models">Tree-Based Models</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/ensemble-methods">Ensemble Methods</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Features</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/eda">Exploratory Data Analysis</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/feature-engineering">Feature Engineering</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/advanced-features">Advanced Features</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Optimization</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/metric-optimization">Metric Optimization</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/validation-schemes">Validation Schemes</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/hyperopt">Hyperparameter Optimization</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Competitions</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/competitive-ml">Competitive Machine Learning</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/data-leakages">Data Leakages</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Deep Learning<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">General</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/deep-learning">Deep Learning</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/dl-strategy">Deep Learning Strategy</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Fundamentals</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/backpropagation">Backpropagation</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/activation-functions">Activation Functions</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/initialization">Initialization</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/optimization">Optimization</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/regularization">Regularization</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Computer Vision</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/cnns">Convolutional Neural Networks</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/cnn-architectures">CNN Architectures</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/object-detection">Object Detection</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/face-recognition">Face Recognition</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/nst">Neural Style Transfer</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Natural Language Processing</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/rnns">Recurrect Neural Networks</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/word-embeddings">Word Embeddings</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/nmt">Neural Machine Translation</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/attention-mechanism">Attention Mechanism</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/speech-recognition">Speech Recognition</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Big Data<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">General</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/data-engineering">Data Engineering</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/cloud-computing">Cloud Computing</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/data-warehouses">Data Warehouses</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/datadocs/docs/big-data/data-lakes">Data Lakes</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/data-pipelines">Data Pipelines</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Databases</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/database-design">Database Design</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/sql-databases">SQL Databases</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/wide-column-stores">Wide Column Stores</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/key-value-stores">Key Value Stores</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/document-stores">Document Stores</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/graph-stores">Graph Stores</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Hadoop</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/hadoop">Hadoop Ecosystem</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/data-ingestion">Data Ingestion</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/data-storage">Data Storage</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/data-processing">Data Processing</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/query-engines">Query Engines</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/cluster-management">Cluster Management</a></li></ul></div></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://github.com/polakowo/datadocs/edit/master/docs/big-data/data-lakes.md" target="_blank" rel="noreferrer noopener">Edit</a><h1 class="postHeaderTitle">Data Lakes</h1></header><article><div><span><p><center><img width=250 src="/datadocs/assets/datalake_embed_0.jpg"/></center>
+<center><a href="https://www.ibmbigdatahub.com/blog/providing-transactional-data-your-hadoop-and-kafka-data-lake" style="color: lightgrey">Credit</a></center></p>
+<ul>
+<li>Data warehousing is a mature field with lots of cumulative experience.
+<ul>
+<li>Dimensional modeling is extremely relevant to this day.</li>
+<li>For many organizations, data warehousing is the best way to go.</li>
+</ul></li>
+<li>A data lake shares the same goals of a DWH of supporting business insights beyond the day-to-day transactional data handling.</li>
+<li>Data lakes are the new data warehouses that evolved to cope with:
+<ul>
+<li>The variety of data formats and structuring.</li>
+<li>The agile and ad-hoc nature of data exploration needed by data scientists.</li>
+<li>The wide spectrum of data transformation needed by advanced analytics.</li>
+</ul></li>
+</ul>
+<p><center><img width=700 src="/datadocs/assets/dwh-vs-datalake.png"/></center>
+<center><a href="https://www.talend.com/resources/data-lake-vs-data-warehouse/" style="color: lightgrey">Credit</a></center></p>
+<blockquote>
+<p>Data warehouse is like a bottle of water - ”cleansed, packaged and structured for easy consumption” - while a data lake is more like a body of water in its natural state. Data flows from the streams (the source systems) to the lake. Users have access to the lake to examine, take samples or dive in.</p>
+</blockquote>
+<h4><a class="anchor" aria-hidden="true" id="reasons"></a><a href="#reasons" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Reasons</h4>
+<ul>
+<li>The abundance of unstructured data, such as text, sensor data and images.
+<ul>
+<li>DWH might still convert the data in the ETL process into a tabular format. But deciding on a particular form is a strong commitment without enough knowledge.</li>
+<li>Some data is hard to be put in a tabular format like deep JSON documents. Some data can be stored as blobs but remain useless until extraction.</li>
+<li>ML models need to access raw data in forms different from a star schema.</li>
+<li>Data analysis can also be done without a predefined schema (&quot;schema-on-read&quot;). Schema can be either inferred, or specified and upon read the data is checked against it.</li>
+</ul></li>
+<li>The rise of big data technologies, such as Apache Spark.
+<ul>
+<li>They make it easy to work with files as if they were a database.</li>
+<li>Spark can read from files, file systems, databases, all exposed through DataFrames and SQL.</li>
+<li>Schema-on-Read: Querying on the fly, no database creation, no insertions.</li>
+</ul></li>
+</ul>
+<pre><code class="hljs css language-py"><span class="hljs-comment"># Example: Schema inference</span>
+
+<span class="hljs-comment"># Name     Department years_of_experience        DOB</span>
+<span class="hljs-comment">#  Sam       Software                   5 1990-10-10</span>
+<span class="hljs-comment"># Alex Data Analytics                   3 1992-10-10</span>
+
+df = spark.read.format(<span class="hljs-string">"com.databricks.spark.csv"</span>)\
+    .option(<span class="hljs-string">"header"</span>, <span class="hljs-string">"true"</span>)\
+    .option(<span class="hljs-string">"inferSchema"</span>, <span class="hljs-string">"true"</span>)\
+    .load(path)
+df.schema
+
+<span class="hljs-comment"># root</span>
+<span class="hljs-comment"># |-- Name: string (nullable = true)</span>
+<span class="hljs-comment"># |-- Department: string (nullable = true)</span>
+<span class="hljs-comment"># |-- years_of_experience: integer (nullable = true)</span>
+<span class="hljs-comment"># |-- DOB: string (nullable = true) -&gt; suboptimally inferred type</span>
+</code></pre>
+<ul>
+<li>Unprecedented data volumes, such that of IoT and social data.</li>
+<li>New types of data analysis algorithms are gaining momentum, such as graph analytics.</li>
+<li>Emergence of new roles such as data scientist.
+<ul>
+<li>DWH tries to serve business users with a clean, consistent and performant model.</li>
+<li>But data scientists need freedom (away from single rigid data representation)</li>
+</ul></li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="issues"></a><a href="#issues" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Issues</h4>
+<ul>
+<li>Prone to being a chaotic data garbage dump.
+<ul>
+<li>Efforts are being made to put measures and practices like detailed metadata.</li>
+</ul></li>
+<li>Data governance is not easy to implement:
+<ul>
+<li>Due to the wide accessibility of cross-department data and external data of relevance.</li>
+</ul></li>
+<li>Should data lake replace, offload or work in parallel with data warehouses and marts?
+<ul>
+<li>Dimensional modeling continues to remain a valuable practice.</li>
+</ul></li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="amazon-s3"></a><a href="#amazon-s3" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Amazon S3</h2>
+<p><center><img width=300 src="/datadocs/assets/amazon-s3.png"/></center></p>
+<ul>
+<li><a href="https://aws.amazon.com/s3/">Amazon Simple Storage Service (Amazon S3)</a> is an object storage service.</li>
+<li>Gives any developer access to the same highly scalable, reliable, fast, inexpensive data storage.
+<ul>
+<li>Data is stored as objects within resources called “buckets”.</li>
+<li>Each object is identified by a unique, user-assigned key.</li>
+<li>A single object can be up to 5 terabytes in size.</li>
+<li><a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/Introduction.html">Amazon S3 Concepts</a></li>
+</ul></li>
+<li>Enables running big data analytics across S3 objects with query-in-place services on AWS.
+<ul>
+<li>Amazon Athena to query S3 data with standard SQL expressions.</li>
+<li>Amazon Redshift Spectrum to analyze data that is stored across AWS resources.</li>
+<li>Use S3 Select to retrieve subsets of object data, which improves query performance by up to 400%.</li>
+</ul></li>
+<li>Designed for 99.999999999% (11 9's) of durability and 99.99% of availability.
+<ul>
+<li>The data, once you put it into S3, it's pretty much indestructible.</li>
+<li><a href="https://node.university/courses/aws-intro/lectures/2831271">Availability, Durability and Reliability</a></li>
+</ul></li>
+<li>Features:
+<ul>
+<li>Provides management features to organize data and configure finely-tuned access controls.</li>
+<li>Supports wide range of cost-effective storage classes (based on access patterns)</li>
+<li>Provides security, compliance, and audit capabilities.</li>
+<li>Works well with AWS Lambda to log activities, define alerts, and automate workflows.</li>
+<li>Enables versioning to preserve, retrieve, and restore every version of an object.</li>
+<li>Allows using bucket names, prefixes, object tags, and S3 Inventory to categorize data.</li>
+<li>Enables deploying hybrid storage architectures (on-premise + S3)</li>
+<li><a href="https://aws.amazon.com/s3/features/?nc=sn&amp;loc=2">Amazon S3 Features</a></li>
+</ul></li>
+<li>S3 is an example of the first and the final data stores where data might be loaded.</li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="amazon-emr"></a><a href="#amazon-emr" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Amazon EMR</h2>
+<p><center><img width=200 src="/datadocs/assets/word-image.png"/></center></p>
+<ul>
+<li><a href="https://aws.amazon.com/emr/">Amazon EMR</a> is a service that uses Apache Spark and Hadoop.
+<ul>
+<li>Supports tools such as Spark, Hive, HBase, Flink, and Presto.</li>
+<li>Can run deep learning and machine learning tools such as TensorFlow.</li>
+<li>Using bootstrap actions, one can add and use case-specific tools and libraries.</li>
+</ul></li>
+<li>Offers a scalable managed service as an easier alternative to running in-house cluster computing.</li>
+<li>Features:
+<ul>
+<li>Pay-per-use: For a fraction of the cost of on-premise clusters (per-second billing)</li>
+<li>Provides fast (in minutes) and easy cluster provisioning.</li>
+<li>Elastic: Resources can be scaled out (more nodes) and scaled up (more powerful nodes)</li>
+<li>Jupyter-based EMR Notebooks for iterative development, collaboration, and data access on AWS.</li>
+<li>Tasks can be run on single-purpose short lived clusters that automatically scale.</li>
+<li>Takes care of software updates and bug fixes.</li>
+<li>Can configure Hadoop applications for High Availability.</li>
+<li>Allows for modifying Hadoop applications on the fly without re-creating the cluster.</li>
+<li><a href="https://aws.amazon.com/emr/features/?nc=sn&amp;loc=2">Amazon EMR features</a></li>
+</ul></li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="data-storage-options"></a><a href="#data-storage-options" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Data storage options</h4>
+<ul>
+<li>HDFS:
+<ul>
+<li>Once ingested, the data is stored on HDFS, processed on the cluster (query-in-place), and accessed by BI or advanced analytics tools.</li>
+<li>The EMR cluster is created once, but can grow and is not supposed to be shutdown.</li>
+</ul></li>
+<li>Amazon S3:
+<ul>
+<li>No HDFS, the data is stored on S3. Data is loaded into EMR for processing. Query/processing results are passed back into S3. Those results can be then accessed by other apps.</li>
+<li>The EMR cluster is spun on-demand, shutdown otherwise (which is cheaper)</li>
+<li>The data is easier-to-manage and more safe on S3.</li>
+<li>One can use multiple clusters to process the same data.</li>
+<li>Less performant than the 1. option because of longer load time.</li>
+</ul></li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="aws-glue"></a><a href="#aws-glue" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>AWS Glue</h2>
+<ul>
+<li><a href="https://aws.amazon.com/glue/">AWS Glue</a> is a fully managed ETL (extract, transform, and load) service.</li>
+<li>AWS Glue is serverless, so there’s no infrastructure to set up or manage.</li>
+<li>Used to build a data warehouse to organize, cleanse, validate, and format data.</li>
+<li>Makes the data available for querying with Athena and Redshift Spectrum.</li>
+<li>Consists of
+<ol>
+<li>a central metadata repository known as the AWS Glue Data Catalog,</li>
+<li>an ETL engine that automatically generates Python or Scala code, and</li>
+<li>a flexible scheduler that handles dependency resolution, job monitoring, and retries.</li>
+</ol></li>
+</ul>
+<p><center><img width=650 src="/datadocs/assets/HowItWorks-overview.png"/></center>
+<center><a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-glue.html" style="color: lightgrey">Credit</a></center></p>
+<ul>
+<li>Can process semi-structured data, such as clickstream or process logs.</li>
+<li>Discovers and catalogs metadata about data stores into a central catalog.
+<ul>
+<li>Populates the AWS Glue Data Catalog with table definitions from crawlers.</li>
+<li>Crawlers call classifier logic to infer the schema, format, and data types of the data.</li>
+<li>The catalog is a fully managed, Apache Hive Metastore compatible, metadata repository.</li>
+<li>Can be used to quickly search and discover the datasets on S3.</li>
+</ul></li>
+<li>Generates ETL scripts to transform, flatten, and enrich the data from source to target.</li>
+<li>Can trigger ETL jobs based on a schedule or event.
+<ul>
+<li>Can initiate jobs automatically to move the data into data warehouse.</li>
+<li>Triggers can be used to create a dependency flow between jobs.</li>
+</ul></li>
+<li>Gathers runtime metrics to monitor the activities of the data warehouse.
+<ul>
+<li>Handles errors and retries automatically.</li>
+<li>Scales resources, as needed.</li>
+</ul></li>
+<li><a href="https://docs.aws.amazon.com/glue/latest/dg/what-is-glue.html">What Is AWS Glue?</a></li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="amazon-athena"></a><a href="#amazon-athena" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Amazon Athena</h2>
+<p><center><img width=200 src="/datadocs/assets/QueryServiceLogsAthena1.png"/></center></p>
+<ul>
+<li><a href="https://aws.amazon.com/athena/">Amazon Athena</a> is an interactive query service to analyze data in Amazon S3 using SQL.</li>
+<li>Athena is serverless, so there is no infrastructure to manage.</li>
+<li>The technology is based on the open-source Facebook Presto or PrestoDB software.
+<ul>
+<li>See the <a href="http://docs.aws.amazon.com/athena/latest/ug/language-reference.html#functions">Facebook Presto function documentation</a> for a full list of functions.</li>
+</ul></li>
+</ul>
+<p><center><img width=100 src="/datadocs/assets/presto-og.png"/></center></p>
+<ul>
+<li>Pay by execution time, not by machine up-time.</li>
+<li>Supports many file formats such as ORC, JSON, CSV, and Parquet.
+<ul>
+<li>Hint: Compress, partition, or convert data to a Parquet format to get cost savings.</li>
+</ul></li>
+<li>Automatically executes queries in parallel to get query results in seconds, even on large datasets.</li>
+<li>Integrates out-of-the-box with AWS Glue Data Catalog.</li>
+<li>Limitations:
+<ul>
+<li>No support for user-defined functions and stored procedures.</li>
+<li>No support for Hive or Presto transactions.</li>
+<li>One query at a time and five concurrent queries for each account.</li>
+<li><a href="https://blog.openbridge.com/9-things-to-consider-when-choosing-amazon-athena-78a4d7157ff">9 Things to Consider When Choosing Amazon Athena</a></li>
+</ul></li>
+</ul>
+</span></div></article></div><div class="docLastUpdate"><em>Last updated on 2019-8-21 by Oleg Polakow</em></div><div class="docs-prevnext"><a class="docs-prev button" href="/datadocs/docs/big-data/data-warehouses"><span class="arrow-prev">← </span><span>Data Warehouses</span></a><a class="docs-next button" href="/datadocs/docs/big-data/data-pipelines"><span>Data Pipelines</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#amazon-s3">Amazon S3</a></li><li><a href="#amazon-emr">Amazon EMR</a></li><li><a href="#aws-glue">AWS Glue</a></li><li><a href="#amazon-athena">Amazon Athena</a></li></ul></nav></div><footer class="nav-footer" id="footer"><div class="brand-box"><div class="brand"><a href="https://www.tum.de/nc/en/" target="_blank" rel="noreferrer noopener" class="brand-link"><img src="/datadocs/img/tum_logo.png" alt="Technical University of Munich" height="45"/></a></div><div class="brand"><a href="https://opensource.facebook.com/" target="_blank" rel="noreferrer noopener" class="brand-link"><img src="/datadocs/img/oss_logo.png" alt="Facebook Open Source" width="170" height="45"/></a></div></div><section class="copyright">Copyright © 2019 Oleg Polakow</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
+                document.addEventListener('keyup', function(e) {
+                  if (e.target !== document.body) {
+                    return;
+                  }
+                  // keyCode for '/' (slash)
+                  if (e.keyCode === 191) {
+                    const search = document.getElementById('search_input_react');
+                    search && search.focus();
+                  }
+                });
+              </script><script>
+              var search = docsearch({
+                
+                apiKey: '6642fca03d716a543ac4428d7d20b842',
+                indexName: 'polakowo-datadocs',
+                inputSelector: '#search_input_react',
+                algoliaOptions: {}
+              });
+            </script></body></html>

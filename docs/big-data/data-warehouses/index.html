@@ -1,0 +1,638 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Data Warehouses · datadocs</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="- A data warehouse (DWH) is a centralized database system that retrieves and consolidates data from multiple applications and sources into one location for BI and other analytical activities."/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Data Warehouses · datadocs"/><meta property="og:type" content="website"/><meta property="og:url" content="https://polakowo.github.io/datadocs/"/><meta property="og:description" content="- A data warehouse (DWH) is a centralized database system that retrieves and consolidates data from multiple applications and sources into one location for BI and other analytical activities."/><meta property="og:image" content="https://polakowo.github.io/datadocs/img/undraw_online.svg"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://polakowo.github.io/datadocs/img/undraw_tweetstorm.svg"/><link rel="shortcut icon" href="/datadocs/img/favicon.ico"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-142521178-1"></script><script>
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments); }
+              gtag('js', new Date());
+              gtag('config', 'UA-142521178-1');
+            </script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script><script type="text/javascript" src="/datadocs/js/code-block-buttons.js"></script><script type="text/javascript" src="/datadocs/js/disqus.js"></script><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script src="/datadocs/js/scrollSpy.js"></script><link rel="stylesheet" href="/datadocs/css/prism.css"/><link rel="stylesheet" href="/datadocs/css/main.css"/><script src="/datadocs/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/datadocs/"><img class="logo" src="/datadocs/img/headerIcon.ico" alt="datadocs"/><h2 class="headerTitleWithLogo">datadocs</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/datadocs/docs/machine-learning/linear-models" target="_self">Docs</a></li><li class=""><a href="https://github.com/polakowo/datadocs" target="_self">GitHub</a></li><li class="navSearchWrapper reactNavSearchWrapper"><input type="text" id="search_input_react" placeholder="Search" title="Search"/></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>General</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Machine Learning<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">General</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/machine-learning">Machine Learning</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Methods</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/linear-models">Linear Models</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/tree-based-models">Tree-Based Models</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/ensemble-methods">Ensemble Methods</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Features</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/eda">Exploratory Data Analysis</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/feature-engineering">Feature Engineering</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/advanced-features">Advanced Features</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Optimization</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/metric-optimization">Metric Optimization</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/validation-schemes">Validation Schemes</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/hyperopt">Hyperparameter Optimization</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Competitions</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/competitive-ml">Competitive Machine Learning</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/data-leakages">Data Leakages</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Deep Learning<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">General</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/deep-learning">Deep Learning</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/dl-strategy">Deep Learning Strategy</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Fundamentals</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/backpropagation">Backpropagation</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/activation-functions">Activation Functions</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/initialization">Initialization</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/optimization">Optimization</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/regularization">Regularization</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Computer Vision</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/cnns">Convolutional Neural Networks</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/cnn-architectures">CNN Architectures</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/object-detection">Object Detection</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/face-recognition">Face Recognition</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/nst">Neural Style Transfer</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Natural Language Processing</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/rnns">Recurrect Neural Networks</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/word-embeddings">Word Embeddings</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/nmt">Neural Machine Translation</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/attention-mechanism">Attention Mechanism</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/speech-recognition">Speech Recognition</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Big Data<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">General</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/data-engineering">Data Engineering</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/cloud-computing">Cloud Computing</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/datadocs/docs/big-data/data-warehouses">Data Warehouses</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/data-lakes">Data Lakes</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/data-pipelines">Data Pipelines</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Databases</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/database-design">Database Design</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/sql-databases">SQL Databases</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/wide-column-stores">Wide Column Stores</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/key-value-stores">Key Value Stores</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/document-stores">Document Stores</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/graph-stores">Graph Stores</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Hadoop</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/hadoop">Hadoop Ecosystem</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/data-ingestion">Data Ingestion</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/data-storage">Data Storage</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/data-processing">Data Processing</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/query-engines">Query Engines</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/cluster-management">Cluster Management</a></li></ul></div></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://github.com/polakowo/datadocs/edit/master/docs/big-data/data-warehouses.md" target="_blank" rel="noreferrer noopener">Edit</a><h1 class="postHeaderTitle">Data Warehouses</h1></header><article><div><span><ul>
+<li>A data warehouse (DWH) is a centralized database system that retrieves and consolidates data from multiple applications and sources into one location for BI and other analytical activities.
+<ul>
+<li>Subject-oriented, integrated, non-volatile, and time-variant</li>
+</ul></li>
+<li>Use case: Queries that need to incorporate data from multiple data sources across the organization.</li>
+<li>SQL databases are not sufficient on their own:
+<ul>
+<li>Retailer has a nation-wide presence → Scale?</li>
+<li>Acquired smaller retailers, brick &amp; mortar shops, online store → Single database? Complexity?</li>
+<li>Has support call center &amp; social media accounts → Tabular data?</li>
+<li>Customers, Inventory Staff and Delivery staff expect the system to be fast &amp; stable → Performance</li>
+<li>HR, Marketing &amp; Sales Reports want a lot information but have not decided yet on everything they need → Clear Requirements?</li>
+</ul></li>
+<li>Data is available:
+<ul>
+<li>In an understandable &amp; performant dimensional model.</li>
+<li>With conformed dimensions or separate data marts.</li>
+<li>For users to report and visualize by interacting directly with the model or, in most cases, through a BI application.</li>
+</ul></li>
+<li><a href="https://medium.com/@BluePi_In/deep-diving-in-the-world-of-data-warehousing-78c0d52f49a">Deep Diving in the World of Data Warehousing</a></li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="pros"></a><a href="#pros" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Pros</h4>
+<ul>
+<li>Enhanced business intelligence:
+<ul>
+<li>Solves the problem of analyzing separate data and converting it into actions.</li>
+<li>Allows for decision making based on complete information.</li>
+<li>Makes it easier for business users to analyze and report on data relevant to their initiatives.</li>
+</ul></li>
+<li>Timely access to data:
+<ul>
+<li>Easy and fast access to data from a single interface</li>
+</ul></li>
+<li>Increased query and system performance:
+<ul>
+<li>Allows for storing large amounts of data and rapidly querying it.</li>
+</ul></li>
+<li>Enhanced quality and consistency:
+<ul>
+<li>Data from multiple sources is standardized and consistent.</li>
+</ul></li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="components"></a><a href="#components" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Components</h2>
+<ul>
+<li>Data sources: Different types, skill sets, upgrades, locations (high heterogeneity)</li>
+<li>ETL: Usually a &quot;grid&quot; of machines with different schedules and pipeline complexities.</li>
+<li>DWH: Different resource needs and workloads (scalability &amp; elasticity)</li>
+<li>BI apps and visualizations: Hybrid environment of tools for interaction, reporting and visualizations.</li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="oltp-and-olap-systems"></a><a href="#oltp-and-olap-systems" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>OLTP and OLAP systems</h4>
+<ul>
+<li>OLTP systems provide source data to data warehouses, whereas OLAP systems help to analyze it.</li>
+</ul>
+<p><center><img width=700 src="/datadocs/assets/OLTP-vs.-OLAP.png"/></center>
+<center><a href="https://diffzi.com/oltp-vs-olap/" style="color: lightgrey">Credit</a></center></p>
+<ul>
+<li>OLTP (On-line Transaction Processing):
+<ul>
+<li>Examples: Track inventory, financial transactions, shipment of customer orders.</li>
+<li>Characterized by a large number of short on-line transactions.</li>
+<li>Very fast query processing (mostly CRUD operations).</li>
+<li>Maintains data integrity (ACID transactions) in multi-access environments.</li>
+<li>The number of transactions per second is an effectiveness measure.</li>
+<li>In OLTP database there is detailed and current business data.</li>
+<li>History data is usually archived.</li>
+<li>The schema used to store transactional data is the entity model (usually 3NF)</li>
+</ul></li>
+<li>OLAP (On-line Analytical Processing):
+<ul>
+<li>Examples: Split customers into market segments for market optimization.</li>
+<li>Characterized by relatively low volume of transactions.</li>
+<li>Queries are often very complex and involve aggregations (mostly SELECT operations)</li>
+<li>Response time is an effectiveness measure.</li>
+<li>OLAP applications are widely used for data mining.</li>
+<li>The historical data is aggregated and stored in multi-dimensional schemas (usually star schema).</li>
+</ul></li>
+<li><a href="https://datawarehouseinfo.com/how-does-oltp-differ-from-olap-database/">Transactional vs. Analytical Databases: How Does OLTP Differ from OLAP</a></li>
+<li>Using the same database for both OLAP and OLTP:
+<ul>
+<li>Slow analytical queries and a schema that is hard to understand.</li>
+<li>Might be OK for small datasets.</li>
+</ul></li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="etl-process"></a><a href="#etl-process" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>ETL process</h4>
+<ul>
+<li>ETL is a type of data integration that refers to the three steps (extract, transform, load) used to blend data from multiple sources and (often) to build a data warehouse.</li>
+<li>A core component of an organization’s data integration toolbox.</li>
+<li>Extraction:
+<ul>
+<li>The data is extracted from multiple and different types of sources into the staging area.</li>
+<li>Common types of sources include relational databases, XML, JSON and flat files.</li>
+<li>Staging area allows for data validation (unwanted/duplicated data, data type check)</li>
+<li>Extraction should not affect performance of the source systems.</li>
+</ul></li>
+<li>Transformation:
+<ul>
+<li>The data is cleansed, mapped and transformed into a proper format.</li>
+<li>Occurs by using rules or lookup tables or by combining the data with other data.</li>
+<li>Produces diagnostic metadata.</li>
+<li><a href="https://en.wikipedia.org/wiki/Extract,_transform,_load#Transform">Transformation types</a></li>
+</ul></li>
+<li>Loading:
+<ul>
+<li>The data is structured and loaded into the target DWH.</li>
+<li>The load process should be optimized for performance.</li>
+<li>Recover mechanisms should be configured to restart from the point of failure.</li>
+</ul></li>
+<li>For example, an ETL server does SELECT on the source DB servers, stores the results in CSV files, and does INSERT/COPY to the destination server.
+<ul>
+<li>You will need a lot of storage in the middle for that.</li>
+</ul></li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="data-marts"></a><a href="#data-marts" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Data marts</h4>
+<ul>
+<li>A data mart is a subset of a DWH oriented to a specific business line.</li>
+<li>Intended for analysis on a specific business section or unit (e.g. sales department)</li>
+<li>Use case: Queries that do not require enterprise-wide data.</li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="architectures"></a><a href="#architectures" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Architectures</h2>
+<ul>
+<li>Various views on how data warehouses should be designed from the organization's perspective.</li>
+<li>Two data warehouse pioneers: Bill Inmon and Ralph Kimball.</li>
+<li><a href="https://drazda.blogspot.com/2013/04/data-warehousing-concepts-kimball-vs.html">Data Warehousing concepts: Kimball vs. Inmon vs. Hybrid vs. Vault</a></li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="independent-data-marts"></a><a href="#independent-data-marts" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Independent data marts</h4>
+<ul>
+<li>Each department has independent ETL processes and dimensional models.
+<ul>
+<li>These separate &amp; smaller dimensional models are called &quot;Data Marts&quot;</li>
+<li>Different fact tables for the same events, no conformed dimensions.</li>
+</ul></li>
+<li>Uncoordinated efforts can lead to inconsistent views.
+<ul>
+<li>Independent data marts are highly discouraged.</li>
+</ul></li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="kimballs-bus-architecture"></a><a href="#kimballs-bus-architecture" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Kimball's Bus Architecture</h4>
+<ul>
+<li>The DWH is the combination of the organization’s individual data marts (bottom-up design)</li>
+<li>Data is organized by business processes and used by different departments.</li>
+<li>Data is not kept at the aggregated level, but rather at the atomic level.</li>
+<li>Results in conformed (same) dimensions shared across different departments.
+<ul>
+<li>Conformed dimensions deliver consistent descriptive attributes.</li>
+<li>Does not allow for individual department specific data modeling requirements.</li>
+</ul></li>
+</ul>
+<p><center><img width=500 src="/datadocs/assets/1*cEgTofMPw7HArKReNrwbug.png"/></center>
+<center><a href="https://medium.com/@amritha_fernando/types-of-data-warehousing-architecture-9a656443b510" style="color: lightgrey">Credit</a></center></p>
+<h4><a class="anchor" aria-hidden="true" id="inmons-corporate-information-factory-cif"></a><a href="#inmons-corporate-information-factory-cif" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Inmon's Corporate Information Factory (CIF)</h4>
+<ul>
+<li>Builds upon the centralized corporate data repository (top-down design)
+<ul>
+<li>The repository is usually 3NF normalized.</li>
+<li>It's a single integrated source of truth for data marts.</li>
+<li>Ensures data integrity and consistency across the organization.</li>
+</ul></li>
+<li>Dimensional data marts are then created from the DWH based on department needs.
+<ul>
+<li>2 ETL processes: Source systems → 3NF database → Departmental data marts.</li>
+</ul></li>
+<li>Data marts are now coordinated through the same ETL processes (unlike independent data marts)</li>
+<li>Data marts are dimensionally modeled and aggregated (unlike Kimball's dimensional models)</li>
+</ul>
+<p><center><img width=500 src="/datadocs/assets/1*eeiD15Xwc_2Ul2DA5u_-Gw.png"/></center>
+<center><a href="https://medium.com/@amritha_fernando/types-of-data-warehousing-architecture-9a656443b510" style="color: lightgrey">Credit</a></center></p>
+<h4><a class="anchor" aria-hidden="true" id="hybrid-kimball-inmon"></a><a href="#hybrid-kimball-inmon" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Hybrid Kimball &amp; Inmon</h4>
+<ul>
+<li>The DWH is built using the Inmon model and on top of the integrated data warehouse, the business process oriented data marts are built using the star schema for reporting.</li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="dimensional-modeling"></a><a href="#dimensional-modeling" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Dimensional modeling</h2>
+<ul>
+<li>Dimensional modeling is primarily used to support OLAP and decision making while ER modeling is best fit for OLTP where results consist of detailed information of entities rather an aggregated view.</li>
+<li>Pros of dimensional modeling:
+<ul>
+<li>Easier to understand and more intuitive to a business user.</li>
+<li>More denormalized and optimized for data querying.</li>
+<li>Scalable and easily accommodate unexpected new data.</li>
+</ul></li>
+<li>Uses the concepts of facts (measures) and dimensions (context).</li>
+<li>Fact tables record business events.
+<ul>
+<li>For example: Store sales</li>
+<li>Each row (= event) contains the measurement data (facts) associated with that event.</li>
+<li>Facts are typically numeric columns that can be aggregated.</li>
+<li>They can be additive (sales per unit), non additive, and semi additive.</li>
+<li>Grain of the table is the level of detail (daily or monthly sales?)</li>
+<li>Two types of columns: facts and foreign keys to dimension tables.</li>
+<li>The primary key is usually a composite key that is made up of foreign keys.</li>
+</ul></li>
+<li>Dimension tables describe the events in fact tables.
+<ul>
+<li>For example: People, products, place and time</li>
+<li>Usually have a relatively small number of records compared to fact tables.</li>
+<li>But each record may have a very large number of columns.</li>
+<li>Dimensions are typically discrete columns for filtering.</li>
+</ul></li>
+<li>Work together to create an organized data model.</li>
+<li><a href="http://publib.boulder.ibm.com/db2blox/82/en/cube/cube13.htm">Dimensional Schemas</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Dimensional_modeling#Design_method">Design method</a></li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="star-schema"></a><a href="#star-schema" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Star schema</h4>
+<p><center><img width=500 src="/datadocs/assets/cubeschemaa_v2.gif"/></center>
+<center><a href="http://publib.boulder.ibm.com/db2blox/82/en/cube/cube13.htm" style="color: lightgrey">Credit</a></center></p>
+<ul>
+<li>The star schema separates the data into facts and dimensions as descriptive attributes of the facts.
+<ul>
+<li>Gets its name from the physical data model resembling a star shape.</li>
+</ul></li>
+<li>The star schema is the simplest style of data mart schema.
+<ul>
+<li>It is a special, simplified case of the snowflake schema.</li>
+</ul></li>
+<li>Star schemas are denormalized.
+<ul>
+<li>Star schemas tend to be more purpose-built for a particular view of the data.</li>
+</ul></li>
+<li>Pros:
+<ul>
+<li>Simplifies queries and common business reporting logic.</li>
+<li>Faster aggregation and read-only reporting applications.</li>
+<li>Used by all OLAP systems to build proprietary OLAP cubes efficiently.</li>
+</ul></li>
+<li>Cons:
+<ul>
+<li>Data integrity is not enforced well since it is in a highly de-normalized state.</li>
+<li>Must be loaded in a highly controlled fashion.</li>
+<li>Not as flexible as normalized data model.</li>
+<li>Does not support many-to-many relationships between business entities.</li>
+</ul></li>
+<li>Most widely used to develop data warehouses and dimensional data marts.</li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="snowflake-schema"></a><a href="#snowflake-schema" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Snowflake schema</h4>
+<p><center><img width=500 src="/datadocs/assets/cubeschemaa3_v2.gif"/></center>
+<center><a href="http://publib.boulder.ibm.com/db2blox/82/en/cube/cube13.htm" style="color: lightgrey">Credit</a></center></p>
+<ul>
+<li>In the snowflake schema, the dimension tables are normalized into multiple related tables.</li>
+<li>Pros
+<ul>
+<li>Results in storage savings</li>
+<li>Reduces the number of places where the data needs to be updated.</li>
+<li>Some OLAP tools are optimized for snowflake schemas.</li>
+</ul></li>
+<li>Cons:
+<ul>
+<li>Adds complexity to source query joins.</li>
+<li>Data loads must be highly controlled and managed to avoid update and insert anomalies.</li>
+</ul></li>
+<li>Use cases:
+<ul>
+<li>No frequent queries of some dimension data for needing it for information purposes.</li>
+<li>A reporting or cube architecture that needs hierarchies or slicing feature.</li>
+<li>Having fact tables that have different level of granularity.</li>
+</ul></li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="olap-cubes"></a><a href="#olap-cubes" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>OLAP cubes</h2>
+<p><center><img width=250 src="/datadocs/assets/IntroOLAP_01.png"/></center>
+<center><a href="https://devnet.logianalytics.com/rdPage.aspx?rdReport=Article&dnDocID=1053" style="color: lightgrey">Credit</a></center></p>
+<ul>
+<li>OLAP cube is a multi-dimensional table.
+<ul>
+<li>Also called a hypercube if the number of dimensions is greater than 3.</li>
+</ul></li>
+<li>Each cell of the cube holds a number that represents some measure.
+<ul>
+<li>The measure (from fact table) is categorized by dimensions (from dimension tables) of the cube.</li>
+<li>For example, summarize financial data by product, time period, and by city.</li>
+<li>Should store the finest grain of data (atomic data)</li>
+</ul></li>
+<li>Data cubes can be easily built from the star schema.</li>
+<li>Often the final step in the deployment of a dimensional DW/BI system.</li>
+<li>Pros:
+<ul>
+<li>A very convenient way for slicing, dicing and drilling down.</li>
+<li>Improves query performance.</li>
+<li>Easy to communicate to business users.</li>
+</ul></li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="operations"></a><a href="#operations" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Operations</h3>
+<h4><a class="anchor" aria-hidden="true" id="query-optimization"></a><a href="#query-optimization" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Query optimization</h4>
+<ul>
+<li>Each operation on the cube will potentially go through the facts table (suboptimal)</li>
+<li>Materializing all dimension combinations is usually enough to answer all forthcoming queries.</li>
+<li>The <code>CUBE</code> operator computes <code>GROUPING SETS</code> on every subset of the dimensions.
+<ul>
+<li>The statement will create \(2^N\) subtotal combinations for \(N\) dimensions.</li>
+</ul></li>
+<li>Make sure that the original data doesn't have any None's.</li>
+</ul>
+<pre><code class="hljs css language-sql"><span class="hljs-keyword">SELECT</span> c1, c2, aggregate_function(c3)
+<span class="hljs-keyword">FROM</span> table_name
+<span class="hljs-keyword">GROUP</span> <span class="hljs-keyword">BY</span> <span class="hljs-keyword">CUBE</span>(c1, c2);
+
+<span class="hljs-comment">-- (c1, c2)</span>
+<span class="hljs-comment">-- (c1)</span>
+<span class="hljs-comment">-- (c2)</span>
+<span class="hljs-comment">-- ()</span>
+</code></pre>
+<h4><a class="anchor" aria-hidden="true" id="slice"></a><a href="#slice" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Slice</h4>
+<ul>
+<li>Reduce \(N\) dimensions to \(N-1\) dimensions by restricting one dimension to a single value.</li>
+</ul>
+<pre><code class="hljs css language-sql"><span class="hljs-keyword">SELECT</span> c2, c3
+<span class="hljs-keyword">FROM</span> table_name
+<span class="hljs-keyword">WHERE</span> c1 = <span class="hljs-number">1</span>;
+</code></pre>
+<h4><a class="anchor" aria-hidden="true" id="dice"></a><a href="#dice" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Dice</h4>
+<ul>
+<li>Compute a sub-cube by restricting some dimensions, same dimensionality, less values.</li>
+</ul>
+<pre><code class="hljs css language-sql"><span class="hljs-keyword">SELECT</span> c1, c2, c3
+<span class="hljs-keyword">FROM</span> table_name
+<span class="hljs-keyword">WHERE</span> c1 <span class="hljs-keyword">IN</span> (<span class="hljs-number">1</span>, <span class="hljs-number">2</span>) <span class="hljs-keyword">AND</span> c2 <span class="hljs-keyword">IN</span> (<span class="hljs-number">2</span>, <span class="hljs-number">3</span>);
+</code></pre>
+<h4><a class="anchor" aria-hidden="true" id="roll-up"></a><a href="#roll-up" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Roll-up</h4>
+<ul>
+<li>Aggregate or combine values and reduces number of rows or columns.
+<ul>
+<li>For example, street → city → province → country</li>
+</ul></li>
+<li>Query optimization:
+<ul>
+<li>Most efficient operations in OLAP are COUNT, MAX, MIN, and SUM.</li>
+<li>The <code>ROLLUP</code> operator creates progressively higher-level subtotals.</li>
+<li>Moves from right to left through the list of grouping dimensions.</li>
+</ul></li>
+</ul>
+<pre><code class="hljs css language-sql"><span class="hljs-keyword">SELECT</span> c1, c2, aggregate_function(c3)
+<span class="hljs-keyword">FROM</span> table_name
+<span class="hljs-keyword">GROUP</span> <span class="hljs-keyword">BY</span> <span class="hljs-keyword">ROLLUP</span>(c1, c2);
+
+<span class="hljs-comment">-- (c1,c2)</span>
+<span class="hljs-comment">-- (c1)</span>
+<span class="hljs-comment">-- ()</span>
+</code></pre>
+<h4><a class="anchor" aria-hidden="true" id="drill-down"></a><a href="#drill-down" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Drill-down</h4>
+<ul>
+<li>The reverse operation of roll up.
+<ul>
+<li>For example, country → province → city → street</li>
+</ul></li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="pivot"></a><a href="#pivot" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Pivot</h4>
+<ul>
+<li>Rotate the whole cube, giving another perspective on the data.
+<ul>
+<li>For example, replace products with time periods to see data across time for a single product.</li>
+</ul></li>
+</ul>
+<pre><code class="hljs css language-sql"><span class="hljs-keyword">SELECT</span> <span class="hljs-string">'TotalSalary'</span> <span class="hljs-keyword">AS</span> TotalSalaryByDept, [<span class="hljs-number">30</span>], [<span class="hljs-number">45</span>]
+<span class="hljs-keyword">FROM</span> (<span class="hljs-keyword">SELECT</span> dept_id, salary <span class="hljs-keyword">FROM</span> employees) <span class="hljs-keyword">AS</span> SourceTable
+<span class="hljs-keyword">PIVOT</span> (<span class="hljs-keyword">SUM</span>(salary) <span class="hljs-keyword">FOR</span> dept_id <span class="hljs-keyword">IN</span> ([<span class="hljs-number">30</span>], [<span class="hljs-number">45</span>])) <span class="hljs-keyword">AS</span> PivotTable;
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="types"></a><a href="#types" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Types</h3>
+<h4><a class="anchor" aria-hidden="true" id="molap"></a><a href="#molap" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>MOLAP</h4>
+<ul>
+<li>Pre-aggregate the OLAP cubes and save them on a special purpose non-relational database.</li>
+<li>Pros:
+<ul>
+<li>Fast query performance due to indexing and storage optimizations.</li>
+<li>Smaller on-disk size due to compression.</li>
+<li>Very compact for low dimension datasets.</li>
+</ul></li>
+<li>Cons:
+<ul>
+<li>The processing step can be quite lengthy, especially on large data volumes.</li>
+<li>Database explosion if high number of dimensions or sparse multidimensional data.</li>
+</ul></li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="rolap"></a><a href="#rolap" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>ROLAP</h4>
+<ul>
+<li>Compute the OLAP cubes on the fly from the existing relational databases.</li>
+<li>The source database must still be carefully designed for ROLAP use (e.g. columnar storage)</li>
+<li>Pros:
+<ul>
+<li>Have the ability to ask any question.</li>
+<li>More scalable in handling large data volumes and many dimensions.</li>
+<li>Load times are generally much shorter than for MOLAP.</li>
+<li>The data can be accessed by any SQL reporting tool.</li>
+</ul></li>
+<li>Cons:
+<ul>
+<li>Slower query performance as opposed to MOLAP.</li>
+<li>The load task must be managed by custom ETL code.</li>
+<li>Relies on the source databases for querying and caching.</li>
+</ul></li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="holap"></a><a href="#holap" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>HOLAP</h4>
+<ul>
+<li>Divide data between relational and specialized storage.</li>
+<li>Benefits from greater scalability of ROLAP and faster computation of MOLAP.</li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="amazon-redshift"></a><a href="#amazon-redshift" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Amazon Redshift</h2>
+<p><center><img width=250 src="/datadocs/assets/aws-redshift-connector.png"/></center></p>
+<ul>
+<li>Amazon Redshift is a fully managed, column-oriented, petabyte-scale data warehouse in the cloud.
+<ul>
+<li>Can build a central data warehouse unifying data from many sources.</li>
+<li>Can run big, complex analytic queries against that data with SQL.</li>
+<li>Can report and pass on the results to dashboards or other apps.</li>
+</ul></li>
+<li>Behind the scenes, Redshift stores relational data in column format.
+<ul>
+<li>Based on industry-standard PostgreSQL.</li>
+<li>Supports high compression and in-memory operations.</li>
+<li>Columnar storage reduces the number of disk I/O requests and the amount of data.</li>
+</ul></li>
+<li>Integrates with various data loading and ETL tools and BI reporting, data mining, and analytics tools.
+<ul>
+<li>Also provides its own Query Editor.</li>
+<li>Accessible, like any relational database, via JDBC/ODBC.</li>
+</ul></li>
+<li>Designed to crunch data, i.e. running “big” or “heavy” queries against large datasets.</li>
+<li>Can ingest huge structured, semi-structured and unstructured datasets (via S3 or DynamoDB)
+<ul>
+<li>It's a database, so it can store raw data AND the results of transformations.</li>
+</ul></li>
+<li>Can run analytic queries against data stored Amazon S3 data lake.
+<ul>
+<li>Redshift Spectrum: Run queries against data in Amazon S3 without moving it.</li>
+<li>Can query open file formats, such as CSV, JSON, Parquet, and more.</li>
+<li><a href="https://aws.amazon.com/blogs/big-data/amazon-redshift-spectrum-extends-data-warehousing-out-to-exabytes-no-loading-required/">Amazon Redshift Spectrum - No Loading Required</a></li>
+</ul></li>
+<li>Massively parallel processing (MPP) architecture distributes and parallelizes queries.
+<ul>
+<li>Based on ParAccel's MPP technology.</li>
+<li>Distributes the rows of a table to the compute nodes for parallel processing.</li>
+<li>Parallelizes execution of one query on multiple CPUs/machines.</li>
+<li>Other examples include Teradata Aster, Oracle ExaData and Azure SQL.</li>
+</ul></li>
+</ul>
+<p><center><img width=700 src="/datadocs/assets/mpp2.jpg"/></center>
+<center><a href="https://techxplicit.com/2016/09/26/first-encounter-with-massively-parallel-processing-aws-redshift/" style="color: lightgrey">Credit</a></center></p>
+<ul>
+<li>Other performance features:
+<ul>
+<li>Incorporates a query optimizer that is MPP-aware.</li>
+<li>Caches the results of complex queries in memory to reduce query execution time.</li>
+<li><a href="https://docs.aws.amazon.com/redshift/latest/dg/c_challenges_achieving_high_performance_queries.html">Performance Features</a></li>
+<li><a href="https://www.intermix.io/blog/top-14-performance-tuning-techniques-for-amazon-redshift/">Top 14 Performance Tuning Techniques for Amazon Redshift</a></li>
+</ul></li>
+<li>Two node types available:
+<ul>
+<li>Dense Compute (DC): fast CPUs, large amounts of RAM, and solid-state disks (SSDs).</li>
+<li>Dense Storage (DS): cost-effective, lots of storage, a very low price point.</li>
+<li>Can scale out easily by changing the number or type of nodes.</li>
+</ul></li>
+<li>Redshift is a fully managed service on AWS.
+<ul>
+<li>Redshift automatically provisions the infrastructure with just a few clicks.</li>
+<li>Most administrative tasks are automated, such as backups and replication.</li>
+<li>Ensures fault tolerance of the cluster.</li>
+</ul></li>
+<li>Can use SSL to secure data in transit and run within Amazon VPC.</li>
+<li>Has a price-point that is unheard of in the world of data warehousing ($935/TB annually)
+<ul>
+<li>Offers On-Demand pricing with no up-front costs.</li>
+</ul></li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="compared-to-amazon-rds"></a><a href="#compared-to-amazon-rds" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Compared to Amazon RDS</h4>
+<ul>
+<li>RDS is Amazon's relational databases as a service offering.
+<ul>
+<li>Supports engines such as Amazon Aurora, Oracle, PostgreSQL, MySQL, and many others.</li>
+</ul></li>
+<li>RDS meant to be used as the main or a supporting data store and transactional (OLTP) database.</li>
+<li>Both services can be used together very effectively: RDS as a source, Redshift as a target.</li>
+<li>Amazon RDS is primarily used by end customers, while Redshift by internal users (data scientists)</li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="architecture"></a><a href="#architecture" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Architecture</h3>
+<ul>
+<li>The core component is a cluster, which is composed of one or more compute nodes.</li>
+<li>Leader node coordinates the compute nodes and handles external communication.
+<ul>
+<li>Client interacts only with the leader node, but compute nodes remain transparent.</li>
+<li>Develops execution plans to carry out database operations.</li>
+<li>Optimizes query execution.</li>
+<li>Distributes SQL statements to the compute nodes (only if they have relevant partition)</li>
+</ul></li>
+<li>Compute nodes (EC2 instances) execute the compiled code and send intermediate results back.
+<ul>
+<li>Each compute node has its own dedicated CPU, memory, and disk storage.</li>
+<li>One can increase the number of nodes (scale out) or upgrade the node type (scale up)</li>
+</ul></li>
+<li>Each compute node is logically partitioned into slices:
+<ul>
+<li>Each slice is allocated 1 CPU, a portion of the node's memory and disk space.</li>
+<li>A cluster with \(N\) slices can process \(N\) partitions simultaneously.</li>
+<li>For example, 4 compute nodes x 8 slices = maximum 32 partitions.</li>
+<li>One can optionally specify one column as the distribution key.</li>
+</ul></li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="data-modeling"></a><a href="#data-modeling" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Data modeling</h3>
+<ul>
+<li>A <code>COPY</code> command is the most efficient way to load a table.
+<ul>
+<li>Leverages MPP to read from multiple data files or streams simultaneously.</li>
+</ul></li>
+<li>On contrary, the <code>INSERT</code> command inserts record by record and can be slow.</li>
+<li>For better load performance, split data into multiple files:
+<ul>
+<li>The number of files should be a multiple of the number of slices in the cluster.</li>
+<li>The files should be roughly the same size (1MB-1GB)</li>
+<li>Specify a common prefix or a manifest file.</li>
+</ul></li>
+</ul>
+<pre><code class="hljs css language-js"><span class="hljs-comment">// Example: venue.txt split into files</span>
+
+venue.txt<span class="hljs-number">.1</span>
+venue.txt<span class="hljs-number">.2</span>
+venue.txt<span class="hljs-number">.3</span>
+venue.txt<span class="hljs-number">.4</span>
+</code></pre>
+<ul>
+<li>By default, Redshift (blindly) distributes the workload uniformly among the nodes in the cluster.</li>
+<li>For better execution performance, set distribution keys on tables:
+<ul>
+<li>To minimize data movement during query execution.</li>
+<li>To ensure that every row is collocated for every join that the table participates in.</li>
+</ul></li>
+<li>Distribution styles:
+<ul>
+<li><code>EVEN</code>: Appropriate for load balancing and when a table does not participate in joins.</li>
+<li><code>ALL</code>: A copy of the entire table is distributed to every node (broadcasting). For small tables.</li>
+<li><code>KEY</code>: The rows are distributed according to the values in one column. The leader node collocates the rows on the slices according to the values in the joining columns so that matching values from the common columns are physically stored together. For large tables.</li>
+<li><code>AUTO</code>: Automatic assignment based on the size of the table data.</li>
+</ul></li>
+<li>Sorting enables efficient handling of range-restricted predicates.
+<ul>
+<li>Define one or more of its columns as sort keys.</li>
+<li>Allows exploitation of the way that the data is sorted.</li>
+<li>Useful for columns that are frequently used in <code>ORDER BY</code> like dates.</li>
+</ul></li>
+</ul>
+<pre><code class="hljs css language-sql"><span class="hljs-comment">-- Example: 2x speed improvement using distribution and sort keys</span>
+
+<span class="hljs-keyword">create</span> <span class="hljs-keyword">table</span> activity (
+  <span class="hljs-keyword">id</span>         <span class="hljs-built_in">integer</span>     primary <span class="hljs-keyword">key</span>,
+  created_at <span class="hljs-built_in">date</span>        sortkey distkey,
+  device     <span class="hljs-built_in">varchar</span>(<span class="hljs-number">30</span>)
+);
+</code></pre>
+<ul>
+<li>Defining constraints:
+<ul>
+<li>Uniqueness, primary key, and foreign key constraints are not enforced.</li>
+<li>But declare constraints anyway when you know that they are valid.</li>
+<li>Redshift enforces <code>NOT NULL</code> column constraints.</li>
+</ul></li>
+<li>One can apply a compression type, or encoding, to the columns in a table.
+<ul>
+<li>Reduces the amount of disk I/O and therefore improves query performance.</li>
+<li>Use the <code>COPY</code> command to apply compression automatically.</li>
+</ul></li>
+<li><a href="https://docs.aws.amazon.com/redshift/latest/dg/t_Creating_tables.html">Designing Tables</a></li>
+</ul>
+</span></div></article></div><div class="docLastUpdate"><em>Last updated on 2019-8-20 by Oleg Polakow</em></div><div class="docs-prevnext"><a class="docs-prev button" href="/datadocs/docs/big-data/cloud-computing"><span class="arrow-prev">← </span><span>Cloud Computing</span></a><a class="docs-next button" href="/datadocs/docs/big-data/data-lakes"><span>Data Lakes</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#components">Components</a></li><li><a href="#architectures">Architectures</a></li><li><a href="#dimensional-modeling">Dimensional modeling</a></li><li><a href="#olap-cubes">OLAP cubes</a><ul class="toc-headings"><li><a href="#operations">Operations</a></li><li><a href="#types">Types</a></li></ul></li><li><a href="#amazon-redshift">Amazon Redshift</a><ul class="toc-headings"><li><a href="#architecture">Architecture</a></li><li><a href="#data-modeling">Data modeling</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><div class="brand-box"><div class="brand"><a href="https://www.tum.de/nc/en/" target="_blank" rel="noreferrer noopener" class="brand-link"><img src="/datadocs/img/tum_logo.png" alt="Technical University of Munich" height="45"/></a></div><div class="brand"><a href="https://opensource.facebook.com/" target="_blank" rel="noreferrer noopener" class="brand-link"><img src="/datadocs/img/oss_logo.png" alt="Facebook Open Source" width="170" height="45"/></a></div></div><section class="copyright">Copyright © 2019 Oleg Polakow</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
+                document.addEventListener('keyup', function(e) {
+                  if (e.target !== document.body) {
+                    return;
+                  }
+                  // keyCode for '/' (slash)
+                  if (e.keyCode === 191) {
+                    const search = document.getElementById('search_input_react');
+                    search && search.focus();
+                  }
+                });
+              </script><script>
+              var search = docsearch({
+                
+                apiKey: '6642fca03d716a543ac4428d7d20b842',
+                indexName: 'polakowo-datadocs',
+                inputSelector: '#search_input_react',
+                algoliaOptions: {}
+              });
+            </script></body></html>

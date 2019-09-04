@@ -1,0 +1,410 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>SQL Databases · datadocs</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="- Data is placed in tables and data schema is carefully designed before the database is built."/><meta name="docsearch:language" content="en"/><meta property="og:title" content="SQL Databases · datadocs"/><meta property="og:type" content="website"/><meta property="og:url" content="https://polakowo.github.io/datadocs/"/><meta property="og:description" content="- Data is placed in tables and data schema is carefully designed before the database is built."/><meta property="og:image" content="https://polakowo.github.io/datadocs/img/undraw_online.svg"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://polakowo.github.io/datadocs/img/undraw_tweetstorm.svg"/><link rel="shortcut icon" href="/datadocs/img/favicon.ico"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-142521178-1"></script><script>
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments); }
+              gtag('js', new Date());
+              gtag('config', 'UA-142521178-1');
+            </script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script><script type="text/javascript" src="/datadocs/js/code-block-buttons.js"></script><script type="text/javascript" src="/datadocs/js/disqus.js"></script><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script src="/datadocs/js/scrollSpy.js"></script><link rel="stylesheet" href="/datadocs/css/prism.css"/><link rel="stylesheet" href="/datadocs/css/main.css"/><script src="/datadocs/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/datadocs/"><img class="logo" src="/datadocs/img/headerIcon.ico" alt="datadocs"/><h2 class="headerTitleWithLogo">datadocs</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/datadocs/docs/machine-learning/linear-models" target="_self">Docs</a></li><li class=""><a href="https://github.com/polakowo/datadocs" target="_self">GitHub</a></li><li class="navSearchWrapper reactNavSearchWrapper"><input type="text" id="search_input_react" placeholder="Search" title="Search"/></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Databases</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Machine Learning<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">General</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/machine-learning">Machine Learning</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Methods</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/linear-models">Linear Models</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/tree-based-models">Tree-Based Models</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/ensemble-methods">Ensemble Methods</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Features</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/eda">Exploratory Data Analysis</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/feature-engineering">Feature Engineering</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/advanced-features">Advanced Features</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Optimization</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/metric-optimization">Metric Optimization</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/validation-schemes">Validation Schemes</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/hyperopt">Hyperparameter Optimization</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Competitions</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/competitive-ml">Competitive Machine Learning</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/data-leakages">Data Leakages</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Deep Learning<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">General</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/deep-learning">Deep Learning</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/dl-strategy">Deep Learning Strategy</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Fundamentals</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/backpropagation">Backpropagation</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/activation-functions">Activation Functions</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/initialization">Initialization</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/optimization">Optimization</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/regularization">Regularization</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Computer Vision</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/cnns">Convolutional Neural Networks</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/cnn-architectures">CNN Architectures</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/object-detection">Object Detection</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/face-recognition">Face Recognition</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/nst">Neural Style Transfer</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Natural Language Processing</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/rnns">Recurrect Neural Networks</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/word-embeddings">Word Embeddings</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/nmt">Neural Machine Translation</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/attention-mechanism">Attention Mechanism</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/speech-recognition">Speech Recognition</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Big Data<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">General</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/data-engineering">Data Engineering</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/cloud-computing">Cloud Computing</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/data-warehouses">Data Warehouses</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/data-lakes">Data Lakes</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/data-pipelines">Data Pipelines</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Databases</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/database-design">Database Design</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/datadocs/docs/big-data/sql-databases">SQL Databases</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/wide-column-stores">Wide Column Stores</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/key-value-stores">Key Value Stores</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/document-stores">Document Stores</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/graph-stores">Graph Stores</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Hadoop</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/hadoop">Hadoop Ecosystem</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/data-ingestion">Data Ingestion</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/data-storage">Data Storage</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/data-processing">Data Processing</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/query-engines">Query Engines</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/cluster-management">Cluster Management</a></li></ul></div></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://github.com/polakowo/datadocs/edit/master/docs/big-data/sql-databases.md" target="_blank" rel="noreferrer noopener">Edit</a><h1 class="postHeaderTitle">SQL Databases</h1></header><article><div><span><ul>
+<li>Data is placed in tables and data schema is carefully designed before the database is built.</li>
+<li>Relational database management system (RDBMS) is used to maintain relational databases.
+<ul>
+<li>Invented by E. F. Codd in 1970.</li>
+<li>Oracle (banking), Teradata, MySQL, PostgreSQL, SQLite (simplex tasks, development)</li>
+</ul></li>
+<li>Structured Query Language (SQL) is the language for querying and maintaining relational databases.
+<ul>
+<li>Virtually every RDBMS uses SQL.</li>
+<li>SQL is the most common standardized language used to access databases.</li>
+<li>The SQL standard has been evolving since 1986.</li>
+</ul></li>
+<li>To operate efficiently and accurately, RDBMS must use ACID transactions.</li>
+<li>The programming within a RDBMS is usually accomplished using stored procedures (SPs)
+<ul>
+<li>Those are sets of SQL statements which are stored as a group, reused and shared.</li>
+</ul></li>
+<li>Relational databases typically provide indexing.
+<ul>
+<li>The use of efficient indexes can dramatically improve query performance</li>
+<li>Indices are usually implemented via B+ trees, R-trees, and bitmaps.</li>
+</ul></li>
+<li>Use cases:
+<ul>
+<li>You need ACID compliancy.</li>
+<li>Your data is structured and unchanging.</li>
+<li>Large-scale web organizations such as Google and Amazon employ relational databases as adjuncts where high-grade data consistency is necessary.</li>
+<li><a href="https://blog.panoply.io/sql-or-nosql-that-is-the-question">SQL Vs NoSQL: The Differences Explained</a></li>
+</ul></li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="acid-transactions"></a><a href="#acid-transactions" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>ACID transactions</h4>
+<ul>
+<li>Atomicity: The whole transaction is processed or nothing is processed.
+<ul>
+<li>For example, debit and credit operations cannot occur partially.</li>
+</ul></li>
+<li>Consistency: Any data written to the database must be valid according to all defined rules.
+<ul>
+<li>For example, a column of type integer does not accept boolean values.</li>
+</ul></li>
+<li>Isolation: Transactions are processed independently and securely, order does not matter.
+<ul>
+<li>But complete isolation uses more system resources and transactions blocking each other.</li>
+</ul></li>
+<li>Durability: Committed transactions remain committed even in case of system failure.
+<ul>
+<li>For example, a flight seat remains booked even after a crash.</li>
+</ul></li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="pros"></a><a href="#pros" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Pros</h4>
+<ul>
+<li>Small to medium sized data volumes.</li>
+<li>Complex query intensive environment:
+<ul>
+<li>Support for JOINS, aggregations and analytics.</li>
+<li>Support for secondary indexes to help with quick searching.</li>
+</ul></li>
+<li>ACID transactions guarantee accuracy, completeness, and data integrity.
+<ul>
+<li>Stable enough in high load and for complex transactional applications.</li>
+<li>Remember, financial systems are built on trust.</li>
+</ul></li>
+<li>Easier to change to business requirements:
+<ul>
+<li>Modeling the data, not modeling queries.</li>
+<li>Have better support, product suites and add-ons to manage these databases.</li>
+</ul></li>
+<li>No need to do queries first, run them based on the schemas and ERD.</li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="cons"></a><a href="#cons" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Cons</h4>
+<ul>
+<li>Not suited for large amounts of data as they cannot scale horizontally.</li>
+<li>Not highly available because of a single point of failure.</li>
+<li>Not designed to handle unstructured and hierarchical data.</li>
+<li>The atomicity of the operations plays a crucial part in the database’s performance.
+<ul>
+<li>ACID transactions slow down the process of reading and writing data.</li>
+</ul></li>
+<li>Have a predefined (not flexible) schema.</li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="scaling-up-relational-databases"></a><a href="#scaling-up-relational-databases" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Scaling up relational databases</h4>
+<ul>
+<li>Denormalization: Add redundant copies of data or by grouping data to get faster reads.</li>
+<li>Caching layers (memcached): Distributed memory cache sitting on top of the database.</li>
+<li>Sharding: Split up the database into range partitions.</li>
+<li>Materialized views: Materialize views to serve the services in the format they expect and faster.</li>
+<li>Removing stored procedures: Remove expensive logic.</li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="data-modeling"></a><a href="#data-modeling" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Data modeling</h2>
+<h3><a class="anchor" aria-hidden="true" id="relational-model"></a><a href="#relational-model" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Relational model</h3>
+<ul>
+<li>The relational data model allows to create a consistent, logical representation of information.</li>
+<li>The data is stored in relations (tables)
+<ul>
+<li>Each relation consists of tuples (rows, records) and attributes (columns, fields).</li>
+<li>Tables that are not stored but computed on the fly are called views or queries.</li>
+</ul></li>
+<li>Consistency is achieved by including declared constraints (logical schema)
+<ul>
+<li>Constraints provide one method of implementing business rules in the database.</li>
+<li>Constraints can apply to attributes, tuples or to an entire relation.</li>
+<li>There are key, domain, and referential integrity constraints.</li>
+<li>A domain describes the set of possible values for a given attribute.</li>
+</ul></li>
+<li>Relationships are a logical connection between different tables.</li>
+<li>Defines how the data are to be manipulated (relational calculus)</li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="keys"></a><a href="#keys" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Keys</h4>
+<ul>
+<li>SUPERKEY is a set of attributes whose values can be used to uniquely identify a tuple.</li>
+<li>CANDIDATE KEY is a minimal set of attributes necessary to identify a tuple.
+<ul>
+<li>Also called a MINIMAL SUPERKEY.</li>
+<li>Usually one CANDIDATE KEY is chosen to be called the PRIMARY KEY.</li>
+<li>Other CANDIDATE KEYS are called ALTERNATE KEYS.</li>
+</ul></li>
+<li>PRIMARY KEY ensures that the column(s) has no NULL values, and that every value is unique.
+<ul>
+<li>Must be unique for each record.</li>
+<li>Must apply uniform rules for all records.</li>
+<li>Must stand the test of time.</li>
+<li>Must be read-only (to avoid typos and varying formats).</li>
+<li>Physically, implemented as a unique index.</li>
+</ul></li>
+<li>SURROGATE KEY is a key which is not natural.
+<ul>
+<li>A natural key is a key that has contextual or business meaning (STORE, SALES).</li>
+<li>For example, an increasing sequential integer or “counter” value.</li>
+<li>Can be extremely useful for analytical purposes.</li>
+</ul></li>
+<li>FOREIGN KEY is a column in one table that refers to the PRIMARY KEY in other table.</li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="normalization"></a><a href="#normalization" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Normalization</h3>
+<ul>
+<li>Normalization means organizing tables in a manner that reduces redundancy and dependency of data.
+<ul>
+<li>Redundant data wastes disk space and creates maintenance problems.</li>
+<li>If data exists in more than one place, it must be changed in all locations.</li>
+</ul></li>
+<li>The process is progressive (a higher level cannot be achieved before the previous levels)</li>
+<li>Divides larger tables to smaller tables and links them using relationships.
+<ul>
+<li>The end result should feel natural.</li>
+</ul></li>
+<li>Objectives of normalization:
+<ul>
+<li>Free the database from unwanted insertions, updates &amp; deletion dependencies.</li>
+<li>Reduce the need for refactoring the database as new types of data are introduced.</li>
+<li>Make the relational model more informative to users.</li>
+<li>Make the database neutral to the query statistics (do not model queries beforehand!)</li>
+</ul></li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="normal-forms"></a><a href="#normal-forms" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Normal Forms</h4>
+<p><center><img width=400 src="/datadocs/assets/codds-law.jpg"/></center>
+<center><a href="https://slideplayer.com/slide/6860017/" style="color: lightgrey">Credit</a></center></p>
+<ul>
+<li><a href="https://www.techopedia.com/definition/25955/first-normal-form-1nf">First Normal Form (1NF)</a>:
+<ul>
+<li>Make the columns atomic: cells have a single value.</li>
+<li>Define the primary key: no repeating groups in individual tables.</li>
+<li>Columns must contain values of the same type.</li>
+<li>The order in which data is stored does not matter.</li>
+<li>May still contain partial and/or transitive dependencies.</li>
+</ul></li>
+<li><a href="https://www.techopedia.com/definition/21980/second-normal-form-2nf">Second Normal Form (2NF)</a>:
+<ul>
+<li>Have reached 1NF</li>
+<li>Split up all data resulting in many-to-many relationships.</li>
+<li>Create relationships between tables by use of foreign keys.</li>
+<li>Is the identifier comprised of more than one attribute?</li>
+<li>If so, are any attribute values dependent on just part of the key?</li>
+<li>Remove partial dependencies: every non-key attribute must depend on the whole key.</li>
+<li>May still contain transitive dependencies.</li>
+</ul></li>
+<li><a href="https://www.techopedia.com/definition/22561/third-normal-form-3nf">Third Normal Form (3NF)</a>:
+<ul>
+<li>Have reached 2NF</li>
+<li>Do any attribute values depend on an attribute that is not the key?</li>
+<li>Remove transitive dependencies: non-prime attributes are independent of one another.</li>
+<li>However, many small tables may degrade performance.</li>
+</ul></li>
+<li><a href="https://www.techopedia.com/definition/5642/boyce-codd-normal-form-bcnf">Boyce-Codd Normal Form (BCNF)</a>:
+<ul>
+<li>Have reached 3NF</li>
+<li>Remove non-trivial functional dependencies.</li>
+<li>Happens if there are two or more overlapping composite candidate keys.</li>
+<li>Sometimes referred to as 3.5NF</li>
+</ul></li>
+<li>In most practical applications, normalization achieves its best in 3NF.</li>
+<li><a href="https://en.wikipedia.org/wiki/Database_normalization#Normal_forms">Normal forms - Wikipedia</a></li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="denormalization"></a><a href="#denormalization" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Denormalization</h4>
+<ul>
+<li>JOINS on the database allow for outstanding flexibility but are extremely slow.</li>
+<li>Adding redundant data improves read performance at the expense of write performance.</li>
+</ul>
+<p><center><img width=550 src="/datadocs/assets/denormalization.jpg"/></center>
+<center><a href="https://www.slideserve.com/walter-clay/chapter-11-enterprise-resource-planning-systems" style="color: lightgrey">Credit</a></center></p>
+<ul>
+<li>Requires more space on the system since there are more copies of the data.
+<ul>
+<li>Not really a limiting factor as storage has become less expensive.</li>
+</ul></li>
+<li>Denormalized data model is not the same as a data model that has not been normalized:
+<ul>
+<li>Denormalization should only take place after normalization.</li>
+</ul></li>
+<li>With denormalization we want to think about the queries beforehand.</li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="mysql"></a><a href="#mysql" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>MySQL</h2>
+<p><center><img width=200 src="/datadocs/assets/640px-MySQL_logo.svg.png"/></center></p>
+<ul>
+<li>MySQL is the most popular Open Source RDBMS.
+<ul>
+<li>The logical model includes objects such as databases, tables, views, rows, and columns.</li>
+<li>The database structures are organized into physical files optimized for speed.</li>
+</ul></li>
+<li>It is developed, distributed, and supported by Oracle.
+<ul>
+<li>MySQL is Open Source and part of LAMP (Linux, Apache, MySQL, PHP/Perl/Python) environment.</li>
+<li>It has a huge community, extensive testing and quite a bit of stability.</li>
+<li>In contrast to PostgreSQL, commercial distribution requires a paid license though.</li>
+</ul></li>
+<li>Given that the server hardware is optimal, MySQL runs very fast.
+<ul>
+<li>Written in C and C++</li>
+</ul></li>
+<li>MySQL is faster, more reliable and cheaper because of its unique storage engine architecture.</li>
+<li>Understands standards based SQL (Structured Query Language).</li>
+<li>Follows a client/server architecture consisting of a database server and arbitrarily many clients.
+<ul>
+<li>MySQL Server is a multithreaded SQL server.</li>
+<li>Designed to be fully multithreaded using kernel threads, to easily use multiple CPUs.</li>
+</ul></li>
+<li>Supports sharding and can be replicated across multiple nodes for more scalability and availability.</li>
+<li>Supports a large number of platforms, client programs and libraries, administrative tools and APIs.
+<ul>
+<li>Supports JDBC and JDBC</li>
+<li>Provides transactional and non-transactional storage engines.</li>
+<li>Designed to make it relatively easy to add other storage engines.</li>
+</ul></li>
+<li>Other features:
+<ul>
+<li>Roll-backs, commit and crash recovery</li>
+<li>Triggers, stored procedures and views</li>
+</ul></li>
+<li><a href="https://dev.mysql.com/doc/refman/8.0/en/features.html">The Main Features of MySQL</a></li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="object-oriented-databases"></a><a href="#object-oriented-databases" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Object-oriented databases</h2>
+<ul>
+<li>An object-relational database (ORD) is composed of both RDBMS and OODBMS.</li>
+<li>Supports sets and lists, arbitrary user-defined datatypes as well as nested objects.
+<ul>
+<li>Allows developers to build and innovate their own data types and methods.</li>
+</ul></li>
+<li>Supports object-oriented database model: objects, classes and inheritance.
+<ul>
+<li>Very similar to objects used in object-oriented programming.</li>
+</ul></li>
+<li>Supports relationships between objects to easily collect related records.</li>
+</ul>
+<pre><code class="hljs css language-sql"><span class="hljs-comment">-- Example: Custom data types and methods</span>
+
+<span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> Customers (
+    <span class="hljs-keyword">Id</span>    Cust_Id     <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span> PRIMARY <span class="hljs-keyword">KEY</span>,
+    <span class="hljs-keyword">Name</span>  PersonName  <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>,
+    DOB   <span class="hljs-built_in">DATE</span>        <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>
+);
+<span class="hljs-keyword">SELECT</span> Formal(C.Id)
+<span class="hljs-keyword">FROM</span> Customers C
+<span class="hljs-keyword">WHERE</span> BirthDay(C.DOB) = TODAY;
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="postgresql"></a><a href="#postgresql" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>PostgreSQL</h3>
+<p><center><img width=100 src="/datadocs/assets/220px-Postgresql_elephant.svg.png"/></center></p>
+<ul>
+<li>One of the most popular and advanced solutions is PostgreSQL.</li>
+<li>PostgreSQL is an enterprise-class open source ORDBMS.
+<ul>
+<li>Not owned by any organization.</li>
+</ul></li>
+<li>Some most prominent features:
+<ul>
+<li>Supports both SQL for relational and JSON for non-relational queries.</li>
+<li>Backed by an experienced community of developers who have made tremendous contribution.</li>
+<li>Supports advanced data types and advance performance optimization.</li>
+<li>The first database to implement multi-version concurrency control (MVCC)</li>
+<li>Compliant with the ANSI SQL standard (160/179 functions as of 2018)</li>
+<li>Completely ACID compliant (in contrast to MySQL)</li>
+<li>Highly extensible with custom data types, functions, and even code.</li>
+<li>Supports synchronous and asynchronous replication for high availability.</li>
+</ul></li>
+<li>More suited for complex queries, data warehousing and fast read-write speeds.</li>
+<li><a href="https://www.postgresql.org/about/">Why use PostgreSQL?</a></li>
+<li><a href="https://www.geekytidbits.com/performance-tuning-postgres/">Performance Tuning Queries in PostgreSQL</a></li>
+<li><a href="https://www.digitalocean.com/community/tutorials/sqlite-vs-mysql-vs-postgresql-a-comparison-of-relational-database-management-systems">SQLite vs MySQL vs PostgreSQL: A Comparison Of Relational Database Management Systems</a></li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="columnar-databases"></a><a href="#columnar-databases" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Columnar databases</h2>
+<ul>
+<li>A columnar DBMS stores data tables by column rather than by row.
+<ul>
+<li>Stores each column in one or more contiguous blocks.</li>
+<li>Basically a row-store with an index on every column.</li>
+</ul></li>
+<li>Most column oriented databases are relational.
+<ul>
+<li>Some relational databases can use columnar storage, such as PostgreSQL with cstore_fdw.</li>
+</ul></li>
+<li>Optimized for fast retrieval of columns of data, typically in OLAP applications.</li>
+<li>Pros:
+<ul>
+<li>High-speed searching, scanning, and aggregation capabilities.</li>
+<li>Ability to scale out easily.</li>
+<li>Drastically reduce the overall disk I/O operations.</li>
+<li>Most columnar databases compress similar data to reduce storage.</li>
+</ul></li>
+<li>Cons:
+<ul>
+<li>Operations that retrieve the entire row are slower (but rare)</li>
+<li>INSERTs must be separated into columns and compressed as they are stored.</li>
+</ul></li>
+<li>OLTP constraints can be mediated using in-memory data storage.</li>
+</ul>
+<pre><code class="hljs css language-sql"><span class="hljs-comment">-- Example: Block in columnar storage</span>
+
+10:001,12:002,11:003,22:004;
+Smith:001,Jones:002,Johnson:003,Jones:004;
+goodreads.com:001,google.com:002,gamerassaultweekly.com:003
+</code></pre>
+</span></div></article></div><div class="docLastUpdate"><em>Last updated on 2019-8-30 by Oleg Polakow</em></div><div class="docs-prevnext"><a class="docs-prev button" href="/datadocs/docs/big-data/database-design"><span class="arrow-prev">← </span><span>Database Design</span></a><a class="docs-next button" href="/datadocs/docs/big-data/wide-column-stores"><span>Wide Column Stores</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#data-modeling">Data modeling</a><ul class="toc-headings"><li><a href="#relational-model">Relational model</a></li><li><a href="#normalization">Normalization</a></li></ul></li><li><a href="#mysql">MySQL</a></li><li><a href="#object-oriented-databases">Object-oriented databases</a><ul class="toc-headings"><li><a href="#postgresql">PostgreSQL</a></li></ul></li><li><a href="#columnar-databases">Columnar databases</a></li></ul></nav></div><footer class="nav-footer" id="footer"><div class="brand-box"><div class="brand"><a href="https://www.tum.de/nc/en/" target="_blank" rel="noreferrer noopener" class="brand-link"><img src="/datadocs/img/tum_logo.png" alt="Technical University of Munich" height="45"/></a></div><div class="brand"><a href="https://opensource.facebook.com/" target="_blank" rel="noreferrer noopener" class="brand-link"><img src="/datadocs/img/oss_logo.png" alt="Facebook Open Source" width="170" height="45"/></a></div></div><section class="copyright">Copyright © 2019 Oleg Polakow</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
+                document.addEventListener('keyup', function(e) {
+                  if (e.target !== document.body) {
+                    return;
+                  }
+                  // keyCode for '/' (slash)
+                  if (e.keyCode === 191) {
+                    const search = document.getElementById('search_input_react');
+                    search && search.focus();
+                  }
+                });
+              </script><script>
+              var search = docsearch({
+                
+                apiKey: '6642fca03d716a543ac4428d7d20b842',
+                indexName: 'polakowo-datadocs',
+                inputSelector: '#search_input_react',
+                algoliaOptions: {}
+              });
+            </script></body></html>

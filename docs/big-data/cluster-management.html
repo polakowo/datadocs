@@ -1,0 +1,325 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Cluster Management · datadocs</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="## Hadoop YARN"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Cluster Management · datadocs"/><meta property="og:type" content="website"/><meta property="og:url" content="https://polakowo.github.io/datadocs/"/><meta property="og:description" content="## Hadoop YARN"/><meta property="og:image" content="https://polakowo.github.io/datadocs/img/undraw_online.svg"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://polakowo.github.io/datadocs/img/undraw_tweetstorm.svg"/><link rel="shortcut icon" href="/datadocs/img/favicon.ico"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-142521178-1"></script><script>
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments); }
+              gtag('js', new Date());
+              gtag('config', 'UA-142521178-1');
+            </script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script><script type="text/javascript" src="/datadocs/js/code-block-buttons.js"></script><script type="text/javascript" src="/datadocs/js/disqus.js"></script><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script src="/datadocs/js/scrollSpy.js"></script><link rel="stylesheet" href="/datadocs/css/prism.css"/><link rel="stylesheet" href="/datadocs/css/main.css"/><script src="/datadocs/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/datadocs/"><img class="logo" src="/datadocs/img/headerIcon.ico" alt="datadocs"/><h2 class="headerTitleWithLogo">datadocs</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/datadocs/docs/machine-learning/linear-models" target="_self">Docs</a></li><li class=""><a href="https://github.com/polakowo/datadocs" target="_self">GitHub</a></li><li class="navSearchWrapper reactNavSearchWrapper"><input type="text" id="search_input_react" placeholder="Search" title="Search"/></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Hadoop</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Machine Learning<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">General</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/machine-learning">Machine Learning</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Methods</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/linear-models">Linear Models</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/tree-based-models">Tree-Based Models</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/ensemble-methods">Ensemble Methods</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Features</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/eda">Exploratory Data Analysis</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/feature-engineering">Feature Engineering</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/advanced-features">Advanced Features</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Optimization</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/metric-optimization">Metric Optimization</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/validation-schemes">Validation Schemes</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/hyperopt">Hyperparameter Optimization</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Competitions</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/competitive-ml">Competitive Machine Learning</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/data-leakages">Data Leakages</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Deep Learning<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">General</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/deep-learning">Deep Learning</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/dl-strategy">Deep Learning Strategy</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Fundamentals</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/backpropagation">Backpropagation</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/activation-functions">Activation Functions</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/initialization">Initialization</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/optimization">Optimization</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/regularization">Regularization</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Computer Vision</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/cnns">Convolutional Neural Networks</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/cnn-architectures">CNN Architectures</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/object-detection">Object Detection</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/face-recognition">Face Recognition</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/nst">Neural Style Transfer</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Natural Language Processing</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/rnns">Recurrect Neural Networks</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/word-embeddings">Word Embeddings</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/nmt">Neural Machine Translation</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/attention-mechanism">Attention Mechanism</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/speech-recognition">Speech Recognition</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Big Data<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">General</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/data-engineering">Data Engineering</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/cloud-computing">Cloud Computing</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/data-warehouses">Data Warehouses</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/data-lakes">Data Lakes</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/data-pipelines">Data Pipelines</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Databases</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/database-design">Database Design</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/sql-databases">SQL Databases</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/wide-column-stores">Wide Column Stores</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/key-value-stores">Key Value Stores</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/document-stores">Document Stores</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/graph-stores">Graph Stores</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Hadoop</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/hadoop">Hadoop Ecosystem</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/data-ingestion">Data Ingestion</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/data-storage">Data Storage</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/data-processing">Data Processing</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/query-engines">Query Engines</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/datadocs/docs/big-data/cluster-management">Cluster Management</a></li></ul></div></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://github.com/polakowo/datadocs/edit/master/docs/big-data/cluster-management.md" target="_blank" rel="noreferrer noopener">Edit</a><h1 class="postHeaderTitle">Cluster Management</h1></header><article><div><span><h2><a class="anchor" aria-hidden="true" id="hadoop-yarn"></a><a href="#hadoop-yarn" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Hadoop YARN</h2>
+<ul>
+<li>YARN (Yet Another Resource Negotiator) is responsible for allocating system resources to various applications running on a Hadoop cluster and scheduling tasks to be executed on its nodes.
+<ul>
+<li>YARN is a compute layer on top of HDFS, introduced in Hadoop 2.</li>
+</ul></li>
+<li>YARN sits between HDFS and the processing engines being used to run applications.
+<ul>
+<li>Decoupling from MapReduce 2 enabled Hadoop clusters to run interactive querying, streaming data and real-time analytics.</li>
+<li>Also enabled development of MapReduce alternatives (Spark, Tez) on top of YARN.</li>
+</ul></li>
+<li>YARN offers scalability, resource utilization, compatibility, multi-tenancy, and high availability.
+<ul>
+<li>Can dynamically allocate pools of resources to applications.</li>
+<li>Data locality: Tries to run tasks on the same nodes which hold the relevant HDFS blocks.</li>
+</ul></li>
+<li><a href="https://hortonworks.com/blog/introducing-apache-hadoop-yarn/">Introducing Apache Hadoop YARN</a></li>
+<li><a href="https://medium.com/@arseny.chernov/nomad-vs-yarn-vs-kubernetes-vs-borg-vs-mesos-vs-you-name-it-7f15a907ece2">Nomad vs. Yarn vs. Kubernetes vs. Borg vs. Mesos vs… you name it!</a></li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="components"></a><a href="#components" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Components</h3>
+<ul>
+<li>YARN decentralizes execution and monitoring of processing jobs.</li>
+</ul>
+<p><img width=700 src="/datadocs/assets/yarn.png"/>
+<center><a href="https://www.youtube.com/watch?v=1vg_W-MMZpA" style="color: lightgrey">Credit</a></center></p>
+<ul>
+<li>Client:
+<ul>
+<li>Submits an application.</li>
+<li>Contacts ResourceManager/ApplicationMaster to monitor application’s status.</li>
+</ul></li>
+<li>Global ResourceManager:
+<ul>
+<li>Consists of Scheduler and ApplicationsManager.</li>
+<li>The Scheduler allocates resources to the various running applications according to constraints such as queue capacities and user limits.</li>
+<li>The ApplicationsManager maintains a collection of submitted applications.</li>
+<li>For each application, launches the ApplicationMaster.</li>
+</ul></li>
+<li>Per-application ApplicationMaster:
+<ul>
+<li>Negotiates resources with the Scheduler.</li>
+<li>Works with the NodeManagers to execute and monitor the containers and their resource consumption.</li>
+<li>Once the application is complete, deregisters with the ResourceManager and shuts down.</li>
+</ul></li>
+<li>Per-node slave NodeManager:
+<ul>
+<li>Launches the applications’ containers.</li>
+<li>Monitors their resource usage.</li>
+<li>Kills a container based on directions from the ResourceManager.</li>
+</ul></li>
+<li>Per-application Container running on a NodeManager:
+<ul>
+<li>A collection of physical resources such as RAM, CPU cores and disk on a single node.</li>
+</ul></li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="mesos"></a><a href="#mesos" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Mesos</h2>
+<p><img width=250 src="/datadocs/assets/1200px-Apache_Mesos_Logo.svg.png"/></p>
+<ul>
+<li><a href="http://mesos.apache.org">Apache Mesos</a> is an open-source project to manage computer clusters.</li>
+<li>Abstracts CPU, memory, storage, and other compute resources away from machines (physical or virtual), enabling fault-tolerant and elastic distributed systems to easily be built and run effectively.</li>
+<li>Mesos is comparable to Google's Borg scheduler.</li>
+<li>Built using the same principles as the Linux kernel but for distributed apps.</li>
+<li>Focuses on resource management and decouples scheduling by allowing pluggable frameworks.
+<ul>
+<li>Two-level architecture enables &quot;application-aware&quot; scheduling.</li>
+</ul></li>
+</ul>
+<blockquote>
+<p>Mesos' ability to manage each workload the way it wants to be treated has led many companies to use Mesos as a single unified platform to run a combination of micro-services and data services together.</p>
+</blockquote>
+<ul>
+<li>Main tasks:
+<ul>
+<li>Abstracts data center resources into a single pool to simplify resource allocation.</li>
+<li>Colocates diverse workloads on the same infrastructure.</li>
+<li>Automates day-two operations for application-specific tasks.</li>
+<li>Runs new applications and technologies without modifying the cluster manager.</li>
+<li>Elastically scales the application and the underlying infrastructure.</li>
+</ul></li>
+<li>Main features:
+<ul>
+<li>Can easily scale to 10,000s of nodes.</li>
+<li>Fault-tolerant replicated master and agents using Zookeeper. Highly available.</li>
+<li>Native support for launching containers with Docker and AppC images.</li>
+<li>Support for running cloud native and legacy applications in the same cluster.</li>
+<li>HTTP APIs for developing new distributed applications, operating the cluster, and monitoring.</li>
+<li>Offers a built-in Web UI for viewing cluster state.</li>
+</ul></li>
+<li>Can allocate resources not just for big data:
+<ul>
+<li>Java apps, stateless Docker containers, batch jobs, real-time analytics, and more.</li>
+</ul></li>
+<li>Mesos was quickly adopted by Twitter, Apple(Siri), Yelp, Uber, Netflix.</li>
+<li><a href="http://mesos.apache.org/documentation/latest/architecture/">Mesos Architecture</a></li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="compared-to-hadoop-yarn"></a><a href="#compared-to-hadoop-yarn" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Compared to Hadoop YARN</h4>
+<ul>
+<li>YARN is still better if the data resides on HDFS.</li>
+<li>Mesos is a container management system:
+<ul>
+<li>Solves a more general problem than YARN.</li>
+</ul></li>
+<li>Apache Spark and Apache Storm can both natively run on top of Mesos.
+<ul>
+<li>Spark on Mesos is limited to one executor per slave though.</li>
+</ul></li>
+<li>YARN is a monolithic scheduler, while Mesos is a two-tiered system:
+<ul>
+<li>Makes offers of resources to your application (&quot;framework&quot;)</li>
+<li>Your framework decides whether to accept or reject them.</li>
+<li>You also decide on your own scheduling algorithm.</li>
+</ul></li>
+<li>YARN is optimized for long, analytical jobs like in Hadoop.
+<ul>
+<li>Mesos built to handle that as well as to handle long and short lives processes.</li>
+</ul></li>
+<li>Hadoop YARN may be integrated with Mesos using Myriad to intermix computing resources.
+<ul>
+<li>So that spare capacities on Hadoop get used, to safe money.</li>
+</ul></li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="compared-to-kubernetes"></a><a href="#compared-to-kubernetes" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Compared to Kubernetes</h4>
+<blockquote>
+<p>Kubernetes and Mesos are a match made in heaven.</p>
+</blockquote>
+<ul>
+<li>Mesos is a distributed system kernel that makes a cluster look like one giant computer system.
+<ul>
+<li>Abstracts underlying hardware away and just exposes the resources.</li>
+<li>Contains primitives for writing distributed applications (Spark was built for Messos)</li>
+<li>Yet Kubernetes is one (amongst others) frameworks that can be run on Mesos.</li>
+</ul></li>
+<li>Kubernetes can provide the scheduling logic and Mesos can take care of running jobs.
+<ul>
+<li>Kubernetes enables the Pod (group of co-located containers) abstraction, along with Pod labels for service discovery, load-balancing, and replication control.</li>
+<li>Mesos provides the fine-grained resource allocations for pods across nodes in a cluster.</li>
+</ul></li>
+<li>Mesos is being adapted to add a lot of the Kubernetes concepts.</li>
+<li><a href="https://d2iq.com/blog/docker-vs-kubernetes-vs-apache-mesos">Docker vs. Kubernetes vs. Apache Mesos</a></li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="apache-zookeeper"></a><a href="#apache-zookeeper" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Apache ZooKeeper</h2>
+<p><img width=250 src="/datadocs/assets/1200px-Apache_ZooKeeper_Logo.svg.png"/></p>
+<ul>
+<li><a href="https://zookeeper.apache.org">ZooKeeper</a> is a service for distributed systems to store configuration information.
+<ul>
+<li>ZooKeeper was once a sub-project of Hadoop.</li>
+<li>ZooKeeper is an integral part of HBase, Apache Drill, Storm and more.</li>
+<li>For example, Mesos uses ZooKeeper for cluster membership and leader election.</li>
+</ul></li>
+<li>Based on Paxos algorithm variant called Zab.</li>
+<li>Used where some data needs to be carefully synchronized between client nodes.
+<ul>
+<li>Which node is the master?</li>
+<li>Which tasks are assigned to which workers?</li>
+<li>Which workers are currently available?</li>
+</ul></li>
+<li>Feature-light: The mechanisms such as leader election and locks are not already present, but can be written above the ZooKeeper primitives.</li>
+<li>Offers a hierarchical key-value store, which is used for maintaining configuration information, naming, providing distributed synchronization, and providing group services.
+<ul>
+<li>Really a little distributed file system with strong consistency guarantees (CP).</li>
+<li>A shared hierarchical name space of data registers (znodes)</li>
+<li>A name is a sequence of path elements separated by a slash (&quot;/&quot;)</li>
+<li>Every znode can have data associated with it. For example, a znode can contain information on who the current master is.</li>
+<li>Persistent znodes remain stored even if master crashes.</li>
+<li>Ephemeral znodes are destroyed as soon as the client that created it disconnects.</li>
+<li>Avoids continuous polling by letting the client subscribe for notifications on a znode.</li>
+<li>ZooKeeper's API: <code>create</code>, <code>delete</code>, <code>exists</code>, <code>setData</code>, <code>getData</code>, <code>getChildren</code></li>
+</ul></li>
+</ul>
+<p><img width=600 src="/datadocs/assets/Zookeeper-1.png"/>
+<center><a href="https://www.3pillarglobal.com/insights/test-execution-distributed-environment-using-zookeeper-poc" style="color: lightgrey">Credit</a></center></p>
+<ul>
+<li>Offers high throughput, low latency, highly available, strictly ordered access to the znodes.
+<ul>
+<li>Prevents becoming the single point of failure in big systems.</li>
+<li>It's an atomic broadcast system, through which updates are totally ordered.</li>
+<li>As long as a majority of the servers are available, the ZooKeeper service will be available.</li>
+</ul></li>
+<li>Who watches the watcher?
+<ul>
+<li>Ensemble is nothing but a cluster of Zookeeper servers.</li>
+<li>Quorum defines the rule to form a healthy ensemble. Quorum is defined using a formula \(Q=2N+1\) where \(Q\) defines number of nodes required to form a healthy ensemble which can allow \(N\) failure nodes. Three nodes are required to tolerate a single failure.</li>
+<li>Healthy ensemble is a cluster with only one active leader at any point of time.</li>
+</ul></li>
+<li>Pros:
+<ul>
+<li>This system is very reliable as it keeps working even if a node fails.</li>
+<li>The architecture of ZooKeeper is quite simple as there is a shared hierarchical namespace which helps coordinating the processes.</li>
+<li>ZooKeeper is especially fast in &quot;read-dominant&quot; workloads (because of the guarantee of linear writes it does not perform well for write-dominant workloads)</li>
+<li>The performance of ZooKeeper can be improved by adding nodes.</li>
+<li>Can be used in large distributed systems.</li>
+</ul></li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="apache-oozie"></a><a href="#apache-oozie" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Apache Oozie</h2>
+<p><img width=250 src="/datadocs/assets/oozie_282x1178.png"/></p>
+<ul>
+<li><a href="https://oozie.apache.org">Apache Oozie</a> is a workflow scheduler system to manage Apache Hadoop jobs.</li>
+<li>Oozie is a scalable, reliable and extensible system.</li>
+<li>Oozie is a Java Web-Application that runs in a Java servlet-container.</li>
+<li>Workflow is a collection of Hadoop actions arranged in a control dependency DAG.
+<ul>
+<li>The second action can’t run until the first action has completed.</li>
+<li>Can chain together MapReduce, Hive, Pig, etc. but also Java programs and shell scripts.</li>
+<li>Other systems are available via add-ons (e.g. Spark)</li>
+<li>Workflow definitions are written in hPDL (a XML Process Definition Language)</li>
+</ul></li>
+<li>Steps to set up a workflow:
+<ul>
+<li>Make sure each action works on its own.</li>
+<li>Make a directory on HDFS.</li>
+<li>Create <code>workflow.xml</code> file and put it inside of this directory.</li>
+<li>Create <code>job.properties</code> defining the variables that <code>workflow.xml</code> needs.</li>
+</ul></li>
+</ul>
+<pre><code class="hljs css language-bash">$ oozie job --oozie http://localhost:11000/oozie -config /home/maria_dev/job.properties -run
+<span class="hljs-comment"># Monitor the progress at http://localhost:11000/oozie</span>
+</code></pre>
+<ul>
+<li>Coordinator allows to define and execute recurrent and interdependent workflow jobs.
+<ul>
+<li>Schedules workflow execution.</li>
+<li>Launches workflows based on a given start time and frequency.</li>
+<li>Will also wait for required input data to become available.</li>
+<li>Runs in exactly the same way as workflows.</li>
+</ul></li>
+<li>Bundle is a higher-level abstraction that will batch a set of coordinator applications.
+<ul>
+<li>There is no explicit dependency among the coordinator applications in a bundle.</li>
+<li>But there is a data dependency: For example, by grouping a bunch of coordinators into a bundle, one could suspend them all if there is any problem with the input data.</li>
+</ul></li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="apache-zeppelin"></a><a href="#apache-zeppelin" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Apache Zeppelin</h2>
+<p><img width=150 src="/datadocs/assets/zeppelin_classic_logo.png"/></p>
+<ul>
+<li><a href="https://zeppelin.apache.org">Apache Zeppelin</a> is a web-based notebook that enables data-driven, interactive data analytics and collaborative documents on Hadoop.</li>
+<li>Similar to the Jupyter Notebook that has been extremely popular in the Python community.</li>
+<li>Supports 20+ different interpreters such as Spark, Python, Scala, Hive, shell and markdown.
+<ul>
+<li>Allows any language and data processing backend to be plugged in.</li>
+<li>Allows them to be mixed in the same notebook.</li>
+</ul></li>
+</ul>
+<p><img width=600 src="/datadocs/assets/zeppelin-04-d646c299.png"/>
+<center><a href="https://predictionio.apache.org/datacollection/analytics-zeppelin/" style="color: lightgrey">Credit</a></center></p>
+</span></div></article></div><div class="docLastUpdate"><em>Last updated on 2019-9-4 by Oleg Polakow</em></div><div class="docs-prevnext"><a class="docs-prev button" href="/datadocs/docs/big-data/query-engines"><span class="arrow-prev">← </span><span>Query Engines</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#hadoop-yarn">Hadoop YARN</a><ul class="toc-headings"><li><a href="#components">Components</a></li></ul></li><li><a href="#mesos">Mesos</a></li><li><a href="#apache-zookeeper">Apache ZooKeeper</a></li><li><a href="#apache-oozie">Apache Oozie</a></li><li><a href="#apache-zeppelin">Apache Zeppelin</a></li></ul></nav></div><footer class="nav-footer" id="footer"><div class="brand-box"><div class="brand"><a href="https://www.tum.de/nc/en/" target="_blank" rel="noreferrer noopener" class="brand-link"><img src="/datadocs/img/tum_logo.png" alt="Technical University of Munich" height="45"/></a></div><div class="brand"><a href="https://opensource.facebook.com/" target="_blank" rel="noreferrer noopener" class="brand-link"><img src="/datadocs/img/oss_logo.png" alt="Facebook Open Source" width="170" height="45"/></a></div></div><section class="copyright">Copyright © 2019 Oleg Polakow</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
+                document.addEventListener('keyup', function(e) {
+                  if (e.target !== document.body) {
+                    return;
+                  }
+                  // keyCode for '/' (slash)
+                  if (e.keyCode === 191) {
+                    const search = document.getElementById('search_input_react');
+                    search && search.focus();
+                  }
+                });
+              </script><script>
+              var search = docsearch({
+                
+                apiKey: '6642fca03d716a543ac4428d7d20b842',
+                indexName: 'polakowo-datadocs',
+                inputSelector: '#search_input_react',
+                algoliaOptions: {}
+              });
+            </script></body></html>

@@ -1,0 +1,1290 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Data Processing · datadocs</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="## Batch vs Stream Processing"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Data Processing · datadocs"/><meta property="og:type" content="website"/><meta property="og:url" content="https://polakowo.github.io/datadocs/"/><meta property="og:description" content="## Batch vs Stream Processing"/><meta property="og:image" content="https://polakowo.github.io/datadocs/img/undraw_online.svg"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://polakowo.github.io/datadocs/img/undraw_tweetstorm.svg"/><link rel="shortcut icon" href="/datadocs/img/favicon.ico"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-142521178-1"></script><script>
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments); }
+              gtag('js', new Date());
+              gtag('config', 'UA-142521178-1');
+            </script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script><script type="text/javascript" src="/datadocs/js/code-block-buttons.js"></script><script type="text/javascript" src="/datadocs/js/disqus.js"></script><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script src="/datadocs/js/scrollSpy.js"></script><link rel="stylesheet" href="/datadocs/css/prism.css"/><link rel="stylesheet" href="/datadocs/css/main.css"/><script src="/datadocs/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/datadocs/"><img class="logo" src="/datadocs/img/headerIcon.ico" alt="datadocs"/><h2 class="headerTitleWithLogo">datadocs</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/datadocs/docs/machine-learning/linear-models" target="_self">Docs</a></li><li class=""><a href="https://github.com/polakowo/datadocs" target="_self">GitHub</a></li><li class="navSearchWrapper reactNavSearchWrapper"><input type="text" id="search_input_react" placeholder="Search" title="Search"/></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Hadoop</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Machine Learning<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">General</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/machine-learning">Machine Learning</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Methods</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/linear-models">Linear Models</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/tree-based-models">Tree-Based Models</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/ensemble-methods">Ensemble Methods</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Features</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/eda">Exploratory Data Analysis</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/feature-engineering">Feature Engineering</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/advanced-features">Advanced Features</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Optimization</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/metric-optimization">Metric Optimization</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/validation-schemes">Validation Schemes</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/hyperopt">Hyperparameter Optimization</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Competitions</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/competitive-ml">Competitive Machine Learning</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/data-leakages">Data Leakages</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Deep Learning<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">General</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/deep-learning">Deep Learning</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/dl-strategy">Deep Learning Strategy</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Fundamentals</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/backpropagation">Backpropagation</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/activation-functions">Activation Functions</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/initialization">Initialization</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/optimization">Optimization</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/regularization">Regularization</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Computer Vision</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/cnns">Convolutional Neural Networks</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/cnn-architectures">CNN Architectures</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/object-detection">Object Detection</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/face-recognition">Face Recognition</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/nst">Neural Style Transfer</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Natural Language Processing</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/rnns">Recurrect Neural Networks</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/word-embeddings">Word Embeddings</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/nmt">Neural Machine Translation</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/attention-mechanism">Attention Mechanism</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/speech-recognition">Speech Recognition</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Big Data<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">General</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/data-engineering">Data Engineering</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/cloud-computing">Cloud Computing</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/data-warehouses">Data Warehouses</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/data-lakes">Data Lakes</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/data-pipelines">Data Pipelines</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Databases</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/database-design">Database Design</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/sql-databases">SQL Databases</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/wide-column-stores">Wide Column Stores</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/key-value-stores">Key Value Stores</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/document-stores">Document Stores</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/graph-stores">Graph Stores</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Hadoop</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/hadoop">Hadoop Ecosystem</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/data-ingestion">Data Ingestion</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/data-storage">Data Storage</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/datadocs/docs/big-data/data-processing">Data Processing</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/query-engines">Query Engines</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/cluster-management">Cluster Management</a></li></ul></div></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://github.com/polakowo/datadocs/edit/master/docs/big-data/data-processing.md" target="_blank" rel="noreferrer noopener">Edit</a><h1 class="postHeaderTitle">Data Processing</h1></header><article><div><span><h2><a class="anchor" aria-hidden="true" id="batch-vs-stream-processing"></a><a href="#batch-vs-stream-processing" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Batch vs Stream Processing</h2>
+<h3><a class="anchor" aria-hidden="true" id="batch-processing"></a><a href="#batch-processing" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Batch processing</h3>
+<ul>
+<li>Batch processing is the processing of a large volume of data all at once.</li>
+<li>An efficient way to process large amounts of data that is collected over a period of time.
+<ul>
+<li>Newly arriving data elements are collected into a group.</li>
+<li>The whole group is then processed at a future time.</li>
+</ul></li>
+<li>Features:
+<ul>
+<li>Has access to all data.</li>
+<li>Might compute something big and complex.</li>
+<li>Has latency measured in minutes or more.</li>
+<li>More concerned with throughput (big data) than latency (fast response)</li>
+</ul></li>
+</ul>
+<p>$$\text{Throughput}=\frac{\text{QueueSize}}{\text{Latency}}$$</p>
+<ul>
+<li>Best suited when:
+<ul>
+<li>The data has already been collected.</li>
+<li>Processing needs multiple passes through the data.</li>
+<li>The data has random access.</li>
+<li>Dealing with large volumes of data.</li>
+</ul></li>
+<li>Requires all the data needed for the batch to be loaded into some storage.</li>
+<li>Traditional DWH and Hadoop are two common examples of systems focused on batch processing.</li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="stream-processing"></a><a href="#stream-processing" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Stream processing</h3>
+<p><center><img width=300 src="/datadocs/assets/kisspng-streaming-media-data-stream-5b07b62265be17.png"/></center>
+<center><a href="https://www.ververica.com/what-is-stream-processing" style="color: lightgrey">Credit</a></center></p>
+<ul>
+<li>Some data naturally comes as a never ending stream of events.
+<ul>
+<li>Most continuous data series are time series data (e.g. IoT data)</li>
+</ul></li>
+<li>Given a sequence of data, a series of operations is applied to each element in the stream.</li>
+<li>Features:
+<ul>
+<li>Continuous computation happens as data flows through the system.</li>
+<li>Computes a function of one data element, or a smallish window of recent data.</li>
+<li>Computes something relatively simple.</li>
+<li>Needs to complete each computation in near-real-time (probably seconds at most)</li>
+<li>Computations are generally independent.</li>
+<li>Asynchronous - source of data doesn't interact with the processing.</li>
+</ul></li>
+<li>Best suited when:
+<ul>
+<li>The event needs to be detected right away and responded to quickly.</li>
+<li>Approximate answers are sufficient.</li>
+<li>Processing can be done with single pass over the data.</li>
+<li>Processing has temporal locality.</li>
+<li>Sometimes data is huge and it is not even possible to store it.</li>
+</ul></li>
+<li>Stream processing can work with lot less hardware and storage than batch processing.</li>
+<li>Common applications include time series data and detecting patterns over time, mobile and web applications, e-commerce purchases, in-game player activity, social networks, and telemetry from connected devices.</li>
+<li><a href="https://aws.amazon.com/streaming-data/">Comparison between Batch Processing and Stream Processing</a></li>
+<li><a href="https://engineering.linkedin.com/distributed-systems/log-what-every-software-engineer-should-know-about-real-time-datas-unifying">The Log: What every software engineer should know about real-time data's unifying abstraction</a></li>
+<li><a href="https://mapr.com/ebooks/streaming-architecture/chapter-02-stream-based-architecture.html">Stream-based Architecture</a></li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="concepts"></a><a href="#concepts" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Concepts</h4>
+<ul>
+<li>Streaming data is data that is continuously generated by different sources at high speed.
+<ul>
+<li>The data is streamed in small sizes (order of Kilobytes)</li>
+<li>Allows users to access the content immediately, rather than having to wait for it to be downloaded.</li>
+<li>The data is processed sequentially on a record-by-record basis or over sliding time windows.</li>
+</ul></li>
+<li>Three different times can be distinguished:
+<ul>
+<li>Event time: Time at which the event actually occurred.</li>
+<li>Ingestion time: Time at which the event was observed in the system.</li>
+<li>Processing time: Time at which the event was processed by the system.</li>
+</ul></li>
+<li>Window is the time period over which aggregations are made in stream processing.
+<ul>
+<li>Tumbling window: Non-overlapping, fixed time segments.</li>
+<li>Sliding window: Overlapping, fixed time segments.</li>
+<li>Session window: Non-overlapping time segments of different length.</li>
+</ul></li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="approaches"></a><a href="#approaches" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Approaches</h4>
+<ul>
+<li>Micro-batching (Spark Streaming, Storm Trident):
+<ul>
+<li>Collects the incoming data for a certain time (1–30s) and then processes it together.</li>
+<li>Throughput is high as processing and checkpointing will be done in one shot.</li>
+<li>The handling of errors is somewhat easier.</li>
+<li>But increases latency and efficient state management will be a challenge to maintain.</li>
+</ul></li>
+<li>A native streaming approach:
+<ul>
+<li>Incoming data is processed directly.</li>
+<li>A very high throughput can now also be achieved by native streaming frameworks.</li>
+<li>They also offer more flexibility for windows and states.</li>
+</ul></li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="framework-requirements"></a><a href="#framework-requirements" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Framework requirements</h4>
+<ul>
+<li>The streaming frameworks are designed with infinite data sets in mind.</li>
+<li>Any technology needs to be highly scalable, capable of starting and stopping without losing information, and able to interface with messaging technologies with capabilities similar to Kafka.</li>
+<li>Applications are defined by how well the framework controls streams, state, and time.</li>
+<li>Delivery guarantees:
+<ul>
+<li>At-least-once: every record is processed, but some may be processed more than once.</li>
+<li>At-most-once: no record will be processed more than once, but some records may be lost.</li>
+<li>Exactly-once: will be processed one and exactly one time even in case of failures.</li>
+<li>For example, in financial examples such as credit card transactions, unintentionally processing an event twice is bad. But, for instance, if the consumer uses messages to simply write (and never overwrite) a value in a database, then receiving a message more than once is no different than receiving it exactly once.</li>
+</ul></li>
+<li>Fault tolerance:
+<ul>
+<li>In case of failures, it should recover and start processing again from the point where it left.</li>
+<li>This is achieved through checkpointing the state to some persistent storage from time to time.</li>
+</ul></li>
+<li>State management:
+<ul>
+<li>Should provide a mechanism to preserve state information.</li>
+<li>Any non-trivial application requires a state in which previous events are stored (temp).</li>
+</ul></li>
+<li>Performance:
+<ul>
+<li>Latency should be minimal while throughput should be maximal (hard to achieve)</li>
+</ul></li>
+<li>Advanced features:
+<ul>
+<li>Event-time processing, watermarks, windowing</li>
+</ul></li>
+<li>A window is used to aggregate and analyze data for a specific period of time.
+<ul>
+<li>Tumbling window: Non-overlapping, fixed time segments</li>
+<li>Sliding window: Overlapping, fixed time segments</li>
+<li>Session window: Non-overlapping time segments of different length.</li>
+</ul></li>
+<li>Maturity:
+<ul>
+<li>The framework is already proven and battle-tested at scale by big companies.</li>
+</ul></li>
+<li><a href="https://medium.com/@chandanbaranwal/spark-streaming-vs-flink-vs-storm-vs-kafka-streams-vs-samza-choose-your-stream-processing-91ea3f04675b">Choose Your Stream Processing Framework</a></li>
+<li><a href="https://blog.codecentric.de/en/2017/03/distributed-stream-processing-frameworks-fast-big-data/">Distributed Stream Processing Frameworks for Fast &amp; Big Data</a></li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="architectures"></a><a href="#architectures" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Architectures</h3>
+<h4><a class="anchor" aria-hidden="true" id="lambda-architecture"></a><a href="#lambda-architecture" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Lambda architecture</h4>
+<p><center><img width=600 src="/datadocs/assets/1*nKfizpKOvGHiWDn8QOVowA.jpeg"/></center>
+<center><a href="https://hackernoon.com/in-search-of-data-dominance-spark-versus-flink-45cefb28f377" style="color: lightgrey">Credit</a></center></p>
+<ul>
+<li>The data entering the system is dispatched to both the batch and speed layer for processing.</li>
+<li>The batch layer looks at the entire data and corrects the data in the stream layer.
+<ul>
+<li>Manages the master dataset (an immutable, append-only set of raw data)</li>
+<li>Pre-computes the batch views.</li>
+<li>Run using a predefined schedule (1-2x/day)</li>
+<li>For example, Hadoop is the de facto standard batch-processing system.</li>
+</ul></li>
+<li>The stream layer processes the data in real time.
+<ul>
+<li>Only deals with recent data.</li>
+<li>Compensates for the high latency of updates to the serving layer.</li>
+<li>Sacrifices throughput as it aims to minimize latency by providing real-time views.</li>
+<li>The views may be incomplete but can be replaced by the batch layer's views later on.</li>
+</ul></li>
+<li>The serving layer responds to ad-hoc queries by returning precomputed views.
+<ul>
+<li>Indexes the batch views so that they can be queried in low-latency basis.</li>
+<li>For example, <a href="https://druid.apache.org">Apache Druid</a> provides a single cluster to handle output from both layers.</li>
+</ul></li>
+<li>Any incoming query can be answered by merging results from batch and real-time views.</li>
+<li>Apache Spark can be considered as an integrated solution for all layers.</li>
+<li><a href="https://en.wikipedia.org/wiki/Lambda_architecture">Lambda architecture</a></li>
+<li><a href="https://towardsdatascience.com/a-brief-introduction-to-two-data-processing-architectures-lambda-and-kappa-for-big-data-4f35c28005bb">A brief introduction to two data processing architectures</a></li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="kappa-architecture"></a><a href="#kappa-architecture" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Kappa architecture</h4>
+<p><center><img width=600 src="/datadocs/assets/kappa-2.png"/></center>
+<center><a href="https://dzone.com/articles/lambda-architecture-with-apache-spark" style="color: lightgrey">Credit</a></center></p>
+<ul>
+<li>Kappa Architecture is a software architecture pattern.</li>
+<li>The canonical data store in a Kappa Architecture system is an append-only immutable log.</li>
+<li>From the log, data is streamed through a computational system and fed into stores for serving.</li>
+<li>Same as Lambda Architecture system but:
+<ul>
+<li>Makes all the processing happen in a near–real-time streaming mode.</li>
+<li>Eliminates batch processing systems entirely.</li>
+<li>Re-computation on historical data in the long-term storage is still possible.</li>
+</ul></li>
+<li><a href="http://milinda.pathirage.org/kappa-architecture.com/">What is Kappa Architecture?</a></li>
+<li><a href="https://www.oreilly.com/ideas/questioning-the-lambda-architecture">Questioning the Lambda Architecture</a></li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="hadoop-mapreduce"></a><a href="#hadoop-mapreduce" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Hadoop MapReduce</h2>
+<p><center><img width=250 src="/datadocs/assets/Apache-MapReduce-logo-Hadoop-Ecosystem-Edureka.jpg"/></center></p>
+<ul>
+<li>MapReduce is a programming model and runtime for processing large data-sets (in clusters).</li>
+<li>Divides the data up into partitions that are MAPPED (transformed) and REDUCED (aggregated).
+<ul>
+<li>In the map step, each data is analyzed and converted into a (key, value) pair. Then these key-value pairs are shuffled across the cluster so that all keys are on the same machine. In the reduce step, the values with the same keys are combined together.</li>
+</ul></li>
+<li>Google published MapReduce paper in 2004 at OSDI.</li>
+<li>As the processing component, MapReduce is the heart of Apache Hadoop.
+<ul>
+<li>Typically the compute nodes and the storage nodes are the same.</li>
+<li>MapReduce sits on top of YARN.</li>
+</ul></li>
+<li>MapReduce = functional programming meets distributed processing.
+<ul>
+<li>Computation as application of functions</li>
+<li>Programmer specifies only “what” (declarative programming)</li>
+<li>System determines “how”</li>
+</ul></li>
+<li>MapReduce is resilient to failures.</li>
+<li>The execution framework:
+<ul>
+<li>Scheduling: assigns workers to map and reduce tasks.</li>
+<li>Data distribution: moves processes to data.</li>
+<li>Synchronization: gathers, sorts, and shuffles intermediate data.</li>
+<li>Errors and faults: detects worker failures and restarts.</li>
+</ul></li>
+<li>MapReduce is natively Java.
+<ul>
+<li>Streaming allows interfacing to other languages such as Python.</li>
+</ul></li>
+<li>Use cases:
+<ul>
+<li>One-iteration algorithms are perfect fits (Naive Bayes, kNN)</li>
+<li>Multi-iteration algorithms may be slow (K-Means)</li>
+<li>Algorithms that require large shared data with lots of synchronization are not good fits (SVM)</li>
+</ul></li>
+<li>Drawbacks:
+<ul>
+<li>MapReduce writes intermediate results to disk.</li>
+<li>Too low level: Manual programming of per record manipulation.</li>
+<li>Nothing new: Map and reduce are classical Lisp or higher order functions.</li>
+<li>Low per node performance: Due to replication, data transfer, shuffle, and a lot of I/O to DFS.</li>
+<li>Not designed for incremental/streaming tasks.</li>
+</ul></li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="stages"></a><a href="#stages" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Stages</h3>
+<ul>
+<li>The MapReduce framework operates exclusively on key/value pairs.</li>
+</ul>
+<p><center><img width=600 src="/datadocs/assets/mapreduce.png"/></center></p>
+<ul>
+<li>Map:
+<ul>
+<li>Mapper maps input key/value pairs to a set of intermediate key/value pairs.</li>
+<li>Master program divides up tasks based on location of data (same machine or at least same rack)</li>
+<li>Runs in parallel.</li>
+</ul></li>
+<li>Combine (optional):
+<ul>
+<li>Can save network time by pre-aggregating at mapper.</li>
+<li>For associative operations like sum, count, max.</li>
+<li>Decreases size of intermediate data.</li>
+</ul></li>
+<li>Shuffle and sort:
+<ul>
+<li>Different mappers may have output the same key.</li>
+<li>Reduce phase can’t start until map phase is completely finished.</li>
+<li>Shuffle is the process of moving map outputs to the reducers.</li>
+<li>While map-outputs are being fetched, they are merged and sorted.</li>
+</ul></li>
+<li>Partition:
+<ul>
+<li>Partitioner partitions the key space.</li>
+<li>All values with the same key need to be sent to the same reducer.</li>
+<li>Usually, system distributes the intermediate keys to reduce workers “randomly”.</li>
+</ul></li>
+<li>Reduce:
+<ul>
+<li>Reducer combines all intermediate values for a particular key.</li>
+<li>If some workers are slow (Straggler problem), start redundant workers and take the fastest one.</li>
+<li>Runs in parallel.</li>
+</ul></li>
+<li><a href="https://hadoop.apache.org/docs/r1.2.1/mapred_tutorial.html">MapReduce Tutorial</a></li>
+</ul>
+<pre><code class="hljs css language-py"><span class="hljs-comment"># Example: Break down movie ratings by rating score</span>
+
+<span class="hljs-keyword">from</span> mrjob.job <span class="hljs-keyword">import</span> MRJob
+<span class="hljs-keyword">from</span> mrjob.step <span class="hljs-keyword">import</span> MRStep
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">RatingsBreakdown</span><span class="hljs-params">(MRJob)</span>:</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">steps</span><span class="hljs-params">(self)</span>:</span>
+        <span class="hljs-keyword">return</span> [
+            MRStep(mapper=self.mapper_get_ratings,
+                   reducer=self.reducer_count_ratings)
+        ]
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">mapper_get_ratings</span><span class="hljs-params">(self, _, line)</span>:</span>
+        (userID, movieID, rating, timestamp) = line.split(<span class="hljs-string">'\t'</span>)
+        <span class="hljs-keyword">yield</span> rating, <span class="hljs-number">1</span>
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">reducer_count_ratings</span><span class="hljs-params">(self, key, values)</span>:</span>
+        <span class="hljs-keyword">yield</span> key, sum(values)
+
+<span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">'__main__'</span>:
+    RatingsBreakdown.run()
+</code></pre>
+<pre><code class="hljs css language-bash"><span class="hljs-comment"># Example: Running this example</span>
+
+<span class="hljs-comment"># Local mode</span>
+$ python RatingsBreakdown.py u.data
+
+<span class="hljs-comment"># On Hadoop</span>
+$ python RatingsBreakdown.py -r hadoop --hadoop-streaming-jar <span class="hljs-variable">$HADOOP_HOME</span>/hadoop-streaming.jar u.data
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="apache-tez"></a><a href="#apache-tez" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Apache Tez</h3>
+<p><center><img width=200 src="/datadocs/assets/ApacheTezLogo_lowres.png.jpeg"/></center></p>
+<ul>
+<li>Apache Tez expresses complex computations in MapReduce programs as DAGs.</li>
+<li>Improves the MapReduce paradigm by dramatically improving its speed.</li>
+<li>Permits dynamic performance optimizations:
+<ul>
+<li>Eliminates unnecessary steps and dependencies.</li>
+<li>Optimizes physical data flows and resource usage.</li>
+</ul></li>
+<li>Integrates well with Pig, Hive and other engines (can be selected via checkbox)</li>
+<li>Apache Tez can only perform interactive processing.</li>
+<li><a href="https://hortonworks.com/apache/tez/#section_1">Apache Tez: Overview</a></li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="apache-spark"></a><a href="#apache-spark" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Apache Spark</h2>
+<p><center><img width=200 src="/datadocs/assets/1200px-Apache_Spark_Logo.svg.png"/></center></p>
+<ul>
+<li>Apache Spark is an open-source distributed general-purpose cluster-computing framework.
+<ul>
+<li>Originated as a university-based project developed at UC Berkeley’s AMPLab in 2009.</li>
+<li>Then donated the Apache Software Foundation in 2013.</li>
+<li>Provides an interface for programming clusters with implicit data parallelism and fault tolerance.</li>
+<li>Can perform batch, stream, interactive and graph processing.</li>
+</ul></li>
+<li>Runs applications on Hadoop up to 100x faster in memory and 10x faster on disk.
+<ul>
+<li>Offers real-time computation and low latency because of in-memory computation.</li>
+<li>Makes accessing stored data quickly by keeping data in servers' RAM.</li>
+<li>Achieves high performance using DAGScheduler, query optimizer, and physical execution engine.</li>
+<li>Simple programming layer provides powerful caching and disk persistence capabilities.</li>
+</ul></li>
+<li>Spark is a polyglot:
+<ul>
+<li>Supports Scala, Python, R, and SQL programming languages.</li>
+<li>Runs on Hadoop, Apache Mesos, Kubernetes, standalone, or in the cloud.</li>
+<li>Can access data in HDFS, Cassandra, HBase, Hive, and other data sources.</li>
+<li>Spark on cloud offers faster time to deployment, better availability, more frequent feature updates, more elasticity, more geographic coverage, and lower costs linked to actual utilization.</li>
+</ul></li>
+<li>Limitations:
+<ul>
+<li>Spark is near real-time processing of live data: it operates on micro-batches of records. Native streaming tools such as Storm, Apex, or Flink are more suitable for low-latency applications. Flink and Apex can also be used for batch computation.</li>
+<li>Currently, Spark only supports ML algorithms that scale linearly with the input data size.</li>
+<li>Does not have its own file management system.</li>
+<li>Requires lots of RAM to run in-memory and thus is expensive.</li>
+</ul></li>
+<li>Not a good fit for small datasets, there are other tools which are preferred:
+<ul>
+<li>AWK - a command line tool for manipulating text files.</li>
+<li>R - a programming language and software environment for statistical computing.</li>
+<li>PyData Stack, which includes pandas, matplotlib, numpy, and scikit-learn among other libraries.</li>
+<li>Use pandas by chunking and filtering the data, and writing out the relevant parts to disk.</li>
+<li>Use libraries such as SQLAlchemy, to leverage pandas and SQL simultaneously.</li>
+</ul></li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="compared-to-mapreduce"></a><a href="#compared-to-mapreduce" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Compared to MapReduce</h4>
+<ul>
+<li>The Hadoop ecosystem is a slightly older technology than the Spark ecosystem.</li>
+<li>MapReduce is slower than Spark because it writes data out to disk during intermediate steps.</li>
+<li>While Spark is great for iterative algorithms, Hadoop MapReduce is good at batch processing.</li>
+<li>Many big companies, such as Facebook and LinkedIn, are still running on Hadoop.
+<ul>
+<li>Migrating legacy code from Hadoop to Spark might not be worth the cost.</li>
+</ul></li>
+<li>Spark runs up to 100 times faster than Hadoop MapReduce for large-scale data processing.</li>
+</ul>
+<blockquote>
+<p>&quot;Spark is beautiful. With Hadoop, it would take us six-seven months to develop a machine learning model. Now, we can do about four models a day.”</p>
+</blockquote>
+<h3><a class="anchor" aria-hidden="true" id="architecture"></a><a href="#architecture" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Architecture</h3>
+<ul>
+<li>Apache Spark Framework uses a master–slave architecture.</li>
+<li>Master node:
+<ul>
+<li>Driver: Schedules the job execution and negotiates with the cluster manager.</li>
+<li>SparkContext (<code>sc</code> variable): Represents the connection to the Spark cluster. Creates RDDs. After Spark 2.0, SparkSession (<code>spark</code> variable) combines SparkContext, SQLContext, and HiveContext. Creates DataFrames.</li>
+<li>DAGScheduler: Computes a DAG of stages for each job and submits them to TaskScheduler.</li>
+<li>TaskScheduler: Sends tasks to the cluster, runs them, and retries if there are failures.</li>
+<li>SchedulerBackend: Allows plugging in different implementations (Mesos, YARN, Standalone)</li>
+</ul></li>
+<li>Cluster manager:
+<ul>
+<li>Either Spark’s own standalone cluster manager, Mesos, YARN or Kubernetes.</li>
+</ul></li>
+<li>Slave node (Executor):
+<ul>
+<li>Executor is a distributed agent responsible for the execution of tasks.</li>
+<li>Stores the computation results data in memory, on disk or off-heap.</li>
+<li>Interacts with the storage systems.</li>
+</ul></li>
+<li><a href="https://spark.apache.org/docs/latest/cluster-overview.html">Cluster Mode Overview</a></li>
+<li><a href="https://stackoverflow.com/questions/37027732/apache-spark-differences-between-client-and-cluster-deploy-modes">Apache Spark: Differences between client and cluster deploy modes</a></li>
+<li><a href="http://datastrophic.io/core-concepts-architecture-and-internals-of-apache-spark/">Apache Spark: core concepts, architecture and internals</a></li>
+</ul>
+<p><center><img width=800 src="/datadocs/assets/Spark-Overview--1-.png"/></center>
+<center><a href="http://datastrophic.io/core-concepts-architecture-and-internals-of-apache-spark/" style="color: lightgrey">Credit</a></center></p>
+<h3><a class="anchor" aria-hidden="true" id="dags"></a><a href="#dags" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>DAGs</h3>
+<ul>
+<li>MapReduce forces a particular linear dataflow structure on distributed programs.
+<ul>
+<li>Each MapReduce operation is independent and Hadoop has no idea which one comes next.</li>
+</ul></li>
+<li>The limitations of MapReduce in Hadoop became a key point to introduce DAG in Spark.
+<ul>
+<li>Spark forms a DAG of consecutive computation stages.</li>
+<li>Allows the execution plan to be optimized, e.g. to minimize shuffling data around.</li>
+</ul></li>
+<li>DAG (Directed Acyclic Graph) is a finite directed graph with no directed cycles.
+<ul>
+<li>A set of vertices and edges, where vertices represent RDDs and edges represent transformations.</li>
+</ul></li>
+<li>When an action is called on RDD at a high level, DAG is created and submitted to the DAGScheduler.
+<ul>
+<li>DAGScheduler is the scheduling layer that implements stage-oriented scheduling.</li>
+<li>Transforms a logical execution plan (GAD) into a physical execution plan (stages of tasks)</li>
+<li>The narrow transformations will be grouped (pipelined) together into a single stage.</li>
+</ul></li>
+<li>There are two transformations that can be applied onto RDDs:
+<ul>
+<li>Narrow transformations: Stages combine tasks which don’t require shuffling/repartitioning of the data (e.g., map, filter). The stages that are not interdependent may be executed in parallel.</li>
+<li>Wide transformations: Require shuffling and result in stage boundaries.</li>
+</ul></li>
+<li>The DAGScheduler will then submit the stages to the TaskScheduler.</li>
+</ul>
+<p><center><img width=600 src="/datadocs/assets/GoYQB.png"/></center>
+<center><a href="https://stackoverflow.com/questions/25836316/how-dag-works-under-the-covers-in-rdd" style="color: lightgrey">Credit</a></center></p>
+<h3><a class="anchor" aria-hidden="true" id="programming-model"></a><a href="#programming-model" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Programming model</h3>
+<h4><a class="anchor" aria-hidden="true" id="rdd-api"></a><a href="#rdd-api" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>RDD API</h4>
+<ul>
+<li>The RDD APIs have been on Spark since the 1.0 release.</li>
+<li>RDD is a read-only multiset of data items distributed over a cluster of machines.
+<ul>
+<li>Resilient: Fault tolerant and transformations can be repeated in the event of data loss.</li>
+<li>Distributed: Distributed data among the multiple nodes in a cluster.</li>
+<li>Dataset: Collection of partitioned data with values.</li>
+</ul></li>
+<li>MapReduce operations:
+<ul>
+<li>RDD uses MapReduce operations which are widely adopted for processing.</li>
+</ul></li>
+<li>Immutable:
+<ul>
+<li>RDDs composed of a collection of records which are partitioned.</li>
+<li>A partition is a basic unit of parallelism in an RDD.</li>
+<li>Each partition is one logical division of data which is immutable.</li>
+<li>Immutability helps to achieve consistency in computations.</li>
+</ul></li>
+</ul>
+<p><center><img width=250 src="/datadocs/assets/IEcsA.png"/></center>
+<center><a href="https://stackoverflow.com/questions/34433027/what-is-rdd-in-spark" style="color: lightgrey">Credit</a></center></p>
+<ul>
+<li>Fault tolerant:
+<ul>
+<li>Fault-tolerance is achieved by keeping track of the &quot;lineage&quot; of each RDD: each RDD maintains a pointer to one or more parents and metadata about the relationship.</li>
+<li>Rather than doing data replication, computations can be reconstructed in case of data loss.</li>
+<li>This saves effort in data management and replication and thus achieves faster computation.</li>
+</ul></li>
+<li>Lazy evaluations:
+<ul>
+<li>The transformations are only computed when an action requires a result to be returned.</li>
+</ul></li>
+<li>Support two types of operations:
+<ul>
+<li>Transformations: Create a new RDD from an existing RDD.</li>
+<li>Actions: Return a value to the driver program after running a computation on the RDD.</li>
+<li>They apply to the whole RDD not on a single element.</li>
+<li>The original RDD remains unchanged throughout.</li>
+</ul></li>
+<li>Can easily and efficiently process data which is structured as well as unstructured data.</li>
+<li>Can be created by parallelizing a collection or referencing a dataset in an external storage system.</li>
+<li>Remain in memory, greatly increasing the performance of the cluster.
+<ul>
+<li>Only spilling to disk when required by memory limitations.</li>
+<li>Supports persisting in memory or on disk, or replicating across multiple nodes.</li>
+<li>Persisting in memory with <code>persist</code> allows future actions to be (often 10x) faster.</li>
+</ul></li>
+<li>Cons:
+<ul>
+<li>Does not support compile-time safety for both syntax and analysis errors.</li>
+<li>RDDs don’t infer the schema of the ingested data.</li>
+<li>Cannot take advantage of the catalyst optimizer and Tungsten execution engine.</li>
+</ul></li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="dataframe-api-untyped"></a><a href="#dataframe-api-untyped" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>DataFrame API (Untyped)</h4>
+<ul>
+<li>Spark introduced DataFrames in Spark 1.3 release.</li>
+<li>A DataFrame is organized into named columns.
+<ul>
+<li>It is conceptually equivalent to a table in a relational database.</li>
+<li>Allows running SQL queries.</li>
+</ul></li>
+<li>DataFrame is a distributed collection of Row objects:
+<ul>
+<li>DataFrame is simply a type alias of Dataset[Row].</li>
+<li>Row is a generic untyped JVM object.</li>
+</ul></li>
+<li>Hive compatibility:
+<ul>
+<li>One can run unmodified Hive queries on existing Hive warehouses.</li>
+<li>Reuses Hive frontend and MetaStore and gives full compatibility.</li>
+</ul></li>
+<li>Along with Dataframe, Spark also introduced Catalyst optimizer.
+<ul>
+<li>Catalyst contains a general library for representing trees and applying rules to manipulate them.</li>
+<li>Supports both rule-based and cost-based optimization.</li>
+</ul></li>
+<li>Tungsten:
+<ul>
+<li>Tungsten provides a physical execution backend which explicitly manages memory and dynamically generates bytecode for expression evaluation.</li>
+</ul></li>
+<li>Pros:
+<ul>
+<li>Expression-based operations and UDFs</li>
+<li>Logical plans and optimizer</li>
+<li>Fast/efficient internal representation</li>
+<li>Well-defined schema leads to a more efficient storage</li>
+<li>Read and write to JSON, Hive, Parquet</li>
+<li>Communicates with JDBC/ODBC, Tableau</li>
+</ul></li>
+<li>Cons:
+<ul>
+<li>Does not support compile-time safety for analysis errors (only syntax errors)</li>
+<li>Cannot recover domain object (e.g. Person) once transformed into DataFrame (Row)</li>
+</ul></li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="dataset-api-typed"></a><a href="#dataset-api-typed" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Dataset API (Typed)</h4>
+<ul>
+<li>Spark introduced Dataset in Spark 1.6 release.</li>
+<li>Provides best of both RDD and DataFrame.
+<ul>
+<li>An extension to DataFrames that provides a type-safe, object-oriented programming interface.</li>
+<li>Allows to work with both structured and unstructured data.</li>
+</ul></li>
+<li>Datasets are dictated by a case class defined in Scala or a class in Java.</li>
+<li>Allows to easily convert existing RDDs and DataFrames into Datasets without boilerplate code.</li>
+<li>Since Python and R have no compile-time type-safety, they support only DataFrames.</li>
+<li>Pros:
+<ul>
+<li>Best of both worlds: type safe + fast</li>
+</ul></li>
+<li>Cons:
+<ul>
+<li>Slower than DataFrames</li>
+<li>Not as good for interactive analysis, especially Python</li>
+<li>Requires type casting to string</li>
+</ul></li>
+</ul>
+<p><center><img width=600 src="/datadocs/assets/Unified-Apache-Spark-2.0-API-1.png"/></center>
+<center><a href="https://databricks.com/blog/2016/07/14/a-tale-of-three-apache-spark-apis-rdds-dataframes-and-datasets.html" style="color: lightgrey">Credit</a></center></p>
+<ul>
+<li>Both DataFrames and Datasets internally do final execution on RDDs.</li>
+<li>Since Spark 2.0, DataFrame and Datasets APIs are unified into a single Datasets API.</li>
+<li><a href="https://databricks.com/blog/2016/07/14/a-tale-of-three-apache-spark-apis-rdds-dataframes-and-datasets.html">A Tale of Three Apache Spark APIs: RDDs, DataFrames, and Datasets</a></li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="components"></a><a href="#components" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Components</h3>
+<h4><a class="anchor" aria-hidden="true" id="spark-core"></a><a href="#spark-core" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Spark Core</h4>
+<ul>
+<li>Spark Core is the base engine for large-scale parallel and distributed data processing.
+<ul>
+<li>Provides distributed task dispatching, scheduling, and basic I/O functionalities.</li>
+<li>Centered on the RDD abstraction.</li>
+<li>Other libraries are built on top of this engine.</li>
+</ul></li>
+</ul>
+<pre><code class="hljs css language-py"><span class="hljs-comment"># Example: Spark Core</span>
+
+text_file = sc.textFile(<span class="hljs-string">"hdfs://..."</span>)
+counts = text_file.flatMap(<span class="hljs-keyword">lambda</span> line: line.split(<span class="hljs-string">"\s+"</span>)) \
+                  .map(<span class="hljs-keyword">lambda</span> word: (word, <span class="hljs-number">1</span>)) \
+                  .reduceByKey(<span class="hljs-keyword">lambda</span> a, b: a + b)
+counts.saveAsTextFile(<span class="hljs-string">"hdfs://..."</span>)
+</code></pre>
+<h4><a class="anchor" aria-hidden="true" id="spark-sql"></a><a href="#spark-sql" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Spark SQL</h4>
+<ul>
+<li>Spark SQL blurs the lines between RDDs and relational tables.
+<ul>
+<li>Provides a programming abstraction called DataFrames.</li>
+<li>Provides SQL language support, with command-line interfaces and ODBC/JDBC connections.</li>
+<li>Supports the open source Hive project, and its SQL-like HiveQL query syntax.</li>
+<li>Includes a cost-based optimizer, columnar storage, and code generation to make queries fast.</li>
+</ul></li>
+</ul>
+<pre><code class="hljs css language-py"><span class="hljs-comment"># Example: Spark SQL</span>
+
+df = text_file.map(<span class="hljs-keyword">lambda</span> r: Row(r)).toDF([<span class="hljs-string">"line"</span>])
+text_file.select(explode(split(col(<span class="hljs-string">"line"</span>), <span class="hljs-string">"\s+"</span>))
+         .alias(<span class="hljs-string">"word"</span>))
+         .groupBy(<span class="hljs-string">"word"</span>)
+         .count()
+</code></pre>
+<h4><a class="anchor" aria-hidden="true" id="spark-mllib"></a><a href="#spark-mllib" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Spark MLlib</h4>
+<ul>
+<li>Spark MLlib is used to perform machine learning algorithms.
+<ul>
+<li>These include statistics, classification and regression, collaborative filtering techniques, cluster analysis methods, dimensionality reduction techniques, feature extraction and transformation functions, and optimization algorithms.</li>
+<li>9 times as fast as the disk-based implementation used by Apache Mahout.</li>
+<li>Scales better than Vowpal Wabbit.</li>
+</ul></li>
+</ul>
+<pre><code class="hljs css language-py"><span class="hljs-comment"># Example: Spark MLlib</span>
+
+df = sqlContext.createDataFrame(data, [<span class="hljs-string">"label"</span>, <span class="hljs-string">"features"</span>])
+lr = LogisticRegression(maxIter=<span class="hljs-number">10</span>)
+model = lr.fit(df)
+model.transform(df).show()
+</code></pre>
+<h4><a class="anchor" aria-hidden="true" id="spark-streaming"></a><a href="#spark-streaming" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Spark Streaming</h4>
+<ul>
+<li>Spark Streaming supports scalable and fault-tolerant processing of streaming data.
+<ul>
+<li>Lambda architecture comes free with Spark Streaming.</li>
+<li>High throughput, good for many use cases where sub-latency is not required.</li>
+<li>Fault tolerance by default due to micro-batch nature.</li>
+<li>Simple to use higher level APIs.</li>
+<li>Big community and aggressive improvements.</li>
+</ul></li>
+<li>Uses microbatching to approximate real-time stream analytics.
+<ul>
+<li>Micro-batches are batches that are small and/or processed at small intervals.</li>
+<li>Performs RDD transformations on those mini-batches of data.</li>
+<li>Code written for batch analytics can be used in streaming analytics.</li>
+</ul></li>
+</ul>
+<p><center><img width=800 src="/datadocs/assets/Spark-Streaming-Overview-Spark-Streaming-Edureka.png"/></center>
+<center><a href="https://www.edureka.co/blog/spark-streaming/" style="color: lightgrey">Credit</a></center></p>
+<ul>
+<li>Provides exactly-once guarantees more easily than a true real-time system.</li>
+<li>Spark DStream is a continuous stream of data.
+<ul>
+<li>Listens for incoming data, collects it and generates RDDs for each time period.</li>
+<li>Once can access the underlying RDDs if needed.</li>
+<li><a href="https://spark.apache.org/docs/latest/streaming-programming-guide.html#discretized-streams-dstreams">Discretized Streams (DStreams)</a></li>
+</ul></li>
+<li>Common stateless transformation include <code>map</code>, <code>flatMap</code>, <code>filter</code> and <code>reduceByKey</code>.</li>
+<li>Stateful transformations combine data across multiple batches.
+<ul>
+<li>Maintain a long-lived state on a DStream, for example, for running totals.</li>
+<li>The state is stored locally in memory or on disk and is regularly backed up by checkpointing.</li>
+</ul></li>
+<li>Windowed transformations allow computations over a longer time period than mini-batches.
+<ul>
+<li>One might process the data every second but aggregate the data every hour.</li>
+<li>The batch interval is how often the data is captured into DStream.</li>
+<li>The slide interval is how often the windowed transformation is computed.</li>
+<li>The window interval is how far back in time the windowed transformation goes.</li>
+</ul></li>
+<li>Structured streaming paves the way for event-based streaming in Spark (like Flink)
+<ul>
+<li>Imagine a table that never ends and new data just keeps getting appended to it.</li>
+<li>A streaming code looks equivalent to a non-streaming code.</li>
+<li>Structured data representation allows for more efficiency.</li>
+<li>SQL-style queries allow for further query optimizations.</li>
+<li>Interoperability with other components such as Spark MLlib.</li>
+<li>Built on the Spark SQL engine.</li>
+<li><a href="https://spark.apache.org/docs/2.2.0/structured-streaming-programming-guide.html">Structured Streaming Programming Guide</a></li>
+</ul></li>
+<li>Can integrate with established sources like Flume, Kafka, Kinesis, or TCP sockets.</li>
+</ul>
+<pre><code class="hljs css language-bash"><span class="hljs-comment"># Start TCP server</span>
+$ nc -lk 9999
+</code></pre>
+<pre><code class="hljs css language-py"><span class="hljs-comment"># Example: Display a running word count of text data received from a data server listening on a TCP socket.</span>
+<span class="hljs-comment"># https://spark.apache.org/docs/2.2.0/structured-streaming-programming-guide.html</span>
+
+<span class="hljs-keyword">from</span> pyspark.sql <span class="hljs-keyword">import</span> SparkSession
+<span class="hljs-keyword">from</span> pyspark.sql.functions <span class="hljs-keyword">import</span> explode
+<span class="hljs-keyword">from</span> pyspark.sql.functions <span class="hljs-keyword">import</span> split
+
+spark = SparkSession \
+    .builder \
+    .appName(<span class="hljs-string">"StructuredNetworkWordCount"</span>) \
+    .getOrCreate()
+
+<span class="hljs-comment"># Create DataFrame representing the stream of input lines from connection to localhost:9999</span>
+lines = spark \
+    .readStream \
+    .format(<span class="hljs-string">"socket"</span>) \
+    .option(<span class="hljs-string">"host"</span>, <span class="hljs-string">"localhost"</span>) \
+    .option(<span class="hljs-string">"port"</span>, <span class="hljs-number">9999</span>) \
+    .load()
+
+<span class="hljs-comment"># Split the lines into words</span>
+words = lines.select(
+   explode(
+       split(lines.value, <span class="hljs-string">" "</span>)
+   ).alias(<span class="hljs-string">"word"</span>)
+)
+
+<span class="hljs-comment"># Generate running word count</span>
+wordCounts = words.groupBy(<span class="hljs-string">"word"</span>).count()
+
+<span class="hljs-comment"># Start running the query that prints the running counts to the console</span>
+query = wordCounts \
+    .writeStream \
+    .outputMode(<span class="hljs-string">"complete"</span>) \
+    .format(<span class="hljs-string">"console"</span>) \
+    .start()
+
+query.awaitTermination()
+</code></pre>
+<pre><code class="hljs css language-bash"><span class="hljs-comment"># Running this example</span>
+
+$ ./bin/spark-submit examples/src/main/python/sql/streaming/structured_network_wordcount.py localhost 9999
+</code></pre>
+<h4><a class="anchor" aria-hidden="true" id="graphx"></a><a href="#graphx" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>GraphX</h4>
+<ul>
+<li>GraphX is the Spark API for graphs and graph-parallel computation.</li>
+<li>Includes a number of widely understood graph algorithms, including PageRank.</li>
+<li>RDDs are immutable and thus GraphX is unsuitable for graphs that need to be updated.</li>
+<li>GraphX can be viewed as being the Spark in-memory version of Apache Giraph.</li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="addressing-issues"></a><a href="#addressing-issues" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Addressing issues</h3>
+<ul>
+<li>Insufficient resources:
+<ul>
+<li>Different stages of a Spark job can differ greatly in their resource needs. Some stages might require a lot of memory, others might need a lot of CPU. Use the Spark UI and logs to collect information on these metrics.</li>
+<li>If running into out-of-memory errors, consider increasing the number of partitions.</li>
+<li>If memory errors occur over time, look into why the size of some objects is increasing.</li>
+<li>Look for ways of freeing up resources if garbage collection metrics are high.</li>
+<li>ML algorithms: The driver stores the data the workers share and update; check if the algorithm is pushing too much data there.</li>
+<li>Too much data to process? Compressed file formats can be tricky to interpret.</li>
+</ul></li>
+<li>Data skew:
+<ul>
+<li>Data skew is very specific to the dataset.</li>
+<li>Drill down Spark UI to the task level to see if certain partitions process significantly more data than others and if they are lagging behind.</li>
+<li>Add an intermediate data processing step with an alternative key.</li>
+<li>Adjust the <code>spark.sql.shuffle.partitions</code> parameter if necessary.</li>
+</ul></li>
+<li>Inefficient queries:
+<ul>
+<li>Use the Spark UI to check the DAG and the jobs and stages it’s built of.</li>
+<li>Catalyst will push filters as early as possible but won’t move them across stages. Make sure to do these optimizations manually without compromising the business logic.</li>
+<li>Catalyst can’t decide on its own how much data will shuffle across the cluster. Make sure to perform joins and grouped aggregations as late as possible.</li>
+<li>For joins, if one of dataframes is small, consider using broadcasting.</li>
+</ul></li>
+<li><a href="https://spark.apache.org/docs/latest/monitoring.html">Monitoring and Instrumentation</a></li>
+<li><a href="https://spark.apache.org/docs/latest/configuration.html#configuring-logging">Configuring Logging</a></li>
+<li><a href="https://spark.apache.org/docs/latest/tuning.html">Tuning Spark</a></li>
+<li><a href="https://spark.apache.org/docs/latest/sql-performance-tuning.html">Performance Tuning</a></li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="apache-storm"></a><a href="#apache-storm" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Apache Storm</h2>
+<p><center><img width=250 src="/datadocs/assets/logo.png"/></center></p>
+<ul>
+<li><a href="https://storm.apache.org">Apache Storm</a> is an open source, scalable, fault-tolerant, distributed real-time computation system.</li>
+<li>Did for realtime processing what Hadoop did for batch processing.</li>
+<li>Has continued to evolve since it became a top-level Apache project.</li>
+<li>Features:
+<ul>
+<li>Integrates: integrates with any queueing system and any database system.</li>
+<li>Fast: benchmarked as processing one million 100 byte messages per second per node.</li>
+<li>Scalable: with parallel calculations that run across a cluster of machines.</li>
+<li>Fault-tolerant: when workers die, Storm will automatically restart them.</li>
+<li>Reliable: guarantees that each tuple will be processed at least once or exactly once.</li>
+<li>Easy to operate: standard configurations are suitable for production on day one.</li>
+</ul></li>
+<li>Reliably processes unbounded streams of data... without storing any actual data.
+<ul>
+<li>Can process a million tuples per second per node.</li>
+</ul></li>
+<li>Has a &quot;local mode&quot; where a Apache Storm cluster is simulated in-process.</li>
+<li>Can be used with any programming language thanks to Thrift.</li>
+<li>Used for realtime analytics, online ML, continuous computation, distributed RPC, ETL.
+<ul>
+<li>Kafka + Storm seems to be a pretty popular combination.</li>
+</ul></li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="compared-to-apache-spark"></a><a href="#compared-to-apache-spark" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Compared to Apache Spark</h4>
+<ul>
+<li>Spark performs data-parallel computations while Storm performs task-parallel computations.</li>
+<li>Spark supports &quot;exactly once&quot; processing mode only.</li>
+<li>Storm provides better latency (truly real-time processing) with fewer restrictions.</li>
+<li>Storm offers &quot;tumbling&quot; windows (5s every 5s) in addition to &quot;sliding&quot; windows (5s every 2s)</li>
+<li>With Spark, the same code can be used for both batch and stream processing.</li>
+<li>Spark is offered by a dedicated company - Databricks - for support.</li>
+<li>Both can be allocated on the same cluster.</li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="architecture-1"></a><a href="#architecture-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Architecture</h3>
+<ul>
+<li>A Storm cluster is superficially similar to a Hadoop cluster.
+<ul>
+<li>Whereas on Hadoop you run &quot;MapReduce jobs&quot;, on Storm you run &quot;topologies&quot;.</li>
+<li>MapReduce job eventually finishes, whereas a topology processes messages forever until killed.</li>
+</ul></li>
+<li>A running topology consists of many worker processes spread across many machines.
+<ul>
+<li>Each node in a topology contains processing logic, and links between nodes indicate how data should be passed around between nodes.</li>
+<li>Each node in a Storm topology executes in parallel (tunable)</li>
+<li>Will automatically reassign any failed tasks.</li>
+<li>Guarantees that there will be no data loss, even if machines go down and messages are dropped.</li>
+</ul></li>
+<li>There are two kinds of nodes on a Storm cluster: the master node and the worker nodes.
+<ul>
+<li>All coordination between Nimbus and the Supervisors is done through a Zookeeper cluster.</li>
+<li>Storm nodes are fail-fast and stateless: all state is kept in Zookeeper or on local disk.</li>
+<li>This design leads to Storm clusters being incredibly stable.</li>
+</ul></li>
+</ul>
+<p><center><img width=500 src="/datadocs/assets/Apache-Storm-architecture.png"/></center>
+<center><a href="https://www.researchgate.net/publication/319680334_Aging-related_Performance_Anomalies_in_the_Apache_Storm_Stream_Processing_System/figures?lo=1&utm_source=google&utm_medium=organic" style="color: lightgrey">Credit</a></center></p>
+<ul>
+<li>The master node runs a daemon called &quot;Nimbus&quot;:
+<ul>
+<li>Responsible for distributing tasks to machines and monitoring for failures.</li>
+<li>Similar to Hadoop's &quot;JobTracker&quot;.</li>
+</ul></li>
+<li>Each worker node runs a daemon called the &quot;Supervisor&quot;:
+<ul>
+<li>Starts and stops worker processes as necessary based on Nimbus instructions.</li>
+<li>Each worker process executes a subset of a topology.</li>
+</ul></li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="concepts-1"></a><a href="#concepts-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Concepts</h3>
+<ul>
+<li>A stream is an unbounded sequence of tuples.
+<ul>
+<li>A tuple is a named list of values, and a field in a tuple can be an object of any type.</li>
+<li>For example, a “4-tuple” might be <code>(7, 1, 3, 7)</code></li>
+</ul></li>
+<li>Storm provides the primitives &quot;spouts&quot; and &quot;bolts&quot; for transforming a stream into a new stream.</li>
+<li>Storm defines its workflows in DAGs called “topologies”:
+<ul>
+<li>An arbitrarily complex multi-stage stream computation out of spouts and bolts.</li>
+<li>The top-level abstraction that are submitted to Storm clusters for execution.</li>
+<li>Runs forever, or until killed.</li>
+</ul></li>
+</ul>
+<p><center><img width=400 src="/datadocs/assets/storm-100_topology.png"/></center></p>
+<ul>
+<li>A spout is a source of streams in a computation.
+<ul>
+<li>Typically a spout reads from a queueing broker such as Kafka.</li>
+</ul></li>
+<li>A bolt processes any number of input streams and produces any number of new output streams.
+<ul>
+<li>Most of the logic of a computation goes into bolts.</li>
+<li>Run functions, filter tuples, do streaming aggregations and joins, talk to databases.</li>
+<li>Complex stream transformations require multiple steps and thus multiple bolts.</li>
+</ul></li>
+<li>Each task corresponds to one thread of execution at spout or bolt.</li>
+<li>A stream grouping defines how to send tuples from one set of tasks to another set of tasks.
+<ul>
+<li>Shuffle: Sends tuples in random (to distribute work evenly across receiving tasks)</li>
+<li>Fields: Sends tuples based on one or more fields in the tuple (for segmentation)</li>
+<li>All: Sends a single copy of each tuple to all instances (for signals)</li>
+</ul></li>
+<li><a href="https://docs.hortonworks.com/HDPDocuments/HDP3/HDP-3.1.0/developing-storm-applications/content/developing_apache_storm_applications.html">Developing Apache Storm Applications</a></li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="components-1"></a><a href="#components-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Components</h3>
+<ul>
+<li>Storm applications are usually written in Java.
+<ul>
+<li>Although bolts may be directed through scripts in different languages (thanks to Thrift)</li>
+</ul></li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="storm-core"></a><a href="#storm-core" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Storm Core</h4>
+<ul>
+<li>Storm Core guarantees that every event will be processed &quot;at least once&quot;.
+<ul>
+<li>The lower-level API for Storm.</li>
+<li>Messages are only replayed when there are failures.</li>
+</ul></li>
+</ul>
+<pre><code class="hljs css language-java"><span class="hljs-comment">// Example: A simple bolt class</span>
+<span class="hljs-comment">// https://storm.apache.org/releases/2.0.0/Tutorial.html</span>
+
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ExclamationBolt</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">BaseRichBolt</span> </span>{
+    OutputCollector _collector;
+
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">prepare</span><span class="hljs-params">(Map conf, TopologyContext context, OutputCollector collector)</span> </span>{
+        _collector = collector;
+    }
+
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">execute</span><span class="hljs-params">(Tuple tuple)</span> </span>{
+        _collector.emit(tuple, <span class="hljs-keyword">new</span> Values(tuple.getString(<span class="hljs-number">0</span>) + <span class="hljs-string">"!!!"</span>));
+        _collector.ack(tuple);
+    }
+
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">declareOutputFields</span><span class="hljs-params">(OutputFieldsDeclarer declarer)</span> </span>{
+        declarer.declare(<span class="hljs-keyword">new</span> Fields(<span class="hljs-string">"word"</span>));
+    }    
+}
+</code></pre>
+<pre><code class="hljs css language-java"><span class="hljs-comment">// Example: A simple topology</span>
+<span class="hljs-comment">// https://storm.apache.org/releases/2.0.0/Tutorial.html</span>
+
+TopologyBuilder builder = <span class="hljs-keyword">new</span> TopologyBuilder();        
+builder.setSpout(<span class="hljs-string">"words"</span>, <span class="hljs-keyword">new</span> TestWordSpout(), <span class="hljs-number">10</span>);        
+builder.setBolt(<span class="hljs-string">"exclaim1"</span>, <span class="hljs-keyword">new</span> ExclamationBolt(), <span class="hljs-number">3</span>)
+        .shuffleGrouping(<span class="hljs-string">"words"</span>);
+builder.setBolt(<span class="hljs-string">"exclaim2"</span>, <span class="hljs-keyword">new</span> ExclamationBolt(), <span class="hljs-number">2</span>)
+        .shuffleGrouping(<span class="hljs-string">"exclaim1"</span>);
+</code></pre>
+<h4><a class="anchor" aria-hidden="true" id="trident"></a><a href="#trident" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Trident</h4>
+<ul>
+<li>Trident guarantees that every event will be processed &quot;exactly once&quot;.
+<ul>
+<li>Higher-level API for Storm.</li>
+<li>An abstraction built on top of Storm which allows stateful stream processing.</li>
+<li>Provides &quot;transactional&quot; datastore persistence.</li>
+<li>Has joins, aggregations, grouping, functions, and filters.</li>
+<li>Adds complexity to a Storm topology, lowers performance and generates state.</li>
+</ul></li>
+<li>Trident is similar to high level batch processing tools like Pig or Cascading.
+<ul>
+<li>Processes the stream as small batches of tuples.</li>
+<li>Provides functions for doing aggregations across batches and persistently storing them.</li>
+</ul></li>
+<li><a href="https://www.alooma.com/blog/trident-exactly-once">Exactly-Once Processing with Trident - The Fake Truth</a></li>
+</ul>
+<pre><code class="hljs css language-java"><span class="hljs-comment">// Example: Trident</span>
+<span class="hljs-comment">// https://storm.apache.org/releases/2.0.0/Trident-tutorial.html</span>
+
+<span class="hljs-comment">// Create a spout that generates an infinite stream of sentences</span>
+FixedBatchSpout spout = <span class="hljs-keyword">new</span> FixedBatchSpout(<span class="hljs-keyword">new</span> Fields(<span class="hljs-string">"sentence"</span>), <span class="hljs-number">3</span>,
+               <span class="hljs-keyword">new</span> Values(<span class="hljs-string">"the cow jumped over the moon"</span>),
+               <span class="hljs-keyword">new</span> Values(<span class="hljs-string">"the man went to the store and bought some candy"</span>),
+               <span class="hljs-keyword">new</span> Values(<span class="hljs-string">"four score and seven years ago"</span>),
+               <span class="hljs-keyword">new</span> Values(<span class="hljs-string">"how many apples can you eat"</span>));
+spout.setCycle(<span class="hljs-keyword">true</span>);
+
+<span class="hljs-comment">// Compute streaming word count from an input stream of sentences</span>
+TridentTopology topology = <span class="hljs-keyword">new</span> TridentTopology();        
+TridentState wordCounts = topology.newStream(<span class="hljs-string">"spout1"</span>, spout)
+    .each(<span class="hljs-keyword">new</span> Fields(<span class="hljs-string">"sentence"</span>), <span class="hljs-keyword">new</span> Split(), <span class="hljs-keyword">new</span> Fields(<span class="hljs-string">"word"</span>))
+    .groupBy(<span class="hljs-keyword">new</span> Fields(<span class="hljs-string">"word"</span>))
+    .persistentAggregate(<span class="hljs-keyword">new</span> MemoryMapState.Factory(), <span class="hljs-keyword">new</span> Count(), <span class="hljs-keyword">new</span> Fields(<span class="hljs-string">"count"</span>))                
+    .parallelismHint(<span class="hljs-number">6</span>);
+</code></pre>
+<ul>
+<li>Stream APIs is another alternative interface to Storm (experimental)
+<ul>
+<li>Provides a typed API for expressing streaming computations.</li>
+<li>Supports functional style operations such as map-reduce.</li>
+</ul></li>
+</ul>
+<pre><code class="hljs css language-java"><span class="hljs-comment">// Example: A word count topology expressed using the Stream API</span>
+<span class="hljs-comment">// https://storm.apache.org/releases/2.0.0/Stream-API.html</span>
+
+StreamBuilder builder = <span class="hljs-keyword">new</span> StreamBuilder();
+
+builder
+   <span class="hljs-comment">// A stream of random sentences with two partitions</span>
+   .newStream(<span class="hljs-keyword">new</span> RandomSentenceSpout(), <span class="hljs-keyword">new</span> ValueMapper&lt;String&gt;(<span class="hljs-number">0</span>), <span class="hljs-number">2</span>)
+   <span class="hljs-comment">// a two seconds tumbling window</span>
+   .window(TumblingWindows.of(Duration.seconds(<span class="hljs-number">2</span>)))
+   <span class="hljs-comment">// split the sentences to words</span>
+   .flatMap(s -&gt; Arrays.asList(s.split(<span class="hljs-string">" "</span>)))
+   <span class="hljs-comment">// create a stream of (word, 1) pairs</span>
+   .mapToPair(w -&gt; Pair.of(w, <span class="hljs-number">1</span>))
+   <span class="hljs-comment">// compute the word counts in the last two second window</span>
+   .countByKey()
+   <span class="hljs-comment">// print the results to stdout</span>
+   .print();
+</code></pre>
+<h4><a class="anchor" aria-hidden="true" id="storm-sql"></a><a href="#storm-sql" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Storm SQL</h4>
+<ul>
+<li>The Storm SQL integration allows to run SQL queries over streaming data in Storm (experimental)
+<ul>
+<li>Allows faster development cycles on streaming analytics.</li>
+<li>Unifies batch data processing like Apache Hive and real-time streaming data analytics.</li>
+<li>Compiles SQL queries to Storm topologies leveraging Streams API.</li>
+</ul></li>
+</ul>
+<pre><code class="hljs css language-sql"><span class="hljs-comment">-- Example: Filtering Kafka Stream</span>
+<span class="hljs-comment">-- https://storm.apache.org/releases/2.0.0/storm-sql.html</span>
+
+<span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">EXTERNAL</span> <span class="hljs-keyword">TABLE</span> ORDERS (<span class="hljs-keyword">ID</span> <span class="hljs-built_in">INT</span> PRIMARY <span class="hljs-keyword">KEY</span>, UNIT_PRICE <span class="hljs-built_in">INT</span>, QUANTITY <span class="hljs-built_in">INT</span>) LOCATION <span class="hljs-string">'kafka://orders?bootstrap-servers=localhost:9092,localhost:9093'</span>
+<span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">EXTERNAL</span> <span class="hljs-keyword">TABLE</span> LARGE_ORDERS (<span class="hljs-keyword">ID</span> <span class="hljs-built_in">INT</span> PRIMARY <span class="hljs-keyword">KEY</span>, TOTAL <span class="hljs-built_in">INT</span>) LOCATION <span class="hljs-string">'kafka://large_orders?bootstrap-servers=localhost:9092,localhost:9093'</span> TBLPROPERTIES <span class="hljs-string">'{"producer":{"acks":"1","key.serializer":"org.apache.storm.kafka.IntSerializer"}}'</span>
+<span class="hljs-keyword">INSERT</span> <span class="hljs-keyword">INTO</span> LARGE_ORDERS <span class="hljs-keyword">SELECT</span> <span class="hljs-keyword">ID</span>, UNIT_PRICE * QUANTITY <span class="hljs-keyword">AS</span> TOTAL <span class="hljs-keyword">FROM</span> ORDERS <span class="hljs-keyword">WHERE</span> UNIT_PRICE * QUANTITY &gt; <span class="hljs-number">50</span>
+</code></pre>
+<pre><code class="hljs css language-bash"><span class="hljs-comment"># Example: Running StormSQL</span>
+
+$ bin/storm sql order_filtering.sql order_filtering --artifacts <span class="hljs-string">"org.apache.storm:storm-sql-kafka:2.0.0-SNAPSHOT,org.apache.storm:storm-kafka-client:2.0.0-SNAPSHOT,org.apache.kafka:kafka-clients:1.1.0^org.slf4j:slf4j-log4j12"</span>
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="apache-flink"></a><a href="#apache-flink" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Apache Flink</h2>
+<p><center><img width=200 src="/datadocs/assets/1200px-Apache_Flink_Logo.svg.png"/></center></p>
+<ul>
+<li><a href="https://flink.apache.org/flink-architecture.html">Apache Flink</a> is a framework and distributed processing engine for stateful streaming computations.
+<ul>
+<li>Flink means “agile or swift” in German.</li>
+<li>Originated as a joint effort of several German and Swedish universities.</li>
+<li>Entered incubation as an Apache project in 2015.</li>
+<li>Was as inspired by Google Data Flow model.</li>
+</ul></li>
+<li>A unified framework which allows data workflows for streaming, batch, SQL and Machine learning.</li>
+<li>Provides a high-throughput, low-latency streaming engine.</li>
+<li>Supports native streaming, that is, &quot;message at a time&quot; stream processing.</li>
+<li>Supports event-time processing (as opposed to processing time)</li>
+<li>Has an impressive windowing system.
+<ul>
+<li>Event-time, highly customizable window logic, and fine-grained control of time.</li>
+<li>Features a library for Complex Event Processing (CEP) to detect patterns in data streams.</li>
+<li>This + real-time streaming + exactly-one semantics is important for financial apps.</li>
+<li><a href="https://blog.codecentric.de/en/2017/04/event-time-processing-apache-spark-apache-flink/">Event time processing in Apache Spark and Apache Flink</a></li>
+</ul></li>
+<li>Supports execution of bulk/batch and stream processing programs.
+<ul>
+<li>Can operate over unbounded and bounded (fixed-size) data streams.</li>
+<li>Can handle real streams and recorded streams.</li>
+<li>Treats batch as a special example of streaming.</li>
+</ul></li>
+<li>Supports the execution of iterative algorithms natively.</li>
+<li>Supports sophisticated state management.</li>
+<li>Supports exactly-once consistency guarantees for state.</li>
+<li>Can to run in common cluster environments, perform computations at in-memory speed and any scale.
+<ul>
+<li>Can be deployed on YARN, Apache Mesos, and Kubernetes but also as stand-alone cluster on bare-metal hardware.</li>
+<li>Configured for high availability, Flink does not have a single point of failure.</li>
+<li>Has been proven to scale to 1000s of nodes and terabytes of application state.</li>
+<li>Stateful Flink applications are optimized for local, in-memory state access.</li>
+</ul></li>
+<li>Can survive failures while still guaranteeing exactly-one semantics.
+<ul>
+<li>Provides a lightweight fault tolerance mechanism based on distributed checkpoints.</li>
+<li>A checkpoint is an automatic, asynchronous snapshot of the state of an application.</li>
+<li>Can write checkpoints to a custom persistent storage.</li>
+</ul></li>
+<li>Includes a mechanism of savepoints:
+<ul>
+<li>The user can stop a running Flink program and then resume it from the same position.</li>
+</ul></li>
+<li>Programs can be written in Java, Scala, Python, and SQL.
+<ul>
+<li>Automatically compiled and optimized into dataflow programs.</li>
+</ul></li>
+<li>Doesn’t ship with a storage system - it is just a computation engine.</li>
+<li>Provides a rich set of connectors such as Kafka, Kinesis, Elasticsearch, and JDBC.</li>
+<li>Getting widely accepted by big companies at scale like Uber, Alibaba, CapitalOne.</li>
+<li><a href="https://flink.apache.org/flink-applications.html">What is Apache Flink? — Applications</a></li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="use-cases"></a><a href="#use-cases" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Use cases</h4>
+<p><center><img width=600 src="/datadocs/assets/flink-home-graphic.png"/></center>
+<center><a href="https://flink.apache.org" style="color: lightgrey">Credit</a></center></p>
+<ul>
+<li>Event-driven applications:
+<ul>
+<li>Reacts to incoming events by triggering computations, state updates, or external actions.</li>
+<li>Data and computation are co-located in Flink.</li>
+<li>Use cases: Fraud and anomaly detection, rule-based alerting, business process monitoring.</li>
+</ul></li>
+<li>Data analytics applications:
+<ul>
+<li>Analytics can be performed in a real-time fashion.</li>
+<li>SQL queries compute the same result regardless of recorded events or streaming events.</li>
+<li>Rich support for UDFs ensures that custom code can be executed in SQL queries.</li>
+<li>Use cases: Ad-hoc analysis of live data.</li>
+</ul></li>
+<li>Data pipeline applications:
+<ul>
+<li>Data pipelines operate in a continuous streaming mode instead of being periodically triggered.</li>
+<li>The obvious advantage over periodic ETL jobs is the reduced latency of moving data.</li>
+<li>Use cases: Continuous ETL in e-commerce.</li>
+</ul></li>
+<li><a href="https://flink.apache.org/usecases.html">Apache Flink - Use Cases</a></li>
+<li><a href="https://www.ververica.com/blog/high-throughput-low-latency-and-exactly-once-stream-processing-with-apache-flink">High-throughput, low-latency, and exactly-once stream processing with Apache Flink</a></li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="compared-to-other-frameworks"></a><a href="#compared-to-other-frameworks" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Compared to other frameworks</h4>
+<ul>
+<li>Leader of innovation in open-source streaming landscape.
+<ul>
+<li>Looks like a true successor of Storm.</li>
+<li>Slightly younger than Spark, but is gaining in popularity.</li>
+</ul></li>
+<li>Compared to other frameworks, there is no micro batching of data but true streaming.</li>
+<li>Can process data based on event times, not processing times.</li>
+<li>Has its own rocketing ecosystem where it directly competes with Spark.</li>
+<li><a href="https://hackernoon.com/in-search-of-data-dominance-spark-versus-flink-45cefb28f377">In Search of Data Dominance: Spark Versus Flink</a></li>
+<li><a href="https://mapr.com/ebooks/streaming-architecture/chapter-02-stream-based-architecture.html">Stream-based Architecture</a></li>
+<li><a href="https://medium.com/@chandanbaranwal/spark-streaming-vs-flink-vs-storm-vs-kafka-streams-vs-samza-choose-your-stream-processing-91ea3f04675b">Choose Your Stream Processing Framework</a></li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="components-2"></a><a href="#components-2" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Components</h3>
+<ul>
+<li>Has a layered architecture where each component is a part of a specific layer.
+<ul>
+<li>Each layer is built on top of the others for clear abstraction.</li>
+</ul></li>
+</ul>
+<p><center><img width=500 src="/datadocs/assets/stack.png"/></center>
+<center><a href="https://ci.apache.org/projects/flink/flink-docs-release-1.1/internals/general_arch.html" style="color: lightgrey">Credit</a></center></p>
+<ul>
+<li>Flink’s basic data model is comprised of data streams, i.e., sequences of events.
+<ul>
+<li>A stream can be an infinite stream that is boundless.</li>
+<li>A stream can also be a finite stream with boundaries (equivalent to batch processing)</li>
+</ul></li>
+<li>Upon execution, Flink programs are mapped to streaming dataflows.
+<ul>
+<li>Starts with one or more sources (a data input)</li>
+<li>Ends with one or more sinks (a data output)</li>
+<li>Can be arranged as a DAG, allowing an application to branch and merge dataflows.</li>
+</ul></li>
+<li><a href="https://ci.apache.org/projects/flink/flink-docs-release-1.1/internals/general_arch.html">General Architecture and Process Model</a></li>
+<li><a href="https://www.oreilly.com/library/view/stream-processing-with/9781491974285/ch03.html">Chapter 3. The Architecture of Apache Flink</a></li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="datastream-api"></a><a href="#datastream-api" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>DataStream API</h4>
+<ul>
+<li>DataStream API enables transformations on unbounded streams of data.</li>
+<li>Provides primitives for many common stream processing operations, such as windowing, record-at-a-time transformations, and enriching events by querying an external data store.</li>
+<li>Based on provided functions, such as map, reduce, and aggregate, and UDFs.</li>
+<li><a href="https://ci.apache.org/projects/flink/flink-docs-release-1.1/apis/streaming/index.html">Flink DataStream API Programming Guide</a></li>
+</ul>
+<pre><code class="hljs css language-scala"><span class="hljs-comment">// Example: Count the words coming from a web socket in 5 second windows</span>
+
+<span class="hljs-keyword">import</span> org.apache.flink.streaming.api.scala._
+<span class="hljs-keyword">import</span> org.apache.flink.streaming.api.windowing.time.<span class="hljs-type">Time</span>
+
+<span class="hljs-class"><span class="hljs-keyword">object</span> <span class="hljs-title">WindowWordCount</span> </span>{
+  <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">main</span></span>(args: <span class="hljs-type">Array</span>[<span class="hljs-type">String</span>]) {
+
+    <span class="hljs-keyword">val</span> env = <span class="hljs-type">StreamExecutionEnvironment</span>.getExecutionEnvironment
+    <span class="hljs-keyword">val</span> text = env.socketTextStream(<span class="hljs-string">"localhost"</span>, <span class="hljs-number">9999</span>)
+
+    <span class="hljs-keyword">val</span> counts = text.flatMap { _.toLowerCase.split(<span class="hljs-string">"\\W+"</span>) filter { _.nonEmpty } }
+      .map { (_, <span class="hljs-number">1</span>) }
+      .keyBy(<span class="hljs-number">0</span>)
+      .timeWindow(<span class="hljs-type">Time</span>.seconds(<span class="hljs-number">5</span>))
+      .sum(<span class="hljs-number">1</span>)
+
+    counts.print
+
+    env.execute(<span class="hljs-string">"Window Stream WordCount"</span>)
+  }
+}
+</code></pre>
+<pre><code class="hljs css language-bash"><span class="hljs-comment"># Start the input stream with netcat</span>
+$ nc -lk 9999
+</code></pre>
+<h4><a class="anchor" aria-hidden="true" id="dataset-api"></a><a href="#dataset-api" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>DataSet API</h4>
+<ul>
+<li>DataSet API enables transformations on bounded data sets.</li>
+<li>The primitives include map, reduce, (outer) join, co-group, and iterate.</li>
+<li>Operations are backed by algorithms and data structures that operate on serialized data.</li>
+<li><a href="https://ci.apache.org/projects/flink/flink-docs-release-1.1/apis/batch/index.html">Flink DataSet API Programming Guide</a></li>
+</ul>
+<pre><code class="hljs css language-scala"><span class="hljs-comment">// Example: Count works locally</span>
+
+<span class="hljs-keyword">import</span> org.apache.flink.api.scala._
+
+<span class="hljs-class"><span class="hljs-keyword">object</span> <span class="hljs-title">WordCount</span> </span>{
+  <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">main</span></span>(args: <span class="hljs-type">Array</span>[<span class="hljs-type">String</span>]) {
+
+    <span class="hljs-keyword">val</span> env = <span class="hljs-type">ExecutionEnvironment</span>.getExecutionEnvironment
+    <span class="hljs-keyword">val</span> text = env.fromElements(
+      <span class="hljs-string">"Who's there?"</span>,
+      <span class="hljs-string">"I think I hear them. Stand, ho! Who's there?"</span>)
+
+    <span class="hljs-keyword">val</span> counts = text.flatMap { _.toLowerCase.split(<span class="hljs-string">"\\W+"</span>) filter { _.nonEmpty } }
+      .map { (_, <span class="hljs-number">1</span>) }
+      .groupBy(<span class="hljs-number">0</span>)
+      .sum(<span class="hljs-number">1</span>)
+
+    counts.print()
+  }
+}
+</code></pre>
+<h4><a class="anchor" aria-hidden="true" id="table-api-and-sql"></a><a href="#table-api-and-sql" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Table API and SQL</h4>
+<ul>
+<li>Table API is a SQL-like expression language for relational stream and batch processing.
+<ul>
+<li>Can be easily embedded in Java and Scala DataStream and DataSet APIs.</li>
+<li>Tables can be created from external sources or from existing DataStreams and DataSets.</li>
+<li>Supports relational operators such as selection, aggregation, and joins.</li>
+</ul></li>
+</ul>
+<pre><code class="hljs css language-scala"><span class="hljs-comment">// Example: Perform join on two tables</span>
+
+<span class="hljs-keyword">case</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MyResult</span>(<span class="hljs-params">a: <span class="hljs-type">String</span>, d: <span class="hljs-type">Int</span></span>)</span>
+
+<span class="hljs-keyword">val</span> input1 = env.fromElements(...).toTable(tEnv).as(<span class="hljs-symbol">'a</span>, <span class="hljs-symbol">'b</span>)
+<span class="hljs-keyword">val</span> input2 = env.fromElements(...).toTable(tEnv, <span class="hljs-symbol">'c</span>, <span class="hljs-symbol">'d</span>)
+
+<span class="hljs-keyword">val</span> joined = input1.join(input2)
+               .where(<span class="hljs-string">"a = c &amp;&amp; d &gt; 42"</span>)
+               .select(<span class="hljs-string">"a, d"</span>)
+               .toDataSet[<span class="hljs-type">MyResult</span>]
+</code></pre>
+<ul>
+<li>The highest-level language supported by Flink is SQL.
+<ul>
+<li>Semantically similar to the Table API and represents programs as SQL query expressions.</li>
+<li>Tables can be queried with regular SQL if registered.</li>
+<li>Current version (1.9.0) only supports SELECT, FROM, WHERE, and UNION clauses.</li>
+</ul></li>
+</ul>
+<pre><code class="hljs"><span class="hljs-comment">// Example: Executing a SQL query on a streaming table</span>
+
+<span class="hljs-keyword">val</span> env = <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">StreamExecutionEnvironment</span>.</span></span>getExecutionEnvironment
+<span class="hljs-keyword">val</span> tEnv = <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">TableEnvironment</span>.</span></span>get<span class="hljs-constructor">TableEnvironment(<span class="hljs-params">env</span>)</span>
+
+<span class="hljs-comment">// read a DataStream from an external source</span>
+<span class="hljs-keyword">val</span> ds: DataStream<span class="hljs-literal">[(L<span class="hljs-identifier">ong</span>, S<span class="hljs-identifier">tring</span>, I<span class="hljs-identifier">nteger</span>)]</span> = env.add<span class="hljs-constructor">Source(<span class="hljs-operator">...</span>)</span>
+<span class="hljs-comment">// register the DataStream under the name "Orders"</span>
+tableEnv.register<span class="hljs-constructor">DataStream(<span class="hljs-string">"Orders"</span>, <span class="hljs-params">ds</span>, '<span class="hljs-params">user</span>, '<span class="hljs-params">product</span>, '<span class="hljs-params">amount</span>)</span>
+<span class="hljs-comment">// run a SQL query on the Table and retrieve the result as a new Table</span>
+<span class="hljs-keyword">val</span> result = tableEnv.sql(
+  <span class="hljs-string">"SELECT STREAM product, amount FROM Orders WHERE product LIKE '%Rubber%'"</span>)
+</code></pre>
+<ul>
+<li>Both interfaces operate on a relational Table abstraction.</li>
+<li>Both interfaces offer equivalent functionality and can be mixed in the same program.</li>
+<li>Leverage Apache Calcite for parsing, validation, and query optimization.</li>
+<li><a href="https://ci.apache.org/projects/flink/flink-docs-release-1.1/apis/table.html">Table API and SQL Beta</a></li>
+</ul>
+</span></div></article></div><div class="docLastUpdate"><em>Last updated on 2019-9-3 by Oleg Polakow</em></div><div class="docs-prevnext"><a class="docs-prev button" href="/datadocs/docs/big-data/data-storage"><span class="arrow-prev">← </span><span>Data Storage</span></a><a class="docs-next button" href="/datadocs/docs/big-data/query-engines"><span>Query Engines</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#batch-vs-stream-processing">Batch vs Stream Processing</a><ul class="toc-headings"><li><a href="#batch-processing">Batch processing</a></li><li><a href="#stream-processing">Stream processing</a></li><li><a href="#architectures">Architectures</a></li></ul></li><li><a href="#hadoop-mapreduce">Hadoop MapReduce</a><ul class="toc-headings"><li><a href="#stages">Stages</a></li><li><a href="#apache-tez">Apache Tez</a></li></ul></li><li><a href="#apache-spark">Apache Spark</a><ul class="toc-headings"><li><a href="#architecture">Architecture</a></li><li><a href="#dags">DAGs</a></li><li><a href="#programming-model">Programming model</a></li><li><a href="#components">Components</a></li><li><a href="#addressing-issues">Addressing issues</a></li></ul></li><li><a href="#apache-storm">Apache Storm</a><ul class="toc-headings"><li><a href="#architecture-1">Architecture</a></li><li><a href="#concepts-1">Concepts</a></li><li><a href="#components-1">Components</a></li></ul></li><li><a href="#apache-flink">Apache Flink</a><ul class="toc-headings"><li><a href="#components-2">Components</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><div class="brand-box"><div class="brand"><a href="https://www.tum.de/nc/en/" target="_blank" rel="noreferrer noopener" class="brand-link"><img src="/datadocs/img/tum_logo.png" alt="Technical University of Munich" height="45"/></a></div><div class="brand"><a href="https://opensource.facebook.com/" target="_blank" rel="noreferrer noopener" class="brand-link"><img src="/datadocs/img/oss_logo.png" alt="Facebook Open Source" width="170" height="45"/></a></div></div><section class="copyright">Copyright © 2019 Oleg Polakow</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
+                document.addEventListener('keyup', function(e) {
+                  if (e.target !== document.body) {
+                    return;
+                  }
+                  // keyCode for '/' (slash)
+                  if (e.keyCode === 191) {
+                    const search = document.getElementById('search_input_react');
+                    search && search.focus();
+                  }
+                });
+              </script><script>
+              var search = docsearch({
+                
+                apiKey: '6642fca03d716a543ac4428d7d20b842',
+                indexName: 'polakowo-datadocs',
+                inputSelector: '#search_input_react',
+                algoliaOptions: {}
+              });
+            </script></body></html>
