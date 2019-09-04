@@ -72,6 +72,7 @@ class HomeSplash extends React.Component {
           <PromoSection>
             <Button href={docUrl('machine-learning/linear-models')}>Machine Learning</Button>
             <Button href={docUrl('deep-learning/deep-learning')}>Deep Learning</Button>
+            <Button href={docUrl('big-data/data-engineering')}>Big Data</Button>
           </PromoSection>
           <GitHubButton/>
         </div>

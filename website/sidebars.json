@@ -2,6 +2,12 @@
     "docs": {
         "Machine Learning": [{
             "type": "subcategory",
+            "label": "General",
+            "ids": [
+                "machine-learning/machine-learning"
+            ]
+        }, {
+            "type": "subcategory",
             "label": "Methods",
             "ids": [
                 "machine-learning/linear-models",
@@ -68,6 +74,39 @@
                 "deep-learning/nmt",
                 "deep-learning/attention-mechanism",
                 "deep-learning/speech-recognition"
+            ]
+        }],
+        "Big Data": [{
+            "type": "subcategory",
+            "label": "General",
+            "ids": [
+                "big-data/data-engineering",
+                "big-data/cloud-computing",
+                "big-data/data-warehouses",
+                "big-data/data-lakes",
+                "big-data/data-pipelines"
+            ]
+        }, {
+            "type": "subcategory",
+            "label": "Databases",
+            "ids": [
+                "big-data/database-design",
+                "big-data/sql-databases",
+                "big-data/wide-column-stores",
+                "big-data/key-value-stores",
+                "big-data/document-stores",
+                "big-data/graph-stores"
+            ]
+        }, {
+            "type": "subcategory",
+            "label": "Hadoop",
+            "ids": [
+                "big-data/hadoop",
+                "big-data/data-ingestion",
+                "big-data/data-storage",
+                "big-data/data-processing",
+                "big-data/query-engines",
+                "big-data/cluster-management"
             ]
         }]
     }

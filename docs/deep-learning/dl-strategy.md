@@ -5,7 +5,7 @@ sidebar_label: Deep Learning Strategy
 custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/deep-learning/dl-strategy.md
 ---
 
-- Machine learning strategy is useful to iterate through ideas quickly and efficiently reach the project outcome.
+- DL strategy is useful to iterate through ideas quickly and efficiently reach the project outcome.
 - Build the first system quickly and then iterate: 
     - Quickly prototype a first version of the classifier and then improve it iteratively following the strategic guidelines.
 - Respect orthogonalization: 
@@ -13,11 +13,11 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/deep-lear
 
 ## Evaluation metrics
 
-- A machine learning model generally has:
+- A DL model generally has:
     - Evaluation metrics: metrics to instantly judge the performance of models, e.g., accuracy.
     - Optimizing metric: one metric to optimize for, e.g., achieve maximum accuracy.
     - Satisficing metrics: certain constraints which should be upheld, e.g., time and memory usage.
-- To choose a classifier, a well-defined development set and an evaluation metric speed up the iteration process.
+- A well-defined development set and an evaluation metric speed up the iteration process.
 - If you find out that your evaluation metric doesn’t accurately reflect the performance of the model, consider restating the optimization metric, e.g. through adding a weighting term to heavily penalize your classifier for misclassifying really important examples.
 
 ## Splitting data
@@ -33,7 +33,7 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/deep-lear
 - Size of the *dev* and *test* sets: Use as much data as possible for *training* and use 1%/1% for the *dev/test* sets, given that your *training* is in the millions.
 - Divide the *training* and *dev/test* sets in such a way that their distributions are similar.
 
-### Different distributions
+#### Different distributions
 
 - If the data comes from mixed data sources, create the *dev/test* sets with the data that you want to optimize for. For example, if you want to classify sneaker images from a phone, use a *dev* and *test* set consisting only of sneaker photos from mobile phones but feel free to use enhanced sneaker web images to train the network.
 - Create a *training-dev* set with the same data distribution as the *training* set when you have a *dev/test* sets from different data distributions. This step helps you check if you have a variance, bias or data-mismatch problem.
@@ -76,7 +76,7 @@ Without data mismatch | With data mismatch
     - Use a better optimization algorithm.
     - Switch to a different architecture.
 
-### Train-dev error (Variance)
+#### Train-dev error (Variance)
 
 - High variance means overfitting to the *training* set.
 - Variance is error variability, or by how much error will vary if we train the model on different sets of data.

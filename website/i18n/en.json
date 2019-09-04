@@ -5,6 +5,74 @@
     "previous": "Previous",
     "tagline": "Documentation for data enthusiasts",
     "docs": {
+      "big-data/cloud-computing": {
+        "title": "Cloud Computing",
+        "sidebar_label": "Cloud Computing"
+      },
+      "big-data/cluster-management": {
+        "title": "Cluster Management",
+        "sidebar_label": "Cluster Management"
+      },
+      "big-data/data-engineering": {
+        "title": "Data Engineering",
+        "sidebar_label": "Data Engineering"
+      },
+      "big-data/data-ingestion": {
+        "title": "Data Ingestion",
+        "sidebar_label": "Data Ingestion"
+      },
+      "big-data/data-lakes": {
+        "title": "Data Lakes",
+        "sidebar_label": "Data Lakes"
+      },
+      "big-data/data-pipelines": {
+        "title": "Data Pipelines",
+        "sidebar_label": "Data Pipelines"
+      },
+      "big-data/data-processing": {
+        "title": "Data Processing",
+        "sidebar_label": "Data Processing"
+      },
+      "big-data/data-storage": {
+        "title": "Data Storage",
+        "sidebar_label": "Data Storage"
+      },
+      "big-data/data-warehouses": {
+        "title": "Data Warehouses",
+        "sidebar_label": "Data Warehouses"
+      },
+      "big-data/database-design": {
+        "title": "Database Design",
+        "sidebar_label": "Database Design"
+      },
+      "big-data/document-stores": {
+        "title": "Document Stores",
+        "sidebar_label": "Document Stores"
+      },
+      "big-data/graph-stores": {
+        "title": "Graph Stores",
+        "sidebar_label": "Graph Stores"
+      },
+      "big-data/hadoop": {
+        "title": "Hadoop Ecosystem",
+        "sidebar_label": "Hadoop Ecosystem"
+      },
+      "big-data/key-value-stores": {
+        "title": "Key Value Stores",
+        "sidebar_label": "Key Value Stores"
+      },
+      "big-data/query-engines": {
+        "title": "Query Engines",
+        "sidebar_label": "Query Engines"
+      },
+      "big-data/sql-databases": {
+        "title": "SQL Databases",
+        "sidebar_label": "SQL Databases"
+      },
+      "big-data/wide-column-stores": {
+        "title": "Wide Column Stores",
+        "sidebar_label": "Wide Column Stores"
+      },
       "deep-learning/activation-functions": {
         "title": "Activation Functions",
         "sidebar_label": "Activation Functions"
@@ -113,6 +181,10 @@
         "title": "Linear Models",
         "sidebar_label": "Linear Models"
       },
+      "machine-learning/machine-learning": {
+        "title": "Machine Learning",
+        "sidebar_label": "Machine Learning"
+      },
       "machine-learning/metric-optimization": {
         "title": "Metric Optimization",
         "sidebar_label": "Metric Optimization"
@@ -132,7 +204,8 @@
     },
     "categories": {
       "Machine Learning": "Machine Learning",
-      "Deep Learning": "Deep Learning"
+      "Deep Learning": "Deep Learning",
+      "Big Data": "Big Data"
     }
   },
   "pages-strings": {
