@@ -7,6 +7,7 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/big-data/
 
 - Companies today need to be able to reliably store, process and query its huge inflows. 
 - As a result, the data infrastructure needs to be distributed, scalable (petabytes) and reliable.
+- Data engineering thinks about the end-to-end process as “data pipelines“.
 
 #### Data engineers
 
@@ -16,7 +17,7 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/big-data/
     - They are in charge of pulling, cleaning and loading the data into data stores.
     - Over the years though, terminology and roles have become harder to separate.
     - Data engineering is much closer to software engineering than it is to a data science.
-- Data engineers are one of the most in- demand job roles at today’s leading companies.
+- Data engineers are one of the most in-demand job roles at today’s leading companies.
 - The tool set of a data engineer includes:
     - Hadoop, Spark, Python, Scala, Java, C++, SQL, AWS/Redshift, Azure
     - To stay marketable, keeping up to date is more important than ever.
@@ -26,6 +27,9 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/big-data/
     - Data engineers usually set up and operate platforms like Hadoop/Hive/HBase, Spark, and the like.
     - Use hosted services offered by Amazon or Databricks.
     - Get support from companies like Cloudera or Hortonworks.
+
+<img width=400 src="/datadocs/assets/data-engineer-job.jpg"/>
+<center><a href="https://news.efinancialcareers.com/sg-en/3001517/data-science-careers-finance" style="color: lightgrey">Credit</a></center>
 
 #### Evolution of data engineering
 
@@ -60,6 +64,9 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/big-data/
     - Data now could be easily ingested without managing infrastructure.
 
 ## Big data
+
+<img width=300 src="/datadocs/assets/Big-data-1024x722.png"/>
+<center><a href="https://www.actify.com/industry-topics/10-big-data-use-cases-manufacturing/" style="color: lightgrey">Credit</a></center>
 
 - Handling and analyzing very large amounts of data is an urgent problem in many business areas. 
 - The trend towards "Big Data" is caused by a host of developments:
