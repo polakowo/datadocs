@@ -37,6 +37,12 @@
                 "machine-learning/competitive-ml",
                 "machine-learning/data-leakages"
             ]
+        }, {
+            "type": "subcategory",
+            "label": "Production",
+            "ids": [
+                "machine-learning/production-code"
+            ]
         }],
         "Deep Learning": [{
             "type": "subcategory",

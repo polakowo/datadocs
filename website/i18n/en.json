@@ -189,6 +189,10 @@
         "title": "Metric Optimization",
         "sidebar_label": "Metric Optimization"
       },
+      "machine-learning/production-code": {
+        "title": "Production Code",
+        "sidebar_label": "Production Code"
+      },
       "machine-learning/tree-based-models": {
         "title": "Tree-Based Models",
         "sidebar_label": "Tree-Based Models"

@@ -28,9 +28,6 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/big-data/
     - Use hosted services offered by Amazon or Databricks.
     - Get support from companies like Cloudera or Hortonworks.
 
-<img width=400 src="/datadocs/assets/data-engineer-job.jpg"/>
-<center><a href="https://news.efinancialcareers.com/sg-en/3001517/data-science-careers-finance" style="color: lightgrey">Credit</a></center>
-
 #### Evolution of data engineering
 
 - [Data Engineering Introduction and Epochs](https://learn.panoply.io/hubfs/Data%20Engineering%20-%20Introduction%20and%20Epochs.pdf)

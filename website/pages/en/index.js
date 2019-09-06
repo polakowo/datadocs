@@ -70,7 +70,7 @@ class HomeSplash extends React.Component {
         <div className="inner">
           <ProjectTitle siteConfig={siteConfig} />
           <PromoSection>
-            <Button href={docUrl('machine-learning/linear-models')}>Machine Learning</Button>
+            <Button href={docUrl('machine-learning/machine-learning')}>Machine Learning</Button>
             <Button href={docUrl('deep-learning/deep-learning')}>Deep Learning</Button>
             <Button href={docUrl('big-data/data-engineering')}>Big Data</Button>
           </PromoSection>

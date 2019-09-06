@@ -101,3 +101,7 @@ table tr:nth-child(2n) {
 pre .btnIcon {
     color: inherit;
 }
+
+code[class*='language-'], pre[class*='language-'] {
+    border: 1px solid #b4b9bd;
+}
