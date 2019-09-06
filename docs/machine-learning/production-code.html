@@ -1,0 +1,364 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Production Code · datadocs</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="- Software running on production servers to handle live users and data of the intended audience."/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Production Code · datadocs"/><meta property="og:type" content="website"/><meta property="og:url" content="https://polakowo.github.io/datadocs/"/><meta property="og:description" content="- Software running on production servers to handle live users and data of the intended audience."/><meta property="og:image" content="https://polakowo.github.io/datadocs/img/undraw_online.svg"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://polakowo.github.io/datadocs/img/undraw_tweetstorm.svg"/><link rel="shortcut icon" href="/datadocs/img/favicon.ico"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-142521178-1"></script><script>
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments); }
+              gtag('js', new Date());
+              gtag('config', 'UA-142521178-1');
+            </script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script><script type="text/javascript" src="/datadocs/js/code-block-buttons.js"></script><script type="text/javascript" src="/datadocs/js/disqus.js"></script><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script src="/datadocs/js/scrollSpy.js"></script><link rel="stylesheet" href="/datadocs/css/prism.css"/><link rel="stylesheet" href="/datadocs/css/main.css"/><script src="/datadocs/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/datadocs/"><img class="logo" src="/datadocs/img/headerIcon.ico" alt="datadocs"/><h2 class="headerTitleWithLogo">datadocs</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/datadocs/docs/machine-learning/linear-models" target="_self">Docs</a></li><li class=""><a href="https://github.com/polakowo/datadocs" target="_self">GitHub</a></li><li class="navSearchWrapper reactNavSearchWrapper"><input type="text" id="search_input_react" placeholder="Search" title="Search"/></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Production</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Machine Learning<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">General</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/machine-learning">Machine Learning</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Methods</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/linear-models">Linear Models</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/tree-based-models">Tree-Based Models</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/ensemble-methods">Ensemble Methods</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Features</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/eda">Exploratory Data Analysis</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/feature-engineering">Feature Engineering</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/advanced-features">Advanced Features</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Optimization</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/metric-optimization">Metric Optimization</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/validation-schemes">Validation Schemes</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/hyperopt">Hyperparameter Optimization</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Competitions</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/competitive-ml">Competitive Machine Learning</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/data-leakages">Data Leakages</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Production</h4><ul><li class="navListItem navListItemActive"><a class="navItem" href="/datadocs/docs/machine-learning/production-code">Production Code</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Deep Learning<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">General</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/deep-learning">Deep Learning</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/dl-strategy">Deep Learning Strategy</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Fundamentals</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/backpropagation">Backpropagation</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/activation-functions">Activation Functions</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/initialization">Initialization</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/optimization">Optimization</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/regularization">Regularization</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Computer Vision</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/cnns">Convolutional Neural Networks</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/cnn-architectures">CNN Architectures</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/object-detection">Object Detection</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/face-recognition">Face Recognition</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/nst">Neural Style Transfer</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Natural Language Processing</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/rnns">Recurrect Neural Networks</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/word-embeddings">Word Embeddings</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/nmt">Neural Machine Translation</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/attention-mechanism">Attention Mechanism</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/speech-recognition">Speech Recognition</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Big Data<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">General</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/data-engineering">Data Engineering</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/cloud-computing">Cloud Computing</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/data-warehouses">Data Warehouses</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/data-lakes">Data Lakes</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/data-pipelines">Data Pipelines</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Databases</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/database-design">Database Design</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/sql-databases">SQL Databases</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/wide-column-stores">Wide Column Stores</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/key-value-stores">Key Value Stores</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/document-stores">Document Stores</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/graph-stores">Graph Stores</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Hadoop</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/hadoop">Hadoop Ecosystem</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/data-ingestion">Data Ingestion</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/data-storage">Data Storage</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/data-processing">Data Processing</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/query-engines">Query Engines</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/cluster-management">Cluster Management</a></li></ul></div></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://github.com/polakowo/datadocs/edit/master/docs/big-data/production-code.md" target="_blank" rel="noreferrer noopener">Edit</a><h1 class="postHeaderTitle">Production Code</h1></header><article><div><span><ul>
+<li>Software running on production servers to handle live users and data of the intended audience.</li>
+<li>Production quality code describes code that meets expectations for production.</li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="refactoring"></a><a href="#refactoring" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Refactoring</h2>
+<ul>
+<li>Restructuring code to change its internal structure, without changing its external functionality.</li>
+<li>Pays off by speeding up development time in the long run.</li>
+<li>Helps becoming a stronger programmer when constantly looking to improve the code.</li>
+<li>First get the sh*t done, and only then refactor.</li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="writing-clean-code"></a><a href="#writing-clean-code" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Writing clean code</h4>
+<blockquote>
+<p>Can I understand the code easily?<br>
+Does it use meaningful names and whitespace?</p>
+</blockquote>
+<ul>
+<li>Clean code:
+<ul>
+<li>Readable, simple, and concise.</li>
+<li>Crucial for collaboration and maintainability in software development.</li>
+</ul></li>
+<li>Use meaningful names:
+<ul>
+<li>For booleans, you can prefix with <code>is_</code> or <code>has_</code> to make it clear it is a condition.</li>
+<li>Use part of speech to imply types, like verbs for functions and nouns for variables.</li>
+<li>Avoid abbreviations and especially single letters (except counters and common math variables)</li>
+<li>Certain variables may be common knowledge among data scientists, but it might be necessary to provide more descriptive names for software engineers.</li>
+<li>Names should be descriptive, but only with relevant information.</li>
+</ul></li>
+<li>Use whitespace properly:
+<ul>
+<li>Organize code with consistent indentation (4 spaces)</li>
+<li>Separate sections with blank lines to keep the code well organized and readable.</li>
+<li>Limit the lines to around 79 characters, which is the guideline given in the PEP 8 style guide.</li>
+</ul></li>
+<li><a href="https://www.python.org/dev/peps/pep-0008/?#code-lay-out">PEP 8 guidelines for code layout</a></li>
+</ul>
+<pre><code class="hljs css language-py"><span class="hljs-comment"># Example: Variable names not consistent</span>
+
+t = end_time - start  <span class="hljs-comment"># compute execution time</span>
+c = category(t)  <span class="hljs-comment"># get category of task</span>
+print(<span class="hljs-string">'Task Duration: {} seconds, Category: {}'</span>.format(t, c)
+</code></pre>
+<pre><code class="hljs css language-py"><span class="hljs-comment"># Example: Clean code</span>
+
+execution_time = end_time - start_time
+category = categorize_task(execution_time)
+print(<span class="hljs-string">'Task Duration: {} seconds, Category: {}'</span>.format(execution_time, category)
+</code></pre>
+<h4><a class="anchor" aria-hidden="true" id="writing-modular-code"></a><a href="#writing-modular-code" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Writing modular code</h4>
+<blockquote>
+<p>Is there any duplicated code?<br>
+Can you provide another layer of abstraction?<br>
+Is there any function or module unnecessary?<br>
+Is there any function or module too long?</p>
+</blockquote>
+<ul>
+<li>Modular code:
+<ul>
+<li>Logically broken up into functions and modules.</li>
+<li>Modules allow code to be reused by encapsulating them into files that can be imported.</li>
+<li>Makes code more organized, efficient, and reusable.</li>
+</ul></li>
+<li>DRY (Don't Repeat Yourself):
+<ul>
+<li>Modularization allows reusing parts of code.</li>
+<li>Generalize and consolidate repeated code in functions or loops.</li>
+</ul></li>
+<li>Abstract out logic to improve readability:
+<ul>
+<li>But it is possible to over-engineer things and have way too many modules.</li>
+</ul></li>
+<li>Minimize the number of entities (functions, classes, modules, etc.):
+<ul>
+<li>Creating more modules doesn't necessarily result in effective modularization.</li>
+<li>There are tradeoffs to having function calls instead of inline logic.</li>
+<li>An unnecessary amount of entities forces you to jump around everywhere.</li>
+</ul></li>
+<li>Functions should do one thing:
+<ul>
+<li>If a function is doing multiple things, it becomes more difficult to generalize and reuse.</li>
+<li>Generally, if there's an <code>_and_</code> in your function name, consider refactoring.</li>
+</ul></li>
+<li>Try to use fewer than three arguments per function (there are exceptions, matplotlib?)</li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="writing-efficient-code"></a><a href="#writing-efficient-code" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Writing efficient code</h4>
+<blockquote>
+<p>Are there loops or other steps we can vectorize?<br>
+Can we use better data structures to optimize any steps?<br>
+Can we shorten the number of calculations needed for any steps?<br>
+Can we use generators or multiprocessing to optimize any steps?</p>
+</blockquote>
+<ul>
+<li>Optimizing code to be more efficient can mean making it:
+<ul>
+<li>Execute faster (especially on larger data)</li>
+<li>Take up less space in memory/storage.</li>
+</ul></li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="documentation"></a><a href="#documentation" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Documentation</h2>
+<blockquote>
+<p>Are the in-line comments concise and meaningful?<br>
+Is there any complex code that's missing documentation?<br>
+Does every function use effective docstrings?<br>
+Is the necessary project documentation provided?</p>
+</blockquote>
+<ul>
+<li>An additional text or illustrated information that comes with or is embedded in the code of software.</li>
+<li>Helpful for:
+<ul>
+<li>Clarifying complex parts of code.</li>
+<li>Making code easier to navigate.</li>
+<li>Quickly conveying how and why different components of program are used.</li>
+</ul></li>
+<li>Writing documentation helps improving the code design, as you're forced to think through your design decisions more thoroughly.</li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="in-line-comments"></a><a href="#in-line-comments" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>In-line comments</h4>
+<ul>
+<li>Used is to document the major steps of complex code to help readers follow.</li>
+<li>Comments are valuable for explaining where code cannot (why it is implemented a specific way?)</li>
+<li>But sometimes, if code requires comments to follow, it is a sign that refactoring is needed.</li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="docstrings"></a><a href="#docstrings" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Docstrings</h4>
+<ul>
+<li>Documentation strings explain the purpose and functionality of a function or module.</li>
+<li>Each function should always have a docstring.</li>
+<li>The first line of the docstring is a brief explanation of the function's purpose.</li>
+</ul>
+<pre><code class="hljs css language-py"><span class="hljs-comment"># Example: One line docstring</span>
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">population_density</span><span class="hljs-params">(population, land_area)</span>:</span>
+    <span class="hljs-string">"""Calculate the population density of an area."""</span>
+    <span class="hljs-keyword">return</span> population / land_area
+</code></pre>
+<ul>
+<li>The next elements of a docstring is an explanation of the function's arguments and output.</li>
+<li>You can add whatever details you want in a docstring (it's optional)</li>
+</ul>
+<pre><code class="hljs css language-py"><span class="hljs-comment"># Example: Multi line docstring</span>
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">population_density</span><span class="hljs-params">(population, land_area)</span>:</span>
+    <span class="hljs-string">"""Calculate the population density of an area.
+
+    Args:
+    population: int. The population of the area
+    land_area: int or float. This function is unit-agnostic.
+
+    Returns:
+    population_density: population/land_area. The population density of a particular area.
+    """</span>
+    <span class="hljs-keyword">return</span> population / land_area
+</code></pre>
+<ul>
+<li><a href="https://www.python.org/dev/peps/pep-0257/">PEP 257 - Docstring Conventions</a></li>
+<li><a href="https://numpydoc.readthedocs.io/en/latest/format.html">NumPy Docstring Guide</a></li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="project-documentation"></a><a href="#project-documentation" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Project Documentation</h4>
+<ul>
+<li>Project documentation is essential for getting others to understand why code is relevant to them.</li>
+<li>A great first step in project documentation is README file (for first interaction with the user)</li>
+<li>README explains what it does, lists its dependencies, and provides instructions on how to use it.
+<ul>
+<li>Also allows future contributors to know how to follow your original intentions.</li>
+<li><a href="https://help.github.com/en/articles/about-readmes">About READMEs</a></li>
+</ul></li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="git"></a><a href="#git" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Git</h2>
+<ul>
+<li>Git is a distributed version-control system for tracking changes in source code.</li>
+<li><a href="http://nvie.com/posts/a-successful-git-branching-model/">A successful Git branching model</a></li>
+<li><a href="https://help.github.com/articles/about-merge-conflicts/">About merge conflicts</a></li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="model-versioning"></a><a href="#model-versioning" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Model Versioning</h4>
+<ul>
+<li>Version control is a system that records changes to a file or set of files over time so that you can recall specific versions later.</li>
+<li>Version control in data science can be tricky.</li>
+<li><a href="https://blog.algorithmia.com/how-to-version-control-your-production-machine-learning-models/">How to Version Control Your Production Machine Learning Models</a></li>
+<li><a href="https://shuaiw.github.io/2017/07/30/versioning-data-science.html">Versioning Data Science</a></li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="testing"></a><a href="#testing" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Testing</h2>
+<blockquote>
+<p>Does the code have high test coverage?<br>
+Do the tests check for interesting cases?<br>
+Are the tests readable?<br>
+Can the tests be made more efficient?</p>
+</blockquote>
+<ul>
+<li>Testing is the process of evaluating a system or its component(s) with the intent to find whether it satisfies the specified requirements.</li>
+<li>Testing is essential before deployment.</li>
+<li>Helps catching errors and faulty conclusions before they make any major business impact.</li>
+<li>Problems that could occur in data science aren’t always easily detectable:
+<ul>
+<li>Values being encoded incorrectly</li>
+<li>Features being used inappropriately</li>
+<li>Unexpected data breaking assumptions</li>
+</ul></li>
+<li><a href="https://www.predictiveanalyticsworld.com/patimes/four-ways-data-science-goes-wrong-and-how-test-driven-data-analysis-can-help/6947/">Four Ways Data Science Goes Wrong and How Test Driven Data Analysis Can Help</a></li>
+<li><a href="https://speakerdeck.com/pycon2014/getting-started-testing-by-ned-batchelder">Ned Batchelder: Getting Started Testing</a></li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="unit-tests"></a><a href="#unit-tests" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Unit tests</h4>
+<ul>
+<li>Unit testing involves breaking the program into pieces, and subjecting each piece to a series of (independent) tests.</li>
+<li>The advantage of unit tests is that they are isolated, thus, no dependencies are involved.
+<ul>
+<li>They don't require access to databases, APIs, or other external sources.</li>
+</ul></li>
+<li>However, passing unit tests isn’t always enough to prove that the program is working successfully.</li>
+<li>Use integration tests to test whether they are communicating and transferring data correctly.
+<ul>
+<li><a href="https://www.fullstackpython.com/integration-testing.html">Integration Testing</a></li>
+</ul></li>
+<li>Testing with pytest:
+<ul>
+<li>Create a test file starting with <code>test_</code></li>
+<li>Define unit test functions that start with <code>test_</code> inside the test file.</li>
+<li>It's wise to have only one <code>assert</code> statement per test.</li>
+<li>Run <code>pytest</code> in the directory of the defined test files.</li>
+</ul></li>
+<li><a href="https://www.fullstackpython.com/unit-testing.html">Unit Testing</a></li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="test-driven-development"></a><a href="#test-driven-development" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Test-driven development</h4>
+<ul>
+<li>The Test Driven Development (TDD) is a software engineering practice that requires unit tests to be written before the code they are supposed to validate.
+<ul>
+<li><a href="https://hackernoon.com/introduction-to-test-driven-development-tdd-61a13bc92d92">Introduction to Test Driven Development (TDD)</a></li>
+<li><a href="http://docs.python-guide.org/en/latest/writing/tests/">Testing Your Code</a></li>
+</ul></li>
+<li>Tests can check for all the different scenarios and edge cases before even starting to code.
+<ul>
+<li>The test then can be run to get immediate feedback on whether it works or not.</li>
+</ul></li>
+<li>TDD for data science is relatively new and has a lot of experimentation and breakthroughs appearing.
+<ul>
+<li><a href="https://www.linkedin.com/pulse/data-science-test-driven-development-sam-savage/">Data Science TDD</a></li>
+<li><a href="http://engineering.pivotal.io/post/test-driven-development-for-data-science/">TDD for Data Science</a></li>
+<li><a href="https://medium.com/@karijdempsey/test-driven-development-is-essential-for-good-data-science-heres-why-db7975a03a44">TDD is Essential for Good Data Science Here's Why</a></li>
+</ul></li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="logging"></a><a href="#logging" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Logging</h2>
+<blockquote>
+<p>Are log messages clear, concise, and professional?<br>
+Do they include all relevant and useful information?<br>
+Do they use the appropriate logging level?</p>
+</blockquote>
+<ul>
+<li>Logging is a means of tracking events that happen when some software runs (e.g. over night)</li>
+<li>Good examples of log messages:
+<ul>
+<li>Be professional and clear: &quot;Couldn't parse file&quot;</li>
+<li>Be concise and use normal capitalization: &quot;Generating product recommendations&quot;</li>
+<li>Provide any useful information: &quot;Failed to read location data: store_id 8324971&quot;</li>
+<li>Choose the appropriate level for logging: <code>DEBUG</code> (anything that happens), <code>ERROR</code> (any error that occurs), <code>INFO</code> (any user-driven or system-specific operation)</li>
+</ul></li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="code-review"></a><a href="#code-review" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Code review</h2>
+<ul>
+<li>Represents the process of reviewing someone's code before it gets merged.</li>
+<li><a href="https://github.com/lyst/MakingLyst/tree/master/code-reviews">Code Review</a></li>
+<li><a href="https://www.kevinlondon.com/2015/05/05/code-review-best-practices.html">Code Review Best Practices</a></li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="tips-for-conducting-a-code-review"></a><a href="#tips-for-conducting-a-code-review" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Tips for conducting a code review</h4>
+<ul>
+<li>Using a Python code linter like pylint for coding standards and PEP 8 guidelines.</li>
+<li>Agree on a style guide as a team to handle disagreements on code style.</li>
+<li>Rather than commanding people to change their code a specific way, explain to them the consequences of the current code and suggest changes to improve it.</li>
+<li>Promote a constructive discussion, rather than opposition.</li>
+</ul>
+<pre><code class="hljs css language-text">BAD: Make model evaluation code its own module - too repetitive.
+GOOD: How about we consider making the model evaluation code its own module? This would simplify models.py to only include code for building models. Organizing these evaluations methods into separate functions would also allow us to reuse them with different models without repeating code.
+</code></pre>
+<ul>
+<li>Avoid comments that sound personal to bring the attention of the review to the code.</li>
+</ul>
+<pre><code class="hljs css language-text">BAD: I wouldn't groupby genre twice like you did here... Just compute it once and use that for your aggregations.
+GOOD: Can we group by genre at the beginning of the function and then save that as a groupby object? We could then reference that object to get the average prices and views without computing groupby twice.
+</code></pre>
+<ul>
+<li>When providing a code review, write out code suggestions.</li>
+</ul>
+<pre><code class="hljs css language-text">BAD: You can do this all in one step by using the pandas str.split method.
+GOOD: We can actually simplify this step to the line below using the pandas str.split method. Found this on this stack overflow post: https://stackoverflow.com/questions/14745022/how-to-split-a-column-into-two-columns
+</code></pre>
+</span></div></article></div><div class="docLastUpdate"><em>Last updated on 2019-9-6 by Oleg Polakow</em></div><div class="docs-prevnext"><a class="docs-prev button" href="/datadocs/docs/machine-learning/data-leakages"><span class="arrow-prev">← </span><span>Data Leakages</span></a><a class="docs-next button" href="/datadocs/docs/deep-learning/deep-learning"><span>Deep Learning</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#refactoring">Refactoring</a></li><li><a href="#documentation">Documentation</a></li><li><a href="#git">Git</a></li><li><a href="#testing">Testing</a></li><li><a href="#logging">Logging</a></li><li><a href="#code-review">Code review</a></li></ul></nav></div><footer class="nav-footer" id="footer"><div class="brand-box"><div class="brand"><a href="https://www.tum.de/nc/en/" target="_blank" rel="noreferrer noopener" class="brand-link"><img src="/datadocs/img/tum_logo.png" alt="Technical University of Munich" height="45"/></a></div><div class="brand"><a href="https://opensource.facebook.com/" target="_blank" rel="noreferrer noopener" class="brand-link"><img src="/datadocs/img/oss_logo.png" alt="Facebook Open Source" width="170" height="45"/></a></div></div><section class="copyright">Copyright © 2019 Oleg Polakow</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
+                document.addEventListener('keyup', function(e) {
+                  if (e.target !== document.body) {
+                    return;
+                  }
+                  // keyCode for '/' (slash)
+                  if (e.keyCode === 191) {
+                    const search = document.getElementById('search_input_react');
+                    search && search.focus();
+                  }
+                });
+              </script><script>
+              var search = docsearch({
+                
+                apiKey: '6642fca03d716a543ac4428d7d20b842',
+                indexName: 'polakowo-datadocs',
+                inputSelector: '#search_input_react',
+                algoliaOptions: {}
+              });
+            </script></body></html>
