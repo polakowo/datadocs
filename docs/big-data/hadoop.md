@@ -27,7 +27,7 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/big-data/
 - [The Hadoop Ecosystem Table](https://hadoopecosystemtable.github.io)
 
 <center><img width=700 src="/datadocs/assets/HadoopStack.png"/></center>
-<center><a href="http://blog.newtechways.com/2017/10/apache-hadoop-ecosystem.html" style="color: lightgrey">Credit</a></center>
+<center><a href="http://blog.newtechways.com/2017/10/apache-hadoop-ecosystem.html" class="credit">Credit</a></center>
 
 #### Pros
 

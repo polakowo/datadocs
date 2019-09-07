@@ -6,7 +6,7 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/big-data/
 ---
 
 <center><img width=250 src="/datadocs/assets/datalake_embed_0.jpg"/></center>
-<center><a href="https://www.ibmbigdatahub.com/blog/providing-transactional-data-your-hadoop-and-kafka-data-lake" style="color: lightgrey">Credit</a></center>
+<center><a href="https://www.ibmbigdatahub.com/blog/providing-transactional-data-your-hadoop-and-kafka-data-lake" class="credit">Credit</a></center>
 
 - Data warehousing is a mature field with lots of cumulative experience.
     - Dimensional modeling is extremely relevant to this day.
@@ -18,7 +18,7 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/big-data/
     - The wide spectrum of data transformation needed by advanced analytics.
 
 <center><img width=700 src="/datadocs/assets/dwh-vs-datalake.png"/></center>
-<center><a href="https://www.talend.com/resources/data-lake-vs-data-warehouse/" style="color: lightgrey">Credit</a></center>
+<center><a href="https://www.talend.com/resources/data-lake-vs-data-warehouse/" class="credit">Credit</a></center>
 
 > Data warehouse is like a bottle of water - ”cleansed, packaged and structured for easy consumption” - while a data lake is more like a body of water in its natural state. Data flows from the streams (the source systems) to the lake. Users have access to the lake to examine, take samples or dive in.
 
@@ -142,7 +142,7 @@ df.schema
     3. a flexible scheduler that handles dependency resolution, job monitoring, and retries.
 
 <center><img width=650 src="/datadocs/assets/HowItWorks-overview.png"/></center>
-<center><a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-glue.html" style="color: lightgrey">Credit</a></center>
+<center><a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-glue.html" class="credit">Credit</a></center>
 
 - Can process semi-structured data, such as clickstream or process logs.
 - Discovers and catalogs metadata about data stores into a central catalog.

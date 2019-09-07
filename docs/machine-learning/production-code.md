@@ -5,6 +5,9 @@ sidebar_label: Production Code
 custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/big-data/production-code.md
 ---
 
+- Python for software development and Python for scripting is not exactly the same beast.
+    - Scripting is (mostly) the code you write for yourself. 
+    - Software is the assemblage of code you (and other teammates) write for others.
 - Software running on production servers to handle live users and data of the intended audience.
 - Production quality code describes code that meets expectations for production.
     
@@ -14,6 +17,26 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/big-data/
 - Pays off by speeding up development time in the long run.
 - Helps becoming a stronger programmer when constantly looking to improve the code.
 - First get the sh*t done, and only then refactor.
+
+#### General tips
+
+- Turn repetitive code blocks into utility functions.
+- Think carefully about the API of the functions (required/optional parameters)
+- Use the `*args` and `**kwargs` arguments to add more flexibility to functions.
+- Write docstrings to explain the function and its parameters, and provide an example.
+- Turn an object into a class if you start accumulating many utility functions related to it.
+- Extend class functionality whenever possible using inheritance.
+- Switch over to a new, clean notebook after defining a bunch of utility functions.
+- Put `__init__.py` in the same directory to make the package importable.
+- Build the habit of modularizing your work to be easily reused and extended by anyone.
+- Contribute your own methods to community-owned packages such as NumPy and TensorFlow.
+
+include a README file detailing the files in your package and how to install the package.
+Comment your code - use docstrings and inline comments where appropriate.
+Refactor code when possible - if you find your functions are getting too long, then refactor your code!
+Use object-oriented programming whenever it makes sense to do so.
+You're encouraged to write unit tests! The coding exercises in this lesson contained unit tests, so you can use those tests as a model for your package.
+Use GitHub for version control, and commit your work often.
 
 #### Writing clean code
 
@@ -160,9 +183,10 @@ def population_density(population, land_area):
 #### Model Versioning
 
 - Version control is a system that records changes to a file or set of files over time so that you can recall specific versions later.
+    - [Semantic Versioning 2.0.0](https://semver.org)
 - Version control in data science can be tricky.
-- [How to Version Control Your Production Machine Learning Models](https://blog.algorithmia.com/how-to-version-control-your-production-machine-learning-models/)
-- [Versioning Data Science](https://shuaiw.github.io/2017/07/30/versioning-data-science.html)
+    - [How to Version Control Your Production Machine Learning Models](https://blog.algorithmia.com/how-to-version-control-your-production-machine-learning-models/)
+    - [Versioning Data Science](https://shuaiw.github.io/2017/07/30/versioning-data-science.html)
 
 ## Testing
 
@@ -234,21 +258,123 @@ Do they use the appropriate logging level?
 - Rather than commanding people to change their code a specific way, explain to them the consequences of the current code and suggest changes to improve it.
 - Promote a constructive discussion, rather than opposition.
 
-```text
-BAD: Make model evaluation code its own module - too repetitive.
-GOOD: How about we consider making the model evaluation code its own module? This would simplify models.py to only include code for building models. Organizing these evaluations methods into separate functions would also allow us to reuse them with different models without repeating code.
-```
+> **BAD**: Make model evaluation code its own module - too repetitive.  
+**GOOD**: How about we consider making the model evaluation code its own module? This would simplify models.py to only include code for building models. Organizing these evaluations methods into separate functions would also allow us to reuse them with different models without repeating code.
 
 - Avoid comments that sound personal to bring the attention of the review to the code.
 
-```text
-BAD: I wouldn't groupby genre twice like you did here... Just compute it once and use that for your aggregations.
-GOOD: Can we group by genre at the beginning of the function and then save that as a groupby object? We could then reference that object to get the average prices and views without computing groupby twice.
-```
+> **BAD**: I wouldn't groupby genre twice like you did here... Just compute it once and use that for your aggregations.  
+**GOOD**: Can we group by genre at the beginning of the function and then save that as a groupby object? We could then reference that object to get the average prices and views without computing groupby twice.
 
 - When providing a code review, write out code suggestions.
 
-```text
-BAD: You can do this all in one step by using the pandas str.split method.
-GOOD: We can actually simplify this step to the line below using the pandas str.split method. Found this on this stack overflow post: https://stackoverflow.com/questions/14745022/how-to-split-a-column-into-two-columns
+> **BAD**: You can do this all in one step by using the pandas str.split method.  
+**GOOD**: We can actually simplify this step to the line below using the pandas str.split method. Found this on this stack overflow post: https://stackoverflow.com/questions/14745022/how-to-split-a-column-into-two-columns
+
+## Pythonic OOP
+
+- Object-oriented programming (OOP) has a few benefits over procedural programming:
+    - Allows to create large, modular programs that can easily expand over time.
+    - Hides the implementation from the end-user.
+- Classes, object, attributes, methods, and inheritance are common to all OOP languages.
+- [Java OOPs Concepts](https://www.javatpoint.com/java-oops-concepts)
+
+#### Pythonic way
+
+> **For a Java guy**: Python is an anarchic playgound where anyone can grab a club and start mauling your head.  
+**For a Python guy**: Java is a an Orwellian universe where you are constantly shackled to someone else`s diminishing view of how the universe tick.
+
+- Python packages like Scikit-learn, pandas, and NumPy are built using OOP principles.
+- [When should I be using classes in Python?](https://stackoverflow.com/questions/33072570/when-should-i-be-using-classes-in-python#answer-33072722)
+
+#### Attributes and methods
+
+- The general OOP convention is to use methods to access attributes or change attribute values.
+    - These methods are called set and get methods or setter and getter methods.
+    - Changing values via a method provides more flexibility in the long-term.
+- Accessing attributes directly would be frowned upon in many other languages but not in Python.
+    - The underscore in front of a variable means it can should be accessed with get and set.
+    - `_` prefix means stay away even if you're not technically prevented from doing so.
+- Python does not distinguish between private and public variables.
+    - To emulate private variables for some reason, you can always use the `__` prefix from PEP 8.
+- [Python's Instance, Class, and Static Methods Demystified](https://realpython.com/instance-class-and-static-methods-demystified/)
+- [Class and Instance Attributes](https://www.python-course.eu/python3_class_and_instance_attributes.php)
+
+#### Inheritance
+
+- Inheritance helps organize code with a more general version of a class and then specific children.
+    - Inheritance can make object-oriented programs more efficient to write.
+    - Updates to a parent class automatically trickle down to its children.
+    - [Inheritance](https://docs.python.org/3/tutorial/classes.html#inheritance)
+- A mixin is a special kind of multiple inheritance, used when:
+    - You want to provide a lot of optional features for a class.
+    - You want to use one particular feature in a lot of different classes.
+    - [Mixins for Fun and Profit](https://easyaspython.com/mixins-for-fun-and-profit-cb9962760556)
+
+#### Magic functions and decorators
+
+- Magic functions allow us to override or add the default functionality of python objects.
+    - For example, one can do `class_1+class_2` to build a new class.
+    - [A Guide to Python's Magic Methods](https://rszalski.github.io/magicmethods/)
+- Decorator adds new functionality to an existing object without modifying its structure.
+    - Syntactic Sugar with `@`!
+    - For example, a `@timer` decorator can measure the time a function takes.
+    - [Primer on Python Decorators](https://realpython.com/primer-on-python-decorators/)
+
+## Packaging
+
+- A package is a collection of Python modules.
+- A module is a piece of software that has a specific functionality.
+- Packaging is all about target environment and deployment experience.
+    - [How To Package Your Python Code](https://python-packaging.readthedocs.io/en/latest/index.html)
+    - [An Overview of Packaging for Python](https://packaging.python.org/overview/#packaging-applications)
+
+#### Virtual environments
+
+- When installing your package locally, consider setting up a virtual environment.
+- A virtual environment is a silo-ed Python installation apart from the main Python installation.
+    - One can install and delete the virtual environment without any side effects.
+- Conda does two things: manages packages and manages environments.
+    - Makes it easy to manage Python packages especially for data science.
+    - Created to manage data science packages that relied on libraries outside of Python.
+
+```bash
+# Example: conda
+
+$ conda create --name env_name
+$ source activate env_name
+```
+
+- venv is an environment manager that comes pre-installed with Python 3.
+- Pip is the main package-management system used to install and manage Python packages.
+    - Can only manage Python packages whereas conda is a language agnostic package manager.
+- Both tend to be used for generic software development projects including web development.
+    - [Installing packages using pip and virtual environments](https://packaging.python.org/guides/installing-using-pip-and-virtualenv/)
+
+```bash
+# Example: virtualenv
+
+$ python3 -m venv env_name
+$ source env_name/bin/activate
+```
+
+#### PyPi
+
+- [The Python Package Index (PyPI)](https://pypi.org) is a repository of software for the Python programming language.
+- If your open-source code isn’t on PyPI, it is harder for other developers to find and use it.
+
+```bash
+# Example: Packaging to PyPi
+
+$ cd your_package
+$ python setup.py sdist
+$ pip install twine
+
+# Commands to upload to the PyPi test repository
+$ twine upload --repository-url https://test.pypi.org/legacy/ dist/*
+$ pip install --index-url https://test.pypi.org/simple/ your_package_name
+
+# Command to upload to the PyPi repository
+$ twine upload dist/*
+$ pip install your_package_name
 ```

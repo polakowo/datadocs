@@ -12,7 +12,7 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/deep-lear
 - A word embedding is a learned representation for text where semantically similar words have similar vectors.
 
 <img width=500 src="/datadocs/assets/1*jpnKO5X0Ii8PVdQYFO2z1Q.png"/>
-<center><a href="https://towardsdatascience.com/word-embedding-with-word2vec-and-fasttext-a209c1d3e12c" style="color: lightgrey">Credit</a></center>
+<center><a href="https://towardsdatascience.com/word-embedding-with-word2vec-and-fasttext-a209c1d3e12c" class="credit">Credit</a></center>
 
 - In a simplified sense each dimension represents a meaning and the word’s numerical weight on that dimension captures the closeness of its association with and to that meaning.
 - The beauty of representing words as vectors is that they lend themselves to mathematical operators, such as `king — man + woman = queen` enabling analogy reasoning.
@@ -37,7 +37,7 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/deep-lear
 - Sometimes, the learned embeddings may have no or combined interpretable features at all.
 
 <img width=500 src="/datadocs/assets/turian.png"/>
-<center><a href="https://lvdmaaten.github.io/tsne/" style="color: lightgrey">Credit</a></center>
+<center><a href="https://lvdmaaten.github.io/tsne/" class="credit">Credit</a></center>
 
 #### Usage
 
@@ -68,7 +68,7 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/deep-lear
 - For example, the network will automatically learn to encode gender in a consistent way.
 
 <img width=550 src="/datadocs/assets/1*CVoes2yr1puyXkWT69nMlw.png"/>
-<center><a href="https://chatbotnewsdaily.com/tensorflow-in-a-nutshell-part-two-hybrid-learning-98c121d35392" style="color: lightgrey">Credit</a></center>
+<center><a href="https://chatbotnewsdaily.com/tensorflow-in-a-nutshell-part-two-hybrid-learning-98c121d35392" class="credit">Credit</a></center>
 
 ### Word2Vec
 
@@ -93,7 +93,7 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/deep-lear
 - Word2vec comes in two flavors, the Continuous Bag-of-Words model (CBOW) and the Skip-Gram model. 
 
 <img width=600 src="/datadocs/assets/word2vec.png"/>
-<center><a href="https://www.researchgate.net/publication/326588219_Extending_Thesauri_Using_Word_Embeddings_and_the_Intersection_Method/figures?lo=1&utm_source=google&utm_medium=organic" style="color: lightgrey">Credit</a></center>
+<center><a href="https://www.researchgate.net/publication/326588219_Extending_Thesauri_Using_Word_Embeddings_and_the_Intersection_Method/figures?lo=1&utm_source=google&utm_medium=organic" class="credit">Credit</a></center>
 
 - Algorithmically, these models are similar, except that:
     - CBOW predicts target words (e.g. 'mat') from source context words ('the cat sits on the'), which works well for smaller datasets.
@@ -121,7 +121,7 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/deep-lear
 - Rather than using a window to define local context, GloVe constructs an explicit word-context or word co-occurrence matrix using statistics across the whole text corpus.
 
 <img width=350 src="/datadocs/assets/1*EaPTHymy22IW4OjnUq84jw.png"/>
-<center><a href="https://towardsdatascience.com/game-of-thrones-word-embeddings-does-r-l-j-part-1-8ca70a8f1fad" style="color: lightgrey">Credit</a></center>
+<center><a href="https://towardsdatascience.com/game-of-thrones-word-embeddings-does-r-l-j-part-1-8ca70a8f1fad" class="credit">Credit</a></center>
 
 #### Pros
 

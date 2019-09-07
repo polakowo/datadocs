@@ -46,7 +46,7 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/machine-l
 - This method is more efficient for parameter optimization than grid search.
     - While grid search captures grid points only, random search is free to search the whole action space (without any aliasing).
     <center><img width=500 src="/datadocs/assets/both.png"/></center>
-    <center><a href="https://www.analyticsindiamag.com/why-is-random-search-better-than-grid-search-for-machine-learning/" style="color: lightgrey">Credit</a></center>
+    <center><a href="https://www.analyticsindiamag.com/why-is-random-search-better-than-grid-search-for-machine-learning/" class="credit">Credit</a></center>
     - It is empirically and theoretically shown, that if at least 5% of the points on the grid yield a close-to-optimal solution, then random search with 60 trials will find that region with 95% probability (and the close-to-optimal region in stable machine learning models is quite large).
     - Compared to other methods it doesn't bog down in local optima.
     - Random search allows the inclusion of prior knowledge by specifying the distribution from which to sample.
@@ -67,7 +67,7 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/machine-l
 - Builds a probabilistic model of the function mapping from the hyperparameters to the objective.
 
 <img width=350 src="/datadocs/assets/6a010534b1db25970b01b7c869bebc970b-800wi.gif"/>
-<center><a href="https://blog.revolutionanalytics.com/2016/06/bayesian-optimization-of-machine-learning-models.html" style="color: lightgrey">Credit</a></center>
+<center><a href="https://blog.revolutionanalytics.com/2016/06/bayesian-optimization-of-machine-learning-models.html" class="credit">Credit</a></center>
 
 - Bayesian optimization obtain better results in fewer evaluations compared to grid search and random search.
 - Bayesian optimization is much better than manual tuning.

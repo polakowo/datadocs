@@ -63,7 +63,7 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/big-data/
 ## Big data
 
 <img width=300 src="/datadocs/assets/Big-data-1024x722.png"/>
-<center><a href="https://www.actify.com/industry-topics/10-big-data-use-cases-manufacturing/" style="color: lightgrey">Credit</a></center>
+<center><a href="https://www.actify.com/industry-topics/10-big-data-use-cases-manufacturing/" class="credit">Credit</a></center>
 
 - Handling and analyzing very large amounts of data is an urgent problem in many business areas. 
 - The trend towards "Big Data" is caused by a host of developments:

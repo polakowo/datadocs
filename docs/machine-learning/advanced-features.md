@@ -24,7 +24,7 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/machine-l
     - (optional) Mean encode all variables to create a homogeneous feature space.
     - Calculate \\(N\\) nearest neighbors with some distance metric (e.g., Bray-Curtis).
     <center><img width=200 src="/datadocs/assets/knn3.png"/></center>
-    <center><a href="https://www.analyticsvidhya.com/blog/2018/03/introduction-k-neighbours-algorithm-clustering/" style="color: lightgrey">Credit</a></center>
+    <center><a href="https://www.analyticsvidhya.com/blog/2018/03/introduction-k-neighbours-algorithm-clustering/" class="credit">Credit</a></center>
     - Calculate various statistics based on the nearest \\(K\\) neighbors.
     - Examples:
         - Mean target of nearest 5, 10, 15, 500, 2000 neighbors
@@ -89,7 +89,7 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/machine-l
 - NMF decomposes a data matrix \\(V\\) into the product of two lower rank matrices \\(W\\) and \\(H\\) so that \\(V\approx{W*H}\\).
 
 <center><img width=550 src="/datadocs/assets/holdout.png"/></center>
-<center><a href="http://alexhwilliams.info/itsneuronalblog/2018/02/26/crossval/" style="color: lightgrey">Credit</a></center>
+<center><a href="http://alexhwilliams.info/itsneuronalblog/2018/02/26/crossval/" class="credit">Credit</a></center>
 
 - Primarily used for recommender systems and text mining.
 - Provides an additive basis to represent the data.
@@ -109,7 +109,7 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/machine-l
 - Unlike PCA, is not a linear projection but allows to capture a non-linear structure.
 
 <center><img width=250 src="/datadocs/assets/PCASwiss.png"/></center>
-<center><a href="https://www.biostars.org/p/295174/" style="color: lightgrey">Credit</a></center>
+<center><a href="https://www.biostars.org/p/295174/" class="credit">Credit</a></center>
 
 - Projects points from high to low-dimensional space by preserving the relative distance between them.
     - Neighbor embedding is a search for a new and less-dimensional data representation that preserves neighborship of examples.

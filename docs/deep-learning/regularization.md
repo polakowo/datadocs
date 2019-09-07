@@ -17,7 +17,7 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/deep-lear
 
 <img width=400 src="/datadocs/assets/layer_sizes.jpeg"/>
 <img width=400 src="/datadocs/assets/reg_strengths.jpeg"/>
-<center><a href="http://cs231n.github.io/neural-networks-1/" style="color: lightgrey">Credit</a></center>
+<center><a href="http://cs231n.github.io/neural-networks-1/" class="credit">Credit</a></center>
 
 #### Examples of regularization
 
@@ -64,7 +64,7 @@ $$L2=\large{\lambda\sum{\|\|W\|\|_2^2}}$$
 - The key idea is to randomly drop units (along with their connections) from the neural network during training. This prevents units from co-adapting too much. Also divide each dropout layer by probability to keep the same expected value for the activation.
 
 <img width=500 src="/datadocs/assets/1*IrdJ5PghD9YoOyVAQ73MJw.gif"/>
-<center><a href="https://chatbotslife.com/regularization-in-deep-learning-f649a45d6e0" style="color: lightgrey">Credit</a></center>
+<center><a href="https://chatbotslife.com/regularization-in-deep-learning-f649a45d6e0" class="credit">Credit</a></center>
 
 - If you have to explain drop-out to a 6-year-old, this is how: 
 > Imagine a scenario, in a classroom, a teacher asks some questions but always same two kids are answering, immediately. Now, the teacher asks them to stay quiet for some time and let other pupils participate. This way other students get to learn better. Maybe they answer wrong, but the teacher can correct them(weight updates). This way the whole class(layer) learns about a topic better.
@@ -105,7 +105,7 @@ $$L2=\large{\lambda\sum{\|\|W\|\|_2^2}}$$
 - Commonly data augmentation and training tasks are run on parallel CPU threads
 
 <img width=500 src="/datadocs/assets/data-augmentation.png"/>
-<center><a href="https://www.analyticsvidhya.com/blog/2018/04/fundamentals-deep-learning-regularization-techniques/" style="color: lightgrey">Credit</a></center>
+<center><a href="https://www.analyticsvidhya.com/blog/2018/04/fundamentals-deep-learning-regularization-techniques/" class="credit">Credit</a></center>
 
 #### Image size
 

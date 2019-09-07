@@ -9,7 +9,7 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/machine-l
 - Linear methods split space into 2 subspaces.
 
 <center><img width=150 src="/datadocs/assets/classifier.png"/></center>
-<center><a href="https://33bits.wordpress.com/tag/spam/" target="_blank" style="color: lightgrey">Credit</a></center>
+<center><a href="https://33bits.wordpress.com/tag/spam/" target="_blank" class="credit">Credit</a></center>
 
 #### Pros
 
@@ -25,7 +25,7 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/machine-l
 - The most famous toy example of where classes cannot be divided by a hyperplane (or line) with no errors is "the XOR problem". But if one were to give polynomial features as an input, then the problem can be solved.
 
 <center><img width=300 src="/datadocs/assets/xor.png"/></center>
-<center><a href="https://github.com/Yorko/mlcourse.ai/blob/master/jupyter_english/topic04_linear_models/topic4_linear_models_part4_good_bad_logit_movie_reviews_XOR.ipynb" target="_blank" style="color: lightgrey">Credit</a></center>
+<center><a href="https://github.com/Yorko/mlcourse.ai/blob/master/jupyter_english/topic04_linear_models/topic4_linear_models_part4_good_bad_logit_movie_reviews_XOR.ipynb" target="_blank" class="credit">Credit</a></center>
 
 - Weaker than other algorithms in terms of reducing error rates.
 - Rely on continuous data to build regression capabilities.
@@ -99,7 +99,7 @@ $$\large\min_w\|\|y-\hat{y}\|\|^2_2$$
     - be independent of one another.
 - The best way to assess assumptions is by using residual plots.
 <center><img width=350 src="/datadocs/assets/index.png"/></center>
-<center><a href="https://newonlinecourses.science.psu.edu/stat501/node/317/" target="_blank" style="color: lightgrey">Credit</a></center>
+<center><a href="https://newonlinecourses.science.psu.edu/stat501/node/317/" target="_blank" class="credit">Credit</a></center>
 - The Gauss-Markov theorem states that OLS produces best estimates when the assumptions hold true. Also, as the sample size increases to infinity, the coefficient estimates converge on the actual population parameters.
 - Many of the assumptions describe properties of the error terms.
 - We use residuals of a fitted model instead, which are the sample estimate of the error for each observation.
@@ -216,7 +216,7 @@ $$\large{p=\frac{1}{1+e^{-\hat{y}}}}$$
 - Only support vectors are important whereas other training examples are ignorable.
     - Support vectors are the data points nearest to the hyperplane.
 <center><img width=500 src="/datadocs/assets/1*Ox4UFUKHna9BjW5gfNcQlw.png"/></center>
-<center><a href="https://towardsdatascience.com/support-vector-machine-simply-explained-fee28eba5496" target="_blank" style="color: lightgrey">Credit</a></center>
+<center><a href="https://towardsdatascience.com/support-vector-machine-simply-explained-fee28eba5496" target="_blank" class="credit">Credit</a></center>
 - By combining the soft margin (tolerance of misclassifications) and kernel trick together, SVM is able to structure the decision boundary for linear non-separable cases:
     - Soft margin tolerates one or few misclassified points.
     - Kernels are functions which transform a low-dimensional space to a higher-dimensional space to make the cases separable.
@@ -224,7 +224,7 @@ $$\large{p=\frac{1}{1+e^{-\hat{y}}}}$$
     - Different kernels functions for different decision boundaries.
     - The kernel trick avoids explicit transformation of raw representation into feature vector representation (without ever computing the coordinates of the data in that space), which is often computationally cheaper.
 <center><img width=400 src="/datadocs/assets/1*zWzeMGyCc7KvGD9X8lwlnQ.png"/></center>
-<center><a href="https://towardsdatascience.com/the-kernel-trick-c98cdbcaeb3f" target="_blank" style="color: lightgrey">Credit</a></center>
+<center><a href="https://towardsdatascience.com/the-kernel-trick-c98cdbcaeb3f" target="_blank" class="credit">Credit</a></center>
 - SVM is effective in high-dimensional spaces.
 - Works well on smaller cleaner datasets.
 - Memory efficient since it uses a subset of training points in the decision function.

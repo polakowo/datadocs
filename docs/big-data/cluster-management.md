@@ -23,7 +23,7 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/big-data/
 - YARN decentralizes execution and monitoring of processing jobs.
 
 <img width=700 src="/datadocs/assets/yarn.png"/>
-<center><a href="https://www.youtube.com/watch?v=1vg_W-MMZpA" style="color: lightgrey">Credit</a></center>
+<center><a href="https://www.youtube.com/watch?v=1vg_W-MMZpA" class="credit">Credit</a></center>
 
 - Client:
     - Submits an application.
@@ -127,7 +127,7 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/big-data/
     - ZooKeeper's API: `create`, `delete`, `exists`, `setData`, `getData`, `getChildren`
 
 <img width=600 src="/datadocs/assets/Zookeeper-1.png"/>
-<center><a href="https://www.3pillarglobal.com/insights/test-execution-distributed-environment-using-zookeeper-poc" style="color: lightgrey">Credit</a></center>
+<center><a href="https://www.3pillarglobal.com/insights/test-execution-distributed-environment-using-zookeeper-poc" class="credit">Credit</a></center>
 
 - Offers high throughput, low latency, highly available, strictly ordered access to the znodes.
     - Prevents becoming the single point of failure in big systems. 
@@ -187,5 +187,5 @@ $ oozie job --oozie http://localhost:11000/oozie -config /home/maria_dev/job.pro
     - Allows them to be mixed in the same notebook.
 
 <img width=600 src="/datadocs/assets/zeppelin-04-d646c299.png"/>
-<center><a href="https://predictionio.apache.org/datacollection/analytics-zeppelin/" style="color: lightgrey">Credit</a></center>
+<center><a href="https://predictionio.apache.org/datacollection/analytics-zeppelin/" class="credit">Credit</a></center>
     

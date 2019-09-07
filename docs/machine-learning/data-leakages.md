@@ -45,7 +45,7 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/machine-l
     - Similarities of vector representations in the connectivity matrix can expose this data leakage.
 
 <center><img width=300 src="/datadocs/assets/1200px-Cluster-2.svg.png"/></center>
-<center><a href="https://en.wikipedia.org/wiki/Cluster_analysis" target="_blank" style="color: lightgrey">Credit</a></center>
+<center><a href="https://en.wikipedia.org/wiki/Cluster_analysis" target="_blank" class="credit">Credit</a></center>
 
 ## Distance-based tasks
 - Using distances we may find a good approximation for the true coordinates.

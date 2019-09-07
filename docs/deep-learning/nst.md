@@ -9,7 +9,7 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/deep-lear
 - VGG network is more well-suited for NST than Inception.
 
 <img width=600 src="/datadocs/assets/perspolis_vangogh.png"/>
-<center><a href="https://github.com/tejaslodaya/neural-style-transfer" style="color: lightgrey">Credit</a></center>
+<center><a href="https://github.com/tejaslodaya/neural-style-transfer" class="credit">Credit</a></center>
 
 - [A Neural Algorithm of Artistic Style (2015)](https://arxiv.org/pdf/1508.06576)
 - [Convolutional neural networks for artistic style transfer](https://harishnarayanan.org/writing/artistic-style-transfer/)
@@ -22,7 +22,7 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/deep-lear
 - CNNs have been learned to encode perceptual and semantic information, so they can be repurposed for the style transfer problem.
 
 <img width=500 src="/datadocs/assets/1*-bEkHF328n-S59iFnjTzag.png"/>
-<center><a href="https://medium.com/data-science-group-iitr/artistic-style-transfer-with-convolutional-neural-network-7ce2476039fd" style="color: lightgrey">Credit</a></center>
+<center><a href="https://medium.com/data-science-group-iitr/artistic-style-transfer-with-convolutional-neural-network-7ce2476039fd" class="credit">Credit</a></center>
 
 - Use the outputs of various intermediate layers to compute two types of losses:
     - style loss (how close is the pastiche to the style image in style)
@@ -32,7 +32,7 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/deep-lear
 
 <img width=300 src="/datadocs/assets/content-loss.png"/>
 <img width=300 src="/datadocs/assets/style-loss.png"/>
-<center><a href="https://harishnarayanan.org/writing/artistic-style-transfer/" style="color: lightgrey">Credit</a></center>
+<center><a href="https://harishnarayanan.org/writing/artistic-style-transfer/" class="credit">Credit</a></center>
 
 - The relative importance of these terms is determined by a set of scalar weights \\(\alpha\\) and \\(\beta\\).
 
@@ -42,7 +42,7 @@ $$\large{L_{\text{total}}(S,C,G)=\alpha L_{\text{content}}(C,G)+\beta L_{\text{s
 - The best results are achieved by a combination of many different layers from the network.
 
 <img width=600 src="/datadocs/assets/1*YHpizJPE2QzXLPUVbD28Tg.png"/>
-<center><a href="https://medium.com/data-science-group-iitr/artistic-style-transfer-with-convolutional-neural-network-7ce2476039fd" style="color: lightgrey">Credit</a></center>
+<center><a href="https://medium.com/data-science-group-iitr/artistic-style-transfer-with-convolutional-neural-network-7ce2476039fd" class="credit">Credit</a></center>
 
 #### Content loss
 

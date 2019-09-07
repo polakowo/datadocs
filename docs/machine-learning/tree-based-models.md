@@ -9,7 +9,7 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/machine-l
 - Applies a “Divide and Conquer” approach by splitting the data into sub-spaces or boxes based on probabilities of outcome.
 
 <img width=500 src="/datadocs/assets/ml-classifiers-2.png"/>
-<center><a href="https://martin-thoma.com/comparing-classifiers/" style="color: lightgrey">Credit</a></center>
+<center><a href="https://martin-thoma.com/comparing-classifiers/" class="credit">Credit</a></center>
 
 #### Pros
 
@@ -38,7 +38,7 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/machine-l
     $$\large{H=-\sum{p(x)\log_2{p(x)}}}$$
     - The procedure is repeated recursively until the entropy is zero (or some small value to account for overfitting).
     <center><img width=230 src="/datadocs/assets/decision-tree.svg"/></center>
-    <center><a href="https://victorzhou.com/blog/intro-to-random-forests/" style="color: lightgrey">Credit</a></center>
+    <center><a href="https://victorzhou.com/blog/intro-to-random-forests/" class="credit">Credit</a></center>
 - The simplest heuristics for handling numeric features in a decision tree is to sort its values in ascending order and check only those thresholds where the value of the target variable changes. The value obtained by leaves in the training data is the mean response of observation falling in that region. 
 - Criterions: In practice, Gini uncertainty and information gain work similarly.
 - [Introduction to Decision Trees](https://medium.com/greyatom/decision-trees-a-simple-way-to-visualize-a-decision-dc506a403aeb)
@@ -77,12 +77,12 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/machine-l
 - Random forests are combined through the construction of uncorrelated trees using CART, bagging, and the random subspace method.
 
 <img width=400 src="/datadocs/assets/cover.jpg"/>
-<center><a href="https://www.jpytr.com/post/random_forests_and_jackknife_variance/" style="color: lightgrey">Credit</a></center>
+<center><a href="https://www.jpytr.com/post/random_forests_and_jackknife_variance/" class="credit">Credit</a></center>
 
 - Bias-variance tradeoff: As random forests training use 1) bootstrap sampling (or sampling with replacement) along with 2) random selection of features for a split, the correlation between the trees (or weak learners) would be low. That means although individual trees would have high variance but the ensemble output will be appropriate (lower variance but the same bias) because the trees are loosely correlated. Thus random forests would give good performance with full depth of decision trees.
 
 <img width=500 src="/datadocs/assets/random-forests.png"/>
-<center><a href="https://relguzman.blogspot.com/2018/04/random-forests-python.html" style="color: lightgrey">Credit</a></center>
+<center><a href="https://relguzman.blogspot.com/2018/04/random-forests-python.html" class="credit">Credit</a></center>
 
 - When bagging with decision trees, we are less concerned about individual trees overfitting the training data. For this reason, the individual decision trees are grown deep and the trees are not pruned.
 - To make estimators more independent, `ExtraTrees` ca be used, which always tests random splits over fraction of features (in contrast to `RandomForest`, which tests all possible splits over fraction of features).
@@ -104,7 +104,7 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/machine-l
 - Rarely overfits. In practice, an increase in the tree number almost always improves the composition. But, after reaching a certain number of trees, the learning curve is very close to the asymptote.
 
 <img width=400 src="/datadocs/assets/performance_rf.png"/>
-<center><a href="https://www.researchgate.net/publication/332391062_Wet_and_Dry_Snow_Detection_Using_Sentinel-1_SAR_Data_for_Mountainous_Areas_with_a_Machine_Learning_Technique/figures?lo=1&utm_source=google&utm_medium=organic" style="color: lightgrey">Credit</a></center>
+<center><a href="https://www.researchgate.net/publication/332391062_Wet_and_Dry_Snow_Detection_Using_Sentinel-1_SAR_Data_for_Mountainous_Areas_with_a_Machine_Learning_Technique/figures?lo=1&utm_source=google&utm_medium=organic" class="credit">Credit</a></center>
 
 - There are developed methods to estimate feature importance
 - Works well with missing data and maintains good accuracy levels even when a large part of data is missing
@@ -147,7 +147,7 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/machine-l
 - Predictions are made by majority vote of the weak learners’ predictions, weighted by their individual accuracy.
 
 <img width=450 src="/datadocs/assets/b2b029d898f64bbbb158e15d29595969.png"/>
-<center><a href="https://nbviewer.jupyter.org/github/Yorko/mlcourse.ai/blob/master/jupyter_english/topic10_boosting/topic10_gradient_boosting.ipynb" style="color: lightgrey">Credit</a></center>
+<center><a href="https://nbviewer.jupyter.org/github/Yorko/mlcourse.ai/blob/master/jupyter_english/topic10_boosting/topic10_gradient_boosting.ipynb" class="credit">Credit</a></center>
 
 #### Pros
 

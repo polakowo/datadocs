@@ -30,10 +30,10 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/big-data/
 - [Data Modeling vs. Database Design (1996, but it's gold)](http://www.dwelleart.com/aisintl/case/library/R-Theory_vs_ER/r-theory_vs_er.html)
 
 <center><img width=550 src="/datadocs/assets/data-modeling.png"/></center>
-<center><a href="https://www.sap.com/hana" style="color: lightgrey">Credit</a></center>
+<center><a href="https://www.sap.com/hana" class="credit">Credit</a></center>
 
 <center><img width=350 src="/datadocs/assets/data-modeling-features.png"/></center>
-<center><a href="https://www.1keydata.com/datawarehousing/data-modeling-levels.html" style="color: lightgrey">Credit</a></center>
+<center><a href="https://www.1keydata.com/datawarehousing/data-modeling-levels.html" class="credit">Credit</a></center>
 
 #### Conceptional schema
 
@@ -82,7 +82,7 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/big-data/
 > All systems are, in fact, CAP, but tunes how much C and A are provided during P.
 
 <center><img width=450 src="/datadocs/assets/56858813-35362180-699e-11e9-8e9d-a7be8b2b83e4.png"/></center>
-<center><a href="https://blog.grio.com/tag/nosql" style="color: lightgrey">Credit</a></center>
+<center><a href="https://blog.grio.com/tag/nosql" class="credit">Credit</a></center>
 
 #### PACELC
 
@@ -123,7 +123,7 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/big-data/
     - Key-value, document, columnar and graph formats
 
 <center><img width=700 src="/datadocs/assets/nosql-databases.png"/></center>
-<center><a href="http://www.cbs1.com.my/WebLITE/Applications/news/uploaded/docs/IBM_POWER8%20Linux%20-%20OpenDB%20V1.0.pdf" style="color: lightgrey">Credit</a></center>
+<center><a href="http://www.cbs1.com.my/WebLITE/Applications/news/uploaded/docs/IBM_POWER8%20Linux%20-%20OpenDB%20V1.0.pdf" class="credit">Credit</a></center>
 
 - NoSQL databases have become very popular among application developers.
     - Developers do not need to convert in-memory structure to relational structure.

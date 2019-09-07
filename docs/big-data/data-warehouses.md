@@ -45,7 +45,7 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/big-data/
 - OLTP systems provide source data to data warehouses, whereas OLAP systems help to analyze it.
 
 <center><img width=700 src="/datadocs/assets/OLTP-vs.-OLAP.png"/></center>
-<center><a href="https://diffzi.com/oltp-vs-olap/" style="color: lightgrey">Credit</a></center>
+<center><a href="https://diffzi.com/oltp-vs-olap/" class="credit">Credit</a></center>
 
 - OLTP (On-line Transaction Processing):
     - Examples: Track inventory, financial transactions, shipment of customer orders.
@@ -119,7 +119,7 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/big-data/
     - Does not allow for individual department specific data modeling requirements.
 
 <center><img width=500 src="/datadocs/assets/1*cEgTofMPw7HArKReNrwbug.png"/></center>
-<center><a href="https://medium.com/@amritha_fernando/types-of-data-warehousing-architecture-9a656443b510" style="color: lightgrey">Credit</a></center>
+<center><a href="https://medium.com/@amritha_fernando/types-of-data-warehousing-architecture-9a656443b510" class="credit">Credit</a></center>
 
 #### Inmon's Corporate Information Factory (CIF)
 
@@ -133,7 +133,7 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/big-data/
 - Data marts are dimensionally modeled and aggregated (unlike Kimball's dimensional models)
 
 <center><img width=500 src="/datadocs/assets/1*eeiD15Xwc_2Ul2DA5u_-Gw.png"/></center>
-<center><a href="https://medium.com/@amritha_fernando/types-of-data-warehousing-architecture-9a656443b510" style="color: lightgrey">Credit</a></center>
+<center><a href="https://medium.com/@amritha_fernando/types-of-data-warehousing-architecture-9a656443b510" class="credit">Credit</a></center>
 
 #### Hybrid Kimball & Inmon
 
@@ -167,7 +167,7 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/big-data/
 #### Star schema
 
 <center><img width=500 src="/datadocs/assets/cubeschemaa_v2.gif"/></center>
-<center><a href="http://publib.boulder.ibm.com/db2blox/82/en/cube/cube13.htm" style="color: lightgrey">Credit</a></center>
+<center><a href="http://publib.boulder.ibm.com/db2blox/82/en/cube/cube13.htm" class="credit">Credit</a></center>
 
 - The star schema separates the data into facts and dimensions as descriptive attributes of the facts.
     - Gets its name from the physical data model resembling a star shape.
@@ -189,7 +189,7 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/big-data/
 #### Snowflake schema
 
 <center><img width=500 src="/datadocs/assets/cubeschemaa3_v2.gif"/></center>
-<center><a href="http://publib.boulder.ibm.com/db2blox/82/en/cube/cube13.htm" style="color: lightgrey">Credit</a></center>
+<center><a href="http://publib.boulder.ibm.com/db2blox/82/en/cube/cube13.htm" class="credit">Credit</a></center>
 
 - In the snowflake schema, the dimension tables are normalized into multiple related tables.
 - Pros
@@ -207,7 +207,7 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/big-data/
 ## OLAP cubes
 
 <center><img width=250 src="/datadocs/assets/IntroOLAP_01.png"/></center>
-<center><a href="https://devnet.logianalytics.com/rdPage.aspx?rdReport=Article&dnDocID=1053" style="color: lightgrey">Credit</a></center>
+<center><a href="https://devnet.logianalytics.com/rdPage.aspx?rdReport=Article&dnDocID=1053" class="credit">Credit</a></center>
 
 - OLAP cube is a multi-dimensional table.
     - Also called a hypercube if the number of dimensions is greater than 3.
@@ -359,7 +359,7 @@ PIVOT (SUM(salary) FOR dept_id IN ([30], [45])) AS PivotTable;
     - Other examples include Teradata Aster, Oracle ExaData and Azure SQL.
 
 <center><img width=700 src="/datadocs/assets/mpp2.jpg"/></center>
-<center><a href="https://techxplicit.com/2016/09/26/first-encounter-with-massively-parallel-processing-aws-redshift/" style="color: lightgrey">Credit</a></center>
+<center><a href="https://techxplicit.com/2016/09/26/first-encounter-with-massively-parallel-processing-aws-redshift/" class="credit">Credit</a></center>
 
 - Other performance features:
      - Incorporates a query optimizer that is MPP-aware.

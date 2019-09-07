@@ -20,7 +20,7 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/deep-lear
 - This serves the process of symmetry-breaking and gives much better accuracy.
 
 <img width=350 src="/datadocs/assets/sigmoid.png"/>
-<center><a href="https://mnsgrg.com/2017/12/21/xavier-initialization/" style="color: lightgrey">Credit</a></center>
+<center><a href="https://mnsgrg.com/2017/12/21/xavier-initialization/" class="credit">Credit</a></center>
 
 #### Vanishing gradients
 
@@ -52,7 +52,7 @@ $$\large{\sigma(w)=\sqrt{\frac{2}{n_{\text{in}}+n_{\text{out}}}}}$$
 - Helps in attaining a global minimum of the cost function faster and more efficiently.
 
 <img width=700 src="/datadocs/assets/training-losses.png"/>
-<center><a href="https://intoli.com/blog/neural-network-initialization/" style="color: lightgrey">Credit</a></center>
+<center><a href="https://intoli.com/blog/neural-network-initialization/" class="credit">Credit</a></center>
 
 - Likewise if using sigmoid/tanh activation function.
 - [Understanding the difficulty of training deep feedforward neural networks (2010)](http://proceedings.mlr.press/v9/glorot10a/glorot10a.pdf)

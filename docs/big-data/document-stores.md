@@ -16,7 +16,7 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/big-data/
     - Enable developers to use the same format they use in their application code.
 
 <center><img width=500 src="/datadocs/assets/mongobeans_screenshot.png"/></center>
-<center><a href="http://pingax.com/mongodb-schema-design/" style="color: lightgrey">Credit</a></center>
+<center><a href="http://pingax.com/mongodb-schema-design/" class="credit">Credit</a></center>
 
 - Support CRUD operations:
     - Documents are addressed in the database via a (indexed) unique key.

@@ -119,7 +119,7 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/big-data/
 #### Normal Forms
 
 <center><img width=400 src="/datadocs/assets/codds-law.jpg"/></center>
-<center><a href="https://slideplayer.com/slide/6860017/" style="color: lightgrey">Credit</a></center>
+<center><a href="https://slideplayer.com/slide/6860017/" class="credit">Credit</a></center>
 
 - [First Normal Form (1NF)](https://www.techopedia.com/definition/25955/first-normal-form-1nf):
     - Make the columns atomic: cells have a single value.
@@ -154,7 +154,7 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/big-data/
 - Adding redundant data improves read performance at the expense of write performance.
 
 <center><img width=550 src="/datadocs/assets/denormalization.jpg"/></center>
-<center><a href="https://www.slideserve.com/walter-clay/chapter-11-enterprise-resource-planning-systems" style="color: lightgrey">Credit</a></center>
+<center><a href="https://www.slideserve.com/walter-clay/chapter-11-enterprise-resource-planning-systems" class="credit">Credit</a></center>
 
 - Requires more space on the system since there are more copies of the data.
     - Not really a limiting factor as storage has become less expensive.

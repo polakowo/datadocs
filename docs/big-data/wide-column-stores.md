@@ -81,7 +81,7 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/big-data/
 - [An In-Depth Look at the HBase Architecture](https://mapr.com/blog/in-depth-look-hbase-architecture/)
 
 <img width=600 src="/datadocs/assets/HBaseArchitecture-Blog-Fig1.png"/>
-<center><a href="https://mapr.com/blog/in-depth-look-hbase-architecture/" style="color: lightgrey">Credit</a></center>
+<center><a href="https://mapr.com/blog/in-depth-look-hbase-architecture/" class="credit">Credit</a></center>
 
 #### Write path
 
@@ -121,7 +121,7 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/big-data/
     - One could have millions of columns in a particular column family.
 
 <img width=600 src="/datadocs/assets/httpatomoreillycomsourceoreillyimages889236.png"/>
-<center><a href="https://www.oreilly.com/library/view/hbase-the-definitive/9781449314682/ch01.html" style="color: lightgrey">Credit</a></center>
+<center><a href="https://www.oreilly.com/library/view/hbase-the-definitive/9781449314682/ch01.html" class="credit">Credit</a></center>
 
 - HBase model is a sparse, distributed, persistent, multidimensional map, which is indexed by row key, column key, and a timestamp.
     - Timestamp is the identifier for a given version of a value.
@@ -154,7 +154,7 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/big-data/
     - A hash function is applied on the primary key to (evenly) distribute the data.
 
 <center><img width=500 src="/datadocs/assets/ring-architecture-2.png"/></center>
-<center><a href="https://docs.scylladb.com/architecture/ringarchitecture/" style="color: lightgrey">Credit</a></center>
+<center><a href="https://docs.scylladb.com/architecture/ringarchitecture/" class="credit">Credit</a></center>
 
 - Main features:
     - Decentralized load balancing and scalability.
@@ -181,7 +181,7 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/big-data/
     - For example, to do analytics or data preprocessing for transactional use.
 
 <center><img width=400 src="/datadocs/assets/Picture1-1.png"/></center>
-<center><a href="https://www.instaclustr.com/multi-data-center-sparkcassandra-benchmark-round-2/" style="color: lightgrey">Credit</a></center>
+<center><a href="https://www.instaclustr.com/multi-data-center-sparkcassandra-benchmark-round-2/" class="credit">Credit</a></center>
 
 #### Compared to HBase
 
@@ -233,7 +233,7 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/big-data/
     - On the other hand, read consistency is controlled by the number of agreements.
 
 <center><img width=400 src="/datadocs/assets/arc_write-singleDCConOne.png"/></center>
-<center><a href="https://docs.datastax.com/en/ddac/doc/datastax_enterprise/dbInternals/dbIntClientRequestsWrite.html" style="color: lightgrey">Credit</a></center>
+<center><a href="https://docs.datastax.com/en/ddac/doc/datastax_enterprise/dbInternals/dbIntClientRequestsWrite.html" class="credit">Credit</a></center>
 
 - Success means data was written to the node's commit log and the memtable.
     - The commit log guarantees durability in case of a node restart or failure.

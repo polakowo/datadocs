@@ -14,7 +14,7 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/deep-lear
 - Unlike feedforward neural networks, RNNs can use their internal state (memory) to process sequences of inputs.
 
 <img width=350 src="/datadocs/assets/mlst_1403.png"/>
-<center><a href="https://www.oreilly.com/library/view/neural-networks-and/9781492037354/ch04.html" style="color: lightgrey">Credit</a></center>
+<center><a href="https://www.oreilly.com/library/view/neural-networks-and/9781492037354/ch04.html" class="credit">Credit</a></center>
 $$\large{h_t=\sigma{(W_h\cdot{[h_{t-1},x_t]}+b_h)}}$$
 $$\large{\hat{y_t}=\tanh{(W_yh_t+b_y)}}$$
 <center>where</center>
@@ -31,7 +31,7 @@ $$\large{\hat{y_t}=\tanh{(W_yh_t+b_y)}}$$
 - RNNs are Turing-Complete in the sense that they can to simulate arbitrary programs (with proper weights). If training vanilla neural nets is optimization over functions, training recurrent nets is optimization over programs.
 
 <img width=350 src="/datadocs/assets/maxresdefault.jpg"/>
-<center><a href="https://www.youtube.com/watch?v=RPQD7-AOjMI" style="color: lightgrey">Credit</a></center>
+<center><a href="https://www.youtube.com/watch?v=RPQD7-AOjMI" class="credit">Credit</a></center>
 
 #### Usage
 
@@ -60,7 +60,7 @@ $$\large{\hat{y_t}=\tanh{(W_yh_t+b_y)}}$$
 #### Architectures
 
 <img width=700 src="/datadocs/assets/sequences.png"/>
-<center><a href="http://karpathy.github.io/2015/05/21/rnn-effectiveness/" style="color: lightgrey">Credit</a></center>
+<center><a href="http://karpathy.github.io/2015/05/21/rnn-effectiveness/" class="credit">Credit</a></center>
 
 - We can have bidirectional RNNs that feed in the input sequence in both directions by concatenating the outputs of two RNNs, one processing the sequence from left to right, the other one from right to left.
 
@@ -81,7 +81,7 @@ $$\large{\hat{y_t}=\tanh{(W_y\cdot{[\overrightarrow{h_t},\overleftarrow{h_t}]}+b
     - With that information RNNs can watch short-to-medium-sized regions in the input space.
 
 <img width=250 src="/datadocs/assets/shorttermmemory_300x200.jpg"/>
-<center><a href="https://www.mindgames.com/game/Short+Term+Memory" style="color: lightgrey">Credit</a></center>
+<center><a href="https://www.mindgames.com/game/Short+Term+Memory" class="credit">Credit</a></center>
 
 - Learn sequential patterns:
     - The RNN can handle sequential data of arbitrary length.
@@ -99,7 +99,7 @@ $$\large{\hat{y_t}=\tanh{(W_y\cdot{[\overrightarrow{h_t},\overleftarrow{h_t}]}+b
     - For example, the model opens a `\begin{proof}` environment but then ends it with a `\end{lemma}`.
 
 <img width=600 src="/datadocs/assets/Screen Shot 2019-01-06 at 00.06.35.png"/>
-<center><a href="http://karpathy.github.io/2015/05/21/rnn-effectiveness/" style="color: lightgrey">Credit</a></center>
+<center><a href="http://karpathy.github.io/2015/05/21/rnn-effectiveness/" class="credit">Credit</a></center>
 
 - Problems like exploding and vanishing gradients.
 - The recurrent structures are either exploring short-term or long-term temporal structures, but not both simultaneously.
@@ -113,7 +113,7 @@ $$\large{\hat{y_t}=\tanh{(W_y\cdot{[\overrightarrow{h_t},\overleftarrow{h_t}]}+b
     - This is when they get exponentially large from being multiplied by numbers larger than 1. Gradient clipping will clip the gradients between two numbers to prevent them from getting too large.
 
 <img width=400 src="/datadocs/assets/gradient_clipping.png"/>
-<center><a href="http://nmarkou.blogspot.com/2017/07/deep-learning-why-you-should-use.html" style="color: lightgrey">Credit</a></center>
+<center><a href="http://nmarkou.blogspot.com/2017/07/deep-learning-why-you-should-use.html" class="credit">Credit</a></center>
 
 ## Gating mechanisms
 
@@ -123,7 +123,7 @@ $$\large{\hat{y_t}=\tanh{(W_y\cdot{[\overrightarrow{h_t},\overleftarrow{h_t}]}+b
 - LSTM’s and GRU’s were created as a method to mitigate short-term memory using mechanisms called gates (pipes).
 
 <img width=170 src="/datadocs/assets/1*oS5taVAKcIII1qNduYnLJA.jpeg"/>
-<center><a href="https://medium.com/mlreview/understanding-lstm-and-its-diagrams-37e2f46f1714" style="color: lightgrey">Credit</a></center>
+<center><a href="https://medium.com/mlreview/understanding-lstm-and-its-diagrams-37e2f46f1714" class="credit">Credit</a></center>
 
 - These gates can learn which data in a sequence is important to keep or throw away.
 > Imagine you pick up words like “amazing” and “perfectly balanced breakfast”. You don’t care much for words like “this”, “gave“, “all”, “should”, etc. If a friend asks you the next day what the review said, you probably wouldn’t remember it word for word.
@@ -135,7 +135,7 @@ $$\large{\hat{y_t}=\tanh{(W_y\cdot{[\overrightarrow{h_t},\overleftarrow{h_t}]}+b
 - GRU has fewer tensor operations and parameters than LSTM, as it lacks an output gate.
 
 <img width=600 src="/datadocs/assets/1*yBXV9o5q7L_CvY7quJt3WQ.png"/>
-<center><a href="https://towardsdatascience.com/illustrated-guide-to-lstms-and-gru-s-a-step-by-step-explanation-44e9eb85bf21" style="color: lightgrey">Credit</a></center>
+<center><a href="https://towardsdatascience.com/illustrated-guide-to-lstms-and-gru-s-a-step-by-step-explanation-44e9eb85bf21" class="credit">Credit</a></center>
 
 ### Long short-term memory (LSTM)
 

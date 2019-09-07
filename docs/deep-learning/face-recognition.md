@@ -6,7 +6,7 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/deep-lear
 ---
 
 <img width=400 src="/datadocs/assets/t01a5ed8aab97b460c9.jpg"/>
-<center><a href="https://hackernoon.com/building-a-facial-recognition-pipeline-with-deep-learning-in-tensorflow-66e7645015b8" style="color: lightgrey">Credit</a></center>
+<center><a href="https://hackernoon.com/building-a-facial-recognition-pipeline-with-deep-learning-in-tensorflow-66e7645015b8" class="credit">Credit</a></center>
 
 #### Verification vs. recognition
 
@@ -33,7 +33,7 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/deep-lear
 - Siamese networks are best-suited for cases where we can have only a few examples per class.
 
 <img width=300 src="/datadocs/assets/Futurama.png"/>
-<center><a href="https://sorenbouma.github.io/blog/oneshot/" style="color: lightgrey">Credit</a></center>
+<center><a href="https://sorenbouma.github.io/blog/oneshot/" class="credit">Credit</a></center>
 
 - Siamese neural network is a class of neural network architectures that contain two or more identical subnetworks (identical here means they have the same configuration with the same parameters and weights)
 - Parameter updating is mirrored across both subnetworks.
@@ -41,7 +41,7 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/deep-lear
 - You can also learn the similarity function by letting the network adjust the weights and biases of the logistic regression.
 
 <img width=550 src="/datadocs/assets/Siamese-network.jpg"/>
-<center><a href="https://www.researchgate.net/publication/328376369_Partial_Discharge_Recognition_with_a_Multi-Resolution_Convolutional_Neural_Network" style="color: lightgrey">Credit</a></center>
+<center><a href="https://www.researchgate.net/publication/328376369_Partial_Discharge_Recognition_with_a_Multi-Resolution_Convolutional_Neural_Network" class="credit">Credit</a></center>
 
 - [Siamese Neural Networks for One-shot Image Recognition (2015)](https://www.cs.cmu.edu/~rsalakhu/papers/oneshot1.pdf)
 - [One Shot Learning and Siamese Networks in Keras](https://sorenbouma.github.io/blog/oneshot/)
@@ -55,7 +55,7 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/deep-lear
 - For further details, see [Word Embeddings](deep-learning/word-embeddings.md)
 
 <img width=350 src="/datadocs/assets/olivetti_tsne.jpg"/>
-<center><a href="https://lvdmaaten.github.io/tsne/" style="color: lightgrey">Credit</a></center>
+<center><a href="https://lvdmaaten.github.io/tsne/" class="credit">Credit</a></center>
 
 #### Pros
 
@@ -102,7 +102,7 @@ $$\large{L(X_1,X_2)=(1-Y)\frac{1}{2}d(X_1,X_2)^2+Y\frac{1}{2}\{\max{(0,m-d(X_1,X
 - The contrastive loss, on the other hand, only considers pairwise examples at a time.
 
 <img width=550 src="/datadocs/assets/main-qimg-e09a3ebbb08ee14ef4301170fe6649c8.png"/>
-<center><a href="https://arxiv.org/pdf/1503.03832v3.pdf" style="color: lightgrey">Credit</a></center>
+<center><a href="https://arxiv.org/pdf/1503.03832v3.pdf" class="credit">Credit</a></center>
 
 - Implementation:
     - Encode triplets as embeddings in some vector space.
@@ -125,7 +125,7 @@ $$\large{L(A,P,N)=\frac{1}{n}\left(\sum_{i=1}^{n}{\max{(d(A_i,P_i)-d(A_i,N_i)+m,
 - Binary classification is another way to learn the similarity function, e.g., using Manhattan distance and sigmoid layer
 
 <img width=900 src="/datadocs/assets/Siamese_diagram_2.png"/>
-<center><a href="https://sorenbouma.github.io/blog/oneshot/" style="color: lightgrey">Credit</a></center>
+<center><a href="https://sorenbouma.github.io/blog/oneshot/" class="credit">Credit</a></center>
 
 ## FaceNet
 

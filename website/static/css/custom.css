@@ -80,9 +80,21 @@ ul>li {
     color: #393939;
 }
 
-article a,
-article a:hover {
-    text-decoration: underline;
+article a:not(.anchor, .credit) {
+    text-decoration: none;
+    border-bottom: 1px solid rgba(0,0,0,.2);
+    background-color: rgba(187,239,253,.3);
+}
+
+article a:not(.anchor, .credit):visited {
+    text-decoration: none;
+    border-bottom: 1px solid rgba(0,0,0,.2);
+    background-color: rgba(253,187,239,.3);
+}
+
+.credit {
+    color: rgba(0,0,0,.2);
+    border-bottom: 1px solid rgba(0,0,0,.2);
 }
 
 table tr:nth-child(2n) {
@@ -102,6 +114,17 @@ pre .btnIcon {
     color: inherit;
 }
 
-code[class*='language-'], pre[class*='language-'] {
-    border: 1px solid #b4b9bd;
+.container .wrapper .hljs {
+    border-radius: 10px;
+}
+
+blockquote {
+    border: none;
+    border-radius: 10px;
+    padding: 1.25rem 1.5rem;
+}
+
+body {
+    font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+    color: #404040;
 }

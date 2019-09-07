@@ -71,7 +71,7 @@ $ bin/hadoop dfs -mkdir /foodir
     - Clients contact NameNode for file metadata or file modifications and perform actual file I/O directly with the DataNodes.
 
 <img width=500 src="/datadocs/assets/hdfsarchitecture.gif"/>
-<center><a href="https://hadoop.apache.org/docs/r1.2.1/hdfs_design.html" style="color: lightgrey">Credit</a></center>
+<center><a href="https://hadoop.apache.org/docs/r1.2.1/hdfs_design.html" class="credit">Credit</a></center>
 
 - NameNode:
     - A master server that manages the file system namespace and regulates access to files by clients.

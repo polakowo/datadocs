@@ -11,12 +11,12 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/deep-lear
 - The weights are adjusted in proportion to their contribution to the total error.
 
 <img width=500 src="/datadocs/assets/0*AxqT3EOPEThyRqfK..png"/>
-<center><a href="https://towardsdatascience.com/how-to-use-batch-normalization-with-tensorflow-and-tf-keras-to-train-deep-neural-networks-faster-60ba4d054b73" style="color: lightgrey">Credit</a></center>
+<center><a href="https://towardsdatascience.com/how-to-use-batch-normalization-with-tensorflow-and-tf-keras-to-train-deep-neural-networks-faster-60ba4d054b73" class="credit">Credit</a></center>
 
 - This is actually a simple implementation of chain rule of derivatives, which simply gives you the ability to compute all required partial derivatives in linear time in terms of the graph size.
 
 <img width=700 src="/datadocs/assets/1*q1M7LGiDTirwU-4LcFq7_Q.png"/>
-<center><a href="https://kratzert.github.io/2016/02/12/understanding-the-gradient-flow-through-the-batch-normalization-layer.html" style="color: lightgrey">Credit</a></center>
+<center><a href="https://kratzert.github.io/2016/02/12/understanding-the-gradient-flow-through-the-batch-normalization-layer.html" class="credit">Credit</a></center>
 
 - In the context of learning, backpropagation is commonly used by the gradient descent optimization algorithm to adjust the weight of neurons by calculating the gradient of the loss function.
 - [Neural Networks: Feedforward and Backpropagation Explained & Optimization](https://mlfromscratch.com/neural-networks-explained/#/)

@@ -71,7 +71,7 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/big-data/
     - The web interface is built using the Flask web-development micro-framework.
 
 <center><img width=600 src="/datadocs/assets/multi-node-architecture.png"/></center>
-<center><a href="https://drivy.engineering/airflow-architecture/" style="color: lightgrey">Credit</a></center>
+<center><a href="https://drivy.engineering/airflow-architecture/" class="credit">Credit</a></center>
 
 - An Airflow cluster has a number of daemons: a web server, a scheduler and one or several workers.
 - Single-node architecture: 

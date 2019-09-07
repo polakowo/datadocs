@@ -127,7 +127,7 @@ $$\large{MAE=\frac{\sum_{i=1}^{n}{\|y_i-\hat{y}_i\|}}{n}}$$
     - As option: Huber loss combines good properties from both MSE and MAE.
     - As another option: Log-Cosh loss has all the advantages of Huber loss, and it’s twice differentiable everywhere (which is more favorable for models using Newton’s method), unlike Huber loss.
     <center><img width=400 src="/datadocs/assets/vXMgz.png"/></center>
-    <center><a href="https://heartbeat.fritz.ai/5-regression-loss-functions-all-machine-learners-should-know-4fb140e9d4b0" style="color: lightgrey">Credit</a></center>
+    <center><a href="https://heartbeat.fritz.ai/5-regression-loss-functions-all-machine-learners-should-know-4fb140e9d4b0" class="credit">Credit</a></center>
 
 #### MAPE
 
@@ -166,7 +166,7 @@ $$\large{Accuracy=\frac{1}{n}\sum_{i=1}^{n}{[y_i=\hat{y}_i]}}$$
     - The loss function is not differentable since gradients are zero almost always.
     - Zero-one loss may be approximated with a proxy loss such as logloss or Hinge loss.
     <center><img width=400 src="/datadocs/assets/RUIJ4.png"/></center>
-    <center><a href="https://stackoverflow.com/questions/47716601/classification-modified-huber-loss-how-is-it-more-tolerant-to-outliers" style="color: lightgrey">Credit</a></center>
+    <center><a href="https://stackoverflow.com/questions/47716601/classification-modified-huber-loss-how-is-it-more-tolerant-to-outliers" class="credit">Credit</a></center>
 
 #### Dealing with imbalanced data
 
@@ -201,7 +201,7 @@ $$\large{LogLoss=-\frac{1}{n}\sum_{i=1}^{n}\sum_{j=1}^{n}{y_{i,j}\log{\hat{y}_{i
 - AUC tells how much model is capable of distinguishing between classes 0 and 1.
 
 <center><img width=350 src="/datadocs/assets/glucosedistn.png"/></center>
-<center><a href="http://corysimon.github.io/articles/what-is-an-roc-curve/" style="color: lightgrey">Credit</a></center>
+<center><a href="http://corysimon.github.io/articles/what-is-an-roc-curve/" class="credit">Credit</a></center>
     
 - AUC is a rank-based metric (depends on ordering of predictions, not on absolute values)
 - Used for binary classification problems. 

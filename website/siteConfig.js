@@ -95,6 +95,9 @@ const siteConfig = {
         '/datadocs/js/disqus.js',
         'https://buttons.github.io/buttons.js'
     ],
+    stylesheets: [
+        'https://fonts.googleapis.com/css?family=Lato',
+    ],
     gaTrackingId: 'UA-142521178-1',
     gaGtag: true,
     stylesheets: [],

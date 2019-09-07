@@ -9,7 +9,7 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/machine-l
 - Ensemble of *low-correlating* classifiers with slightly greater than 50% accuracy will outperform each of the classifiers individually.
 
 <center><img width=350 src="/datadocs/assets/apes.jpg"/></center>
-<center><a href="https://www.youtube.com/watch?v=Q6TkuNX_0HA" style="color: lightgrey">Credit</a></center>
+<center><a href="https://www.youtube.com/watch?v=Q6TkuNX_0HA" class="credit">Credit</a></center>
 
 - Condorcet's jury theorem: 
     - If each member of the jury (of size \\(N\\)) makes an *independent* judgement and the probability \\(p\\) of the correct decision by each juror is more than 0.5, then the probability of the correct decision \\(P_N\\) by the majority \\(m\\) tends to one. On the other hand, if \\(p<0.5\\) for each juror, then the probability tends to zero.
@@ -52,7 +52,7 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/machine-l
 - Bootstrapping allows to fit models that are roughly independent.
 
 <center><img width=350 src="/datadocs/assets/Ozone.png"/></center>
-<center><a href="https://en.wikipedia.org/wiki/Bootstrap_aggregating" style="color: lightgrey">Credit</a></center>
+<center><a href="https://en.wikipedia.org/wiki/Bootstrap_aggregating" class="credit">Credit</a></center>
 
 - The procedure is as follows:
     - Create \\(N\\) random sub-samples (with replacement) for the dataset of size \\(N\\).
@@ -173,7 +173,7 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/machine-l
 - Try [Heamy](https://github.com/rushter/heamy) - a set of useful tools for competitive data science (including ensembling).
 
 <center><img width=600 src="/datadocs/assets/stacknet.png"/></center>
-<center><a href="https://opendatascience.com/predicting-resignation-in-the-military/" style="color: lightgrey">Credit</a></center>
+<center><a href="https://opendatascience.com/predicting-resignation-in-the-military/" class="credit">Credit</a></center>
 
 - Keep in mind:
     - Adding levels can either be data expensive or time expensive.

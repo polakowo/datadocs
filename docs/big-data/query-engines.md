@@ -22,7 +22,7 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/big-data/
 - Hive looks like traditional database code with SQL access but has to adhere to the rules of Hadoop framework.
 
 <img width=400 src="/datadocs/assets/image1.png"/>
-<center><a href="https://mapr.com/products/apache-hive/" style="color: lightgrey">Credit</a></center>
+<center><a href="https://mapr.com/products/apache-hive/" class="credit">Credit</a></center>
 
 - Hive features an SQL-like programming interface called HiveQL:
     - Pretty much MySQL with extensions (for example views)
@@ -44,7 +44,7 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/big-data/
 - Users are able to connect with Hive using a command-line tool and a JDBC driver.
 
 <img width=600 src="/datadocs/assets/4.jpg"/>
-<center><a href="http://www.bigintellects.com/2018/08/hive-tutorial-hive-architecture-and.html" style="color: lightgrey">Credit</a></center>
+<center><a href="http://www.bigintellects.com/2018/08/hive-tutorial-hive-architecture-and.html" class="credit">Credit</a></center>
 
 - Limitations:
     - Hive is best suited for batch jobs, rather than working with web log data and append-only data.
@@ -202,7 +202,7 @@ SELECT * FROM us_population WHERE state = 'CA';
 - Presto provides a (sexy) web interface for monitoring and managing queries.
 
 <img width=700 src="/datadocs/assets/1*A1x1lzEtI5SUkUjn_hjCWw.png"/>
-<center><a href="https://medium.com/walmartlabs/exploring-presto-and-zeppelin-for-fast-data-analytics-and-visualization-9cb4dca91c3d" style="color: lightgrey">Credit</a></center>
+<center><a href="https://medium.com/walmartlabs/exploring-presto-and-zeppelin-for-fast-data-analytics-and-visualization-9cb4dca91c3d" class="credit">Credit</a></center>
 
 - As compared to Hive:
     - Presto is an alternative to tools that query HDFS using pipelines of MapReduce jobs.

@@ -34,7 +34,7 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/deep-lear
 - According to the [Nyquist theorem](https://en.wikipedia.org/wiki/Nyquist–Shannon_sampling_theorem), we can use math to perfectly reconstruct the original sound wave from the spaced-out samples - as long as we sample at least twice as fast as the highest frequency we want to record.
 
 <img width=400 src="/datadocs/assets/Signal_Sampling.png"/>
-<center><a href="https://en.wikipedia.org/wiki/Sampling_(signal_processing)" style="color: lightgrey">Credit</a></center>
+<center><a href="https://en.wikipedia.org/wiki/Sampling_(signal_processing)" class="credit">Credit</a></center>
 
 #### Spectrogram
 
@@ -45,20 +45,20 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/deep-lear
 - A spectrogram is a visual representation of sound with a time and a frequency axis and pixel intensities representing the amplitude or energy of the sound at that moment and at that frequency.
 
 <img width=200 src="/datadocs/assets/76.png"/>
-<center><a href="https://www.coursera.org/learn/nlp-sequence-models/home/welcome" style="color: lightgrey">Credit</a></center>
+<center><a href="https://www.coursera.org/learn/nlp-sequence-models/home/welcome" class="credit">Credit</a></center>
 
 - A spectrogram is computed by sliding a window over the raw audio signal, and calculates the most active frequencies in each window using a Fourier transformation.
 - Short Time Fourier Transform decomposes a function of time (a signal) into the frequencies that make it up, in a way similar to how a musical chord can be expressed as the frequencies (or pitches) of its constituent notes.
 
 <img width=450 src="/datadocs/assets/3311485_orig.gif"/>
-<center><a href="http://mriquestions.com/fourier-transform-ft.html" style="color: lightgrey">Credit</a></center>
+<center><a href="http://mriquestions.com/fourier-transform-ft.html" class="credit">Credit</a></center>
 
 - MFCCs are yet another transformation on spectrograms and are meant to capture characteristics of human speech better. 
 - There are also delta and delta-delta transformations on top of MFCC, which you probably can think of them as first and second derivatives. 
 - MFCCs are the standard feature representation in popular speech recognition frameworks.
 
 <img width=500 src="/datadocs/assets/1*sJ6sAVUO4k9d8HYtckxYuw.png"/>
-<center><a href="https://towardsdatascience.com/speech-recognition-challenge-with-deep-learning-studio-7ad73dc6bfa" style="color: lightgrey">Credit</a></center>
+<center><a href="https://towardsdatascience.com/speech-recognition-challenge-with-deep-learning-studio-7ad73dc6bfa" class="credit">Credit</a></center>
 
 - We need to slice the spectrogram into short-time segments (typically 10 milliseconds) shifted with a fixed timestep.
 
@@ -79,12 +79,12 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/deep-lear
     - It will consider the outputs from the acoustic model as a graph and take each probability of a phoneme as a node. Each path will have its own probability, which will simply be the product of the probability of the nodes.
 
 <img width=250 src="/datadocs/assets/1*BFQYgGofh6HOxnGdkJnO-w.png"/>
-<center><a href="https://towardsdatascience.com/intuitively-understanding-connectionist-temporal-classification-3797e43a86c" style="color: lightgrey">Credit</a></center>
+<center><a href="https://towardsdatascience.com/intuitively-understanding-connectionist-temporal-classification-3797e43a86c" class="credit">Credit</a></center>
 
 - CTC computes the probability of an output sequence as a sum over all possible alignments of input sequences that could map to the output sequence.
 
 <img width=600 src="/datadocs/assets/0115.sdt-warp-ctc.png"/>
-<center><a href="https://github.com/baidu-research/warp-ctc" style="color: lightgrey">Credit</a></center>
+<center><a href="https://github.com/baidu-research/warp-ctc" class="credit">Credit</a></center>
 
 - Computing the sum of all such probabilities explicitly would be prohibitively costly due to the combinatorics involved, but CTC uses dynamic programming to dramatically reduce the complexity of the computation.
 - In order to encode duplicate characters, CTC introduces a pseudo-character called blank.

@@ -8,13 +8,13 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/deep-lear
 - According to the universal approximation theorem, given enough capacity, we know that a feedforward network with a single layer is sufficient to represent any function. However, the layer might be massive and the network is prone to overfitting the data. Therefore, there is a common trend in the research community that our network architecture needs to go deeper.
 
 <center><img width=350 src="/datadocs/assets/a88.jpg"/></center>
-<center><a href="https://medium.com/datadriveninvestor/thats-not-enough-we-have-to-go-deeper-24dd16d85828" style="color: lightgrey">Credit</a></center>
+<center><a href="https://medium.com/datadriveninvestor/thats-not-enough-we-have-to-go-deeper-24dd16d85828" class="credit">Credit</a></center>
 
 - The less data you have, the more hand-engineering ("hacks") you need. The more data you have, the simpler the learning algorithm becomes (think of end-to-end learning).
 - We are developing complex network architectures to compensate for the lack of labeled data.
 
 <img width=500 src="/datadocs/assets/1*kBpEOy4fzLiFxRLjpxAX6A.png"/>
-<center><a href="https://dataconomy.com/2017/04/history-neural-networks/" style="color: lightgrey">Credit</a></center>
+<center><a href="https://dataconomy.com/2017/04/history-neural-networks/" class="credit">Credit</a></center>
 
 - [LeNet-5: Gradient-Based Learning Applied to Document Recognition (1998)](http://yann.lecun.com/exdb/publis/pdf/lecun-01a.pdf)
 - [AlexNet: ImageNet Classification with Deep Convolutional Neural Networks (2012)](https://papers.nips.cc/paper/4824-imagenet-classification-with-deep-convolutional-neural-networks.pdf)
@@ -41,7 +41,7 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/deep-lear
 - In most of applications each convolution is directly succeeded by a non-linear activation.
 
 <img width=400 src="/datadocs/assets/1x1_convolution.jpg"/>
-<center><a href="https://slideplayer.com/slide/12039897//" style="color: lightgrey">Credit</a></center>
+<center><a href="https://slideplayer.com/slide/12039897//" class="credit">Credit</a></center>
 
 #### Variation in object size
 
@@ -58,7 +58,7 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/deep-lear
 - For this, the filter banks in the module are expanded
 
 <img width=500 src="/datadocs/assets/inception_implement.png"/>
-<center><a href="https://towardsdatascience.com/a-simple-guide-to-the-versions-of-the-inception-network-7fc52b863202" style="color: lightgrey">Credit</a></center>
+<center><a href="https://towardsdatascience.com/a-simple-guide-to-the-versions-of-the-inception-network-7fc52b863202" class="credit">Credit</a></center>
 
 #### Factorization methods
 
@@ -66,7 +66,7 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/deep-lear
     - Factorize convolutions of filter size nxn to a combination of 1xn and nx1 convolutions.
 
 <img width=400 src="/datadocs/assets/Screen-Shot-2018-04-17-at-5.32.45-PM.png"/>
-<center><a href="https://www.jeremyjordan.me/convnet-architectures/" style="color: lightgrey">Credit</a></center>
+<center><a href="https://www.jeremyjordan.me/convnet-architectures/" class="credit">Credit</a></center>
 
 #### Auxiliary classifiers
 
@@ -98,7 +98,7 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/deep-lear
 - The second problem with training the deeper networks is, performing the optimization on huge parameter space and therefore naively adding the layers leading to higher training error. This is called *degradation problem*.
 
 <img width=600 src="/datadocs/assets/1*McwAbGJjA1lV_xBdg1w5XA.png"/>
-<center><a href="https://towardsdatascience.com/an-overview-of-resnet-and-its-variants-5281e2f56035" style="color: lightgrey">Credit</a></center>
+<center><a href="https://towardsdatascience.com/an-overview-of-resnet-and-its-variants-5281e2f56035" class="credit">Credit</a></center>
 
 - It is hard to know the desired depth of a deep network:
     - If layers are too deep, errors are hard to propagate back correctly. 
@@ -113,7 +113,7 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/deep-lear
 - The residual is given by \\(H(x)=F(x)-x\\) where \\(x\\) is the output of the previous layer and \\(F(x)\\) is the mapping you would normally have the network learn on this layer.
 
 <img width=350 src="/datadocs/assets/1*pUyst_ciesOz_LUg0HocYg.png"/>
-<center><a href="https://blog.waya.ai/deep-residual-learning-9610bb62c355" style="color: lightgrey">Credit</a></center>
+<center><a href="https://blog.waya.ai/deep-residual-learning-9610bb62c355" class="credit">Credit</a></center>
 
 - With identity mapping, the signal can be directly propagated from one layer to another, in both forward and backward direction.
 - Residual learning means each subsequent layer in a deep neural network is only responsible for fine tuning the output from the previous layer by adding a learned "residual" to the input. This differs from a more traditional approach where each layer generates the whole output.
@@ -132,7 +132,7 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/deep-lear
 - A residual neural network is an artificial neural network (ANN) of a kind that builds on constructs known from pyramidal cells in the cerebral cortex.
 
 <img width=400 src="/datadocs/assets/large.png"/>
-<center><a href="http://www.opensourcebrain.org/projects/l5pyramidalcellmodels/wiki" style="color: lightgrey">Credit</a></center>
+<center><a href="http://www.opensourcebrain.org/projects/l5pyramidalcellmodels/wiki" class="credit">Credit</a></center>
 
 #### Research findings
 

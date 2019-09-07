@@ -20,7 +20,7 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/deep-lear
 - The neocortex stores information in sequences of patterns, hierarchically.
 
 <img width=300 src="/datadocs/assets/neuron_model_001.jpg">
-<center><a href="http://neuroclusterbrain.com/neuron_model.html" style="color: lightgrey">Credit</a></center>
+<center><a href="http://neuroclusterbrain.com/neuron_model.html" class="credit">Credit</a></center>
 
 ## Feature extraction
 - The most fundamental advantage of a convolutional neural network is automatic feature extraction for the given task; provided that the input can be represented as a tensor in which local elements are correlated with one another.
@@ -28,7 +28,7 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/deep-lear
 - CNNs take advantage of local spatial coherence in the input, which allow them to have fewer weights as some parameters are shared. This process, taking the form of convolutions, makes them especially well suited to extract relevant information at a low computational cost.
 
 <img width=450 src="/datadocs/assets/main-qimg-2e1f0071ca9878f7719ed0ea8aeb386d.png"/>
-<center><a href="https://www.quora.com/What-are-the-advantages-of-a-convolutional-neural-network-CNN-compared-to-a-simple-neural-network-from-the-theoretical-and-practical-perspective" style="color: lightgrey">Credit</a></center>
+<center><a href="https://www.quora.com/What-are-the-advantages-of-a-convolutional-neural-network-CNN-compared-to-a-simple-neural-network-from-the-theoretical-and-practical-perspective" class="credit">Credit</a></center>
 
 - In image classification a CNN may
     - learn to detect edges from raw pixels in the first layer, 
@@ -47,7 +47,7 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/deep-lear
 
 <center>
 <img width=700 src="/datadocs/assets/AlexNet-1.png"/>
-<a href="https://neurohive.io/en/popular-networks/alexnet-imagenet-classification-with-deep-convolutional-neural-networks/" style="color: lightgrey">Credit</a>
+<a href="https://neurohive.io/en/popular-networks/alexnet-imagenet-classification-with-deep-convolutional-neural-networks/" class="credit">Credit</a>
 </center>
 
 #### Common patterns
@@ -65,7 +65,7 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/deep-lear
     - For example, input of 32x32x32 encodes an image of width 32, height 32, and three color channels R,G,B.
     <center>
     <img width=700 src="/datadocs/assets/I4p5q.png"/>
-    <a href="https://stackoverflow.com/questions/16163611/extract-rgb-channels-from-a-jpeg-image-in-r/16164239" style="color: lightgrey">Credit</a>
+    <a href="https://stackoverflow.com/questions/16163611/extract-rgb-channels-from-a-jpeg-image-in-r/16164239" class="credit">Credit</a>
     </center>
 - Channels are different "views" on input data:
     - For example, in image recognition you typically have RGB channels. 
@@ -89,7 +89,7 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/deep-lear
 - Feature detector is applied on input image to produce a feature map.
 
 <img width=400 src="/datadocs/assets/giphy-2.gif"/>
-<center><a href="https://ujjwalkarn.me/2016/08/11/intuitive-explanation-convnets/" style="color: lightgrey">Credit</a></center>
+<center><a href="https://ujjwalkarn.me/2016/08/11/intuitive-explanation-convnets/" class="credit">Credit</a></center>
 
 - In contrast to traditional networks, we use convolutions (mathematically "cross-correlation") over the dot product.
 - The convolution operation produces its output by taking a number of "kernels" of weights and applying them across the image.
@@ -98,7 +98,7 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/deep-lear
     - At each point where it’s applied, all of the corresponding input values and weights are multiplied together, and then summed to produce a single output value at that point.
 
 <img width=300 src="/datadocs/assets/patches1.png"/>
-<center><a href="https://petewarden.com/2015/04/20/why-gemm-is-at-the-heart-of-deep-learning/" style="color: lightgrey">Credit</a></center>
+<center><a href="https://petewarden.com/2015/04/20/why-gemm-is-at-the-heart-of-deep-learning/" class="credit">Credit</a></center>
 
 - You can think of this operation as something like an edge detector:
     - The kernel contains a pattern of weights, and when the part of the input image it’s looking at has a similar pattern it outputs a high value. 
@@ -106,7 +106,7 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/deep-lear
 - Because the input to the first layer is an RGB image, all of these kernels can be visualized as RGB too, and they show the primitive patterns that the network is looking for.
 
 <img width=400 src="/datadocs/assets/kernels.png"/>
-<center><a href="https://petewarden.com/2015/04/20/why-gemm-is-at-the-heart-of-deep-learning/" style="color: lightgrey">Credit</a></center>
+<center><a href="https://petewarden.com/2015/04/20/why-gemm-is-at-the-heart-of-deep-learning/" class="credit">Credit</a></center>
 
 - During the training phase, a CNN automatically learns the values of its kernels.
 
@@ -137,7 +137,7 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/deep-lear
 - Unlike a regular network, the layers of a ConvNet have neurons arranged in 3 dimensions: width, height, depth.
 
 <img width=350 src="/datadocs/assets/kernelview.png"/>
-<center><a href="https://petewarden.com/2015/04/20/why-gemm-is-at-the-heart-of-deep-learning/" style="color: lightgrey">Credit</a></center>
+<center><a href="https://petewarden.com/2015/04/20/why-gemm-is-at-the-heart-of-deep-learning/" class="credit">Credit</a></center>
 
 - The size of the output map depends on multiple hyperparameters:
 $$\large{\text{output width}=\frac{W-F_w+2P}{S_w}+1}$$
@@ -179,7 +179,7 @@ $$\large{\text{output height}=\frac{H-F_h+2P}{S_h}+1}$$
 - Pooling layer downsamples the volume spatially, independently in each depth slice of the input volume.
 
 <img width=700 src="/datadocs/assets/Pooling_Simple_max.png"/>
-<center><a href="http://cs231n.github.io/convolutional-networks/" style="color: lightgrey">Credit</a></center>
+<center><a href="http://cs231n.github.io/convolutional-networks/" class="credit">Credit</a></center>
 
 - Spatial pooling can be of different types. Max pooling used much more often than other types.
 

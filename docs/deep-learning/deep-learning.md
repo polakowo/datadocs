@@ -14,7 +14,7 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/deep-lear
     - Although they can also include propositional formulas or latent variables organized layer-wise in deep generative models such as the nodes in deep belief networks and deep Boltzmann machines.
 
 <img width=350 src="/datadocs/assets/main-qimg-dcabf4a1ecc28a3ee6c9dfb913291e7e-c.jpeg"/>
-<center><a href="https://www.quora.com/What-is-the-relationship-between-artificial-intelligence-machine-learning-deep-learning-and-artificial-neural-networks" style="color: lightgrey">Credit</a></center>
+<center><a href="https://www.quora.com/What-is-the-relationship-between-artificial-intelligence-machine-learning-deep-learning-and-artificial-neural-networks" class="credit">Credit</a></center>
 
 ## Rise of deep learning
 
@@ -26,12 +26,12 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/deep-lear
 - Neural networks are extremely better than traditional methods because of the advances in hardware (mostly GPUs, now TPUs), and the exponential generation and accumulation of data.
 
 <img width=450 src="/datadocs/assets/riseofDeeplearning.jpg"/>
-<center><a href="http://bytes.schibsted.com/deep-learning-changing-data-science-paradigms/" style="color: lightgrey">Credit</a></center>
+<center><a href="http://bytes.schibsted.com/deep-learning-changing-data-science-paradigms/" class="credit">Credit</a></center>
 
 - Another reason that deep learning has taken off is because of important theoretical and algorithmic improvements, mainly in supervised learning.
 
 <img width=900 src="/datadocs/assets/deepLearningTimeline.png"/>
-<center><a href="https://towardsdatascience.com/a-weird-introduction-to-deep-learning-7828803693b0" style="color: lightgrey">Credit</a></center>
+<center><a href="https://towardsdatascience.com/a-weird-introduction-to-deep-learning-7828803693b0" class="credit">Credit</a></center>
 
 ## Hierarchical learning
 
@@ -42,7 +42,7 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/deep-lear
 - In literature we have *letters->words->sentences->paragraph*, just as in vision we have *pixels->edges->parts->objects*.
 
 <img width=500 src="/datadocs/assets/featureLearning.jpg"/>
-<center><a href="https://www.picswe.com/pics/feature-learning-a0.html" style="color: lightgrey">Credit</a></center>
+<center><a href="https://www.picswe.com/pics/feature-learning-a0.html" class="credit">Credit</a></center>
 
 ## Deep neural networks
 
@@ -53,7 +53,7 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/deep-lear
 - They generate compositional models where object is expressed as a layered composition of primitives.
 
 <img width=400 src="/datadocs/assets/0*0mia7BQKjUAuXeqZ.jpeg"/>
-<center><a href="http://cs231n.github.io/neural-networks-1/" style="color: lightgrey">Credit</a></center>
+<center><a href="http://cs231n.github.io/neural-networks-1/" class="credit">Credit</a></center>
 
 #### Universal function approximators
 
@@ -62,7 +62,7 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/deep-lear
 - Almost any process we can think of can be represented as a functional computation in NNs.
 
 <img width=400 src="/datadocs/assets/decisionBoundary.jpg"/>
-<center><a href="https://www.learnopencv.com/understanding-feedforward-neural-networks/" style="color: lightgrey">Credit</a></center>
+<center><a href="https://www.learnopencv.com/understanding-feedforward-neural-networks/" class="credit">Credit</a></center>
 
 - The fact that deeper networks (with multiple hidden layers) can work better than a single-hidden-layer networks is an empirical observation, despite the fact that their representational power is equal.
 - [A visual proof that neural nets can compute any function](http://neuralnetworksanddeeplearning.com/chap4.html)
@@ -106,7 +106,7 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/deep-lear
 - Other researchers have argued that unsupervised forms of deep learning, such as those based on hierarchical generative models and deep belief networks, may be closer to biological reality.
 
 <img width=500 src="/datadocs/assets/biologicalNeuron.png"/>
-<center><a href="https://www.mentalconstruction.com/mental-construction/neural-connections/neural-threshold/attachment/generic-neuron-input-output/" style="color: lightgrey">Credit</a></center>
+<center><a href="https://www.mentalconstruction.com/mental-construction/neural-connections/neural-threshold/attachment/generic-neuron-input-output/" class="credit">Credit</a></center>
 
 ## Architectures
 
@@ -116,7 +116,7 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/deep-lear
 - [AI Knowledge Map: how to classify AI technologies](https://medium.com/@Francesco_AI/ai-knowledge-map-how-to-classify-ai-technologies-6c073b969020?fbclid=IwAR1mrs0KqMNST6AwqBFFZFWJmWNs34NFoADNk_LT-3o27w2nEyFfmBB9T_Q)
 
 <img width=800 src="/datadocs/assets/knowledgeMap.jpeg"/>
-<center><a href="https://www.kdnuggets.com/2018/08/ai-knowledge-map-classify-ai-technologies.html" style="color: lightgrey">Credit</a></center>
+<center><a href="https://www.kdnuggets.com/2018/08/ai-knowledge-map-classify-ai-technologies.html" class="credit">Credit</a></center>
 
 ## Challenges
 
@@ -128,7 +128,7 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/deep-lear
     - [Strike (with) a Pose: Neural Networks Are Easily Fooled by Strange Poses of Familiar Objects (2018)](https://arxiv.org/pdf/1811.11553.pdf)
 
 <img width=400 src="/datadocs/assets/confusion.jpeg"/>
-<center><a href="https://medium.com/@GaryMarcus/the-deepest-problem-with-deep-learning-91c5991f5695" style="color: lightgrey">Credit</a></center>
+<center><a href="https://medium.com/@GaryMarcus/the-deepest-problem-with-deep-learning-91c5991f5695" class="credit">Credit</a></center>
 
 - RL: We are beginning to realize that there are major complexity problems with regards to the entire ML paradigm of specifying reward functions and optimizing based on these rewards.
 - Deep learning is:

@@ -1,0 +1,175 @@
+.fixedHeaderContainer {
+    padding: 0;
+    height: 60px
+}
+
+.fixedHeaderContainer header img {
+    height: 75%
+}
+
+.fixedHeaderContainer header a {
+    margin: 13px 0
+}
+
+.fixedHeaderContainer header > a:first-child {
+    width: 160px
+}
+
+.fixedHeaderContainer header h3 {
+    font-size: 14px;
+    margin-left: 8px;
+    text-decoration: none;
+    font-weight: 400;
+    -webkit-transition: color .15s ease-out;
+    transition: color .15s ease-out
+}
+
+.fixedHeaderContainer header h3:hover {
+    color: #61dafb;
+    -webkit-transition: none;
+    transition: none
+}
+
+li.navSearchWrapper {
+    font-size: 16px
+}
+
+@media only screen and (max-width:480px) {
+    .headerWrapper.wrapper {
+        padding: 0 10px
+    }
+
+    .fixedHeaderContainer header > a:first-child {
+        width: 140px
+    }
+
+    .fixedHeaderContainer header .headerTitleWithLogo {
+        display: initial !important;
+        font-size: 1rem
+    }
+}
+
+@media only screen and (max-width:1023px) {
+    .navPusher {
+        padding-top: 110px
+    }
+
+    ul.nav-site.nav-site-internal {
+        margin-top: 60px
+    }
+
+    .navigationSlider .slidingNav ul {
+        background-color: #373940
+    }
+
+    .navigationSlider .slidingNav ul li a {
+        background-color: transparent;
+        -webkit-transition: none;
+        transition: none
+    }
+
+    .navigationSlider .slidingNav ul li > a:hover {
+        background-color: transparent;
+        color: #61dafb
+    }
+
+    .navigationSlider .slidingNav ul li > a:focus {
+        background-color: transparent
+    }
+
+    .navigationSlider .slidingNav ul li:not(.reactNavSearchWrapper) {
+        position: relative
+    }
+
+    .navigationSlider .slidingNav ul li.siteNavGroupActive a, .navigationSlider .slidingNav ul li.siteNavItemActive a {
+        color: #61dafb;
+        background-color: transparent
+    }
+
+    .navigationSlider .slidingNav ul li.siteNavGroupActive:after, .navigationSlider .slidingNav ul li.siteNavItemActive:after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: .25rem;
+        background-color: #61dafb
+    }
+
+    .navigationSlider .slidingNav ul li:not(.reactNavSearchWrapper):focus-within {
+        background-color: #373940
+    }
+}
+
+@media only screen and (max-width:1024px) {
+    .reactNavSearchWrapper input#search_input_react {
+        border-radius: .25rem;
+        background-color: #282c34;
+        height: 30px
+    }
+
+    .reactNavSearchWrapper input#search_input_react:focus {
+        background-color: #373940
+    }
+}
+
+@media only screen and (min-width:1024px) {
+    .navPusher {
+        padding-top: 60px
+    }
+
+    .navigationSlider .slidingNav ul li:not(.reactNavSearchWrapper) {
+        position: relative;
+        padding: 0;
+        height: 60px
+    }
+
+    .navigationSlider .slidingNav ul li:not(.reactNavSearchWrapper):focus-within {
+        background-color: #373940
+    }
+
+    .navigationSlider .slidingNav ul li.siteNavGroupActive:after, .navigationSlider .slidingNav ul li.siteNavItemActive:after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: .25rem;
+        background-color: #61dafb
+    }
+
+    .navigationSlider .slidingNav ul li a {
+        color: #fff;
+        background-color: transparent !important;
+        -webkit-transition: color .15s ease-out;
+        transition: color .15s ease-out;
+        height: 60px;
+        padding: 0 1.5rem
+    }
+
+    .navigationSlider .slidingNav ul li a:hover {
+        color: #61dafb;
+        -webkit-transition: none;
+        transition: none
+    }
+
+    .navigationSlider .slidingNav ul li.siteNavGroupActive a, .navigationSlider .slidingNav ul li.siteNavItemActive a {
+        color: #61dafb
+    }
+}
+
+.reactNavSearchWrapper {
+    box-sizing: initial
+}
+
+input#search_input_react {
+    width: 220px;
+    background-color: #282c34;
+    border-radius: .25rem;
+    -webkit-transition: background-color .15s ease-in-out;
+    transition: background-color .15s ease-in-out
+}
+
+input#search_input_react:focus {
+    background-color: #373940
+}

@@ -1,0 +1,115 @@
+
+.docsNavContainer .toc .navBreadcrumb {
+    z-index: 9999;
+    background-color: #f7f7f7;
+    border-bottom: 2px solid #ececec
+}
+
+.toc .toggleNav .navBreadcrumb h2 {
+    font-weight: 700;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: .08em
+}
+
+.toc .toggleNav .navBreadcrumb i {
+    display: none
+}
+
+.navBreadcrumb a,
+.navBreadcrumb span {
+    color: #6d6d6d
+}
+
+.collapsible .arrow {
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg)
+}
+
+.collapsible .arrow.rotate {
+    -webkit-transform: rotate(0);
+    transform: rotate(0)
+}
+
+@media only screen and (min-width:736px) {
+    .docsNavContainer {
+        width: 100%
+    }
+}
+
+.container.docsNavContainer {
+    overflow: visible;
+    -webkit-box-flex: 0;
+    flex: 0 0 240px;
+}
+
+.toc {
+    height: 100%;
+    border-right: 1px solid #ececec;
+    margin-left: -9999px;
+    padding-left: 9990px;
+    overflow-y: auto;
+    background-color: #f7f7f7
+}
+
+.toc .toggleNav .navGroup .navGroupCategoryTitle {
+    color: #6d6d6d;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .08em
+}
+
+.toc .toggleNav .navGroup .navGroupCategoryTitle.collapsible:hover {
+    color: #1a1a1a
+}
+
+.toc .toggleNav .navGroup .navGroupSubcategoryTitle {
+    color: #6d6d6d;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .08em;
+    margin-top: 12px;
+}
+
+.toc .toggleNav ul {
+    padding: 0 10px 0 0
+}
+
+.toc .toggleNav ul li a {
+    color: #1a1a1a;
+    background-color: transparent;
+    font-size: 14px;
+    padding-left: 10px;
+}
+
+.toc .toggleNav ul li a:hover {
+    color: #6d6d6d;
+    -webkit-transition: none;
+    transition: none
+}
+
+.toc .toggleNav ul li.navListItemActive a {
+    font-weight: 700
+}
+
+.toc .toggleNav ul li {
+    position: relative
+}
+
+.toc .toggleNav ul li.navListItemActive:before {
+    content: "";
+    background-color: #61dafb;
+    position: absolute;
+    width: 5px;
+    top: 2px;
+    left: -20px;
+    bottom: 2px
+}
+
+@media only screen and (min-width:1024px) {
+    .toc {
+        padding-top: 2rem
+    }
+}

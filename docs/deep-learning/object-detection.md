@@ -11,7 +11,7 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/deep-lear
 ## YOLO
 
 <img width=200 src="/datadocs/assets/yologo_2.png"/>
-<center><a href="https://pjreddie.com/darknet/yolo/" style="color: lightgrey">Credit</a></center>
+<center><a href="https://pjreddie.com/darknet/yolo/" class="credit">Credit</a></center>
 
 - [Real-time Object Detection with YOLO, YOLOv2 and now YOLOv3](https://medium.com/@jonathan_hui/real-time-object-detection-with-yolo-yolov2-28b1b93e2088)
 - [Gentle guide on how YOLO Object Localization works with Keras](https://hackernoon.com/gentle-guide-on-how-yolo-object-localization-works-with-keras-part-1-aec99277f56f)
@@ -32,7 +32,7 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/deep-lear
 - The division is done with the convolution sliding window, which is more efficient than classical sliding windows detection algorithm, because it shares the computations for each of the sliding windows.
 
 <img width=800 src="/datadocs/assets/21.png"/>
-<center><a href="https://www.coursera.org/learn/convolutional-neural-networks" style="color: lightgrey">Credit</a></center>
+<center><a href="https://www.coursera.org/learn/convolutional-neural-networks" class="credit">Credit</a></center>
 
 - Unlike sliding window and region proposal-based techniques, YOLO sees the entire image during training and test time so it implicitly encodes contextual information about classes as well as their appearance.
 - The (effective) receptive field of those output neurons is much larger than the cell and actually cover the entire image.
@@ -47,7 +47,7 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/deep-lear
   - predicts C conditional class probabilities (one per class for the likeliness of the object class).
 
 <img width=500 src="/datadocs/assets/1*m8p5lhWdFDdapEFa2zUtIA.jpeg"/>
-<center><a href="https://arxiv.org/pdf/1506.02640v5.pdf" style="color: lightgrey">Credit</a></center>
+<center><a href="https://arxiv.org/pdf/1506.02640v5.pdf" class="credit">Credit</a></center>
 
 #### Bounding boxes
 
@@ -81,14 +81,14 @@ $$\text{class confidence score}=\text{box confidence score}\times\text{condition
 - An IOU score \\(\text{IoU}\ge{0.5}\\) is normally considered as a true positive.
 
 <img width=500 src="/datadocs/assets/iou.png"/>
-<center><a href="https://www.coursera.org/learn/convolutional-neural-networks" style="color: lightgrey">Credit</a></center>
+<center><a href="https://www.coursera.org/learn/convolutional-neural-networks" class="credit">Credit</a></center>
 
 #### Non-maximum suppression (NMS)
 
 - NMS eliminates some candidates that are in fact different detections of the same object, without removing the candidates for different objects.
 
 <img width=300 src="/datadocs/assets/nms_algo.jpg"/>
-<center><a href="https://leonardoaraujosantos.gitbooks.io/artificial-inteligence/content/single-shot-detectors/yolo.html" style="color: lightgrey">Credit</a></center>
+<center><a href="https://leonardoaraujosantos.gitbooks.io/artificial-inteligence/content/single-shot-detectors/yolo.html" class="credit">Credit</a></center>
 
 - For each object class:
   - discard all those bounding boxes where probability of object being present is below some threshold (0.6),
@@ -132,7 +132,7 @@ $$\text{class confidence score}=\text{box confidence score}\times\text{condition
 - After doing some clustering studies on ground truth labels, it turns out that most bounding boxes have certain height-width ratios. So instead of directly predicting a bounding box, YOLOv2 (and v3) predict off-sets from a predetermined set of boxes with particular height-width ratios - those predetermined set of boxes are the anchor boxes.
 
 <img width=250 src="/datadocs/assets/0*SX5qJIuV44XvBXju.jpg"/>
-<center><a href="https://www.coursera.org/learn/convolutional-neural-networks" style="color: lightgrey">Credit</a></center>
+<center><a href="https://www.coursera.org/learn/convolutional-neural-networks" class="credit">Credit</a></center>
 
 - Anchor box makes it possible to detect multiple objects centered in one grid cell.
 - The idea of anchor box adds one more "dimension" to the output labels by pre-defining a number of anchor boxes:
@@ -155,7 +155,7 @@ $$\text{class confidence score}=\text{box confidence score}\times\text{condition
 ### YOLOv3
 
 <img width=700 src="/datadocs/assets/1*d4Eg17IVJ0L41e7CTWLLSg.png"/>
-<center><a href="https://towardsdatascience.com/yolo-v3-object-detection-53fb7d3bfe6b" style="color: lightgrey">Credit</a></center>
+<center><a href="https://towardsdatascience.com/yolo-v3-object-detection-53fb7d3bfe6b" class="credit">Credit</a></center>
 
 - [YOLOv3: An Incremental Improvement (2018)](https://arxiv.org/pdf/1804.02767.pdf)
 
@@ -190,4 +190,4 @@ $$\text{class confidence score}=\text{box confidence score}\times\text{condition
 - YOLOv3 performs at par with other state of art detectors like RetinaNet, while being considerably faster.
 
 <img width=450 src="/datadocs/assets/1*YpNE9OQeshABhBgjyEXlLA.png"/>
-<center><a href="https://towardsdatascience.com/yolo-v3-object-detection-53fb7d3bfe6b" style="color: lightgrey">Credit</a></center>
+<center><a href="https://towardsdatascience.com/yolo-v3-object-detection-53fb7d3bfe6b" class="credit">Credit</a></center>

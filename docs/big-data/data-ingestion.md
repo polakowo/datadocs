@@ -108,7 +108,7 @@ This is another message
 - Agent is a JVM process which comprises of a Flume source, channel and sink.
 
 <img width=500 src="/datadocs/assets/061114_1038_Introductio2.png"/>
-<center><a href="https://www.guru99.com/create-your-first-flume-program.html" style="color: lightgrey">Credit</a></center>
+<center><a href="https://www.guru99.com/create-your-first-flume-program.html" class="credit">Credit</a></center>
 
 - Source:
     - Receives an event and stores it into one or more channels.
@@ -202,7 +202,7 @@ This is another message
     - For example, records are load-balanced over the consumers in the same group.
 
 <img width=400 src="/datadocs/assets/consumer-groups.png"/>
-<center><a href="https://kafka.apache.org/intro" style="color: lightgrey">Credit</a></center>
+<center><a href="https://kafka.apache.org/intro" class="credit">Credit</a></center>
 
 - A topic is a category or feed name to which records are published.
     - A topic can have zero, one, or many consumers.

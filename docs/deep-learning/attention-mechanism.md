@@ -8,7 +8,7 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/deep-lear
 - At any given moment, our minds concentrate on a subset of the total information available to them. This is important, because the field of sensation is wide, and the mind’s bandwidth to process information is narrow, and some inputs are indeed more important that others, with regard to any given goal.
 
 <img width=300 src="/datadocs/assets/visual_attention.png"/>
-<center><a href="http://proceedings.mlr.press/v37/xuc15.pdf" style="color: lightgrey">Credit</a></center>
+<center><a href="http://proceedings.mlr.press/v37/xuc15.pdf" class="credit">Credit</a></center>
 
 - Neural networks can achieve this same behavior using an attention mechanism:
     - It distributes attention over several inputs or encoded hidden states. 
@@ -28,14 +28,14 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/deep-lear
 - By utilizing the attention mechanism, it is possible for decoder to capture global information rather than solely to infer based on one hidden state.
 
 <img width=500 src="/datadocs/assets/1*75Jb0q3sX1GDYmJSfl-gOw.gif"/>
-<center><a href="https://medium.com/@umerfarooq_26378/neural-machine-translation-with-code-68c425044bbd" style="color: lightgrey">Credit</a></center>
+<center><a href="https://medium.com/@umerfarooq_26378/neural-machine-translation-with-code-68c425044bbd" class="credit">Credit</a></center>
 
 - The encoder is a bidirectional RNN with forward and backward hidden states combined into one vector.
 - The decoder is a RNN with a forward hidden state for the output word at some position. 
 - This hidden state is calculated based on the previous state and the context vector.
 
 <img width=300 src="/datadocs/assets/0*Jpp6WALMjZbjUFjP.png"/>
-<center><a href="https://hackernoon.com/attention-mechanism-in-neural-network-30aaf5e39512" style="color: lightgrey">Credit</a></center>
+<center><a href="https://hackernoon.com/attention-mechanism-in-neural-network-30aaf5e39512" class="credit">Credit</a></center>
 
 - The context vector is a sum of hidden states (also called annotations) of the input sequence, weighted by alignment scores, which define how much of each hidden state in encoder should be considered for each output in decoder.
 - The alignment scores \\(\alpha\\) are calculated for each pair \\(i\\) of the encoded input \\(h_i\\) and the previous output of the decoder \\(s_{t-1}\\), based on how well they match. 
@@ -49,7 +49,7 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/deep-lear
 - The matrix of alignment scores is a nice byproduct to explicitly show the correlation between source and target words.
 
 <img width=400 src="/datadocs/assets/bahdanau-fig3.png"/>
-<center><a href="https://arxiv.org/pdf/1508.04025.pdf" style="color: lightgrey">Credit</a></center>
+<center><a href="https://arxiv.org/pdf/1508.04025.pdf" class="credit">Credit</a></center>
 
 - Finally, the context vector becomes a weighted sum of the annotations (hidden states) \\(h\\) and normalized alignment scores \\(\alpha\\).
 

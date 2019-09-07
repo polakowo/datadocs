@@ -18,7 +18,7 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/machine-l
     - Logic of feature engineering depends on the data splitting strategy.
     
 <center><img width=400 src="/datadocs/assets/grid_search_workflow.png"/></center>
-<center><a href="https://scikit-learn.org/stable/modules/cross_validation.html#cross-validation" style="color: lightgrey">Credit</a></center>
+<center><a href="https://scikit-learn.org/stable/modules/cross_validation.html#cross-validation" class="credit">Credit</a></center>
 
 #### Validation stage
 

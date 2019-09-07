@@ -32,7 +32,7 @@ $$\text{Throughput}=\frac{\text{QueueSize}}{\text{Latency}}$$
 ### Stream processing
 
 <center><img width=300 src="/datadocs/assets/kisspng-streaming-media-data-stream-5b07b62265be17.png"/></center>
-<center><a href="https://www.ververica.com/what-is-stream-processing" style="color: lightgrey">Credit</a></center>
+<center><a href="https://www.ververica.com/what-is-stream-processing" class="credit">Credit</a></center>
 
 
 - Some data naturally comes as a never ending stream of events.
@@ -118,7 +118,7 @@ $$\text{Throughput}=\frac{\text{QueueSize}}{\text{Latency}}$$
 #### Lambda architecture
 
 <center><img width=600 src="/datadocs/assets/1*nKfizpKOvGHiWDn8QOVowA.jpeg"/></center>
-<center><a href="https://hackernoon.com/in-search-of-data-dominance-spark-versus-flink-45cefb28f377" style="color: lightgrey">Credit</a></center>
+<center><a href="https://hackernoon.com/in-search-of-data-dominance-spark-versus-flink-45cefb28f377" class="credit">Credit</a></center>
 
 - The data entering the system is dispatched to both the batch and speed layer for processing.
 - The batch layer looks at the entire data and corrects the data in the stream layer.
@@ -142,7 +142,7 @@ $$\text{Throughput}=\frac{\text{QueueSize}}{\text{Latency}}$$
 #### Kappa architecture
 
 <center><img width=600 src="/datadocs/assets/kappa-2.png"/></center>
-<center><a href="https://dzone.com/articles/lambda-architecture-with-apache-spark" style="color: lightgrey">Credit</a></center>
+<center><a href="https://dzone.com/articles/lambda-architecture-with-apache-spark" class="credit">Credit</a></center>
 
 - Kappa Architecture is a software architecture pattern.
 - The canonical data store in a Kappa Architecture system is an append-only immutable log.
@@ -325,7 +325,7 @@ $ python RatingsBreakdown.py -r hadoop --hadoop-streaming-jar $HADOOP_HOME/hadoo
 - [Apache Spark: core concepts, architecture and internals](http://datastrophic.io/core-concepts-architecture-and-internals-of-apache-spark/)
 
 <center><img width=800 src="/datadocs/assets/Spark-Overview--1-.png"/></center>
-<center><a href="http://datastrophic.io/core-concepts-architecture-and-internals-of-apache-spark/" style="color: lightgrey">Credit</a></center>
+<center><a href="http://datastrophic.io/core-concepts-architecture-and-internals-of-apache-spark/" class="credit">Credit</a></center>
 
 ### DAGs
 
@@ -346,7 +346,7 @@ $ python RatingsBreakdown.py -r hadoop --hadoop-streaming-jar $HADOOP_HOME/hadoo
 - The DAGScheduler will then submit the stages to the TaskScheduler.
 
 <center><img width=600 src="/datadocs/assets/GoYQB.png"/></center>
-<center><a href="https://stackoverflow.com/questions/25836316/how-dag-works-under-the-covers-in-rdd" style="color: lightgrey">Credit</a></center>
+<center><a href="https://stackoverflow.com/questions/25836316/how-dag-works-under-the-covers-in-rdd" class="credit">Credit</a></center>
 
 ### Programming model
 
@@ -366,7 +366,7 @@ $ python RatingsBreakdown.py -r hadoop --hadoop-streaming-jar $HADOOP_HOME/hadoo
     - Immutability helps to achieve consistency in computations.
 
 <center><img width=250 src="/datadocs/assets/IEcsA.png"/></center>
-<center><a href="https://stackoverflow.com/questions/34433027/what-is-rdd-in-spark" style="color: lightgrey">Credit</a></center>
+<center><a href="https://stackoverflow.com/questions/34433027/what-is-rdd-in-spark" class="credit">Credit</a></center>
 
 - Fault tolerant:
     - Fault-tolerance is achieved by keeping track of the "lineage" of each RDD: each RDD maintains a pointer to one or more parents and metadata about the relationship.
@@ -435,7 +435,7 @@ $ python RatingsBreakdown.py -r hadoop --hadoop-streaming-jar $HADOOP_HOME/hadoo
     - Requires type casting to string
 
 <center><img width=600 src="/datadocs/assets/Unified-Apache-Spark-2.0-API-1.png"/></center>
-<center><a href="https://databricks.com/blog/2016/07/14/a-tale-of-three-apache-spark-apis-rdds-dataframes-and-datasets.html" style="color: lightgrey">Credit</a></center>
+<center><a href="https://databricks.com/blog/2016/07/14/a-tale-of-three-apache-spark-apis-rdds-dataframes-and-datasets.html" class="credit">Credit</a></center>
 
 - Both DataFrames and Datasets internally do final execution on RDDs.
 - Since Spark 2.0, DataFrame and Datasets APIs are unified into a single Datasets API.
@@ -508,7 +508,7 @@ model.transform(df).show()
     - Code written for batch analytics can be used in streaming analytics.
 
 <center><img width=800 src="/datadocs/assets/Spark-Streaming-Overview-Spark-Streaming-Edureka.png"/></center>
-<center><a href="https://www.edureka.co/blog/spark-streaming/" style="color: lightgrey">Credit</a></center>
+<center><a href="https://www.edureka.co/blog/spark-streaming/" class="credit">Credit</a></center>
 
 - Provides exactly-once guarantees more easily than a true real-time system.
 - Spark DStream is a continuous stream of data. 
@@ -664,7 +664,7 @@ $ ./bin/spark-submit examples/src/main/python/sql/streaming/structured_network_w
     - This design leads to Storm clusters being incredibly stable.
 
 <center><img width=500 src="/datadocs/assets/Apache-Storm-architecture.png"/></center>
-<center><a href="https://www.researchgate.net/publication/319680334_Aging-related_Performance_Anomalies_in_the_Apache_Storm_Stream_Processing_System/figures?lo=1&utm_source=google&utm_medium=organic" style="color: lightgrey">Credit</a></center>
+<center><a href="https://www.researchgate.net/publication/319680334_Aging-related_Performance_Anomalies_in_the_Apache_Storm_Stream_Processing_System/figures?lo=1&utm_source=google&utm_medium=organic" class="credit">Credit</a></center>
 
 - The master node runs a daemon called "Nimbus":
     - Responsible for distributing tasks to machines and monitoring for failures.
@@ -874,7 +874,7 @@ $ bin/storm sql order_filtering.sql order_filtering --artifacts "org.apache.stor
 #### Use cases
 
 <center><img width=600 src="/datadocs/assets/flink-home-graphic.png"/></center>
-<center><a href="https://flink.apache.org" style="color: lightgrey">Credit</a></center>
+<center><a href="https://flink.apache.org" class="credit">Credit</a></center>
 
 - Event-driven applications:
     - Reacts to incoming events by triggering computations, state updates, or external actions.
@@ -910,7 +910,7 @@ $ bin/storm sql order_filtering.sql order_filtering --artifacts "org.apache.stor
     - Each layer is built on top of the others for clear abstraction.
 
 <center><img width=500 src="/datadocs/assets/stack.png"/></center>
-<center><a href="https://ci.apache.org/projects/flink/flink-docs-release-1.1/internals/general_arch.html" style="color: lightgrey">Credit</a></center>
+<center><a href="https://ci.apache.org/projects/flink/flink-docs-release-1.1/internals/general_arch.html" class="credit">Credit</a></center>
 
 - Flink’s basic data model is comprised of data streams, i.e., sequences of events.
     - A stream can be an infinite stream that is boundless.

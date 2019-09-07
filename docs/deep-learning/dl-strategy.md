@@ -39,14 +39,14 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/deep-lear
 - Create a *training-dev* set with the same data distribution as the *training* set when you have a *dev/test* sets from different data distributions. This step helps you check if you have a variance, bias or data-mismatch problem.
 
 <img width=500 src="/datadocs/assets/im31.png"/>
-<center><a href="https://yashuseth.blog/2018/03/20/what-to-do-when-we-have-mismatched-training-and-validation-set/" style="color: lightgrey">Credit</a></center>
+<center><a href="https://yashuseth.blog/2018/03/20/what-to-do-when-we-have-mismatched-training-and-validation-set/" class="credit">Credit</a></center>
 
 ## Error types
 
 Without data mismatch | With data mismatch
 :-:|:-:
 <img width=400 src="/datadocs/assets/1*-PJMjoc3sPv5LZGCbXFyMg.png"/> | <img width=600 src="/datadocs/assets/errors.png"/>
-<center><a href="https://medium.com/machine-learning-bites/deeplearning-series-how-to-structure-machine-learning-projects-ae484c0919c3" style="color: lightgrey">Credit</a></center>
+<center><a href="https://medium.com/machine-learning-bites/deeplearning-series-how-to-structure-machine-learning-projects-ae484c0919c3" class="credit">Credit</a></center>
 
 #### Bayes error
 
@@ -62,7 +62,7 @@ Without data mismatch | With data mismatch
     - If your algorithm surpasses human-level performance, it becomes very hard to judge the avoidable bias because you generally don’t know how small the Bayes error is.
 
 <img width=500 src="/datadocs/assets/1*iSygwQMVlGpyRofod_iotg.png"/>
-<center><a href="https://towardsdatascience.com/how-to-improve-my-ml-algorithm-lessons-from-andrew-ngs-experience-ii-f66926926f88" style="color: lightgrey">Credit</a></center>
+<center><a href="https://towardsdatascience.com/how-to-improve-my-ml-algorithm-lessons-from-andrew-ngs-experience-ii-f66926926f88" class="credit">Credit</a></center>
 
 #### Training error (Bias)
 
@@ -86,7 +86,7 @@ Without data mismatch | With data mismatch
     - Switch to a different architecture.
     
 <img width=400 src="/datadocs/assets/Bias vs Variance.png"/>
-<center><a href="https://elitedatascience.com/bias-variance-tradeoff" style="color: lightgrey">Credit</a></center>
+<center><a href="https://elitedatascience.com/bias-variance-tradeoff" class="credit">Credit</a></center>
 
 #### Dev error (Data mismatch)
 
@@ -117,7 +117,7 @@ Without data mismatch | With data mismatch
 - In general, we can set learning rates to be different for each layer to find a tradeoff between freezing and fine-tuning.
 
 <img width=500 src="/datadocs/assets/1*f2_PnaPgA9iC5bpQaTroRw.png"/>
-<center><a href="https://medium.com/@subodh.malgonde/transfer-learning-using-tensorflow-52a4f6bcde3e" style="color: lightgrey">Credit</a></center>
+<center><a href="https://medium.com/@subodh.malgonde/transfer-learning-using-tensorflow-52a4f6bcde3e" class="credit">Credit</a></center>
 
 - [A Comprehensive Hands-on Guide to Transfer Learning with Real-World Applications in Deep Learning](https://towardsdatascience.com/a-comprehensive-hands-on-guide-to-transfer-learning-with-real-world-applications-in-deep-learning-212bf3b2f27a)
 - [Building powerful image classification models using very little data](https://blog.keras.io/building-powerful-image-classification-models-using-very-little-data.html)
@@ -128,7 +128,7 @@ Without data mismatch | With data mismatch
 - Again, it is useful when the neural network identifies lower-level features which are helpful for multiple classification tasks and if you have an equal distribution of class data.
 
 <img width=600 src="/datadocs/assets/1*RXWO8pWJelvFJrGEr8sRrg.png"/>
-<center><a href="https://blog.manash.me/multi-task-learning-in-keras-implementation-of-multi-task-classification-loss-f1d42da5c3f6" style="color: lightgrey">Credit</a></center>
+<center><a href="https://blog.manash.me/multi-task-learning-in-keras-implementation-of-multi-task-classification-loss-f1d42da5c3f6" class="credit">Credit</a></center>
 
 ### End-to-end deep learning
 
@@ -136,7 +136,7 @@ Without data mismatch | With data mismatch
 -  End-to-end deep learning has advantages like letting the network figure out important features itself and disadvantages like requiring lots of data, so its use really has to be judged on a case-by-case basis by how complex the task or function is that you are solving.
 
 <img width=500 src="/datadocs/assets/deep-learning_W640.jpg"/>
-<center><a href="https://www.researchgate.net/publication/322325843_Deep_learning_for_smart_manufacturing_Methods_and_applications/figures?lo=1&utm_source=google&utm_medium=organic" style="color: lightgrey">Credit</a></center>
+<center><a href="https://www.researchgate.net/publication/322325843_Deep_learning_for_smart_manufacturing_Methods_and_applications/figures?lo=1&utm_source=google&utm_medium=organic" class="credit">Credit</a></center>
 
 ## Benchmark competitions
 
