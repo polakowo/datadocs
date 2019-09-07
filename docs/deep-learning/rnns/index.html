@@ -75,7 +75,7 @@
 <li>Unlike feedforward neural networks, RNNs can use their internal state (memory) to process sequences of inputs.</li>
 </ul>
 <p><img width=350 src="/datadocs/assets/mlst_1403.png"/>
-<center><a href="https://www.oreilly.com/library/view/neural-networks-and/9781492037354/ch04.html" style="color: lightgrey">Credit</a></center>
+<center><a href="https://www.oreilly.com/library/view/neural-networks-and/9781492037354/ch04.html" class="credit">Credit</a></center>
 $$\large{h_t=\sigma{(W_h\cdot{[h_{t-1},x_t]}+b_h)}}$$
 $$\large{\hat{y_t}=\tanh{(W_yh_t+b_y)}}$$
 <center>where</center>
@@ -92,7 +92,7 @@ $$\large{\hat{y_t}=\tanh{(W_yh_t+b_y)}}$$
 <li>RNNs are Turing-Complete in the sense that they can to simulate arbitrary programs (with proper weights). If training vanilla neural nets is optimization over functions, training recurrent nets is optimization over programs.</li>
 </ul>
 <p><img width=350 src="/datadocs/assets/maxresdefault.jpg"/>
-<center><a href="https://www.youtube.com/watch?v=RPQD7-AOjMI" style="color: lightgrey">Credit</a></center></p>
+<center><a href="https://www.youtube.com/watch?v=RPQD7-AOjMI" class="credit">Credit</a></center></p>
 <h4><a class="anchor" aria-hidden="true" id="usage"></a><a href="#usage" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Usage</h4>
 <ul>
 <li>Whenever there is a sequence of data and that temporal dynamics that connects the data is more important than the spatial content of each individual frame.</li>
@@ -125,7 +125,7 @@ $$\large{\hat{y_t}=\tanh{(W_yh_t+b_y)}}$$
 </ul>
 <h4><a class="anchor" aria-hidden="true" id="architectures"></a><a href="#architectures" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Architectures</h4>
 <p><img width=700 src="/datadocs/assets/sequences.png"/>
-<center><a href="http://karpathy.github.io/2015/05/21/rnn-effectiveness/" style="color: lightgrey">Credit</a></center></p>
+<center><a href="http://karpathy.github.io/2015/05/21/rnn-effectiveness/" class="credit">Credit</a></center></p>
 <ul>
 <li>We can have bidirectional RNNs that feed in the input sequence in both directions by concatenating the outputs of two RNNs, one processing the sequence from left to right, the other one from right to left.</li>
 </ul>
@@ -150,7 +150,7 @@ $$\large{\hat{y_t}=\tanh{(W_yh_t+b_y)}}$$
 </ul></li>
 </ul>
 <p><img width=250 src="/datadocs/assets/shorttermmemory_300x200.jpg"/>
-<center><a href="https://www.mindgames.com/game/Short+Term+Memory" style="color: lightgrey">Credit</a></center></p>
+<center><a href="https://www.mindgames.com/game/Short+Term+Memory" class="credit">Credit</a></center></p>
 <ul>
 <li>Learn sequential patterns:
 <ul>
@@ -176,7 +176,7 @@ $$\large{\hat{y_t}=\tanh{(W_yh_t+b_y)}}$$
 </ul></li>
 </ul>
 <p><img width=600 src="/datadocs/assets/Screen Shot 2019-01-06 at 00.06.35.png"/>
-<center><a href="http://karpathy.github.io/2015/05/21/rnn-effectiveness/" style="color: lightgrey">Credit</a></center></p>
+<center><a href="http://karpathy.github.io/2015/05/21/rnn-effectiveness/" class="credit">Credit</a></center></p>
 <ul>
 <li>Problems like exploding and vanishing gradients.</li>
 <li>The recurrent structures are either exploring short-term or long-term temporal structures, but not both simultaneously.</li>
@@ -194,7 +194,7 @@ $$\large{\hat{y_t}=\tanh{(W_yh_t+b_y)}}$$
 </ul></li>
 </ul>
 <p><img width=400 src="/datadocs/assets/gradient_clipping.png"/>
-<center><a href="http://nmarkou.blogspot.com/2017/07/deep-learning-why-you-should-use.html" style="color: lightgrey">Credit</a></center></p>
+<center><a href="http://nmarkou.blogspot.com/2017/07/deep-learning-why-you-should-use.html" class="credit">Credit</a></center></p>
 <h2><a class="anchor" aria-hidden="true" id="gating-mechanisms"></a><a href="#gating-mechanisms" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Gating mechanisms</h2>
 <ul>
 <li>RNNs suffer from short-term memory:
@@ -205,7 +205,7 @@ $$\large{\hat{y_t}=\tanh{(W_yh_t+b_y)}}$$
 <li>LSTM’s and GRU’s were created as a method to mitigate short-term memory using mechanisms called gates (pipes).</li>
 </ul>
 <p><img width=170 src="/datadocs/assets/1*oS5taVAKcIII1qNduYnLJA.jpeg"/>
-<center><a href="https://medium.com/mlreview/understanding-lstm-and-its-diagrams-37e2f46f1714" style="color: lightgrey">Credit</a></center></p>
+<center><a href="https://medium.com/mlreview/understanding-lstm-and-its-diagrams-37e2f46f1714" class="credit">Credit</a></center></p>
 <ul>
 <li>These gates can learn which data in a sequence is important to keep or throw away.</li>
 </ul>
@@ -221,7 +221,7 @@ $$\large{\hat{y_t}=\tanh{(W_yh_t+b_y)}}$$
 <li>GRU has fewer tensor operations and parameters than LSTM, as it lacks an output gate.</li>
 </ul>
 <p><img width=600 src="/datadocs/assets/1*yBXV9o5q7L_CvY7quJt3WQ.png"/>
-<center><a href="https://towardsdatascience.com/illustrated-guide-to-lstms-and-gru-s-a-step-by-step-explanation-44e9eb85bf21" style="color: lightgrey">Credit</a></center></p>
+<center><a href="https://towardsdatascience.com/illustrated-guide-to-lstms-and-gru-s-a-step-by-step-explanation-44e9eb85bf21" class="credit">Credit</a></center></p>
 <h3><a class="anchor" aria-hidden="true" id="long-short-term-memory-lstm"></a><a href="#long-short-term-memory-lstm" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Long short-term memory (LSTM)</h3>
 <ul>
 <li>Long short-term memory (LSTM) is a deep learning system that avoids the vanishing/exploding gradient problem.</li>
@@ -276,7 +276,7 @@ $$\large{r_t=\sigma{(W_r\cdot{[h_{t-1},x_t]}+b_r)}}$$</li>
 $$\large{\tilde{h_t}=\tanh{(W_h\cdot{[r_t\odot{h_{t-1}},x_t]})}}$$
 $$\large{h_t=(1-z_t)\odot{h_{t-1}}+z_t\odot\tilde{h_t}}$$</li>
 </ul>
-</span></div></article></div><div class="docLastUpdate"><em>Last updated on 2019-6-20 by Oleg Polakow</em></div><div class="docs-prevnext"><a class="docs-prev button" href="/datadocs/docs/deep-learning/nst"><span class="arrow-prev">← </span><span>Neural Style Transfer</span></a><a class="docs-next button" href="/datadocs/docs/deep-learning/word-embeddings"><span>Word Embeddings</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#gating-mechanisms">Gating mechanisms</a><ul class="toc-headings"><li><a href="#long-short-term-memory-lstm">Long short-term memory (LSTM)</a></li><li><a href="#gated-recurrent-unit-gru">Gated recurrent unit (GRU)</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><div class="brand-box"><div class="brand"><a href="https://www.tum.de/nc/en/" target="_blank" rel="noreferrer noopener" class="brand-link"><img src="/datadocs/img/tum_logo.png" alt="Technical University of Munich" height="45"/></a></div><div class="brand"><a href="https://opensource.facebook.com/" target="_blank" rel="noreferrer noopener" class="brand-link"><img src="/datadocs/img/oss_logo.png" alt="Facebook Open Source" width="170" height="45"/></a></div></div><section class="copyright">Copyright © 2019 Oleg Polakow</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
+</span></div></article></div><div class="docLastUpdate"><em>Last updated on 2019-9-7 by Oleg Polakow</em></div><div class="docs-prevnext"><a class="docs-prev button" href="/datadocs/docs/deep-learning/nst"><span class="arrow-prev">← </span><span>Neural Style Transfer</span></a><a class="docs-next button" href="/datadocs/docs/deep-learning/word-embeddings"><span>Word Embeddings</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#gating-mechanisms">Gating mechanisms</a><ul class="toc-headings"><li><a href="#long-short-term-memory-lstm">Long short-term memory (LSTM)</a></li><li><a href="#gated-recurrent-unit-gru">Gated recurrent unit (GRU)</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><div class="brand-box"><div class="brand"><a href="https://www.tum.de/nc/en/" target="_blank" rel="noreferrer noopener" class="brand-link"><img src="/datadocs/img/tum_logo.png" alt="Technical University of Munich" height="45"/></a></div><div class="brand"><a href="https://opensource.facebook.com/" target="_blank" rel="noreferrer noopener" class="brand-link"><img src="/datadocs/img/oss_logo.png" alt="Facebook Open Source" width="170" height="45"/></a></div></div><section class="copyright">Copyright © 2019 Oleg Polakow</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
                 document.addEventListener('keyup', function(e) {
                   if (e.target !== document.body) {
                     return;

@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Production Code · datadocs</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="- Software running on production servers to handle live users and data of the intended audience."/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Production Code · datadocs"/><meta property="og:type" content="website"/><meta property="og:url" content="https://polakowo.github.io/datadocs/"/><meta property="og:description" content="- Software running on production servers to handle live users and data of the intended audience."/><meta property="og:image" content="https://polakowo.github.io/datadocs/img/undraw_online.svg"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://polakowo.github.io/datadocs/img/undraw_tweetstorm.svg"/><link rel="shortcut icon" href="/datadocs/img/favicon.ico"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-142521178-1"></script><script>
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Production Code · datadocs</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="- Python for software development and Python for scripting is not exactly the same beast."/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Production Code · datadocs"/><meta property="og:type" content="website"/><meta property="og:url" content="https://polakowo.github.io/datadocs/"/><meta property="og:description" content="- Python for software development and Python for scripting is not exactly the same beast."/><meta property="og:image" content="https://polakowo.github.io/datadocs/img/undraw_online.svg"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://polakowo.github.io/datadocs/img/undraw_tweetstorm.svg"/><link rel="shortcut icon" href="/datadocs/img/favicon.ico"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-142521178-1"></script><script>
               window.dataLayer = window.dataLayer || [];
               function gtag(){dataLayer.push(arguments); }
               gtag('js', new Date());
@@ -60,6 +60,11 @@
               }
             });
         </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://github.com/polakowo/datadocs/edit/master/docs/big-data/production-code.md" target="_blank" rel="noreferrer noopener">Edit</a><h1 class="postHeaderTitle">Production Code</h1></header><article><div><span><ul>
+<li>Python for software development and Python for scripting is not exactly the same beast.
+<ul>
+<li>Scripting is (mostly) the code you write for yourself.</li>
+<li>Software is the assemblage of code you (and other teammates) write for others.</li>
+</ul></li>
 <li>Software running on production servers to handle live users and data of the intended audience.</li>
 <li>Production quality code describes code that meets expectations for production.</li>
 </ul>
@@ -70,6 +75,25 @@
 <li>Helps becoming a stronger programmer when constantly looking to improve the code.</li>
 <li>First get the sh*t done, and only then refactor.</li>
 </ul>
+<h4><a class="anchor" aria-hidden="true" id="general-tips"></a><a href="#general-tips" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>General tips</h4>
+<ul>
+<li>Turn repetitive code blocks into utility functions.</li>
+<li>Think carefully about the API of the functions (required/optional parameters)</li>
+<li>Use the <code>*args</code> and <code>**kwargs</code> arguments to add more flexibility to functions.</li>
+<li>Write docstrings to explain the function and its parameters, and provide an example.</li>
+<li>Turn an object into a class if you start accumulating many utility functions related to it.</li>
+<li>Extend class functionality whenever possible using inheritance.</li>
+<li>Switch over to a new, clean notebook after defining a bunch of utility functions.</li>
+<li>Put <code>__init__.py</code> in the same directory to make the package importable.</li>
+<li>Build the habit of modularizing your work to be easily reused and extended by anyone.</li>
+<li>Contribute your own methods to community-owned packages such as NumPy and TensorFlow.</li>
+</ul>
+<p>include a README file detailing the files in your package and how to install the package.
+Comment your code - use docstrings and inline comments where appropriate.
+Refactor code when possible - if you find your functions are getting too long, then refactor your code!
+Use object-oriented programming whenever it makes sense to do so.
+You're encouraged to write unit tests! The coding exercises in this lesson contained unit tests, so you can use those tests as a model for your package.
+Use GitHub for version control, and commit your work often.</p>
 <h4><a class="anchor" aria-hidden="true" id="writing-clean-code"></a><a href="#writing-clean-code" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Writing clean code</h4>
 <blockquote>
 <p>Can I understand the code easily?<br>
@@ -234,18 +258,23 @@ Is the necessary project documentation provided?</p>
 </ul>
 <h4><a class="anchor" aria-hidden="true" id="model-versioning"></a><a href="#model-versioning" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Model Versioning</h4>
 <ul>
-<li>Version control is a system that records changes to a file or set of files over time so that you can recall specific versions later.</li>
-<li>Version control in data science can be tricky.</li>
+<li>Version control is a system that records changes to a file or set of files over time so that you can recall specific versions later.
+<ul>
+<li><a href="https://semver.org">Semantic Versioning 2.0.0</a></li>
+</ul></li>
+<li>Version control in data science can be tricky.
+<ul>
 <li><a href="https://blog.algorithmia.com/how-to-version-control-your-production-machine-learning-models/">How to Version Control Your Production Machine Learning Models</a></li>
 <li><a href="https://shuaiw.github.io/2017/07/30/versioning-data-science.html">Versioning Data Science</a></li>
+</ul></li>
 </ul>
 <h2><a class="anchor" aria-hidden="true" id="testing"></a><a href="#testing" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Testing</h2>
 <blockquote>
-<p>Does the code have high test coverage?<br>
-Do the tests check for interesting cases?<br>
+<p>Does the code have high test coverage?</p>
+</blockquote>
+<p>Do the tests check for interesting cases?<br>
 Are the tests readable?<br>
 Can the tests be made more efficient?</p>
-</blockquote>
 <ul>
 <li>Testing is the process of evaluating a system or its component(s) with the intent to find whether it satisfies the specified requirements.</li>
 <li>Testing is essential before deployment.</li>
@@ -327,22 +356,155 @@ Do they use the appropriate logging level?</p>
 <li>Rather than commanding people to change their code a specific way, explain to them the consequences of the current code and suggest changes to improve it.</li>
 <li>Promote a constructive discussion, rather than opposition.</li>
 </ul>
-<pre><code class="hljs css language-text">BAD: Make model evaluation code its own module - too repetitive.
-GOOD: How about we consider making the model evaluation code its own module? This would simplify models.py to only include code for building models. Organizing these evaluations methods into separate functions would also allow us to reuse them with different models without repeating code.
-</code></pre>
+<blockquote>
+<p><strong>BAD</strong>: Make model evaluation code its own module - too repetitive.<br>
+<strong>GOOD</strong>: How about we consider making the model evaluation code its own module? This would simplify models.py to only include code for building models. Organizing these evaluations methods into separate functions would also allow us to reuse them with different models without repeating code.</p>
+</blockquote>
 <ul>
 <li>Avoid comments that sound personal to bring the attention of the review to the code.</li>
 </ul>
-<pre><code class="hljs css language-text">BAD: I wouldn't groupby genre twice like you did here... Just compute it once and use that for your aggregations.
-GOOD: Can we group by genre at the beginning of the function and then save that as a groupby object? We could then reference that object to get the average prices and views without computing groupby twice.
-</code></pre>
+<blockquote>
+<p><strong>BAD</strong>: I wouldn't groupby genre twice like you did here... Just compute it once and use that for your aggregations.<br>
+<strong>GOOD</strong>: Can we group by genre at the beginning of the function and then save that as a groupby object? We could then reference that object to get the average prices and views without computing groupby twice.</p>
+</blockquote>
 <ul>
 <li>When providing a code review, write out code suggestions.</li>
 </ul>
-<pre><code class="hljs css language-text">BAD: You can do this all in one step by using the pandas str.split method.
-GOOD: We can actually simplify this step to the line below using the pandas str.split method. Found this on this stack overflow post: https://stackoverflow.com/questions/14745022/how-to-split-a-column-into-two-columns
+<blockquote>
+<p><strong>BAD</strong>: You can do this all in one step by using the pandas str.split method.<br>
+<strong>GOOD</strong>: We can actually simplify this step to the line below using the pandas str.split method. Found this on this stack overflow post: <a href="https://stackoverflow.com/questions/14745022/how-to-split-a-column-into-two-columns">https://stackoverflow.com/questions/14745022/how-to-split-a-column-into-two-columns</a></p>
+</blockquote>
+<h2><a class="anchor" aria-hidden="true" id="pythonic-oop"></a><a href="#pythonic-oop" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Pythonic OOP</h2>
+<ul>
+<li>Object-oriented programming (OOP) has a few benefits over procedural programming:
+<ul>
+<li>Allows to create large, modular programs that can easily expand over time.</li>
+<li>Hides the implementation from the end-user.</li>
+</ul></li>
+<li>Classes, object, attributes, methods, and inheritance are common to all OOP languages.</li>
+<li><a href="https://www.javatpoint.com/java-oops-concepts">Java OOPs Concepts</a></li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="pythonic-way"></a><a href="#pythonic-way" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Pythonic way</h4>
+<blockquote>
+<p><strong>For a Java guy</strong>: Python is an anarchic playgound where anyone can grab a club and start mauling your head.<br>
+<strong>For a Python guy</strong>: Java is a an Orwellian universe where you are constantly shackled to someone else`s diminishing view of how the universe tick.</p>
+</blockquote>
+<ul>
+<li>Python packages like Scikit-learn, pandas, and NumPy are built using OOP principles.</li>
+<li><a href="https://stackoverflow.com/questions/33072570/when-should-i-be-using-classes-in-python#answer-33072722">When should I be using classes in Python?</a></li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="attributes-and-methods"></a><a href="#attributes-and-methods" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Attributes and methods</h4>
+<ul>
+<li>The general OOP convention is to use methods to access attributes or change attribute values.
+<ul>
+<li>These methods are called set and get methods or setter and getter methods.</li>
+<li>Changing values via a method provides more flexibility in the long-term.</li>
+</ul></li>
+<li>Accessing attributes directly would be frowned upon in many other languages but not in Python.
+<ul>
+<li>The underscore in front of a variable means it can should be accessed with get and set.</li>
+<li><code>_</code> prefix means stay away even if you're not technically prevented from doing so.</li>
+</ul></li>
+<li>Python does not distinguish between private and public variables.
+<ul>
+<li>To emulate private variables for some reason, you can always use the <code>__</code> prefix from PEP 8.</li>
+</ul></li>
+<li><a href="https://realpython.com/instance-class-and-static-methods-demystified/">Python's Instance, Class, and Static Methods Demystified</a></li>
+<li><a href="https://www.python-course.eu/python3_class_and_instance_attributes.php">Class and Instance Attributes</a></li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="inheritance"></a><a href="#inheritance" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Inheritance</h4>
+<ul>
+<li>Inheritance helps organize code with a more general version of a class and then specific children.
+<ul>
+<li>Inheritance can make object-oriented programs more efficient to write.</li>
+<li>Updates to a parent class automatically trickle down to its children.</li>
+<li><a href="https://docs.python.org/3/tutorial/classes.html#inheritance">Inheritance</a></li>
+</ul></li>
+<li>A mixin is a special kind of multiple inheritance, used when:
+<ul>
+<li>You want to provide a lot of optional features for a class.</li>
+<li>You want to use one particular feature in a lot of different classes.</li>
+<li><a href="https://easyaspython.com/mixins-for-fun-and-profit-cb9962760556">Mixins for Fun and Profit</a></li>
+</ul></li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="magic-functions-and-decorators"></a><a href="#magic-functions-and-decorators" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Magic functions and decorators</h4>
+<ul>
+<li>Magic functions allow us to override or add the default functionality of python objects.
+<ul>
+<li>For example, one can do <code>class_1+class_2</code> to build a new class.</li>
+<li><a href="https://rszalski.github.io/magicmethods/">A Guide to Python's Magic Methods</a></li>
+</ul></li>
+<li>Decorator adds new functionality to an existing object without modifying its structure.
+<ul>
+<li>Syntactic Sugar with <code>@</code>!</li>
+<li>For example, a <code>@timer</code> decorator can measure the time a function takes.</li>
+<li><a href="https://realpython.com/primer-on-python-decorators/">Primer on Python Decorators</a></li>
+</ul></li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="packaging"></a><a href="#packaging" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Packaging</h2>
+<ul>
+<li>A package is a collection of Python modules.</li>
+<li>A module is a piece of software that has a specific functionality.</li>
+<li>Packaging is all about target environment and deployment experience.
+<ul>
+<li><a href="https://python-packaging.readthedocs.io/en/latest/index.html">How To Package Your Python Code</a></li>
+<li><a href="https://packaging.python.org/overview/#packaging-applications">An Overview of Packaging for Python</a></li>
+</ul></li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="virtual-environments"></a><a href="#virtual-environments" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Virtual environments</h4>
+<ul>
+<li>When installing your package locally, consider setting up a virtual environment.</li>
+<li>A virtual environment is a silo-ed Python installation apart from the main Python installation.
+<ul>
+<li>One can install and delete the virtual environment without any side effects.</li>
+</ul></li>
+<li>Conda does two things: manages packages and manages environments.
+<ul>
+<li>Makes it easy to manage Python packages especially for data science.</li>
+<li>Created to manage data science packages that relied on libraries outside of Python.</li>
+</ul></li>
+</ul>
+<pre><code class="hljs css language-bash"><span class="hljs-comment"># Example: conda</span>
+
+$ conda create --name env_name
+$ <span class="hljs-built_in">source</span> activate env_name
 </code></pre>
-</span></div></article></div><div class="docLastUpdate"><em>Last updated on 2019-9-6 by Oleg Polakow</em></div><div class="docs-prevnext"><a class="docs-prev button" href="/datadocs/docs/machine-learning/data-leakages"><span class="arrow-prev">← </span><span>Data Leakages</span></a><a class="docs-next button" href="/datadocs/docs/deep-learning/deep-learning"><span>Deep Learning</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#refactoring">Refactoring</a></li><li><a href="#documentation">Documentation</a></li><li><a href="#git">Git</a></li><li><a href="#testing">Testing</a></li><li><a href="#logging">Logging</a></li><li><a href="#code-review">Code review</a></li></ul></nav></div><footer class="nav-footer" id="footer"><div class="brand-box"><div class="brand"><a href="https://www.tum.de/nc/en/" target="_blank" rel="noreferrer noopener" class="brand-link"><img src="/datadocs/img/tum_logo.png" alt="Technical University of Munich" height="45"/></a></div><div class="brand"><a href="https://opensource.facebook.com/" target="_blank" rel="noreferrer noopener" class="brand-link"><img src="/datadocs/img/oss_logo.png" alt="Facebook Open Source" width="170" height="45"/></a></div></div><section class="copyright">Copyright © 2019 Oleg Polakow</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
+<ul>
+<li>venv is an environment manager that comes pre-installed with Python 3.</li>
+<li>Pip is the main package-management system used to install and manage Python packages.
+<ul>
+<li>Can only manage Python packages whereas conda is a language agnostic package manager.</li>
+</ul></li>
+<li>Both tend to be used for generic software development projects including web development.
+<ul>
+<li><a href="https://packaging.python.org/guides/installing-using-pip-and-virtualenv/">Installing packages using pip and virtual environments</a></li>
+</ul></li>
+</ul>
+<pre><code class="hljs css language-bash"><span class="hljs-comment"># Example: virtualenv</span>
+
+$ python3 -m venv env_name
+$ <span class="hljs-built_in">source</span> env_name/bin/activate
+</code></pre>
+<h4><a class="anchor" aria-hidden="true" id="pypi"></a><a href="#pypi" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>PyPi</h4>
+<ul>
+<li><a href="https://pypi.org">The Python Package Index (PyPI)</a> is a repository of software for the Python programming language.</li>
+<li>If your open-source code isn’t on PyPI, it is harder for other developers to find and use it.</li>
+</ul>
+<pre><code class="hljs css language-bash"><span class="hljs-comment"># Example: Packaging to PyPi</span>
+
+$ <span class="hljs-built_in">cd</span> your_package
+$ python setup.py sdist
+$ pip install twine
+
+<span class="hljs-comment"># Commands to upload to the PyPi test repository</span>
+$ twine upload --repository-url https://test.pypi.org/legacy/ dist/*
+$ pip install --index-url https://test.pypi.org/simple/ your_package_name
+
+<span class="hljs-comment"># Command to upload to the PyPi repository</span>
+$ twine upload dist/*
+$ pip install your_package_name
+</code></pre>
+</span></div></article></div><div class="docLastUpdate"><em>Last updated on 2019-9-7 by Oleg Polakow</em></div><div class="docs-prevnext"><a class="docs-prev button" href="/datadocs/docs/machine-learning/data-leakages"><span class="arrow-prev">← </span><span>Data Leakages</span></a><a class="docs-next button" href="/datadocs/docs/deep-learning/deep-learning"><span>Deep Learning</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#refactoring">Refactoring</a></li><li><a href="#documentation">Documentation</a></li><li><a href="#git">Git</a></li><li><a href="#testing">Testing</a></li><li><a href="#logging">Logging</a></li><li><a href="#code-review">Code review</a></li><li><a href="#pythonic-oop">Pythonic OOP</a></li><li><a href="#packaging">Packaging</a></li></ul></nav></div><footer class="nav-footer" id="footer"><div class="brand-box"><div class="brand"><a href="https://www.tum.de/nc/en/" target="_blank" rel="noreferrer noopener" class="brand-link"><img src="/datadocs/img/tum_logo.png" alt="Technical University of Munich" height="45"/></a></div><div class="brand"><a href="https://opensource.facebook.com/" target="_blank" rel="noreferrer noopener" class="brand-link"><img src="/datadocs/img/oss_logo.png" alt="Facebook Open Source" width="170" height="45"/></a></div></div><section class="copyright">Copyright © 2019 Oleg Polakow</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
                 document.addEventListener('keyup', function(e) {
                   if (e.target !== document.body) {
                     return;

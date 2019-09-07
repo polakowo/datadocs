@@ -64,7 +64,7 @@
 <li>Applies a “Divide and Conquer” approach by splitting the data into sub-spaces or boxes based on probabilities of outcome.</li>
 </ul>
 <p><img width=500 src="/datadocs/assets/ml-classifiers-2.png"/>
-<center><a href="https://martin-thoma.com/comparing-classifiers/" style="color: lightgrey">Credit</a></center></p>
+<center><a href="https://martin-thoma.com/comparing-classifiers/" class="credit">Credit</a></center></p>
 <h4><a class="anchor" aria-hidden="true" id="pros"></a><a href="#pros" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Pros</h4>
 <ul>
 <li>They are very powerful for tabular data.</li>
@@ -93,7 +93,7 @@ $$\large{Gain(S,D)=H(S)-\sum_{V\in{D}}{\frac{|V|}{|S|}H(V)}}$$</li>
 $$\large{H=-\sum{p(x)\log_2{p(x)}}}$$</li>
 <li>The procedure is repeated recursively until the entropy is zero (or some small value to account for overfitting).
 <center><img width=230 src="/datadocs/assets/decision-tree.svg"/></center>
-<center><a href="https://victorzhou.com/blog/intro-to-random-forests/" style="color: lightgrey">Credit</a></center></li>
+<center><a href="https://victorzhou.com/blog/intro-to-random-forests/" class="credit">Credit</a></center></li>
 </ul></li>
 <li>The simplest heuristics for handling numeric features in a decision tree is to sort its values in ascending order and check only those thresholds where the value of the target variable changes. The value obtained by leaves in the training data is the mean response of observation falling in that region.</li>
 <li>Criterions: In practice, Gini uncertainty and information gain work similarly.</li>
@@ -137,12 +137,12 @@ $$\large{H=-\sum{p(x)\log_2{p(x)}}}$$</li>
 <li>Random forests are combined through the construction of uncorrelated trees using CART, bagging, and the random subspace method.</li>
 </ul>
 <p><img width=400 src="/datadocs/assets/cover.jpg"/>
-<center><a href="https://www.jpytr.com/post/random_forests_and_jackknife_variance/" style="color: lightgrey">Credit</a></center></p>
+<center><a href="https://www.jpytr.com/post/random_forests_and_jackknife_variance/" class="credit">Credit</a></center></p>
 <ul>
 <li>Bias-variance tradeoff: As random forests training use 1) bootstrap sampling (or sampling with replacement) along with 2) random selection of features for a split, the correlation between the trees (or weak learners) would be low. That means although individual trees would have high variance but the ensemble output will be appropriate (lower variance but the same bias) because the trees are loosely correlated. Thus random forests would give good performance with full depth of decision trees.</li>
 </ul>
 <p><img width=500 src="/datadocs/assets/random-forests.png"/>
-<center><a href="https://relguzman.blogspot.com/2018/04/random-forests-python.html" style="color: lightgrey">Credit</a></center></p>
+<center><a href="https://relguzman.blogspot.com/2018/04/random-forests-python.html" class="credit">Credit</a></center></p>
 <ul>
 <li>When bagging with decision trees, we are less concerned about individual trees overfitting the training data. For this reason, the individual decision trees are grown deep and the trees are not pruned.</li>
 <li>To make estimators more independent, <code>ExtraTrees</code> ca be used, which always tests random splits over fraction of features (in contrast to <code>RandomForest</code>, which tests all possible splits over fraction of features).</li>
@@ -166,7 +166,7 @@ $$\large{H=-\sum{p(x)\log_2{p(x)}}}$$</li>
 <li>Rarely overfits. In practice, an increase in the tree number almost always improves the composition. But, after reaching a certain number of trees, the learning curve is very close to the asymptote.</li>
 </ul>
 <p><img width=400 src="/datadocs/assets/performance_rf.png"/>
-<center><a href="https://www.researchgate.net/publication/332391062_Wet_and_Dry_Snow_Detection_Using_Sentinel-1_SAR_Data_for_Mountainous_Areas_with_a_Machine_Learning_Technique/figures?lo=1&utm_source=google&utm_medium=organic" style="color: lightgrey">Credit</a></center></p>
+<center><a href="https://www.researchgate.net/publication/332391062_Wet_and_Dry_Snow_Detection_Using_Sentinel-1_SAR_Data_for_Mountainous_Areas_with_a_Machine_Learning_Technique/figures?lo=1&utm_source=google&utm_medium=organic" class="credit">Credit</a></center></p>
 <ul>
 <li>There are developed methods to estimate feature importance</li>
 <li>Works well with missing data and maintains good accuracy levels even when a large part of data is missing</li>
@@ -217,7 +217,7 @@ $$\large{H=-\sum{p(x)\log_2{p(x)}}}$$</li>
 <li>Predictions are made by majority vote of the weak learners’ predictions, weighted by their individual accuracy.</li>
 </ul>
 <p><img width=450 src="/datadocs/assets/b2b029d898f64bbbb158e15d29595969.png"/>
-<center><a href="https://nbviewer.jupyter.org/github/Yorko/mlcourse.ai/blob/master/jupyter_english/topic10_boosting/topic10_gradient_boosting.ipynb" style="color: lightgrey">Credit</a></center></p>
+<center><a href="https://nbviewer.jupyter.org/github/Yorko/mlcourse.ai/blob/master/jupyter_english/topic10_boosting/topic10_gradient_boosting.ipynb" class="credit">Credit</a></center></p>
 <h4><a class="anchor" aria-hidden="true" id="pros-3"></a><a href="#pros-3" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Pros</h4>
 <ul>
 <li>Simple and easy to program</li>
@@ -317,7 +317,7 @@ $$\large{H=-\sum{p(x)\log_2{p(x)}}}$$</li>
 <li>It is also very stable to changing hyperparameters when you have enough training data.</li>
 <li>CatBoost has efficient CPU training implementation. With GPU training it is 2 times faster than LightGBM and 20 times faster than XGBoost. The larger the dataset, the more the speedup.</li>
 </ul>
-</span></div></article></div><div class="docLastUpdate"><em>Last updated on 2019-6-20 by Oleg Polakow</em></div><div class="docs-prevnext"><a class="docs-prev button" href="/datadocs/docs/machine-learning/linear-models"><span class="arrow-prev">← </span><span>Linear Models</span></a><a class="docs-next button" href="/datadocs/docs/machine-learning/ensemble-methods"><span>Ensemble Methods</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#decision-tree">Decision tree</a></li><li><a href="#random-forest">Random forest</a></li><li><a href="#boosted-trees">Boosted trees</a><ul class="toc-headings"><li><a href="#adaptive-boosting">Adaptive boosting</a></li><li><a href="#gradient-boosting">Gradient boosting</a></li><li><a href="#implementations">Implementations</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><div class="brand-box"><div class="brand"><a href="https://www.tum.de/nc/en/" target="_blank" rel="noreferrer noopener" class="brand-link"><img src="/datadocs/img/tum_logo.png" alt="Technical University of Munich" height="45"/></a></div><div class="brand"><a href="https://opensource.facebook.com/" target="_blank" rel="noreferrer noopener" class="brand-link"><img src="/datadocs/img/oss_logo.png" alt="Facebook Open Source" width="170" height="45"/></a></div></div><section class="copyright">Copyright © 2019 Oleg Polakow</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
+</span></div></article></div><div class="docLastUpdate"><em>Last updated on 2019-9-7 by Oleg Polakow</em></div><div class="docs-prevnext"><a class="docs-prev button" href="/datadocs/docs/machine-learning/linear-models"><span class="arrow-prev">← </span><span>Linear Models</span></a><a class="docs-next button" href="/datadocs/docs/machine-learning/ensemble-methods"><span>Ensemble Methods</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#decision-tree">Decision tree</a></li><li><a href="#random-forest">Random forest</a></li><li><a href="#boosted-trees">Boosted trees</a><ul class="toc-headings"><li><a href="#adaptive-boosting">Adaptive boosting</a></li><li><a href="#gradient-boosting">Gradient boosting</a></li><li><a href="#implementations">Implementations</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><div class="brand-box"><div class="brand"><a href="https://www.tum.de/nc/en/" target="_blank" rel="noreferrer noopener" class="brand-link"><img src="/datadocs/img/tum_logo.png" alt="Technical University of Munich" height="45"/></a></div><div class="brand"><a href="https://opensource.facebook.com/" target="_blank" rel="noreferrer noopener" class="brand-link"><img src="/datadocs/img/oss_logo.png" alt="Facebook Open Source" width="170" height="45"/></a></div></div><section class="copyright">Copyright © 2019 Oleg Polakow</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
                 document.addEventListener('keyup', function(e) {
                   if (e.target !== document.body) {
                     return;

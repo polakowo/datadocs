@@ -159,7 +159,7 @@
 <li><a href="https://mapr.com/blog/in-depth-look-hbase-architecture/">An In-Depth Look at the HBase Architecture</a></li>
 </ul>
 <p><img width=600 src="/datadocs/assets/HBaseArchitecture-Blog-Fig1.png"/>
-<center><a href="https://mapr.com/blog/in-depth-look-hbase-architecture/" style="color: lightgrey">Credit</a></center></p>
+<center><a href="https://mapr.com/blog/in-depth-look-hbase-architecture/" class="credit">Credit</a></center></p>
 <h4><a class="anchor" aria-hidden="true" id="write-path"></a><a href="#write-path" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Write path</h4>
 <ul>
 <li>The first step is to write the data to the write-ahead log, the WAL.
@@ -212,7 +212,7 @@
 </ul></li>
 </ul>
 <p><img width=600 src="/datadocs/assets/httpatomoreillycomsourceoreillyimages889236.png"/>
-<center><a href="https://www.oreilly.com/library/view/hbase-the-definitive/9781449314682/ch01.html" style="color: lightgrey">Credit</a></center></p>
+<center><a href="https://www.oreilly.com/library/view/hbase-the-definitive/9781449314682/ch01.html" class="credit">Credit</a></center></p>
 <ul>
 <li>HBase model is a sparse, distributed, persistent, multidimensional map, which is indexed by row key, column key, and a timestamp.
 <ul>
@@ -252,7 +252,7 @@
 </ul></li>
 </ul>
 <p><center><img width=500 src="/datadocs/assets/ring-architecture-2.png"/></center>
-<center><a href="https://docs.scylladb.com/architecture/ringarchitecture/" style="color: lightgrey">Credit</a></center></p>
+<center><a href="https://docs.scylladb.com/architecture/ringarchitecture/" class="credit">Credit</a></center></p>
 <ul>
 <li>Main features:
 <ul>
@@ -289,7 +289,7 @@
 </ul></li>
 </ul>
 <p><center><img width=400 src="/datadocs/assets/Picture1-1.png"/></center>
-<center><a href="https://www.instaclustr.com/multi-data-center-sparkcassandra-benchmark-round-2/" style="color: lightgrey">Credit</a></center></p>
+<center><a href="https://www.instaclustr.com/multi-data-center-sparkcassandra-benchmark-round-2/" class="credit">Credit</a></center></p>
 <h4><a class="anchor" aria-hidden="true" id="compared-to-hbase"></a><a href="#compared-to-hbase" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Compared to HBase</h4>
 <ul>
 <li>Cassandra is AP while HBase is CP.</li>
@@ -368,7 +368,7 @@
 </ul></li>
 </ul>
 <p><center><img width=400 src="/datadocs/assets/arc_write-singleDCConOne.png"/></center>
-<center><a href="https://docs.datastax.com/en/ddac/doc/datastax_enterprise/dbInternals/dbIntClientRequestsWrite.html" style="color: lightgrey">Credit</a></center></p>
+<center><a href="https://docs.datastax.com/en/ddac/doc/datastax_enterprise/dbInternals/dbIntClientRequestsWrite.html" class="credit">Credit</a></center></p>
 <ul>
 <li>Success means data was written to the node's commit log and the memtable.
 <ul>
@@ -499,7 +499,7 @@
 
 <span class="hljs-comment">-- Support those queries with additional tables designed as such</span>
 </code></pre>
-</span></div></article></div><div class="docLastUpdate"><em>Last updated on 2019-9-3 by Oleg Polakow</em></div><div class="docs-prevnext"><a class="docs-prev button" href="/datadocs/docs/big-data/sql-databases"><span class="arrow-prev">← </span><span>SQL Databases</span></a><a class="docs-next button" href="/datadocs/docs/big-data/key-value-stores"><span>Key Value Stores</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#apache-hbase">Apache HBase</a><ul class="toc-headings"><li><a href="#architecture">Architecture</a></li><li><a href="#data-modeling">Data modeling</a></li></ul></li><li><a href="#apache-cassandra">Apache Cassandra</a><ul class="toc-headings"><li><a href="#architecture-1">Architecture</a></li><li><a href="#data-modeling-1">Data modeling</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><div class="brand-box"><div class="brand"><a href="https://www.tum.de/nc/en/" target="_blank" rel="noreferrer noopener" class="brand-link"><img src="/datadocs/img/tum_logo.png" alt="Technical University of Munich" height="45"/></a></div><div class="brand"><a href="https://opensource.facebook.com/" target="_blank" rel="noreferrer noopener" class="brand-link"><img src="/datadocs/img/oss_logo.png" alt="Facebook Open Source" width="170" height="45"/></a></div></div><section class="copyright">Copyright © 2019 Oleg Polakow</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
+</span></div></article></div><div class="docLastUpdate"><em>Last updated on 2019-9-7 by Oleg Polakow</em></div><div class="docs-prevnext"><a class="docs-prev button" href="/datadocs/docs/big-data/sql-databases"><span class="arrow-prev">← </span><span>SQL Databases</span></a><a class="docs-next button" href="/datadocs/docs/big-data/key-value-stores"><span>Key Value Stores</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#apache-hbase">Apache HBase</a><ul class="toc-headings"><li><a href="#architecture">Architecture</a></li><li><a href="#data-modeling">Data modeling</a></li></ul></li><li><a href="#apache-cassandra">Apache Cassandra</a><ul class="toc-headings"><li><a href="#architecture-1">Architecture</a></li><li><a href="#data-modeling-1">Data modeling</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><div class="brand-box"><div class="brand"><a href="https://www.tum.de/nc/en/" target="_blank" rel="noreferrer noopener" class="brand-link"><img src="/datadocs/img/tum_logo.png" alt="Technical University of Munich" height="45"/></a></div><div class="brand"><a href="https://opensource.facebook.com/" target="_blank" rel="noreferrer noopener" class="brand-link"><img src="/datadocs/img/oss_logo.png" alt="Facebook Open Source" width="170" height="45"/></a></div></div><section class="copyright">Copyright © 2019 Oleg Polakow</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
                 document.addEventListener('keyup', function(e) {
                   if (e.target !== document.body) {
                     return;
