@@ -37,7 +37,7 @@
     }
 }
 
-.container.docsNavContainer {
+.docsNavContainer {
     overflow: visible;
     -webkit-box-flex: 0;
     flex: 0 0 240px;
