@@ -161,6 +161,14 @@
         "title": "Data Leakages",
         "sidebar_label": "Data Leakages"
       },
+      "machine-learning/deployment-to-cloud": {
+        "title": "Deployment to Cloud",
+        "sidebar_label": "Deployment to Cloud"
+      },
+      "machine-learning/deployment": {
+        "title": "Deployment",
+        "sidebar_label": "Deployment"
+      },
       "machine-learning/eda": {
         "title": "Exploratory Data Analysis",
         "sidebar_label": "Exploratory Data Analysis"

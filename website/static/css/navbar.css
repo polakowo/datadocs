@@ -30,10 +30,6 @@
     transition: none
 }
 
-li.navSearchWrapper {
-    font-size: 16px
-}
-
 @media only screen and (max-width:480px) {
     .headerWrapper.wrapper {
         padding: 0 10px
@@ -101,18 +97,6 @@ li.navSearchWrapper {
     }
 }
 
-@media only screen and (max-width:1024px) {
-    .reactNavSearchWrapper input#search_input_react {
-        border-radius: .25rem;
-        background-color: #282c34;
-        height: 30px
-    }
-
-    .reactNavSearchWrapper input#search_input_react:focus {
-        background-color: #373940
-    }
-}
-
 @media only screen and (min-width:1024px) {
     .navPusher {
         padding-top: 60px
@@ -156,20 +140,4 @@ li.navSearchWrapper {
     .navigationSlider .slidingNav ul li.siteNavGroupActive a, .navigationSlider .slidingNav ul li.siteNavItemActive a {
         color: #61dafb
     }
-}
-
-.reactNavSearchWrapper {
-    box-sizing: initial
-}
-
-input#search_input_react {
-    width: 220px;
-    background-color: #282c34;
-    border-radius: .25rem;
-    -webkit-transition: background-color .15s ease-in-out;
-    transition: background-color .15s ease-in-out
-}
-
-input#search_input_react:focus {
-    background-color: #373940
 }

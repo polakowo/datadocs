@@ -41,7 +41,9 @@
             "type": "subcategory",
             "label": "Production",
             "ids": [
-                "machine-learning/production-code"
+                "machine-learning/production-code",
+                "machine-learning/deployment",
+                "machine-learning/deployment-to-cloud"
             ]
         }],
         "Deep Learning": [{
