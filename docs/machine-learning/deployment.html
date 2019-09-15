@@ -1,0 +1,378 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Deployment · datadocs</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="- Deployment to production is a method that integrates a model into an existing production environment."/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Deployment · datadocs"/><meta property="og:type" content="website"/><meta property="og:url" content="https://polakowo.github.io/datadocs/"/><meta property="og:description" content="- Deployment to production is a method that integrates a model into an existing production environment."/><meta property="og:image" content="https://polakowo.github.io/datadocs/img/undraw_online.svg"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://polakowo.github.io/datadocs/img/undraw_tweetstorm.svg"/><link rel="shortcut icon" href="/datadocs/img/favicon.ico"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-142521178-1"></script><script>
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments); }
+              gtag('js', new Date());
+              gtag('config', 'UA-142521178-1');
+            </script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script><script type="text/javascript" src="/datadocs/js/code-block-buttons.js"></script><script type="text/javascript" src="/datadocs/js/disqus.js"></script><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script src="/datadocs/js/scrollSpy.js"></script><link rel="stylesheet" href="/datadocs/css/prism.css"/><link rel="stylesheet" href="/datadocs/css/main.css"/><script src="/datadocs/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/datadocs/"><img class="logo" src="/datadocs/img/headerIcon.ico" alt="datadocs"/><h2 class="headerTitleWithLogo">datadocs</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/datadocs/docs/machine-learning/linear-models" target="_self">Docs</a></li><li class=""><a href="https://github.com/polakowo/datadocs" target="_self">GitHub</a></li><li class="navSearchWrapper reactNavSearchWrapper"><input type="text" id="search_input_react" placeholder="Search" title="Search"/></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Production</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Machine Learning<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">General</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/machine-learning">Machine Learning</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Methods</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/linear-models">Linear Models</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/tree-based-models">Tree-Based Models</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/ensemble-methods">Ensemble Methods</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Features</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/eda">Exploratory Data Analysis</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/feature-engineering">Feature Engineering</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/advanced-features">Advanced Features</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Optimization</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/metric-optimization">Metric Optimization</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/validation-schemes">Validation Schemes</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/hyperopt">Hyperparameter Optimization</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Competitions</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/competitive-ml">Competitive Machine Learning</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/data-leakages">Data Leakages</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Production</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/production-code">Production Code</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/datadocs/docs/machine-learning/deployment">Deployment</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/deployment-to-cloud">Deployment to Cloud</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Deep Learning<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">General</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/deep-learning">Deep Learning</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/dl-strategy">Deep Learning Strategy</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Fundamentals</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/backpropagation">Backpropagation</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/activation-functions">Activation Functions</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/initialization">Initialization</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/optimization">Optimization</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/regularization">Regularization</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Computer Vision</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/cnns">Convolutional Neural Networks</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/cnn-architectures">CNN Architectures</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/object-detection">Object Detection</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/face-recognition">Face Recognition</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/nst">Neural Style Transfer</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Natural Language Processing</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/rnns">Recurrect Neural Networks</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/word-embeddings">Word Embeddings</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/nmt">Neural Machine Translation</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/attention-mechanism">Attention Mechanism</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/speech-recognition">Speech Recognition</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Big Data<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">General</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/data-engineering">Data Engineering</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/cloud-computing">Cloud Computing</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/data-warehouses">Data Warehouses</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/data-lakes">Data Lakes</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/data-pipelines">Data Pipelines</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Databases</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/database-design">Database Design</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/sql-databases">SQL Databases</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/wide-column-stores">Wide Column Stores</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/key-value-stores">Key Value Stores</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/document-stores">Document Stores</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/graph-stores">Graph Stores</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Hadoop</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/hadoop">Hadoop Ecosystem</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/data-ingestion">Data Ingestion</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/data-storage">Data Storage</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/data-processing">Data Processing</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/query-engines">Query Engines</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/cluster-management">Cluster Management</a></li></ul></div></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://github.com/polakowo/datadocs/edit/master/docs/machine-learning/deployment.md" target="_blank" rel="noreferrer noopener">Edit</a><h1 class="postHeaderTitle">Deployment</h1></header><article><div><span><ul>
+<li>Deployment to production is a method that integrates a model into an existing production environment.
+<ul>
+<li>The model can then be used to make decisions or predictions based upon data input.</li>
+</ul></li>
+<li>Examples of ML models in production:
+<ul>
+<li>Fraud detection, recommender systems, risk assessment, facial recognition.</li>
+</ul></li>
+<li>Deployment is typically a critical part in the workplace.</li>
+<li>Deployment is not typically a critical part with academic or personal usage (e.g. Kaggle)</li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="deployment-scenarios"></a><a href="#deployment-scenarios" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Deployment scenarios</h4>
+<ul>
+<li>Python model is converted into a format that can be used in the production environment.
+<ul>
+<li>Convert Python models into intermediate standard format, like ONNX.</li>
+<li>The easiest and fastest way to move a Python model from modeling directly to deployment.</li>
+</ul></li>
+<li>Model is coded in Predictive Model Markup Language (PMML) or Portable Format Analytics (PFA).
+<ul>
+<li>The Data Mining Group developed both PMML and PFA to provide vendor-neutral executable model specifications for certain predictive models used by data mining and machine learning.</li>
+<li>Direct import is allows by, for example, IBM SPSS, R, SAS Base &amp; Enterprise Miner, Apache Spark, Teradata Warehouse Miner, and TIBCO Spotfire.</li>
+</ul></li>
+<li>Python model is recoded into the programming language of the production environment (C++, Java)
+<ul>
+<li>Rarely used anymore because it takes time to recode, test, and validate the model.</li>
+</ul></li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="deployment-characteristics"></a><a href="#deployment-characteristics" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Deployment characteristics</h4>
+<ul>
+<li>Model versioning:
+<ul>
+<li>A model version can be saved as part of the metadata or by the deployment platform.</li>
+</ul></li>
+<li>Model monitoring:
+<ul>
+<li>Make certain that the model continues to meet its performance metrics.</li>
+</ul></li>
+<li>Model updating:
+<ul>
+<li>Model updates can address when a deployed model is failing to meet its performance metrics.</li>
+</ul></li>
+<li>Model routing:
+<ul>
+<li>Collect new input data for updating the model.</li>
+<li>Routing user requests to the deployed models allows comparison of their performance.</li>
+</ul></li>
+<li>On-demand predictions:
+<ul>
+<li>On-demand predictions might also be called online, real-time, or synchronous predictions.</li>
+<li>One expects a low latency of response but allows high variability in request volume.</li>
+<li>Predictions are returned in the response from the request.</li>
+<li>Each prediction request from the user can contain one or many requests for predictions.</li>
+<li>Noting that many is limited based upon the size of the data sent as the request (5Mb for SageMaker)</li>
+</ul></li>
+<li>Batch predictions:
+<ul>
+<li>Batch predictions might also be called asynchronous, or batch-based predictions.</li>
+<li>One expects high volume of requests with periodic submissions so latency won’t be an issue.</li>
+<li>Each batch request will point to specifically formatted data file of requests.</li>
+<li>Cloud services require these files will be stored in the cloud provider’s cloud.</li>
+<li>Cloud services typically have limits based on those they impose in their cloud storage service.</li>
+<li>Batch predictions are commonly used to help make business decisions.</li>
+</ul></li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="endpoints-and-rest-apis"></a><a href="#endpoints-and-rest-apis" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Endpoints and REST APIs</h2>
+<ul>
+<li>The type of environment is defined by the kind of user who can access the service.
+<ul>
+<li>A test environment is the one that is used for testing an application by testers.</li>
+<li>A production environment is the one that is used for receiving predictions by customers.</li>
+</ul></li>
+<li>Communication between the application and the model is done through the endpoint (interface)
+<ul>
+<li>Allows the application to send user data to the model.</li>
+<li>Receives predictions back from the model based upon that user data.</li>
+</ul></li>
+<li>The endpoint itself is like a function call.
+<ul>
+<li>The function itself would be the model.</li>
+<li>The functions's argument would be the user's data.</li>
+<li>The functions's returned value would be the model's prediction.</li>
+<li>The Python program would be the application.</li>
+</ul></li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="rest-api"></a><a href="#rest-api" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>REST API</h3>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Representational_state_transfer">Representational state transfer (REST)</a> is a software architectural style that defines a set of constraints to be used for creating Web services.</li>
+<li>Web services that conform to the REST are called RESTful Web services (RWS)</li>
+<li>&quot;verb + resource&quot;:
+<ul>
+<li>REST uses HTTP(S) to implement stateless message-passing in a distributed system, and suggests using standard HTTP verbs to perform operations on &quot;resources&quot; that can be specified using hierarchical URIs.</li>
+</ul></li>
+<li>Resource is an object or representation of something.
+<ul>
+<li>Has some associated data with it and there can be set of methods to operate on it.</li>
+<li>For example, <code>GET https://api.example.com/collection/api/users/1</code></li>
+<li><a href="https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol#Request_methods">Request methods</a></li>
+</ul></li>
+<li>Collections are set of resources.
+<ul>
+<li>For example, <code>https://api.example.com/collection/api/users</code></li>
+</ul></li>
+<li>URI (Uniform Resource Identifier) is a path through which a resource can be located.
+<ul>
+<li>For example, <code>https://api.example.com/collection/</code></li>
+</ul></li>
+<li><a href="https://hackernoon.com/restful-api-designing-guidelines-the-best-practices-60e1d954e7c9">RESTful API Designing guidelines — The best practices</a></li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="pros"></a><a href="#pros" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Pros</h4>
+<ul>
+<li>REST focuses on scalability and large-scale performance for distributed hypermedia systems.</li>
+<li>Provides interoperability between computer systems on the Internet.</li>
+<li>Allows to access and manipulate data by using a uniform and predefined set of stateless operations.</li>
+<li>Aims for fast performance, reliability, and the ability to grow by reusing components.</li>
+<li>Separation of concerns enables developments on clients and servers to take place independently.</li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="cons"></a><a href="#cons" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Cons</h4>
+<ul>
+<li>Truly RESTful services simply require too much work to be practical for most applications.</li>
+<li>Forces semi-religious debates about when verbs are appropriate.</li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="compared-to-soap"></a><a href="#compared-to-soap" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Compared to SOAP</h4>
+<ul>
+<li>REST is an architectural style, while SOAP is a protocol.</li>
+<li>REST APIs access a resource for data (a URI); SOAP APIs perform an operation.</li>
+<li>REST+JSON are most commonly used when exposing a public API over the Internet.
+<ul>
+<li>REST allows a greater variety of data formats, whereas SOAP only allows XML.</li>
+<li>Coupled with JSON, REST is generally considered easier to work with.</li>
+<li>Thanks to JSON, REST offers better support for browser clients.</li>
+<li>REST provides superior performance, particularly through caching.</li>
+</ul></li>
+</ul>
+<pre><code class="hljs css language-json">Example: REST message
+
+POST /api/2.2/auth/signin HTTP/1.1
+HOST: my-server
+Content-Type:application/json
+Accept:application/json
+
+{
+  "credentials": {
+    "name": "administrator",
+    "password": "passw0rd",
+    "site": {
+      "contentUrl": ""
+    }
+  }
+}
+</code></pre>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/SOAP">SOAP</a> exposes components of application logic as services rather than data.
+<ul>
+<li>SOAP tends to be better-suited for robust security, data privacy and integrity.</li>
+<li>SOAP offers built-in retry logic to compensate for failed communications.</li>
+<li>SOAP's protocol makes it easier for it to operate across firewalls and proxies.</li>
+<li>SOAP has built-in ACID compliance that reduces anomalies and protects the integrity.</li>
+<li>For operations requiring content and context to be maintained, SOAP requires less coding.</li>
+<li>SOAP is highly extensible through other protocols and technologies.</li>
+</ul></li>
+</ul>
+<pre><code class="hljs css language-xml">Example: SOAP message
+
+POST /InStock HTTP/1.1
+Host: www.example.org
+Content-Type: application/soap+xml; charset=utf-8
+Content-Length: 299
+SOAPAction: "http://www.w3.org/2003/05/soap-envelope"
+
+<span class="hljs-meta">&lt;?xml version="1.0"?&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">soap:Envelope</span> <span class="hljs-attr">xmlns:soap</span>=<span class="hljs-string">"http://www.w3.org/2003/05/soap-envelope"</span> <span class="hljs-attr">xmlns:m</span>=<span class="hljs-string">"http://www.example.org"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">soap:Header</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">soap:Header</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">soap:Body</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">m:GetStockPrice</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">m:StockName</span>&gt;</span>GOOG<span class="hljs-tag">&lt;/<span class="hljs-name">m:StockName</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">m:GetStockPrice</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">soap:Body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">soap:Envelope</span>&gt;</span>
+</code></pre>
+<ul>
+<li><a href="https://raygun.com/blog/soap-vs-rest-vs-json/">SOAP vs REST vs JSON comparison [2019]</a></li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="constraints"></a><a href="#constraints" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Constraints</h4>
+<ul>
+<li>Uniform interface:
+<ul>
+<li>A uniform way of interacting with a given server irrespective of application type.</li>
+<li>Simplifies and decouples the architecture, which enables each part to evolve independently.</li>
+<li>Each resource must have a specific and cohesive URI.</li>
+<li>Each message includes enough information to describe how to process the message.</li>
+<li>A REST client should be able to discover all the available actions and resources it needs.</li>
+</ul></li>
+<li>Statelessness:
+<ul>
+<li>No client context is stored on the server between requests.</li>
+<li>Each request from any client contains all the information necessary to service the request.</li>
+</ul></li>
+<li>Cacheability:
+<ul>
+<li>Responses must, implicitly or explicitly, define themselves as cacheable or not.</li>
+</ul></li>
+<li>Client-server architecture:
+<ul>
+<li>REST application should have a client-server architecture (the separation of concerns)</li>
+<li>Improves the portability of the UIs and scalability by simplifying the server components.</li>
+<li>Allows the components to evolve independently.</li>
+</ul></li>
+<li>Layered system:
+<ul>
+<li>The client shouldn't know if it's talking with an intermediate or the actual server.</li>
+<li>A proxy or load balancer wouldn't affect their communications.</li>
+<li>Intermediary servers can improve system scalability and security.</li>
+</ul></li>
+<li>Code on demand (optional):
+<ul>
+<li>Servers can extend the functionality of a client by transferring executable code.</li>
+</ul></li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="containers"></a><a href="#containers" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Containers</h2>
+<ul>
+<li>Both the model and the application require a computing environment.</li>
+<li>One way to create and maintain these computing environments is through the use of containers.</li>
+<li>A container is a standard unit of software that packages up code and all its dependencies.</li>
+</ul>
+<blockquote>
+<p>Analogy to real containers: Shipping containers can contain a wide variety of products, from food to computers to cars. The structure of a shipping container provides the ability for it to hold different types of products while making it easy to track, load, unload, and transport products worldwide. Everything becomes the same and we can develop tooling around this sameness (e.g. cranes). We don't care about the contents of a container anymore.</p>
+</blockquote>
+<h4><a class="anchor" aria-hidden="true" id="pros-1"></a><a href="#pros-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Pros</h4>
+<ul>
+<li>Better isolation:
+<ul>
+<li>Execute application processes in isolation from the underlying host OS.</li>
+<li>Protect the underlying host OS against malicious escape and breakout attempts.</li>
+<li>Are sandboxed and isolated from other applications, which increases security.</li>
+</ul></li>
+<li>Less overhead:
+<ul>
+<li>Require only software needed to run the application.</li>
+<li>The host OS doesn’t need this software.</li>
+<li>Require less system resources than traditional or virtual machine environments.</li>
+<li>Able to start and stop much faster than traditional VMs.</li>
+</ul></li>
+<li>Increased portability:
+<ul>
+<li>Containerization provides an easy packaging mechanism.</li>
+<li>Can be deployed easily to multiple different operating systems and hardware platforms.</li>
+<li>Able to run virtually anywhere.</li>
+</ul></li>
+<li>More consistent operation:
+<ul>
+<li>Can create predictable environments that are isolated from other applications.</li>
+<li>Will run the same, regardless of where they are deployed.</li>
+</ul></li>
+<li>Greater efficiency:
+<ul>
+<li>Allow applications to be more rapidly deployed, patched, or scaled.</li>
+</ul></li>
+<li>Better application development:
+<ul>
+<li>Support agile and DevOps efforts to accelerate development, test, and production cycles.</li>
+<li>Make application creation, replication, deletion, and maintenance easier and the same.</li>
+</ul></li>
+<li>Offer the possibility of horizontal scaling:
+<ul>
+<li>Add more identical containers within a cluster to scale out.</li>
+</ul></li>
+<li>Provide a more simple and secure way to replicate, save, and share containers (through a script file)
+<ul>
+<li>For Docker, the <a href="https://hub.docker.com/explore/">Docker Hub</a> is the official repository for storing and sharing Dockerfiles.</li>
+</ul></li>
+</ul>
+<pre><code class="hljs css language-docker"><span class="hljs-comment"># Example: Dockerfile</span>
+
+<span class="hljs-keyword">FROM</span> ubuntu:<span class="hljs-number">18.04</span>
+<span class="hljs-keyword">COPY</span><span class="bash"> . /app</span>
+<span class="hljs-keyword">RUN</span><span class="bash"> make /app</span>
+<span class="hljs-keyword">CMD</span><span class="bash"> python /app/app.py</span>
+</code></pre>
+<h4><a class="anchor" aria-hidden="true" id="cons-1"></a><a href="#cons-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Cons</h4>
+<ul>
+<li>Containers don't run at bare-metal speeds:
+<ul>
+<li>Consume resources more efficiently than VMs but still subject to performance overhead.</li>
+</ul></li>
+<li>Persistent data storage is complicated.
+<ul>
+<li>There are ways to save data persistently in Docker, but not in a seamless way.</li>
+</ul></li>
+<li>Graphical applications don't work well:
+<ul>
+<li>Docker was designed for deploying server applications that don't require a GUI.</li>
+</ul></li>
+<li>Only applications that are designed to run as a set of discrete micro-services gain.</li>
+</ul>
+</span></div></article></div><div class="docLastUpdate"><em>Last updated on 2019-9-15 by Oleg Polakow</em></div><div class="docs-prevnext"><a class="docs-prev button" href="/datadocs/docs/machine-learning/production-code"><span class="arrow-prev">← </span><span>Production Code</span></a><a class="docs-next button" href="/datadocs/docs/machine-learning/deployment-to-cloud"><span>Deployment to Cloud</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#endpoints-and-rest-apis">Endpoints and REST APIs</a><ul class="toc-headings"><li><a href="#rest-api">REST API</a></li></ul></li><li><a href="#containers">Containers</a></li></ul></nav></div><footer class="nav-footer" id="footer"><div class="brand-box"><div class="brand"><a href="https://www.tum.de/nc/en/" target="_blank" rel="noreferrer noopener" class="brand-link"><img src="/datadocs/img/tum_logo.png" alt="Technical University of Munich" height="45"/></a></div><div class="brand"><a href="https://opensource.facebook.com/" target="_blank" rel="noreferrer noopener" class="brand-link"><img src="/datadocs/img/oss_logo.png" alt="Facebook Open Source" width="170" height="45"/></a></div></div><section class="copyright">Copyright © 2019 polakowo.io</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
+                document.addEventListener('keyup', function(e) {
+                  if (e.target !== document.body) {
+                    return;
+                  }
+                  // keyCode for '/' (slash)
+                  if (e.keyCode === 191) {
+                    const search = document.getElementById('search_input_react');
+                    search && search.focus();
+                  }
+                });
+              </script><script>
+              var search = docsearch({
+                
+                apiKey: '6642fca03d716a543ac4428d7d20b842',
+                indexName: 'polakowo-datadocs',
+                inputSelector: '#search_input_react',
+                algoliaOptions: {}
+              });
+            </script></body></html>
