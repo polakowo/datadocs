@@ -158,8 +158,9 @@ $$\large{\theta_{t+1}=\theta_{t}-\alpha\frac{\delta{J(\theta_{t})}}{\delta\theta
 
 - When estimating on a small batch, we’re not always going in the optimal direction, because our derivatives are noisy.
 - To prevent gradient descent from getting stuck at local optima (which may not be the global optimum), we can use a momentum term which allows our search to overcome local optima.
-- An intuitive understanding of momentum can be painted by a ball rolling down the hill. Its mass is constant all the way, but because of the gravitational pull, its velocity increases over time, making momentum increase. When the directions change, we go marginally slower.
 - With Momentum update, the parameter vector will build up velocity in any direction that has consistent gradient.
+
+> An intuitive understanding of momentum can be painted by a ball rolling down the hill. Its mass is constant all the way, but because of the gravitational pull, its velocity increases over time, making momentum increase. When the directions change, we go marginally slower.
 
 <img width=300 src="/datadocs/assets/momentum.png"/>
 <center><a href="http://www.junlulocky.com/blog/SGDoverview" class="credit">Credit</a></center>
@@ -218,9 +219,10 @@ $$\large{\theta_{t+1}=\theta_{t}-\alpha\frac{1}{\sqrt{v_t}+\epsilon}g_t}$$
 
 ### Adam
 
-- Adam or Adaptive Moment Optimization algorithms combines the heuristics of both Momentum and RMSProp
+- Adam or Adaptive Moment Optimization algorithm combines the heuristics of both Momentum and RMSProp.
 - Adam adds bias-correction and momentum to RMSprop.
-- Whereas momentum can be seen as a ball running down a slope, Adam behaves like a heavy ball with friction, which thus prefers flat minima in the error surface.
+
+> Whereas momentum can be seen as a ball running down a slope, Adam behaves like a heavy ball with friction, which thus prefers flat minima in the error surface.
 
 $$\large{v_t=\beta_1v_{t-1}+(1-\beta_1)g_t}$$
 $$\large{s_t=\beta_2s_{t-1}+(1-\beta_2)g_t^2}$$
@@ -243,6 +245,13 @@ $$\large{\theta_{t+1}=\theta_{t}-\alpha\frac{\hat{v}_t}{\sqrt{\hat{s}_t}+\epsilo
 #### Best practices
 
 - Good default settings for the tested machine learning problems are \\(\alpha=0.001\\), \\(\beta_1=0.9\\), \\(\beta_2=0.999\\) and \\(\epsilon=10^{−8}\\). The popular deep learning libraries generally use the default parameters recommended by the paper.
+
+### LAMB
+
+- Achieves better performance than existing optimizers for a wide range of applications.
+- Supports adaptive elementwise updating and layerwise learning rates.
+- Enables use of very large batches sizes of 32868; thereby, requiring just 8599 iterations to train.
+- [LARGE BATCH OPTIMIZATION FOR DEEP LEARNING: TRAINING BERT IN 76 MINUTES](https://arxiv.org/pdf/1904.00962.pdf)
 
 ### SGDR
 

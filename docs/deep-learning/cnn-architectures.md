@@ -19,6 +19,7 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/deep-lear
 - [LeNet-5: Gradient-Based Learning Applied to Document Recognition (1998)](http://yann.lecun.com/exdb/publis/pdf/lecun-01a.pdf)
 - [AlexNet: ImageNet Classification with Deep Convolutional Neural Networks (2012)](https://papers.nips.cc/paper/4824-imagenet-classification-with-deep-convolutional-neural-networks.pdf)
 - [VGG-16: Very Deep Convolutional Networks for Large-Scale Image Recognition (2015)](https://arxiv.org/pdf/1409.1556.pdf)
+- [Bag of Tricks for Image Classification with Convolutional Neural Networks (2018)](https://arxiv.org/abs/1812.01187)
 
 ## Inception (GoogLeNet)
 

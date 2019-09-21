@@ -26,20 +26,14 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/deep-lear
 
 #### Internal covariate shift
 
-- As learning progresses, each hidden unit’s input distribution changes every time there is a parameter update in the previous layer
-- This can result in most inputs being in the nonlinear regime of the activation function and slow down learning
-- This in turn makes training slow and requires a very small learning rate and a good parameter initialization
-
-#### Solution
-
-- We can think of any layer in a neural network as the first layer of a smaller subsequent network
+- As learning progresses, each hidden unit’s input distribution changes every time there is a parameter update in the previous layer. This can result in most inputs being in the nonlinear regime of the activation function and slow down learning. This in turn makes training slow and requires a very small learning rate and a good parameter initialization.
+- We can think of any layer in a neural network as the first layer of a smaller subsequent network.
 - BN is divided in two sub-operations:
-  - First sub-operation will normalize activation output, dimension-wise with zero mean and unit variance within a mini-batch of training set
-  - Second sub-operation will optimally shift and scale these normalized activations.
+  - Normalize activation output, dimension-wise with zero mean and unit variance within a mini-batch of training set.
+  - Shift and scale these normalized activations.
 
 #### 1. Normalization
 
-- The basic idea behind batch normalization is to limit covariate shift by normalizing the activations of each layer
 - By normalizing each layer, we're introducing a level of orthogonality between layers
 
 <img width=600 src="/datadocs/assets/prepro1.jpeg"/>
@@ -69,8 +63,17 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/deep-lear
 <img width=400 src="/datadocs/assets/ModelAccuracy.png"/>
 <center><a href="https://www.learnopencv.com/batch-normalization-in-deep-networks/" class="credit">Credit</a></center>
 
+#### Cons
+
+- BatchNorm is not good for small batch sizes.
+    - This problem can happen actually if all of those are the same values.
+- BatchNorm works well in most of the cases but it cannot be applied to online learning tasks.
+    - The problem is that the variance of one data point is infinite.
+- We can’t use BatchNorm with RNNs and small batches.
+
 #### Best practices
 
 - During training you have to consider a mini-batch at a time. This requirement of mini-batch training is for learning of two extra parameters for every dimension for every hidden layers along with the weights associated with the network.
-- Note that batch normalization occurs after each fully-connected layer, but before the activation function and dropout
-- To get the normalization parameters, which will be used during inference, you can take average of parameters calculated from many equal size mini-batch training. Alternatively, during training, you can track the moving averages of normalization parameters
+- Note that batch normalization occurs after each fully-connected layer, but before the activation function and dropout.
+- To get the normalization parameters, which will be used during inference, you can take average of parameters calculated from many equal size mini-batch training. Alternatively, during training, you can track the moving averages of normalization parameters.
+- If we use BatchNorm we don’t need bias because there is already a bias in BatchNorm.

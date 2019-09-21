@@ -8,8 +8,19 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/deep-lear
 - DL strategy is useful to iterate through ideas quickly and efficiently reach the project outcome.
 - Build the first system quickly and then iterate: 
     - Quickly prototype a first version of the classifier and then improve it iteratively following the strategic guidelines.
-- Respect orthogonalization: 
-    - Orthogonalization refers to the concept of picking parameters to tune which only adjust one outcome of the machine learning model, e.g. regularization is a knob to reduce variance.
+
+#### Experimentation
+
+- The cutting edge of deep learning is really about engineering, not about papers. 
+    - The difference between really effective people in deep learning and the rest is really about who can make things in code that work properly and there’s very few of those people.
+    - Reading papers from competition winners is a very very good idea.
+- Experiment lots, particularly in your domain area.
+    - Write stuff down for the you of six months ago, that’s your audience. 
+    - It doesn’t have to be perfect.
+- You can and should schedule everything, your dropout amount, what kind of data augmentation you do, weight decay, learning rate, momentum, everything. It’s very unlikely you would want the same hyperparameters throughout.
+    - Respect orthogonalization, which is the concept of picking parameters to tune which only adjust one outcome of the machine learning model, e.g. regularization is a knob to reduce variance.
+    - Don't set a random seed to see variation in your model.
+- [Things Jeremy says to do (Part 2)](https://forums.fast.ai/t/things-jeremy-says-to-do-part-2/41533)
 
 ## Evaluation metrics
 
@@ -25,6 +36,7 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/deep-lear
 - Training set: Train the model on the *training* set.
 - Validation/development set: After training the model, validate it on the *dev* set.
 - Test set: When we have the final model, evaluate it on the *test* set in order to get an unbiased estimate of how well our algorithm is doing.
+- Always make sure your data sets were normalized in the same way.
 
 #### Same distribution
 
@@ -103,7 +115,7 @@ Without data mismatch | With data mismatch
 - Test error is the degree of overfitting to the *dev* set.
 - Reserve more data for the *dev* set.
 
-## Different aspects of learning
+## Tips and tricks
 
 ### Transfer learning
 
@@ -130,7 +142,7 @@ Without data mismatch | With data mismatch
 <img width=600 src="/datadocs/assets/1*RXWO8pWJelvFJrGEr8sRrg.png"/>
 <center><a href="https://blog.manash.me/multi-task-learning-in-keras-implementation-of-multi-task-classification-loss-f1d42da5c3f6" class="credit">Credit</a></center>
 
-### End-to-end deep learning
+### End-to-end learning
 
 - Instead of using many different steps and manual feature engineering to generate a prediction, use one neural network to figure out the underlying pattern
 -  End-to-end deep learning has advantages like letting the network figure out important features itself and disadvantages like requiring lots of data, so its use really has to be judged on a case-by-case basis by how complex the task or function is that you are solving.
@@ -138,7 +150,77 @@ Without data mismatch | With data mismatch
 <img width=500 src="/datadocs/assets/deep-learning_W640.jpg"/>
 <center><a href="https://www.researchgate.net/publication/322325843_Deep_learning_for_smart_manufacturing_Methods_and_applications/figures?lo=1&utm_source=google&utm_medium=organic" class="credit">Credit</a></center>
 
-## Benchmark competitions
+### Data augmentation
+
+- Suppose we are building an image classification model and are lacking the requisite data due to various reasons. 
+- Data augmentation refers to randomly changing the images in ways that shouldn't impact their interpretation, such as horizontal flipping, zooming, and rotating, to effectively create more data.
+- These can potentially help us get more training data and hence reduce overfitting.
+- But sometimes it can make some important features disappear or slow down training.
+- One of the big opportunities for research is to figure out how to do data augmentation for different domains. Almost nobody is looking at that and to me it is one of the biggest opportunities that could let you decrease data requirements by 5-10x.
+- Commonly data augmentation and training tasks are run on parallel CPU threads.
+- `RandomResizeCrop` is something almost every Kaggle (image competition) winner have used.
+
+<img width=500 src="/datadocs/assets/data-augmentation.png"/>
+<center><a href="https://www.analyticsvidhya.com/blog/2018/04/fundamentals-deep-learning-regularization-techniques/" class="credit">Credit</a></center>
+
+#### Generating images
+
+- [Tips for building large image datasets](https://forums.fast.ai/t/tips-for-building-large-image-datasets/26688)
+- [Generating image datasets quickly](https://forums.fast.ai/t/generating-image-datasets-quickly/19079)
+- [How to scrape the web for images?](https://forums.fast.ai/t/how-to-scrape-the-web-for-assets/7446)
+
+#### Resizing images
+
+- One effective way to synthesize more data is to downscale/upscale images during training.
+- Instead of squashing images, center-crop them to a specific size. Also, do multiple crops and use these to augment your input data, so that the original image will be split into different images of correct size.
+- Padding the images with a solid color: The padding option might introduce an additional error source to the network's prediction, as the network might (read: likely will) be biased to images that contain such a padded border.
+- When you're dealing with object detection and instance segmentation, anchor box sizes which are also hyperparameters need to adjust if you have a dataset with high variance in image sizes.
+- Fully-convolutional networks (FCN) as well as networks with Global Average Pooling (GAP) can work regardless of the original image size, without requiring any fixed number of units at any stage, given that all connections are local.
+- Make a spatial pyramid pooling layer and put it after your last convolution layer so that the FC layers always get constant dimensional vectors as input.
+- [Spatial Pyramid Pooling in Deep Convolutional Networks for Visual Recognition](https://arxiv.org/abs/1406.4729)
+
+#### Mixup
+
+- Combine two images by taking some amount of another image and some amount of another.
+    - For example, we might take 30% of a plane image and 70% of a dog image and then label for that combination will be 30% of a plane and 70% of a dog.
+- Generalizes well to all domains and definitely something everyone should pay attention to.
+
+<img width=300 src="/datadocs/assets/1*8xjWZ6pLhHErDlsC3eOysg.png"/>
+<center><a href="https://medium.com/@lankinen/fast-ai-lesson-12-notes-part-2-v3-dd53bec89c0b" class="credit">Credit</a></center>
+
+#### Label smoothing
+
+- When we apply the cross-entropy loss to a classification task, we’re expecting true labels to have 1, while the others 0. In other words, we have no doubts that the true labels are true, and the others are not. Is that always true? Maybe not.
+- One possible solution to this is to relax our confidence on the labels.
+    - For example, we can slightly lower the loss target values from 1 to, say, 0.9.
+- If label smoothing is nonzero, smooth the labels towards 1/num_classes.
+
+$$\large{loss=y_k(1-\alpha)+\frac{\alpha}{K}}$$
+<center>where</center>
+<center>\\(y_k\\): is "1" for the correct class and "0" for the rest,</center>
+<center>\\(\alpha\\): label smoothing parameter,</center>
+<center>\\(K\\): the number of classes</center>
+
+- Helps the model to train around mislabeled data and consequently improve its robustness and performance.
+- [When Does Label Smoothing Help?](https://arxiv.org/abs/1906.02629)
+
+#### Test-time augmentation
+
+- Test-time augmentation (TTA) is a form of data augmentation that a model uses during test time, as opposed to most data augmentation techniques that run during training time.
+- The technique works as follows:
+  - augment a test image in multiple ways
+  - use the model to classify these variants of the test image
+  - average the results of the model’s many predictions
+- The technique found popularity among some competitors in the ImageNet Large Scale Visual Recognition Competition
+
+### Mixed precision learning
+
+- Mixed precision training is a technique where instead of using 32-bit floats we use 16-bit floats.
+    - This will speed up the training about 3x.
+    - It is only working on modern Nvidia drivers.
+- We can’t do all in 16-bit because it is not accurate.
+    - Forward and backward passes are done in 16-bit because they are time consuming.
+- [Fixed-Precision Training Techniques Using Tensor Cores for Deep Learning](https://devblogs.nvidia.com/video-mixed-precision-techniques-tensor-cores-deep-learning/)
 
 ### Ensemble learning
 
@@ -150,12 +232,3 @@ Without data mismatch | With data mismatch
 
 - One of the most effective methods is to train a single neural network, converging to several local minima along its optimization path, and save the model parameters. This way, we obtain the seemingly contradictory goal of ensembling multiple neural networks at no additional training cost.
 - [Snapshot Ensembles: Train 1, get M for free](https://arxiv.org/abs/1704.00109)
-
-### Test-time augmentation (TTA)
-
-- TTA is a form of data augmentation that a model uses during test time, as opposed to most data augmentation techniques that run during training time.
-- The technique works as follows:
-  - augment a test image in multiple ways
-  - use the model to classify these variants of the test image
-  - average the results of the model’s many predictions
-- The technique found popularity among some competitors in the ImageNet Large Scale Visual Recognition Competition

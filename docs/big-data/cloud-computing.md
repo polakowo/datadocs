@@ -161,9 +161,9 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/big-data/
     - Applications are accessible from almost any internet-connected device, from anywhere.
     - In many cases more affordable than similar options.
     - Clients have fast access to most recent patches and features.
-- Some examples are Google Docs, Gmail, iCloud and Salesforce.
+- Some examples are Google Docs, Gmail, Dropbox and Salesforce.
 
-<center><img width=100 src="/datadocs/assets/gmail.png"/></center>
+<center><img width=100 src="/datadocs/assets/Dropbox_Logo_02.svg.png"/></center>
 
 #### Serverless computing
 

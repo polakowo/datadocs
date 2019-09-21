@@ -6,18 +6,20 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/deep-lear
 ---
 
 - This is a form of regression that penalizes the weights of the nodes and shrinks them towards zero. 
-- This technique discourages learning a more complex or flexible model, so as to avoid the risk of overfitting.
-- It forces the downstream hidden units not to rely too much on the previous units by introducing noise.
+- Discourages learning a more complex or flexible model, so as to avoid the risk of overfitting.
+- Forces the downstream hidden units not to rely too much on the previous units by introducing noise.
 
 #### Overfitting
 
-- The concept of regularization plays an important role in preventing overfitting
+- The concept of regularization plays an important role in preventing overfitting.
 - The primary reason overfitting happens is because the model learns even the tiniest details (noise) present in the data.
-- In practice, it is always better to use regularization methods to control overfitting instead of the number of neurons.
+- It's always better to use regularization methods to control overfitting instead of the number of neurons.
 
 <img width=400 src="/datadocs/assets/layer_sizes.jpeg"/>
 <img width=400 src="/datadocs/assets/reg_strengths.jpeg"/>
 <center><a href="http://cs231n.github.io/neural-networks-1/" class="credit">Credit</a></center>
+
+- Overfit -> Reduce Overfitting -> There is no step 3. Remember overfitting doesn’t mean having a lower training loss than validation loss, that is normal. It means you have seen your validation error getting worse, until you see that happening you’re not overfitting.
 
 #### Examples of regularization
 
@@ -66,8 +68,8 @@ $$L2=\large{\lambda\sum{\|\|W\|\|_2^2}}$$
 <img width=500 src="/datadocs/assets/1*IrdJ5PghD9YoOyVAQ73MJw.gif"/>
 <center><a href="https://chatbotslife.com/regularization-in-deep-learning-f649a45d6e0" class="credit">Credit</a></center>
 
-- If you have to explain drop-out to a 6-year-old, this is how: 
-> Imagine a scenario, in a classroom, a teacher asks some questions but always same two kids are answering, immediately. Now, the teacher asks them to stay quiet for some time and let other pupils participate. This way other students get to learn better. Maybe they answer wrong, but the teacher can correct them(weight updates). This way the whole class(layer) learns about a topic better.
+> **If you have to explain drop-out to a 6-year-old, this is how:**  
+Imagine a scenario, in a classroom, a teacher asks some questions but always same two kids are answering, immediately. Now, the teacher asks them to stay quiet for some time and let other pupils participate. This way other students get to learn better. Maybe they answer wrong, but the teacher can correct them(weight updates). This way the whole class(layer) learns about a topic better.
 
 - Dropout forces a neural network to learn more robust features that are useful in conjunction with many different random subsets of the other neurons.
 - Dropout roughly doubles the number of iterations required to converge. However, training time for each epoch is less.
@@ -96,33 +98,6 @@ $$L2=\large{\lambda\sum{\|\|W\|\|_2^2}}$$
     - Use a large number of units (\\(1/p\\)) in a hidden layer.
     - At startup, drop weights with probability \\(p\\) in that layer.
     - Use the same structure throughout all iterations (in contrast to DropConnect).
-
-## Data augmentation
-
-- Suppose we are building an image classification model and are lacking the requisite data due to various reasons. 
-- Data augmentation refers to randomly changing the images in ways that shouldn't impact their interpretation, such as horizontal flipping, zooming, and rotating, to effectively create more data.
-- These can potentially help us get more training data and hence reduce overfitting.
-- Commonly data augmentation and training tasks are run on parallel CPU threads
-
-<img width=500 src="/datadocs/assets/data-augmentation.png"/>
-<center><a href="https://www.analyticsvidhya.com/blog/2018/04/fundamentals-deep-learning-regularization-techniques/" class="credit">Credit</a></center>
-
-#### Image size
-
-- One effective way to synthesize more data is to downscale/upscale images during training.
-- Fully-convolutional networks (FCN) as well as networks with Global Average Pooling (GAP) can work regardless of the original image size, without requiring any fixed number of units at any stage, given that all connections are local.
-- Instead of squashing images, center-crop them to a specific size. Also, do multiple crops and use these to augment your input data, so that the original image will be split into different images of correct size.
-- Padding the images with a solid color: The padding option might introduce an additional error source to the network's prediction, as the network might (read: likely will) be biased to images that contain such a padded border.
-- Make a spatial pyramid pooling layer and put it after your last convolution layer so that the FC layers always get constant dimensional vectors as input.
-- [Spatial Pyramid Pooling in Deep Convolutional Networks for Visual Recognition](https://arxiv.org/abs/1406.4729)
-- When you're dealing with object detection and instance segmentation, anchor box sizes which are also hyperparameters need to adjust if you have a dataset with high variance in image sizes.
-
-#### Generating image datasets
-
-- https://forums.fast.ai/t/tips-for-building-large-image-datasets/26688
-- https://forums.fast.ai/t/generating-image-datasets-quickly/19079
-- https://github.com/fastai/course-v3/blob/master/nbs/dl1/lesson2-download.ipynb
-- https://forums.fast.ai/t/how-to-scrape-the-web-for-assets/7446
 
 ## Early stopping
 

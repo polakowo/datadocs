@@ -89,10 +89,10 @@
             "label": "General",
             "ids": [
                 "big-data/data-engineering",
-                "big-data/cloud-computing",
                 "big-data/data-warehouses",
                 "big-data/data-lakes",
-                "big-data/data-pipelines"
+                "big-data/data-pipelines",
+                "big-data/cloud-computing"
             ]
         }, {
             "type": "subcategory",
