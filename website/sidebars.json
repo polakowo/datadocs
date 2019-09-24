@@ -80,7 +80,7 @@
                 "deep-learning/rnns",
                 "deep-learning/word-embeddings",
                 "deep-learning/nmt",
-                "deep-learning/attention-mechanism",
+                "deep-learning/attention-mechanisms",
                 "deep-learning/speech-recognition"
             ]
         }],

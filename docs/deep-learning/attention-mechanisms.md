@@ -1,8 +1,8 @@
 ---
-id: attention-mechanism
-title: Attention Mechanism
-sidebar_label: Attention Mechanism
-custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/deep-learning/attention-mechanism.md
+id: attention-mechanisms
+title: Attention Mechanisms
+sidebar_label: Attention Mechanisms
+custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/deep-learning/attention-mechanisms.md
 ---
 
 - At any given moment, our minds concentrate on a subset of the total information available to them. This is important, because the field of sensation is wide, and the mind’s bandwidth to process information is narrow, and some inputs are indeed more important that others, with regard to any given goal.
@@ -18,8 +18,11 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/deep-lear
 - Attention mechanisms are components of memory networks, which focus their attention on external memory storage.
 - Attention is used for machine translation, speech recognition, reasoning, image captioning, summarization, and the visual identification of objects.
 - [Attention? Attention!](https://lilianweng.github.io/lil-log/2018/06/24/attention-attention.html)
+- [How Does Attention Work in Encoder-Decoder Recurrent Neural Networks](https://machinelearningmastery.com/how-does-attention-work-in-encoder-decoder-recurrent-neural-networks/)
 - [Attention and Augmented Recurrent Neural Networks](https://distill.pub/2016/augmented-rnns/)
 - [Implementing NLP Attention Mechanisms with DeepLearning4J](https://www.youtube.com/watch?v=XrZ_Y4koV5A&feature=youtu.be&t=249)
+
+## Attention model
 
 #### Encoder-decoder approach
 
@@ -66,3 +69,11 @@ $$\large{c_t=\sum_{i=1}{\alpha_{ti}h_i}}$$
 #### Cons
 
 - That advance, like many increases in accuracy, comes at the cost of increased computational demands.
+
+## Transformer
+
+- TODO
+
+## BERT
+
+- TODO

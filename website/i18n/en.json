@@ -77,9 +77,9 @@
         "title": "Activation Functions",
         "sidebar_label": "Activation Functions"
       },
-      "deep-learning/attention-mechanism": {
-        "title": "Attention Mechanism",
-        "sidebar_label": "Attention Mechanism"
+      "deep-learning/attention-mechanisms": {
+        "title": "Attention Mechanisms",
+        "sidebar_label": "Attention Mechanisms"
       },
       "deep-learning/backpropagation": {
         "title": "Backpropagation",

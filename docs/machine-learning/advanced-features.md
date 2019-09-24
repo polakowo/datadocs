@@ -66,8 +66,10 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/machine-l
 
 #### PCA
 
-- PCA (Principal Component Analysis) performs a linear mapping of the data to a lower-dimensional space in such a way that the variance of the data in the low-dimensional representation is maximized. It does so by calculating the eigenvectors from the covariance matrix.
-- Can drop the least important feature while still retaining the most valuable parts.
+- PCA (Principal Component Analysis) performs a linear mapping of the data to a lower-dimensional space in such a way that the variance of the data in the low-dimensional representation is maximized. 
+    - It does so by calculating the eigenvectors from the covariance matrix.
+- Helps decorrelating correlated features.
+    - Can drop the least important feature while still retaining the most valuable parts.
 - In practice, we would choose the number of principal components such that we can explain 90% of the initial data dispersion (via the `explained_variance_ratio`)
 - Each of the new features or components created after PCA are all independent of one another.
 - Mainly applied to dense data.

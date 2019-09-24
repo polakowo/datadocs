@@ -7,20 +7,6 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/machine-l
 
 - Machine learning is an application of artificial intelligence (AI) that provides systems the ability to automatically learn and improve from experience without being explicitly programmed.
 
-## Roles
-
-- Business analyst: 
-    - Expert in the business/industry with specific domain knowledge.
-- Data scientist: 
-    - Expert in mathematics, statistics and programming (data science/scripting)
-    - Can write low-level code or leverage higher level tooling.
-- Citizen data scientist: 
-    - Similar to the data scientist, but more high level.
-    - Needs to use higher level tooling instead of coding.
-    - Depending on the ease of the tooling this can even be done by the business analyst.
-- Developer: 
-    - Expert in software development process (enterprise applications)
-
 ## Machine Learning Workflow
 
 <img width=700 src="/datadocs/assets/1*2T5rbjOBGVFdSvtlhCqlNg.png"/>
