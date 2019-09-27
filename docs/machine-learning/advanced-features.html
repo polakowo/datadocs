@@ -75,13 +75,10 @@
 <h2><a class="anchor" aria-hidden="true" id="distance-based-features"></a><a href="#distance-based-features" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Distance-based features</h2>
 <ul>
 <li>Perform a <code>groupby</code> operation on instance neighborhoods (not only geodesic).</li>
-<li>Explicit group is not needed</li>
 <li>More flexible but harder to implement:
 <ul>
 <li>(optional) Mean encode all variables to create a homogeneous feature space.</li>
-<li>Calculate \(N\) nearest neighbors with some distance metric (e.g., Bray-Curtis).
-<center><img width=200 src="/datadocs/assets/knn3.png"/></center>
-<center><a href="https://www.analyticsvidhya.com/blog/2018/03/introduction-k-neighbours-algorithm-clustering/" class="credit">Credit</a></center></li>
+<li>Calculate \(N\) nearest neighbors with some distance metric (e.g., Bray-Curtis).</li>
 <li>Calculate various statistics based on the nearest \(K\) neighbors.</li>
 <li>Examples:
 <ul>
@@ -96,6 +93,81 @@
 <li>Distance between their average word2vec vectors</li>
 <li>Levenshtein distance</li>
 </ul></li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="k-nn"></a><a href="#k-nn" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>k-NN</h3>
+<ul>
+<li>K-nearest neighbors is a non-parametric method used for classification and regression.
+<ul>
+<li>Although k-NN belongs to the family of ML algorithms, it does not learn anything.</li>
+</ul></li>
+<li>k-NN is a type of instance-based learning, or lazy learning, where the function is only approximated locally and all computation is deferred until classification.</li>
+<li>The algorithm searches for \(k\)-nearest training samples using a distance metric.
+<ul>
+<li>Regression: takes the average of the values.</li>
+<li>Classification: classified by a plurality vote.</li>
+<li>Larger values of \(k\) reduce noise but also make class boundaries less distinct.</li>
+</ul></li>
+</ul>
+<p><center><img width=200 src="/datadocs/assets/knn3.png"/></center>
+<center><a href="https://www.analyticsvidhya.com/blog/2018/03/introduction-k-neighbours-algorithm-clustering/" class="credit">Credit</a></center></p>
+<h4><a class="anchor" aria-hidden="true" id="pros"></a><a href="#pros" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Pros</h4>
+<ul>
+<li>Very simple to understand and equally easy to implement.</li>
+<li>A non-parametric algorithm which means there are no assumptions to be met.</li>
+<li>Given that it is a memory-based approach, it immediately adapts as new training data is collected.
+<ul>
+<li>Allows the algorithm to respond quickly to changes in the input during real-time use.</li>
+</ul></li>
+<li>Works for multi-class problems without any extra efforts.</li>
+<li>Can be used both for classification and regression problems.</li>
+<li>Gives the user flexibility to choose the distance metric.</li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="cons"></a><a href="#cons" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Cons</h4>
+<ul>
+<li>Its speed declines with the increase in the size of the dataset.</li>
+<li>Suffers under curse of dimensionality: works only well for a small number of input variables.
+<ul>
+<li>For high-dimensional data, dimension reduction is usually performed.</li>
+</ul></li>
+<li>Requires features to be scaled for certain distance criteria (e.g. Euclidean, Manhattan)</li>
+<li>Doesn’t perform well on imbalanced data: a more frequent class tends to dominate the prediction.</li>
+<li>The accuracy can be severely degraded by the presence of noisy or irrelevant features.
+<ul>
+<li>Select and scale features to improve classification.</li>
+</ul></li>
+<li>Has no capability of dealing with missing values.</li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="k-means"></a><a href="#k-means" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>K-means</h3>
+<ul>
+<li>A very simple algorithm used in market segmentation, computer vision, and astronomy.</li>
+<li>Performs division of objects into clusters that are “similar” inside and “dissimilar” outside.</li>
+<li>k-means clustering aims to partition \(n\) observations into \(k\) clusters:
+<ul>
+<li>Select the number of clusters \(k\) that you think is the optimal number.</li>
+<li>Initialize \(k\) points as “centroids” randomly within the data space.</li>
+<li>Attribute each observation to its closest centroid.</li>
+<li>Update the centroids to the center of all the attributed set of observations.</li>
+<li>Repeat the previous steps a fixed number of times or until all of the centroids are stable.</li>
+</ul></li>
+<li>One method for choosing a &quot;good&quot; \(k\) is Elbow method:
+<ul>
+<li>The centroid distance - the average distance between data points and cluster centroids - typically reaches some &quot;elbow&quot;; it stops decreasing at a sharp rate.</li>
+</ul></li>
+</ul>
+<p><center><img width=300 src="/datadocs/assets/the-optimal-number-of-clusters.png"/></center>
+<center><a href="https://www.datanovia.com/en/lessons/determining-the-optimal-number-of-clusters-3-must-know-methods/" class="credit">Credit</a></center></p>
+<ul>
+<li>Inherently, K-means is NP-hard:
+<ul>
+<li>K-Means finds a solution in \(O(n^{dk+1})\) in time.</li>
+<li>There are some heuristics to deal with this, such as <a href="http://scikit-learn.org/stable/auto_examples/cluster/plot_mini_batch_kmeans.html">MiniBatch K-means</a></li>
+</ul></li>
+<li>Other limitations:
+<ul>
+<li>The parameter \(k\) is known to be hard to choose.</li>
+<li>Cannot be used with arbitrary distance functions or on non-numerical data.</li>
+</ul></li>
+<li><a href="https://medium.com/open-machine-learning-course/open-machine-learning-course-topic-7-unsupervised-learning-pca-and-clustering-db7879568417">Unsupervised Learning: PCA and Clustering</a></li>
 </ul>
 <h2><a class="anchor" aria-hidden="true" id="bumper-features"></a><a href="#bumper-features" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Bumper features</h2>
 <ul>
@@ -126,23 +198,37 @@
 <h2><a class="anchor" aria-hidden="true" id="matrix-factorization"></a><a href="#matrix-factorization" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Matrix factorization</h2>
 <ul>
 <li>Matrix factorization is a generic approach for dimensionality reduction and feature extraction.</li>
+<li>Useful as a dimensionality reduction technique:
+<ul>
+<li>Dimensionality reduction helps in filtering out not important features.</li>
+<li>For example, for higher dimensions, clustering algorithms have a difficult time figuring out which features are the most important, resulting in noisier clusters.</li>
+</ul></li>
 <li>Can provide additional diversity which is good for ensembles.</li>
 <li>It is a lossy transformation which efficiency depends on the task and the number of latent factors.</li>
 <li>The same transformation tricks as for linear models should be used.</li>
 <li>The same parameters should be used throughout the dataset as it's a trainable transformation.</li>
 <li><a href="http://scikit-learn.org/stable/modules/decomposition.html">Overview of Matrix Decomposition methods (sklearn)</a></li>
 </ul>
-<h4><a class="anchor" aria-hidden="true" id="pca"></a><a href="#pca" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>PCA</h4>
+<h3><a class="anchor" aria-hidden="true" id="pca"></a><a href="#pca" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>PCA</h3>
 <ul>
 <li>PCA (Principal Component Analysis) performs a linear mapping of the data to a lower-dimensional space in such a way that the variance of the data in the low-dimensional representation is maximized.
 <ul>
-<li>It does so by calculating the eigenvectors from the covariance matrix.</li>
+<li>Features with low variance contribute less to the separation of objects.</li>
+<li>For example, a constant feature means it doesn't have any distinguishing information.</li>
+</ul></li>
+<li>Works by calculating the eigenvectors from the covariance matrix.</li>
+<li>Creates components in the order of causing the most to least variance.
+<ul>
+<li>In practice, we would create as many components as possible and from them, choose the top \(N\) principal components that can explain 80-90% of the initial data dispersion (via the <code>explained_variance_ratio</code>)</li>
+<li>We can then examine the makeup of each PCA component based on the weightings of the original features that are included in that component.</li>
+<li><a href="https://aws.amazon.com/blogs/machine-learning/analyze-us-census-data-for-population-segmentation-using-amazon-sagemaker/">Analyze US census data for population segmentation using Amazon SageMaker</a>
+<center><img width=400 src="/datadocs/assets/census-sagemaker-2.gif"/></center>
+<center><a href="https://aws.amazon.com/blogs/machine-learning/analyze-us-census-data-for-population-segmentation-using-amazon-sagemaker/" class="credit">Credit</a></center></li>
 </ul></li>
 <li>Helps decorrelating correlated features.
 <ul>
 <li>Can drop the least important feature while still retaining the most valuable parts.</li>
 </ul></li>
-<li>In practice, we would choose the number of principal components such that we can explain 90% of the initial data dispersion (via the <code>explained_variance_ratio</code>)</li>
 <li>Each of the new features or components created after PCA are all independent of one another.</li>
 <li>Mainly applied to dense data.</li>
 <li>Limitations:
@@ -152,13 +238,13 @@
 <li>Strongly focused on variance which may not correlate with predictive power.</li>
 </ul></li>
 </ul>
-<h4><a class="anchor" aria-hidden="true" id="svd"></a><a href="#svd" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>SVD</h4>
+<h3><a class="anchor" aria-hidden="true" id="svd"></a><a href="#svd" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>SVD</h3>
 <ul>
 <li>SVD (Singular Value Decomposition) is a factorization of a matrix.</li>
 <li>Same advantages and limitations as for PCA but faster.</li>
 <li><code>TruncatedSVD</code> can be applied to sparse matrices.</li>
 </ul>
-<h4><a class="anchor" aria-hidden="true" id="nmf"></a><a href="#nmf" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>NMF</h4>
+<h3><a class="anchor" aria-hidden="true" id="nmf"></a><a href="#nmf" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>NMF</h3>
 <ul>
 <li>NMF (Nonnegative Matrix Factorization) is a state of the art feature extraction algorithm.</li>
 <li>Automatically extracts sparse and meaningful features from a set of nonnegative data vectors (counts-like data).</li>
@@ -185,7 +271,7 @@
 </ul></li>
 </ul></li>
 </ul>
-<h4><a class="anchor" aria-hidden="true" id="t-sne"></a><a href="#t-sne" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>t-SNE</h4>
+<h3><a class="anchor" aria-hidden="true" id="t-sne"></a><a href="#t-sne" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>t-SNE</h3>
 <ul>
 <li>t-SNE (t-Distributed Stochastic Neighbor Embedding) is a tool to visualize high-dimensional data.</li>
 <li>Unlike PCA, is not a linear projection but allows to capture a non-linear structure.</li>
@@ -222,7 +308,7 @@
 <li><a href="http://scikit-learn.org/stable/auto_examples/manifold/plot_compare_methods.html">Comparison of Manifold Learning methods (sklearn)</a></li>
 <li><a href="https://distill.pub/2016/misread-tsne/">How to Use t-SNE Effectively (distill.pub blog)</a></li>
 </ul>
-</span></div></article></div><div class="docLastUpdate"><em>Last updated on 2019-9-24 by Oleg Polakow</em></div><div class="docs-prevnext"><a class="docs-prev button" href="/datadocs/docs/machine-learning/feature-engineering"><span class="arrow-prev">← </span><span>Feature Engineering</span></a><a class="docs-next button" href="/datadocs/docs/machine-learning/metric-optimization"><span>Metric Optimization</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#group-based-features">Group-based features</a></li><li><a href="#distance-based-features">Distance-based features</a></li><li><a href="#bumper-features">Bumper features</a></li><li><a href="#feature-interactions">Feature interactions</a></li><li><a href="#matrix-factorization">Matrix factorization</a></li></ul></nav></div><footer class="nav-footer" id="footer"><div class="brand-box"><div class="brand"><a href="https://www.tum.de/nc/en/" target="_blank" rel="noreferrer noopener" class="brand-link"><img src="/datadocs/img/tum_logo.png" alt="Technical University of Munich" height="45"/></a></div><div class="brand"><a href="https://opensource.facebook.com/" target="_blank" rel="noreferrer noopener" class="brand-link"><img src="/datadocs/img/oss_logo.png" alt="Facebook Open Source" width="170" height="45"/></a></div></div><section class="copyright">Copyright © 2019 polakowo.io</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
+</span></div></article></div><div class="docLastUpdate"><em>Last updated on 2019-9-27 by Oleg Polakow</em></div><div class="docs-prevnext"><a class="docs-prev button" href="/datadocs/docs/machine-learning/feature-engineering"><span class="arrow-prev">← </span><span>Feature Engineering</span></a><a class="docs-next button" href="/datadocs/docs/machine-learning/metric-optimization"><span>Metric Optimization</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#group-based-features">Group-based features</a></li><li><a href="#distance-based-features">Distance-based features</a><ul class="toc-headings"><li><a href="#k-nn">k-NN</a></li><li><a href="#k-means">K-means</a></li></ul></li><li><a href="#bumper-features">Bumper features</a></li><li><a href="#feature-interactions">Feature interactions</a></li><li><a href="#matrix-factorization">Matrix factorization</a><ul class="toc-headings"><li><a href="#pca">PCA</a></li><li><a href="#svd">SVD</a></li><li><a href="#nmf">NMF</a></li><li><a href="#t-sne">t-SNE</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><div class="brand-box"><div class="brand"><a href="https://www.tum.de/nc/en/" target="_blank" rel="noreferrer noopener" class="brand-link"><img src="/datadocs/img/tum_logo.png" alt="Technical University of Munich" height="45"/></a></div><div class="brand"><a href="https://opensource.facebook.com/" target="_blank" rel="noreferrer noopener" class="brand-link"><img src="/datadocs/img/oss_logo.png" alt="Facebook Open Source" width="170" height="45"/></a></div></div><section class="copyright">Copyright © 2019 polakowo.io</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
                 document.addEventListener('keyup', function(e) {
                   if (e.target !== document.body) {
                     return;

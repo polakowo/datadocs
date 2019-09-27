@@ -69,7 +69,7 @@
 <h2><a class="anchor" aria-hidden="true" id="amazon-sagemaker"></a><a href="#amazon-sagemaker" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Amazon SageMaker</h2>
 <p><center><img width=120 src="/datadocs/assets/IconOnly-1.png"/></center></p>
 <ul>
-<li><a href="https://aws.amazon.com/sagemaker/">Amazon SageMaker</a> is a fully managed service for integrating machine learning-based models into applications.</li>
+<li><a href="https://aws.amazon.com/sagemaker/">Amazon SageMaker</a> is a fully-managed, end-to-end machine learning service.</li>
 <li>Compared to plug-and-play API services, SageMaker is a platform tailor-made for ML workflows.
 <ul>
 <li>Covers the entire ML workflow to label and prepare data, choose an algorithm, train the model, tune and optimize it for deployment, make predictions, and take action.</li>
@@ -95,6 +95,7 @@
 <li>Out-of-the-box support for multi-node training.</li>
 <li>Straightforward deployment of trained models to production.</li>
 <li>A developer can track and trigger alarms for changes in performance via Amazon CloudWatch.</li>
+<li>SageMaker is a valuable skill to learn, since it teaches you the best practices in the ML world.</li>
 </ul>
 <h4><a class="anchor" aria-hidden="true" id="apis"></a><a href="#apis" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>APIs</h4>
 <ul>
@@ -149,13 +150,17 @@
 <li>Having large amounts of training data could be a differentiator in building high-quality models.</li>
 <li>Use <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms.html">Amazon SageMaker Ground Truth</a> to create a labeled dataset.
 <ul>
-<li>Use workers from Amazon Mechanical Turk, a vendor company, or an internal, private workforce.</li>
+<li>Uses a combination of human labelers and an active learning model to label data.</li>
+</ul></li>
+<li>Human labelers:
+<ul>
+<li>Workers from Amazon Mechanical Turk, a vendor company, or an internal, private workforce.</li>
 <li>Bounding boxes, image and text classification, semantic segmentation, named entity recognition.</li>
 </ul></li>
-<li>Use automated data labeling:
+<li>Active learning model:
 <ul>
-<li>ML decides which data needs to be labeled by humans.</li>
-<li>Save up to 70% of costs by utilizing active learning.</li>
+<li>An ML algorithm decides which data needs to be labeled by humans.</li>
+<li>Reduces the time and cost to label datasets by about 70%.</li>
 </ul></li>
 <li>Increase the quality by increasing the number of labelers per dataset object.
 <ul>
@@ -166,10 +171,13 @@
 <h4><a class="anchor" aria-hidden="true" id="explore-and-transform-the-data"></a><a href="#explore-and-transform-the-data" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Explore and transform the data</h4>
 <ul>
 <li>Explore training data to determine what to clean up and which transformations to apply.</li>
-<li>Split the training dataset into training and validation, write them to a file and upload those to S3.
+<li>Split the training dataset into training and validation.</li>
+<li>Save the datasets into files and upload them to S3.
 <ul>
+<li>One can transform them into <code>RecordSet</code> format to do this automatically.</li>
 <li>Do the same with test to use SageMaker's Batch Transform functionality to test the model.</li>
 <li>The datasets should contain no headers or index, the label should occur as first column.</li>
+<li>Also upload all artifacts that are required by inference code (e.g. word vocabulary)</li>
 </ul></li>
 <li>Think of ETL as a software application.
 <ul>
@@ -351,7 +359,7 @@
 <li>Do not assume that different models will return data in the same way (JSON or CSV?)</li>
 </ul></li>
 </ul>
-</span></div></article></div><div class="docLastUpdate"><em>Last updated on 2019-9-24 by Oleg Polakow</em></div><div class="docs-prevnext"><a class="docs-prev button" href="/datadocs/docs/machine-learning/deployment"><span class="arrow-prev">← </span><span>Deployment</span></a><a class="docs-next button" href="/datadocs/docs/deep-learning/deep-learning"><span>Deep Learning</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#amazon-sagemaker">Amazon SageMaker</a><ul class="toc-headings"><li><a href="#workflow">Workflow</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><div class="brand-box"><div class="brand"><a href="https://www.tum.de/nc/en/" target="_blank" rel="noreferrer noopener" class="brand-link"><img src="/datadocs/img/tum_logo.png" alt="Technical University of Munich" height="45"/></a></div><div class="brand"><a href="https://opensource.facebook.com/" target="_blank" rel="noreferrer noopener" class="brand-link"><img src="/datadocs/img/oss_logo.png" alt="Facebook Open Source" width="170" height="45"/></a></div></div><section class="copyright">Copyright © 2019 polakowo.io</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
+</span></div></article></div><div class="docLastUpdate"><em>Last updated on 2019-9-27 by Oleg Polakow</em></div><div class="docs-prevnext"><a class="docs-prev button" href="/datadocs/docs/machine-learning/deployment"><span class="arrow-prev">← </span><span>Deployment</span></a><a class="docs-next button" href="/datadocs/docs/deep-learning/deep-learning"><span>Deep Learning</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#amazon-sagemaker">Amazon SageMaker</a><ul class="toc-headings"><li><a href="#workflow">Workflow</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><div class="brand-box"><div class="brand"><a href="https://www.tum.de/nc/en/" target="_blank" rel="noreferrer noopener" class="brand-link"><img src="/datadocs/img/tum_logo.png" alt="Technical University of Munich" height="45"/></a></div><div class="brand"><a href="https://opensource.facebook.com/" target="_blank" rel="noreferrer noopener" class="brand-link"><img src="/datadocs/img/oss_logo.png" alt="Facebook Open Source" width="170" height="45"/></a></div></div><section class="copyright">Copyright © 2019 polakowo.io</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
                 document.addEventListener('keyup', function(e) {
                   if (e.target !== document.body) {
                     return;
