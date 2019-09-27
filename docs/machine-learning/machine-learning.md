@@ -60,7 +60,7 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/machine-l
 - For example, inspect descriptive statistics, visualization, detection of garbage data/noise/outlier values, signal-to-noise ratio.
 - Quantify suitability of data for ML: number of records and features, availability and quality of labels.
 
-#### Data processing and wrangling
+#### Data cleaning and preprocessing
 
 - Data-gathering methods are often loosely controlled, resulting in corrupted values.
     - The raw data retrieved in the first step is in most cases unusable by ML algorithms.

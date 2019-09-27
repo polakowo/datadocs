@@ -179,6 +179,7 @@ $$\large{Accuracy=\frac{1}{n}\sum_{i=1}^{n}{[y_i=\hat{y}_i]}}$$
 - But information about class distribution is lost when resampling the dataset and can skew predictions on test.
 - Penalize mistakes on minority classes with class re-weighting (`sample_weight`).
 - Use a different performance metric (e.g., precision, recall, F-score, ROC AUC).
+- [Hands-on example: Detecting credit card fraud](https://nbviewer.jupyter.org/github/awslabs/amazon-sagemaker-examples/blob/master/scientific_details_of_algorithms/linear_learner_class_weights_loss_functions/linear_learner_class_weights_loss_functions.ipynb)
 
 ### LogLoss
 

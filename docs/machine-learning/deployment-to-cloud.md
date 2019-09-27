@@ -15,7 +15,7 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/machine-l
 
 <center><img width=120 src="/datadocs/assets/IconOnly-1.png"/></center>
 
-- [Amazon SageMaker](https://aws.amazon.com/sagemaker/) is a fully managed service for integrating machine learning-based models into applications.
+- [Amazon SageMaker](https://aws.amazon.com/sagemaker/) is a fully-managed, end-to-end machine learning service.
 - Compared to plug-and-play API services, SageMaker is a platform tailor-made for ML workflows.
     - Covers the entire ML workflow to label and prepare data, choose an algorithm, train the model, tune and optimize it for deployment, make predictions, and take action.
 - Habitual environment:
@@ -33,6 +33,7 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/machine-l
 - Out-of-the-box support for multi-node training.
 - Straightforward deployment of trained models to production.
 - A developer can track and trigger alarms for changes in performance via Amazon CloudWatch.
+- SageMaker is a valuable skill to learn, since it teaches you the best practices in the ML world.
 
 #### APIs
 
@@ -77,11 +78,13 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/machine-l
 
 - Having large amounts of training data could be a differentiator in building high-quality models.
 - Use [Amazon SageMaker Ground Truth](https://docs.aws.amazon.com/sagemaker/latest/dg/sms.html) to create a labeled dataset.
-    - Use workers from Amazon Mechanical Turk, a vendor company, or an internal, private workforce.
+    - Uses a combination of human labelers and an active learning model to label data.
+- Human labelers: 
+    - Workers from Amazon Mechanical Turk, a vendor company, or an internal, private workforce.
     - Bounding boxes, image and text classification, semantic segmentation, named entity recognition.
-- Use automated data labeling: 
-    - ML decides which data needs to be labeled by humans.
-    - Save up to 70% of costs by utilizing active learning.
+- Active learning model:
+    - An ML algorithm decides which data needs to be labeled by humans.
+    - Reduces the time and cost to label datasets by about 70%.
 - Increase the quality by increasing the number of labelers per dataset object.
     - Use majority voting or probabilities of labelers being correct by looking at their past work.
 - [Build Highly Accurate Training Datasets at Reduced Costs](https://youtu.be/oQOQ8nvgu1w)
@@ -89,9 +92,12 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/machine-l
 #### Explore and transform the data
 
 - Explore training data to determine what to clean up and which transformations to apply.
-- Split the training dataset into training and validation, write them to a file and upload those to S3.
+- Split the training dataset into training and validation.
+- Save the datasets into files and upload them to S3.
+    - One can transform them into `RecordSet` format to do this automatically.
     - Do the same with test to use SageMaker's Batch Transform functionality to test the model.
     - The datasets should contain no headers or index, the label should occur as first column.
+    - Also upload all artifacts that are required by inference code (e.g. word vocabulary)
 - Think of ETL as a software application.
     - Wrap steps into modular, readable, reusable functions.
 - Inference pipelines:

@@ -32,6 +32,10 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/machine-l
 - http://www.chioka.in/kaggle-competition-solutions/
 - https://github.com/ShuaiW/kaggle-classification/
 
+#### Tutorials
+
+- https://mlcourse.ai/tutorials
+
 ## Pipeline
 
 - Never join a competition at its very beginning:
