@@ -95,7 +95,12 @@
 <li>Out-of-the-box support for multi-node training.</li>
 <li>Straightforward deployment of trained models to production.</li>
 <li>A developer can track and trigger alarms for changes in performance via Amazon CloudWatch.</li>
-<li>SageMaker is a valuable skill to learn, since it teaches you the best practices in the ML world.</li>
+<li>SageMaker is a valuable skill to learn:
+<ul>
+<li>Teaches the best practices in the world of machine learning.</li>
+<li>Guides through the machine learning lifecycle.</li>
+<li>Has a repository with use cases updated continuously.</li>
+</ul></li>
 </ul>
 <h4><a class="anchor" aria-hidden="true" id="apis"></a><a href="#apis" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>APIs</h4>
 <ul>
@@ -160,6 +165,7 @@
 <li>Active learning model:
 <ul>
 <li>An ML algorithm decides which data needs to be labeled by humans.</li>
+<li>Labels data points and sends those with a confidence below a threshold to human workers.</li>
 <li>Reduces the time and cost to label datasets by about 70%.</li>
 </ul></li>
 <li>Increase the quality by increasing the number of labelers per dataset object.
@@ -172,13 +178,36 @@
 <ul>
 <li>Explore training data to determine what to clean up and which transformations to apply.</li>
 <li>Split the training dataset into training and validation.</li>
+</ul>
+<pre><code class="hljs css language-py"><span class="hljs-comment"># Example: Split into train, validation and test</span>
+
+X_train, X_test, y_train, y_test = sklearn.model_selection.train_test_split(X, y, test_size=<span class="hljs-number">0.33</span>)
+X_train, X_val, y_train, y_val = sklearn.model_selection.train_test_split(X_train, y_train, test_size=<span class="hljs-number">0.33</span>)
+</code></pre>
+<ul>
 <li>Save the datasets into files and upload them to S3.
 <ul>
-<li>One can transform them into <code>RecordSet</code> format to do this automatically.</li>
 <li>Do the same with test to use SageMaker's Batch Transform functionality to test the model.</li>
 <li>The datasets should contain no headers or index, the label should occur as first column.</li>
 <li>Also upload all artifacts that are required by inference code (e.g. word vocabulary)</li>
 </ul></li>
+</ul>
+<pre><code class="hljs css language-py"><span class="hljs-comment"># Example: Upload training data to S3</span>
+
+pd.concat([y_train, X_train], axis=<span class="hljs-number">1</span>).to_csv(os.path.join(data_dir, <span class="hljs-string">'train.csv'</span>), header=<span class="hljs-literal">False</span>, index=<span class="hljs-literal">False</span>)
+train_location = session.upload_data(os.path.join(data_dir, <span class="hljs-string">'train.csv'</span>), key_prefix=prefix)
+
+</code></pre>
+<ul>
+<li>One can transform them into <code>RecordSet</code> format to do this automatically.</li>
+</ul>
+<pre><code class="hljs css language-py"><span class="hljs-comment"># Example: Create training RecordSet</span>
+
+X_train_np = X_train.astype(<span class="hljs-string">'float32'</span>)
+y_train_np = y_train.astype(<span class="hljs-string">'float32'</span>)
+formatted_train_data = learner.record_set(X_train_np, labels=y_train_np)
+</code></pre>
+<ul>
 <li>Think of ETL as a software application.
 <ul>
 <li>Wrap steps into modular, readable, reusable functions.</li>
@@ -201,6 +230,18 @@
 <li>Can be developed and run locally for testing.</li>
 </ul></li>
 <li><a href="https://youtu.be/yGc0qePSYig">Built-in Machine Learning Algorithms</a></li>
+</ul>
+<pre><code class="hljs css language-py"><span class="hljs-comment"># Example: Built-in estimator</span>
+
+container = get_image_uri(session.boto_region_name, <span class="hljs-string">'xgboost'</span>)
+xgb = sagemaker.estimator.Estimator(container,
+                                    role,
+                                    train_instance_count=<span class="hljs-number">1</span>,
+                                    train_instance_type=<span class="hljs-string">'ml.m4.xlarge'</span>,
+                                    output_path=<span class="hljs-string">'s3://{}/{}/output'</span>.format(session.default_bucket(), prefix),
+                                    sagemaker_session=session)
+</code></pre>
+<ul>
 <li>Bring own script, algorithm or model:
 <ul>
 <li>Script mode: Quick training but limited options.</li>
@@ -209,13 +250,23 @@
 <li><a href="https://youtu.be/YQyid2uLOvI">Bring Your Own Custom ML Models</a></li>
 <li><a href="https://www.youtube.com/watch?v=VeEGAeohe7c&amp;list=PLhr1KZpdzukcOr_6j_zmSrvYnLUtgqsZz&amp;index=8">Use the Deep Learning Framework of Your Choice</a></li>
 </ul></li>
-<li>Each notebook is self contained, that is, models cannot be shared between them.
-<ul>
-<li>But one can use <code>attach</code> method to create an Estimator object which is attached to an already completed training job (only the name of the job required)</li>
-</ul></li>
 </ul>
+<pre><code class="hljs css language-py"><span class="hljs-comment"># Example: Custom sklearn estimator</span>
+
+<span class="hljs-keyword">from</span> sagemaker.sklearn.estimator <span class="hljs-keyword">import</span> SKLearn
+
+sklearn_estimator = SKLearn(entry_point=<span class="hljs-string">'train.py'</span>, 
+                            source_dir=<span class="hljs-string">'source_sklearn'</span>, 
+                            role=role, 
+                            train_instance_count=<span class="hljs-number">1</span>, 
+                            train_instance_type=<span class="hljs-string">'ml.c5.xlarge'</span>, 
+                            sagemaker_session=sagemaker_session, 
+                            hyperparameters={},
+                            output_path=<span class="hljs-string">'s3://{}/{}/output'</span>.format(bucket, prefix))
+</code></pre>
 <h4><a class="anchor" aria-hidden="true" id="train-and-evaluate-the-model"></a><a href="#train-and-evaluate-the-model" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Train and evaluate the model</h4>
 <ul>
+<li>Before starting a training job, ensure that the model behaves correctly (locally, on a subset of data)</li>
 <li>Training Jobs allow us to create model artifacts by fitting various machine learning models to data.
 <ul>
 <li>SageMaker spins up one or several “training instances”, copies all the necessary scripts and data from S3 there, runs the training, and uploads the model back to S3.</li>
@@ -225,6 +276,15 @@
 <li>The logs are sent to CloudWatch and can be monitored via console or notification system.</li>
 </ul></li>
 <li>A training job requires input and output S3 locations, Docker container location, and EC2 configuration.</li>
+</ul>
+<pre><code class="hljs css language-py"><span class="hljs-comment"># Example: Fit the estimator</span>
+
+s3_input_train = sagemaker.s3_input(s3_data=train_location, content_type=<span class="hljs-string">'csv'</span>)
+s3_input_validation = sagemaker.s3_input(s3_data=val_location, content_type=<span class="hljs-string">'csv'</span>)
+
+xgb.fit({<span class="hljs-string">'train'</span>: s3_input_train, <span class="hljs-string">'validation'</span>: s3_input_validation})
+</code></pre>
+<ul>
 <li>Distributed training:
 <ul>
 <li><a href="https://hub.packtpub.com/horovod-an-open-source-distributed-training-framework-by-uber-for-tensorflow-keras-pytorch-and-mxnet/">Horovod</a> enables running multiple processes per node (multi-GPU training)</li>
@@ -245,13 +305,51 @@
 </ul>
 <h4><a class="anchor" aria-hidden="true" id="tune-hyperparameters"></a><a href="#tune-hyperparameters" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Tune hyperparameters</h4>
 <ul>
-<li>Hyperparameter Tuning allow us to create multiple training jobs each with different hyperparameters in order to find the hyperparameters that work best for a given problem.</li>
+<li>Hyperparameter Tuning allows us to create multiple training jobs each with different hyperparameters in order to find the hyperparameters that work best for a given problem.</li>
 <li>SageMaker provides an automated way of doing hyperparameter tuning.
 <ul>
 <li>One tuning job is just an umbrella over multiple training jobs.</li>
 <li>One can specify the maximum number of training jobs and parallel training jobs.</li>
 <li>SageMaker then provides the name of the best-performing job based on the objective metric.</li>
 </ul></li>
+</ul>
+<pre><code class="hljs css language-py"><span class="hljs-comment"># Example: Hyperparameter tuning</span>
+
+<span class="hljs-keyword">from</span> sagemaker.tuner <span class="hljs-keyword">import</span> IntegerParameter, ContinuousParameter, HyperparameterTuner
+
+<span class="hljs-comment"># Make sure to set any model specific hyperparameters that we wish to have default values</span>
+xgb.set_hyperparameters(max_depth=<span class="hljs-number">5</span>,
+                        eta=<span class="hljs-number">0.2</span>,
+                        gamma=<span class="hljs-number">4</span>,
+                        min_child_weight=<span class="hljs-number">6</span>,
+                        subsample=<span class="hljs-number">0.8</span>,
+                        objective=<span class="hljs-string">'reg:linear'</span>,
+                        early_stopping_rounds=<span class="hljs-number">10</span>,
+                        num_round=<span class="hljs-number">200</span>)
+
+<span class="hljs-comment"># Create the hyperparameter tuner</span>
+xgb_tuner = HyperparameterTuner(estimator=xgb,
+                                objective_metric_name=<span class="hljs-string">'validation:rmse'</span>,
+                                objective_type=<span class="hljs-string">'Minimize'</span>,
+                                max_jobs=<span class="hljs-number">20</span>,
+                                max_parallel_jobs=<span class="hljs-number">3</span>,
+                                hyperparameter_ranges={
+                                    <span class="hljs-string">'max_depth'</span>: IntegerParameter(<span class="hljs-number">3</span>, <span class="hljs-number">12</span>),
+                                    <span class="hljs-string">'eta'</span>: ContinuousParameter(<span class="hljs-number">0.05</span>, <span class="hljs-number">0.5</span>),
+                                    <span class="hljs-string">'min_child_weight'</span>: IntegerParameter(<span class="hljs-number">2</span>, <span class="hljs-number">8</span>),
+                                    <span class="hljs-string">'subsample'</span>: ContinuousParameter(<span class="hljs-number">0.5</span>, <span class="hljs-number">0.9</span>),
+                                    <span class="hljs-string">'gamma'</span>: ContinuousParameter(<span class="hljs-number">0</span>, <span class="hljs-number">10</span>),
+                                })
+</code></pre>
+<ul>
+<li>Each notebook is self contained, that is, models cannot be shared between them.
+<ul>
+<li>But one can use <code>attach</code> method to create an Estimator object which is attached to an already completed training job (only the name of the job required)</li>
+</ul></li>
+</ul>
+<pre><code class="hljs css language-py">xgb_attached = sagemaker.estimator.Estimator.attach(xgb_tuner.best_training_job())
+</code></pre>
+<ul>
 <li>CloudWatch provides a UI through which we can examine various logs generated during training.
 <ul>
 <li>This can be especially useful when diagnosing errors.</li>
@@ -273,7 +371,15 @@
 <li>Enables running inference without a need of a persistent endpoint.</li>
 </ul></li>
 </ul>
-<h4><a class="anchor" aria-hidden="true" id="deploy-the-best-model"></a><a href="#deploy-the-best-model" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Deploy the best model</h4>
+<pre><code class="hljs css language-py"><span class="hljs-comment"># Example: Batch transform on test set</span>
+
+xgb_transformer = xgb_attached.transformer(instance_count=<span class="hljs-number">1</span>, instance_type=<span class="hljs-string">'ml.m4.xlarge'</span>)
+xgb_transformer.transform(test_location, content_type=<span class="hljs-string">'text/csv'</span>, split_type=<span class="hljs-string">'Line'</span>)
+xgb_transformer.wait()
+!aws s3 cp --recursive $xgb_transformer.output_path $data_dir
+test_pred = pd.read_csv(os.path.join(data_dir, <span class="hljs-string">'test.csv.out'</span>), header=<span class="hljs-literal">None</span>)
+</code></pre>
+<h4><a class="anchor" aria-hidden="true" id="deploy-the-model"></a><a href="#deploy-the-model" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Deploy the model</h4>
 <ul>
 <li>Deploy the trained model to a production-ready cluster.
 <ul>
@@ -281,6 +387,12 @@
 <li>Monitor the inferences, collect &quot;ground truth,&quot; and evaluate the model to identify drift.</li>
 <li>Scale and manage the production environment.</li>
 </ul></li>
+</ul>
+<pre><code class="hljs css language-py"><span class="hljs-comment"># Example: Deploy the model</span>
+
+xgb_predictor = xgb.deploy(initial_instance_count=<span class="hljs-number">1</span>, instance_type=<span class="hljs-string">'ml.m4.xlarge'</span>)
+</code></pre>
+<ul>
 <li>To get inferences for an entire dataset, use Amazon SageMaker batch transform.
 <ul>
 <li>Enables preprocessing of and getting inferences from large datasets.</li>
@@ -291,6 +403,20 @@
 <ul>
 <li>Allows to perform inference on small amounts of data by sending it bit by bit.</li>
 </ul></li>
+</ul>
+<pre><code class="hljs css language-py"><span class="hljs-comment"># Example: Predict on test set using endpoint</span>
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">predict</span><span class="hljs-params">(data, rows=<span class="hljs-number">512</span>)</span>:</span>
+    <span class="hljs-comment"># We split the data into chunks and send each chunk seperately, accumulating the results.</span>
+    split_array = np.array_split(data, int(data.shape[<span class="hljs-number">0</span>] / float(rows) + <span class="hljs-number">1</span>))
+    predictions = np.array([])
+    <span class="hljs-keyword">for</span> array <span class="hljs-keyword">in</span> split_array:
+        predictions = np.append(predictions, predictor.predict(array))
+    <span class="hljs-keyword">return</span> predictions
+
+predictions = predict(X_test.values)
+</code></pre>
+<ul>
 <li>Endpoints are the actual HTTP URLs that are created by SageMaker.
 <ul>
 <li>SageMaker launches a compute instance running a Docker container with the inference code and a URL that data can be sent to and returned from.</li>
@@ -308,6 +434,24 @@
 <li>Only entities that are authenticated with AWS can send or receive data from the deployed model. Thus, use an API Gateway to create HTTP endpoints (URL addresses) that are integrated with AWS services and open to the public (charged per execution)</li>
 <li>Use Lambda function for pre and post processing, e.g., tokenization (charged per execution)</li>
 </ul></li>
+</ul>
+<pre><code class="hljs css language-py"><span class="hljs-comment"># Example: Creating a Lambda function</span>
+
+<span class="hljs-keyword">import</span> boto3
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">lambda_handler</span><span class="hljs-params">(event, context)</span>:</span>
+    runtime = boto3.Session().client(<span class="hljs-string">'sagemaker-runtime'</span>)
+    response = runtime.invoke_endpoint(EndpointName = <span class="hljs-string">'**ENDPOINT NAME HERE**'</span>,
+                                       ContentType = <span class="hljs-string">'text/plain'</span>,
+                                       Body = event[<span class="hljs-string">'body'</span>])
+    result = response[<span class="hljs-string">'Body'</span>].read().decode(<span class="hljs-string">'utf-8'</span>)
+    <span class="hljs-keyword">return</span> {
+        <span class="hljs-string">'statusCode'</span> : <span class="hljs-number">200</span>,
+        <span class="hljs-string">'headers'</span> : { <span class="hljs-string">'Content-Type'</span> : <span class="hljs-string">'text/plain'</span>, <span class="hljs-string">'Access-Control-Allow-Origin'</span> : <span class="hljs-string">'*'</span> },
+        <span class="hljs-string">'body'</span> : result
+    }
+</code></pre>
+<ul>
 <li>Common deployment workflow:
 <ul>
 <li>The user does an action.</li>
@@ -346,20 +490,57 @@
 <li>Such constraints may include accurate predictions, interpretability and costs.</li>
 <li>Use batch transform to test the model on the new dataset.</li>
 </ul></li>
-<li>Re-train the model and update the existing endpoint so that it uses the updated model.
+<li>Re-train the model:
 <ul>
 <li>Make sure that the new model also performs well on the original data.</li>
-<li>Use a low-level approach to construct an endpoint configuration for the new model.</li>
-<li>Ask SageMaker to update the existing endpoint so that it uses the new configuration.</li>
-<li>SageMaker first deploys the new model and then shuts down the old one (= no downtime)</li>
 </ul></li>
 <li>Model comparison:
 <ul>
 <li>Create an endpoint that sends data to multiple models for an A/B test (using routing)</li>
+<li>Use a low-level approach to construct an endpoint configuration.</li>
 <li>Do not assume that different models will return data in the same way (JSON or CSV?)</li>
 </ul></li>
 </ul>
-</span></div></article></div><div class="docLastUpdate"><em>Last updated on 2019-9-27 by Oleg Polakow</em></div><div class="docs-prevnext"><a class="docs-prev button" href="/datadocs/docs/machine-learning/deployment"><span class="arrow-prev">← </span><span>Deployment</span></a><a class="docs-next button" href="/datadocs/docs/deep-learning/deep-learning"><span>Deep Learning</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#amazon-sagemaker">Amazon SageMaker</a><ul class="toc-headings"><li><a href="#workflow">Workflow</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><div class="brand-box"><div class="brand"><a href="https://www.tum.de/nc/en/" target="_blank" rel="noreferrer noopener" class="brand-link"><img src="/datadocs/img/tum_logo.png" alt="Technical University of Munich" height="45"/></a></div><div class="brand"><a href="https://opensource.facebook.com/" target="_blank" rel="noreferrer noopener" class="brand-link"><img src="/datadocs/img/oss_logo.png" alt="Facebook Open Source" width="170" height="45"/></a></div></div><section class="copyright">Copyright © 2019 polakowo.io</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
+<pre><code class="hljs css language-py"><span class="hljs-comment"># Example: Deploy a combined endpoint</span>
+
+<span class="hljs-comment"># Create endpoint configuration</span>
+combined_endpoint_config_name = <span class="hljs-string">"boston-combined-endpoint-config-"</span> + strftime(<span class="hljs-string">"%Y-%m-%d-%H-%M-%S"</span>, gmtime())
+combined_endpoint_config_info = session.sagemaker_client.create_endpoint_config(
+    EndpointConfigName=combined_endpoint_config_name,
+    ProductionVariants=[
+        {
+            <span class="hljs-string">"InstanceType"</span>: <span class="hljs-string">"ml.m4.xlarge"</span>,
+            <span class="hljs-string">"InitialVariantWeight"</span>: <span class="hljs-number">1</span>,
+            <span class="hljs-string">"InitialInstanceCount"</span>: <span class="hljs-number">1</span>,
+            <span class="hljs-string">"ModelName"</span>: linear_model_name,
+            <span class="hljs-string">"VariantName"</span>: <span class="hljs-string">"Linear-Model"</span>
+        }, {
+            <span class="hljs-string">"InstanceType"</span>: <span class="hljs-string">"ml.m4.xlarge"</span>,
+            <span class="hljs-string">"InitialVariantWeight"</span>: <span class="hljs-number">1</span>,
+            <span class="hljs-string">"InitialInstanceCount"</span>: <span class="hljs-number">1</span>,
+            <span class="hljs-string">"ModelName"</span>: xgb_model_name,
+            <span class="hljs-string">"VariantName"</span>: <span class="hljs-string">"XGB-Model"</span>
+        }])
+
+<span class="hljs-comment"># Create endpoint</span>
+endpoint_name = <span class="hljs-string">"boston-update-endpoint-"</span> + strftime(<span class="hljs-string">"%Y-%m-%d-%H-%M-%S"</span>, gmtime())
+endpoint_info = session.sagemaker_client.create_endpoint(
+    EndpointName=endpoint_name,
+    EndpointConfigName=combined_endpoint_config_name)
+endpoint_dec = session.wait_for_endpoint(endpoint_name)
+</code></pre>
+<ul>
+<li>Ask SageMaker to update the existing endpoint so that it uses the new configuration.
+<ul>
+<li>SageMaker first deploys the new model and then shuts down the old one (= no downtime)</li>
+</ul></li>
+</ul>
+<pre><code class="hljs css language-py"><span class="hljs-comment"># Example: Update the endpoint</span>
+
+session.sagemaker_client.update_endpoint(EndpointName=endpoint_name, EndpointConfigName=linear_endpoint_config_name)
+endpoint_dec = session.wait_for_endpoint(endpoint_name)
+</code></pre>
+</span></div></article></div><div class="docLastUpdate"><em>Last updated on 2019-10-8 by Oleg Polakow</em></div><div class="docs-prevnext"><a class="docs-prev button" href="/datadocs/docs/machine-learning/deployment"><span class="arrow-prev">← </span><span>Deployment</span></a><a class="docs-next button" href="/datadocs/docs/deep-learning/deep-learning"><span>Deep Learning</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#amazon-sagemaker">Amazon SageMaker</a><ul class="toc-headings"><li><a href="#workflow">Workflow</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><div class="brand-box"><div class="brand"><a href="https://www.tum.de/nc/en/" target="_blank" rel="noreferrer noopener" class="brand-link"><img src="/datadocs/img/tum_logo.png" alt="Technical University of Munich" height="45"/></a></div><div class="brand"><a href="https://opensource.facebook.com/" target="_blank" rel="noreferrer noopener" class="brand-link"><img src="/datadocs/img/oss_logo.png" alt="Facebook Open Source" width="170" height="45"/></a></div></div><section class="copyright">Copyright © 2019 polakowo.io</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
                 document.addEventListener('keyup', function(e) {
                   if (e.target !== document.body) {
                     return;
