@@ -6,6 +6,9 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/machine-l
 ---
 
 - Machine learning is an application of artificial intelligence (AI) that provides systems the ability to automatically learn and improve from experience without being explicitly programmed.
+- Some tips on learning "machine learning":
+
+> Follow guided learning, stay curious, watch the market and the industry, find the key players in education and product development, get to know their interests, follow that interests and try to draw a roadmap that you can use for your learning activities.
 
 ## Machine Learning Workflow
 
@@ -13,9 +16,10 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/machine-l
 <center><a href="https://subscription.packtpub.com/book/big_data_and_business_intelligence/9781788831307/1/ch01lvl1sec13/standard-ml-workflow" class="credit">Credit</a></center>
 
 - Machine learning is a continuous cycle.
-- [Rules of Machine Learning: Best Practices for ML Engineering](https://developers.google.com/machine-learning/guides/)
-- [Machine Learning Workflows](https://skymind.ai/wiki/machine-learning-workflow)
-- [A Machine Learning Workflow](http://fgiasson.com/blog/index.php/2017/03/10/a-machine-learning-workflow/)
+    - [Rules of Machine Learning: Best Practices for ML Engineering](https://developers.google.com/machine-learning/guides/)
+    - [Machine Learning Workflows](https://skymind.ai/wiki/machine-learning-workflow)
+    - [A Machine Learning Workflow](http://fgiasson.com/blog/index.php/2017/03/10/a-machine-learning-workflow/)
+- When writing the final report, follow [these instructions](https://github.com/udacity/machine-learning/blob/master/projects/capstone/capstone_report_template.md)
 
 #### Development and operations
 
@@ -61,6 +65,8 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/machine-l
 - Quantify suitability of data for ML: number of records and features, availability and quality of labels.
 
 #### Data cleaning and preprocessing
+
+> Data scientists spend 80% of time cleaning their data and 20% of time complaining about it.
 
 - Data-gathering methods are often loosely controlled, resulting in corrupted values.
     - The raw data retrieved in the first step is in most cases unusable by ML algorithms.
