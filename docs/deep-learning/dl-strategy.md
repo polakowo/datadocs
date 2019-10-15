@@ -6,10 +6,9 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/deep-lear
 ---
 
 - DL strategy is useful to iterate through ideas quickly and efficiently reach the project outcome.
-- Build the first system quickly and then iterate: 
-    - Quickly prototype a first version of the classifier and then improve it iteratively following the strategic guidelines.
+- Quickly prototype the first version and then improve it iteratively following the strategic guidelines.
 
-#### Experimentation
+#### Tips
 
 - The cutting edge of deep learning is really about engineering, not about papers. 
     - The difference between really effective people in deep learning and the rest is really about who can make things in code that work properly and there’s very few of those people.

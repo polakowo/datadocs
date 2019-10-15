@@ -6,11 +6,100 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/machine-l
 ---
 
 - Machine learning is an application of artificial intelligence (AI) that provides systems the ability to automatically learn and improve from experience without being explicitly programmed.
-- Some tips on learning "machine learning":
 
-> Follow guided learning, stay curious, watch the market and the industry, find the key players in education and product development, get to know their interests, follow that interests and try to draw a roadmap that you can use for your learning activities.
+> **Some tips on learning "machine learning":**  
+Follow guided learning, stay curious, watch the market and the industry, find the key players in education and product development, get to know their interests, follow that interests and try to draw a roadmap that you can use for your learning activities.
 
-## Machine Learning Workflow
+## Role comparison
+
+<img width=450 src="/datadocs/assets/main-qimg-2466ca52e060125bda9d131dc4f1a9fa.png"/>
+<center><a href="https://www.quora.com/What-is-the-difference-between-Data-Analytics-Data-Analysis-Data-Mining-Data-Science-Machine-Learning-and-Big-Data-1" class="credit">Credit</a></center>
+
+#### Big Data
+
+- Using all of the data available to provide new insights to a problem.
+- Focussed around creating large data pipelines rather than creating value out of the collected data.
+- Write computer programs in SQL, Python, R, C++, Java, Scala, Ruby to only maintain big-data databases. 
+    - You would be called a database manager.
+
+#### Data Mining
+
+- Most widely used in the late 90's and early 00's when a business consolidated all of its data into DWH. 
+- Discover previously unknown trends, anomalies and correlations.
+- Search through enormous quantities of data without having any idea what you are looking for.
+- Identify correlations simply through brute force analysis and neural network (learning) techniques.
+
+#### Data Analysis
+
+- Analysis is a heuristic activity, where the analyst gains insight by scanning through all the data.
+- Done by an engineer working on process control, or someone wanting to streamline company operations. 
+
+#### Data Analytics
+
+- Analytics are the result of analysis and the form of presentation of those results.
+- Analytics is about applying a mechanical or algorithmic process to derive insights from data.
+    - For example running through various data sets looking for meaningful correlations between them.
+- Discover useful patterns/findings, uncover hidden patterns, market trends and customers preferences to provide useful information that can help a company to produce future decisions.
+- Do data mining, data cleaning, data analysis, modeling, predictive modeling and so on.
+    - You may use simple software (Tableau, JMP, SAS) or write elaborate codes in SQL, Python, R.
+    - Lot of people do everything online where a SAP based business intelligence setup can be used.
+
+#### Predictive Analytics
+
+- Creating a quantitative model that allows an outcome to be predicted.
+- The predictive model determines what signals in the data can be used to make an accurate prediction. 
+
+#### Machine Learning
+
+- While data mining is exploratory, machine learning is focused on solving specific tasks.
+- A model is created that mathematically describes a certain process and its outcomes, then the model provides recommendations and monitors the results once those recommendations are implemented and uses the results to improve the model. 
+- An attempt to replace explicit programming with automatic discovery of parameters.
+    - Use machine learning to come up with predictions, wherever analytical answers are not possible. 
+    - Think of analytical answers as if/then type of computer programs, where all the input conditions are already known, and only a few parameters change.
+- This is one of the tools used by data scientist.
+
+#### Data Science
+
+- Data science is the father of above all.
+- Data Science is the scientific approach to knowledge extraction from data.
+- A combination of mathematics, statistics, programming, the context of the problem being solved, ingenious ways of capturing data that may not be being captured right now plus the ability to look at things 'differently' (like this [Why UPS Trucks Don't Turn Left](https://bigthink.com/robby-berman/the-science-behind-why-ups-trucks-avoid-making-left-turns)) and of course the significant and necessary activity of cleansing, preparing and aligning the data.
+- You observe a system, create an hypothesis, test it and update your knowledge through it.
+
+> The less charitable description of "data scientist" is "programmer who gets to work on the most interesting projects". Your functions would be helping the companies engineer things better.
+
+- Requires lots of expertise in handling data and knowledge of a few programming languages.
+- Use everything to your advantage: 
+    - Analytical solutions, partitioning data, hacking mindset, automation by programming, reporting, deriving conclusions, making decisions, taking actions, and telling stories about your data.
+
+## Data project workflow
+
+- Find a compelling narrative behind the idea:
+    - [Business Model Canvas](https://en.wikipedia.org/wiki/Business_Model_Canvas)
+- Prepare the data:
+    - Collect manually, download, scrape from websites or access data through public API’s.
+    - Get as much data as possible in a reasonable time.
+    - One can spin up a simple AWS EC2 instance for this.
+    - Do not be selective about inclusion of exclusion of data to avoid bias.
+    - Selection should be based upon what the data says - not what you want it to say.
+- Choose the right tools:
+    - One can use user-friendly graphical tools like Orange, Rapid Miner or Knime.
+    - Or write the analysis on your own with such languages as Python or R.
+- Prove the theory:
+    - Models are implementations of the theory.
+- Build a minimum viable product (MVP):
+    - Should have just enough features to satisfy early customers.
+    - Should provide feedback for future development.
+- Automate the system:
+    - Also set up a system for logging, monitoring and measuring all meaningful data.
+    - [Best Log Management Tools](https://stackify.com/best-log-management-tools/)
+- Reiterate and expand:
+    - Get rid of weaknesses, optimize the overall performance, and add new functions.
+    - Implementing new features will also allow you to offer new services or products.
+- Present the product:
+    - Visualize data, and incorporate trends and significance into a narrative.
+- [A Layman’s Guide to Data Science. Part 2](https://medium.com/sciforce/a-laymans-guide-to-data-science-part-2-how-to-build-a-data-project-58237a78860e)
+
+## Machine Learning workflow
 
 <img width=700 src="/datadocs/assets/1*2T5rbjOBGVFdSvtlhCqlNg.png"/>
 <center><a href="https://subscription.packtpub.com/book/big_data_and_business_intelligence/9781788831307/1/ch01lvl1sec13/standard-ml-workflow" class="credit">Credit</a></center>
@@ -20,6 +109,7 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/machine-l
     - [Machine Learning Workflows](https://skymind.ai/wiki/machine-learning-workflow)
     - [A Machine Learning Workflow](http://fgiasson.com/blog/index.php/2017/03/10/a-machine-learning-workflow/)
 - When writing the final report, follow [these instructions](https://github.com/udacity/machine-learning/blob/master/projects/capstone/capstone_report_template.md)
+    - [How to explain some machine learning concepts to your readers](https://developers.google.com/machine-learning/glossary/)
 
 #### Development and operations
 
@@ -117,7 +207,9 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/machine-l
     - A model is basically a generalized representation of data.
 - Develop a model using established ML techniques or by defining new operations and approaches.
 - Thorough literature review with short list of proposed machine-learning approaches.
+    - [Benchmarking Predictive Models](https://blog.dominodatalab.com/benchmarking-predictive-models/)
 - Given candidate models of similar predictive or explanatory power, the simplest model wins.
+    - [Interpretable Machine Learning](https://christophm.github.io/interpretable-ml-book/)
 
 #### Model evaluation and tuning
 

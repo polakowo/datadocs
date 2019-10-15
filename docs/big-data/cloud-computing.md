@@ -33,6 +33,8 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/big-data/
     - eBay also recently migrated to the GCP.
     - [Google Cloud Next '17 - Day 1 Keynote](https://www.youtube.com/embed/j_K1YoMHpbk)
 
+> Invention requires two things: The ability to try lots of experiments, and not having to live with the collateral damage of failed experiments (for example, being stuck in a 3-year contract) - Andy Jassy, CEO of AWS
+
 #### Pros
 
 - With traditional infrastructure, it takes a considerable amount of time to predict demand, obtain approval for capacity increase, purchase new resources, and install these resources.

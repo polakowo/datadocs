@@ -8,10 +8,19 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/machine-l
 - A metric is used to measure the algorithm's performance.
 - A loss function is used to optimize an algorithm. 
 - If a metric is not optimizable:
-    - Preprocess train and optimize another metric
-    - Optimize another metric and postprocess predictions
-    - Write a custom loss function
-    - Optimize another metric and use early stopping
+    - Preprocess train and optimize another metric.
+    - Optimize another metric and postprocess predictions.
+    - Write a custom loss function.
+    - Optimize another metric and use early stopping.
+- [Metrics to Evaluate your Machine Learning Algorithm](https://towardsdatascience.com/metrics-to-evaluate-your-machine-learning-algorithm-f10ba6e38234)
+- [Choosing the Right Metric for Evaluating Machine Learning Models](https://www.kdnuggets.com/2018/04/right-metric-evaluating-machine-learning-models-1.html)
+
+#### Tips
+
+- [Why is my validation loss lower than my training loss?](https://www.pyimagesearch.com/2019/10/14/why-is-my-validation-loss-lower-than-my-training-loss/)
+    - Regularization applied during training, but not during validation/testing.
+    - Training loss is measured during each epoch while validation loss is measured after each epoch.
+    - The validation set may be easier than the training set.
 
 ## Regression metrics
 
@@ -179,6 +188,7 @@ $$\large{Accuracy=\frac{1}{n}\sum_{i=1}^{n}{[y_i=\hat{y}_i]}}$$
 - But information about class distribution is lost when resampling the dataset and can skew predictions on test.
 - Penalize mistakes on minority classes with class re-weighting (`sample_weight`).
 - Use a different performance metric (e.g., precision, recall, F-score, ROC AUC).
+- [What metrics should be used for evaluating a model on an imbalanced data set?](https://towardsdatascience.com/what-metrics-should-we-use-on-imbalanced-data-set-precision-recall-roc-e2e79252aeba)
 - [Hands-on example: Detecting credit card fraud](https://nbviewer.jupyter.org/github/awslabs/amazon-sagemaker-examples/blob/master/scientific_details_of_algorithms/linear_learner_class_weights_loss_functions/linear_learner_class_weights_loss_functions.ipynb)
 
 ### LogLoss

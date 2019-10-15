@@ -5,6 +5,14 @@
     "previous": "Previous",
     "tagline": "Documentation for data enthusiasts",
     "docs": {
+      "big-data/aws": {
+        "title": "Amazon Web Services",
+        "sidebar_label": "Amazon Web Services"
+      },
+      "big-data/big-data": {
+        "title": "Big Data",
+        "sidebar_label": "Big Data"
+      },
       "big-data/cloud-computing": {
         "title": "Cloud Computing",
         "sidebar_label": "Cloud Computing"
@@ -12,10 +20,6 @@
       "big-data/cluster-management": {
         "title": "Cluster Management",
         "sidebar_label": "Cluster Management"
-      },
-      "big-data/data-engineering": {
-        "title": "Data Engineering",
-        "sidebar_label": "Data Engineering"
       },
       "big-data/data-ingestion": {
         "title": "Data Ingestion",

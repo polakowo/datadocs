@@ -1,9 +1,60 @@
 ---
-id: data-engineering
-title: Data Engineering
-sidebar_label: Data Engineering
-custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/big-data/data-engineering.md
+id: big-data
+title: Big Data
+sidebar_label: Big Data
+custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/big-data/big-data.md
 ---
+
+<img width=300 src="/datadocs/assets/Big-data-1024x722.png"/>
+<center><a href="https://www.actify.com/industry-topics/10-big-data-use-cases-manufacturing/" class="credit">Credit</a></center>
+
+- “Big data” refers to datasets whose size is beyond the ability of typical database software tools to capture, store, manage, and analyze.
+    - Ranges from a few dozen terabytes to multiple petabytes (thousands of terabytes)
+    - The data can be smaller but its complexity can be higher.
+- The trend towards "Big Data" is caused by a host of developments:
+    - The creation and storage of large data sets becomes feasible and economically viable.
+    - Technical advances for example in multi-core systems and cloud computing make it possible.
+    - Such amounts of data are now are created in many areas of life (e.g. sensor data)
+- [Big data: The next frontier for innovation, competition, and productivity](https://www.mckinsey.com/business-functions/mckinsey-digital/our-insights/big-data-the-next-frontier-for-innovation)
+
+#### Hardware
+
+- CPU is the brains of a computer:
+    - Directs other components as well as runs mathematical calculations.
+    - Registers hold data that the CPU is working with at the moment (e.g. cumulative sum)
+    - Registers avoid having to send data back and forth between memory (RAM) and the CPU.
+    - 2.5 billion operations per second x 8 bytes per operation = 20 billion bytes per second.
+    - Most of the time, CPU is sitting idle while waiting for input data from RAM.
+- Memory takes 200x longer than the CPU:
+    - Known to be "efficient, expensive, and ephemeral (volatile)"
+    - Data stored in RAM gets erased once the computer shuts down.
+    - RAM is relatively expensive.
+- Magnetic disks can be 200x slower and SSDs can be 15x slower than RAM.
+- Network transfer takes 20x longer than SSDs.
+    - Transferring data across a network is the biggest bottleneck when working with big data.
+    - Distributed systems try to minimize shuffling data back and forth between nodes.
+- [Latency Numbers Every Programmer Should Know](http://people.eecs.berkeley.edu/~rcs/research/interactive_latency.html)
+- Even if the entire dataset cannot fit into the RAM, it can still be processed chunk wise.
+    - [Iterating through files chunk by chunk](https://pandas.pydata.org/pandas-docs/stable/user_guide/io.html#io-chunking)
+
+#### The V's of big data
+
+- Volume:
+    - The sheer volume of data that is produced each day (petabytes, exabytes, zettabytes)
+    - Cannot no longer be saved or analyzed using conventional data processing methods.
+- Velocity:
+    - Speed with which the data is generated, analyzed and reprocessed.
+- Variety:
+    - Diversity of data types and data sources.
+    - 80% of the data in the world today is unstructured.
+- Veracity:
+    - “garbage in, garbage out”
+    - For big data systems to be reliable and usable, the data has to be also accurate.
+- Value:
+    - Added value for companies.
+    - It's a question of generating business value from their investments.
+
+## Data Engineering
 
 - Companies today need to be able to reliably store, process and query its huge inflows. 
 - As a result, the data infrastructure needs to be distributed, scalable (petabytes) and reliable.
@@ -60,55 +111,7 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/big-data/
     - Lambda function (2014) kicked off the serverless movement.
     - Data now could be easily ingested without managing infrastructure.
 
-## Big data
-
-<img width=300 src="/datadocs/assets/Big-data-1024x722.png"/>
-<center><a href="https://www.actify.com/industry-topics/10-big-data-use-cases-manufacturing/" class="credit">Credit</a></center>
-
-- Handling and analyzing very large amounts of data is an urgent problem in many business areas. 
-- The trend towards "Big Data" is caused by a host of developments:
-    - The creation and storage of large data sets becomes feasible and economically viable.
-    - Technical advances for example in multi-core systems and cloud computing make it possible.
-    - Such amounts of data are now are created in many areas of life (e.g. sensor data)
-
-#### Hardware
-
-- CPU is the brains of a computer:
-    - Directs other components as well as runs mathematical calculations.
-    - Registers hold data that the CPU is working with at the moment (e.g. cumulative sum)
-    - Registers avoid having to send data back and forth between memory (RAM) and the CPU.
-    - 2.5 billion operations per second x 8 bytes per operation = 20 billion bytes per second.
-    - Most of the time, CPU is sitting idle while waiting for input data from RAM.
-- Memory takes 200x longer than the CPU:
-    - Known to be "efficient, expensive, and ephemeral (volatile)"
-    - Data stored in RAM gets erased once the computer shuts down.
-    - RAM is relatively expensive.
-- Magnetic disks can be 200x slower and SSDs can be 15x slower than RAM.
-- Network transfer takes 20x longer than SSDs.
-    - Transferring data across a network is the biggest bottleneck when working with big data.
-    - Distributed systems try to minimize shuffling data back and forth between nodes.
-- [Latency Numbers Every Programmer Should Know](http://people.eecs.berkeley.edu/~rcs/research/interactive_latency.html)
-- Even if the entire dataset cannot fit into the RAM, it can still be processed chunk wise.
-    - [Iterating through files chunk by chunk](https://pandas.pydata.org/pandas-docs/stable/user_guide/io.html#io-chunking)
-
-#### The V's of big data
-
-- Volume:
-    - The sheer volume of data that is produced each day (petabytes, exabytes, zettabytes)
-    - Cannot no longer be saved or analyzed using conventional data processing methods.
-- Velocity:
-    - Speed with which the data is generated, analyzed and reprocessed.
-- Variety:
-    - Diversity of data types and data sources.
-    - 80% of the data in the world today is unstructured.
-- Veracity:
-    - “garbage in, garbage out”
-    - For big data systems to be reliable and usable, the data has to be also accurate.
-- Value:
-    - Added value for companies.
-    - It's a question of generating business value from their investments.
-
-## Designing systems
+### Designing systems
 
 #### Thinking about requirements
 

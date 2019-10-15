@@ -6,15 +6,18 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/deep-lear
 ---
 
 - Deep learning is a branch of machine learning that covers the set of algorithms that model complex patterns by feeding data through multiple non-linear transformations causing each level to capture a different level of abstraction.
+- Deep learning algorithms seek to exploit the unknown structure in the input distribution.
 - The word “learning” describes an automatic search process for better representation of the data.
-    - Deep learning algorithms seek to exploit the unknown structure in the input distribution.
-- The key aspect of deep learning is that the layers of features are not designed by human engineers. 
+    - The key aspect of deep learning is that the layers of features are not designed by human engineers. 
     - A deep learning process can learn which features to optimally place in which level on its own.
 - Most modern deep learning models are based on an ANNs.
-    - Although they can also include propositional formulas or latent variables organized layer-wise in deep generative models such as the nodes in deep belief networks and deep Boltzmann machines.
 
-<img width=350 src="/datadocs/assets/main-qimg-dcabf4a1ecc28a3ee6c9dfb913291e7e-c.jpeg"/>
-<center><a href="https://www.quora.com/What-is-the-relationship-between-artificial-intelligence-machine-learning-deep-learning-and-artificial-neural-networks" class="credit">Credit</a></center>
+#### Compared to AI and ML
+
+- AI >> ML >> DL
+- AI enables machines to mimic human intelligence, using logic and machine learning.
+- ML is a subset of AI that enables machines to improve at tasks with experience.
+- DL is a subset of ML that exposes multi-layered neural networks to vast amounts of data.
 
 ## Rise of deep learning
 
