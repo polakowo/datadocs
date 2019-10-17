@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Amazon Web Services · datadocs</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="## Concepts"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Amazon Web Services · datadocs"/><meta property="og:type" content="website"/><meta property="og:url" content="https://polakowo.github.io/datadocs/"/><meta property="og:description" content="## Concepts"/><meta property="og:image" content="https://polakowo.github.io/datadocs/img/undraw_online.svg"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://polakowo.github.io/datadocs/img/undraw_tweetstorm.svg"/><link rel="shortcut icon" href="/datadocs/img/favicon.ico"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-142521178-1"></script><script>
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Amazon Web Services · datadocs</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="&lt;img width=150 src=&quot;/datadocs/assets/1200px-Amazon_Web_Services_Logo.svg.png&quot;/&gt;"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Amazon Web Services · datadocs"/><meta property="og:type" content="website"/><meta property="og:url" content="https://polakowo.github.io/datadocs/"/><meta property="og:description" content="&lt;img width=150 src=&quot;/datadocs/assets/1200px-Amazon_Web_Services_Logo.svg.png&quot;/&gt;"/><meta property="og:image" content="https://polakowo.github.io/datadocs/img/undraw_online.svg"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://polakowo.github.io/datadocs/img/undraw_tweetstorm.svg"/><link rel="shortcut icon" href="/datadocs/img/favicon.ico"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-142521178-1"></script><script>
               window.dataLayer = window.dataLayer || [];
               function gtag(){dataLayer.push(arguments); }
               gtag('js', new Date());
@@ -59,20 +59,382 @@
                 };
               }
             });
-        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://github.com/polakowo/datadocs/edit/master/docs/big-data/aws.md" target="_blank" rel="noreferrer noopener">Edit</a><h1 class="postHeaderTitle">Amazon Web Services</h1></header><article><div><span><h2><a class="anchor" aria-hidden="true" id="concepts"></a><a href="#concepts" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Concepts</h2>
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://github.com/polakowo/datadocs/edit/master/docs/big-data/aws.md" target="_blank" rel="noreferrer noopener">Edit</a><h1 class="postHeaderTitle">Amazon Web Services</h1></header><article><div><span><p><img width=150 src="/datadocs/assets/1200px-Amazon_Web_Services_Logo.svg.png"/></p>
+<h2><a class="anchor" aria-hidden="true" id="infrastructure"></a><a href="#infrastructure" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Infrastructure</h2>
 <ul>
-<li>Global infrastructure:
+<li>Each region is a distinct location designed to provide high availability to a specific geography.
 <ul>
-<li>Each region is a distinct location within a geographic area designed to provide high availability to a specific geography. Each Region comprises at least two AZ's.</li>
-<li>An availability zone (AZ) is one or more discrete data centers, each with redundant power, networking and connectivity, housed in separate facilities.</li>
-<li>Edge locations are endpoints for AWS that are used for caching content (CloudFront). The number of Edge Locations is greater than the number of Availability Zones, which is greater than the number of Regions.</li>
+<li>Each region comprises at least two AZ's.</li>
 </ul></li>
-<li>Networking:
+<li>An availability zone (AZ) is one or more discrete data centers.
 <ul>
-<li>A Virtual Private Cloud (VPC) is a virtual network dedicated to a single AWS account. It is logically isolated from other virtual networks in the AWS cloud, providing compute resources with security and robust networking functionality.</li>
+<li>Each with redundant power, networking and connectivity, housed in separate facilities.</li>
+</ul></li>
+<li>Edge locations are endpoints for AWS that are used for caching content (CloudFront).
+<ul>
+<li>The number of edge locations &gt;&gt; the number of AZ's &gt;&gt; the number of regions.</li>
+</ul></li>
+<li>A Virtual Private Cloud (VPC) is a virtual network dedicated to a single AWS account.
+<ul>
+<li>It is logically isolated from other virtual networks in the AWS cloud, providing compute resources with security and robust networking functionality.</li>
 </ul></li>
 </ul>
-</span></div></article></div><div class="docLastUpdate"><em>Last updated on 2019-10-15 by Oleg Polakow</em></div><div class="docs-prevnext"><a class="docs-prev button" href="/datadocs/docs/big-data/cloud-computing"><span class="arrow-prev">← </span><span>Cloud Computing</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#concepts">Concepts</a></li></ul></nav></div><footer class="nav-footer" id="footer"><div class="brand-box"><div class="brand"><a href="https://www.tum.de/nc/en/" target="_blank" rel="noreferrer noopener" class="brand-link"><img src="/datadocs/img/tum_logo.png" alt="Technical University of Munich" height="45"/></a></div><div class="brand"><a href="https://opensource.facebook.com/" target="_blank" rel="noreferrer noopener" class="brand-link"><img src="/datadocs/img/oss_logo.png" alt="Facebook Open Source" width="170" height="45"/></a></div></div><section class="copyright">Copyright © 2019 polakowo.io</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
+<h4><a class="anchor" aria-hidden="true" id="cloudfront"></a><a href="#cloudfront" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>CloudFront</h4>
+<ul>
+<li>A Content Delivery Network (CDN) is a system of distributed servers (network) that deliver webpages and other web content to a user based on the geographic locations of the user, the origin of the webpage, and a content delivery server.
+<ul>
+<li>Origin is the origin of all the files that the CDN will distribute.</li>
+<li>Distribution is the name of the CDN that consists of a collection of edge locations.</li>
+<li>Web distributions are typically used for websites.</li>
+<li>RTMP is used for media streaming.</li>
+</ul></li>
+<li>Amazon CloudFront is a fast content delivery network (CDN) service.
+<ul>
+<li>Can deliver an entire website, including dynamic, static, streaming, and interactive content using a global network of edge locations.</li>
+<li>Requests for the content are automatically routed to the nearest edge location, so the content is delivered with the best possible performance.</li>
+</ul></li>
+<li>Edge locations:
+<ul>
+<li>They are not just read-only, one can write to them too.</li>
+<li>Objects are cached based on the TTL (time to live)</li>
+<li>You can clear cached objects (i.e. invalidate them), but you will be charged.</li>
+</ul></li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="iam"></a><a href="#iam" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>IAM</h2>
+<p><img width=200 src="/datadocs/assets/What-is-IAM-in-AWS-and-How-to-Create-user-in-IAM.png"/></p>
+<ul>
+<li>IAM allows to manage users and their level of access to the AWS console.</li>
+<li>IAM is universal and is not region-specific at this time.</li>
+<li>Identity access management (IAM) offers the following features:
+<ul>
+<li>Centralized control of the AWS account</li>
+<li>Shared access to the account</li>
+<li>Fine-grained access control to AWS resources</li>
+<li>Identity federations (Facebook, Linkedin, etc.)</li>
+<li>Multi-factor authentication</li>
+<li>Provides temporary access for users/devices and services when necessary.</li>
+<li>Allows to set up own password rotation policy.</li>
+</ul></li>
+<li>The &quot;root account&quot; is simply the account created with the AWS account.</li>
+<li>Users:
+<ul>
+<li>End users such as employees of an organization.</li>
+<li>New users have no permissions by default.</li>
+<li>To access the AWS management console, new users use the account and password combination.</li>
+<li>To access the AWS programmatically, they use the access key &amp; secret access key combination.</li>
+<li>Credentials can be viewed only once, thus save them in a secure location.</li>
+<li>Set up multi-factor authentication (MFA) to the root account (easy with Google Authenticator)</li>
+<li>Using SAML (Security Assertion Markup Language 2.0), you can give your federated users single sign-on (SSO) access to the AWS Management Console.</li>
+</ul></li>
+<li>Groups:
+<ul>
+<li>Groups are collections of users.</li>
+<li>Each user inherits the permissions of the group.</li>
+</ul></li>
+<li>Policies:
+<ul>
+<li>A policy is a JSON document that provides formal statement of one or more permissions.</li>
+<li>For example, allow user to access of all AWS services except the IAM service (power user)</li>
+<li>Configure users and policy documents only once, as these are applied globally.</li>
+</ul></li>
+<li>Roles:
+<ul>
+<li>Give permissions to AWS services to use other AWS services.</li>
+</ul></li>
+<li>Tips:
+<ul>
+<li>Enact a strong password policy: user passwords must be changed every 45 days, with each password containing a combination of capital letters, lower case letters, numbers, and special symbols.</li>
+</ul></li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="s3"></a><a href="#s3" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>S3</h2>
+<p><img width=150 src="/datadocs/assets/AmazonS3.png"/></p>
+<ul>
+<li>S3 provides developers and IT teams with secure, durable, highly-scalable object storage.</li>
+<li>Amazon Simple Storage Service (S3) is easy to use, with a simple web services interface to store and retrieve any amount of data from anywhere on the web.</li>
+<li>Just a safe place to store flat files of any size (from 0 Bytes):
+<ul>
+<li>Key is the name of the object.</li>
+<li>Value is the data, and is made up of a sequence of bytes.</li>
+<li>Version ID is used for versioning.</li>
+<li>Metadata is the structured description of the object.</li>
+</ul></li>
+<li>It is an object-oriented storage:
+<ul>
+<li>Allows uploading files (HTTP 200 status code for success)</li>
+<li>Not suitable to install an operating system or databases on (you need block-based storage then)</li>
+</ul></li>
+<li>The data is spread across multiple devices and facilities.</li>
+<li>Files are stored in buckets (i.e. folders)
+<ul>
+<li>S3 is a universal namespace, that is, the bucket names must be unique globally. The URL of the bucket depends on the region though, for example <code>https://s3-eu-west-1.amazonaws.com/somebucket</code></li>
+<li>By default, all newly created buckets are private.</li>
+<li>One can set up access control using Bucket Policies or Access Control Lists.</li>
+<li>One can configure to create access logs that log all requests made to this bucket.</li>
+<li>One has 100 S3 buckets per account by default.</li>
+</ul></li>
+<li>S3 puts the limit of 3500 PUTs per second.</li>
+<li>Charges:
+<ul>
+<li>Storage</li>
+<li>Requests</li>
+<li>Storage management pricing</li>
+<li>Data transfer pricing</li>
+<li>Transfer acceleration</li>
+<li>Cross-region replication</li>
+</ul></li>
+<li>Tips:
+<ul>
+<li>&quot;Your proposed upload exceeds the maximum allowed object size&quot;: design the application to use the Multipart Upload API for all objects.</li>
+<li>Read the <a href="https://aws.amazon.com/s3/faqs/">S3 FAQs</a></li>
+</ul></li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="storage-classes"></a><a href="#storage-classes" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Storage classes</h4>
+<ul>
+<li>S3 Standard:
+<ul>
+<li>Stored redundantly across multiple devices in multiple facilities, and is designed to sustain the loss of 2 facilities concurrently.</li>
+</ul></li>
+<li>S3 IA (Infrequently Accessed):
+<ul>
+<li>For data that is accessed less frequently, but requires rapid access when needed.</li>
+<li>Lower fee than S3, but you are charged a retrieval fee.</li>
+<li>There can be cost implications if you use it frequently or use it for short lived storage.</li>
+<li>The availability is 99.99%</li>
+</ul></li>
+<li>S3 OneZone-IA:
+<ul>
+<li>Only stored in one availability zone.</li>
+<li>The availability is 99.50%</li>
+</ul></li>
+<li>S3 Intelligent Tiering:
+<ul>
+<li>Designed to optimize costs by automatically moving data to the most cost-effective access tier, without performance impact or operational overhead. Uses machine learning.</li>
+</ul></li>
+<li>S3 Glacier:
+<ul>
+<li>Designed for long-term data archival.</li>
+<li>Glacier is cheaper, but has a long retrieval time (configurable from minutes to hours)</li>
+<li>You can reliably store any amount of data at costs that are competitive with or cheaper than on-premises solutions.</li>
+</ul></li>
+<li>S3 Glacier Deep Archive:
+<ul>
+<li>Amazon S3's lowest-cost storage class where a retrieval time of 12 hours is acceptable.</li>
+</ul></li>
+<li>RRS (Reduced Redundancy Storage):
+<ul>
+<li>RRS has effectively been deprecated.</li>
+</ul></li>
+<li><a href="https://aws.amazon.com/s3/storage-classes/">Amazon S3 Storage Classes</a></li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="features"></a><a href="#features" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Features</h4>
+<ul>
+<li>Data consistency:
+<ul>
+<li>Read after write consistency for newly created files (available immediately)</li>
+<li>Eventual consistency for overwrite PUT's and DELETE's (can take some time to propagate)</li>
+</ul></li>
+<li>Guarantees:
+<ul>
+<li>Built for 99.99% availability.</li>
+<li>Guarantees 99.9999999999% (11 9's) durability.</li>
+</ul></li>
+<li>Encryption:
+<ul>
+<li>Encryption in transit is achieved by SSL/TLS (HTTPS)</li>
+<li>Encryption at rest is achieved (server side) by S3 Managed Keys (SSE-S3), AWS Key Management Service (SSE-KMS), or Server Side Encryption With Customer Provided Keys (SSE-C).</li>
+<li>One can also encrypt the file on client side and upload it.</li>
+</ul></li>
+<li>Versioning:
+<ul>
+<li>Stores all versions of an object (including all writes and even deletes)</li>
+<li>Great as a backup tool.</li>
+<li>Once enabled, versioning cannot be disabled, only suspended.</li>
+<li>Integrates with Lifecycle rules (to expire old objects)</li>
+<li>Versioning's MFA Delete capability provides additional layer of security.</li>
+<li>Newly uploaded versions are automatically made private.</li>
+</ul></li>
+<li>Lifecycle management:
+<ul>
+<li>Automates moving objects between the different storage tiers (e.g. archive after 30 days)</li>
+<li>Can be used in conjunction with versioning.</li>
+<li>Can be applied to current and previous versions.</li>
+</ul></li>
+<li>Cross-region replication:
+<ul>
+<li>Replicates changes from any source bucket to one or more destination buckets.</li>
+<li>Versioning must be enabled on all buckets.</li>
+<li>Regions must be different for all buckets.</li>
+<li>Destination buckets will have the same permissions as the source after setup.</li>
+<li>Files at the time of setup are not replicated automatically, only subsequent updates.</li>
+<li>Deleting versions or delete markers are not replicated (for security)</li>
+</ul></li>
+<li>Transfer acceleration:
+<ul>
+<li>Enables fast, easy, and secure transfers of files over long distances.</li>
+<li>As the data arrives at an edge location, data is routed to S3 over an optimized network path.</li>
+<li>Takes advantage of Amazon CloudFront's globally distributed edge locations.</li>
+<li><a href="https://s3-accelerate-speedtest.s3-accelerate.amazonaws.com/en/accelerate-speed-comparsion.html">Amazon S3 Transfer Acceleration - Speed Comparison</a></li>
+</ul></li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="data-transfer"></a><a href="#data-transfer" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Data transfer</h3>
+<h4><a class="anchor" aria-hidden="true" id="storage-gateway"></a><a href="#storage-gateway" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Storage Gateway</h4>
+<ul>
+<li>AWS Storage Gateway is a service that connects an on-premises software appliance with cloud-based storage to provide seamless and secure integration between an organization's on-premises IT environment and AWS's storage infrastructure.</li>
+<li>At its heart it is a way of using AWS S3 managed storage to supplement on-premise storage.
+<ul>
+<li>It is a physical or virtual appliance that can be used to cache S3 locally.</li>
+<li>Available for download as a virtual machine (VM) image that install on a host in the datacenter.</li>
+<li>Support either VMware ESXi or Microsoft Hyper-V.</li>
+<li>It can also be used within a VPC in a similar way.</li>
+</ul></li>
+<li>File Gateway (NFS &amp; SMB):
+<ul>
+<li>Flat files are stored as objects in S3 bucket, accessed through a NFS mount point.</li>
+<li>Ownership, permissions, and timestamps are durably stored in S3 in the metadata.</li>
+</ul></li>
+<li>Volume Gateway (iSCSI):
+<ul>
+<li>The volume interface presents applications with disk volumes using the iSCSI block protocol.</li>
+<li>Data is asynchronously backed up as point-in-time snapshots and stored as Amazon EBS snapshots.</li>
+<li>Snapshots are incremental backups that capture only changed blocks (and compressed)</li>
+<li>Stored Volumes: Entire dataset is stored on site and is asynchronously backed up to S3.</li>
+<li>Cached Volumes: Entire dataset is stored on S3 and the most frequently accessed data is cached on site.</li>
+</ul></li>
+<li>Gateway Virtual Tape Library (VTL):
+<ul>
+<li>A durable, cost-effective solution to archive tape data.</li>
+<li>Stores data on virtual tape cartridges that are created on tape gateway.</li>
+<li>Supported by NetBackup, Backup Exec, Veeam.</li>
+</ul></li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="snowball"></a><a href="#snowball" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Snowball</h4>
+<p><img width=200 src="/datadocs/assets/az.0.0.jpg"/>
+<center><a href="https://www.theverge.com/2015/10/7/9471381/amazon-snowball-data-transfer-device" class="credit">Credit</a></center></p>
+<ul>
+<li>Snowball is a petabyte-scale data transport solution.
+<ul>
+<li>Uses secure appliances to transfer large amounts of data and out of AWS.</li>
+<li>Addresses challenges such as high network costs, long transfer times, and security concerns.</li>
+<li>Transferring data with Snowball can be as little as one-fifth the cost of high speed internet.</li>
+<li>Comes in either a 50TB or 80TB size.</li>
+<li>Uses multiple layers of security including tamper-resistant enclosures, 256-bit encryption, and an industry-standard Trusted Platform Module (TPM) designed to ensure both security and full chain-of-custody of data.</li>
+<li>Once the data transfer job has been processed and verified, AWS performs a software erase.</li>
+</ul></li>
+<li>AWS Snowball Edge is a 100TB data transfer device with on-board storage and compute capabilities.
+<ul>
+<li>Can be used to move large amounts of data into and out of AWS, as a temporary storage tier for large local datasets, and to support local workloads in remote or offline locations.</li>
+<li>Connects to existing applications and infrastructure.</li>
+<li>Can cluster together to form a local storage tier and process data on-premises, helping ensure your applications continue to run even when they are not able to access to cloud.</li>
+</ul></li>
+</ul>
+<p><img width=250 src="/datadocs/assets/amazon-snowmobile-truck-aws-3.jpg"/>
+<center><a href="https://twistedsifter.com/2017/05/amazon-aws-data-transfer-cloud-truck-snowmobile/" class="credit">Credit</a></center></p>
+<ul>
+<li>AWS Snowmobile is an Exabyte-scale data transfer service.
+<ul>
+<li>One can transfer up to 100PB per Snowmobile, a 45-foot long ruggedized shipping container.</li>
+<li>For video libraries, image repositories, or even a complete data center migration.</li>
+</ul></li>
+<li><a href="https://aws.amazon.com/snowball/faqs/#When_to_use_Snowball">When to use Snowball</a></li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="ec2"></a><a href="#ec2" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>EC2</h2>
+<p><img width=100 src="/datadocs/assets/icon-aws-amazon-ec2.svg"/></p>
+<ul>
+<li>Amazon Elastic Compute Cloud (EC2) is a web service that provides resizable compute capacity.</li>
+<li>Reduces the time required to obtain and boot new server instances (from days) to minutes.
+<ul>
+<li>A huge side-effect of both of these: it’s way easier to innovate.</li>
+</ul></li>
+<li>Allows quickly scaling capacity, both up and down, as requirements change.</li>
+<li>Pay as you go, pay for what you use, and pay even less for reserved instances.</li>
+<li>Instance termination:
+<ul>
+<li>Termination protection is turned off by default.</li>
+<li>The default action is for the root EBS volume to be deleted when the instance is terminated.</li>
+</ul></li>
+<li>Security groups:
+<ul>
+<li>All inbound traffic is blocked by default.</li>
+<li>All outbound traffic is allowed by default.</li>
+<li>Changes to security groups take effect immediately.</li>
+<li>Any number of EC2 instances can be within a security group.</li>
+<li>Any number of security groups can be attached to an EC2 instance.</li>
+<li>Security groups are stateful: If creating an inbound rule allowing traffic in, that traffic is automatically allowed back out again.</li>
+<li>IP addresses cannot be blocked using security groups, instead use Network Access Control Lists.</li>
+<li>Rules can only be allowed by not denied.</li>
+</ul></li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="pricing"></a><a href="#pricing" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Pricing</h4>
+<ul>
+<li>On demand:
+<ul>
+<li>Fixed rate by hour (or by second) with no up-front payment or commitment.</li>
+<li>For applications with short term, spiky, or unpredictable workloads that cannot be interrupted.</li>
+<li>For applications that are tested for the first time.</li>
+</ul></li>
+<li>Reserved:
+<ul>
+<li>Capacity reservation with significant discounts, one or three years contracts.</li>
+<li>For applications with steady state and predictable usage.</li>
+<li>For applications that require reserved capacity.</li>
+<li>Users can do up-front payments to reduce their total computing costs even further.</li>
+<li>Standard Reserved Instances: The higher the upfront payment and the longer the contract, the greater the discount (up to 75% off)</li>
+<li>Convertible Reserved Instances: Attributes can be changed dynamically as long as the new instances is of equal or greater value (up to 54% off)</li>
+<li>Scheduled Reserved Instances: “I just need extra on Black Friday, but that’s it”</li>
+</ul></li>
+<li>Spot instances:
+<ul>
+<li>Have a huge isolated workload? Snag a spot instance when the price is super cheap at 4AM on a Tuesday, run your stuff, then shut it all down.</li>
+<li>Whenever the price goes up, these instances will be terminated.</li>
+<li>Not charged for a partial hour of usage if terminated (except if terminated manually)</li>
+<li>For applications that have flexible start and end times.</li>
+<li>For applications that are only feasible at very low computing prices.</li>
+<li>For users with urgent computing needs for large amounts of additional capacity.</li>
+</ul></li>
+<li>Dedicated hosts:
+<ul>
+<li>Physical EC2 server dedicated for own use.</li>
+<li>Allows to use existing server-bound software licenses like VMWare and Oracle.</li>
+<li>For regulatory requirements that may not support multi-tenant virtualization.</li>
+<li>For licensing that does not support multi-tenant virtualization or cloud deployment (Oracle)</li>
+<li>Can be purchased on-demand.</li>
+<li>Can be purchased as a reservation for up to 70% off the on-demand price.</li>
+</ul></li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="instance-types"></a><a href="#instance-types" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Instance types</h4>
+<ul>
+<li>Fight Dr. McPXZ in Australia</li>
+<li>FIGHT:
+<ul>
+<li>F (Field programmable gate array): Genomic research, financial analysis, big data</li>
+<li>I (IOPS): NoSQL, data warehouses</li>
+<li>G (Graphics intense): Video encoding, 3D application streaming</li>
+<li>H (High disk throughput): MapReduce, HDFS</li>
+<li>T (Cheap general purpose, T2 Micro): Web servers, small databases</li>
+</ul></li>
+<li>DR:
+<ul>
+<li>D (Dense storage): File servers, data warehouses, Hadoop</li>
+<li>R (RAM optimized): Memory intensive applications or databases</li>
+</ul></li>
+<li>MC:
+<ul>
+<li>M (Main choice for general purpose applications): application servers</li>
+<li>C (Compute optimized): CPU intensive applications or databases</li>
+</ul></li>
+<li>PXZ:
+<ul>
+<li>P (Graphics, GPUs): Machine learning, Bitcoin mining</li>
+<li>X (Extreme memory): SAP HANA, Apache Spark</li>
+<li>Z (Extreme memory and CPU): Electronic design automation, high per-core licensing costs</li>
+</ul></li>
+<li>AU:
+<ul>
+<li>A (Arm-based workloads): Scale-out workloads such as web servers</li>
+<li>U (Bare metal): Bare metal capabilities</li>
+</ul></li>
+</ul>
+</span></div></article></div><div class="docLastUpdate"><em>Last updated on 2019-10-17 by Oleg Polakow</em></div><div class="docs-prevnext"><a class="docs-prev button" href="/datadocs/docs/big-data/cloud-computing"><span class="arrow-prev">← </span><span>Cloud Computing</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#infrastructure">Infrastructure</a></li><li><a href="#iam">IAM</a></li><li><a href="#s3">S3</a><ul class="toc-headings"><li><a href="#data-transfer">Data transfer</a></li></ul></li><li><a href="#ec2">EC2</a></li></ul></nav></div><footer class="nav-footer" id="footer"><div class="brand-box"><div class="brand"><a href="https://www.tum.de/nc/en/" target="_blank" rel="noreferrer noopener" class="brand-link"><img src="/datadocs/img/tum_logo.png" alt="Technical University of Munich" height="45"/></a></div><div class="brand"><a href="https://opensource.facebook.com/" target="_blank" rel="noreferrer noopener" class="brand-link"><img src="/datadocs/img/oss_logo.png" alt="Facebook Open Source" width="170" height="45"/></a></div></div><section class="copyright">Copyright © 2019 polakowo.io</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
                 document.addEventListener('keyup', function(e) {
                   if (e.target !== document.body) {
                     return;
