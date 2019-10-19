@@ -28,5 +28,7 @@ Currently, datadocs covers topics from the following courses:
 - [Competitive Data Science](https://www.coursera.org/learn/competitive-data-science) (Coursera, 2019)
 - [The Ultimate Hands-On Hadoop](https://www.udemy.com/the-ultimate-hands-on-hadoop-tame-your-big-data/) (Udemy, 2019)
 - [Data Engineering Nanodegree Program](https://eu.udacity.com/course/data-engineer-nanodegree--nd027) (Udacity, 2019)
+- [Machine Learning Engineer Nanodegree Program](https://www.udacity.com/course/machine-learning-engineer-nanodegree--nd009t) (Udacity, 2019)
+- [AWS Certified Solutions Architect - Associate 2019](https://www.udemy.com/course/aws-certified-solutions-architect-associate/) (Udemy, 2019)
 
 Since the project is new, we've got many reads but few writes, so feel free to contribute!

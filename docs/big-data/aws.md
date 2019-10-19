@@ -218,24 +218,18 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/big-data/
 - Allows quickly scaling capacity, both up and down, as requirements change.
 - Pay as you go, pay for what you use, and pay even less for reserved instances.
 - Termination protection is turned off by default.
-- Security groups:
-    - All inbound traffic is blocked by default.
-    - All outbound traffic is allowed by default.
-    - Changes to security groups take effect immediately.
-    - Any number of EC2 instances can be within a security group.
-    - Any number of security groups can be attached to an EC2 instance.
-    - Security groups are stateful: If creating an inbound rule allowing traffic in, that traffic is automatically allowed back out again.
-    - IP addresses cannot be blocked using security groups, instead use Network Access Control Lists.
-    - Rules can only be allowed by not denied.
+- Individual instances are provisioned in a AZ's.
+    - The region cannot be changed for a running instance, only the AZ.
 - Credentials:
     - Roles are more secure and easier to manage than via `aws configure` on EC2.
     - Roles can be assigned to EC2 instances after its created.
     - Roles are universal (global) and take effect immediately.
 - Bootstrap scripts:
-    - Enable running shell scripts at launch.
+    - Run when the EC2 instance first boots.
+    - Can be a powerful way of automating software installs and updates.
 
 ```bash
-# Example: Running an Apache server with a simple index page
+# Example: Bootstrap script for a simple Apache server
 
 #!/bin/bash
 yum update -y
@@ -246,11 +240,13 @@ cd /var/www/html
 echo "<html><h1>Hello, World!</h1></html>" > index.html
 ```
 
-- Metadata:
-    - Used to internally get all the available information about the running instance.
-    - For example, EC2 can access its public IP address and write it to a database.
+- Metadata can be assigned using tags.
+    - Tagging is a key part of managing an environment.
+- Accessing instance metadata from within:
+    - Instance metadata and user data can be retrieved from within via a special URL.
     - Get metadata by running `curl http://169.256.169.254/latest/meta-data/`
     - Get user data by running `curl http://169.256.169.254/latest/user-data/`
+    - For example, EC2 can access its public IP address and write it to a database.
 
 ### Pricing
 
@@ -313,8 +309,8 @@ echo "<html><h1>Hello, World!</h1></html>" > index.html
 
 #### EBS
 
-- Amazon Elastic Block Store (EBS) provides persistent block storage volumes for EC2 instances.
-- Each volume is replicated within its AZ to protect from component failure.
+- Amazon Elastic Block Store (EBS) provides persistent block storage volumes in the cloud.
+- Each EBS volume is replicated within its AZ to protect from component failure.
 - EBS types:
     - SSD >> General purpose SSD (GP2): For most workloads (16,000 IOPS)
     - SSD >> Provisioned IOPS SSD (IO1): For databases (64,000 IOPS)
@@ -325,17 +321,21 @@ echo "<html><h1>Hello, World!</h1></html>" > index.html
 - Volumes exist on EBS:
     - Think of EBS as of a virtual hard disk.
 - Snapshots exist on S3:
+    - Created with command `aws ec2 create-snapshot`
     - Think of snapshots as of a photograph of the disk.
     - Snapshots are point-in-time copies of volumes.
     - Snapshots are incremental: only the blocks that changed since last snapshots are moved to S3.
     - The first snapshot may take some time.
     - To take a snapshot of a root device, you should stop the EC2 instance first. But you can also make a snapshot while the instance is running.
+    - One can perform actions on an existing EBS snapshot using AWS APIs, CLI, and AWS Console.
+    - One cannot delete a snapshot that is used as the root device of a registered AMI.
 - Data migration:
     - Volumes are always in the same AZ as the EC2 instance.
     - To move an EC2 volume from one AZ to another, take a snapshot, create an AMI from that snapshot, and then use the AMI to launch a new EC2 instance in a new AZ.
     - To move an EC2 volume from one region to another, take a snapshot, create an AMI from that snapshot, copy that AMI to another region, and then use the copied AMI to launch a new EC2 instance in the new region.
 - Encryption:
-    - EBS root volumes of default AMI's cannot be encrypted, but additional volumes can be.
+    - The use of encryption at rest is default requirement for many industry compliance certifications. 
+    - Using AWS managed keys to provide EBS encryption at rest is relatively painless and reliable.
     - Snapshots of encrypted volumes are encrypted automatically.
     - Volumes restored from encrypted snapshots are encrypted automatically.
     - You can share snapshots (on AWS or publicly), but only if they are unencrypted.
@@ -343,7 +343,24 @@ echo "<html><h1>Hello, World!</h1></html>" > index.html
     - To encrypt an unencrypted root device volume, create a snapshot of it, encrypt that snapshot, create an AMI from that snapshot, and use that AMI to launch a new encrypted EC2 instance.
 - Termination:
     - The default action is for the root EBS volume to be deleted when the instance is terminated.
-    - Delete on termination is not checked automatically for added volumes.
+    - The default action for additional volumes is to be persisted.
+- Additional volumes:
+    - Additional volumes can be detached without stopping the instance.
+    - You can add multiple volumes to an EC2 instance and then create your own RAID 5/RAID 10/RAID 0 configurations using those volumes.
+    - You cannot attach an EBS volume to more than one EC2 instance at the same time.
+
+#### Instance stores
+
+- Storage backed by Amazon EBS:
+    - The root device is an Amazon EBS volume created from an Amazon EBS snapshot.
+    - EBS backed instances can be stopped since they get a new host when starting again.
+    - Can be rebooted without data loss.
+- Storage backed by instance store:
+    - Sometimes called ephemeral storage ("persistent" for the life of the instance, non-billable)
+    - The root device is an instance store backed volume created from a template stored on S3.
+    - The instance store is ideal for temporary storage.
+    - Cannot be stopped: If the underlying host fails, the data will be lost.
+    - But can be rebooted without data loss.
 
 #### Images
 
@@ -355,15 +372,6 @@ echo "<html><h1>Hello, World!</h1></html>" > index.html
     - Architecture (32-bit or 64-bit)
     - Launch permissions
     - Storage for the root device (root device volume)
-- Storage backed by Amazon EBS:
-    - The root device is an Amazon EBS volume created from an Amazon EBS snapshot.
-    - EBS backed instances can be stopped since they get a new host when starting again.
-    - Can be rebooted without data loss.
-- Storage backed by instance store:
-    - Sometimes called ephemeral storage ("persistent" for the life of the instance, non-billable)
-    - The root device is an instance store backed volume created from a template stored on S3.
-    - Cannot be stopped: If the underlying host fails, the data will be lost.
-    - But can be rebooted without data loss.
 
 #### EFS
 
@@ -381,6 +389,7 @@ echo "<html><h1>Hello, World!</h1></html>" > index.html
 
 - Clustered placement group:
     - Grouping of instances within a single AZ.
+    - Keeps compute resources within one network hop of each other on high speed rack switches.
     - For applications that require low latency, high network throughput, or both.
     - AWS recommends homogeneous instances with this group.
 - Spread placement group:
@@ -388,6 +397,7 @@ echo "<html><h1>Hello, World!</h1></html>" > index.html
     - For applications that have critical instances that should be kept separate from each other.
     - Can be located in different AZ's of one region.
     - Allows to isolate the impact of hardware failure within application.
+    - Allows to have a maximum of 7 running instances per AZ.
 - Partitioned placement group:
     - Same as spread placement group but allows multiple instances (e.g. Hadoop cluster)
     - Divides each group into logical segments called partitions.
@@ -400,6 +410,23 @@ echo "<html><h1>Hello, World!</h1></html>" > index.html
 - Placement groups can't be merged.
 - An existing instance can't be moved into a placement group.
     - Create an AMI from the existing instance, and then launch a new instance from the AMI into the placement group.
+
+### Security groups
+
+- For a new security group nothing is allowed in by default.
+    - All inbound traffic is blocked by default.
+    - All outbound traffic is allowed by default.
+    - For the default security group everything is allowed though.
+- Changes to security groups take effect immediately.
+- Any number of EC2 instances can be within a security group.
+- Any number of security groups can be attached to an EC2 instance.
+- Security groups are STATEFUL: 
+    - If creating an inbound rule allowing traffic in, that traffic is automatically allowed back out again.
+    - IP addresses cannot be blocked using security groups.
+    - Rules can only be allowed but not denied.
+- Access control lists (ACL's) are STATELESS: 
+    - One has to specify inbound and outbound rules.
+    - IP addresses can be blocked using ACL's.
 
 ## CloudWatch
 
@@ -425,3 +452,157 @@ echo "<html><h1>Hello, World!</h1></html>" > index.html
     - CloudTrail monitors AWS Management Console actions and API calls.
     - CloudTrail records users who called AWS services, their IP addresses, and timestamps.
     - CloudWatch is used for monitoring performance, while CloudTrail is used for auditing.
+
+## Databases
+
+### RDS (OLTP)
+
+<img width=100 src="/datadocs/assets/BM-AWS-RDS-post-icon.png"/>
+
+- Amazon Relational Database Service (Amazon RDS) makes it easy to set up, operate, and scale a relational database in the cloud.
+- Can be optimized for memory, performance or I/O
+    - Use IOPS for OLTP in production environment.
+    - To increase the number of IOPS available to a MySQL database on the root volume of an EC2 instance, add (at minimum) 4 additional EBS SSD volumes and create a RAID 10 using these volumes.
+- Supports six familiar database engines: SQL Server, MySQL Server, PostgreSQL, Aurora, MariaDB.
+- Microsoft SQL Server database engine can have the maximum size of 16TB.
+- MySQL installations default to port number 3306.
+    - The RDS instance port number is automatically applied to the RDS DB Security Group.
+- RDS runs on virtual machines.
+    - You cannot RDP or SSH into an RDS instance however.
+    - Patching of the RDS operating system and DB is Amazon's responsibility.
+    - RDS is not server-less (with exception of Aurora)
+- Encryption:
+    - Encryption at rest is done using the AWS KMS service.
+    - RDS's storage, automated backups, read replicas, and snapshots are encrypted as well.
+
+#### Multi-AZ
+
+- Allows you to have an exact copy of your production database in another AZ.
+- Writes to the production database are automatically synchronized to the standby database.
+- In case of planned database maintenance, instance failure, or an AZ failure, Amazon RDS will automatically failover to the standby without any administrative intervention.
+- You can force a failover from one AZ to another by rebooting the RDS instance.
+- Used primarily for disaster recovery (DR), not for improving performance.
+- Available for all databases except Aurora (it is completely fault-tolerant by default)
+- RDS Reserved instances are also available for Multi-AZ deployments.
+
+#### Read replica
+
+- Allows you to have a read-only copy of your production database.
+- This is achieved by using asynchronous replication.
+    - There is no charge associated with data transfer.
+- Used primarily for very read-heavy database workloads.
+- Must have automatic backups turned on.
+- Up to 5 read replicas can be created.
+    - Can be created from another read replicas (but watch out for latency)
+    - Can be created from a Multi-AZ database.
+    - Can be created in another region.
+- Has its own DNS endpoint.
+- Can be Multi-AZ.
+- Can be promoted to be its own database.
+
+#### Backups
+
+- Automated backups: 
+    - Recover the database to any point in time within a "retention period".
+    - The retention period can be within one and 35 days.
+    - Takes a full daily snapshot and also stores transaction logs throughout the day.
+    - Recovery: Chooses the most recent backup and then applies transaction logs.
+    - With new RDS DB instances, automated backups are enabled by default.
+    - The backup data is stored in S3 and the storage is free (= the size of DB)
+    - Backups are taken within a specified time window.
+- Database snapshots:
+    - Done manually (i.e. user initiated)
+    - They are stored even after you delete the original RDS instance, unlike automated backups.
+    - One can take a final snapshot before deleting the RDB.
+- The restored version of the database with be a new RDS instance with a new DNS endpoint.
+    - `original.us-east-1.rds.amazonaws.com` to `restored.us-east-1.rds.amazonaws.com`
+- During a database snapshot or backup, I/O may be briefly suspended while the backup process initializes (typically under a few seconds), and you may experience a brief period of elevated latency.
+- In RDS, changes to the backup window take effect immediately.
+
+### Aurora
+
+<img width=100 src="/datadocs/assets/BM-AWS-RDS-post-icon.png"/>
+
+- Amazon Aurora is a MySQL-compatible relational database management system (RDBMS) that combines the speed and availability of high-end commercial databases with the simplicity and cost-effectiveness of open source databases.
+- Up to five times better performance than MySQL at a price point one tenth that of a commercial RDBMS.
+- Built from scratch by Amazon.
+- Starts with 10GB and auto-scales in 10GB increments to 64TB.
+- Computes resources can scale up to 34vCPUs and 244GB of memory.
+- Maintains a total of 6 copies of data: 2 copies in each AZ with minimum of 3 AZ's.
+    - Thus, Aurora is available only in regions with minimum of 3 AZ's.
+    - Designed to transparently handle the loss of up to two copies of data without affecting write availability and up to three copies without affecting read availability.
+- Aurora storage is self-healing:
+    - Data blocks and disks are continuously scanned for errors and repaired automatically.
+- Two types of replicas available:
+    - Aurora replicas with automatic failover (currently 15)
+    - MySQL read replicas (currently 5)
+- Backups:
+    - Automatic backups are always enabled.
+    - Backups do not impact database performance.
+    - You can take snapshots, also without impacting database performance.
+    - You can share Aurora snapshots with other AWS accounts.
+- A MySQL database can be migrated to Aurora by creating an Aurora replica and then promoting it, or creating a snapshot and then restoring from it.
+
+### DynamoDB (NoSQL)
+
+<img width=100 src="/datadocs/assets/220px-DynamoDB.png"/>
+
+- Amazon DynamoDB is a fast and flexible NoSQL database service for all applications that need consistent, single-digit millisecond latency at any scale. 
+- It is a fully managed database and supports both document and key-value data models.
+- Great fit for mobile, web, gaming, ad-tech, IoT, and many other applications.
+- Stored on SSD storage.
+- Spread across 3 geographically distinct data centers.
+- Eventual consistent reads:
+    - The response might not reflect the results of a recently completed write operation.
+    - If you repeat your read request after a short time, the response should return the latest data.
+- Strongly consistent reads:
+    - DynamoDB returns a response with the most up-to-date data.
+    - For example, for a financial algorithm of life critical systems or a booking system.
+    - A strongly consistent read might not be available if there is a network delay or outage.
+
+### Redshift (DWH)
+
+<img width=100 src="/datadocs/assets/aws-redshift-logo.svg"/>
+
+- Data warehouses:
+    - Used for business intelligence (tools such as SAP NetWeaver)
+    - Used to pull in very large and complex datasets.
+    - Usually used by management to do queries on data (such as current performance)
+- Amazon's data warehouse solution is called Redshift.
+- Redshift is a fast and powerful, fully managed, petabyte-scale data warehouse service.
+- Can be configured as follows:
+    - Single node (160GB)
+    - Multi-node: Leader node that manages client connections and receives queries, and compute node that stores data and performs queries and computations. Up to 128 compute nodes are permitted.
+- Employs multiple compression techniques.
+    - When loading data into Redshift, it automatically samples the data and select the most appropriate compression scheme.
+- Massively Parallel Processing (MPP):
+    - Automatically distributes data and query load across all nodes.
+    - Redshift makes it easy to add nodes and enables you to maintain fast query performance.
+- Doesn't require indexes or materialized views, and so uses less space.
+- Backups:
+    - Enabled by default with a 1 day retention period.
+    - Maximum retention period is 35 days.
+    - Always attempts to maintain at least three copies of data (the original and replica on the compute nodes and a backup in S3)
+    - Can asynchronously replicate snapshots to S3 in another region for disaster recovery.
+- Priced as follows:
+    - Compute node hours (1 unit per node per hour), but not charged for leader node hours.
+    - Data transfer (only within a VPC, not outside it)
+    - Backups
+- Encryption:
+    - Encrypted in transit using SSL.
+    - Encrypted at rest using AES-256 encryption.
+    - By default Redshift takes care of key management.
+    - But you can manage your keys using HSM or AWS KMS.
+- Availability:
+    - Currently available in one AZ.
+    - Can restore snapshots to new AZ in the event of an outage.
+
+### ElastiCache
+
+<img width=100 src="/datadocs/assets/elasticache-logo.png"/>
+
+- ElastiCache is a web service to deploy, operate, and scale in-memory cache in the cloud.
+- Improves performance of web applications by allowing to retrieve information from fast, managed, in-memory caches, instead of relying entirely on slower disk-based databases.
+- Supports two open-source in-memory caching engines: Memcached and Redis.
+    - For a simple cache to offload DB, use Memcached.
+    - For a cache with more advanced capabilities (Multi-AZ, backups), use Redis.
