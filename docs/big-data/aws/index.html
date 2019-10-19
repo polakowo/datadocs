@@ -347,16 +347,9 @@
 <li>Allows quickly scaling capacity, both up and down, as requirements change.</li>
 <li>Pay as you go, pay for what you use, and pay even less for reserved instances.</li>
 <li>Termination protection is turned off by default.</li>
-<li>Security groups:
+<li>Individual instances are provisioned in a AZ's.
 <ul>
-<li>All inbound traffic is blocked by default.</li>
-<li>All outbound traffic is allowed by default.</li>
-<li>Changes to security groups take effect immediately.</li>
-<li>Any number of EC2 instances can be within a security group.</li>
-<li>Any number of security groups can be attached to an EC2 instance.</li>
-<li>Security groups are stateful: If creating an inbound rule allowing traffic in, that traffic is automatically allowed back out again.</li>
-<li>IP addresses cannot be blocked using security groups, instead use Network Access Control Lists.</li>
-<li>Rules can only be allowed by not denied.</li>
+<li>The region cannot be changed for a running instance, only the AZ.</li>
 </ul></li>
 <li>Credentials:
 <ul>
@@ -366,10 +359,11 @@
 </ul></li>
 <li>Bootstrap scripts:
 <ul>
-<li>Enable running shell scripts at launch.</li>
+<li>Run when the EC2 instance first boots.</li>
+<li>Can be a powerful way of automating software installs and updates.</li>
 </ul></li>
 </ul>
-<pre><code class="hljs css language-bash"><span class="hljs-comment"># Example: Running an Apache server with a simple index page</span>
+<pre><code class="hljs css language-bash"><span class="hljs-comment"># Example: Bootstrap script for a simple Apache server</span>
 
 <span class="hljs-meta">#!/bin/bash</span>
 yum update -y
@@ -380,12 +374,16 @@ chkconfig httpd on
 <span class="hljs-built_in">echo</span> <span class="hljs-string">"&lt;html&gt;&lt;h1&gt;Hello, World!&lt;/h1&gt;&lt;/html&gt;"</span> &gt; index.html
 </code></pre>
 <ul>
-<li>Metadata:
+<li>Metadata can be assigned using tags.
 <ul>
-<li>Used to internally get all the available information about the running instance.</li>
-<li>For example, EC2 can access its public IP address and write it to a database.</li>
+<li>Tagging is a key part of managing an environment.</li>
+</ul></li>
+<li>Accessing instance metadata from within:
+<ul>
+<li>Instance metadata and user data can be retrieved from within via a special URL.</li>
 <li>Get metadata by running <code>curl http://169.256.169.254/latest/meta-data/</code></li>
 <li>Get user data by running <code>curl http://169.256.169.254/latest/user-data/</code></li>
+<li>For example, EC2 can access its public IP address and write it to a database.</li>
 </ul></li>
 </ul>
 <h3><a class="anchor" aria-hidden="true" id="pricing"></a><a href="#pricing" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Pricing</h3>
@@ -466,8 +464,8 @@ chkconfig httpd on
 </ul>
 <h4><a class="anchor" aria-hidden="true" id="ebs"></a><a href="#ebs" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>EBS</h4>
 <ul>
-<li>Amazon Elastic Block Store (EBS) provides persistent block storage volumes for EC2 instances.</li>
-<li>Each volume is replicated within its AZ to protect from component failure.</li>
+<li>Amazon Elastic Block Store (EBS) provides persistent block storage volumes in the cloud.</li>
+<li>Each EBS volume is replicated within its AZ to protect from component failure.</li>
 <li>EBS types:
 <ul>
 <li>SSD &gt;&gt; General purpose SSD (GP2): For most workloads (16,000 IOPS)</li>
@@ -483,11 +481,14 @@ chkconfig httpd on
 </ul></li>
 <li>Snapshots exist on S3:
 <ul>
+<li>Created with command <code>aws ec2 create-snapshot</code></li>
 <li>Think of snapshots as of a photograph of the disk.</li>
 <li>Snapshots are point-in-time copies of volumes.</li>
 <li>Snapshots are incremental: only the blocks that changed since last snapshots are moved to S3.</li>
 <li>The first snapshot may take some time.</li>
 <li>To take a snapshot of a root device, you should stop the EC2 instance first. But you can also make a snapshot while the instance is running.</li>
+<li>One can perform actions on an existing EBS snapshot using AWS APIs, CLI, and AWS Console.</li>
+<li>One cannot delete a snapshot that is used as the root device of a registered AMI.</li>
 </ul></li>
 <li>Data migration:
 <ul>
@@ -497,7 +498,8 @@ chkconfig httpd on
 </ul></li>
 <li>Encryption:
 <ul>
-<li>EBS root volumes of default AMI's cannot be encrypted, but additional volumes can be.</li>
+<li>The use of encryption at rest is default requirement for many industry compliance certifications.</li>
+<li>Using AWS managed keys to provide EBS encryption at rest is relatively painless and reliable.</li>
 <li>Snapshots of encrypted volumes are encrypted automatically.</li>
 <li>Volumes restored from encrypted snapshots are encrypted automatically.</li>
 <li>You can share snapshots (on AWS or publicly), but only if they are unencrypted.</li>
@@ -507,7 +509,30 @@ chkconfig httpd on
 <li>Termination:
 <ul>
 <li>The default action is for the root EBS volume to be deleted when the instance is terminated.</li>
-<li>Delete on termination is not checked automatically for added volumes.</li>
+<li>The default action for additional volumes is to be persisted.</li>
+</ul></li>
+<li>Additional volumes:
+<ul>
+<li>Additional volumes can be detached without stopping the instance.</li>
+<li>You can add multiple volumes to an EC2 instance and then create your own RAID 5/RAID 10/RAID 0 configurations using those volumes.</li>
+<li>You cannot attach an EBS volume to more than one EC2 instance at the same time.</li>
+</ul></li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="instance-stores"></a><a href="#instance-stores" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Instance stores</h4>
+<ul>
+<li>Storage backed by Amazon EBS:
+<ul>
+<li>The root device is an Amazon EBS volume created from an Amazon EBS snapshot.</li>
+<li>EBS backed instances can be stopped since they get a new host when starting again.</li>
+<li>Can be rebooted without data loss.</li>
+</ul></li>
+<li>Storage backed by instance store:
+<ul>
+<li>Sometimes called ephemeral storage (&quot;persistent&quot; for the life of the instance, non-billable)</li>
+<li>The root device is an instance store backed volume created from a template stored on S3.</li>
+<li>The instance store is ideal for temporary storage.</li>
+<li>Cannot be stopped: If the underlying host fails, the data will be lost.</li>
+<li>But can be rebooted without data loss.</li>
 </ul></li>
 </ul>
 <h4><a class="anchor" aria-hidden="true" id="images"></a><a href="#images" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Images</h4>
@@ -521,19 +546,6 @@ chkconfig httpd on
 <li>Architecture (32-bit or 64-bit)</li>
 <li>Launch permissions</li>
 <li>Storage for the root device (root device volume)</li>
-</ul></li>
-<li>Storage backed by Amazon EBS:
-<ul>
-<li>The root device is an Amazon EBS volume created from an Amazon EBS snapshot.</li>
-<li>EBS backed instances can be stopped since they get a new host when starting again.</li>
-<li>Can be rebooted without data loss.</li>
-</ul></li>
-<li>Storage backed by instance store:
-<ul>
-<li>Sometimes called ephemeral storage (&quot;persistent&quot; for the life of the instance, non-billable)</li>
-<li>The root device is an instance store backed volume created from a template stored on S3.</li>
-<li>Cannot be stopped: If the underlying host fails, the data will be lost.</li>
-<li>But can be rebooted without data loss.</li>
 </ul></li>
 </ul>
 <h4><a class="anchor" aria-hidden="true" id="efs"></a><a href="#efs" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>EFS</h4>
@@ -557,6 +569,7 @@ chkconfig httpd on
 <li>Clustered placement group:
 <ul>
 <li>Grouping of instances within a single AZ.</li>
+<li>Keeps compute resources within one network hop of each other on high speed rack switches.</li>
 <li>For applications that require low latency, high network throughput, or both.</li>
 <li>AWS recommends homogeneous instances with this group.</li>
 </ul></li>
@@ -566,6 +579,7 @@ chkconfig httpd on
 <li>For applications that have critical instances that should be kept separate from each other.</li>
 <li>Can be located in different AZ's of one region.</li>
 <li>Allows to isolate the impact of hardware failure within application.</li>
+<li>Allows to have a maximum of 7 running instances per AZ.</li>
 </ul></li>
 <li>Partitioned placement group:
 <ul>
@@ -582,6 +596,29 @@ chkconfig httpd on
 <li>An existing instance can't be moved into a placement group.
 <ul>
 <li>Create an AMI from the existing instance, and then launch a new instance from the AMI into the placement group.</li>
+</ul></li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="security-groups"></a><a href="#security-groups" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Security groups</h3>
+<ul>
+<li>For a new security group nothing is allowed in by default.
+<ul>
+<li>All inbound traffic is blocked by default.</li>
+<li>All outbound traffic is allowed by default.</li>
+<li>For the default security group everything is allowed though.</li>
+</ul></li>
+<li>Changes to security groups take effect immediately.</li>
+<li>Any number of EC2 instances can be within a security group.</li>
+<li>Any number of security groups can be attached to an EC2 instance.</li>
+<li>Security groups are STATEFUL:
+<ul>
+<li>If creating an inbound rule allowing traffic in, that traffic is automatically allowed back out again.</li>
+<li>IP addresses cannot be blocked using security groups.</li>
+<li>Rules can only be allowed but not denied.</li>
+</ul></li>
+<li>Access control lists (ACL's) are STATELESS:
+<ul>
+<li>One has to specify inbound and outbound rules.</li>
+<li>IP addresses can be blocked using ACL's.</li>
 </ul></li>
 </ul>
 <h2><a class="anchor" aria-hidden="true" id="cloudwatch"></a><a href="#cloudwatch" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>CloudWatch</h2>
@@ -622,7 +659,203 @@ chkconfig httpd on
 <li>CloudWatch is used for monitoring performance, while CloudTrail is used for auditing.</li>
 </ul></li>
 </ul>
-</span></div></article></div><div class="docLastUpdate"><em>Last updated on 2019-10-19 by Oleg Polakow</em></div><div class="docs-prevnext"><a class="docs-prev button" href="/datadocs/docs/big-data/cloud-computing"><span class="arrow-prev">← </span><span>Cloud Computing</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#infrastructure">Infrastructure</a></li><li><a href="#iam">IAM</a></li><li><a href="#s3">S3</a><ul class="toc-headings"><li><a href="#storage-classes">Storage classes</a></li><li><a href="#features">Features</a></li><li><a href="#data-transfer">Data transfer</a></li></ul></li><li><a href="#ec2">EC2</a><ul class="toc-headings"><li><a href="#pricing">Pricing</a></li><li><a href="#instance-types">Instance types</a></li><li><a href="#storage">Storage</a></li><li><a href="#placement-groups">Placement groups</a></li></ul></li><li><a href="#cloudwatch">CloudWatch</a></li></ul></nav></div><footer class="nav-footer" id="footer"><div class="brand-box"><div class="brand"><a href="https://www.tum.de/nc/en/" target="_blank" rel="noreferrer noopener" class="brand-link"><img src="/datadocs/img/tum_logo.png" alt="Technical University of Munich" height="45"/></a></div><div class="brand"><a href="https://opensource.facebook.com/" target="_blank" rel="noreferrer noopener" class="brand-link"><img src="/datadocs/img/oss_logo.png" alt="Facebook Open Source" width="170" height="45"/></a></div></div><section class="copyright">Copyright © 2019 polakowo.io</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
+<h2><a class="anchor" aria-hidden="true" id="databases"></a><a href="#databases" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Databases</h2>
+<h3><a class="anchor" aria-hidden="true" id="rds-oltp"></a><a href="#rds-oltp" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>RDS (OLTP)</h3>
+<p><img width=100 src="/datadocs/assets/BM-AWS-RDS-post-icon.png"/></p>
+<ul>
+<li>Amazon Relational Database Service (Amazon RDS) makes it easy to set up, operate, and scale a relational database in the cloud.</li>
+<li>Can be optimized for memory, performance or I/O
+<ul>
+<li>Use IOPS for OLTP in production environment.</li>
+<li>To increase the number of IOPS available to a MySQL database on the root volume of an EC2 instance, add (at minimum) 4 additional EBS SSD volumes and create a RAID 10 using these volumes.</li>
+</ul></li>
+<li>Supports six familiar database engines: SQL Server, MySQL Server, PostgreSQL, Aurora, MariaDB.</li>
+<li>Microsoft SQL Server database engine can have the maximum size of 16TB.</li>
+<li>MySQL installations default to port number 3306.
+<ul>
+<li>The RDS instance port number is automatically applied to the RDS DB Security Group.</li>
+</ul></li>
+<li>RDS runs on virtual machines.
+<ul>
+<li>You cannot RDP or SSH into an RDS instance however.</li>
+<li>Patching of the RDS operating system and DB is Amazon's responsibility.</li>
+<li>RDS is not server-less (with exception of Aurora)</li>
+</ul></li>
+<li>Encryption:
+<ul>
+<li>Encryption at rest is done using the AWS KMS service.</li>
+<li>RDS's storage, automated backups, read replicas, and snapshots are encrypted as well.</li>
+</ul></li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="multi-az"></a><a href="#multi-az" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Multi-AZ</h4>
+<ul>
+<li>Allows you to have an exact copy of your production database in another AZ.</li>
+<li>Writes to the production database are automatically synchronized to the standby database.</li>
+<li>In case of planned database maintenance, instance failure, or an AZ failure, Amazon RDS will automatically failover to the standby without any administrative intervention.</li>
+<li>You can force a failover from one AZ to another by rebooting the RDS instance.</li>
+<li>Used primarily for disaster recovery (DR), not for improving performance.</li>
+<li>Available for all databases except Aurora (it is completely fault-tolerant by default)</li>
+<li>RDS Reserved instances are also available for Multi-AZ deployments.</li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="read-replica"></a><a href="#read-replica" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Read replica</h4>
+<ul>
+<li>Allows you to have a read-only copy of your production database.</li>
+<li>This is achieved by using asynchronous replication.
+<ul>
+<li>There is no charge associated with data transfer.</li>
+</ul></li>
+<li>Used primarily for very read-heavy database workloads.</li>
+<li>Must have automatic backups turned on.</li>
+<li>Up to 5 read replicas can be created.
+<ul>
+<li>Can be created from another read replicas (but watch out for latency)</li>
+<li>Can be created from a Multi-AZ database.</li>
+<li>Can be created in another region.</li>
+</ul></li>
+<li>Has its own DNS endpoint.</li>
+<li>Can be Multi-AZ.</li>
+<li>Can be promoted to be its own database.</li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="backups"></a><a href="#backups" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Backups</h4>
+<ul>
+<li>Automated backups:
+<ul>
+<li>Recover the database to any point in time within a &quot;retention period&quot;.</li>
+<li>The retention period can be within one and 35 days.</li>
+<li>Takes a full daily snapshot and also stores transaction logs throughout the day.</li>
+<li>Recovery: Chooses the most recent backup and then applies transaction logs.</li>
+<li>With new RDS DB instances, automated backups are enabled by default.</li>
+<li>The backup data is stored in S3 and the storage is free (= the size of DB)</li>
+<li>Backups are taken within a specified time window.</li>
+</ul></li>
+<li>Database snapshots:
+<ul>
+<li>Done manually (i.e. user initiated)</li>
+<li>They are stored even after you delete the original RDS instance, unlike automated backups.</li>
+<li>One can take a final snapshot before deleting the RDB.</li>
+</ul></li>
+<li>The restored version of the database with be a new RDS instance with a new DNS endpoint.
+<ul>
+<li><code>original.us-east-1.rds.amazonaws.com</code> to <code>restored.us-east-1.rds.amazonaws.com</code></li>
+</ul></li>
+<li>During a database snapshot or backup, I/O may be briefly suspended while the backup process initializes (typically under a few seconds), and you may experience a brief period of elevated latency.</li>
+<li>In RDS, changes to the backup window take effect immediately.</li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="aurora"></a><a href="#aurora" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Aurora</h3>
+<p><img width=100 src="/datadocs/assets/BM-AWS-RDS-post-icon.png"/></p>
+<ul>
+<li>Amazon Aurora is a MySQL-compatible relational database management system (RDBMS) that combines the speed and availability of high-end commercial databases with the simplicity and cost-effectiveness of open source databases.</li>
+<li>Up to five times better performance than MySQL at a price point one tenth that of a commercial RDBMS.</li>
+<li>Built from scratch by Amazon.</li>
+<li>Starts with 10GB and auto-scales in 10GB increments to 64TB.</li>
+<li>Computes resources can scale up to 34vCPUs and 244GB of memory.</li>
+<li>Maintains a total of 6 copies of data: 2 copies in each AZ with minimum of 3 AZ's.
+<ul>
+<li>Thus, Aurora is available only in regions with minimum of 3 AZ's.</li>
+<li>Designed to transparently handle the loss of up to two copies of data without affecting write availability and up to three copies without affecting read availability.</li>
+</ul></li>
+<li>Aurora storage is self-healing:
+<ul>
+<li>Data blocks and disks are continuously scanned for errors and repaired automatically.</li>
+</ul></li>
+<li>Two types of replicas available:
+<ul>
+<li>Aurora replicas with automatic failover (currently 15)</li>
+<li>MySQL read replicas (currently 5)</li>
+</ul></li>
+<li>Backups:
+<ul>
+<li>Automatic backups are always enabled.</li>
+<li>Backups do not impact database performance.</li>
+<li>You can take snapshots, also without impacting database performance.</li>
+<li>You can share Aurora snapshots with other AWS accounts.</li>
+</ul></li>
+<li>A MySQL database can be migrated to Aurora by creating an Aurora replica and then promoting it, or creating a snapshot and then restoring from it.</li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="dynamodb-nosql"></a><a href="#dynamodb-nosql" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>DynamoDB (NoSQL)</h3>
+<p><img width=100 src="/datadocs/assets/220px-DynamoDB.png"/></p>
+<ul>
+<li>Amazon DynamoDB is a fast and flexible NoSQL database service for all applications that need consistent, single-digit millisecond latency at any scale.</li>
+<li>It is a fully managed database and supports both document and key-value data models.</li>
+<li>Great fit for mobile, web, gaming, ad-tech, IoT, and many other applications.</li>
+<li>Stored on SSD storage.</li>
+<li>Spread across 3 geographically distinct data centers.</li>
+<li>Eventual consistent reads:
+<ul>
+<li>The response might not reflect the results of a recently completed write operation.</li>
+<li>If you repeat your read request after a short time, the response should return the latest data.</li>
+</ul></li>
+<li>Strongly consistent reads:
+<ul>
+<li>DynamoDB returns a response with the most up-to-date data.</li>
+<li>For example, for a financial algorithm of life critical systems or a booking system.</li>
+<li>A strongly consistent read might not be available if there is a network delay or outage.</li>
+</ul></li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="redshift-dwh"></a><a href="#redshift-dwh" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Redshift (DWH)</h3>
+<p><img width=100 src="/datadocs/assets/aws-redshift-logo.svg"/></p>
+<ul>
+<li>Data warehouses:
+<ul>
+<li>Used for business intelligence (tools such as SAP NetWeaver)</li>
+<li>Used to pull in very large and complex datasets.</li>
+<li>Usually used by management to do queries on data (such as current performance)</li>
+</ul></li>
+<li>Amazon's data warehouse solution is called Redshift.</li>
+<li>Redshift is a fast and powerful, fully managed, petabyte-scale data warehouse service.</li>
+<li>Can be configured as follows:
+<ul>
+<li>Single node (160GB)</li>
+<li>Multi-node: Leader node that manages client connections and receives queries, and compute node that stores data and performs queries and computations. Up to 128 compute nodes are permitted.</li>
+</ul></li>
+<li>Employs multiple compression techniques.
+<ul>
+<li>When loading data into Redshift, it automatically samples the data and select the most appropriate compression scheme.</li>
+</ul></li>
+<li>Massively Parallel Processing (MPP):
+<ul>
+<li>Automatically distributes data and query load across all nodes.</li>
+<li>Redshift makes it easy to add nodes and enables you to maintain fast query performance.</li>
+</ul></li>
+<li>Doesn't require indexes or materialized views, and so uses less space.</li>
+<li>Backups:
+<ul>
+<li>Enabled by default with a 1 day retention period.</li>
+<li>Maximum retention period is 35 days.</li>
+<li>Always attempts to maintain at least three copies of data (the original and replica on the compute nodes and a backup in S3)</li>
+<li>Can asynchronously replicate snapshots to S3 in another region for disaster recovery.</li>
+</ul></li>
+<li>Priced as follows:
+<ul>
+<li>Compute node hours (1 unit per node per hour), but not charged for leader node hours.</li>
+<li>Data transfer (only within a VPC, not outside it)</li>
+<li>Backups</li>
+</ul></li>
+<li>Encryption:
+<ul>
+<li>Encrypted in transit using SSL.</li>
+<li>Encrypted at rest using AES-256 encryption.</li>
+<li>By default Redshift takes care of key management.</li>
+<li>But you can manage your keys using HSM or AWS KMS.</li>
+</ul></li>
+<li>Availability:
+<ul>
+<li>Currently available in one AZ.</li>
+<li>Can restore snapshots to new AZ in the event of an outage.</li>
+</ul></li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="elasticache"></a><a href="#elasticache" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>ElastiCache</h3>
+<p><img width=100 src="/datadocs/assets/elasticache-logo.png"/></p>
+<ul>
+<li>ElastiCache is a web service to deploy, operate, and scale in-memory cache in the cloud.</li>
+<li>Improves performance of web applications by allowing to retrieve information from fast, managed, in-memory caches, instead of relying entirely on slower disk-based databases.</li>
+<li>Supports two open-source in-memory caching engines: Memcached and Redis.
+<ul>
+<li>For a simple cache to offload DB, use Memcached.</li>
+<li>For a cache with more advanced capabilities (Multi-AZ, backups), use Redis.</li>
+</ul></li>
+</ul>
+</span></div></article></div><div class="docLastUpdate"><em>Last updated on 2019-10-19 by Oleg Polakow</em></div><div class="docs-prevnext"><a class="docs-prev button" href="/datadocs/docs/big-data/cloud-computing"><span class="arrow-prev">← </span><span>Cloud Computing</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#infrastructure">Infrastructure</a></li><li><a href="#iam">IAM</a></li><li><a href="#s3">S3</a><ul class="toc-headings"><li><a href="#storage-classes">Storage classes</a></li><li><a href="#features">Features</a></li><li><a href="#data-transfer">Data transfer</a></li></ul></li><li><a href="#ec2">EC2</a><ul class="toc-headings"><li><a href="#pricing">Pricing</a></li><li><a href="#instance-types">Instance types</a></li><li><a href="#storage">Storage</a></li><li><a href="#placement-groups">Placement groups</a></li><li><a href="#security-groups">Security groups</a></li></ul></li><li><a href="#cloudwatch">CloudWatch</a></li><li><a href="#databases">Databases</a><ul class="toc-headings"><li><a href="#rds-oltp">RDS (OLTP)</a></li><li><a href="#aurora">Aurora</a></li><li><a href="#dynamodb-nosql">DynamoDB (NoSQL)</a></li><li><a href="#redshift-dwh">Redshift (DWH)</a></li><li><a href="#elasticache">ElastiCache</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><div class="brand-box"><div class="brand"><a href="https://www.tum.de/nc/en/" target="_blank" rel="noreferrer noopener" class="brand-link"><img src="/datadocs/img/tum_logo.png" alt="Technical University of Munich" height="45"/></a></div><div class="brand"><a href="https://opensource.facebook.com/" target="_blank" rel="noreferrer noopener" class="brand-link"><img src="/datadocs/img/oss_logo.png" alt="Facebook Open Source" width="170" height="45"/></a></div></div><section class="copyright">Copyright © 2019 polakowo.io</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
                 document.addEventListener('keyup', function(e) {
                   if (e.target !== document.body) {
                     return;
