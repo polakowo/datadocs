@@ -7,6 +7,8 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/big-data/
 
 <img width=150 src="/datadocs/assets/1200px-Amazon_Web_Services_Logo.svg.png"/>
 
+- [AWS This Week](https://acloud.guru/aws-this-week) is quick online coverage of breaking news and current headlines from AWS.
+
 ## Infrastructure
 
 - Each region is a distinct location designed to provide high availability to a specific geography. 
@@ -101,7 +103,7 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/big-data/
     - "Your proposed upload exceeds the maximum allowed object size": design the application to use the Multipart Upload API for all objects.
     - Read the [S3 FAQs](https://aws.amazon.com/s3/faqs/)
 
-#### Storage classes
+### Storage classes
 
 - S3 Standard: 
     - Stored redundantly across multiple devices in multiple facilities, and is designed to sustain the loss of 2 facilities concurrently.
@@ -125,7 +127,7 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/big-data/
     - RRS has effectively been deprecated.
 - [Amazon S3 Storage Classes](https://aws.amazon.com/s3/storage-classes/)
 
-#### Features
+### Features
 
 - Data consistency:
     - Read after write consistency for newly created files (available immediately)
@@ -201,10 +203,6 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/big-data/
     - Can be used to move large amounts of data into and out of AWS, as a temporary storage tier for large local datasets, and to support local workloads in remote or offline locations.
     - Connects to existing applications and infrastructure.
     - Can cluster together to form a local storage tier and process data on-premises, helping ensure your applications continue to run even when they are not able to access to cloud.
-
-<img width=250 src="/datadocs/assets/amazon-snowmobile-truck-aws-3.jpg"/>
-<center><a href="https://twistedsifter.com/2017/05/amazon-aws-data-transfer-cloud-truck-snowmobile/" class="credit">Credit</a></center>
-
 - AWS Snowmobile is an Exabyte-scale data transfer service. 
     - One can transfer up to 100PB per Snowmobile, a 45-foot long ruggedized shipping container. 
     - For video libraries, image repositories, or even a complete data center migration.
@@ -219,9 +217,7 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/big-data/
     - A huge side-effect of both of these: it’s way easier to innovate.
 - Allows quickly scaling capacity, both up and down, as requirements change.
 - Pay as you go, pay for what you use, and pay even less for reserved instances.
-- Instance termination:
-    - Termination protection is turned off by default.
-    - The default action is for the root EBS volume to be deleted when the instance is terminated.
+- Termination protection is turned off by default.
 - Security groups:
     - All inbound traffic is blocked by default.
     - All outbound traffic is allowed by default.
@@ -231,8 +227,32 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/big-data/
     - Security groups are stateful: If creating an inbound rule allowing traffic in, that traffic is automatically allowed back out again.
     - IP addresses cannot be blocked using security groups, instead use Network Access Control Lists.
     - Rules can only be allowed by not denied.
+- Credentials:
+    - Roles are more secure and easier to manage than via `aws configure` on EC2.
+    - Roles can be assigned to EC2 instances after its created.
+    - Roles are universal (global) and take effect immediately.
+- Bootstrap scripts:
+    - Enable running shell scripts at launch.
 
-#### Pricing
+```bash
+# Example: Running an Apache server with a simple index page
+
+#!/bin/bash
+yum update -y
+yum install httpd -y
+service httpd start
+chkconfig httpd on
+cd /var/www/html
+echo "<html><h1>Hello, World!</h1></html>" > index.html
+```
+
+- Metadata:
+    - Used to internally get all the available information about the running instance.
+    - For example, EC2 can access its public IP address and write it to a database.
+    - Get metadata by running `curl http://169.256.169.254/latest/meta-data/`
+    - Get user data by running `curl http://169.256.169.254/latest/user-data/`
+
+### Pricing
 
 - On demand:
     - Fixed rate by hour (or by second) with no up-front payment or commitment.
@@ -261,7 +281,10 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/big-data/
     - Can be purchased on-demand.
     - Can be purchased as a reservation for up to 70% off the on-demand price.
 
-#### Instance types
+### Instance types
+
+<img width=250 src="/datadocs/assets/mr-mcpxz.png"/>
+<center><a href="https://www.udemy.com/course/aws-certified-solutions-architect-associate" class="credit">Credit</a></center>
 
 - Fight Dr. McPXZ in Australia
 - FIGHT:
@@ -283,3 +306,122 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/big-data/
 - AU:
     - A (Arm-based workloads): Scale-out workloads such as web servers
     - U (Bare metal): Bare metal capabilities
+
+### Storage
+
+- [AWS Storage Types - S3, EFS, & EBS](https://help.acloud.guru/hc/en-us/articles/115002011194)
+
+#### EBS
+
+- Amazon Elastic Block Store (EBS) provides persistent block storage volumes for EC2 instances.
+- Each volume is replicated within its AZ to protect from component failure.
+- EBS types:
+    - SSD >> General purpose SSD (GP2): For most workloads (16,000 IOPS)
+    - SSD >> Provisioned IOPS SSD (IO1): For databases (64,000 IOPS)
+    - Magnetic >> Throughput Optimized HDD (ST1): For big data, DWH, logs (500 IOPS)
+    - Magnetic >> Cold HDD (SC1): Cheap, for file servers (250 IOPS)
+    - Magnetic >> EBS Magnetic: Extra cheap, for infrequently accessed workloads (40-200 IOPS)
+    - EBS volumes can be changed on the fly (including the size and storage type)
+- Volumes exist on EBS:
+    - Think of EBS as of a virtual hard disk.
+- Snapshots exist on S3:
+    - Think of snapshots as of a photograph of the disk.
+    - Snapshots are point-in-time copies of volumes.
+    - Snapshots are incremental: only the blocks that changed since last snapshots are moved to S3.
+    - The first snapshot may take some time.
+    - To take a snapshot of a root device, you should stop the EC2 instance first. But you can also make a snapshot while the instance is running.
+- Data migration:
+    - Volumes are always in the same AZ as the EC2 instance.
+    - To move an EC2 volume from one AZ to another, take a snapshot, create an AMI from that snapshot, and then use the AMI to launch a new EC2 instance in a new AZ.
+    - To move an EC2 volume from one region to another, take a snapshot, create an AMI from that snapshot, copy that AMI to another region, and then use the copied AMI to launch a new EC2 instance in the new region.
+- Encryption:
+    - EBS root volumes of default AMI's cannot be encrypted, but additional volumes can be.
+    - Snapshots of encrypted volumes are encrypted automatically.
+    - Volumes restored from encrypted snapshots are encrypted automatically.
+    - You can share snapshots (on AWS or publicly), but only if they are unencrypted.
+    - You can now encrypt root device volumes upon creation of the EC2 instance.
+    - To encrypt an unencrypted root device volume, create a snapshot of it, encrypt that snapshot, create an AMI from that snapshot, and use that AMI to launch a new encrypted EC2 instance.
+- Termination:
+    - The default action is for the root EBS volume to be deleted when the instance is terminated.
+    - Delete on termination is not checked automatically for added volumes.
+
+#### Images
+
+- Amazon Machine Images (AMI) are configurations of EC2 instances:
+- AMI's can be created from both volumes and snapshots.
+- Created upon various characteristics:
+    - Region
+    - Operating system
+    - Architecture (32-bit or 64-bit)
+    - Launch permissions
+    - Storage for the root device (root device volume)
+- Storage backed by Amazon EBS:
+    - The root device is an Amazon EBS volume created from an Amazon EBS snapshot.
+    - EBS backed instances can be stopped since they get a new host when starting again.
+    - Can be rebooted without data loss.
+- Storage backed by instance store:
+    - Sometimes called ephemeral storage ("persistent" for the life of the instance, non-billable)
+    - The root device is an instance store backed volume created from a template stored on S3.
+    - Cannot be stopped: If the underlying host fails, the data will be lost.
+    - But can be rebooted without data loss.
+
+#### EFS
+
+- Amazon Elastic File System (EFS) is a file storage service for EC2 instances.
+- Easy to use, and provides a simple interface for creating and configuring file systems.
+- Storage capacity is elastic, that is, it is growing and shrinking automatically.
+    - Can scale up to petabytes.
+- Supports the NFSv4 protocol.
+    - Can support thousands of concurrent NFS connections.
+- Only pay for what you use (no pre-provisioning required)
+- Data is stored across multiple AZ's within a region.
+- Read after write consistency. 
+
+### Placement groups
+
+- Clustered placement group:
+    - Grouping of instances within a single AZ.
+    - For applications that require low latency, high network throughput, or both.
+    - AWS recommends homogeneous instances with this group.
+- Spread placement group:
+    - Grouping of instances that are each placed on distinct hardware.
+    - For applications that have critical instances that should be kept separate from each other.
+    - Can be located in different AZ's of one region.
+    - Allows to isolate the impact of hardware failure within application.
+- Partitioned placement group:
+    - Same as spread placement group but allows multiple instances (e.g. Hadoop cluster)
+    - Divides each group into logical segments called partitions.
+    - Each partition has its own set of racks.
+    - Each rack has its own network and power sources.
+    - No two partitions within a placement group share the same racks. 
+    - Allows to isolate the impact of hardware failure within application.
+- Only certain instances can be launched within each group.
+- The specified name must be unique within the AWS account.
+- Placement groups can't be merged.
+- An existing instance can't be moved into a placement group.
+    - Create an AMI from the existing instance, and then launch a new instance from the AMI into the placement group.
+
+## CloudWatch
+
+<img width=100 src="/datadocs/assets/cloudwatch.png"/>
+
+- Amazon CloudWatch is a monitoring service for AWS resources and applications.
+    - CloudWatch can monitor most of the AWS.
+- Dashboards:
+    - Creates dashboards to see what is happing in the AWS environment.
+    - Can be global or regional.
+- Alarms:
+    - Set alarms to notify you when particular thresholds have been hit.
+- Events:
+    - Helps you to respond to state changes in AWS resources.
+- Logs:
+    - Helps you to aggregate, monitor and store logs.
+- Watching compute instances:
+    - Host level checks metrics include CPU, network, disk and status check.
+    - Standard monitoring = 5 minutes (default)
+    - Detailed monitoring = 1 minute (additional costs may apply)
+    - Allows creating performance alarms that trigger notifications.
+- Compared to AWS CloudTrail:
+    - CloudTrail monitors AWS Management Console actions and API calls.
+    - CloudTrail records users who called AWS services, their IP addresses, and timestamps.
+    - CloudWatch is used for monitoring performance, while CloudTrail is used for auditing.
