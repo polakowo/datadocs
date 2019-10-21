@@ -12,9 +12,6 @@ Follow guided learning, stay curious, watch the market and the industry, find th
 
 ## Role comparison
 
-<img width=450 src="/datadocs/assets/main-qimg-2466ca52e060125bda9d131dc4f1a9fa.png"/>
-<center><a href="https://www.quora.com/What-is-the-difference-between-Data-Analytics-Data-Analysis-Data-Mining-Data-Science-Machine-Learning-and-Big-Data-1" class="credit">Credit</a></center>
-
 #### Big Data
 
 - Using all of the data available to provide new insights to a problem.

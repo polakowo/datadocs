@@ -37,7 +37,7 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/big-data/
 
 ## IAM
 
-<img width=200 src="/datadocs/assets/What-is-IAM-in-AWS-and-How-to-Create-user-in-IAM.png"/>
+<img width=70 src="/datadocs/assets/aws-iam.svg"/>
 
 - IAM allows to manage users and their level of access to the AWS console.
 - IAM is universal and is not region-specific at this time.
@@ -189,9 +189,6 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/big-data/
 
 #### Snowball
 
-<img width=200 src="/datadocs/assets/az.0.0.jpg"/>
-<center><a href="https://www.theverge.com/2015/10/7/9471381/amazon-snowball-data-transfer-device" class="credit">Credit</a></center>
-
 - Snowball is a petabyte-scale data transport solution.
     - Uses secure appliances to transfer large amounts of data and out of AWS. 
     - Addresses challenges such as high network costs, long transfer times, and security concerns. 
@@ -199,6 +196,10 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/big-data/
     - Comes in either a 50TB or 80TB size. 
     - Uses multiple layers of security including tamper-resistant enclosures, 256-bit encryption, and an industry-standard Trusted Platform Module (TPM) designed to ensure both security and full chain-of-custody of data. 
     - Once the data transfer job has been processed and verified, AWS performs a software erase.
+
+<img width=200 src="/datadocs/assets/az.0.0.jpg"/>
+<center><a href="https://www.theverge.com/2015/10/7/9471381/amazon-snowball-data-transfer-device" class="credit">Credit</a></center>
+
 - AWS Snowball Edge is a 100TB data transfer device with on-board storage and compute capabilities. 
     - Can be used to move large amounts of data into and out of AWS, as a temporary storage tier for large local datasets, and to support local workloads in remote or offline locations.
     - Connects to existing applications and infrastructure.
@@ -207,6 +208,9 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/big-data/
     - One can transfer up to 100PB per Snowmobile, a 45-foot long ruggedized shipping container. 
     - For video libraries, image repositories, or even a complete data center migration.
 - [When to use Snowball](https://aws.amazon.com/snowball/faqs/#When_to_use_Snowball)
+
+<img width=300 src="/datadocs/assets/maxresdefault copy.jpg"/>
+<center><a href="https://www.youtube.com/watch?v=b7f2V7ecgh8" class="credit">Credit</a></center>
 
 ## EC2
 
@@ -519,7 +523,7 @@ echo "<html><h1>Hello, World!</h1></html>" > index.html
 - During a database snapshot or backup, I/O may be briefly suspended while the backup process initializes (typically under a few seconds), and you may experience a brief period of elevated latency.
 - In RDS, changes to the backup window take effect immediately.
 
-### Aurora
+### Aurora (Serverless, OLTP)
 
 <img width=100 src="/datadocs/assets/BM-AWS-RDS-post-icon.png"/>
 
@@ -606,3 +610,105 @@ echo "<html><h1>Hello, World!</h1></html>" > index.html
 - Supports two open-source in-memory caching engines: Memcached and Redis.
     - For a simple cache to offload DB, use Memcached.
     - For a cache with more advanced capabilities (Multi-AZ, backups), use Redis.
+
+## Routing
+
+### DNS
+
+- The Domain Name Systems (DNS) is the phonebook of the Internet.
+    - Converts a hostname (`www.example.com`) into a computer-friendly IP address (`192.168.1.1`)
+- The DNS recursor is a server designed to receive queries from client machines.
+    - Makes a series of requests until it reaches the authoritative DNS nameserver.
+    - Cached either locally inside the querying computer or remotely in the DNS infrastructure.
+    - Examples include Google DNS, OpenDNS, and providers like Comcast.
+- Root nameserver responds to the resolver with the address of a TLD server (such as `.com` or `.net`)
+- Top Level Domain (TLD) nameserver stores the information for its domains.
+    - The TLD server responds with the IP address of the domain’s nameserver (`example.com`)
+    - The top-level domain (TLD) names (e.g. `.com`) are controlled by the Internet Assigned Numbers Authority (IANA) in a root zone database, which is essentially a database of all available TLD names.
+    - The database can be viewed under [https://www.iana.org/domains/root/db](https://www.iana.org/domains/root/db)
+- Authoritative nameserver is a server that actually holds, and is responsible for, DNS resource records.
+    - This is the server at the bottom of the DNS lookup chain.
+    - Can satisfy queries from its own data without needing to query another source.
+    - But requires an additional nameserver for serving queries for a subdomain (`blog.cloudflare.com`)
+- A registrar is an authority that can assign domain names under one or multiple TLD's.
+    - This domains are registered with InterNIC, a service of ICANN, which enforces uniqueness of domain names across the Internet.
+    - Each domain name becomes registered in a central database known as the WhoIS database.
+    - For example, Amazon, `GoDaddy.com`
+
+<img width=500 src="/datadocs/assets/1354-1.jpg"/>
+<center><a href="http://www.itgeared.com/articles/1354-domain-name-system-dns-tutorial-overview/" class="credit">Credit</a></center>
+
+#### Records
+
+- The State of Authority Record (SOA) stores information about:
+    - The name of the server that supplied the data for the zone.
+    - The administrator of the zone.
+    - The current version of the data file.
+    - The default number of seconds for the TTL file on resource records.
+    - When any record in the zone is updated, the SOA record serial number is incremented.
+- The Name Server (NS) record is used for recursively resolving the required domain name.
+    - Used to redirect the resolver to the DNS server hosting the next level domain.
+- The A record maps a name to one or more IP addresses.
+    - The "A" stands for address.
+    - Use an A record if you manage which IP addresses are assigned to a particular machine, or if the IP are fixed (this is the most common case).
+- The Canonical Name (CNAME) record maps a name to another name.
+    - Use a CNAME record if you want to alias one name to another name, and you don’t need other records (such as MX records for emails) for the same name.
+    - Can be used to map two domain names to the same IP address.
+    - Should only be used when there are no other records on that name.
+- The ALIAS record maps a name to another name, but can coexist with other records on that name.
+    - Use an ALIAS record if you’re trying to alias the root domain (apex zone), or if you need other records for the same name.
+    - Given the choice, always choose an ALIAS record over a CNAME.
+- The MX record is used for emails.
+- The PTR record is used to lookup the domain name of an IP address (also called reversed A record)
+- The duration that the DNS record is cached (on Resolving Server or user PC) is TTL in seconds.
+    - The default is 48 hours, that is, a DNS change may need 48 hours to fully propagate.
+
+### Route 53
+
+<img width=100 src="/datadocs/assets/1*Ezs2-Kqjlo7mPczPv_q_gA.png"/>
+
+- Route 53 is Amazon's DNS Service.
+- Route 53 is named so because the DNS port is 53.
+- You can buy domain names directly with AWS.
+    - Can take up to 3 days to register.
+    - There is a default limit of 50 domain names. However, this limit can be increased by contacting the AWS support.
+- Health checks:
+    - You can set health checks on individual record sets.
+    - If a record set fails a health check, it will be removed until it passes the check.
+    - You can also set up SNS notifications to be notified about any failed health checks.
+
+#### Routing policies
+
+- Simple routing:
+    - One record with multiple IP addresses.
+    - If multiple values are specified, Route 53 returns them in random order.
+    - For example, the user can be redirected to Ohio and the next time to Sydney (after TTL expires)
+    - Cannot be associated with health checks.
+- Weighted routing:
+    - Allows you to split your traffic based on different weights assigned.
+    - For example, you can set 10% of traffic to go to US-EAST-1 and 90% to EU-WEST-1.
+- Latency-based routing:
+    - Routes traffic based on the lowest network latency for the end user.
+    - To use it, create a latency RRset for the AWS resource in each region it is hosted.
+    - Use VPN clients (such as NordVPN) to test the service.
+- Failover routing:
+    - Used when you want to create an active/passive setup.
+    - For example, when your primary server is in US-EAST-1 and secondary in EU-WEST-1.
+    - Route 53 will monitor the health of the primary server using a health check.
+- Geolocation routing:
+    - Routes traffic based on the geolocation of the end user.
+    - For example, route all queries from Europe to a fleet of EC2 instances in EU-WEST-1. These servers may have the local language of European customers and all price are displayed in Euros.
+    - Not to be confused with latency-based routing.
+- Geoproximity routing (traffic flow only):
+    - Routes traffic based on the geolocation of the end user and the resource.
+    - You can also specify to route more traffic or less to a given resource by specifying a value (bias)
+    - A bias expands or shrinks the size of the geographic region from which traffic is routed.
+    - To use it, you must use Route 53 traffic flow.
+- Multivalue Answer routing:
+    - Lets configure Route 53 to return multiple IP addresses in response to DNS queries.
+    - Compared to simple routing, allows health checks and returns only values for healthy resources.
+    - The choice of which to use is left to the requesting service effectively creating a form or randomization.
+
+### ELB
+
+- Do not have pre-defined IPv4 addresses; you can resolve to them using a DNS name.

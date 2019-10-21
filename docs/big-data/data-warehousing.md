@@ -1,8 +1,8 @@
 ---
-id: data-warehouses
-title: Data Warehouses
-sidebar_label: Data Warehouses
-custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/big-data/data-warehouses.md
+id: data-warehousing
+title: Data Warehousing
+sidebar_label: Data Warehousing
+custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/big-data/data-warehousing.md
 ---
 
 - A data warehouse (DWH) is a centralized database system that retrieves and consolidates data from multiple applications and sources into one location for BI and other analytical activities.

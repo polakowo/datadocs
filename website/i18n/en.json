@@ -41,9 +41,9 @@
         "title": "Data Storage",
         "sidebar_label": "Data Storage"
       },
-      "big-data/data-warehouses": {
-        "title": "Data Warehouses",
-        "sidebar_label": "Data Warehouses"
+      "big-data/data-warehousing": {
+        "title": "Data Warehousing",
+        "sidebar_label": "Data Warehousing"
       },
       "big-data/database-design": {
         "title": "Database Design",

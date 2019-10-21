@@ -89,7 +89,7 @@
             "label": "General",
             "ids": [
                 "big-data/big-data",
-                "big-data/data-warehouses",
+                "big-data/data-warehousing",
                 "big-data/data-lakes",
                 "big-data/data-pipelines"
             ]

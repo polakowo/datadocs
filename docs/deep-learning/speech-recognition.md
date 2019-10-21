@@ -70,9 +70,9 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/deep-lear
 - Apply feature engineering to create more “unknown” samples (negatives):
     - You can for example cut and paste pieces of words together to create new words, or you can use pitch shifting or reversing the samples.
 
-## Connectionist Temporal Classification
+## CTC
 
-- Without CTC, every character of a transcription has to be aligned to its exact location in the audio file: 
+- Without Connectionist Temporal Classification (CTC), every character of a transcription has to be aligned to its exact location in the audio file: 
     - The small fixed-length analysis frames used in the acoustic model do not necessarily correspond to a single sound, because a sound might occupy several frames. Also, it is very expensive to correctly label each vector with the correct phoneme because it needs human manual annotation done by professionals.
 - CTC is a loss function useful for performing supervised learning on sequence data, without needing an alignment between input data and labels.
     - Basically, instead of maximizing the probability of one particular phoneme, it will compute each path’s probability and maximize the valid paths to give us the phonetic transcription of the word. 

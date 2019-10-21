@@ -66,6 +66,7 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/big-data/
 - [Is Hadoop Officially Dead?](https://www.datanami.com/2018/10/18/is-hadoop-officially-dead/)
 - [BREAKING OUT OF THE HADOOP COCOON](https://www.nextplatform.com/2019/04/08/breaking-out-of-the-hadoop-cocoon/)
 - [Will Kubernetes Sink the Hadoop Ship?](https://thenewstack.io/will-kubernetes-sink-the-hadoop-ship/)
+- [Is Hadoop Dead?](https://tech.marksblogg.com/is-hadoop-dead.html)
 
 
 
