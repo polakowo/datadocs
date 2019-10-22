@@ -2,7 +2,7 @@
 id: cloud-computing
 title: Cloud Computing
 sidebar_label: Cloud Computing
-custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/big-data/cloud-computing.md
+custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/cloud/cloud-computing.md
 ---
 
 - A computing service you traditionally did local, now the service is performed remotely (off-premises)

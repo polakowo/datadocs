@@ -93,34 +93,23 @@
                 "big-data/data-lakes",
                 "big-data/data-pipelines"
             ]
-        }, {
+        }],
+        "Cloud": [{
             "type": "subcategory",
-            "label": "Databases",
+            "label": "General",
             "ids": [
-                "big-data/database-design",
-                "big-data/sql-databases",
-                "big-data/wide-column-stores",
-                "big-data/key-value-stores",
-                "big-data/document-stores",
-                "big-data/graph-stores"
+                "cloud/cloud-computing"
             ]
         }, {
             "type": "subcategory",
-            "label": "Hadoop",
+            "label": "Amazon Web Services",
             "ids": [
-                "big-data/hadoop",
-                "big-data/data-ingestion",
-                "big-data/data-storage",
-                "big-data/data-processing",
-                "big-data/query-engines",
-                "big-data/cluster-management"
-            ]
-        }, {
-            "type": "subcategory",
-            "label": "Cloud",
-            "ids": [
-                "big-data/cloud-computing",
-                "big-data/aws"
+                "cloud/aws-compute",
+                "cloud/aws-storage",
+                "cloud/aws-databases",
+                "cloud/aws-security",
+                "cloud/aws-networking",
+                "cloud/aws-management"
             ]
         }]
     }

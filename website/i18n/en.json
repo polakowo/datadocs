@@ -5,17 +5,9 @@
     "previous": "Previous",
     "tagline": "Documentation for data enthusiasts",
     "docs": {
-      "big-data/aws": {
-        "title": "Amazon Web Services",
-        "sidebar_label": "Amazon Web Services"
-      },
       "big-data/big-data": {
         "title": "Big Data",
         "sidebar_label": "Big Data"
-      },
-      "big-data/cloud-computing": {
-        "title": "Cloud Computing",
-        "sidebar_label": "Cloud Computing"
       },
       "big-data/cluster-management": {
         "title": "Cluster Management",
@@ -76,6 +68,34 @@
       "big-data/wide-column-stores": {
         "title": "Wide Column Stores",
         "sidebar_label": "Wide Column Stores"
+      },
+      "cloud/aws-compute": {
+        "title": "Compute",
+        "sidebar_label": "Compute"
+      },
+      "cloud/aws-databases": {
+        "title": "Databases",
+        "sidebar_label": "Databases"
+      },
+      "cloud/aws-management": {
+        "title": "Management",
+        "sidebar_label": "Management"
+      },
+      "cloud/aws-networking": {
+        "title": "Networking",
+        "sidebar_label": "Networking"
+      },
+      "cloud/aws-security": {
+        "title": "Security",
+        "sidebar_label": "Security"
+      },
+      "cloud/aws-storage": {
+        "title": "Storage",
+        "sidebar_label": "Storage"
+      },
+      "cloud/cloud-computing": {
+        "title": "Cloud Computing",
+        "sidebar_label": "Cloud Computing"
       },
       "deep-learning/activation-functions": {
         "title": "Activation Functions",
@@ -221,7 +241,8 @@
     "categories": {
       "Machine Learning": "Machine Learning",
       "Deep Learning": "Deep Learning",
-      "Big Data": "Big Data"
+      "Big Data": "Big Data",
+      "Cloud": "Cloud"
     }
   },
   "pages-strings": {
