@@ -53,7 +53,7 @@ The optional `options` argument recognizes the following properties:
 
 #### `dotAllFlag` (default: `false`)
 
-Setting this option to `true` enables experimental support for [the `s` (`dotAll`) flag](https://github.com/mathiasbynens/es-regexp-dotall-flag).
+Setting this option to `true` enables support for [the `s` (`dotAll`) flag](https://github.com/mathiasbynens/es-regexp-dotall-flag).
 
 ```js
 rewritePattern('.');
@@ -77,7 +77,7 @@ rewritePattern('.', 'su', {
 
 #### `unicodePropertyEscape` (default: `false`)
 
-Setting this option to `true` enables [experimental support for Unicode property escapes](property-escapes.md):
+Setting this option to `true` enables [support for Unicode property escapes](property-escapes.md):
 
 ```js
 rewritePattern('\\p{Script_Extensions=Anatolian_Hieroglyphs}', 'u', {
@@ -88,7 +88,7 @@ rewritePattern('\\p{Script_Extensions=Anatolian_Hieroglyphs}', 'u', {
 
 #### `lookbehind` (default: `false`)
 
-Setting this option to `true` enables experimental support for [lookbehind assertions](https://github.com/tc39/proposal-regexp-lookbehind).
+Setting this option to `true` enables support for [lookbehind assertions](https://github.com/tc39/proposal-regexp-lookbehind).
 
 ```js
 rewritePattern('(?<=.)a', '', {
@@ -99,7 +99,7 @@ rewritePattern('(?<=.)a', '', {
 
 #### `namedGroup` (default: `false`)
 
-Setting this option to `true` enables experimental support for [named capture groups](https://github.com/tc39/proposal-regexp-named-groups).
+Setting this option to `true` enables support for [named capture groups](https://github.com/tc39/proposal-regexp-named-groups).
 
 ```js
 rewritePattern('(?<name>.)\k<name>', '', {

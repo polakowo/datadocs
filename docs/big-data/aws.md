@@ -103,31 +103,7 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/big-data/
     - "Your proposed upload exceeds the maximum allowed object size": design the application to use the Multipart Upload API for all objects.
     - Read the [S3 FAQs](https://aws.amazon.com/s3/faqs/)
 
-### Storage classes
-
-- S3 Standard: 
-    - Stored redundantly across multiple devices in multiple facilities, and is designed to sustain the loss of 2 facilities concurrently.
-- S3 IA (Infrequently Accessed): 
-    - For data that is accessed less frequently, but requires rapid access when needed. 
-    - Lower fee than S3, but you are charged a retrieval fee.
-    - There can be cost implications if you use it frequently or use it for short lived storage.
-    - The availability is 99.99%
-- S3 OneZone-IA: 
-    - Only stored in one availability zone.
-    - The availability is 99.50%
-- S3 Intelligent Tiering: 
-    - Designed to optimize costs by automatically moving data to the most cost-effective access tier, without performance impact or operational overhead. Uses machine learning.
-- S3 Glacier: 
-    - Designed for long-term data archival. 
-    - Glacier is cheaper, but has a long retrieval time (configurable from minutes to hours)
-    - You can reliably store any amount of data at costs that are competitive with or cheaper than on-premises solutions.
-- S3 Glacier Deep Archive: 
-    - Amazon S3's lowest-cost storage class where a retrieval time of 12 hours is acceptable.
-- RRS (Reduced Redundancy Storage):
-    - RRS has effectively been deprecated.
-- [Amazon S3 Storage Classes](https://aws.amazon.com/s3/storage-classes/)
-
-### Features
+#### Features
 
 - Data consistency:
     - Read after write consistency for newly created files (available immediately)
@@ -162,6 +138,30 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/big-data/
     - As the data arrives at an edge location, data is routed to S3 over an optimized network path.
     - Takes advantage of Amazon CloudFront's globally distributed edge locations. 
     - [Amazon S3 Transfer Acceleration - Speed Comparison](https://s3-accelerate-speedtest.s3-accelerate.amazonaws.com/en/accelerate-speed-comparsion.html)
+
+#### Storage classes
+
+- S3 Standard: 
+    - Stored redundantly across multiple devices in multiple facilities, and is designed to sustain the loss of 2 facilities concurrently.
+- S3 IA (Infrequently Accessed): 
+    - For data that is accessed less frequently, but requires rapid access when needed. 
+    - Lower fee than S3, but you are charged a retrieval fee.
+    - There can be cost implications if you use it frequently or use it for short lived storage.
+    - The availability is 99.99%
+- S3 OneZone-IA: 
+    - Only stored in one availability zone.
+    - The availability is 99.50%
+- S3 Intelligent Tiering: 
+    - Designed to optimize costs by automatically moving data to the most cost-effective access tier, without performance impact or operational overhead. Uses machine learning.
+- S3 Glacier: 
+    - Designed for long-term data archival. 
+    - Glacier is cheaper, but has a long retrieval time (configurable from minutes to hours)
+    - You can reliably store any amount of data at costs that are competitive with or cheaper than on-premises solutions.
+- S3 Glacier Deep Archive: 
+    - Amazon S3's lowest-cost storage class where a retrieval time of 12 hours is acceptable.
+- RRS (Reduced Redundancy Storage):
+    - RRS has effectively been deprecated.
+- [Amazon S3 Storage Classes](https://aws.amazon.com/s3/storage-classes/)
 
 ### Data transfer
 
@@ -709,6 +709,122 @@ echo "<html><h1>Hello, World!</h1></html>" > index.html
     - Compared to simple routing, allows health checks and returns only values for healthy resources.
     - The choice of which to use is left to the requesting service effectively creating a form or randomization.
 
+## VPC
+
+<img width=150 src="/datadocs/assets/0*0q474CHdkubW1ZA-.jpg"/>
+
+- Amazon Virtual Private Cloud (Amazon VPC) lets you provision a logically isolated section of the AWS where you can launch AWS resources in a virtual network that you define.
+    - Think of VPC as a logical datacenter on AWS.
+- You have complete control over your network environment, including selection of your IP address range, creation of subnets, and configuration of route tables and network gateways.
+    - For example, create a public-facing subnet (`10.0.1.0/24`) for web servers and private-facing subnet (`10.0.2.0/24`) for databases.
+- Allows creation of a hardware VPN connection between private datacenters and Amazon VPC.
+- Consists of Virtual Private Gateways (VPG's), route tables, ACL's, and security groups.
+- Classless Inter-Domain Routing (CIDR) blocks:
+    - Some private IP address ranges include `10.0.0.0/8`, `172.16.0.0/12`, and `192.168.0.0/16`
+    - To translate an IP address with prefix (`192.64.0.0/14`), convert the prefix into the bitmask (14 bits from left is `11111111.11111100.00000000.00000000`), then into the decimal subnet mask (`255.252.0.0`), then into the wildcard (remaining `0.3.255.255`), and finally add the prefix to the IP address (the first available host is `192.64.0.1`, the last `192.67.255.254`)
+    - [AN INTERACTIVE IP ADDRESS AND CIDR RANGE VISUALIZER](http://cidr.xyz)
+    - The largest prefix Amazon allows is 16, the smallest is 28.
+    - Amazon always reserves 5 IP addresses within each subnet for own use.
+- Default VPC:
+    - User friendly, allowing to immediately deploy instances.
+    - Your default VPC includes a subnet per AZ, an internet gateway (each default subnet is a public subnet), a route table with the route to the internet gateway, a default NACL that allows everything, and a default security group that also allows everything. Each EC2 instance created under a subnet of this VPC has both a private and public IP address.
+    - If you do delete the default VPC, it will remove any network objects associated with it. But you can recover it now.
+- VPC Peering:
+    - Connect one VPC with another via a direct network route using private IP addresses.
+    - Instances behave as they are on the same private network.
+    - You can peer VPC's with VPC's in another regions or even AWS accounts.
+    - Peering is a star configuration: 1 central VPC peers with 4 others. No transitive peering! In case A->B, B->C, you must explicitly establish a connection between A and C.
+
+#### Concepts
+
+- Inside a region, we have our VPC. On the outside of the VPC, we have two ways to connecting to it: Internet Gateway and Virtual Private Gateway. The traffic from an Internet gateway is routed to the appropriate subnet using the routes in the routing table. The rules of the network ACL associated with the subnet control which traffic is allowed to the subnet. The rules of the security group associated with an instance control which traffic is allowed to the instance.
+- A virtual private cloud (VPC) is a virtual network dedicated to your AWS account.
+- A subnet is a range of IP addresses in your VPC.
+    - To protect the AWS resources in each subnet, you can use multiple layers of security, including security groups and ACL.
+    - Subnets cannot span multiple AZ's.
+- A route table contains a set of rules (routes) that are used to determine where network traffic is directed.
+    - The route table entries enable instances in the subnet to communicate with other instances in the VPC (also in other subnets), and to communicate directly over the Internet.
+    - Every time we create a subnet, it will be automatically associated with the main route table.
+    - Thus, create a separate, custom route table for any public subnets.
+- An internet gateway is a horizontally scaled, redundant, and highly available VPC component that allows communication between instances in your VPC and the internet. 
+    - It therefore imposes no availability risks or bandwidth constraints on your network traffic.
+    - A subnet that's associated with a route table that has a route to an Internet gateway is known as a public subnet.
+    - You can only attach one internet gateway per VPC.
+- Network ACLs act as a firewall for associated subnets:
+    - Think of Homeland Security.
+    - Operates at the subnet level.
+    - Supports allow rules and deny rules.
+    - Is stateless: Return traffic must be explicitly allowed by rules.
+    - Automatically applies to all instances in the subnets it's associated with (therefore, an additional layer of defense if the security group rules are too permissive)
+- Security groups act as a firewall for associated Amazon EC2 instances:
+    - Think of local law enforcement.
+    - Operates at the instance level.
+    - Supports allow rules only.
+    - Is stateful: Return traffic is automatically allowed, regardless of any rules.
+    - By default, security groups do not have access to each other.
+
+<img width=500 src="/datadocs/assets/security-diagram.png"/>
+<center><a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Security.html" class="credit">Credit</a></center>
+
+#### Create VPC with public/private subnets
+
+- Create a new VPC (`10.0.0.0/16`). When you create a custom VPC, a default route table, a default ACL, and a default VPC security group are created. It won't create any subnets, nor it will create an internet gateway.
+- Create two subnets under this VPC. Assign custom IP address ranges in each subnet: `10.0.1.0/24` for public and `10.0.2.0/24` for private. Select the AZ for each one (Keep in mind: An AZ in one AWS account can be different from the same AZ in a different AWS account, since they are randomized). For the public one, turn on "Auto-assign IPv4".
+- Create an internet gateway and attach it to the VPC.
+- Configure route tables between subnets. Since the created subnets are associated with the main route table by default, create a new route table and add the `0.0.0.0/0` route to the internet gateway created earlier. Associate then the public subnet `10.0.1.0/24` with this table.
+- Go over to the AWS resources, and create them under the corresponding subnets.
+- Specify the appropriate security groups for your resources for them to communicate.
+
+<img width=600 src="/datadocs/assets/internet-gateway-diagram.png"/>
+<center><a href="https://docs.aws.amazon.com/vpc/latest/userguide/how-it-works.html" class="credit">Credit</a></center>
+
+### NAT
+
+<img width=100 src="/datadocs/assets/27_vpc-nat-gateway.aac10e8c0d.svg"/>
+
+- You can use a network address translation (NAT) gateway to enable instances in a private subnet to connect to the internet or other AWS services, but prevent the internet from initiating a connection with those instances.
+    - For example, this can be used to do software updates in private subnets.
+- NAT instances (outdated):
+    - A NAT instance is acting as a bridge between subnets and the internet gateway.
+    - To set it up, create a NAT instance, and in the route table of the subnet where your EC2 instance is located, enter a route to this NAT instance to direct the internet traffic through this instance.
+    - Must be in a public subnet and source/destination checks must be disabled.
+    - The amount of traffic that this instance can support depends on its size.
+    - A massive bottleneck: A single VM, which can be easily overwhelmed. You can create HA using Autoscaling Groups, multiple subnets in different AZ's, and a script to automate failover.
+    - When the instance is removed, the corresponding route is marked as "blackhole"
+    - Behind the security group.
+- NAT Gateways (preferred):
+    - Redundant in the AZ and thus highly available.
+    - Starts at 5Gbps and scales currently to 45Gbps.
+    - There is no need to patch operation system.
+    - Not associated with any security groups.
+    - Automatically assigned a public IP address.
+    - Remember to update your route tables.
+    - Uses ephemeral ports 1024-65535.
+
+### NACL
+
+<img width=100 src="/datadocs/assets/41_network-access-control-list.d577137fe9.svg"/>
+
+- NACL's have separate inbound and outbound rules, and each rule can either allow or deny traffic.
+- Your VPC automatically comes with a default network ACL that allows everything.
+- When creating a new NACL, all inbound and outbound rules are denied by default.
+- Each subnet in the VPC must be associated with a network ACL.
+    - If you don't explicitly associate a subnet with a NACL, the subnet is automatically associated with the default NACL.
+    - You can associate a NACL with multiple subnets.
+    - However, a subnet can only be associated with a single NACL at a time.
+    - When you associate a subnet with a new NACL, starting with the lowest numbered rule.
+- Amazon recommends that you use increments of 100 for each rule (and of 1 for IPv4 and IPv6)
+    - The rules are evaluated in numerical order, from the lowest to the highest.
+    - For example, if you allow port 80 in the rule "100" and disable it in the rule "200", the port will still be open. That's also why everything under the rule "*" is denied at the end.
+
 ### ELB
 
 - Do not have pre-defined IPv4 addresses; you can resolve to them using a DNS name.
+
+### ELB
+
+### ELB
+
+### ELB
+
+### ELB

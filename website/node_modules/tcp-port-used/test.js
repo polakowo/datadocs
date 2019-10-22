@@ -263,7 +263,8 @@ describe('check functionality for unused port', function() {
 });
 
 describe('waitUntilFreeOnHost', function() {
-    this.timeout(2000);
+    this.slow(3000);
+    this.timeout(3000);
 
     before(function(cb) {
         bindPort(44203, function(err) {
@@ -369,6 +370,8 @@ describe('waitUntilFreeOnHost', function() {
 });
 
 describe('waitUntilUsedOnHost', function() {
+    this.timeout(5000);
+    this.slow(5000);
 
     before(function() {
         setTimeout(function() {
@@ -377,7 +380,6 @@ describe('waitUntilUsedOnHost', function() {
     });
 
     it('should wait until the port is listening using an arg object', function(done) {
-        this.timeout(5000);
         tcpPortUsed.waitUntilUsedOnHost({port:44204, host:'127.0.0.1', retryTimeMs:500, timeOutMs:4000})
         .then(function() {
             done();
@@ -387,7 +389,6 @@ describe('waitUntilUsedOnHost', function() {
     });
 
     it('should wait until the port is listening', function(done) {
-        this.timeout(5000);
         tcpPortUsed.waitUntilUsedOnHost(44204, '127.0.0.1', 500, 4000)
         .then(function() {
             done();
@@ -397,7 +398,6 @@ describe('waitUntilUsedOnHost', function() {
     });
 
     it('should reject promise when given an invalid port using an arg object', function(done) {
-        this.timeout(3000);
         tcpPortUsed.waitUntilUsedOnHost({port:'hello', host:'127.0.0.1', retryTimeMs:500, timeOutMs:2000})
         .then(function() {
             done(new Error('waitUntil used unexpectedly successful.'));
@@ -411,7 +411,6 @@ describe('waitUntilUsedOnHost', function() {
     });
 
     it('should reject promise when given an invalid port', function(done) {
-        this.timeout(3000);
         tcpPortUsed.waitUntilUsedOnHost('hello', '127.0.0.1', 500, 2000)
         .then(function() {
             done(new Error('waitUntil used unexpectedly successful.'));
@@ -425,7 +424,6 @@ describe('waitUntilUsedOnHost', function() {
     });
 
     it('should timeout when no port is listening using an arg obj', function(done) {
-        this.timeout(3000);
         tcpPortUsed.waitUntilUsedOnHost({port:44205, host:'127.0.0.1', retryTimeMs:500, tmieOutMs:2000})
         .then(function() {
             done(new Error('waitUntil used unexpectedly successful.'));
@@ -440,7 +438,6 @@ describe('waitUntilUsedOnHost', function() {
 
 
     it('should timeout when no port is listening', function(done) {
-        this.timeout(3000);
         tcpPortUsed.waitUntilUsedOnHost(44205, '127.0.0.1', 500, 2000)
         .then(function() {
             done(new Error('waitUntil used unexpectedly successful.'));
@@ -461,7 +458,8 @@ describe('waitUntilUsedOnHost', function() {
 });
 
 describe('waitUntilFree', function() {
-    this.timeout(5000);
+    this.timeout(8000);
+    this.slow(8000);
 
     before(function(cb) {
         bindPort(44203, function(err) {
@@ -470,6 +468,7 @@ describe('waitUntilFree', function() {
     });
 
     it('should reject promise for used port number after timeout using arg obj', function(done) {
+        this.slow(18000);
         tcpPortUsed.waitUntilFree({port:44203, retryTimeMs:500, timeOutMs:4000})
         .then(function() {
             done(new Error('waitUntilFree unexpectedly succeeded'));
@@ -483,6 +482,7 @@ describe('waitUntilFree', function() {
     });
 
     it('should reject promise for used port number after timeout', function(done) {
+        this.slow(18000);
         tcpPortUsed.waitUntilFree(44203, 500, 4000)
         .then(function() {
             done(new Error('waitUntilFree unexpectedly succeeded'));
@@ -565,6 +565,8 @@ describe('waitUntilFree', function() {
 });
 
 describe('waitUntilUsed', function() {
+    this.timeout(5000);
+    this.slow(5000);
 
     before(function() {
         setTimeout(function() {
@@ -573,7 +575,6 @@ describe('waitUntilUsed', function() {
     });
 
     it('should wait until the port is listening using arg obj', function(done) {
-        this.timeout(5000);
         tcpPortUsed.waitUntilUsed({port:44204, retryTimeMs:500, timeOutMs:4000})
         .then(function() {
             done();
@@ -583,7 +584,6 @@ describe('waitUntilUsed', function() {
     });
 
     it('should wait until the port is listening', function(done) {
-        this.timeout(5000);
         tcpPortUsed.waitUntilUsed(44204, 500, 4000)
         .then(function() {
             done();
@@ -593,7 +593,6 @@ describe('waitUntilUsed', function() {
     });
 
     it('should reject promise when given an invalid port using arg object', function(done) {
-        this.timeout(3000);
         tcpPortUsed.waitUntilUsed({port:'hello', retryTimeMs:500, timeOutMs:2000})
         .then(function() {
             done(new Error('waitUntil used unexpectedly successful.'));
@@ -607,7 +606,6 @@ describe('waitUntilUsed', function() {
     });
 
     it('should reject promise when given an invalid port', function(done) {
-        this.timeout(3000);
         tcpPortUsed.waitUntilUsed('hello', 500, 2000)
         .then(function() {
             done(new Error('waitUntil used unexpectedly successful.'));
@@ -621,7 +619,6 @@ describe('waitUntilUsed', function() {
     });
 
     it('should timeout when no port is listening using arg obj', function(done) {
-        this.timeout(3000);
         tcpPortUsed.waitUntilUsed({port:44205, retryTimeMs:500, timeOutMs:2000})
         .then(function() {
             done(new Error('waitUntil used unexpectedly successful.'));
@@ -635,7 +632,6 @@ describe('waitUntilUsed', function() {
     });
 
     it('should timeout when no port is listening', function(done) {
-        this.timeout(3000);
         tcpPortUsed.waitUntilUsed(44205, 500, 2000)
         .then(function() {
             done(new Error('waitUntil used unexpectedly successful.'));
@@ -656,6 +652,8 @@ describe('waitUntilUsed', function() {
 });
 
 describe('waitForStatus', function() {
+    this.timeout(5000);
+    this.slow(5000);
 
     before(function() {
         setTimeout(function() {
@@ -664,7 +662,6 @@ describe('waitForStatus', function() {
     });
 
     it('should wait until the port is listening using arg obj', function(done) {
-        this.timeout(5000);
         tcpPortUsed.waitForStatus({port:44204, host:'127.0.0.1', inUse:true, retryTimeMs:500, timeOutMs:4000})
         .then(function() {
             done();
@@ -674,7 +671,6 @@ describe('waitForStatus', function() {
     });
 
     it('should wait until the port is listening', function(done) {
-        this.timeout(5000);
         tcpPortUsed.waitForStatus(44204, '127.0.0.1', true, 500, 4000)
         .then(function() {
             done();
@@ -684,7 +680,6 @@ describe('waitForStatus', function() {
     });
 
     it('should reject promise when given an invalid port using arg object', function(done) {
-        this.timeout(3000);
         tcpPortUsed.waitForStatus({port:'hello', host:'127.0.0.1', inUse:false, retryTimeMs:500, timeOutMs:2000})
         .then(function() {
             done(new Error('waitUntil used unexpectedly successful.'));
@@ -698,7 +693,6 @@ describe('waitForStatus', function() {
     });
 
     it('should reject promise when given an invalid port', function(done) {
-        this.timeout(3000);
         tcpPortUsed.waitForStatus('hello', '127.0.0.1', false, 500, 2000)
         .then(function() {
             done(new Error('waitUntil used unexpectedly successful.'));
@@ -712,7 +706,6 @@ describe('waitForStatus', function() {
     });
 
     it('should timeout when no port is listening using arg obj', function(done) {
-        this.timeout(3000);
         tcpPortUsed.waitUntilUsed({port:44205, host:'127.0.0.1', inUse:true, retryTimeMs:500, timeOutMs:2000})
         .then(function() {
             done(new Error('waitUntil used unexpectedly successful.'));
@@ -726,7 +719,6 @@ describe('waitForStatus', function() {
     });
 
     it('should timeout when no port is listening', function(done) {
-        this.timeout(3000);
         tcpPortUsed.waitUntilUsed(44205, '127.0.0.1', true, 500, 2000)
         .then(function() {
             done(new Error('waitUntil used unexpectedly successful.'));

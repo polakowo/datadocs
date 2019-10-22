@@ -34,18 +34,10 @@
     "white"         : false,
 
     "globals" : {
-        "jasmine"   : false,
-        "spyOn"     : false,
         "it"        : false,
         "console"   : true,
-        "logger"    : true,
         "describe"  : false,
-        "expect"    : false,
-        "beforeEach": false,
-        "mush"      : true,
-        "sprintf"   : true,
-        "waits"     : false,
-        "waitsFor"  : false,
-        "runs"      : false
+        "toString"  : false,
+        "window"    : true
     }
 }
