@@ -1,0 +1,366 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Compute · datadocs</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="## EC2"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Compute · datadocs"/><meta property="og:type" content="website"/><meta property="og:url" content="https://polakowo.github.io/datadocs/"/><meta property="og:description" content="## EC2"/><meta property="og:image" content="https://polakowo.github.io/datadocs/img/undraw_online.svg"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://polakowo.github.io/datadocs/img/undraw_tweetstorm.svg"/><link rel="shortcut icon" href="/datadocs/img/favicon.ico"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-142521178-1"></script><script>
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments); }
+              gtag('js', new Date());
+              gtag('config', 'UA-142521178-1');
+            </script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script><script type="text/javascript" src="/datadocs/js/code-block-buttons.js"></script><script type="text/javascript" src="/datadocs/js/disqus.js"></script><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script src="/datadocs/js/scrollSpy.js"></script><link rel="stylesheet" href="/datadocs/css/prism.css"/><link rel="stylesheet" href="/datadocs/css/main.css"/><script src="/datadocs/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/datadocs/"><h2 class="headerTitle">datadocs</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/datadocs/docs/machine-learning/linear-models" target="_self">Docs</a></li><li class=""><a href="https://github.com/polakowo/datadocs" target="_self">GitHub</a></li><li class="navSearchWrapper reactNavSearchWrapper"><input type="text" id="search_input_react" placeholder="Search" title="Search"/></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Amazon Web Services</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Machine Learning<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">General</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/machine-learning">Machine Learning</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Methods</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/linear-models">Linear Models</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/tree-based-models">Tree-Based Models</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/ensemble-methods">Ensemble Methods</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Features</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/eda">Exploratory Data Analysis</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/feature-engineering">Feature Engineering</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/advanced-features">Advanced Features</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Optimization</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/metric-optimization">Metric Optimization</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/validation-schemes">Validation Schemes</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/hyperopt">Hyperparameter Optimization</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Competitions</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/competitive-ml">Competitive Machine Learning</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/data-leakages">Data Leakages</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Production</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/production-code">Production Code</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/deployment">Deployment</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/deployment-to-cloud">Deployment to Cloud</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Deep Learning<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">General</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/deep-learning">Deep Learning</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/dl-strategy">Deep Learning Strategy</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Fundamentals</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/backpropagation">Backpropagation</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/activation-functions">Activation Functions</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/initialization">Initialization</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/optimization">Optimization</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/regularization">Regularization</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Computer Vision</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/cnns">Convolutional Neural Networks</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/cnn-architectures">CNN Architectures</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/object-detection">Object Detection</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/face-recognition">Face Recognition</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/nst">Neural Style Transfer</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Natural Language Processing</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/rnns">Recurrect Neural Networks</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/word-embeddings">Word Embeddings</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/nmt">Neural Machine Translation</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/attention-mechanisms">Attention Mechanisms</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/speech-recognition">Speech Recognition</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Big Data<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">General</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/big-data">Big Data</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/data-warehousing">Data Warehousing</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/data-lakes">Data Lakes</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/data-pipelines">Data Pipelines</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Cloud<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">General</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/cloud/cloud-computing">Cloud Computing</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Amazon Web Services</h4><ul><li class="navListItem navListItemActive"><a class="navItem" href="/datadocs/docs/cloud/aws-compute">Compute</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/cloud/aws-storage">Storage</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/cloud/aws-databases">Databases</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/cloud/aws-security">Security</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/cloud/aws-networking">Networking</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/cloud/aws-management">Management</a></li></ul></div></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://github.com/polakowo/datadocs/edit/master/docs/cloud/aws-compute.md" target="_blank" rel="noreferrer noopener">Edit</a><h1 class="postHeaderTitle">Compute</h1></header><article><div><span><h2><a class="anchor" aria-hidden="true" id="ec2"></a><a href="#ec2" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>EC2</h2>
+<p><img width=100 src="/datadocs/assets/icon-aws-amazon-ec2.svg"/></p>
+<ul>
+<li>Amazon Elastic Compute Cloud (EC2) is a web service that provides resizable compute capacity.</li>
+<li>Reduces the time required to obtain and boot new server instances (from days) to minutes.
+<ul>
+<li>A huge side-effect of both of these: it’s way easier to innovate.</li>
+</ul></li>
+<li>Allows quickly scaling capacity, both up and down, as requirements change.</li>
+<li>Pay as you go, pay for what you use, and pay even less for reserved instances.</li>
+<li>Termination protection is turned off by default.</li>
+<li>Individual instances are provisioned in a AZ's.
+<ul>
+<li>The region cannot be changed for a running instance, only the AZ.</li>
+</ul></li>
+<li>Credentials:
+<ul>
+<li>Roles are more secure and easier to manage than via <code>aws configure</code> on EC2.</li>
+<li>Roles can be assigned to EC2 instances after its created.</li>
+<li>Roles are universal (global) and take effect immediately.</li>
+</ul></li>
+<li>Bootstrap scripts:
+<ul>
+<li>Run when the EC2 instance first boots.</li>
+<li>Can be a powerful way of automating software installs and updates.</li>
+</ul></li>
+</ul>
+<pre><code class="hljs css language-bash"><span class="hljs-comment"># Example: Bootstrap script for a simple Apache server</span>
+
+<span class="hljs-meta">#!/bin/bash</span>
+yum update -y
+yum install httpd -y
+service httpd start
+chkconfig httpd on
+<span class="hljs-built_in">cd</span> /var/www/html
+<span class="hljs-built_in">echo</span> <span class="hljs-string">"&lt;html&gt;&lt;h1&gt;Hello, World!&lt;/h1&gt;&lt;/html&gt;"</span> &gt; index.html
+</code></pre>
+<ul>
+<li>Metadata can be assigned using tags.
+<ul>
+<li>Tagging is a key part of managing an environment.</li>
+</ul></li>
+<li>Accessing instance metadata from within:
+<ul>
+<li>Instance metadata and user data can be retrieved from within via a special URL.</li>
+<li>Get metadata by running <code>curl http://169.256.169.254/latest/meta-data/</code></li>
+<li>Get user data by running <code>curl http://169.256.169.254/latest/user-data/</code></li>
+<li>For example, EC2 can access its public IP address and write it to a database.</li>
+</ul></li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="pricing"></a><a href="#pricing" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Pricing</h3>
+<ul>
+<li>On demand:
+<ul>
+<li>Fixed rate by hour (or by second) with no up-front payment or commitment.</li>
+<li>For applications with short term, spiky, or unpredictable workloads that cannot be interrupted.</li>
+<li>For applications that are tested for the first time.</li>
+</ul></li>
+<li>Reserved:
+<ul>
+<li>Capacity reservation with significant discounts, one or three years contracts.</li>
+<li>For applications with steady state and predictable usage.</li>
+<li>For applications that require reserved capacity.</li>
+<li>Users can do up-front payments to reduce their total computing costs even further.</li>
+<li>Standard Reserved Instances: The higher the upfront payment and the longer the contract, the greater the discount (up to 75% off)</li>
+<li>Convertible Reserved Instances: Attributes can be changed dynamically as long as the new instances is of equal or greater value (up to 54% off)</li>
+<li>Scheduled Reserved Instances: “I just need extra on Black Friday, but that’s it”</li>
+</ul></li>
+<li>Spot instances:
+<ul>
+<li>Have a huge isolated workload? Snag a spot instance when the price is super cheap at 4AM on a Tuesday, run your stuff, then shut it all down.</li>
+<li>Whenever the price goes up, these instances will be terminated.</li>
+<li>Not charged for a partial hour of usage if terminated (except if terminated manually)</li>
+<li>For applications that have flexible start and end times.</li>
+<li>For applications that are only feasible at very low computing prices.</li>
+<li>For users with urgent computing needs for large amounts of additional capacity.</li>
+</ul></li>
+<li>Dedicated hosts:
+<ul>
+<li>Physical EC2 server dedicated for own use.</li>
+<li>Allows to use existing server-bound software licenses like VMWare and Oracle.</li>
+<li>For regulatory requirements that may not support multi-tenant virtualization.</li>
+<li>For licensing that does not support multi-tenant virtualization or cloud deployment (Oracle)</li>
+<li>Can be purchased on-demand.</li>
+<li>Can be purchased as a reservation for up to 70% off the on-demand price.</li>
+</ul></li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="instance-types"></a><a href="#instance-types" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Instance types</h3>
+<p><img width=250 src="/datadocs/assets/mr-mcpxz.png"/>
+<center><a href="https://www.udemy.com/course/aws-certified-solutions-architect-associate" class="credit">Credit</a></center></p>
+<ul>
+<li>Fight Dr. McPXZ in Australia</li>
+<li>FIGHT:
+<ul>
+<li>F (Field programmable gate array): Genomic research, financial analysis, big data</li>
+<li>I (IOPS): NoSQL, data warehouses</li>
+<li>G (Graphics intense): Video encoding, 3D application streaming</li>
+<li>H (High disk throughput): MapReduce, HDFS</li>
+<li>T (Cheap general purpose, T2 Micro): Web servers, small databases</li>
+</ul></li>
+<li>DR:
+<ul>
+<li>D (Dense storage): File servers, data warehouses, Hadoop</li>
+<li>R (RAM optimized): Memory intensive applications or databases</li>
+</ul></li>
+<li>MC:
+<ul>
+<li>M (Main choice for general purpose applications): application servers</li>
+<li>C (Compute optimized): CPU intensive applications or databases</li>
+</ul></li>
+<li>PXZ:
+<ul>
+<li>P (Graphics, GPUs): Machine learning, Bitcoin mining</li>
+<li>X (Extreme memory): SAP HANA, Apache Spark</li>
+<li>Z (Extreme memory and CPU): Electronic design automation, high per-core licensing costs</li>
+</ul></li>
+<li>AU:
+<ul>
+<li>A (Arm-based workloads): Scale-out workloads such as web servers</li>
+<li>U (Bare metal): Bare metal capabilities</li>
+</ul></li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="storage"></a><a href="#storage" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Storage</h3>
+<ul>
+<li><a href="https://help.acloud.guru/hc/en-us/articles/115002011194">AWS Storage Types - S3, EFS, &amp; EBS</a></li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="ebs"></a><a href="#ebs" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>EBS</h4>
+<ul>
+<li>Amazon Elastic Block Store (EBS) provides persistent block storage volumes in the cloud.</li>
+<li>Each EBS volume is replicated within its AZ to protect from component failure.</li>
+<li>EBS types:
+<ul>
+<li>SSD &gt;&gt; General purpose SSD (GP2): For most workloads (16,000 IOPS)</li>
+<li>SSD &gt;&gt; Provisioned IOPS SSD (IO1): For databases (64,000 IOPS)</li>
+<li>Magnetic &gt;&gt; Throughput Optimized HDD (ST1): For big data, DWH, logs (500 IOPS)</li>
+<li>Magnetic &gt;&gt; Cold HDD (SC1): Cheap, for file servers (250 IOPS)</li>
+<li>Magnetic &gt;&gt; EBS Magnetic: Extra cheap, for infrequently accessed workloads (40-200 IOPS)</li>
+<li>EBS volumes can be changed on the fly (including the size and storage type)</li>
+</ul></li>
+<li>Volumes exist on EBS:
+<ul>
+<li>Think of EBS as of a virtual hard disk.</li>
+</ul></li>
+<li>Snapshots exist on S3:
+<ul>
+<li>Created with command <code>aws ec2 create-snapshot</code></li>
+<li>Think of snapshots as of a photograph of the disk.</li>
+<li>Snapshots are point-in-time copies of volumes.</li>
+<li>Snapshots are incremental: only the blocks that changed since last snapshots are moved to S3.</li>
+<li>The first snapshot may take some time.</li>
+<li>To take a snapshot of a root device, you should stop the EC2 instance first. But you can also make a snapshot while the instance is running.</li>
+<li>One can perform actions on an existing EBS snapshot using AWS APIs, CLI, and AWS Console.</li>
+<li>One cannot delete a snapshot that is used as the root device of a registered AMI.</li>
+</ul></li>
+<li>Data migration:
+<ul>
+<li>Volumes are always in the same AZ as the EC2 instance.</li>
+<li>To move an EC2 volume from one AZ to another, take a snapshot, create an AMI from that snapshot, and then use the AMI to launch a new EC2 instance in a new AZ.</li>
+<li>To move an EC2 volume from one region to another, take a snapshot, create an AMI from that snapshot, copy that AMI to another region, and then use the copied AMI to launch a new EC2 instance in the new region.</li>
+</ul></li>
+<li>Encryption:
+<ul>
+<li>The use of encryption at rest is default requirement for many industry compliance certifications.</li>
+<li>Using AWS managed keys to provide EBS encryption at rest is relatively painless and reliable.</li>
+<li>Snapshots of encrypted volumes are encrypted automatically.</li>
+<li>Volumes restored from encrypted snapshots are encrypted automatically.</li>
+<li>You can share snapshots (on AWS or publicly), but only if they are unencrypted.</li>
+<li>You can now encrypt root device volumes upon creation of the EC2 instance.</li>
+<li>To encrypt an unencrypted root device volume, create a snapshot of it, encrypt that snapshot, create an AMI from that snapshot, and use that AMI to launch a new encrypted EC2 instance.</li>
+</ul></li>
+<li>Termination:
+<ul>
+<li>The default action is for the root EBS volume to be deleted when the instance is terminated.</li>
+<li>The default action for additional volumes is to be persisted.</li>
+</ul></li>
+<li>Additional volumes:
+<ul>
+<li>Additional volumes can be detached without stopping the instance.</li>
+<li>You can add multiple volumes to an EC2 instance and then create your own RAID 5/RAID 10/RAID 0 configurations using those volumes.</li>
+<li>You cannot attach an EBS volume to more than one EC2 instance at the same time.</li>
+</ul></li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="instance-stores"></a><a href="#instance-stores" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Instance stores</h4>
+<ul>
+<li>Storage backed by Amazon EBS:
+<ul>
+<li>The root device is an Amazon EBS volume created from an Amazon EBS snapshot.</li>
+<li>EBS backed instances can be stopped since they get a new host when starting again.</li>
+<li>Can be rebooted without data loss.</li>
+</ul></li>
+<li>Storage backed by instance store:
+<ul>
+<li>Sometimes called ephemeral storage (&quot;persistent&quot; for the life of the instance, non-billable)</li>
+<li>The root device is an instance store backed volume created from a template stored on S3.</li>
+<li>The instance store is ideal for temporary storage.</li>
+<li>Cannot be stopped: If the underlying host fails, the data will be lost.</li>
+<li>But can be rebooted without data loss.</li>
+</ul></li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="images"></a><a href="#images" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Images</h4>
+<ul>
+<li>Amazon Machine Images (AMI) are configurations of EC2 instances:</li>
+<li>AMI's can be created from both volumes and snapshots.</li>
+<li>Created upon various characteristics:
+<ul>
+<li>Region</li>
+<li>Operating system</li>
+<li>Architecture (32-bit or 64-bit)</li>
+<li>Launch permissions</li>
+<li>Storage for the root device (root device volume)</li>
+</ul></li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="efs"></a><a href="#efs" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>EFS</h4>
+<ul>
+<li>Amazon Elastic File System (EFS) is a file storage service for EC2 instances.</li>
+<li>Easy to use, and provides a simple interface for creating and configuring file systems.</li>
+<li>Storage capacity is elastic, that is, it is growing and shrinking automatically.
+<ul>
+<li>Can scale up to petabytes.</li>
+</ul></li>
+<li>Supports the NFSv4 protocol.
+<ul>
+<li>Can support thousands of concurrent NFS connections.</li>
+</ul></li>
+<li>Only pay for what you use (no pre-provisioning required)</li>
+<li>Data is stored across multiple AZ's within a region.</li>
+<li>Read after write consistency.</li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="placement-groups"></a><a href="#placement-groups" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Placement groups</h3>
+<ul>
+<li>Clustered placement group:
+<ul>
+<li>Grouping of instances within a single AZ.</li>
+<li>Keeps compute resources within one network hop of each other on high speed rack switches.</li>
+<li>For applications that require low latency, high network throughput, or both.</li>
+<li>AWS recommends homogeneous instances with this group.</li>
+</ul></li>
+<li>Spread placement group:
+<ul>
+<li>Grouping of instances that are each placed on distinct hardware.</li>
+<li>For applications that have critical instances that should be kept separate from each other.</li>
+<li>Can be located in different AZ's of one region.</li>
+<li>Allows to isolate the impact of hardware failure within application.</li>
+<li>Allows to have a maximum of 7 running instances per AZ.</li>
+</ul></li>
+<li>Partitioned placement group:
+<ul>
+<li>Same as spread placement group but allows multiple instances (e.g. Hadoop cluster)</li>
+<li>Divides each group into logical segments called partitions.</li>
+<li>Each partition has its own set of racks.</li>
+<li>Each rack has its own network and power sources.</li>
+<li>No two partitions within a placement group share the same racks.</li>
+<li>Allows to isolate the impact of hardware failure within application.</li>
+</ul></li>
+<li>Only certain instances can be launched within each group.</li>
+<li>The specified name must be unique within the AWS account.</li>
+<li>Placement groups can't be merged.</li>
+<li>An existing instance can't be moved into a placement group.
+<ul>
+<li>Create an AMI from the existing instance, and then launch a new instance from the AMI into the placement group.</li>
+</ul></li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="security-groups"></a><a href="#security-groups" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Security groups</h3>
+<ul>
+<li>For a new security group nothing is allowed in by default.
+<ul>
+<li>All inbound traffic is blocked by default.</li>
+<li>All outbound traffic is allowed by default.</li>
+<li>For the default security group everything is allowed though.</li>
+</ul></li>
+<li>Changes to security groups take effect immediately.</li>
+<li>Any number of EC2 instances can be within a security group.</li>
+<li>Any number of security groups can be attached to an EC2 instance.</li>
+<li>Security groups are STATEFUL:
+<ul>
+<li>If creating an inbound rule allowing traffic in, that traffic is automatically allowed back out again.</li>
+<li>IP addresses cannot be blocked using security groups.</li>
+<li>Rules can only be allowed but not denied.</li>
+</ul></li>
+<li>Access control lists (ACL's) are STATELESS:
+<ul>
+<li>One has to specify inbound and outbound rules.</li>
+<li>IP addresses can be blocked using ACL's.</li>
+</ul></li>
+</ul>
+</span></div></article></div><div class="docLastUpdate"><em>Last updated on 2019-10-22 by Oleg Polakow</em></div><div class="docs-prevnext"><a class="docs-prev button" href="/datadocs/docs/cloud/cloud-computing"><span class="arrow-prev">← </span><span>Cloud Computing</span></a><a class="docs-next button" href="/datadocs/docs/cloud/aws-storage"><span>Storage</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#ec2">EC2</a><ul class="toc-headings"><li><a href="#pricing">Pricing</a></li><li><a href="#instance-types">Instance types</a></li><li><a href="#storage">Storage</a></li><li><a href="#placement-groups">Placement groups</a></li><li><a href="#security-groups">Security groups</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><div class="brand-box"><div class="brand"><a href="https://www.tum.de/nc/en/" target="_blank" rel="noreferrer noopener" class="brand-link"><img src="/datadocs/img/tum_logo.png" alt="Technical University of Munich" height="45"/></a></div><div class="brand"><a href="https://opensource.facebook.com/" target="_blank" rel="noreferrer noopener" class="brand-link"><img src="/datadocs/img/oss_logo.png" alt="Facebook Open Source" width="170" height="45"/></a></div></div><section class="copyright">Copyright © 2019 polakowo.io</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
+                document.addEventListener('keyup', function(e) {
+                  if (e.target !== document.body) {
+                    return;
+                  }
+                  // keyCode for '/' (slash)
+                  if (e.keyCode === 191) {
+                    const search = document.getElementById('search_input_react');
+                    search && search.focus();
+                  }
+                });
+              </script><script>
+              var search = docsearch({
+                
+                apiKey: '6642fca03d716a543ac4428d7d20b842',
+                indexName: 'polakowo-datadocs',
+                inputSelector: '#search_input_react',
+                algoliaOptions: {}
+              });
+            </script></body></html>

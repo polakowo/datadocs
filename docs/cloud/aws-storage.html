@@ -1,0 +1,272 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Storage · datadocs</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="## S3"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Storage · datadocs"/><meta property="og:type" content="website"/><meta property="og:url" content="https://polakowo.github.io/datadocs/"/><meta property="og:description" content="## S3"/><meta property="og:image" content="https://polakowo.github.io/datadocs/img/undraw_online.svg"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://polakowo.github.io/datadocs/img/undraw_tweetstorm.svg"/><link rel="shortcut icon" href="/datadocs/img/favicon.ico"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-142521178-1"></script><script>
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments); }
+              gtag('js', new Date());
+              gtag('config', 'UA-142521178-1');
+            </script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script><script type="text/javascript" src="/datadocs/js/code-block-buttons.js"></script><script type="text/javascript" src="/datadocs/js/disqus.js"></script><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script src="/datadocs/js/scrollSpy.js"></script><link rel="stylesheet" href="/datadocs/css/prism.css"/><link rel="stylesheet" href="/datadocs/css/main.css"/><script src="/datadocs/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/datadocs/"><h2 class="headerTitle">datadocs</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/datadocs/docs/machine-learning/linear-models" target="_self">Docs</a></li><li class=""><a href="https://github.com/polakowo/datadocs" target="_self">GitHub</a></li><li class="navSearchWrapper reactNavSearchWrapper"><input type="text" id="search_input_react" placeholder="Search" title="Search"/></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Amazon Web Services</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Machine Learning<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">General</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/machine-learning">Machine Learning</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Methods</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/linear-models">Linear Models</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/tree-based-models">Tree-Based Models</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/ensemble-methods">Ensemble Methods</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Features</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/eda">Exploratory Data Analysis</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/feature-engineering">Feature Engineering</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/advanced-features">Advanced Features</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Optimization</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/metric-optimization">Metric Optimization</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/validation-schemes">Validation Schemes</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/hyperopt">Hyperparameter Optimization</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Competitions</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/competitive-ml">Competitive Machine Learning</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/data-leakages">Data Leakages</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Production</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/production-code">Production Code</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/deployment">Deployment</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/deployment-to-cloud">Deployment to Cloud</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Deep Learning<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">General</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/deep-learning">Deep Learning</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/dl-strategy">Deep Learning Strategy</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Fundamentals</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/backpropagation">Backpropagation</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/activation-functions">Activation Functions</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/initialization">Initialization</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/optimization">Optimization</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/regularization">Regularization</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Computer Vision</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/cnns">Convolutional Neural Networks</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/cnn-architectures">CNN Architectures</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/object-detection">Object Detection</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/face-recognition">Face Recognition</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/nst">Neural Style Transfer</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Natural Language Processing</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/rnns">Recurrect Neural Networks</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/word-embeddings">Word Embeddings</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/nmt">Neural Machine Translation</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/attention-mechanisms">Attention Mechanisms</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/speech-recognition">Speech Recognition</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Big Data<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">General</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/big-data">Big Data</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/data-warehousing">Data Warehousing</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/data-lakes">Data Lakes</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/data-pipelines">Data Pipelines</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Cloud<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">General</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/cloud/cloud-computing">Cloud Computing</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Amazon Web Services</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/cloud/aws-compute">Compute</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/datadocs/docs/cloud/aws-storage">Storage</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/cloud/aws-databases">Databases</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/cloud/aws-security">Security</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/cloud/aws-networking">Networking</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/cloud/aws-management">Management</a></li></ul></div></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://github.com/polakowo/datadocs/edit/master/docs/cloud/aws-storage.md" target="_blank" rel="noreferrer noopener">Edit</a><h1 class="postHeaderTitle">Storage</h1></header><article><div><span><h2><a class="anchor" aria-hidden="true" id="s3"></a><a href="#s3" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>S3</h2>
+<p><img width=150 src="/datadocs/assets/AmazonS3.png"/></p>
+<ul>
+<li>S3 provides developers and IT teams with secure, durable, highly-scalable object storage.</li>
+<li>Amazon Simple Storage Service (S3) is easy to use, with a simple web services interface to store and retrieve any amount of data from anywhere on the web.</li>
+<li>Just a safe place to store flat files of any size (from 0 Bytes):
+<ul>
+<li>Key is the name of the object.</li>
+<li>Value is the data, and is made up of a sequence of bytes.</li>
+<li>Version ID is used for versioning.</li>
+<li>Metadata is the structured description of the object.</li>
+</ul></li>
+<li>It is an object-oriented storage:
+<ul>
+<li>Allows uploading files (HTTP 200 status code for success)</li>
+<li>Not suitable to install an operating system or databases on (you need block-based storage then)</li>
+</ul></li>
+<li>The data is spread across multiple devices and facilities.</li>
+<li>Files are stored in buckets (i.e. folders)
+<ul>
+<li>S3 is a universal namespace, that is, the bucket names must be unique globally. The URL of the bucket depends on the region though, for example <code>https://s3-eu-west-1.amazonaws.com/somebucket</code></li>
+<li>By default, all newly created buckets are private.</li>
+<li>One can set up access control using Bucket Policies or Access Control Lists.</li>
+<li>One can configure to create access logs that log all requests made to this bucket.</li>
+<li>One has 100 S3 buckets per account by default.</li>
+</ul></li>
+<li>S3 puts the limit of 3500 PUTs per second.</li>
+<li>Charges:
+<ul>
+<li>Storage</li>
+<li>Requests</li>
+<li>Storage management pricing</li>
+<li>Data transfer pricing</li>
+<li>Transfer acceleration</li>
+<li>Cross-region replication</li>
+</ul></li>
+<li>Tips:
+<ul>
+<li>&quot;Your proposed upload exceeds the maximum allowed object size&quot;: design the application to use the Multipart Upload API for all objects.</li>
+<li>Read the <a href="https://aws.amazon.com/s3/faqs/">S3 FAQs</a></li>
+</ul></li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="features"></a><a href="#features" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Features</h3>
+<ul>
+<li>Data consistency:
+<ul>
+<li>Read after write consistency for newly created files (available immediately)</li>
+<li>Eventual consistency for overwrite PUT's and DELETE's (can take some time to propagate)</li>
+</ul></li>
+<li>Guarantees:
+<ul>
+<li>Built for 99.99% availability.</li>
+<li>Guarantees 99.9999999999% (11 9's) durability.</li>
+</ul></li>
+<li>Encryption:
+<ul>
+<li>Encryption in transit is achieved by SSL/TLS (HTTPS)</li>
+<li>Encryption at rest is achieved (server side) by S3 Managed Keys (SSE-S3), AWS Key Management Service (SSE-KMS), or Server Side Encryption With Customer Provided Keys (SSE-C).</li>
+<li>One can also encrypt the file on client side and upload it.</li>
+</ul></li>
+<li>Versioning:
+<ul>
+<li>Stores all versions of an object (including all writes and even deletes)</li>
+<li>Great as a backup tool.</li>
+<li>Once enabled, versioning cannot be disabled, only suspended.</li>
+<li>Integrates with Lifecycle rules (to expire old objects)</li>
+<li>Versioning's MFA Delete capability provides additional layer of security.</li>
+<li>Newly uploaded versions are automatically made private.</li>
+</ul></li>
+<li>Lifecycle management:
+<ul>
+<li>Automates moving objects between the different storage tiers (e.g. archive after 30 days)</li>
+<li>Can be used in conjunction with versioning.</li>
+<li>Can be applied to current and previous versions.</li>
+</ul></li>
+<li>Cross-region replication:
+<ul>
+<li>Replicates changes from any source bucket to one or more destination buckets.</li>
+<li>Versioning must be enabled on all buckets.</li>
+<li>Regions must be different for all buckets.</li>
+<li>Destination buckets will have the same permissions as the source after setup.</li>
+<li>Files at the time of setup are not replicated automatically, only subsequent updates.</li>
+<li>Deleting versions or delete markers are not replicated (for security)</li>
+</ul></li>
+<li>Transfer acceleration:
+<ul>
+<li>Enables fast, easy, and secure transfers of files over long distances.</li>
+<li>As the data arrives at an edge location, data is routed to S3 over an optimized network path.</li>
+<li>Takes advantage of Amazon CloudFront's globally distributed edge locations.</li>
+<li><a href="https://s3-accelerate-speedtest.s3-accelerate.amazonaws.com/en/accelerate-speed-comparsion.html">Amazon S3 Transfer Acceleration - Speed Comparison</a></li>
+</ul></li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="storage-classes"></a><a href="#storage-classes" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Storage classes</h3>
+<ul>
+<li>S3 Standard:
+<ul>
+<li>Stored redundantly across multiple devices in multiple facilities, and is designed to sustain the loss of 2 facilities concurrently.</li>
+</ul></li>
+<li>S3 IA (Infrequently Accessed):
+<ul>
+<li>For data that is accessed less frequently, but requires rapid access when needed.</li>
+<li>Lower fee than S3, but you are charged a retrieval fee.</li>
+<li>There can be cost implications if you use it frequently or use it for short lived storage.</li>
+<li>The availability is 99.99%</li>
+</ul></li>
+<li>S3 OneZone-IA:
+<ul>
+<li>Only stored in one availability zone.</li>
+<li>The availability is 99.50%</li>
+</ul></li>
+<li>S3 Intelligent Tiering:
+<ul>
+<li>Designed to optimize costs by automatically moving data to the most cost-effective access tier, without performance impact or operational overhead. Uses machine learning.</li>
+</ul></li>
+<li>S3 Glacier:
+<ul>
+<li>Designed for long-term data archival.</li>
+<li>Glacier is cheaper, but has a long retrieval time (configurable from minutes to hours)</li>
+<li>You can reliably store any amount of data at costs that are competitive with or cheaper than on-premises solutions.</li>
+</ul></li>
+<li>S3 Glacier Deep Archive:
+<ul>
+<li>Amazon S3's lowest-cost storage class where a retrieval time of 12 hours is acceptable.</li>
+</ul></li>
+<li>RRS (Reduced Redundancy Storage):
+<ul>
+<li>RRS has effectively been deprecated.</li>
+</ul></li>
+<li><a href="https://aws.amazon.com/s3/storage-classes/">Amazon S3 Storage Classes</a></li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="data-transfer"></a><a href="#data-transfer" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Data transfer</h3>
+<h4><a class="anchor" aria-hidden="true" id="storage-gateway"></a><a href="#storage-gateway" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Storage Gateway</h4>
+<ul>
+<li>AWS Storage Gateway is a service that connects an on-premises software appliance with cloud-based storage to provide seamless and secure integration between an organization's on-premises IT environment and AWS's storage infrastructure.</li>
+<li>At its heart it is a way of using AWS S3 managed storage to supplement on-premise storage.
+<ul>
+<li>It is a physical or virtual appliance that can be used to cache S3 locally.</li>
+<li>Available for download as a virtual machine (VM) image that install on a host in the datacenter.</li>
+<li>Support either VMware ESXi or Microsoft Hyper-V.</li>
+<li>It can also be used within a VPC in a similar way.</li>
+</ul></li>
+<li>File Gateway (NFS &amp; SMB):
+<ul>
+<li>Flat files are stored as objects in S3 bucket, accessed through a NFS mount point.</li>
+<li>Ownership, permissions, and timestamps are durably stored in S3 in the metadata.</li>
+</ul></li>
+<li>Volume Gateway (iSCSI):
+<ul>
+<li>The volume interface presents applications with disk volumes using the iSCSI block protocol.</li>
+<li>Data is asynchronously backed up as point-in-time snapshots and stored as Amazon EBS snapshots.</li>
+<li>Snapshots are incremental backups that capture only changed blocks (and compressed)</li>
+<li>Stored Volumes: Entire dataset is stored on site and is asynchronously backed up to S3.</li>
+<li>Cached Volumes: Entire dataset is stored on S3 and the most frequently accessed data is cached on site.</li>
+</ul></li>
+<li>Gateway Virtual Tape Library (VTL):
+<ul>
+<li>A durable, cost-effective solution to archive tape data.</li>
+<li>Stores data on virtual tape cartridges that are created on tape gateway.</li>
+<li>Supported by NetBackup, Backup Exec, Veeam.</li>
+</ul></li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="snowball"></a><a href="#snowball" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Snowball</h4>
+<ul>
+<li>Snowball is a petabyte-scale data transport solution.
+<ul>
+<li>Uses secure appliances to transfer large amounts of data and out of AWS.</li>
+<li>Addresses challenges such as high network costs, long transfer times, and security concerns.</li>
+<li>Transferring data with Snowball can be as little as one-fifth the cost of high speed internet.</li>
+<li>Comes in either a 50TB or 80TB size.</li>
+<li>Uses multiple layers of security including tamper-resistant enclosures, 256-bit encryption, and an industry-standard Trusted Platform Module (TPM) designed to ensure both security and full chain-of-custody of data.</li>
+<li>Once the data transfer job has been processed and verified, AWS performs a software erase.</li>
+</ul></li>
+</ul>
+<p><img width=200 src="/datadocs/assets/az.0.0.jpg"/>
+<center><a href="https://www.theverge.com/2015/10/7/9471381/amazon-snowball-data-transfer-device" class="credit">Credit</a></center></p>
+<ul>
+<li>AWS Snowball Edge is a 100TB data transfer device with on-board storage and compute capabilities.
+<ul>
+<li>Can be used to move large amounts of data into and out of AWS, as a temporary storage tier for large local datasets, and to support local workloads in remote or offline locations.</li>
+<li>Connects to existing applications and infrastructure.</li>
+<li>Can cluster together to form a local storage tier and process data on-premises, helping ensure your applications continue to run even when they are not able to access to cloud.</li>
+</ul></li>
+<li>AWS Snowmobile is an Exabyte-scale data transfer service.
+<ul>
+<li>One can transfer up to 100PB per Snowmobile, a 45-foot long ruggedized shipping container.</li>
+<li>For video libraries, image repositories, or even a complete data center migration.</li>
+</ul></li>
+<li><a href="https://aws.amazon.com/snowball/faqs/#When_to_use_Snowball">When to use Snowball</a></li>
+</ul>
+<p><img width=300 src="/datadocs/assets/maxresdefault copy.jpg"/>
+<center><a href="https://www.youtube.com/watch?v=b7f2V7ecgh8" class="credit">Credit</a></center></p>
+</span></div></article></div><div class="docLastUpdate"><em>Last updated on 2019-10-22 by Oleg Polakow</em></div><div class="docs-prevnext"><a class="docs-prev button" href="/datadocs/docs/cloud/aws-compute"><span class="arrow-prev">← </span><span>Compute</span></a><a class="docs-next button" href="/datadocs/docs/cloud/aws-databases"><span>Databases</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#s3">S3</a><ul class="toc-headings"><li><a href="#features">Features</a></li><li><a href="#storage-classes">Storage classes</a></li><li><a href="#data-transfer">Data transfer</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><div class="brand-box"><div class="brand"><a href="https://www.tum.de/nc/en/" target="_blank" rel="noreferrer noopener" class="brand-link"><img src="/datadocs/img/tum_logo.png" alt="Technical University of Munich" height="45"/></a></div><div class="brand"><a href="https://opensource.facebook.com/" target="_blank" rel="noreferrer noopener" class="brand-link"><img src="/datadocs/img/oss_logo.png" alt="Facebook Open Source" width="170" height="45"/></a></div></div><section class="copyright">Copyright © 2019 polakowo.io</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
+                document.addEventListener('keyup', function(e) {
+                  if (e.target !== document.body) {
+                    return;
+                  }
+                  // keyCode for '/' (slash)
+                  if (e.keyCode === 191) {
+                    const search = document.getElementById('search_input_react');
+                    search && search.focus();
+                  }
+                });
+              </script><script>
+              var search = docsearch({
+                
+                apiKey: '6642fca03d716a543ac4428d7d20b842',
+                indexName: 'polakowo-datadocs',
+                inputSelector: '#search_input_react',
+                algoliaOptions: {}
+              });
+            </script></body></html>
