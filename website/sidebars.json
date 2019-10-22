@@ -93,6 +93,28 @@
                 "big-data/data-lakes",
                 "big-data/data-pipelines"
             ]
+        }, {
+            "type": "subcategory",
+            "label": "Databases",
+            "ids": [
+                "big-data/database-design",
+                "big-data/sql-databases",
+                "big-data/wide-column-stores",
+                "big-data/key-value-stores",
+                "big-data/document-stores",
+                "big-data/graph-stores"
+            ]
+        }, {
+            "type": "subcategory",
+            "label": "Hadoop",
+            "ids": [
+                "big-data/hadoop",
+                "big-data/data-ingestion",
+                "big-data/data-storage",
+                "big-data/data-processing",
+                "big-data/query-engines",
+                "big-data/cluster-management"
+            ]
         }],
         "Cloud": [{
             "type": "subcategory",
