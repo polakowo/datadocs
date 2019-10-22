@@ -191,45 +191,7 @@
 <li>Read the <a href="https://aws.amazon.com/s3/faqs/">S3 FAQs</a></li>
 </ul></li>
 </ul>
-<h3><a class="anchor" aria-hidden="true" id="storage-classes"></a><a href="#storage-classes" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Storage classes</h3>
-<ul>
-<li>S3 Standard:
-<ul>
-<li>Stored redundantly across multiple devices in multiple facilities, and is designed to sustain the loss of 2 facilities concurrently.</li>
-</ul></li>
-<li>S3 IA (Infrequently Accessed):
-<ul>
-<li>For data that is accessed less frequently, but requires rapid access when needed.</li>
-<li>Lower fee than S3, but you are charged a retrieval fee.</li>
-<li>There can be cost implications if you use it frequently or use it for short lived storage.</li>
-<li>The availability is 99.99%</li>
-</ul></li>
-<li>S3 OneZone-IA:
-<ul>
-<li>Only stored in one availability zone.</li>
-<li>The availability is 99.50%</li>
-</ul></li>
-<li>S3 Intelligent Tiering:
-<ul>
-<li>Designed to optimize costs by automatically moving data to the most cost-effective access tier, without performance impact or operational overhead. Uses machine learning.</li>
-</ul></li>
-<li>S3 Glacier:
-<ul>
-<li>Designed for long-term data archival.</li>
-<li>Glacier is cheaper, but has a long retrieval time (configurable from minutes to hours)</li>
-<li>You can reliably store any amount of data at costs that are competitive with or cheaper than on-premises solutions.</li>
-</ul></li>
-<li>S3 Glacier Deep Archive:
-<ul>
-<li>Amazon S3's lowest-cost storage class where a retrieval time of 12 hours is acceptable.</li>
-</ul></li>
-<li>RRS (Reduced Redundancy Storage):
-<ul>
-<li>RRS has effectively been deprecated.</li>
-</ul></li>
-<li><a href="https://aws.amazon.com/s3/storage-classes/">Amazon S3 Storage Classes</a></li>
-</ul>
-<h3><a class="anchor" aria-hidden="true" id="features"></a><a href="#features" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Features</h3>
+<h4><a class="anchor" aria-hidden="true" id="features"></a><a href="#features" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Features</h4>
 <ul>
 <li>Data consistency:
 <ul>
@@ -278,6 +240,44 @@
 <li>Takes advantage of Amazon CloudFront's globally distributed edge locations.</li>
 <li><a href="https://s3-accelerate-speedtest.s3-accelerate.amazonaws.com/en/accelerate-speed-comparsion.html">Amazon S3 Transfer Acceleration - Speed Comparison</a></li>
 </ul></li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="storage-classes"></a><a href="#storage-classes" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Storage classes</h4>
+<ul>
+<li>S3 Standard:
+<ul>
+<li>Stored redundantly across multiple devices in multiple facilities, and is designed to sustain the loss of 2 facilities concurrently.</li>
+</ul></li>
+<li>S3 IA (Infrequently Accessed):
+<ul>
+<li>For data that is accessed less frequently, but requires rapid access when needed.</li>
+<li>Lower fee than S3, but you are charged a retrieval fee.</li>
+<li>There can be cost implications if you use it frequently or use it for short lived storage.</li>
+<li>The availability is 99.99%</li>
+</ul></li>
+<li>S3 OneZone-IA:
+<ul>
+<li>Only stored in one availability zone.</li>
+<li>The availability is 99.50%</li>
+</ul></li>
+<li>S3 Intelligent Tiering:
+<ul>
+<li>Designed to optimize costs by automatically moving data to the most cost-effective access tier, without performance impact or operational overhead. Uses machine learning.</li>
+</ul></li>
+<li>S3 Glacier:
+<ul>
+<li>Designed for long-term data archival.</li>
+<li>Glacier is cheaper, but has a long retrieval time (configurable from minutes to hours)</li>
+<li>You can reliably store any amount of data at costs that are competitive with or cheaper than on-premises solutions.</li>
+</ul></li>
+<li>S3 Glacier Deep Archive:
+<ul>
+<li>Amazon S3's lowest-cost storage class where a retrieval time of 12 hours is acceptable.</li>
+</ul></li>
+<li>RRS (Reduced Redundancy Storage):
+<ul>
+<li>RRS has effectively been deprecated.</li>
+</ul></li>
+<li><a href="https://aws.amazon.com/s3/storage-classes/">Amazon S3 Storage Classes</a></li>
 </ul>
 <h3><a class="anchor" aria-hidden="true" id="data-transfer"></a><a href="#data-transfer" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Data transfer</h3>
 <h4><a class="anchor" aria-hidden="true" id="storage-gateway"></a><a href="#storage-gateway" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Storage Gateway</h4>
@@ -994,11 +994,148 @@ chkconfig httpd on
 <li>The choice of which to use is left to the requesting service effectively creating a form or randomization.</li>
 </ul></li>
 </ul>
+<h2><a class="anchor" aria-hidden="true" id="vpc"></a><a href="#vpc" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>VPC</h2>
+<p><img width=150 src="/datadocs/assets/0*0q474CHdkubW1ZA-.jpg"/></p>
+<ul>
+<li>Amazon Virtual Private Cloud (Amazon VPC) lets you provision a logically isolated section of the AWS where you can launch AWS resources in a virtual network that you define.
+<ul>
+<li>Think of VPC as a logical datacenter on AWS.</li>
+</ul></li>
+<li>You have complete control over your network environment, including selection of your IP address range, creation of subnets, and configuration of route tables and network gateways.
+<ul>
+<li>For example, create a public-facing subnet (<code>10.0.1.0/24</code>) for web servers and private-facing subnet (<code>10.0.2.0/24</code>) for databases.</li>
+</ul></li>
+<li>Allows creation of a hardware VPN connection between private datacenters and Amazon VPC.</li>
+<li>Consists of Virtual Private Gateways (VPG's), route tables, ACL's, and security groups.</li>
+<li>Classless Inter-Domain Routing (CIDR) blocks:
+<ul>
+<li>Some private IP address ranges include <code>10.0.0.0/8</code>, <code>172.16.0.0/12</code>, and <code>192.168.0.0/16</code></li>
+<li>To translate an IP address with prefix (<code>192.64.0.0/14</code>), convert the prefix into the bitmask (14 bits from left is <code>11111111.11111100.00000000.00000000</code>), then into the decimal subnet mask (<code>255.252.0.0</code>), then into the wildcard (remaining <code>0.3.255.255</code>), and finally add the prefix to the IP address (the first available host is <code>192.64.0.1</code>, the last <code>192.67.255.254</code>)</li>
+<li><a href="http://cidr.xyz">AN INTERACTIVE IP ADDRESS AND CIDR RANGE VISUALIZER</a></li>
+<li>The largest prefix Amazon allows is 16, the smallest is 28.</li>
+<li>Amazon always reserves 5 IP addresses within each subnet for own use.</li>
+</ul></li>
+<li>Default VPC:
+<ul>
+<li>User friendly, allowing to immediately deploy instances.</li>
+<li>Your default VPC includes a subnet per AZ, an internet gateway (each default subnet is a public subnet), a route table with the route to the internet gateway, a default NACL that allows everything, and a default security group that also allows everything. Each EC2 instance created under a subnet of this VPC has both a private and public IP address.</li>
+<li>If you do delete the default VPC, it will remove any network objects associated with it. But you can recover it now.</li>
+</ul></li>
+<li>VPC Peering:
+<ul>
+<li>Connect one VPC with another via a direct network route using private IP addresses.</li>
+<li>Instances behave as they are on the same private network.</li>
+<li>You can peer VPC's with VPC's in another regions or even AWS accounts.</li>
+<li>Peering is a star configuration: 1 central VPC peers with 4 others. No transitive peering! In case A-&gt;B, B-&gt;C, you must explicitly establish a connection between A and C.</li>
+</ul></li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="concepts"></a><a href="#concepts" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Concepts</h4>
+<ul>
+<li>Inside a region, we have our VPC. On the outside of the VPC, we have two ways to connecting to it: Internet Gateway and Virtual Private Gateway. The traffic from an Internet gateway is routed to the appropriate subnet using the routes in the routing table. The rules of the network ACL associated with the subnet control which traffic is allowed to the subnet. The rules of the security group associated with an instance control which traffic is allowed to the instance.</li>
+<li>A virtual private cloud (VPC) is a virtual network dedicated to your AWS account.</li>
+<li>A subnet is a range of IP addresses in your VPC.
+<ul>
+<li>To protect the AWS resources in each subnet, you can use multiple layers of security, including security groups and ACL.</li>
+<li>Subnets cannot span multiple AZ's.</li>
+</ul></li>
+<li>A route table contains a set of rules (routes) that are used to determine where network traffic is directed.
+<ul>
+<li>The route table entries enable instances in the subnet to communicate with other instances in the VPC (also in other subnets), and to communicate directly over the Internet.</li>
+<li>Every time we create a subnet, it will be automatically associated with the main route table.</li>
+<li>Thus, create a separate, custom route table for any public subnets.</li>
+</ul></li>
+<li>An internet gateway is a horizontally scaled, redundant, and highly available VPC component that allows communication between instances in your VPC and the internet.
+<ul>
+<li>It therefore imposes no availability risks or bandwidth constraints on your network traffic.</li>
+<li>A subnet that's associated with a route table that has a route to an Internet gateway is known as a public subnet.</li>
+<li>You can only attach one internet gateway per VPC.</li>
+</ul></li>
+<li>Network ACLs act as a firewall for associated subnets:
+<ul>
+<li>Think of Homeland Security.</li>
+<li>Operates at the subnet level.</li>
+<li>Supports allow rules and deny rules.</li>
+<li>Is stateless: Return traffic must be explicitly allowed by rules.</li>
+<li>Automatically applies to all instances in the subnets it's associated with (therefore, an additional layer of defense if the security group rules are too permissive)</li>
+</ul></li>
+<li>Security groups act as a firewall for associated Amazon EC2 instances:
+<ul>
+<li>Think of local law enforcement.</li>
+<li>Operates at the instance level.</li>
+<li>Supports allow rules only.</li>
+<li>Is stateful: Return traffic is automatically allowed, regardless of any rules.</li>
+<li>By default, security groups do not have access to each other.</li>
+</ul></li>
+</ul>
+<p><img width=500 src="/datadocs/assets/security-diagram.png"/>
+<center><a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Security.html" class="credit">Credit</a></center></p>
+<h4><a class="anchor" aria-hidden="true" id="create-vpc-with-public-private-subnets"></a><a href="#create-vpc-with-public-private-subnets" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Create VPC with public/private subnets</h4>
+<ul>
+<li>Create a new VPC (<code>10.0.0.0/16</code>). When you create a custom VPC, a default route table, a default ACL, and a default VPC security group are created. It won't create any subnets, nor it will create an internet gateway.</li>
+<li>Create two subnets under this VPC. Assign custom IP address ranges in each subnet: <code>10.0.1.0/24</code> for public and <code>10.0.2.0/24</code> for private. Select the AZ for each one (Keep in mind: An AZ in one AWS account can be different from the same AZ in a different AWS account, since they are randomized). For the public one, turn on &quot;Auto-assign IPv4&quot;.</li>
+<li>Create an internet gateway and attach it to the VPC.</li>
+<li>Configure route tables between subnets. Since the created subnets are associated with the main route table by default, create a new route table and add the <code>0.0.0.0/0</code> route to the internet gateway created earlier. Associate then the public subnet <code>10.0.1.0/24</code> with this table.</li>
+<li>Go over to the AWS resources, and create them under the corresponding subnets.</li>
+<li>Specify the appropriate security groups for your resources for them to communicate.</li>
+</ul>
+<p><img width=600 src="/datadocs/assets/internet-gateway-diagram.png"/>
+<center><a href="https://docs.aws.amazon.com/vpc/latest/userguide/how-it-works.html" class="credit">Credit</a></center></p>
+<h3><a class="anchor" aria-hidden="true" id="nat"></a><a href="#nat" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>NAT</h3>
+<p><img width=100 src="/datadocs/assets/27_vpc-nat-gateway.aac10e8c0d.svg"/></p>
+<ul>
+<li>You can use a network address translation (NAT) gateway to enable instances in a private subnet to connect to the internet or other AWS services, but prevent the internet from initiating a connection with those instances.
+<ul>
+<li>For example, this can be used to do software updates in private subnets.</li>
+</ul></li>
+<li>NAT instances (outdated):
+<ul>
+<li>A NAT instance is acting as a bridge between subnets and the internet gateway.</li>
+<li>To set it up, create a NAT instance, and in the route table of the subnet where your EC2 instance is located, enter a route to this NAT instance to direct the internet traffic through this instance.</li>
+<li>Must be in a public subnet and source/destination checks must be disabled.</li>
+<li>The amount of traffic that this instance can support depends on its size.</li>
+<li>A massive bottleneck: A single VM, which can be easily overwhelmed. You can create HA using Autoscaling Groups, multiple subnets in different AZ's, and a script to automate failover.</li>
+<li>When the instance is removed, the corresponding route is marked as &quot;blackhole&quot;</li>
+<li>Behind the security group.</li>
+</ul></li>
+<li>NAT Gateways (preferred):
+<ul>
+<li>Redundant in the AZ and thus highly available.</li>
+<li>Starts at 5Gbps and scales currently to 45Gbps.</li>
+<li>There is no need to patch operation system.</li>
+<li>Not associated with any security groups.</li>
+<li>Automatically assigned a public IP address.</li>
+<li>Remember to update your route tables.</li>
+<li>Uses ephemeral ports 1024-65535.</li>
+</ul></li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="nacl"></a><a href="#nacl" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>NACL</h3>
+<p><img width=100 src="/datadocs/assets/41_network-access-control-list.d577137fe9.svg"/></p>
+<ul>
+<li>NACL's have separate inbound and outbound rules, and each rule can either allow or deny traffic.</li>
+<li>Your VPC automatically comes with a default network ACL that allows everything.</li>
+<li>When creating a new NACL, all inbound and outbound rules are denied by default.</li>
+<li>Each subnet in the VPC must be associated with a network ACL.
+<ul>
+<li>If you don't explicitly associate a subnet with a NACL, the subnet is automatically associated with the default NACL.</li>
+<li>You can associate a NACL with multiple subnets.</li>
+<li>However, a subnet can only be associated with a single NACL at a time.</li>
+<li>When you associate a subnet with a new NACL, starting with the lowest numbered rule.</li>
+</ul></li>
+<li>Amazon recommends that you use increments of 100 for each rule (and of 1 for IPv4 and IPv6)
+<ul>
+<li>The rules are evaluated in numerical order, from the lowest to the highest.</li>
+<li>For example, if you allow port 80 in the rule &quot;100&quot; and disable it in the rule &quot;200&quot;, the port will still be open. That's also why everything under the rule &quot;*&quot; is denied at the end.</li>
+</ul></li>
+</ul>
 <h3><a class="anchor" aria-hidden="true" id="elb"></a><a href="#elb" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>ELB</h3>
 <ul>
 <li>Do not have pre-defined IPv4 addresses; you can resolve to them using a DNS name.</li>
 </ul>
-</span></div></article></div><div class="docLastUpdate"><em>Last updated on 2019-10-21 by Oleg Polakow</em></div><div class="docs-prevnext"><a class="docs-prev button" href="/datadocs/docs/big-data/cloud-computing"><span class="arrow-prev">← </span><span>Cloud Computing</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#infrastructure">Infrastructure</a></li><li><a href="#iam">IAM</a></li><li><a href="#s3">S3</a><ul class="toc-headings"><li><a href="#storage-classes">Storage classes</a></li><li><a href="#features">Features</a></li><li><a href="#data-transfer">Data transfer</a></li></ul></li><li><a href="#ec2">EC2</a><ul class="toc-headings"><li><a href="#pricing">Pricing</a></li><li><a href="#instance-types">Instance types</a></li><li><a href="#storage">Storage</a></li><li><a href="#placement-groups">Placement groups</a></li><li><a href="#security-groups">Security groups</a></li></ul></li><li><a href="#cloudwatch">CloudWatch</a></li><li><a href="#databases">Databases</a><ul class="toc-headings"><li><a href="#rds-oltp">RDS (OLTP)</a></li><li><a href="#aurora-serverless-oltp">Aurora (Serverless, OLTP)</a></li><li><a href="#dynamodb-nosql">DynamoDB (NoSQL)</a></li><li><a href="#redshift-dwh">Redshift (DWH)</a></li><li><a href="#elasticache">ElastiCache</a></li></ul></li><li><a href="#routing">Routing</a><ul class="toc-headings"><li><a href="#dns">DNS</a></li><li><a href="#route-53">Route 53</a></li><li><a href="#elb">ELB</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><div class="brand-box"><div class="brand"><a href="https://www.tum.de/nc/en/" target="_blank" rel="noreferrer noopener" class="brand-link"><img src="/datadocs/img/tum_logo.png" alt="Technical University of Munich" height="45"/></a></div><div class="brand"><a href="https://opensource.facebook.com/" target="_blank" rel="noreferrer noopener" class="brand-link"><img src="/datadocs/img/oss_logo.png" alt="Facebook Open Source" width="170" height="45"/></a></div></div><section class="copyright">Copyright © 2019 polakowo.io</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
+<h3><a class="anchor" aria-hidden="true" id="elb-1"></a><a href="#elb-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>ELB</h3>
+<h3><a class="anchor" aria-hidden="true" id="elb-2"></a><a href="#elb-2" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>ELB</h3>
+<h3><a class="anchor" aria-hidden="true" id="elb-3"></a><a href="#elb-3" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>ELB</h3>
+<h3><a class="anchor" aria-hidden="true" id="elb-4"></a><a href="#elb-4" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>ELB</h3>
+</span></div></article></div><div class="docLastUpdate"><em>Last updated on 2019-10-22 by Oleg Polakow</em></div><div class="docs-prevnext"><a class="docs-prev button" href="/datadocs/docs/big-data/cloud-computing"><span class="arrow-prev">← </span><span>Cloud Computing</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#infrastructure">Infrastructure</a></li><li><a href="#iam">IAM</a></li><li><a href="#s3">S3</a><ul class="toc-headings"><li><a href="#data-transfer">Data transfer</a></li></ul></li><li><a href="#ec2">EC2</a><ul class="toc-headings"><li><a href="#pricing">Pricing</a></li><li><a href="#instance-types">Instance types</a></li><li><a href="#storage">Storage</a></li><li><a href="#placement-groups">Placement groups</a></li><li><a href="#security-groups">Security groups</a></li></ul></li><li><a href="#cloudwatch">CloudWatch</a></li><li><a href="#databases">Databases</a><ul class="toc-headings"><li><a href="#rds-oltp">RDS (OLTP)</a></li><li><a href="#aurora-serverless-oltp">Aurora (Serverless, OLTP)</a></li><li><a href="#dynamodb-nosql">DynamoDB (NoSQL)</a></li><li><a href="#redshift-dwh">Redshift (DWH)</a></li><li><a href="#elasticache">ElastiCache</a></li></ul></li><li><a href="#routing">Routing</a><ul class="toc-headings"><li><a href="#dns">DNS</a></li><li><a href="#route-53">Route 53</a></li></ul></li><li><a href="#vpc">VPC</a><ul class="toc-headings"><li><a href="#nat">NAT</a></li><li><a href="#nacl">NACL</a></li><li><a href="#elb">ELB</a></li><li><a href="#elb-1">ELB</a></li><li><a href="#elb-2">ELB</a></li><li><a href="#elb-3">ELB</a></li><li><a href="#elb-4">ELB</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><div class="brand-box"><div class="brand"><a href="https://www.tum.de/nc/en/" target="_blank" rel="noreferrer noopener" class="brand-link"><img src="/datadocs/img/tum_logo.png" alt="Technical University of Munich" height="45"/></a></div><div class="brand"><a href="https://opensource.facebook.com/" target="_blank" rel="noreferrer noopener" class="brand-link"><img src="/datadocs/img/oss_logo.png" alt="Facebook Open Source" width="170" height="45"/></a></div></div><section class="copyright">Copyright © 2019 polakowo.io</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
                 document.addEventListener('keyup', function(e) {
                   if (e.target !== document.body) {
                     return;
