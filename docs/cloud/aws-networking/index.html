@@ -63,7 +63,7 @@
 <ul>
 <li>Each region is a distinct location designed to provide high availability to a specific geography.
 <ul>
-<li>Each region comprises at least two AZ's.</li>
+<li>Each region comprises at least two AZs.</li>
 </ul></li>
 <li>An availability zone (AZ) is one or more discrete data centers.
 <ul>
@@ -71,7 +71,7 @@
 </ul></li>
 <li>Edge locations are endpoints for AWS that are used for caching content (CloudFront).
 <ul>
-<li>The number of edge locations &gt;&gt; the number of AZ's &gt;&gt; the number of regions.</li>
+<li>The number of edge locations &gt;&gt; the number of AZs &gt;&gt; the number of regions.</li>
 </ul></li>
 <li>A Virtual Private Cloud (VPC) is a virtual network dedicated to a single AWS account.
 <ul>
@@ -79,6 +79,7 @@
 </ul></li>
 </ul>
 <h2><a class="anchor" aria-hidden="true" id="cloudfront"></a><a href="#cloudfront" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>CloudFront</h2>
+<p><img width=100 src="/datadocs/assets/aws-cloudfront.svg"/></p>
 <ul>
 <li>A Content Delivery Network (CDN) is a system of distributed servers (network) that deliver webpages and other web content to a user based on the geographic locations of the user, the origin of the webpage, and a content delivery server.
 <ul>
@@ -125,7 +126,7 @@
 <li>Can satisfy queries from its own data without needing to query another source.</li>
 <li>But requires an additional nameserver for serving queries for a subdomain (<code>blog.cloudflare.com</code>)</li>
 </ul></li>
-<li>A registrar is an authority that can assign domain names under one or multiple TLD's.
+<li>A registrar is an authority that can assign domain names under one or multiple TLDs.
 <ul>
 <li>This domains are registered with InterNIC, a service of ICANN, which enforces uniqueness of domain names across the Internet.</li>
 <li>Each domain name becomes registered in a central database known as the WhoIS database.</li>
@@ -246,13 +247,13 @@
 <li>For example, create a public-facing subnet (<code>10.0.1.0/24</code>) for web servers and private-facing subnet (<code>10.0.2.0/24</code>) for databases.</li>
 </ul></li>
 <li>Allows creation of a hardware VPN connection between private datacenters and Amazon VPC.</li>
-<li>Consists of Virtual Private Gateways (VPG's), route tables, ACL's, and security groups.</li>
+<li>Consists of Virtual Private Gateways (IGWs), route tables, ACLs, subnets, and security groups.</li>
 <li>Classless Inter-Domain Routing (CIDR) blocks:
 <ul>
 <li>Some private IP address ranges include <code>10.0.0.0/8</code>, <code>172.16.0.0/12</code>, and <code>192.168.0.0/16</code></li>
 <li>To translate an IP address with prefix (<code>192.64.0.0/14</code>), convert the prefix into the bitmask (14 bits from left is <code>11111111.11111100.00000000.00000000</code>), then into the decimal subnet mask (<code>255.252.0.0</code>), then into the wildcard (remaining <code>0.3.255.255</code>), and finally add the prefix to the IP address (the first available host is <code>192.64.0.1</code>, the last <code>192.67.255.254</code>)</li>
 <li><a href="http://cidr.xyz">AN INTERACTIVE IP ADDRESS AND CIDR RANGE VISUALIZER</a></li>
-<li>The largest prefix Amazon allows is 16, the smallest is 28.</li>
+<li>The largest prefix Amazon allows is 16 (65,536 addresses), the smallest is 28 (16 addresses)</li>
 <li>Amazon always reserves 5 IP addresses within each subnet for own use.</li>
 </ul></li>
 <li>Default VPC:
@@ -265,18 +266,25 @@
 <ul>
 <li>Connect one VPC with another via a direct network route using private IP addresses.</li>
 <li>Instances behave as they are on the same private network.</li>
-<li>You can peer VPC's with VPC's in another regions or even AWS accounts.</li>
-<li>Peering is a star configuration: 1 central VPC peers with 4 others. No transitive peering! In case A-&gt;B, B-&gt;C, you must explicitly establish a connection between A and C.</li>
+<li>You can peer VPCs with VPCs in another regions or even AWS accounts.</li>
+<li>Peering is a star configuration: 1 central VPC peers with 4 others. Transitive peering is not allowed: if both VPC 'B' and VPC 'C' are peered with VPC 'A', they cannot communicate with each other directly.</li>
 </ul></li>
+<li>Vulnerability scans:
+<ul>
+<li>Until recently customers were not permitted to conduct penetration testing without AWS engagement. However that has changed. There are still conditions though.</li>
+</ul></li>
+<li>You can create up to 5 VPCs in a single region.</li>
+<li>In Amazon VPC, an instance always retains its private IP address.</li>
 </ul>
-<h4><a class="anchor" aria-hidden="true" id="concepts"></a><a href="#concepts" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Concepts</h4>
+<h3><a class="anchor" aria-hidden="true" id="concepts"></a><a href="#concepts" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Concepts</h3>
 <ul>
 <li>Inside a region, we have our VPC. On the outside of the VPC, we have two ways to connecting to it: Internet Gateway and Virtual Private Gateway. The traffic from an Internet gateway is routed to the appropriate subnet using the routes in the routing table. The rules of the network ACL associated with the subnet control which traffic is allowed to the subnet. The rules of the security group associated with an instance control which traffic is allowed to the instance.</li>
 <li>A virtual private cloud (VPC) is a virtual network dedicated to your AWS account.</li>
 <li>A subnet is a range of IP addresses in your VPC.
 <ul>
 <li>To protect the AWS resources in each subnet, you can use multiple layers of security, including security groups and ACL.</li>
-<li>Subnets cannot span multiple AZ's.</li>
+<li>Subnets cannot span multiple AZs.</li>
+<li>By default, instances in new subnets in a custom VPC can communicate with each other across AZs. In a custom VPC with new subnets in each AZ, there is a route that supports communication across all subnets/AZs. Plus a default SG with an allow rule 'All traffic, all protocols, all ports, from anything using this default SG'.</li>
 </ul></li>
 <li>A route table contains a set of rules (routes) that are used to determine where network traffic is directed.
 <ul>
@@ -309,14 +317,14 @@
 </ul>
 <p><img width=500 src="/datadocs/assets/security-diagram.png"/>
 <center><a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Security.html" class="credit">Credit</a></center></p>
-<h4><a class="anchor" aria-hidden="true" id="create-vpc-with-public-private-subnets"></a><a href="#create-vpc-with-public-private-subnets" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Create VPC with public/private subnets</h4>
+<h4><a class="anchor" aria-hidden="true" id="custom-vpc"></a><a href="#custom-vpc" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Custom VPC</h4>
 <ul>
 <li>Create a new VPC (<code>10.0.0.0/16</code>). When you create a custom VPC, a default route table, a default ACL, and a default VPC security group are created. It won't create any subnets, nor it will create an internet gateway.</li>
-<li>Create two subnets under this VPC. Assign custom IP address ranges in each subnet: <code>10.0.1.0/24</code> for public and <code>10.0.2.0/24</code> for private. Select the AZ for each one (Keep in mind: An AZ in one AWS account can be different from the same AZ in a different AWS account, since they are randomized). For the public one, turn on &quot;Auto-assign IPv4&quot;.</li>
+<li>Create two subnets under this VPC. Assign custom IP address ranges in each subnet: <code>10.0.1.0/24</code> for public and <code>10.0.2.0/24</code> for private. Select the AZ for each one (Keep in mind: An AZ in one AWS account can be different from the same AZ in a different AWS account, since they are randomized). By default, any user-created VPC subnet WILL NOT automatically assign public IPv4 addresses to instances, thus for the public one, turn on &quot;Auto-assign IPv4&quot;.</li>
 <li>Create an internet gateway and attach it to the VPC.</li>
 <li>Configure route tables between subnets. Since the created subnets are associated with the main route table by default, create a new route table and add the <code>0.0.0.0/0</code> route to the internet gateway created earlier. Associate then the public subnet <code>10.0.1.0/24</code> with this table.</li>
 <li>Go over to the AWS resources, and create them under the corresponding subnets.</li>
-<li>Specify the appropriate security groups for your resources for them to communicate.</li>
+<li>Specify the appropriate security groups for your resources for them to communicate. For example, for SG 'A' to talk to a private SG 'B', create a new rule for SG 'B' and add SG 'A' as Source.</li>
 </ul>
 <p><img width=600 src="/datadocs/assets/internet-gateway-diagram.png"/>
 <center><a href="https://docs.aws.amazon.com/vpc/latest/userguide/how-it-works.html" class="credit">Credit</a></center></p>
@@ -327,31 +335,48 @@
 <ul>
 <li>For example, this can be used to do software updates in private subnets.</li>
 </ul></li>
-<li>NAT instances (outdated):
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="nat-instances-outdated"></a><a href="#nat-instances-outdated" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>NAT instances (outdated)</h4>
 <ul>
 <li>A NAT instance is acting as a bridge between subnets and the internet gateway.</li>
 <li>To set it up, create a NAT instance, and in the route table of the subnet where your EC2 instance is located, enter a route to this NAT instance to direct the internet traffic through this instance.</li>
 <li>Must be in a public subnet and source/destination checks must be disabled.</li>
 <li>The amount of traffic that this instance can support depends on its size.</li>
-<li>A massive bottleneck: A single VM, which can be easily overwhelmed. You can create HA using Autoscaling Groups, multiple subnets in different AZ's, and a script to automate failover.</li>
+<li>A massive bottleneck: A single VM, which can be easily overwhelmed. You can create HA using Autoscaling Groups, multiple subnets in different AZs, and a script to automate failover.</li>
 <li>When the instance is removed, the corresponding route is marked as &quot;blackhole&quot;</li>
 <li>Behind the security group.</li>
-</ul></li>
-<li>NAT Gateways (preferred):
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="nat-gateways"></a><a href="#nat-gateways" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>NAT Gateways</h4>
 <ul>
 <li>Redundant in the AZ and thus highly available.</li>
 <li>Starts at 5Gbps and scales currently to 45Gbps.</li>
 <li>There is no need to patch operation system.</li>
-<li>Not associated with any security groups.</li>
 <li>Automatically assigned a public IP address.</li>
 <li>Remember to update your route tables.</li>
 <li>Uses ephemeral ports 1024-65535.</li>
+<li>Not behind any security group.</li>
+<li>If you have resources in multiple AZs and they share one NAT gateway, in the event of that the NAT gateway's AZ is down, resources in the other AZs lose internet access.
+<ul>
+<li>To create an AZ-independent architecture, create a NAT gateway in each AZ.</li>
+</ul></li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="bastion-host"></a><a href="#bastion-host" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Bastion host</h4>
+<ul>
+<li>A NAT gateway is used to provide internet traffic to EC2 instances in private subnets.</li>
+<li>A bastion is used to securely administer EC2 instances (SSH/RDP)</li>
+<li>Don't confuse Bastions and NATs, which allow outside traffic to reach an instance in a private subnet.</li>
+<li>A bastion host is a special computer on a network designed and configured to withstand attacks.
+<ul>
+<li>Generally hosts a single application (e.g. proxy server)</li>
+<li>All other services are removed or limited to reduce the threat to the computer.</li>
+<li>Located either on the outside of the firewall or in a demilitarized zone (DMZ)</li>
+<li>Usually involves access from untrusted networks or computers.</li>
 </ul></li>
 </ul>
 <h3><a class="anchor" aria-hidden="true" id="nacl"></a><a href="#nacl" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>NACL</h3>
 <p><img width=100 src="/datadocs/assets/41_network-access-control-list.d577137fe9.svg"/></p>
 <ul>
-<li>NACL's have separate inbound and outbound rules, and each rule can either allow or deny traffic.</li>
+<li>NACLs have separate inbound and outbound rules, and each rule can either allow or deny traffic.</li>
 <li>Your VPC automatically comes with a default network ACL that allows everything.</li>
 <li>When creating a new NACL, all inbound and outbound rules are denied by default.</li>
 <li>Each subnet in the VPC must be associated with a network ACL.
@@ -367,11 +392,135 @@
 <li>For example, if you allow port 80 in the rule &quot;100&quot; and disable it in the rule &quot;200&quot;, the port will still be open. That's also why everything under the rule &quot;*&quot; is denied at the end.</li>
 </ul></li>
 </ul>
-<h3><a class="anchor" aria-hidden="true" id="elb"></a><a href="#elb" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>ELB</h3>
+<h3><a class="anchor" aria-hidden="true" id="vpc-flow-logs"></a><a href="#vpc-flow-logs" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>VPC Flow Logs</h3>
 <ul>
-<li>Do not have pre-defined IPv4 addresses; you can resolve to them using a DNS name.</li>
+<li>VPC Flow Logs enables you to capture information about the IP traffic.</li>
+<li>Logs are stored either using S3 or Amazon CloudWatch Logs.
+<ul>
+<li>For this, create a log group in Amazon CloudWatch and an IAM role first.</li>
+</ul></li>
+<li>Can be created at three levels:
+<ul>
+<li>VPC</li>
+<li>Subnet</li>
+<li>Network Interface Level</li>
+</ul></li>
+<li>Limitations:
+<ul>
+<li>You cannot enable flow logs for VPCs that are peered with your VPC unless the peer VPCs are under your account.</li>
+<li>After you've created a flow log, you cannot change its configuration.</li>
+<li>You cannot tag a flow log.</li>
+</ul></li>
+<li>Not all IP traffic is monitored:
+<ul>
+<li>Traffic generated by EC2 instances when they contact the Amazon DNS server (unless its your own DNS server)</li>
+<li>Traffic generated by a Windows instance for Amazon Windows license activation.</li>
+<li>Traffic to and from <code>169.254.169.254</code> for instance metadata.</li>
+<li>DHCP traffic as well as the traffic to the reserved IP address for the default VPC router.</li>
+</ul></li>
 </ul>
-</span></div></article></div><div class="docLastUpdate"><em>Last updated on 2019-10-22 by Oleg Polakow</em></div><div class="docs-prevnext"><a class="docs-prev button" href="/datadocs/docs/cloud/aws-security"><span class="arrow-prev">← </span><span>Security</span></a><a class="docs-next button" href="/datadocs/docs/cloud/aws-management"><span>Management</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#infrastructure">Infrastructure</a></li><li><a href="#cloudfront">CloudFront</a></li><li><a href="#routing">Routing</a><ul class="toc-headings"><li><a href="#dns">DNS</a></li><li><a href="#route-53">Route 53</a></li></ul></li><li><a href="#vpc">VPC</a><ul class="toc-headings"><li><a href="#nat">NAT</a></li><li><a href="#nacl">NACL</a></li><li><a href="#elb">ELB</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><div class="brand-box"><div class="brand"><a href="https://www.tum.de/nc/en/" target="_blank" rel="noreferrer noopener" class="brand-link"><img src="/datadocs/img/tum_logo.png" alt="Technical University of Munich" height="45"/></a></div><div class="brand"><a href="https://opensource.facebook.com/" target="_blank" rel="noreferrer noopener" class="brand-link"><img src="/datadocs/img/oss_logo.png" alt="Facebook Open Source" width="170" height="45"/></a></div></div><section class="copyright">Copyright © 2019 polakowo.io</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
+<h3><a class="anchor" aria-hidden="true" id="vpc-endpoints"></a><a href="#vpc-endpoints" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>VPC Endpoints</h3>
+<p><img width=100 src="/datadocs/assets/23_vpc-endpoints.6dddeea38c.svg"/></p>
+<ul>
+<li>A VPC endpoint enables you to privately connect from your VPC to other AWS services without requiring an internet gateway, NAT device, VPN connection, or AWS Direct Connect connection.
+<ul>
+<li>In contrast to a NAT gateway, traffic does not leave the Amazon network.</li>
+<li>Instances in your VPC do not require public IP addresses.</li>
+</ul></li>
+<li>Endpoints are virtual devices that are horizontally scaled, redundant, and highly available.</li>
+<li>There are two types of VPC endpoints:
+<ul>
+<li>Interface endpoints: A whole bunch of services are supported.</li>
+<li>Gateway endpoints: S3 and DynamoDB are supported.</li>
+</ul></li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="direct-connect"></a><a href="#direct-connect" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Direct Connect</h2>
+<p><img width=100 src="/datadocs/assets/19_aws-direct-connect.f5d993d6da.svg"/></p>
+<ul>
+<li>Direct Connect makes it easy to establish a dedicated network connection from your premises to AWS.</li>
+<li>Useful for high throughput workloads (i.e. lots of network traffic)</li>
+<li>Or if you want to establish a stable and reliable network connection.</li>
+<li>Provides a more consistent network experience than Internet-based applications.</li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="high-availability"></a><a href="#high-availability" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>High availability</h2>
+<ul>
+<li>Availability is the % of a time period when the service will be able to respond to request in some fashion.</li>
+<li>Durability refers to the on-going existence of the object or resource.</li>
+<li>Resiliency can be described as the ability to a system to self heal after damage or an event.</li>
+<li>Reliability is the probability that a system will work as designed.</li>
+<li>Everything fails. Everything. You should always plan for failure.
+<ul>
+<li>Use multiple AZs and multiple regions wherever you can.</li>
+<li>Know the difference between Multi-AZ (for disaster recovery) and read replicas (for performance) for RDS.</li>
+<li>Know the difference between scaling out (auto-scaling) and up (increase resources)</li>
+<li>Know the different S3 storage classes.</li>
+<li>Always consider the cost element.</li>
+<li>Perform manual robustness testing: <a href="https://medium.com/netflix-techblog/the-netflix-simian-army-16e57fbab116">The Netflix Simian Army</a></li>
+</ul></li>
+</ul>
+<p><img width=400 src="/datadocs/assets/this-is-fine-meme-625x350.jpg"/>
+<center><a href="https://www.geek.com/culture/this-is-fine-meme-dog-being-turned-into-a-plushie-1664644/" class="credit">Credit</a></center></p>
+<h3><a class="anchor" aria-hidden="true" id="elb"></a><a href="#elb" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>ELB</h3>
+<p><img width=100 src="/datadocs/assets/38_application-load-balancer.40610a2c7e.svg"/></p>
+<ul>
+<li>Elastic Load Balancing (ELB) automatically distributes incoming application traffic across multiple targets, such as Amazon EC2 instances, containers, IP addresses, and Lambda functions.</li>
+<li>Application ELBs:
+<ul>
+<li>Best suited for load balancing of HTTP and HTTPs traffic.</li>
+<li>Operate at LAYER 7 and are application aware.</li>
+<li>Capable of intelligent request routing: based on rules for target group, condition, and priority.</li>
+<li>For example, ELB can see changing currency to $ on a website and redirect traffic to US.</li>
+</ul></li>
+<li>Network ELBs:
+<ul>
+<li>Best suited for load balancing of TCP traffic where extreme performance is required.</li>
+<li>Specifically designed for high performance traffic that is not conventional web traffic.</li>
+<li>Operate at LAYER 4 and are connection aware.</li>
+<li>Capable of handling millions of requests per second while maintaining low latencies.</li>
+</ul></li>
+<li>Classic ELBs:
+<ul>
+<li>Classic ELBs are the previous generation ELBs.</li>
+<li>Can operate at LAYER 7 (e.g. X-Forwarded and sticky sessions)</li>
+<li>Can also use strict LAYER 4 load balancing for applications that rely on TCP.</li>
+<li>Cheaper than others and is usually used for round-robin DNS.</li>
+<li>If your application stops responding, the ELB responds with &quot;504 Gateway Time-out&quot; error.</li>
+</ul></li>
+<li>X-Forwarded:
+<ul>
+<li>When a request is going through an ELB, the EC2 instance receives the IP address of the ELB instead of the client. To forward the client's IP address, use <code>X-Forwarded-For</code> field.</li>
+</ul></li>
+<li>Monitoring:
+<ul>
+<li>Instances monitored by ELB are either InService or OutService.</li>
+<li>Health checks check the health of an instance by talking to it.</li>
+</ul></li>
+<li>Sticky sessions:
+<ul>
+<li>Sticky session allow you to bind a user's session to a specific EC2 instance.</li>
+<li>Can be useful if you're storing information locally on that instance.</li>
+<li>If you're confronted with an EC2 instance that receives no traffic, disable sticky sessions.</li>
+</ul></li>
+<li>Cross-Zone Load Balancing:
+<ul>
+<li>Direct traffic across multiple AZs.</li>
+</ul></li>
+<li>Path patterns:
+<ul>
+<li>Direct traffic based on the URL contained in the request.</li>
+<li>For example, for microservices, you can route traffic to multiple backend services (<code>www.myurl.com</code> to US-EAST-1A and <code>www.myurl.com/images/</code> to US-EAST-1B)</li>
+</ul></li>
+<li>They do not have IPv4 addresses; you can resolve to them using a DNS name.</li>
+<li>You need at least two public subnets when creating a load balancer.</li>
+<li>Read the <a href="https://aws.amazon.com/elasticloadbalancing/faqs/">ELB FAQ</a> for Classic Load Balancers.</li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="auto-scaling"></a><a href="#auto-scaling" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Auto Scaling</h3>
+<p><img width=100 src="/datadocs/assets/auto-scaling.svg"/></p>
+<ul>
+<li>Auto Scaling allows you to set up dynamic and predictive scaling for scalable AWS resources.</li>
+<li>Always check that the launch configuration is being triggered properly.</li>
+</ul>
+</span></div></article></div><div class="docLastUpdate"><em>Last updated on 2019-10-23 by Oleg Polakow</em></div><div class="docs-prevnext"><a class="docs-prev button" href="/datadocs/docs/cloud/aws-security"><span class="arrow-prev">← </span><span>Security</span></a><a class="docs-next button" href="/datadocs/docs/cloud/aws-management"><span>Management</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#infrastructure">Infrastructure</a></li><li><a href="#cloudfront">CloudFront</a></li><li><a href="#routing">Routing</a><ul class="toc-headings"><li><a href="#dns">DNS</a></li><li><a href="#route-53">Route 53</a></li></ul></li><li><a href="#vpc">VPC</a><ul class="toc-headings"><li><a href="#concepts">Concepts</a></li><li><a href="#nat">NAT</a></li><li><a href="#nacl">NACL</a></li><li><a href="#vpc-flow-logs">VPC Flow Logs</a></li><li><a href="#vpc-endpoints">VPC Endpoints</a></li></ul></li><li><a href="#direct-connect">Direct Connect</a></li><li><a href="#high-availability">High availability</a><ul class="toc-headings"><li><a href="#elb">ELB</a></li><li><a href="#auto-scaling">Auto Scaling</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><div class="brand-box"><div class="brand"><a href="https://www.tum.de/nc/en/" target="_blank" rel="noreferrer noopener" class="brand-link"><img src="/datadocs/img/tum_logo.png" alt="Technical University of Munich" height="45"/></a></div><div class="brand"><a href="https://opensource.facebook.com/" target="_blank" rel="noreferrer noopener" class="brand-link"><img src="/datadocs/img/oss_logo.png" alt="Facebook Open Source" width="170" height="45"/></a></div></div><section class="copyright">Copyright © 2019 polakowo.io</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
                 document.addEventListener('keyup', function(e) {
                   if (e.target !== document.body) {
                     return;

@@ -183,66 +183,8 @@ chkconfig httpd on
 </ul>
 <h3><a class="anchor" aria-hidden="true" id="storage"></a><a href="#storage" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Storage</h3>
 <ul>
-<li><a href="https://help.acloud.guru/hc/en-us/articles/115002011194">AWS Storage Types - S3, EFS, &amp; EBS</a></li>
-</ul>
-<h4><a class="anchor" aria-hidden="true" id="ebs"></a><a href="#ebs" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>EBS</h4>
-<ul>
-<li>Amazon Elastic Block Store (EBS) provides persistent block storage volumes in the cloud.</li>
-<li>Each EBS volume is replicated within its AZ to protect from component failure.</li>
-<li>EBS types:
-<ul>
-<li>SSD &gt;&gt; General purpose SSD (GP2): For most workloads (16,000 IOPS)</li>
-<li>SSD &gt;&gt; Provisioned IOPS SSD (IO1): For databases (64,000 IOPS)</li>
-<li>Magnetic &gt;&gt; Throughput Optimized HDD (ST1): For big data, DWH, logs (500 IOPS)</li>
-<li>Magnetic &gt;&gt; Cold HDD (SC1): Cheap, for file servers (250 IOPS)</li>
-<li>Magnetic &gt;&gt; EBS Magnetic: Extra cheap, for infrequently accessed workloads (40-200 IOPS)</li>
-<li>EBS volumes can be changed on the fly (including the size and storage type)</li>
-</ul></li>
-<li>Volumes exist on EBS:
-<ul>
-<li>Think of EBS as of a virtual hard disk.</li>
-</ul></li>
-<li>Snapshots exist on S3:
-<ul>
-<li>Created with command <code>aws ec2 create-snapshot</code></li>
-<li>Think of snapshots as of a photograph of the disk.</li>
-<li>Snapshots are point-in-time copies of volumes.</li>
-<li>Snapshots are incremental: only the blocks that changed since last snapshots are moved to S3.</li>
-<li>The first snapshot may take some time.</li>
-<li>To take a snapshot of a root device, you should stop the EC2 instance first. But you can also make a snapshot while the instance is running.</li>
-<li>One can perform actions on an existing EBS snapshot using AWS APIs, CLI, and AWS Console.</li>
-<li>One cannot delete a snapshot that is used as the root device of a registered AMI.</li>
-</ul></li>
-<li>Data migration:
-<ul>
-<li>Volumes are always in the same AZ as the EC2 instance.</li>
-<li>To move an EC2 volume from one AZ to another, take a snapshot, create an AMI from that snapshot, and then use the AMI to launch a new EC2 instance in a new AZ.</li>
-<li>To move an EC2 volume from one region to another, take a snapshot, create an AMI from that snapshot, copy that AMI to another region, and then use the copied AMI to launch a new EC2 instance in the new region.</li>
-</ul></li>
-<li>Encryption:
-<ul>
-<li>The use of encryption at rest is default requirement for many industry compliance certifications.</li>
-<li>Using AWS managed keys to provide EBS encryption at rest is relatively painless and reliable.</li>
-<li>Snapshots of encrypted volumes are encrypted automatically.</li>
-<li>Volumes restored from encrypted snapshots are encrypted automatically.</li>
-<li>You can share snapshots (on AWS or publicly), but only if they are unencrypted.</li>
-<li>You can now encrypt root device volumes upon creation of the EC2 instance.</li>
-<li>To encrypt an unencrypted root device volume, create a snapshot of it, encrypt that snapshot, create an AMI from that snapshot, and use that AMI to launch a new encrypted EC2 instance.</li>
-</ul></li>
-<li>Termination:
-<ul>
-<li>The default action is for the root EBS volume to be deleted when the instance is terminated.</li>
-<li>The default action for additional volumes is to be persisted.</li>
-</ul></li>
-<li>Additional volumes:
-<ul>
-<li>Additional volumes can be detached without stopping the instance.</li>
-<li>You can add multiple volumes to an EC2 instance and then create your own RAID 5/RAID 10/RAID 0 configurations using those volumes.</li>
-<li>You cannot attach an EBS volume to more than one EC2 instance at the same time.</li>
-</ul></li>
-</ul>
-<h4><a class="anchor" aria-hidden="true" id="instance-stores"></a><a href="#instance-stores" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Instance stores</h4>
-<ul>
+<li><a href="/datadocs/docs/cloud/aws-storage/#ebs">Amazon EBS</a></li>
+<li><a href="/datadocs/docs/cloud/aws-storage/#efs">Amazon EFS</a></li>
 <li>Storage backed by Amazon EBS:
 <ul>
 <li>The root device is an Amazon EBS volume created from an Amazon EBS snapshot.</li>
@@ -257,35 +199,6 @@ chkconfig httpd on
 <li>Cannot be stopped: If the underlying host fails, the data will be lost.</li>
 <li>But can be rebooted without data loss.</li>
 </ul></li>
-</ul>
-<h4><a class="anchor" aria-hidden="true" id="images"></a><a href="#images" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Images</h4>
-<ul>
-<li>Amazon Machine Images (AMI) are configurations of EC2 instances:</li>
-<li>AMI's can be created from both volumes and snapshots.</li>
-<li>Created upon various characteristics:
-<ul>
-<li>Region</li>
-<li>Operating system</li>
-<li>Architecture (32-bit or 64-bit)</li>
-<li>Launch permissions</li>
-<li>Storage for the root device (root device volume)</li>
-</ul></li>
-</ul>
-<h4><a class="anchor" aria-hidden="true" id="efs"></a><a href="#efs" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>EFS</h4>
-<ul>
-<li>Amazon Elastic File System (EFS) is a file storage service for EC2 instances.</li>
-<li>Easy to use, and provides a simple interface for creating and configuring file systems.</li>
-<li>Storage capacity is elastic, that is, it is growing and shrinking automatically.
-<ul>
-<li>Can scale up to petabytes.</li>
-</ul></li>
-<li>Supports the NFSv4 protocol.
-<ul>
-<li>Can support thousands of concurrent NFS connections.</li>
-</ul></li>
-<li>Only pay for what you use (no pre-provisioning required)</li>
-<li>Data is stored across multiple AZ's within a region.</li>
-<li>Read after write consistency.</li>
 </ul>
 <h3><a class="anchor" aria-hidden="true" id="placement-groups"></a><a href="#placement-groups" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Placement groups</h3>
 <ul>
@@ -344,7 +257,14 @@ chkconfig httpd on
 <li>IP addresses can be blocked using ACL's.</li>
 </ul></li>
 </ul>
-</span></div></article></div><div class="docLastUpdate"><em>Last updated on 2019-10-22 by Oleg Polakow</em></div><div class="docs-prevnext"><a class="docs-prev button" href="/datadocs/docs/cloud/cloud-computing"><span class="arrow-prev">← </span><span>Cloud Computing</span></a><a class="docs-next button" href="/datadocs/docs/cloud/aws-storage"><span>Storage</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#ec2">EC2</a><ul class="toc-headings"><li><a href="#pricing">Pricing</a></li><li><a href="#instance-types">Instance types</a></li><li><a href="#storage">Storage</a></li><li><a href="#placement-groups">Placement groups</a></li><li><a href="#security-groups">Security groups</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><div class="brand-box"><div class="brand"><a href="https://www.tum.de/nc/en/" target="_blank" rel="noreferrer noopener" class="brand-link"><img src="/datadocs/img/tum_logo.png" alt="Technical University of Munich" height="45"/></a></div><div class="brand"><a href="https://opensource.facebook.com/" target="_blank" rel="noreferrer noopener" class="brand-link"><img src="/datadocs/img/oss_logo.png" alt="Facebook Open Source" width="170" height="45"/></a></div></div><section class="copyright">Copyright © 2019 polakowo.io</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
+<h2><a class="anchor" aria-hidden="true" id="elastic-beanstalk"></a><a href="#elastic-beanstalk" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Elastic Beanstalk</h2>
+<p><img width=100 src="/datadocs/assets/elastic_beanstalk.png"/></p>
+<ul>
+<li>Quickly deploy and manage applications without worrying about infrastructure.</li>
+<li>Simply upload your application, and Elastic Beanstalk will automatically handle the capacity provisioning, load balancing, scaling, and health monitoring.</li>
+<li>Aimed at developers who don't know CloudFormation and want to get their stuff into AWS.</li>
+</ul>
+</span></div></article></div><div class="docLastUpdate"><em>Last updated on 2019-10-23 by Oleg Polakow</em></div><div class="docs-prevnext"><a class="docs-prev button" href="/datadocs/docs/cloud/cloud-computing"><span class="arrow-prev">← </span><span>Cloud Computing</span></a><a class="docs-next button" href="/datadocs/docs/cloud/aws-storage"><span>Storage</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#ec2">EC2</a><ul class="toc-headings"><li><a href="#pricing">Pricing</a></li><li><a href="#instance-types">Instance types</a></li><li><a href="#storage">Storage</a></li><li><a href="#placement-groups">Placement groups</a></li><li><a href="#security-groups">Security groups</a></li></ul></li><li><a href="#elastic-beanstalk">Elastic Beanstalk</a></li></ul></nav></div><footer class="nav-footer" id="footer"><div class="brand-box"><div class="brand"><a href="https://www.tum.de/nc/en/" target="_blank" rel="noreferrer noopener" class="brand-link"><img src="/datadocs/img/tum_logo.png" alt="Technical University of Munich" height="45"/></a></div><div class="brand"><a href="https://opensource.facebook.com/" target="_blank" rel="noreferrer noopener" class="brand-link"><img src="/datadocs/img/oss_logo.png" alt="Facebook Open Source" width="170" height="45"/></a></div></div><section class="copyright">Copyright © 2019 polakowo.io</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
                 document.addEventListener('keyup', function(e) {
                   if (e.target !== document.body) {
                     return;

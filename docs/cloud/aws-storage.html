@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Storage · datadocs</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="## S3"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Storage · datadocs"/><meta property="og:type" content="website"/><meta property="og:url" content="https://polakowo.github.io/datadocs/"/><meta property="og:description" content="## S3"/><meta property="og:image" content="https://polakowo.github.io/datadocs/img/undraw_online.svg"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://polakowo.github.io/datadocs/img/undraw_tweetstorm.svg"/><link rel="shortcut icon" href="/datadocs/img/favicon.ico"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-142521178-1"></script><script>
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Storage · datadocs</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="- [AWS Storage Types - S3, EFS, &amp; EBS](https://help.acloud.guru/hc/en-us/articles/115002011194)"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Storage · datadocs"/><meta property="og:type" content="website"/><meta property="og:url" content="https://polakowo.github.io/datadocs/"/><meta property="og:description" content="- [AWS Storage Types - S3, EFS, &amp; EBS](https://help.acloud.guru/hc/en-us/articles/115002011194)"/><meta property="og:image" content="https://polakowo.github.io/datadocs/img/undraw_online.svg"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://polakowo.github.io/datadocs/img/undraw_tweetstorm.svg"/><link rel="shortcut icon" href="/datadocs/img/favicon.ico"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-142521178-1"></script><script>
               window.dataLayer = window.dataLayer || [];
               function gtag(){dataLayer.push(arguments); }
               gtag('js', new Date());
@@ -59,7 +59,10 @@
                 };
               }
             });
-        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://github.com/polakowo/datadocs/edit/master/docs/cloud/aws-storage.md" target="_blank" rel="noreferrer noopener">Edit</a><h1 class="postHeaderTitle">Storage</h1></header><article><div><span><h2><a class="anchor" aria-hidden="true" id="s3"></a><a href="#s3" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>S3</h2>
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://github.com/polakowo/datadocs/edit/master/docs/cloud/aws-storage.md" target="_blank" rel="noreferrer noopener">Edit</a><h1 class="postHeaderTitle">Storage</h1></header><article><div><span><ul>
+<li><a href="https://help.acloud.guru/hc/en-us/articles/115002011194">AWS Storage Types - S3, EFS, &amp; EBS</a></li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="s3"></a><a href="#s3" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>S3</h2>
 <p><img width=150 src="/datadocs/assets/AmazonS3.png"/></p>
 <ul>
 <li>S3 provides developers and IT teams with secure, durable, highly-scalable object storage.</li>
@@ -155,42 +158,127 @@
 <ul>
 <li>S3 Standard:
 <ul>
-<li>Stored redundantly across multiple devices in multiple facilities, and is designed to sustain the loss of 2 facilities concurrently.</li>
+<li>Low latency and high throughput performance.</li>
+<li>Designed for 99.99% availability over a given year.</li>
 </ul></li>
-<li>S3 IA (Infrequently Accessed):
+<li>S3 Intelligent-Tiering:
 <ul>
+<li>Same low latency and high throughput performance of S3 Standard.</li>
+<li>Small monthly monitoring and auto-tiering fee.</li>
+<li>Automatically moves objects between two access tiers based on changing access patterns.</li>
+<li>Designed for 99.90% availability over a given year.</li>
+</ul></li>
+<li>S3 Standard-IA:
+<ul>
+<li>Same low latency and high throughput performance of S3 Standard.</li>
 <li>For data that is accessed less frequently, but requires rapid access when needed.</li>
 <li>Lower fee than S3, but you are charged a retrieval fee.</li>
 <li>There can be cost implications if you use it frequently or use it for short lived storage.</li>
-<li>The availability is 99.99%</li>
+<li>Designed for 99.90% availability over a given year.</li>
 </ul></li>
-<li>S3 OneZone-IA:
+<li>S3 One Zone-IA:
 <ul>
-<li>Only stored in one availability zone.</li>
-<li>The availability is 99.50%</li>
-</ul></li>
-<li>S3 Intelligent Tiering:
-<ul>
-<li>Designed to optimize costs by automatically moving data to the most cost-effective access tier, without performance impact or operational overhead. Uses machine learning.</li>
+<li>Same low latency and high throughput performance of S3 Standard.</li>
+<li>Only stored in one availability zone (= a security threat)</li>
+<li>Designed for 99.50% availability over a given year.</li>
 </ul></li>
 <li>S3 Glacier:
 <ul>
-<li>Designed for long-term data archival.</li>
-<li>Glacier is cheaper, but has a long retrieval time (configurable from minutes to hours)</li>
-<li>You can reliably store any amount of data at costs that are competitive with or cheaper than on-premises solutions.</li>
+<li>Low-cost design is ideal for long-term archive.</li>
+<li>Configurable retrieval times, from minutes to hours.</li>
+<li>Designed for 99.99% availability over a given year.</li>
 </ul></li>
 <li>S3 Glacier Deep Archive:
 <ul>
-<li>Amazon S3's lowest-cost storage class where a retrieval time of 12 hours is acceptable.</li>
+<li>Lowest cost storage class designed for long-term retention of data (7-10 years)</li>
+<li>Ideal alternative to magnetic tape libraries.</li>
+<li>Retrieval time within 12 hours.</li>
+<li>Designed for 99.99% availability over a given year.</li>
 </ul></li>
 <li>RRS (Reduced Redundancy Storage):
 <ul>
 <li>RRS has effectively been deprecated.</li>
 </ul></li>
+<li>All are designed for durability of 99.999999999% (11 9's) of objects.</li>
 <li><a href="https://aws.amazon.com/s3/storage-classes/">Amazon S3 Storage Classes</a></li>
 </ul>
-<h3><a class="anchor" aria-hidden="true" id="data-transfer"></a><a href="#data-transfer" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Data transfer</h3>
-<h4><a class="anchor" aria-hidden="true" id="storage-gateway"></a><a href="#storage-gateway" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Storage Gateway</h4>
+<h2><a class="anchor" aria-hidden="true" id="ebs"></a><a href="#ebs" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>EBS</h2>
+<p><img width=150 src="/datadocs/assets/AWS_Simple_Icons_Storage_Amazon_EBS.svg.png"/></p>
+<ul>
+<li>Amazon Elastic Block Store (EBS) provides persistent block storage volumes in the cloud.</li>
+<li>Each EBS volume is replicated within its AZ to protect from component failure.</li>
+<li>EBS types:
+<ul>
+<li>SSD &gt;&gt; General purpose SSD (GP2): For most workloads (16,000 IOPS)</li>
+<li>SSD &gt;&gt; Provisioned IOPS SSD (IO1): For databases (64,000 IOPS)</li>
+<li>Magnetic &gt;&gt; Throughput Optimized HDD (ST1): For big data, DWH, logs (500 IOPS)</li>
+<li>Magnetic &gt;&gt; Cold HDD (SC1): Cheap, for file servers (250 IOPS)</li>
+<li>Magnetic &gt;&gt; EBS Magnetic: Extra cheap, for infrequently accessed workloads (40-200 IOPS)</li>
+<li>EBS volumes can be changed on the fly (including the size and storage type)</li>
+</ul></li>
+<li>Volumes exist on EBS:
+<ul>
+<li>Think of EBS as of a virtual hard disk.</li>
+</ul></li>
+<li>Snapshots exist on S3:
+<ul>
+<li>Created with command <code>aws ec2 create-snapshot</code></li>
+<li>Think of snapshots as of a photograph of the disk.</li>
+<li>Snapshots are point-in-time copies of volumes.</li>
+<li>Snapshots are incremental: only the blocks that changed since last snapshots are moved to S3.</li>
+<li>The first snapshot may take some time.</li>
+<li>To take a snapshot of a root device, you should stop the EC2 instance first. But you can also make a snapshot while the instance is running.</li>
+<li>One can perform actions on an existing EBS snapshot using AWS APIs, CLI, and AWS Console.</li>
+<li>One cannot delete a snapshot that is used as the root device of a registered AMI.</li>
+</ul></li>
+<li>Data migration:
+<ul>
+<li>Volumes are always in the same AZ as the EC2 instance.</li>
+<li>To move an EC2 volume from one AZ to another, take a snapshot, create an AMI from that snapshot, and then use the AMI to launch a new EC2 instance in a new AZ.</li>
+<li>To move an EC2 volume from one region to another, take a snapshot, create an AMI from that snapshot, copy that AMI to another region, and then use the copied AMI to launch a new EC2 instance in the new region.</li>
+</ul></li>
+<li>Encryption:
+<ul>
+<li>The use of encryption at rest is default requirement for many industry compliance certifications.</li>
+<li>Using AWS managed keys to provide EBS encryption at rest is relatively painless and reliable.</li>
+<li>Snapshots of encrypted volumes are encrypted automatically.</li>
+<li>Volumes restored from encrypted snapshots are encrypted automatically.</li>
+<li>You can share snapshots (on AWS or publicly), but only if they are unencrypted.</li>
+<li>You can now encrypt root device volumes upon creation of the EC2 instance.</li>
+<li>To encrypt an unencrypted root device volume, create a snapshot of it, encrypt that snapshot, create an AMI from that snapshot, and use that AMI to launch a new encrypted EC2 instance.</li>
+</ul></li>
+<li>Termination:
+<ul>
+<li>The default action is for the root EBS volume to be deleted when the instance is terminated.</li>
+<li>The default action for additional volumes is to be persisted.</li>
+</ul></li>
+<li>Additional volumes:
+<ul>
+<li>Additional volumes can be detached without stopping the instance.</li>
+<li>You can add multiple volumes to an EC2 instance and then create your own RAID 5/RAID 10/RAID 0 configurations using those volumes.</li>
+<li>You cannot attach an EBS volume to more than one EC2 instance at the same time.</li>
+</ul></li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="efs"></a><a href="#efs" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>EFS</h2>
+<p><img width=120 src="/datadocs/assets/efs.png"/></p>
+<ul>
+<li>Amazon Elastic File System (EFS) is a file storage service for EC2 instances.</li>
+<li>Easy to use, and provides a simple interface for creating and configuring file systems.</li>
+<li>Storage capacity is elastic, that is, it is growing and shrinking automatically.
+<ul>
+<li>Can scale up to petabytes.</li>
+</ul></li>
+<li>Supports the NFSv4 protocol.
+<ul>
+<li>Can support thousands of concurrent NFS connections.</li>
+</ul></li>
+<li>Only pay for what you use (no pre-provisioning required)</li>
+<li>Data is stored across multiple AZ's within a region.</li>
+<li>Read after write consistency.</li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="data-transfer"></a><a href="#data-transfer" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Data transfer</h2>
+<h3><a class="anchor" aria-hidden="true" id="storage-gateway"></a><a href="#storage-gateway" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Storage Gateway</h3>
+<p><img width=100 src="/datadocs/assets/The-Ballad-of-AWS-Storage-Gateway.png"/></p>
 <ul>
 <li>AWS Storage Gateway is a service that connects an on-premises software appliance with cloud-based storage to provide seamless and secure integration between an organization's on-premises IT environment and AWS's storage infrastructure.</li>
 <li>At its heart it is a way of using AWS S3 managed storage to supplement on-premise storage.
@@ -220,7 +308,7 @@
 <li>Supported by NetBackup, Backup Exec, Veeam.</li>
 </ul></li>
 </ul>
-<h4><a class="anchor" aria-hidden="true" id="snowball"></a><a href="#snowball" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Snowball</h4>
+<h3><a class="anchor" aria-hidden="true" id="snowball"></a><a href="#snowball" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Snowball</h3>
 <ul>
 <li>Snowball is a petabyte-scale data transport solution.
 <ul>
@@ -250,7 +338,7 @@
 </ul>
 <p><img width=300 src="/datadocs/assets/maxresdefault copy.jpg"/>
 <center><a href="https://www.youtube.com/watch?v=b7f2V7ecgh8" class="credit">Credit</a></center></p>
-</span></div></article></div><div class="docLastUpdate"><em>Last updated on 2019-10-22 by Oleg Polakow</em></div><div class="docs-prevnext"><a class="docs-prev button" href="/datadocs/docs/cloud/aws-compute"><span class="arrow-prev">← </span><span>Compute</span></a><a class="docs-next button" href="/datadocs/docs/cloud/aws-databases"><span>Databases</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#s3">S3</a><ul class="toc-headings"><li><a href="#features">Features</a></li><li><a href="#storage-classes">Storage classes</a></li><li><a href="#data-transfer">Data transfer</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><div class="brand-box"><div class="brand"><a href="https://www.tum.de/nc/en/" target="_blank" rel="noreferrer noopener" class="brand-link"><img src="/datadocs/img/tum_logo.png" alt="Technical University of Munich" height="45"/></a></div><div class="brand"><a href="https://opensource.facebook.com/" target="_blank" rel="noreferrer noopener" class="brand-link"><img src="/datadocs/img/oss_logo.png" alt="Facebook Open Source" width="170" height="45"/></a></div></div><section class="copyright">Copyright © 2019 polakowo.io</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
+</span></div></article></div><div class="docLastUpdate"><em>Last updated on 2019-10-23 by Oleg Polakow</em></div><div class="docs-prevnext"><a class="docs-prev button" href="/datadocs/docs/cloud/aws-compute"><span class="arrow-prev">← </span><span>Compute</span></a><a class="docs-next button" href="/datadocs/docs/cloud/aws-databases"><span>Databases</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#s3">S3</a><ul class="toc-headings"><li><a href="#features">Features</a></li><li><a href="#storage-classes">Storage classes</a></li></ul></li><li><a href="#ebs">EBS</a></li><li><a href="#efs">EFS</a></li><li><a href="#data-transfer">Data transfer</a><ul class="toc-headings"><li><a href="#storage-gateway">Storage Gateway</a></li><li><a href="#snowball">Snowball</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><div class="brand-box"><div class="brand"><a href="https://www.tum.de/nc/en/" target="_blank" rel="noreferrer noopener" class="brand-link"><img src="/datadocs/img/tum_logo.png" alt="Technical University of Munich" height="45"/></a></div><div class="brand"><a href="https://opensource.facebook.com/" target="_blank" rel="noreferrer noopener" class="brand-link"><img src="/datadocs/img/oss_logo.png" alt="Facebook Open Source" width="170" height="45"/></a></div></div><section class="copyright">Copyright © 2019 polakowo.io</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
                 document.addEventListener('keyup', function(e) {
                   if (e.target !== document.body) {
                     return;
