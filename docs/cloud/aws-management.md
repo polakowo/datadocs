@@ -29,3 +29,10 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/cloud/aws
     - CloudTrail monitors AWS Management Console actions and API calls.
     - CloudTrail records users who called AWS services, their IP addresses, and timestamps.
     - CloudWatch is used for monitoring performance, while CloudTrail is used for auditing.
+
+## CloudFormation
+
+<img width=100 src="/datadocs/assets/aws-cloudformation.svg"/>
+
+- CloudFormation is a way of completely scripting your cloud environment.
+- [AWS Quick Starts](https://aws.amazon.com/quickstart/?quickstart-all.sort-by=item.additionalFields.updateDate&quickstart-all.sort-order=desc) is a bunch of CloudFormation templates to create complex environments easily.

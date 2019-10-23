@@ -5,6 +5,8 @@ sidebar_label: Storage
 custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/cloud/aws-storage.md
 ---
 
+- [AWS Storage Types - S3, EFS, & EBS](https://help.acloud.guru/hc/en-us/articles/115002011194)
+
 ## S3
 
 <img width=150 src="/datadocs/assets/AmazonS3.png"/>
@@ -77,30 +79,100 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/cloud/aws
 ### Storage classes
 
 - S3 Standard: 
-    - Stored redundantly across multiple devices in multiple facilities, and is designed to sustain the loss of 2 facilities concurrently.
-- S3 IA (Infrequently Accessed): 
+    - Low latency and high throughput performance.
+    - Designed for 99.99% availability over a given year.
+- S3 Intelligent-Tiering: 
+    - Same low latency and high throughput performance of S3 Standard.
+    - Small monthly monitoring and auto-tiering fee.
+    - Automatically moves objects between two access tiers based on changing access patterns.
+    - Designed for 99.90% availability over a given year.
+- S3 Standard-IA: 
+    - Same low latency and high throughput performance of S3 Standard.
     - For data that is accessed less frequently, but requires rapid access when needed. 
     - Lower fee than S3, but you are charged a retrieval fee.
     - There can be cost implications if you use it frequently or use it for short lived storage.
-    - The availability is 99.99%
-- S3 OneZone-IA: 
-    - Only stored in one availability zone.
-    - The availability is 99.50%
-- S3 Intelligent Tiering: 
-    - Designed to optimize costs by automatically moving data to the most cost-effective access tier, without performance impact or operational overhead. Uses machine learning.
+    - Designed for 99.90% availability over a given year.
+- S3 One Zone-IA: 
+    - Same low latency and high throughput performance of S3 Standard.
+    - Only stored in one availability zone (= a security threat)
+    - Designed for 99.50% availability over a given year.
 - S3 Glacier: 
-    - Designed for long-term data archival. 
-    - Glacier is cheaper, but has a long retrieval time (configurable from minutes to hours)
-    - You can reliably store any amount of data at costs that are competitive with or cheaper than on-premises solutions.
+    - Low-cost design is ideal for long-term archive.
+    - Configurable retrieval times, from minutes to hours.
+    - Designed for 99.99% availability over a given year.
 - S3 Glacier Deep Archive: 
-    - Amazon S3's lowest-cost storage class where a retrieval time of 12 hours is acceptable.
+    - Lowest cost storage class designed for long-term retention of data (7-10 years)
+    - Ideal alternative to magnetic tape libraries.
+    - Retrieval time within 12 hours.
+    - Designed for 99.99% availability over a given year.
 - RRS (Reduced Redundancy Storage):
     - RRS has effectively been deprecated.
+- All are designed for durability of 99.999999999% (11 9's) of objects.
 - [Amazon S3 Storage Classes](https://aws.amazon.com/s3/storage-classes/)
 
-### Data transfer
+## EBS
 
-#### Storage Gateway
+<img width=150 src="/datadocs/assets/AWS_Simple_Icons_Storage_Amazon_EBS.svg.png"/>
+
+- Amazon Elastic Block Store (EBS) provides persistent block storage volumes in the cloud.
+- Each EBS volume is replicated within its AZ to protect from component failure.
+- EBS types:
+    - SSD >> General purpose SSD (GP2): For most workloads (16,000 IOPS)
+    - SSD >> Provisioned IOPS SSD (IO1): For databases (64,000 IOPS)
+    - Magnetic >> Throughput Optimized HDD (ST1): For big data, DWH, logs (500 IOPS)
+    - Magnetic >> Cold HDD (SC1): Cheap, for file servers (250 IOPS)
+    - Magnetic >> EBS Magnetic: Extra cheap, for infrequently accessed workloads (40-200 IOPS)
+    - EBS volumes can be changed on the fly (including the size and storage type)
+- Volumes exist on EBS:
+    - Think of EBS as of a virtual hard disk.
+- Snapshots exist on S3:
+    - Created with command `aws ec2 create-snapshot`
+    - Think of snapshots as of a photograph of the disk.
+    - Snapshots are point-in-time copies of volumes.
+    - Snapshots are incremental: only the blocks that changed since last snapshots are moved to S3.
+    - The first snapshot may take some time.
+    - To take a snapshot of a root device, you should stop the EC2 instance first. But you can also make a snapshot while the instance is running.
+    - One can perform actions on an existing EBS snapshot using AWS APIs, CLI, and AWS Console.
+    - One cannot delete a snapshot that is used as the root device of a registered AMI.
+- Data migration:
+    - Volumes are always in the same AZ as the EC2 instance.
+    - To move an EC2 volume from one AZ to another, take a snapshot, create an AMI from that snapshot, and then use the AMI to launch a new EC2 instance in a new AZ.
+    - To move an EC2 volume from one region to another, take a snapshot, create an AMI from that snapshot, copy that AMI to another region, and then use the copied AMI to launch a new EC2 instance in the new region.
+- Encryption:
+    - The use of encryption at rest is default requirement for many industry compliance certifications. 
+    - Using AWS managed keys to provide EBS encryption at rest is relatively painless and reliable.
+    - Snapshots of encrypted volumes are encrypted automatically.
+    - Volumes restored from encrypted snapshots are encrypted automatically.
+    - You can share snapshots (on AWS or publicly), but only if they are unencrypted.
+    - You can now encrypt root device volumes upon creation of the EC2 instance.
+    - To encrypt an unencrypted root device volume, create a snapshot of it, encrypt that snapshot, create an AMI from that snapshot, and use that AMI to launch a new encrypted EC2 instance.
+- Termination:
+    - The default action is for the root EBS volume to be deleted when the instance is terminated.
+    - The default action for additional volumes is to be persisted.
+- Additional volumes:
+    - Additional volumes can be detached without stopping the instance.
+    - You can add multiple volumes to an EC2 instance and then create your own RAID 5/RAID 10/RAID 0 configurations using those volumes.
+    - You cannot attach an EBS volume to more than one EC2 instance at the same time.
+
+## EFS
+
+<img width=120 src="/datadocs/assets/efs.png"/>
+
+- Amazon Elastic File System (EFS) is a file storage service for EC2 instances.
+- Easy to use, and provides a simple interface for creating and configuring file systems.
+- Storage capacity is elastic, that is, it is growing and shrinking automatically.
+    - Can scale up to petabytes.
+- Supports the NFSv4 protocol.
+    - Can support thousands of concurrent NFS connections.
+- Only pay for what you use (no pre-provisioning required)
+- Data is stored across multiple AZ's within a region.
+- Read after write consistency. 
+
+## Data transfer
+
+### Storage Gateway
+
+<img width=100 src="/datadocs/assets/The-Ballad-of-AWS-Storage-Gateway.png"/>
 
 - AWS Storage Gateway is a service that connects an on-premises software appliance with cloud-based storage to provide seamless and secure integration between an organization's on-premises IT environment and AWS's storage infrastructure.
 - At its heart it is a way of using AWS S3 managed storage to supplement on-premise storage. 
@@ -122,7 +194,7 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/cloud/aws
     - Stores data on virtual tape cartridges that are created on tape gateway.
     - Supported by NetBackup, Backup Exec, Veeam.
 
-#### Snowball
+### Snowball
 
 - Snowball is a petabyte-scale data transport solution.
     - Uses secure appliances to transfer large amounts of data and out of AWS. 
