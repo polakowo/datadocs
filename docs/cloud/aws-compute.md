@@ -7,7 +7,7 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/cloud/aws
 
 ## EC2
 
-<img width=100 src="/datadocs/assets/icon-aws-amazon-ec2.svg"/>
+<img width=100 src="/datadocs/assets/0_ec2.0d4f930267.svg"/>
 
 - Amazon Elastic Compute Cloud (EC2) is a web service that provides resizable compute capacity.
 - Reduces the time required to obtain and boot new server instances (from days) to minutes.
@@ -160,7 +160,7 @@ echo "<html><h1>Hello, World!</h1></html>" > index.html
 
 ## Elastic Beanstalk
 
-<img width=100 src="/datadocs/assets/elastic_beanstalk.png"/>
+<img width=100 src="/datadocs/assets/32_aws-elastic-beanstalk.1348b071f1.svg"/>
 
 - Quickly deploy and manage applications without worrying about infrastructure.
 - Simply upload your application, and Elastic Beanstalk will automatically handle the capacity provisioning, load balancing, scaling, and health monitoring.

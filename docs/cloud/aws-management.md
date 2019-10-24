@@ -7,7 +7,7 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/cloud/aws
 
 ## CloudWatch
 
-<img width=100 src="/datadocs/assets/cloudwatch.png"/>
+<img width=100 src="/datadocs/assets/0_aws-cloudwatch.9e5ac55ae4.svg"/>
 
 - Amazon CloudWatch is a monitoring service for AWS resources and applications.
     - CloudWatch can monitor most of the AWS.
@@ -32,7 +32,7 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/cloud/aws
 
 ## CloudFormation
 
-<img width=100 src="/datadocs/assets/aws-cloudformation.svg"/>
+<img width=100 src="/datadocs/assets/5_aws-cloudformation.9c30330994.svg"/>
 
 - CloudFormation is a way of completely scripting your cloud environment.
 - [AWS Quick Starts](https://aws.amazon.com/quickstart/?quickstart-all.sort-by=item.additionalFields.updateDate&quickstart-all.sort-order=desc) is a bunch of CloudFormation templates to create complex environments easily.

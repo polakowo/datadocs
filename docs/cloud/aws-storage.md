@@ -9,7 +9,7 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/cloud/aws
 
 ## S3
 
-<img width=150 src="/datadocs/assets/AmazonS3.png"/>
+<img width=100 src="/datadocs/assets/6_amazon-s3.9252c96dc6.svg"/>
 
 - S3 provides developers and IT teams with secure, durable, highly-scalable object storage.
 - Amazon Simple Storage Service (S3) is easy to use, with a simple web services interface to store and retrieve any amount of data from anywhere on the web.
@@ -112,7 +112,7 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/cloud/aws
 
 ## EBS
 
-<img width=150 src="/datadocs/assets/AWS_Simple_Icons_Storage_Amazon_EBS.svg.png"/>
+<img width=100 src="/datadocs/assets/0_amazon-ebs.6610da80ab.svg"/>
 
 - Amazon Elastic Block Store (EBS) provides persistent block storage volumes in the cloud.
 - Each EBS volume is replicated within its AZ to protect from component failure.
@@ -156,7 +156,7 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/cloud/aws
 
 ## EFS
 
-<img width=120 src="/datadocs/assets/efs.png"/>
+<img width=100 src="/datadocs/assets/1_amazon-efs.79f9dd37c4.svg"/>
 
 - Amazon Elastic File System (EFS) is a file storage service for EC2 instances.
 - Easy to use, and provides a simple interface for creating and configuring file systems.
@@ -172,7 +172,7 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/cloud/aws
 
 ### Storage Gateway
 
-<img width=100 src="/datadocs/assets/The-Ballad-of-AWS-Storage-Gateway.png"/>
+<img width=100 src="/datadocs/assets/12_aws-storage-gateway.a48fc5052e.svg"/>
 
 - AWS Storage Gateway is a service that connects an on-premises software appliance with cloud-based storage to provide seamless and secure integration between an organization's on-premises IT environment and AWS's storage infrastructure.
 - At its heart it is a way of using AWS S3 managed storage to supplement on-premise storage. 
@@ -195,6 +195,8 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/cloud/aws
     - Supported by NetBackup, Backup Exec, Veeam.
 
 ### Snowball
+
+<img width=100 src="/datadocs/assets/10_aws-snowball.5a526539e7.svg"/>
 
 - Snowball is a petabyte-scale data transport solution.
     - Uses secure appliances to transfer large amounts of data and out of AWS. 

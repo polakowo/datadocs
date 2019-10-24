@@ -9,7 +9,7 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/cloud/aws
 
 ### RDS
 
-<img width=100 src="/datadocs/assets/BM-AWS-RDS-post-icon.png"/>
+<img width=100 src="/datadocs/assets/12_amazon-rds.3027eee472.svg"/>
 
 - Amazon Relational Database Service (Amazon RDS) makes it easy to set up, operate, and scale a relational database in the cloud.
 - Can be optimized for memory, performance or I/O
@@ -73,7 +73,7 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/cloud/aws
 
 ### Aurora
 
-<img width=100 src="/datadocs/assets/BM-AWS-RDS-post-icon.png"/>
+<img width=100 src="/datadocs/assets/12_amazon-rds.3027eee472.svg"/>
 
 - Amazon Aurora is a MySQL-compatible relational database management system (RDBMS) that combines the speed and availability of high-end commercial databases with the simplicity and cost-effectiveness of open source databases.
 - Up to five times better performance than MySQL at a price point one tenth that of a commercial RDBMS.
@@ -99,7 +99,7 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/cloud/aws
 
 ### DynamoDB
 
-<img width=100 src="/datadocs/assets/220px-DynamoDB.png"/>
+<img width=100 src="/datadocs/assets/0_amazon-dynamodb.c55010b822.svg"/>
 
 - Amazon DynamoDB is a fast and flexible NoSQL database service for all applications that need consistent, single-digit millisecond latency at any scale. 
 - It is a fully managed database and supports both document and key-value data models.
@@ -116,7 +116,7 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/cloud/aws
 
 ### ElastiCache
 
-<img width=100 src="/datadocs/assets/elasticache-logo.png"/>
+<img width=100 src="/datadocs/assets/8_amazon-elasticcache.91674f7d15.svg"/>
 
 - ElastiCache is a web service to deploy, operate, and scale in-memory cache in the cloud.
 - Improves performance of web applications by allowing to retrieve information from fast, managed, in-memory caches, instead of relying entirely on slower disk-based databases.
@@ -128,7 +128,7 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/cloud/aws
 
 ### Redshift
 
-<img width=100 src="/datadocs/assets/aws-redshift-logo.svg"/>
+<img width=100 src="/datadocs/assets/26_amazon-redshift.458e2a3dda.svg"/>
 
 - Data warehouses:
     - Used for business intelligence (tools such as SAP NetWeaver)

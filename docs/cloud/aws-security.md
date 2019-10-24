@@ -7,7 +7,7 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/cloud/aws
 
 ## IAM
 
-<img width=70 src="/datadocs/assets/aws-iam.svg"/>
+<img width=100 src="/datadocs/assets/11_iam.6979bf0d85.svg"/>
 
 - IAM allows to manage users and their level of access to the AWS console.
 - IAM is universal and is not region-specific at this time.

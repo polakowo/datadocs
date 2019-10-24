@@ -18,7 +18,7 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/cloud/aws
 
 ## CloudFront
 
-<img width=100 src="/datadocs/assets/aws-cloudfront.svg"/>
+<img width=100 src="/datadocs/assets/0_amazon-cloudfront.917316a8c0.svg"/>
 
 - A Content Delivery Network (CDN) is a system of distributed servers (network) that deliver webpages and other web content to a user based on the geographic locations of the user, the origin of the webpage, and a content delivery server.
     - Origin is the origin of all the files that the CDN will distribute.
@@ -87,7 +87,7 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/cloud/aws
 
 ### Route 53
 
-<img width=100 src="/datadocs/assets/1*Ezs2-Kqjlo7mPczPv_q_gA.png"/>
+<img width=100 src="/datadocs/assets/4_amazon-route-53.d9a1f80ac7.svg"/>
 
 - Route 53 is Amazon's DNS Service.
 - Route 53 is named so because the DNS port is 53.
@@ -133,7 +133,7 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/cloud/aws
 
 ## VPC
 
-<img width=150 src="/datadocs/assets/0*0q474CHdkubW1ZA-.jpg"/>
+<img width=100 src="/datadocs/assets/7_amazon-vpc.b679a0832d.svg"/>
 
 - Amazon Virtual Private Cloud (Amazon VPC) lets you provision a logically isolated section of the AWS where you can launch AWS resources in a virtual network that you define.
     - Think of VPC as a logical datacenter on AWS.
@@ -207,8 +207,6 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/cloud/aws
 
 ### NAT
 
-<img width=100 src="/datadocs/assets/27_vpc-nat-gateway.aac10e8c0d.svg"/>
-
 - You can use a network address translation (NAT) gateway to enable instances in a private subnet to connect to the internet or other AWS services, but prevent the internet from initiating a connection with those instances.
     - For example, this can be used to do software updates in private subnets.
 
@@ -222,7 +220,9 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/cloud/aws
 - When the instance is removed, the corresponding route is marked as "blackhole"
 - Behind the security group.
 
-#### NAT Gateways
+#### NAT Gateway
+
+<img width=100 src="/datadocs/assets/15_vpc-nat-gateway.5e3b28aeed.svg"/>
 
 - Redundant in the AZ and thus highly available.
 - Starts at 5Gbps and scales currently to 45Gbps.
@@ -359,7 +359,7 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/cloud/aws
 
 ### Auto Scaling
 
-<img width=100 src="/datadocs/assets/auto-scaling.svg"/>
+<img width=100 src="/datadocs/assets/2_ec2-autoscaling.245399c4bc.svg"/>
 
 - Auto Scaling allows you to set up dynamic and predictive scaling for scalable AWS resources.
 - Always check that the launch configuration is being triggered properly.

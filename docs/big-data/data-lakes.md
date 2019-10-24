@@ -72,7 +72,7 @@ df.schema
 
 ## Amazon S3
 
-<center><img width=300 src="/datadocs/assets/amazon-s3.png"/></center>
+<center><img width=100 src="/datadocs/assets/6_amazon-s3.9252c96dc6.svg"/></center>
 
 - [Amazon Simple Storage Service (Amazon S3)](https://aws.amazon.com/s3/) is an object storage service.
 - Gives any developer access to the same highly scalable, reliable, fast, inexpensive data storage.
@@ -100,7 +100,7 @@ df.schema
 
 ## Amazon EMR
 
-<center><img width=200 src="/datadocs/assets/word-image.png"/></center>
+<center><img width=100 src="/datadocs/assets/3_aws-emr.02f9a53ee4.svg"/></center>
 
 - [Amazon EMR](https://aws.amazon.com/emr/) is a service that uses Apache Spark and Hadoop.
     - Supports tools such as Spark, Hive, HBase, Flink, and Presto.
@@ -162,7 +162,7 @@ df.schema
 ## Amazon Athena
 
 
-<center><img width=200 src="/datadocs/assets/QueryServiceLogsAthena1.png"/></center>
+<center><img width=100 src="/datadocs/assets/0_aws-athena.d55308c2ac.svg"/></center>
 
 - [Amazon Athena](https://aws.amazon.com/athena/) is an interactive query service to analyze data in Amazon S3 using SQL.
 - Athena is serverless, so there is no infrastructure to manage.

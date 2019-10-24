@@ -332,7 +332,7 @@ PIVOT (SUM(salary) FOR dept_id IN ([30], [45])) AS PivotTable;
 
 ## Amazon Redshift
 
-<center><img width=250 src="/datadocs/assets/aws-redshift-connector.png"/></center>
+<center><img width=100 src="/datadocs/assets/26_amazon-redshift.458e2a3dda.svg"/></center>
 
 - Amazon Redshift is a fully managed, column-oriented, petabyte-scale data warehouse in the cloud.
     - Can build a central data warehouse unifying data from many sources.
