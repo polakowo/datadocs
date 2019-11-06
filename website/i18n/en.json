@@ -69,6 +69,10 @@
         "title": "Wide Column Stores",
         "sidebar_label": "Wide Column Stores"
       },
+      "cloud/aws-applications": {
+        "title": "Applications",
+        "sidebar_label": "Applications"
+      },
       "cloud/aws-compute": {
         "title": "Compute",
         "sidebar_label": "Compute"

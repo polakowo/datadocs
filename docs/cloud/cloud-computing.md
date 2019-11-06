@@ -18,6 +18,8 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/cloud/clo
     - Requires fewer staff and costs less to build and maintain their software product.
     - Has greater ability to scale and meet customer demand.
     - Can get their software product or application to market much more quickly.
+    - Not having to deal with the collateral damage of failed experiments.
+    - The ability to try out new ideas and experiment without upfront commitment.
 - For established enterprises and organizations, moving to cloud may not make sense:
     - Some of the legacy architectures might not be able to be integrated with cloud services.
     - Some of the risks (security, governance, compliance) might outweigh the benefits.
@@ -171,8 +173,9 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/cloud/clo
 
 - A cloud-native platform for short-running, stateless computation, and event-driven applications which scales up and down instantly and automatically and charges for actual usage at millisecond granularity.
 - Cloud provider fully manages starting and stopping virtual machines as necessary to serve requests.
-- Requests are billed by an abstract measure of the resources required to satisfy the request.
+Billing does tend to be based on simple units, but the choice of services, intended usage pattern (RIs), and amount of capacity needed also influences the pricing.
 - Serverless does not mean no servers, means worry-less servers.
+    - Serverless is not about eliminating servers, but shifting most of the responsibility for infrastructure and operation of the infrastructure to a vendor so that you can focus more on the business services, not how to manage the infrastructure that they run on.
 - Also known as Function-as-a-Service (FaaS): 
     - A service-hosted remote procedure call that leverages serverless computing to enable the deployment of individual functions in the cloud that run in response to events.
 - Serverless is a good solution for short-running stateless event-driven operations:

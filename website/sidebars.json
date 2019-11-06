@@ -131,7 +131,8 @@
                 "cloud/aws-databases",
                 "cloud/aws-security",
                 "cloud/aws-networking",
-                "cloud/aws-management"
+                "cloud/aws-management",
+                "cloud/aws-applications"
             ]
         }]
     }
