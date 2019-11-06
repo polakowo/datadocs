@@ -1,11 +1,13 @@
 ---
 id: aws-management
-title: Management
-sidebar_label: Management
+title: Management & Governance
+sidebar_label: Management & Governance
 custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/cloud/aws-management.md
 ---
 
-## CloudWatch
+## Monitoring
+
+### CloudWatch
 
 <img width=100 src="/datadocs/assets/0_aws-cloudwatch.9e5ac55ae4.svg"/>
 
@@ -44,13 +46,7 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/cloud/aws
 - AWS can see the instance, but not inside the instance to what it is doing.
 - [Amazon CloudWatch Cheat Sheet](https://tutorialsdojo.com/aws-cheat-sheet-amazon-cloudwatch/)
 
-#### Logging
-
-- General logging guidance:
-    - Set up a Flow Log for the group of instances and forward them to CloudWatch/S3.
-    - Make use of an OS-level logging tools such as `iptables` and log events to CloudWatch/S3.
-
-## CloudTrail
+### CloudTrail
 
 <img width=100 src="/datadocs/assets/9_aws-cloudtrail.5797f03873.svg"/>
 
@@ -69,7 +65,30 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/cloud/aws
 <img width=600 src="/datadocs/assets/cloudtrail_all_regions_main_screen_turn_on_1.png"/>
 <center><a href="https://www.udemy.com/course/aws-certified-solutions-architect-associate-amazon-practice-exams/" class="credit">Credit</a></center>
 
-## CloudFormation
+## Organization
+
+### Resource groups
+
+- A resource group is a collection of AWS resources that are all in the same AWS region, and that match criteria provided in a query.
+- With Resource Groups, you can:
+    - View and manage large numbers of related resources.
+    - Create a custom console that organizes and consolidates information.
+    - Perform bulk actions on resources at one time.
+- Two types of queries supported: tag-based and AWS CloudFormation stack-based.
+
+### Organizations
+
+<img width=100 src="/datadocs/assets/7_aws-organizations.5fb8d30d97.svg"/>
+
+- AWS Organizations is an account management service which allows you manage multiple accounts centrally.
+- Features:
+    - Hierarchical-based control over groups of IAM users and roles, within multiple accounts.
+    - Grouping all of your AWS accounts into Organizational Units (OUs)
+    - AWS accounts that are members of an Organization benefit from consolidated billing.
+
+## Automation
+
+### CloudFormation
 
 <img width=100 src="/datadocs/assets/5_aws-cloudformation.9c30330994.svg"/>
 
@@ -81,6 +100,13 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/cloud/aws
     - You only pay for the AWS resources that are created.
 - [AWS CloudFormation FAQs](https://aws.amazon.com/cloudformation/faqs/)
 - [AWS CloudFormation Cheat Sheet](https://tutorialsdojo.com/aws-cheat-sheet-aws-cloudformation/)
+
+### OpsWorks
+
+<img width=100 src="/datadocs/assets/12_aws-opsworks.aec47ed4ff.svg"/>
+
+- Automates deployment, configurations and operational tasks for distributed applications.
+- Using Chef, customize stacks or use pre-built layer templates on Chef scripts called cookbooks.
 
 ## Support
 
@@ -102,32 +128,6 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/cloud/aws
     - Offers a set of reports you can view data with for up to the last 13 months.
     - Can forecast how much you're likely to spend for the next three months.
     - Can get recommendations for what Reserved Instances to purchase.
-
-## Resource groups
-
-- A resource group is a collection of AWS resources that are all in the same AWS region, and that match criteria provided in a query.
-- With Resource Groups, you can:
-    - View and manage large numbers of related resources.
-    - Create a custom console that organizes and consolidates information.
-    - Perform bulk actions on resources at one time.
-- Two types of queries supported: tag-based and AWS CloudFormation stack-based.
-
-## Organizations
-
-<img width=100 src="/datadocs/assets/7_aws-organizations.5fb8d30d97.svg"/>
-
-- AWS Organizations is an account management service which allows you manage multiple accounts centrally.
-- Features:
-    - Hierarchical-based control over groups of IAM users and roles, within multiple accounts.
-    - Grouping all of your AWS accounts into Organizational Units (OUs)
-    - AWS accounts that are members of an Organization benefit from consolidated billing.
-
-## OpsWorks
-
-<img width=100 src="/datadocs/assets/12_aws-opsworks.aec47ed4ff.svg"/>
-
-- Automates deployment, configurations and operational tasks for distributed applications.
-- Using Chef, customize stacks or use pre-built layer templates on Chef scripts called cookbooks.
 
 ## Disaster recovery (DR)
 

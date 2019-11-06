@@ -82,16 +82,16 @@
         "sidebar_label": "Databases"
       },
       "cloud/aws-management": {
-        "title": "Management",
-        "sidebar_label": "Management"
+        "title": "Management & Governance",
+        "sidebar_label": "Management & Governance"
       },
       "cloud/aws-networking": {
-        "title": "Networking",
-        "sidebar_label": "Networking"
+        "title": "Networking & Content Delivery",
+        "sidebar_label": "Networking & Content Delivery"
       },
       "cloud/aws-security": {
-        "title": "Security",
-        "sidebar_label": "Security"
+        "title": "Security, Identity, & Compliance",
+        "sidebar_label": "Security, Identity, & Compliance"
       },
       "cloud/aws-storage": {
         "title": "Storage",

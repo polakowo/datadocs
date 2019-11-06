@@ -1,7 +1,7 @@
 ---
 id: aws-networking
-title: Networking
-sidebar_label: Networking
+title: Networking & Content Delivery
+sidebar_label: Networking & Content Delivery
 custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/cloud/aws-networking.md
 ---
 

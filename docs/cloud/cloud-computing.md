@@ -184,7 +184,7 @@ Billing does tend to be based on simple units, but the choice of services, inten
     - For example, databases, DL training, Spark/Hadoop analytics, video streaming.
 - Some examples include AWS Lambda, Azure Functions, Google Functions, Apache OpenWhisk.
 
-<center><img width=100 src="/datadocs/assets/aws-lambda-1.svg"/></center>
+<img width=100 src="/datadocs/assets/35_aws-lambda.fd25297303.svg"/>
 
 ## Deployment models
 

@@ -129,8 +129,8 @@
                 "cloud/aws-compute",
                 "cloud/aws-storage",
                 "cloud/aws-databases",
-                "cloud/aws-security",
                 "cloud/aws-networking",
+                "cloud/aws-security",
                 "cloud/aws-management",
                 "cloud/aws-applications"
             ]

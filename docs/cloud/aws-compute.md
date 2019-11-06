@@ -62,6 +62,9 @@ echo "<html><h1>Hello, World!</h1></html>" > index.html
 - Docker containers:
     - Only ECS, Elastic Beanstalk and Fargate allow containers to run natively. 
     - EC2 instances can run Docker containers, but Docker has to be installed separately.
+- General EC2 logging guidance:
+    - Set up a Flow Log for the group of instances and forward them to CloudWatch/S3.
+    - Make use of an OS-level logging tools such as `iptables` and log events to CloudWatch/S3.
 - Billing:
     - Pay as you go, pay for what you use, and pay even less for reserved instances.
     - Simply stop the instances will eliminate charges until the instances are restarted.

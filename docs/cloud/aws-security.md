@@ -1,7 +1,7 @@
 ---
 id: aws-security
-title: Security
-sidebar_label: Security
+title: Security, Identity, & Compliance
+sidebar_label: Security, Identity, & Compliance
 custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/cloud/aws-security.md
 ---
 
@@ -53,16 +53,24 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/cloud/aws
     - If you create an individual user for each staff member, there will be no way to keep their active directory credentials synched when they change their password. You should either create a federation proxy or identity provider and then use AWS security token service to create temporary tokens. You will then need to create the appropriate IAM role for which the users will assume when accessing AWS resources.
 - [AWS IAM Cheat Sheet](https://tutorialsdojo.com/aws-cheat-sheet-aws-identity-and-access-management-iam/)
 
-### Web Identity Federation
+### STS
 
-- Web Identity Federation lets you give your users access to AWS resources after they have successfully authenticated with a web-based identity provides such as Amazon, Facebook, or Google.
-- It does not utilize Active Directory.
-- [Identity Providers and Federation](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers.html)
+<img width=100 src="/datadocs/assets/13_iam-aws-sts.b6620f2c1a.svg"/>
 
-#### Cognito
+- AWS Security Token Service (AWS STS) is the service that you can use to create and provide trusted users with temporary security credentials that can control access to your AWS resources.
+- [Temporary Security Credentials](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp.html)
+
+<img width=600 src="/datadocs/assets/2018-10-23_06-52-31-201df4af92968773479c7a09268baf1e.png"/>
+<center><a href="https://www.udemy.com/course/aws-certified-solutions-architect-associate-amazon-practice-exams/" class="credit">Credit</a></center>
+
+### Cognito
 
 <img width=100 src="/datadocs/assets/1_amazon-cognito.1ae06357f8.svg"/>
 
+- Web Identity Federation:
+    - Web Identity Federation lets you give your users access to AWS resources after they have successfully authenticated with a web-based identity provides such as Amazon, Facebook, or Google.
+    - It does not utilize Active Directory.
+    - [Identity Providers and Federation](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers.html)
 - You can use Amazon Cognito to deliver temporary, limited-privilege credentials to your application so that your users can access AWS resources.
 - Following successful authentication, the user receives an authentication code from the Web ID provider, which they can trade for temporary AWS security credentials.
 - Amazon Cognito provides WIF with the following features:
@@ -99,7 +107,7 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/cloud/aws
 <img width=600 src="/datadocs/assets/saml-based-federation.diagram.png"/>
 <center><a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_saml.html" class="credit">Credit</a></center>
 
-## Directory Service
+### Directory Service
 
 <img width=100 src="/datadocs/assets/22_aws-directory-service.f69deffb7a.svg"/>
 
@@ -113,31 +121,9 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/cloud/aws
 - [AWS Directory Service Cheat Sheets](https://tutorialsdojo.com/aws-cheat-sheet-aws-directory-service/)
 - [Introduction to AWS Directory Service](https://www.youtube.com/watch?v=4XeqotTYBtY&feature=youtu.be)
 
-## WAF
+## Data protection
 
-<img width=100 src="/datadocs/assets/9_aws-waf.b9c9b1bac2.svg"/>
-
-- Web Application Firewall is a firewall that helps protect web applications from common web exploits.
-- The following conditions are supported: Cross-site scripting, Geo, IP, Size, SQL injection, and String and regex match conditions.
-
-## Shield
-
-<img width=100 src="/datadocs/assets/8_aws-shield.7862ba81c9.svg"/>
-
-- AWS Shield is a managed Distributed Denial of Service (DDoS) protection service.
-- Operates on layer 3 and 4 of the ISO network model.
-- AWS Shield Advanced: 
-    - Provides additional detection and mitigation against large and sophisticated DDoS attacks, near real-time visibility into attacks, and integration with AWS WAF, a web application firewall.
-    - Gives you 24x7 access to the AWS DDoS Response Team (DRT)
-- [AWS Best Practices for DDoS Resiliency](https://d1.awsstatic.com/whitepapers/Security/DDoS_White_Paper.pdf)
-
-## Macie 
-
-<img width=100 src="/datadocs/assets/23_amazon-macie.b28b055214.svg"/>
-
-- Amazon Macie is a security service that uses machine learning to automatically discover, classify, and protect sensitive data in AWS.
-
-## KMS
+### KMS
 
 <img width=100 src="/datadocs/assets/6_aws-kms.6269d2eff3.svg"/>
 
@@ -149,12 +135,28 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/cloud/aws
 - [AWS Key Management Service Concepts](https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#data-keys)
 - [AWS KMS Cheat Sheet](https://tutorialsdojo.com/aws-cheat-sheet-aws-key-management-service-aws-kms/)
 
-## STS
+### Macie 
 
-<img width=100 src="/datadocs/assets/13_iam-aws-sts.b6620f2c1a.svg"/>
+<img width=100 src="/datadocs/assets/23_amazon-macie.b28b055214.svg"/>
 
-- AWS Security Token Service (AWS STS) is the service that you can use to create and provide trusted users with temporary security credentials that can control access to your AWS resources.
-- [Temporary Security Credentials](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp.html)
+- Amazon Macie is a security service that uses machine learning to automatically discover, classify, and protect sensitive data in AWS.
 
-<img width=600 src="/datadocs/assets/2018-10-23_06-52-31-201df4af92968773479c7a09268baf1e.png"/>
-<center><a href="https://www.udemy.com/course/aws-certified-solutions-architect-associate-amazon-practice-exams/" class="credit">Credit</a></center>
+## Service protection
+
+### WAF
+
+<img width=100 src="/datadocs/assets/9_aws-waf.b9c9b1bac2.svg"/>
+
+- Web Application Firewall is a firewall that helps protect web applications from common web exploits.
+- The following conditions are supported: Cross-site scripting, Geo, IP, Size, SQL injection, and String and regex match conditions.
+
+### Shield
+
+<img width=100 src="/datadocs/assets/8_aws-shield.7862ba81c9.svg"/>
+
+- AWS Shield is a managed Distributed Denial of Service (DDoS) protection service.
+- Operates on layer 3 and 4 of the ISO network model.
+- AWS Shield Advanced: 
+    - Provides additional detection and mitigation against large and sophisticated DDoS attacks, near real-time visibility into attacks, and integration with AWS WAF, a web application firewall.
+    - Gives you 24x7 access to the AWS DDoS Response Team (DRT)
+- [AWS Best Practices for DDoS Resiliency](https://d1.awsstatic.com/whitepapers/Security/DDoS_White_Paper.pdf)
