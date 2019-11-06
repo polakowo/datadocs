@@ -1,0 +1,351 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Applications · datadocs</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="## Decoupling services"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Applications · datadocs"/><meta property="og:type" content="website"/><meta property="og:url" content="https://polakowo.github.io/datadocs/"/><meta property="og:description" content="## Decoupling services"/><meta property="og:image" content="https://polakowo.github.io/datadocs/img/undraw_online.svg"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://polakowo.github.io/datadocs/img/undraw_tweetstorm.svg"/><link rel="shortcut icon" href="/datadocs/img/favicon.ico"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-142521178-1"></script><script>
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments); }
+              gtag('js', new Date());
+              gtag('config', 'UA-142521178-1');
+            </script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script><script type="text/javascript" src="/datadocs/js/code-block-buttons.js"></script><script type="text/javascript" src="/datadocs/js/disqus.js"></script><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script src="/datadocs/js/scrollSpy.js"></script><link rel="stylesheet" href="/datadocs/css/prism.css"/><link rel="stylesheet" href="/datadocs/css/main.css"/><script src="/datadocs/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/datadocs/"><h2 class="headerTitle">datadocs</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/datadocs/docs/machine-learning/linear-models" target="_self">Docs</a></li><li class=""><a href="https://github.com/polakowo/datadocs" target="_self">GitHub</a></li><li class="navSearchWrapper reactNavSearchWrapper"><input type="text" id="search_input_react" placeholder="Search" title="Search"/></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Amazon Web Services</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Machine Learning<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">General</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/machine-learning">Machine Learning</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Methods</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/linear-models">Linear Models</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/tree-based-models">Tree-Based Models</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/ensemble-methods">Ensemble Methods</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Features</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/eda">Exploratory Data Analysis</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/feature-engineering">Feature Engineering</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/advanced-features">Advanced Features</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Optimization</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/metric-optimization">Metric Optimization</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/validation-schemes">Validation Schemes</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/hyperopt">Hyperparameter Optimization</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Competitions</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/competitive-ml">Competitive Machine Learning</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/data-leakages">Data Leakages</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Production</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/production-code">Production Code</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/deployment">Deployment</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/deployment-to-cloud">Deployment to Cloud</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Deep Learning<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">General</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/deep-learning">Deep Learning</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/dl-strategy">Deep Learning Strategy</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Fundamentals</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/backpropagation">Backpropagation</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/activation-functions">Activation Functions</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/initialization">Initialization</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/optimization">Optimization</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/regularization">Regularization</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Computer Vision</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/cnns">Convolutional Neural Networks</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/cnn-architectures">CNN Architectures</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/object-detection">Object Detection</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/face-recognition">Face Recognition</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/nst">Neural Style Transfer</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Natural Language Processing</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/rnns">Recurrect Neural Networks</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/word-embeddings">Word Embeddings</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/nmt">Neural Machine Translation</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/attention-mechanisms">Attention Mechanisms</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/speech-recognition">Speech Recognition</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Big Data<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">General</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/big-data">Big Data</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/data-warehousing">Data Warehousing</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/data-lakes">Data Lakes</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/data-pipelines">Data Pipelines</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Databases</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/database-design">Database Design</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/sql-databases">SQL Databases</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/wide-column-stores">Wide Column Stores</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/key-value-stores">Key Value Stores</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/document-stores">Document Stores</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/graph-stores">Graph Stores</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Hadoop</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/hadoop">Hadoop Ecosystem</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/data-ingestion">Data Ingestion</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/data-storage">Data Storage</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/data-processing">Data Processing</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/query-engines">Query Engines</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/cluster-management">Cluster Management</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Cloud<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">General</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/cloud/cloud-computing">Cloud Computing</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Amazon Web Services</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/cloud/aws-compute">Compute</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/cloud/aws-storage">Storage</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/cloud/aws-databases">Databases</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/cloud/aws-security">Security</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/cloud/aws-networking">Networking</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/cloud/aws-management">Management</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/datadocs/docs/cloud/aws-applications">Applications</a></li></ul></div></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://github.com/polakowo/datadocs/edit/master/docs/cloud/aws-applications.md" target="_blank" rel="noreferrer noopener">Edit</a><h1 class="postHeaderTitle">Applications</h1></header><article><div><span><h2><a class="anchor" aria-hidden="true" id="decoupling-services"></a><a href="#decoupling-services" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Decoupling services</h2>
+<ul>
+<li>Decoupled architecture is a type of computing architecture that enables computing components or layers to execute independently while still interfacing with each other.</li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="sqs"></a><a href="#sqs" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>SQS</h3>
+<p><img width=100 src="/datadocs/assets/7_amazon-sqs.b03431c35b.svg"/></p>
+<ul>
+<li>Amazon Simple Queue Service (SQS) is a fully managed message queuing service that enables you to decouple and scale microservices, distributed systems, and serverless applications.
+<ul>
+<li>Using SQS, you can decouple the components so that they run independently.</li>
+<li>Resolves issues if producer produces work faster or both components only loosely connected.</li>
+</ul></li>
+<li>A queue is a temporary repository for messages that are awaiting processing.
+<ul>
+<li>The queue acts as a buffer between the producing and receiving components.</li>
+<li>Any component of a distributed application can store messages in a fail-save queue.</li>
+<li>The queue redundantly stores the messages across multiple Amazon SQS servers.</li>
+</ul></li>
+<li>In IT the term 'message' can be used in the common sense, or to describe a piece of data of Task in an asynchronous queueing system such as MQseries, RabbitMQ or SQS.
+<ul>
+<li>Messages can contain up to 256KB of text in any format (or 2GB with S3)</li>
+<li>Messages can be retrieved using the AWS SQS API.</li>
+</ul></li>
+<li>SQS is pull based, not push based.</li>
+<li>You can set the message retention period to a value from 60 seconds to 14 days.</li>
+<li>Visibility timeout:
+<ul>
+<li>The visibility timeout controls how long a message is invisible in the queue while it is being worked on by a processing instance.</li>
+<li>If the message is processed before the timeout, it becomes deleted. Otherwise, it becomes visible again. This can result in the same message being delivered twice.</li>
+<li>This interval should not be confused with how long the message can remain in the queue.</li>
+<li>Visibility timeout maximum is 12 hours.</li>
+</ul></li>
+</ul>
+<p><img width=500 src="/datadocs/assets/sqs-message-lifecycle-diagram.png"/>
+<center><a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-basic-architecture.html" class="credit">Credit</a></center></p>
+<ul>
+<li>Long polling:
+<ul>
+<li>Won't return a response until a message arrives in the message queue, or it times out.</li>
+<li>Enable long polling by setting <code>ReceiveMessageWaitTimeSeconds &gt; 0</code></li>
+<li>Helps reduce the cost of using SQS by eliminating the number of empty and false responses.</li>
+<li>Messages being sent twice in an SQS queue configured with long polling is quite unlikely.</li>
+</ul></li>
+<li>Poor timing of SQS processes can significantly impact the cost effectiveness of the solution:
+<ul>
+<li><code>DelaySeconds</code>: When a new message is added to the SQS queue, it will be hidden from the consumer instances for a fixed period.</li>
+<li><code>VisibilityTimeout</code>: When a consumer instances receives a message, that message will be hidden from other consumer instances for a fixed period.</li>
+<li><code>WaitTimeSeconds</code>: When the consumer instance polls for new work, the SQS service will allow it to wait a certain time for one or more messages to be available before closing the connection.</li>
+</ul></li>
+<li>Priority queues:
+<ul>
+<li>It is best to create separate SQS queues for each priority.</li>
+<li>The SQS queues for with the highest priority will be polled first by consumers.</li>
+</ul></li>
+<li><a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/welcome.html">What Is Amazon Simple Queue Service?</a></li>
+<li><a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-basic-architecture.html">Basic Amazon SQS Architecture</a></li>
+<li><a href="https://tutorialsdojo.com/aws-cheat-sheet-amazon-sqs/">Amazon SQS Cheat Sheet</a></li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="types"></a><a href="#types" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Types</h4>
+<ul>
+<li>Standard queues:
+<ul>
+<li>Nearly an unlimited number of transactions per second, at-least-once processing, and the order is not preserved.</li>
+<li>SQS uses multiple hosts, and each host holds only portion of all the messages. When a consumer calls for a new message, it does not see all the hosts or all the messages. As such, messages are not necessarily delivered in the order in which they were generated.</li>
+<li>If an agent abandons a message or takes a break before finishing a message, it will be offered in the queue again. In order to ensure that no message is lost, a message will persist in the SQS queue until it is processed successfully.</li>
+</ul></li>
+<li>FIFO queues:
+<ul>
+<li>FIFO delivery, exactly-once processing, and the order is preserved.</li>
+</ul></li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="mq"></a><a href="#mq" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>MQ</h3>
+<p><img width=200 src="/datadocs/assets/product-icon_Amazon-MQ.eaffed47025bbc890f471cad5e7812e8b3c45ea6.png"/></p>
+<ul>
+<li>Amazon MQ supports industry-standard APIs and protocols so you can switch from any standards-based message broker to Amazon MQ without rewriting the messaging code in your applications.
+<ul>
+<li>Using Amazon SQS requires you to do additional changes in the code.</li>
+<li>But if you are building brand new applications in the cloud, then it is highly recommended that you consider Amazon SQS and Amazon SNS.</li>
+</ul></li>
+<li><a href="https://aws.amazon.com/amazon-mq/faqs/">Amazon MQ FAQs</a></li>
+<li><a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/welcome.html#sqs-difference-from-amazon-mq-sns">How Is Amazon SQS Different from Amazon MQ or Amazon SNS?</a></li>
+<li><a href="https://tutorialsdojo.com/aws-cheat-sheet-amazon-mq/">Amazon MQ Cheat Sheet</a></li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="swf"></a><a href="#swf" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>SWF</h3>
+<p><img width=100 src="/datadocs/assets/3_amazon-swf.e6aa500b98.svg"/></p>
+<ul>
+<li>Amazon Simple Workflow Service (Amazon SWF) makes it easy to build applications that coordinate work across distributed components.
+<ul>
+<li>Used by Amazon.com for orders, payments, warehousing, etc.</li>
+</ul></li>
+<li>Tasks represent invocations of various processing steps.
+<ul>
+<li>For example, executable code, web service calls, human actions, and scripts.</li>
+</ul></li>
+<li>Concepts:
+<ul>
+<li>Actors: An application that can initiate a workflow.</li>
+<li>Deciders: Control the flow of activity tasks in a workflow execution.</li>
+<li>Activity workers: Carry out activity tasks.</li>
+<li>Domains: Collections of related workflows.</li>
+</ul></li>
+<li>By default, each workflow execution can run for a maximum of 1 year in Amazon SWF.</li>
+<li>While there are a limited range of SDKs available for SWF, AWS provides an HTTP based API which allows you to interact using any language as long as you phrase the interactions in HTTP requests.</li>
+<li><a href="https://tutorialsdojo.com/aws-cheat-sheet-amazon-simple-workflow-amazon-swf/">Amazon SWF Cheat Sheet</a></li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="compared-to-sqs"></a><a href="#compared-to-sqs" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Compared to SQS</h4>
+<ul>
+<li>Similar to SQS, SWF manages queues of work, however unlike SQS it can have out-of-band parallel and sequential task to be completed by humans and non AWS services.</li>
+<li>With SWF, workflow executions can last up to 1 year.
+<ul>
+<li>SQS has retention period of up to 14 days.</li>
+</ul></li>
+<li>SWF presents a task-oriented API.
+<ul>
+<li>SQS presents a message-oriented API.</li>
+</ul></li>
+<li>SWF ensures that a task is assigned only once and is never duplicated.
+<ul>
+<li>With SQS you may handle duplicated messages and need to ensure that a message is processed only once (FIFO)</li>
+</ul></li>
+<li>SWF keeps track of all tasks and events in an application.
+<ul>
+<li>In SQS you need to implement your own application-level tracking, especially if your applications uses multiple queues.</li>
+</ul></li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="sns"></a><a href="#sns" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>SNS</h3>
+<p><img width=100 src="/datadocs/assets/3_amazon-sns.69dee1e7cc.svg"/></p>
+<ul>
+<li>Amazon Simple Notification Service (SNS) is a highly available, durable, secure, fully managed pub/sub messaging service that enables you to decouple microservices, distributed systems, and serverless applications.</li>
+<li>Makes it easy to set up, operate, and send notifications from the cloud.</li>
+<li>Provides developers with a highly scalable, flexible, and cost-effective capability to publish messages from an application and immediately deliver them to subscribers or other applications.</li>
+<li>Besides pushing cloud notifications directly to mobile devices, Amazon SNS can also deliver notifications by SMS, email, or any HTTP endpoint.</li>
+<li>Allows grouping multiple recipients using topics.
+<ul>
+<li>For example, using topics, you can group together iOS, Android, and SMS recipients.</li>
+<li>When you create a topic on Amazon SNS, an ARN is created.</li>
+</ul></li>
+<li>To prevent messages from being lost, all messages are stored redundantly across multiple AZs.</li>
+<li>Benefits:
+<ul>
+<li>Instantaneous, push-based delivery (no polling)</li>
+<li>Simple APIs and easy integration with applications.</li>
+<li>Flexible message delivery over multiple transport protocols.</li>
+<li>Inexpensive, pay-as-you-go model with no up-front costs.</li>
+<li>AWS Management Console offers the simplicity of a point-and-click interface.</li>
+</ul></li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="compared-to-sqs-1"></a><a href="#compared-to-sqs-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Compared to SQS</h4>
+<ul>
+<li>Both are messaging systems in AWS.</li>
+<li>SQS is pull-based, whereas SNS is push-based.</li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="elastic-transcoder"></a><a href="#elastic-transcoder" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Elastic Transcoder</h2>
+<p><img width=100 src="/datadocs/assets/2_elastic-transcoder.5042efbf6f.svg"/></p>
+<ul>
+<li>Media transcoder in the cloud.</li>
+<li>Converts media files into different formats that will play on smartphones, tables, PCs, etc.</li>
+<li>Provides transcoding presets for popular output formats.</li>
+<li>Pay based on the minutes that you transcode and the resolution at which you transcode.</li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="api-gateway"></a><a href="#api-gateway" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>API Gateway</h2>
+<p><img width=100 src="/datadocs/assets/0_api-gateway.2a18d04974.svg"/></p>
+<ul>
+<li>Amazon API Gateway is a fully managed service that makes it easy for developers to publish, maintain, monitor, and secure APIs at any scale.</li>
+<li>You can create an API that acts as a &quot;front door&quot; for applications to access data, business logic, or functionality from your back-end services, such as applications running on EC2 instances, code running on Lambda, or any web application.</li>
+</ul>
+<p><img width=600 src="/datadocs/assets/Serverlesswebapp.45052e1feb8f1748d96a678311d73434599095b1.png"/>
+<center><a href="https://www.udemy.com/course/aws-certified-solutions-architect-associate-amazon-practice-exams/" class="credit">Credit</a></center></p>
+<ul>
+<li>Features:
+<ul>
+<li>Expose HTTP endpoints to define a RESTful API.</li>
+<li>Serverlessly connect to services like Lambda and DynamoDB.</li>
+<li>Send each API endpoint to a different target.</li>
+<li>Track and control usage by API keys.</li>
+<li>Throttle requests to prevent attacks.</li>
+<li>Connect to CloudWatch to log all requests for monitoring.</li>
+<li>Maintain multiple versions of your API.</li>
+<li>API Gateway is low cost and scales automatically.</li>
+</ul></li>
+<li>How to configure API Gateway:
+<ul>
+<li>Define an API (container)</li>
+<li>Define resources and nested resources (URL paths)</li>
+<li>For each resource, select supported HTTP methods, set security, choose the target (e.g. Lambda), and set request and response transformations.</li>
+</ul></li>
+<li>How to deploy API Gateway:
+<ul>
+<li>Deploy API to a stage: Uses the API Gateway domain by default, but you can use a custom domain.</li>
+<li>Now supports AWS Certificate Manager: free SSL/TLS certificates.</li>
+</ul></li>
+<li>Request throttling:
+<ul>
+<li>Throttling limits can be set for standard rates and bursts (for a few seconds)</li>
+<li>Any request over the limit will receive a 429 HTTP response.</li>
+</ul></li>
+<li><a href="https://aws.amazon.com/api-gateway/faqs/#Throttling_and_Caching">Throttling and Caching</a></li>
+<li>You can enable API caching to cache your endpoint's responses.
+<ul>
+<li>With caching, you can reduce the number of calls and improve performance.</li>
+<li>API Gateway caches responses for a specific TTL period, in seconds.</li>
+</ul></li>
+<li>Same Origin Policy:
+<ul>
+<li>Under the policy, the web browser permits scripts contained in a first web page to access data in a second web page, but only if both web pages have the same origin (domain name)</li>
+<li>This is done to prevent Cross-Site Scripting (XSS) attacks.</li>
+<li>Enforced by web browsers, but ignored by tools such as Postman and curl.</li>
+</ul></li>
+<li>If you're using JS/AJAX that uses multiple domains with API Gateway, ensure that you have enabled CORS on API Gateway.
+<ul>
+<li>Cross-Origin Resource Sharing (CORS) is a mechanism that allows restricted resources (e.g. fonts) on a web page to be requested from another domain outside the domain from which the first resource was served.</li>
+<li>The way that server at the other end (not the client side) can relax SOP.</li>
+<li>CORS is enforced by the client.</li>
+</ul></li>
+<li>Billing:
+<ul>
+<li>You pay only for the API calls you receive and the amount of data transferred out.</li>
+</ul></li>
+<li>You can use AWS X-Ray to trace and analyze user requests as they travel through your Amazon API Gateway APIs to the underlying services.
+<ul>
+<li>X-Ray gives you an end-to-end view of an entire request, so you can analyze latencies in your APIs and their backend services.</li>
+</ul></li>
+<li><a href="https://aws.amazon.com/api-gateway/faqs/">Amazon API Gateway FAQs</a></li>
+<li><a href="https://tutorialsdojo.com/aws-cheat-sheet-amazon-api-gateway/">Amazon API Gateway Cheat Sheet</a></li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="kinesis"></a><a href="#kinesis" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Kinesis</h2>
+<p><img width=100 src="/datadocs/assets/11_aws-kinesis.3733450a38.svg"/></p>
+<ul>
+<li>Streaming data is data that is generated continuously by many data sources, which typically send in the data records simultaneously, and in small sizes (order of KB)
+<ul>
+<li>For example, purchases of an online store, stock prices and game data.</li>
+</ul></li>
+<li>Amazon Kinesis is a platform on AWS to send your streaming data to.</li>
+<li>Kinesis makes it easy to load and analyze streaming data, and build custom applications.</li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="types-1"></a><a href="#types-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Types</h4>
+<ul>
+<li>Kinesis Data Streams:
+<ul>
+<li>A massively scalable and durable real-time data streaming service.</li>
+<li>KDS can continuously capture gigabytes of data per second from hundreds of thousands of sources such as website clickstreams, database event streams, financial transactions, social media feeds, IT logs, and location-tracking events.</li>
+<li>Data is stored in shards that are then processed by consumers (EC2 instances)</li>
+<li>Per shard, allows 5 transactions per second for reads, up to a maximum total data read rate of 2 MB per second and up to 1000 records per second for writes, up to a maximum total data write rate of 1 MB per second (including partition keys)</li>
+<li>Persistently stores streaming data for 24 hours and up to 7 days.</li>
+<li>The data capacity of your stream is the sum of the capacities of its shards.</li>
+<li>A Kinesis data stream stores records from 24 hours by default to a maximum of 168 hours.</li>
+</ul></li>
+<li>Kinesis Data Firehose:
+<ul>
+<li>The easiest way to reliably load streaming data into data lakes, data stores and analytics tools.</li>
+<li>A fully managed service that automatically scales to match the throughput.</li>
+<li>Can capture, transform, and load streaming data into S3, Redshift, Elasticsearch, and Splunk.</li>
+<li>Can also batch, compress, transform, and encrypt the data before loading it.</li>
+<li><a href="https://aws.amazon.com/kinesis/data-firehose/">Amazon Kinesis Data Firehose</a></li>
+</ul></li>
+</ul>
+<p><img width=600 src="/datadocs/assets/fh-flow-es.png"/>
+<center><a href="https://www.udemy.com/course/aws-certified-solutions-architect-associate-amazon-practice-exams/" class="credit">Credit</a></center></p>
+<ul>
+<li>Kinesis Data Analytics:
+<ul>
+<li>Enables you to build queries and sophisticated streaming applications with SQL or Java.</li>
+<li>Can use Data Streams or Data Firehose as an underlying streaming service.</li>
+</ul></li>
+<li>Kinesis Video Streams:
+<ul>
+<li>Makes it easy to securely stream video from connected devices to AWS.</li>
+</ul></li>
+<li><a href="https://tutorialsdojo.com/aws-cheat-sheet-amazon-kinesis/">Amazon Kinesis Cheat Sheet</a></li>
+</ul>
+</span></div></article></div><div class="docLastUpdate"><em>Last updated on 2019-11-6 by Oleg Polakow</em></div><div class="docs-prevnext"><a class="docs-prev button" href="/datadocs/docs/cloud/aws-management"><span class="arrow-prev">← </span><span>Management</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#decoupling-services">Decoupling services</a><ul class="toc-headings"><li><a href="#sqs">SQS</a></li><li><a href="#mq">MQ</a></li><li><a href="#swf">SWF</a></li><li><a href="#sns">SNS</a></li></ul></li><li><a href="#elastic-transcoder">Elastic Transcoder</a></li><li><a href="#api-gateway">API Gateway</a></li><li><a href="#kinesis">Kinesis</a></li></ul></nav></div><footer class="nav-footer" id="footer"><div class="brand-box"><div class="brand"><a href="https://www.tum.de/nc/en/" target="_blank" rel="noreferrer noopener" class="brand-link"><img src="/datadocs/img/tum_logo.png" alt="Technical University of Munich" height="45"/></a></div><div class="brand"><a href="https://opensource.facebook.com/" target="_blank" rel="noreferrer noopener" class="brand-link"><img src="/datadocs/img/oss_logo.png" alt="Facebook Open Source" width="170" height="45"/></a></div></div><section class="copyright">Copyright © 2019 polakowo.io</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
+                document.addEventListener('keyup', function(e) {
+                  if (e.target !== document.body) {
+                    return;
+                  }
+                  // keyCode for '/' (slash)
+                  if (e.keyCode === 191) {
+                    const search = document.getElementById('search_input_react');
+                    search && search.focus();
+                  }
+                });
+              </script><script>
+              var search = docsearch({
+                
+                apiKey: '6642fca03d716a543ac4428d7d20b842',
+                indexName: 'polakowo-datadocs',
+                inputSelector: '#search_input_react',
+                algoliaOptions: {}
+              });
+            </script></body></html>

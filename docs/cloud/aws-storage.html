@@ -1,9 +1,9 @@
-<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Storage · datadocs</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="- [AWS Storage Types - S3, EFS, &amp; EBS](https://help.acloud.guru/hc/en-us/articles/115002011194)"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Storage · datadocs"/><meta property="og:type" content="website"/><meta property="og:url" content="https://polakowo.github.io/datadocs/"/><meta property="og:description" content="- [AWS Storage Types - S3, EFS, &amp; EBS](https://help.acloud.guru/hc/en-us/articles/115002011194)"/><meta property="og:image" content="https://polakowo.github.io/datadocs/img/undraw_online.svg"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://polakowo.github.io/datadocs/img/undraw_tweetstorm.svg"/><link rel="shortcut icon" href="/datadocs/img/favicon.ico"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-142521178-1"></script><script>
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Storage · datadocs</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="- For frequently has multiple reads and writes use EBS or EFS."/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Storage · datadocs"/><meta property="og:type" content="website"/><meta property="og:url" content="https://polakowo.github.io/datadocs/"/><meta property="og:description" content="- For frequently has multiple reads and writes use EBS or EFS."/><meta property="og:image" content="https://polakowo.github.io/datadocs/img/undraw_online.svg"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://polakowo.github.io/datadocs/img/undraw_tweetstorm.svg"/><link rel="shortcut icon" href="/datadocs/img/favicon.ico"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-142521178-1"></script><script>
               window.dataLayer = window.dataLayer || [];
               function gtag(){dataLayer.push(arguments); }
               gtag('js', new Date());
               gtag('config', 'UA-142521178-1');
-            </script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script><script type="text/javascript" src="/datadocs/js/code-block-buttons.js"></script><script type="text/javascript" src="/datadocs/js/disqus.js"></script><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script src="/datadocs/js/scrollSpy.js"></script><link rel="stylesheet" href="/datadocs/css/prism.css"/><link rel="stylesheet" href="/datadocs/css/main.css"/><script src="/datadocs/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/datadocs/"><h2 class="headerTitle">datadocs</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/datadocs/docs/machine-learning/linear-models" target="_self">Docs</a></li><li class=""><a href="https://github.com/polakowo/datadocs" target="_self">GitHub</a></li><li class="navSearchWrapper reactNavSearchWrapper"><input type="text" id="search_input_react" placeholder="Search" title="Search"/></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Amazon Web Services</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Machine Learning<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">General</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/machine-learning">Machine Learning</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Methods</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/linear-models">Linear Models</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/tree-based-models">Tree-Based Models</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/ensemble-methods">Ensemble Methods</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Features</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/eda">Exploratory Data Analysis</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/feature-engineering">Feature Engineering</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/advanced-features">Advanced Features</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Optimization</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/metric-optimization">Metric Optimization</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/validation-schemes">Validation Schemes</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/hyperopt">Hyperparameter Optimization</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Competitions</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/competitive-ml">Competitive Machine Learning</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/data-leakages">Data Leakages</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Production</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/production-code">Production Code</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/deployment">Deployment</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/deployment-to-cloud">Deployment to Cloud</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Deep Learning<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">General</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/deep-learning">Deep Learning</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/dl-strategy">Deep Learning Strategy</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Fundamentals</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/backpropagation">Backpropagation</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/activation-functions">Activation Functions</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/initialization">Initialization</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/optimization">Optimization</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/regularization">Regularization</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Computer Vision</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/cnns">Convolutional Neural Networks</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/cnn-architectures">CNN Architectures</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/object-detection">Object Detection</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/face-recognition">Face Recognition</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/nst">Neural Style Transfer</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Natural Language Processing</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/rnns">Recurrect Neural Networks</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/word-embeddings">Word Embeddings</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/nmt">Neural Machine Translation</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/attention-mechanisms">Attention Mechanisms</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/speech-recognition">Speech Recognition</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Big Data<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">General</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/big-data">Big Data</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/data-warehousing">Data Warehousing</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/data-lakes">Data Lakes</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/data-pipelines">Data Pipelines</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Databases</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/database-design">Database Design</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/sql-databases">SQL Databases</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/wide-column-stores">Wide Column Stores</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/key-value-stores">Key Value Stores</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/document-stores">Document Stores</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/graph-stores">Graph Stores</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Hadoop</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/hadoop">Hadoop Ecosystem</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/data-ingestion">Data Ingestion</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/data-storage">Data Storage</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/data-processing">Data Processing</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/query-engines">Query Engines</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/cluster-management">Cluster Management</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Cloud<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">General</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/cloud/cloud-computing">Cloud Computing</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Amazon Web Services</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/cloud/aws-compute">Compute</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/datadocs/docs/cloud/aws-storage">Storage</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/cloud/aws-databases">Databases</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/cloud/aws-security">Security</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/cloud/aws-networking">Networking</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/cloud/aws-management">Management</a></li></ul></div></ul></div></div></section></div><script>
+            </script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script><script type="text/javascript" src="/datadocs/js/code-block-buttons.js"></script><script type="text/javascript" src="/datadocs/js/disqus.js"></script><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script src="/datadocs/js/scrollSpy.js"></script><link rel="stylesheet" href="/datadocs/css/prism.css"/><link rel="stylesheet" href="/datadocs/css/main.css"/><script src="/datadocs/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/datadocs/"><h2 class="headerTitle">datadocs</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/datadocs/docs/machine-learning/linear-models" target="_self">Docs</a></li><li class=""><a href="https://github.com/polakowo/datadocs" target="_self">GitHub</a></li><li class="navSearchWrapper reactNavSearchWrapper"><input type="text" id="search_input_react" placeholder="Search" title="Search"/></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Amazon Web Services</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Machine Learning<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">General</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/machine-learning">Machine Learning</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Methods</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/linear-models">Linear Models</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/tree-based-models">Tree-Based Models</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/ensemble-methods">Ensemble Methods</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Features</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/eda">Exploratory Data Analysis</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/feature-engineering">Feature Engineering</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/advanced-features">Advanced Features</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Optimization</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/metric-optimization">Metric Optimization</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/validation-schemes">Validation Schemes</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/hyperopt">Hyperparameter Optimization</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Competitions</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/competitive-ml">Competitive Machine Learning</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/data-leakages">Data Leakages</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Production</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/production-code">Production Code</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/deployment">Deployment</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/machine-learning/deployment-to-cloud">Deployment to Cloud</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Deep Learning<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">General</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/deep-learning">Deep Learning</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/dl-strategy">Deep Learning Strategy</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Fundamentals</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/backpropagation">Backpropagation</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/activation-functions">Activation Functions</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/initialization">Initialization</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/optimization">Optimization</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/regularization">Regularization</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Computer Vision</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/cnns">Convolutional Neural Networks</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/cnn-architectures">CNN Architectures</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/object-detection">Object Detection</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/face-recognition">Face Recognition</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/nst">Neural Style Transfer</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Natural Language Processing</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/rnns">Recurrect Neural Networks</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/word-embeddings">Word Embeddings</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/nmt">Neural Machine Translation</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/attention-mechanisms">Attention Mechanisms</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/deep-learning/speech-recognition">Speech Recognition</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Big Data<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">General</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/big-data">Big Data</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/data-warehousing">Data Warehousing</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/data-lakes">Data Lakes</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/data-pipelines">Data Pipelines</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Databases</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/database-design">Database Design</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/sql-databases">SQL Databases</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/wide-column-stores">Wide Column Stores</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/key-value-stores">Key Value Stores</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/document-stores">Document Stores</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/graph-stores">Graph Stores</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Hadoop</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/hadoop">Hadoop Ecosystem</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/data-ingestion">Data Ingestion</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/data-storage">Data Storage</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/data-processing">Data Processing</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/query-engines">Query Engines</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/big-data/cluster-management">Cluster Management</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Cloud<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">General</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/cloud/cloud-computing">Cloud Computing</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Amazon Web Services</h4><ul><li class="navListItem"><a class="navItem" href="/datadocs/docs/cloud/aws-compute">Compute</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/datadocs/docs/cloud/aws-storage">Storage</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/cloud/aws-databases">Databases</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/cloud/aws-security">Security</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/cloud/aws-networking">Networking</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/cloud/aws-management">Management</a></li><li class="navListItem"><a class="navItem" href="/datadocs/docs/cloud/aws-applications">Applications</a></li></ul></div></ul></div></div></section></div><script>
             var coll = document.getElementsByClassName('collapsible');
             var checkActiveCategory = true;
             for (var i = 0; i < coll.length; i++) {
@@ -60,27 +60,31 @@
               }
             });
         </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://github.com/polakowo/datadocs/edit/master/docs/cloud/aws-storage.md" target="_blank" rel="noreferrer noopener">Edit</a><h1 class="postHeaderTitle">Storage</h1></header><article><div><span><ul>
+<li>For frequently has multiple reads and writes use EBS or EFS.</li>
+<li>Use S3 is for object storage, not applications.</li>
+<li>Glacier is for data archiving.</li>
 <li><a href="https://help.acloud.guru/hc/en-us/articles/115002011194">AWS Storage Types - S3, EFS, &amp; EBS</a></li>
+<li><a href="https://tutorialsdojo.com/aws-cheat-sheet-amazon-s3-vs-ebs-vs-efs/">Amazon S3 vs Amazon EBS vs Amazon EFS</a></li>
 </ul>
 <h2><a class="anchor" aria-hidden="true" id="s3"></a><a href="#s3" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>S3</h2>
 <p><img width=100 src="/datadocs/assets/6_amazon-s3.9252c96dc6.svg"/></p>
 <ul>
-<li>S3 provides developers and IT teams with secure, durable, highly-scalable object storage.</li>
 <li>Amazon Simple Storage Service (S3) is easy to use, with a simple web services interface to store and retrieve any amount of data from anywhere on the web.</li>
-<li>Just a safe place to store flat files of any size (from 0 Bytes):
+<li>S3 provides developers and IT teams with secure, durable, highly-scalable object storage.</li>
+<li>A safe place to store flat files of any size (from 0 Bytes to 5 TB)</li>
+<li>It is an object-oriented storage:
+<ul>
+<li>Allows uploading files (HTTP 200 status code for success)</li>
+<li>Not suitable to install an operating system or databases on (you will need a block-based storage)</li>
+</ul></li>
+<li>Object properties:
 <ul>
 <li>Key is the name of the object.</li>
 <li>Value is the data, and is made up of a sequence of bytes.</li>
 <li>Version ID is used for versioning.</li>
 <li>Metadata is the structured description of the object.</li>
 </ul></li>
-<li>It is an object-oriented storage:
-<ul>
-<li>Allows uploading files (HTTP 200 status code for success)</li>
-<li>Not suitable to install an operating system or databases on (you need block-based storage then)</li>
-</ul></li>
-<li>The data is spread across multiple devices and facilities.</li>
-<li>Files are stored in buckets (i.e. folders)
+<li>Objects are stored in buckets (i.e. folders)
 <ul>
 <li>S3 is a universal namespace, that is, the bucket names must be unique globally. The URL of the bucket depends on the region though, for example <code>https://s3-eu-west-1.amazonaws.com/somebucket</code></li>
 <li>By default, all newly created buckets are private.</li>
@@ -88,7 +92,6 @@
 <li>One can configure to create access logs that log all requests made to this bucket.</li>
 <li>One has 100 S3 buckets per account by default.</li>
 </ul></li>
-<li>S3 puts the limit of 3500 PUTs per second.</li>
 <li>Charges:
 <ul>
 <li>Storage</li>
@@ -98,11 +101,14 @@
 <li>Transfer acceleration</li>
 <li>Cross-region replication</li>
 </ul></li>
-<li>Tips:
+<li>Limitations:
 <ul>
-<li>&quot;Your proposed upload exceeds the maximum allowed object size&quot;: design the application to use the Multipart Upload API for all objects.</li>
-<li>Read the <a href="https://aws.amazon.com/s3/faqs/">S3 FAQs</a></li>
+<li>S3 puts the limit of 3500 PUTs per second.</li>
+<li>The largest object that can be uploaded in a single PUT is 5GB.</li>
+<li>If you are using the multipart upload API, then the limit is 5TB.</li>
 </ul></li>
+<li><a href="https://aws.amazon.com/s3/faqs/">Amazon S3 FAQs</a></li>
+<li><a href="https://tutorialsdojo.com/aws-cheat-sheet-amazon-s3/">Amazon S3 Cheat Sheet</a></li>
 </ul>
 <h3><a class="anchor" aria-hidden="true" id="features"></a><a href="#features" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Features</h3>
 <ul>
@@ -115,28 +121,24 @@
 <ul>
 <li>Built for 99.99% availability.</li>
 <li>Guarantees 99.9999999999% (11 9's) durability.</li>
-</ul></li>
-<li>Encryption:
-<ul>
-<li>Encryption in transit is achieved by SSL/TLS (HTTPS)</li>
-<li>Encryption at rest is achieved (server side) by S3 Managed Keys (SSE-S3), AWS Key Management Service (SSE-KMS), or Server Side Encryption With Customer Provided Keys (SSE-C).</li>
-<li>One can also encrypt the file on client side and upload it.</li>
+<li>The data is automatically spread across multiple devices and facilities.</li>
 </ul></li>
 <li>Versioning:
 <ul>
 <li>Stores all versions of an object (including all writes and even deletes)</li>
 <li>Great as a backup tool.</li>
-<li>Once enabled, versioning cannot be disabled, only suspended.</li>
+<li>With versioning, you can easily recover from both unintended user actions and application failures.</li>
+<li>Once enabled, versioning cannot be disabled, only suspended (preserves earlier versions)</li>
 <li>Integrates with Lifecycle rules (to expire old objects)</li>
 <li>Versioning's MFA Delete capability provides additional layer of security.</li>
 <li>Newly uploaded versions are automatically made private.</li>
+<li>To restore an accidentally deleted object, simply remove the delete marker.</li>
+<li><a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/Versioning.html">Using Versioning</a></li>
 </ul></li>
-<li>Lifecycle management:
+</ul>
+<p><img width=500 src="/datadocs/assets/c-users-chandr1-appdata-local-temp-snaghtml4e67c.png"/>
+<center><a href="https://cloudaffaire.com/versioning-in-s3/" class="credit">Credit</a></center></p>
 <ul>
-<li>Automates moving objects between the different storage tiers (e.g. archive after 30 days)</li>
-<li>Can be used in conjunction with versioning.</li>
-<li>Can be applied to current and previous versions.</li>
-</ul></li>
 <li>Cross-region replication:
 <ul>
 <li>Replicates changes from any source bucket to one or more destination buckets.</li>
@@ -154,6 +156,76 @@
 <li><a href="https://s3-accelerate-speedtest.s3-accelerate.amazonaws.com/en/accelerate-speed-comparsion.html">Amazon S3 Transfer Acceleration - Speed Comparison</a></li>
 </ul></li>
 </ul>
+<p><img width=500 src="/datadocs/assets/transfer-acceleration.png"/>
+<center><a href="https://s3-accelerate-speedtest.s3-accelerate.amazonaws.com/en/accelerate-speed-comparsion.html" class="credit">Credit</a></center></p>
+<ul>
+<li>Multipart Upload API:
+<ul>
+<li>For cases when your proposed upload exceeds the maximum allowed object size (&gt;100MB)</li>
+<li>Quick recovery from any network issues.</li>
+<li>Begin an upload before you know the final object size.</li>
+<li>Improved throughput - You can upload parts in parallel to improve throughput.</li>
+<li>Pause and resume object uploads.</li>
+</ul></li>
+<li>A notification feature enables you to receive notifications when certain events happen in a bucket.
+<ul>
+<li>The following destinations are supported: SNS topic, SQS queue, and Lambda.</li>
+</ul></li>
+<li>S3 Select:
+<ul>
+<li>With Amazon S3 Select, you can use simple structured query language (SQL) statements to filter the contents of Amazon S3 objects and retrieve just the subset of data that you need.</li>
+<li>You can thus reduce the amount of data that Amazon S3 transfers.</li>
+<li>Works on objects stored in CSV, JSON, or Apache Parquet format.</li>
+</ul></li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="lifecycle-management"></a><a href="#lifecycle-management" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Lifecycle management</h4>
+<ul>
+<li>Automates moving objects between the different storage tiers (e.g. archive after 30 days)</li>
+<li>Can be used in conjunction with versioning.</li>
+<li>Can be applied to current and previous versions.</li>
+<li>Two types of actions:
+<ul>
+<li>Transition actions: In which you define when objects transition to another storage class.</li>
+<li>Expiration actions: In which you specify when the objects expire.</li>
+</ul></li>
+<li>Setting up a lifecycle rule:
+<ul>
+<li>A prefix to specify which objects in the bucket are subject to the policy.</li>
+<li>A relative or absolute time specifier and a time period for transitioning objects to Glacier.</li>
+<li>An object age at which the object will be deleted from S3.</li>
+</ul></li>
+<li>Life-cycle management and Infrequent Access storage is available for both S3 and EFS. A restriction however is that 'Using Amazon EFS with Microsoft Windows is not supported'. File Gateway does not support iSCSI in the client side.</li>
+<li><a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lifecycle-mgmt.html">Object Lifecycle Management</a></li>
+</ul>
+<p><img width=550 src="/datadocs/assets/2018-11-12_21-01-50-8e238b3286aa6c7c72f18b468ce19ead.png"/>
+<center><a href="https://www.udemy.com/course/aws-certified-solutions-architect-associate-amazon-practice-exams/" class="credit">Credit</a></center></p>
+<h3><a class="anchor" aria-hidden="true" id="security"></a><a href="#security" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Security</h3>
+<ul>
+<li>All objects are private by default. You must open access to each object explicitly.</li>
+<li>Use Signed URLs to grant time-limited permission to download the object.</li>
+<li>Public S3 buckets should never be used unless you are using the bucket to host a public website.</li>
+<li>There are two ways of securing S3, using either Access Control Lists (Permissions) or by using bucket Policies.</li>
+<li>By using Versioning and enabling MFA (Multi-Factor Authentication) Delete, you can secure and recover your S3 objects from accidental deletion or overwrite.</li>
+</ul>
+<p><img width=700 src="/datadocs/assets/bucket_policies_defense_s3.43e6c93a095f2f55b33b30276f4782ab9ec79f47.png"/>
+<center><a href="https://www.udemy.com/course/aws-certified-solutions-architect-associate-amazon-practice-exams/" class="credit">Credit</a></center></p>
+<h4><a class="anchor" aria-hidden="true" id="encryption"></a><a href="#encryption" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Encryption</h4>
+<ul>
+<li>Encryption in transit is achieved by SSL/TLS (HTTPS)</li>
+<li><a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingEncryption.html">Protecting Data Using Encryption</a></li>
+<li>Server-side encryption is the encryption of data at its S3 destination.
+<ul>
+<li>Use Server Side Encryption (SSE)-S3, Server Side Encryption With Customer Provided Keys (SSE-C), AWS Key Management Service (SSE-KMS) or a client library such as Amazon S3 Encryption Client.</li>
+<li>Amazon S3 manages both the encryption (as it writes to disks) and decryption (when reading)</li>
+</ul></li>
+<li>Client-side encryption is the act of encrypting data before sending it to Amazon S3.
+<ul>
+<li>Use an AWS KMS-managed customer master key or a client-side master key (never sent to AWS)</li>
+<li><a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingClientSideEncryption.html">Protecting Data Using Client-Side Encryption</a></li>
+</ul></li>
+</ul>
+<p><img width=600 src="/datadocs/assets/s3_sse_customer_key_2.png"/>
+<center><a href="https://www.udemy.com/course/aws-certified-solutions-architect-associate-amazon-practice-exams/" class="credit">Credit</a></center></p>
 <h3><a class="anchor" aria-hidden="true" id="storage-classes"></a><a href="#storage-classes" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Storage classes</h3>
 <ul>
 <li>S3 Standard:
@@ -181,12 +253,17 @@
 <li>Same low latency and high throughput performance of S3 Standard.</li>
 <li>Only stored in one availability zone (= a security threat)</li>
 <li>Designed for 99.50% availability over a given year.</li>
+<li>The S3 One Zone-IA storage class is set at the object level and can exist in the same bucket as S3 Standard and S3 Standard-IA, allowing you to use S3 Lifecycle Policies to automatically transition objects between storage classes without any application changes.</li>
 </ul></li>
 <li>S3 Glacier:
 <ul>
 <li>Low-cost design is ideal for long-term archive.</li>
 <li>Configurable retrieval times, from minutes to hours.</li>
 <li>Designed for 99.99% availability over a given year.</li>
+<li>Amazon Glacier encrypts your data at rest by default and supports secure data transit with SSL.</li>
+<li>Expedited: Expedited retrievals allow you to quickly (1-5 mins) access data when occasional urgent requests for a subset of archives are required. Provisioned Capacity ensures that retrieval capacity for expedited retrievals is available when needed.</li>
+<li>Standard: Standard retrievals allow you to access any of your archives within several hours.</li>
+<li>Bulk: Bulk retrievals typically complete within 5–12 hours.</li>
 </ul></li>
 <li>S3 Glacier Deep Archive:
 <ul>
@@ -199,53 +276,65 @@
 <ul>
 <li>RRS has effectively been deprecated.</li>
 </ul></li>
-<li>All are designed for durability of 99.999999999% (11 9's) of objects.</li>
+<li>All are designed for durability of 99.999999999% (11 9's) of objects.
+<ul>
+<li>RRS is the only S3 Class that does not offer this.</li>
+</ul></li>
 <li><a href="https://aws.amazon.com/s3/storage-classes/">Amazon S3 Storage Classes</a></li>
 </ul>
 <h2><a class="anchor" aria-hidden="true" id="ebs"></a><a href="#ebs" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>EBS</h2>
 <p><img width=100 src="/datadocs/assets/0_amazon-ebs.6610da80ab.svg"/></p>
 <ul>
 <li>Amazon Elastic Block Store (EBS) provides persistent block storage volumes in the cloud.</li>
-<li>Each EBS volume is replicated within its AZ to protect from component failure.</li>
-<li>EBS types:
-<ul>
-<li>SSD &gt;&gt; General purpose SSD (GP2): For most workloads (16,000 IOPS)</li>
-<li>SSD &gt;&gt; Provisioned IOPS SSD (IO1): For databases (64,000 IOPS)</li>
-<li>Magnetic &gt;&gt; Throughput Optimized HDD (ST1): For big data, DWH, logs (500 IOPS)</li>
-<li>Magnetic &gt;&gt; Cold HDD (SC1): Cheap, for file servers (250 IOPS)</li>
-<li>Magnetic &gt;&gt; EBS Magnetic: Extra cheap, for infrequently accessed workloads (40-200 IOPS)</li>
-<li>EBS volumes can be changed on the fly (including the size and storage type)</li>
-</ul></li>
 <li>Volumes exist on EBS:
 <ul>
 <li>Think of EBS as of a virtual hard disk.</li>
+<li>Persist independently from the running life of an EC2 instance.</li>
+<li>Replicated within its AZ to protect from component failure.</li>
+<li>Can only be attached to one EC2 instance at a time.</li>
+<li>You can attach it to any EC2 instance in the same AZ (since it is replicated here)</li>
+<li>Support live configuration changes while in production: you can modify the volume type, volume size, and IOPS capacity without service interruptions.</li>
+<li>Offer 99.999% SLA.</li>
+<li><a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumes.html">Amazon EBS Volumes</a></li>
 </ul></li>
 <li>Snapshots exist on S3:
 <ul>
-<li>Created with command <code>aws ec2 create-snapshot</code></li>
 <li>Think of snapshots as of a photograph of the disk.</li>
 <li>Snapshots are point-in-time copies of volumes.</li>
 <li>Snapshots are incremental: only the blocks that changed since last snapshots are moved to S3.</li>
 <li>The first snapshot may take some time.</li>
-<li>To take a snapshot of a root device, you should stop the EC2 instance first. But you can also make a snapshot while the instance is running.</li>
+<li>Created with command <code>aws ec2 create-snapshot</code></li>
+<li>To take a snapshot of a root device, you should stop the EC2 instance first. But you can also make a snapshot while the instance is running (may be slow)</li>
 <li>One can perform actions on an existing EBS snapshot using AWS APIs, CLI, and AWS Console.</li>
 <li>One cannot delete a snapshot that is used as the root device of a registered AMI.</li>
+<li>EBS snapshots occur asynchronously so the volume can be used as normal.</li>
+<li>Have a copy of the data which is stored redundantly in multiple AZs.</li>
+<li><a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-creating-snapshot.html">Creating Amazon EBS Snapshots</a></li>
 </ul></li>
 <li>Data migration:
 <ul>
 <li>Volumes are always in the same AZ as the EC2 instance.</li>
-<li>To move an EC2 volume from one AZ to another, take a snapshot, create an AMI from that snapshot, and then use the AMI to launch a new EC2 instance in a new AZ.</li>
-<li>To move an EC2 volume from one region to another, take a snapshot, create an AMI from that snapshot, copy that AMI to another region, and then use the copied AMI to launch a new EC2 instance in the new region.</li>
+<li>To move an EC2 volume from one AZ to another, take a snapshot, create an AMI from that snapshot, and then use the AMI to launch a new EC2 instance in a new AZ.
+<img width=600 src="/datadocs/assets/EBS_Backed_AMI_Creation.png"/><center><a href="https://www.bogotobogo.com/DevOps/AWS/aws_snapshot_ami_creation_image_clone_instance.php" class="credit">Credit</a></center></li>
+<li>To move an EC2 volume from one region to another, take a snapshot, create an AMI from that snapshot, <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/CopyingAMIs.html">copy that AMI to another region</a>, and then use the copied AMI to launch a new EC2 instance in the new region.</li>
+<li>AWS does not copy launch permissions, user-defined tags, or Amazon S3 bucket permissions.</li>
 </ul></li>
+</ul>
+<p><img width=350 src="/datadocs/assets/ami_copy.png"/><center>
+<a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/CopyingAMIs.html" class="credit">Credit</a></center></p>
+<ul>
 <li>Encryption:
 <ul>
 <li>The use of encryption at rest is default requirement for many industry compliance certifications.</li>
-<li>Using AWS managed keys to provide EBS encryption at rest is relatively painless and reliable.</li>
+<li>EBS volumes can be encrypted, but they are not encrypted by default.</li>
+<li>Existing EBS volumes cannot be encrypted.</li>
 <li>Snapshots of encrypted volumes are encrypted automatically.</li>
 <li>Volumes restored from encrypted snapshots are encrypted automatically.</li>
 <li>You can share snapshots (on AWS or publicly), but only if they are unencrypted.</li>
 <li>You can now encrypt root device volumes upon creation of the EC2 instance.</li>
-<li>To encrypt an unencrypted root device volume, create a snapshot of it, encrypt that snapshot, create an AMI from that snapshot, and use that AMI to launch a new encrypted EC2 instance.</li>
+<li>You can create an encrypted snapshot from an unencrypted snapshot: To encrypt an unencrypted root device volume, create a snapshot of it, encrypt that snapshot, create an AMI from that snapshot, and use that AMI to launch a new encrypted EC2 instance.</li>
+<li>It is better to use KMS API instead to automatically encrypt the data before saving it to disk.</li>
+<li>Amazon EBS encryption uses 256-bit Advanced Encryption Standard algorithms (AES-256)</li>
 </ul></li>
 <li>Termination:
 <ul>
@@ -257,6 +346,55 @@
 <li>Additional volumes can be detached without stopping the instance.</li>
 <li>You can add multiple volumes to an EC2 instance and then create your own RAID 5/RAID 10/RAID 0 configurations using those volumes.</li>
 <li>You cannot attach an EBS volume to more than one EC2 instance at the same time.</li>
+</ul></li>
+<li>RAID configuration:
+<ul>
+<li>RAID 0 uses striping, i.e., data is split across all the drives.</li>
+<li>RAID 0 is a more suitable option for providing faster read and write operations.</li>
+<li>This means RAID 0 offers no fault tolerance; if any of the constituent drives fails, the RAID unit fails.</li>
+<li>RAID 1 offers redundancy through mirroring, i.e., data is written identically to two drives.</li>
+<li><a href="https://aws.amazon.com/premiumsupport/knowledge-center/snapshot-ebs-raid-array/">The snapshot process for RAID 1 is different</a>: Stop all I/O activity before creating a snapshot.</li>
+</ul></li>
+</ul>
+<p><img width=200 src="/datadocs/assets/RAID-on-EBS-Volumes.jpg"/><center>
+<a href="https://cloudacademy.com/blog/amazon-aws-raid-0-configuration-on-ebs-volumes/" class="credit">Credit</a></center></p>
+<ul>
+<li>Boosting performance:
+<ul>
+<li>Ensure that your EC2 instances are types that can be optimized for use with EBS. This ensures that network traffic cannot contend with traffic between your instance and your EBS volumes.</li>
+<li>Schedule snapshots for periods of low use. This only applies to HDD based EBS volumes. When you create a snapshot of a Throughput Optimized HDD (<code>st1</code>) or Cold HDD (<code>sc1</code>) volume, performance may drop as far as the volume's baseline value while the snapshot is in progress.</li>
+<li>One of the easiest options is to drive more I/O throughput is by striping using RAID 0.</li>
+<li><a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/raid-config.html">RAID Configuration on Linux</a></li>
+<li><a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSPerformance.html">Amazon EBS Volume Performance on Linux Instances</a></li>
+</ul></li>
+<li>Amazon Data Lifecycle Manager:
+<ul>
+<li>Amazon DLM provides a complete backup solution for EBS volumes at no additional cost.</li>
+<li>Automates the creation, retention, and deletion of EBS snapshots.</li>
+<li><a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshot-lifecycle.html">Automating the Amazon EBS Snapshot Lifecycle</a></li>
+</ul></li>
+<li><a href="https://aws.amazon.com/ebs/features/">Amazon EBS features</a></li>
+<li><a href="https://www.udemy.com/course/aws-certified-solutions-architect-associate-amazon-practice-exams/learn/quiz/4394970/result/223783288#overview">Amazon EBS Cheat Sheet</a></li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="types"></a><a href="#types" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Types</h4>
+<ul>
+<li>SSD-backed volumes:
+<ul>
+<li>SSD &gt;&gt; General purpose SSD (GP2): For most workloads (16,000 IOPS, $0.1)</li>
+<li><a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html#EBSVolumeTypes_piops">SSD &gt;&gt; Provisioned IOPS SSD (IO1)</a>: For databases (64,000 IOPS, $.125)</li>
+</ul></li>
+<li>HDD-backed volumes:
+<ul>
+<li>Magnetic &gt;&gt; Throughput Optimized HDD (ST1): For big data, DWH, logs (500 IOPS, $0.045)</li>
+<li>Magnetic &gt;&gt; Cold HDD (SC1): Cheap, for file servers (250 IOPS, $0.025)</li>
+<li>Magnetic &gt;&gt; EBS Magnetic: Extra cheap, for infrequently accessed workloads (40-200 IOPS)</li>
+</ul></li>
+<li>EBS volumes can be changed on the fly (including the size and storage type)</li>
+<li>Of all the EBS types, both current and of the previous generation, HDD based volumes will always be less expensive than SSD types.</li>
+<li><a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-io-characteristics.html">I/O Characteristics and Monitoring</a>
+<ul>
+<li>SSD volumes deliver consistent performance whether an I/O operation is random or sequential.</li>
+<li>HDD volumes deliver optimal performance only when I/O operations are large and sequential.</li>
 </ul></li>
 </ul>
 <h2><a class="anchor" aria-hidden="true" id="efs"></a><a href="#efs" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>EFS</h2>
@@ -275,32 +413,52 @@
 <li>Only pay for what you use (no pre-provisioning required)</li>
 <li>Data is stored across multiple AZ's within a region.</li>
 <li>Read after write consistency.</li>
+<li><a href="https://aws.amazon.com/efs/">Amazon Elastic File System</a></li>
+<li><a href="https://tutorialsdojo.com/aws-cheat-sheet-amazon-efs/">Amazon EFS Cheat Sheet</a></li>
 </ul>
-<h2><a class="anchor" aria-hidden="true" id="data-transfer"></a><a href="#data-transfer" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Data transfer</h2>
+<p><img width=400 src="/datadocs/assets/2019-02-13_00-55-39-826ea8db5a1179c5f79d02b3b6cf1f2c.png"/><center>
+<a href="https://www.udemy.com/course/aws-certified-solutions-architect-associate-amazon-practice-exams/" class="credit">Credit</a></center></p>
 <h3><a class="anchor" aria-hidden="true" id="storage-gateway"></a><a href="#storage-gateway" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Storage Gateway</h3>
 <p><img width=100 src="/datadocs/assets/12_aws-storage-gateway.a48fc5052e.svg"/></p>
 <ul>
 <li>AWS Storage Gateway is a service that connects an on-premises software appliance with cloud-based storage to provide seamless and secure integration between an organization's on-premises IT environment and AWS's storage infrastructure.</li>
 <li>At its heart it is a way of using AWS S3 managed storage to supplement on-premise storage.
 <ul>
+<li>You can think of a file gateway as a file system mount on S3.</li>
 <li>It is a physical or virtual appliance that can be used to cache S3 locally.</li>
-<li>Available for download as a virtual machine (VM) image that install on a host in the datacenter.</li>
-<li>Support either VMware ESXi or Microsoft Hyper-V.</li>
+</ul></li>
+<li>Available for download as a virtual machine (VM) image that install on a host in the datacenter.
+<ul>
+<li>Supports either VMware ESXi or Microsoft Hyper-V.</li>
 <li>It can also be used within a VPC in a similar way.</li>
 </ul></li>
+<li>All data transferred between any type of gateway appliance and AWS storage is encrypted using SSL.</li>
+<li>All data stored by AWS Storage Gateway in S3 is encrypted server-side with SSE-S3.</li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="types-1"></a><a href="#types-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Types</h4>
+<ul>
 <li>File Gateway (NFS &amp; SMB):
 <ul>
-<li>Flat files are stored as objects in S3 bucket, accessed through a NFS mount point.</li>
+<li>Enables you to store and retrieve objects in Amazon S3 using file protocols, such as NFS.</li>
 <li>Ownership, permissions, and timestamps are durably stored in S3 in the metadata.</li>
+<li>Using File Gateway is the recommended way to use S3 with shared document pools.</li>
 </ul></li>
+</ul>
+<p><img width=700 src="/datadocs/assets/file-gateway-concepts-diagram.png"/><center>
+<a href="https://docs.aws.amazon.com/storagegateway/latest/userguide/StorageGatewayConcepts.html" class="credit">Credit</a></center></p>
+<ul>
 <li>Volume Gateway (iSCSI):
 <ul>
-<li>The volume interface presents applications with disk volumes using the iSCSI block protocol.</li>
+<li>Provides block storage to your applications using the iSCSI block protocol.</li>
 <li>Data is asynchronously backed up as point-in-time snapshots and stored as Amazon EBS snapshots.</li>
 <li>Snapshots are incremental backups that capture only changed blocks (and compressed)</li>
 <li>Stored Volumes: Entire dataset is stored on site and is asynchronously backed up to S3.</li>
 <li>Cached Volumes: Entire dataset is stored on S3 and the most frequently accessed data is cached on site.</li>
 </ul></li>
+</ul>
+<p><img width=600 src="/datadocs/assets/aws-storage-gateway-stored-diagram.png"/><center>
+<a href="https://docs.aws.amazon.com/storagegateway/latest/userguide/StorageGatewayConcepts.html" class="credit">Credit</a></center></p>
+<ul>
 <li>Gateway Virtual Tape Library (VTL):
 <ul>
 <li>A durable, cost-effective solution to archive tape data.</li>
@@ -308,38 +466,47 @@
 <li>Supported by NetBackup, Backup Exec, Veeam.</li>
 </ul></li>
 </ul>
-<h3><a class="anchor" aria-hidden="true" id="snowball"></a><a href="#snowball" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Snowball</h3>
+<h3><a class="anchor" aria-hidden="true" id="data-transport"></a><a href="#data-transport" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Data transport</h3>
+<h4><a class="anchor" aria-hidden="true" id="snowball"></a><a href="#snowball" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Snowball</h4>
 <p><img width=100 src="/datadocs/assets/10_aws-snowball.5a526539e7.svg"/></p>
 <ul>
-<li>Snowball is a petabyte-scale data transport solution.
-<ul>
+<li>Snowball is a petabyte-scale data transport solution.</li>
 <li>Uses secure appliances to transfer large amounts of data and out of AWS.</li>
 <li>Addresses challenges such as high network costs, long transfer times, and security concerns.</li>
 <li>Transferring data with Snowball can be as little as one-fifth the cost of high speed internet.</li>
-<li>Comes in either a 50TB or 80TB size.</li>
 <li>Uses multiple layers of security including tamper-resistant enclosures, 256-bit encryption, and an industry-standard Trusted Platform Module (TPM) designed to ensure both security and full chain-of-custody of data.</li>
 <li>Once the data transfer job has been processed and verified, AWS performs a software erase.</li>
+<li>Comes in either a 50TB or 80TB size.
+<ul>
+<li>Only has 72TB of usable capacity.</li>
 </ul></li>
+<li><a href="https://tutorialsdojo.com/aws-cheat-sheet-aws-snowball/">AWS Snowball Cheat Sheet</a></li>
 </ul>
+<h4><a class="anchor" aria-hidden="true" id="snowball-edge"></a><a href="#snowball-edge" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Snowball Edge</h4>
 <p><img width=200 src="/datadocs/assets/az.0.0.jpg"/>
 <center><a href="https://www.theverge.com/2015/10/7/9471381/amazon-snowball-data-transfer-device" class="credit">Credit</a></center></p>
 <ul>
-<li>AWS Snowball Edge is a 100TB data transfer device with on-board storage and compute capabilities.
-<ul>
+<li>AWS Snowball Edge is a data transfer device with on-board storage and compute capabilities.</li>
 <li>Can be used to move large amounts of data into and out of AWS, as a temporary storage tier for large local datasets, and to support local workloads in remote or offline locations.</li>
 <li>Connects to existing applications and infrastructure.</li>
 <li>Can cluster together to form a local storage tier and process data on-premises, helping ensure your applications continue to run even when they are not able to access to cloud.</li>
-</ul></li>
-<li>AWS Snowmobile is an Exabyte-scale data transfer service.
+<li>Can transfer up to 100TB.
 <ul>
+<li>Only has 83TB of usable capacity.</li>
+</ul></li>
+<li><a href="https://docs.aws.amazon.com/snowball/latest/ug/device-differences.html">AWS Snowball Device Differences</a></li>
+<li><a href="https://tutorialsdojo.com/aws-cheat-sheet-aws-snowball-edge/">AWS Snowball Edge Cheat Sheet</a></li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="snowmobile"></a><a href="#snowmobile" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Snowmobile</h4>
+<ul>
+<li>AWS Snowmobile is an Exabyte-scale data transfer service.</li>
 <li>One can transfer up to 100PB per Snowmobile, a 45-foot long ruggedized shipping container.</li>
 <li>For video libraries, image repositories, or even a complete data center migration.</li>
-</ul></li>
 <li><a href="https://aws.amazon.com/snowball/faqs/#When_to_use_Snowball">When to use Snowball</a></li>
 </ul>
 <p><img width=300 src="/datadocs/assets/maxresdefault copy.jpg"/>
 <center><a href="https://www.youtube.com/watch?v=b7f2V7ecgh8" class="credit">Credit</a></center></p>
-</span></div></article></div><div class="docLastUpdate"><em>Last updated on 2019-10-24 by Oleg Polakow</em></div><div class="docs-prevnext"><a class="docs-prev button" href="/datadocs/docs/cloud/aws-compute"><span class="arrow-prev">← </span><span>Compute</span></a><a class="docs-next button" href="/datadocs/docs/cloud/aws-databases"><span>Databases</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#s3">S3</a><ul class="toc-headings"><li><a href="#features">Features</a></li><li><a href="#storage-classes">Storage classes</a></li></ul></li><li><a href="#ebs">EBS</a></li><li><a href="#efs">EFS</a></li><li><a href="#data-transfer">Data transfer</a><ul class="toc-headings"><li><a href="#storage-gateway">Storage Gateway</a></li><li><a href="#snowball">Snowball</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><div class="brand-box"><div class="brand"><a href="https://www.tum.de/nc/en/" target="_blank" rel="noreferrer noopener" class="brand-link"><img src="/datadocs/img/tum_logo.png" alt="Technical University of Munich" height="45"/></a></div><div class="brand"><a href="https://opensource.facebook.com/" target="_blank" rel="noreferrer noopener" class="brand-link"><img src="/datadocs/img/oss_logo.png" alt="Facebook Open Source" width="170" height="45"/></a></div></div><section class="copyright">Copyright © 2019 polakowo.io</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
+</span></div></article></div><div class="docLastUpdate"><em>Last updated on 2019-11-6 by Oleg Polakow</em></div><div class="docs-prevnext"><a class="docs-prev button" href="/datadocs/docs/cloud/aws-compute"><span class="arrow-prev">← </span><span>Compute</span></a><a class="docs-next button" href="/datadocs/docs/cloud/aws-databases"><span>Databases</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#s3">S3</a><ul class="toc-headings"><li><a href="#features">Features</a></li><li><a href="#security">Security</a></li><li><a href="#storage-classes">Storage classes</a></li></ul></li><li><a href="#ebs">EBS</a></li><li><a href="#efs">EFS</a><ul class="toc-headings"><li><a href="#storage-gateway">Storage Gateway</a></li><li><a href="#data-transport">Data transport</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><div class="brand-box"><div class="brand"><a href="https://www.tum.de/nc/en/" target="_blank" rel="noreferrer noopener" class="brand-link"><img src="/datadocs/img/tum_logo.png" alt="Technical University of Munich" height="45"/></a></div><div class="brand"><a href="https://opensource.facebook.com/" target="_blank" rel="noreferrer noopener" class="brand-link"><img src="/datadocs/img/oss_logo.png" alt="Facebook Open Source" width="170" height="45"/></a></div></div><section class="copyright">Copyright © 2019 polakowo.io</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
                 document.addEventListener('keyup', function(e) {
                   if (e.target !== document.body) {
                     return;
