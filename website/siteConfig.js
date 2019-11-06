@@ -7,7 +7,6 @@
 
 // See https://docusaurus.io/docs/site-config for all the possible
 // site configuration options.
-
 // List of projects/orgs using your project for the users page.
 const users = [{
     caption: 'Oleg Polakow',
@@ -111,7 +110,7 @@ const siteConfig = {
     twitterImage: 'img/undraw_tweetstorm.svg',
 
     // Show documentation's last contributor's name.
-    enableUpdateBy: true,
+    enableUpdateBy: false,
 
     // Show documentation's last update time.
     enableUpdateTime: true,

@@ -5,16 +5,6 @@ sidebar_label: Networking & Content Delivery
 custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/cloud/aws-networking.md
 ---
 
-## Global infrastructure
-
-- Each region is a distinct location designed to provide high availability to a specific geography. 
-    - Each region comprises at least two AZs.
-- An availability zone (AZ) is one or more discrete data centers.
-    - Each with redundant power, networking and connectivity, housed in separate facilities.
-    - AZs names are unique per account and do not represent a specific set of physical resources.
-- Edge locations are endpoints for AWS that are used for caching content (CloudFront).
-    - The number of edge locations >> the number of AZs >> the number of regions.
-
 ## CloudFront
 
 <img width=100 src="/datadocs/assets/0_amazon-cloudfront.917316a8c0.svg"/>

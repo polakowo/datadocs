@@ -97,6 +97,10 @@
         "title": "Storage",
         "sidebar_label": "Storage"
       },
+      "cloud/aws": {
+        "title": "Amazon Web Services",
+        "sidebar_label": "Amazon Web Services"
+      },
       "cloud/cloud-computing": {
         "title": "Cloud Computing",
         "sidebar_label": "Cloud Computing"

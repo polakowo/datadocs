@@ -18,8 +18,6 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/cloud/clo
     - Requires fewer staff and costs less to build and maintain their software product.
     - Has greater ability to scale and meet customer demand.
     - Can get their software product or application to market much more quickly.
-    - Not having to deal with the collateral damage of failed experiments.
-    - The ability to try out new ideas and experiment without upfront commitment.
 - For established enterprises and organizations, moving to cloud may not make sense:
     - Some of the legacy architectures might not be able to be integrated with cloud services.
     - Some of the risks (security, governance, compliance) might outweigh the benefits.

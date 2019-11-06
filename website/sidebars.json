@@ -75,7 +75,7 @@
             ]
         }, {
             "type": "subcategory",
-            "label": "Natural Language Processing",
+            "label": "NLP",
             "ids": [
                 "deep-learning/rnns",
                 "deep-learning/word-embeddings",
@@ -124,8 +124,9 @@
             ]
         }, {
             "type": "subcategory",
-            "label": "Amazon Web Services",
+            "label": "AWS",
             "ids": [
+                "cloud/aws",
                 "cloud/aws-compute",
                 "cloud/aws-storage",
                 "cloud/aws-databases",
