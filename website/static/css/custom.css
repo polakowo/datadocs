@@ -80,25 +80,12 @@ ul>li {
     color: #393939;
 }
 
-article a:not(.anchor) {
+article li>a {
     text-decoration: none;
     border-bottom: 1px solid rgba(0,0,0,.2);
     background-color: rgba(187,239,253,.3);
 }
-
-article a:not(.credit) {
-    text-decoration: none;
-    border-bottom: 1px solid rgba(0,0,0,.2);
-    background-color: rgba(187,239,253,.3);
-}
-
-article a:not(.anchor):visited {
-    text-decoration: none;
-    border-bottom: 1px solid rgba(0,0,0,.2);
-    background-color: rgba(253,187,239,.3);
-}
-
-article a:not(.credit):visited {
+article li>a:visited {
     text-decoration: none;
     border-bottom: 1px solid rgba(0,0,0,.2);
     background-color: rgba(253,187,239,.3);
