@@ -4,6 +4,7 @@
             "type": "subcategory",
             "label": "General",
             "ids": [
+                "machine-learning/data-science",
                 "machine-learning/machine-learning"
             ]
         }, {

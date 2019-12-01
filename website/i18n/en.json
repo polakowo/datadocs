@@ -193,6 +193,10 @@
         "title": "Data Leakages",
         "sidebar_label": "Data Leakages"
       },
+      "machine-learning/data-science": {
+        "title": "Data Science",
+        "sidebar_label": "Data Science"
+      },
       "machine-learning/deployment-to-cloud": {
         "title": "Deployment to Cloud",
         "sidebar_label": "Deployment to Cloud"

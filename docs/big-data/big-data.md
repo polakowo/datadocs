@@ -17,7 +17,7 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/big-data/
     - Such amounts of data are now are created in many areas of life (e.g. sensor data)
 - [Big data: The next frontier for innovation, competition, and productivity](https://www.mckinsey.com/business-functions/mckinsey-digital/our-insights/big-data-the-next-frontier-for-innovation)
 
-#### Hardware
+## Hardware limitations
 
 - CPU is the brains of a computer:
     - Directs other components as well as runs mathematical calculations.
@@ -37,7 +37,7 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/big-data/
 - Even if the entire dataset cannot fit into the RAM, it can still be processed chunk wise.
     - [Iterating through files chunk by chunk](https://pandas.pydata.org/pandas-docs/stable/user_guide/io.html#io-chunking)
 
-#### The V's of big data
+## The five V's
 
 - Volume:
     - The sheer volume of data that is produced each day (petabytes, exabytes, zettabytes)
@@ -60,7 +60,7 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/big-data/
 - As a result, the data infrastructure needs to be distributed, scalable (petabytes) and reliable.
 - Data engineering thinks about the end-to-end process as “data pipelines“.
 
-#### Data engineers
+### Data engineers
 
 - Data engineers are highly specialized software engineers who create and maintain robust big data pipelines. 
 - Together with data scientists who analyze the data, they form the basis of the data teams.
@@ -79,7 +79,7 @@ custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/big-data/
     - Use hosted services offered by Amazon or Databricks.
     - Get support from companies like Cloudera or Hortonworks.
 
-#### Evolution of data engineering
+### Evolution of data engineering
 
 - [Data Engineering Introduction and Epochs](https://learn.panoply.io/hubfs/Data%20Engineering%20-%20Introduction%20and%20Epochs.pdf)
 - Hadoop:
