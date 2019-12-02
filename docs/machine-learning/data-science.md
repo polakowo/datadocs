@@ -160,3 +160,4 @@ Follow guided learning, stay curious, watch the market and the industry, find th
 - Present the product:
     - Visualize data, and incorporate trends and significance into a narrative.
 - [A Layman’s Guide to Data Science. Part 2](https://medium.com/sciforce/a-laymans-guide-to-data-science-part-2-how-to-build-a-data-project-58237a78860e)
+- [Life Cycle of Data Science Projects](https://www.datasciencecentral.com/profiles/blogs/life-cycle-of-data-science-projects)

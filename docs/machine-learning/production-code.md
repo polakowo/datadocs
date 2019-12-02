@@ -191,9 +191,9 @@ def population_density(population, land_area):
 ## Testing
 
 > Does the code have high test coverage?  
-Do the tests check for interesting cases?  
-Are the tests readable?  
-Can the tests be made more efficient?
+> Do the tests check for interesting cases?  
+> Are the tests readable?  
+> Can the tests be made more efficient?
 
 - Testing is the process of evaluating a system or its component(s) with the intent to find whether it satisfies the specified requirements.
 - Testing is essential before deployment. 
