@@ -5,7 +5,7 @@ sidebar_label: Amazon Web Services
 custom_edit_url: https://github.com/polakowo/datadocs/edit/master/docs/cloud/aws.md
 ---
 
-<center><img width=300 src="/datadocs/assets/maxresdefault copy 2.jpg"/></center>
+<center><img width=200 src="/datadocs/assets/200px-Amazon_Web_Services_Logo.svg.png"/></center>
 
 - Amazon Web Services (AWS) is the market leader in IaaS and PaaS for cloud ecosystems (2019)
 - Provides on-demand cloud computing platforms and APIs to individuals, companies, and governments, on a metered pay-as-you-go basis.
