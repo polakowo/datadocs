@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/polakowo/datadocs.svg?branch=master)](https://travis-ci.org/polakowo/datadocs?style=for-the-badge)
+[![Build Status](https://travis-ci.org/polakowo/datadocs.svg?branch=master)](https://img.shields.io/travis/polakowo/datadocs/master?style=for-the-badge)
 ![Website](https://img.shields.io/website/https/polakowo.github.io/datadocs.svg?style=for-the-badge)
 
 # datadocs
