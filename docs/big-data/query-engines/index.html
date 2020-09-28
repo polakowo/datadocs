@@ -59,7 +59,7 @@
                 };
               }
             });
-        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://github.com/polakowo/datadocs/edit/master/docs/big-data/query-engines.md" target="_blank" rel="noreferrer noopener">Edit</a><h1 class="postHeaderTitle">Query Engines</h1></header><article><div><span><h2><a class="anchor" aria-hidden="true" id="apache-hive"></a><a href="#apache-hive" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Apache Hive</h2>
+        </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://github.com/polakowo/datadocs/edit/master/docs/big-data/query-engines.md" target="_blank" rel="noreferrer noopener">Edit</a><h1 id="__docusaurus" class="postHeaderTitle">Query Engines</h1></header><article><div><span><h2><a class="anchor" aria-hidden="true" id="apache-hive"></a><a href="#apache-hive" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Apache Hive</h2>
 <p><img width=150 src="/datadocs/assets/Apache_Hive_logo.svg.png"/></p>
 <ul>
 <li>Apache Hive is a data warehouse system built on top of Apache Hadoop that facilitates easy data summarization, ad-hoc queries, and the analysis of large datasets stored in various databases and file systems that integrate with Hadoop.</li>
@@ -155,19 +155,19 @@
 <li>Both, logical and physical plans are created to execute the Pig script.</li>
 <li>Pig is highly-extensible with user-defined functions (UDFs)</li>
 </ul>
-<pre><code class="hljs css language-pig"><span class="hljs-comment">-- Example: Find old 5-star movies</span>
+<pre><code class="hljs css language-pig">-- Example: <span class="hljs-builtin-name">Find</span> old 5-star movies
 
-<span class="hljs-comment">-- Load relations</span>
-ratings              = <span class="hljs-keyword">LOAD</span> <span class="hljs-string">'/user/maria_dev/ml-100k/u.data'</span> <span class="hljs-keyword">AS</span> (userID:<span class="hljs-type">int</span>, movieID:<span class="hljs-type">int</span>, rating:<span class="hljs-type">int</span>, ratingTime:<span class="hljs-type">int</span>);
-metadata             = <span class="hljs-keyword">LOAD</span> <span class="hljs-string">'/user/maria_dev/ml-100k/u.item'</span> <span class="hljs-keyword">USING</span> PigStorage(<span class="hljs-string">'|'</span>) <span class="hljs-keyword">AS</span> (movieID:<span class="hljs-type">int</span>, movieTitle:chararray, releaseDate:chararray, videoRelease:chararray, imdbLink:chararray);
+-- Load relations
+ratings              = LOAD <span class="hljs-string">'/user/maria_dev/ml-100k/u.data'</span> AS (userID:int, movieID:int, rating:int, ratingTime:int);
+metadata             = LOAD <span class="hljs-string">'/user/maria_dev/ml-100k/u.item'</span> USING PigStorage(<span class="hljs-string">'|'</span>) AS (movieID:int, movieTitle:chararray, releaseDate:chararray, videoRelease:chararray, imdbLink:chararray);
 
-<span class="hljs-comment">-- Get the average rating of each movie, filter, and order by the release date</span>
-nameLookup           = <span class="hljs-keyword">FOREACH</span> metadata GENERATE movieID, movieTitle, ToUnixTime(ToDate(releaseDate, <span class="hljs-string">'dd-MMM-yyyy'</span>)) <span class="hljs-keyword">AS</span> releaseTime;
-ratingsByMovie       = <span class="hljs-keyword">GROUP</span> ratings <span class="hljs-keyword">BY</span> movieID;
-avgRatings           = <span class="hljs-keyword">FOREACH</span> ratingsByMovie GENERATE <span class="hljs-keyword">group</span> <span class="hljs-keyword">AS</span> movieID, AVG(ratings.rating) <span class="hljs-keyword">AS</span> avgRating;
-fiveStarMovies       = <span class="hljs-keyword">FILTER</span> avgRatings <span class="hljs-keyword">BY</span> avgRating &gt; <span class="hljs-number">4.0</span>;
-fiveStarsWithData    = <span class="hljs-keyword">JOIN</span> fiveStarMovies <span class="hljs-keyword">BY</span> movieID, nameLookup <span class="hljs-keyword">BY</span> movieID;
-oldestFiveStarMovies = <span class="hljs-keyword">ORDER</span> fiveStarsWithData <span class="hljs-keyword">BY</span> nameLookup::releaseTime;
+-- <span class="hljs-builtin-name">Get</span> the average rating of each movie, filter, <span class="hljs-keyword">and</span> order by the release date
+nameLookup           = <span class="hljs-keyword">FOREACH</span> metadata GENERATE movieID, movieTitle, ToUnixTime(ToDate(releaseDate, <span class="hljs-string">'dd-MMM-yyyy'</span>)) AS releaseTime;
+ratingsByMovie       =<span class="hljs-built_in"> GROUP </span>ratings BY movieID;
+avgRatings           = <span class="hljs-keyword">FOREACH</span> ratingsByMovie GENERATE<span class="hljs-built_in"> group </span>AS movieID, AVG(ratings.rating) AS avgRating;
+fiveStarMovies       =<span class="hljs-built_in"> FILTER </span>avgRatings BY avgRating &gt; 4.0;
+fiveStarsWithData    = JOIN fiveStarMovies BY movieID, nameLookup BY movieID;
+oldestFiveStarMovies = ORDER fiveStarsWithData BY nameLookup::releaseTime;
 
 DUMP oldestFiveStarMovies;
 </code></pre>
