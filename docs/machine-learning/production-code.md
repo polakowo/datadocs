@@ -277,6 +277,7 @@ Do they use the appropriate logging level?
     - Allows to create large, modular programs that can easily expand over time.
     - Hides the implementation from the end-user.
 - Classes, object, attributes, methods, and inheritance are common to all OOP languages.
+- [A Basic Tutorial on Python Classes and Objects](https://jobtensor.com/Tutorial/Python/en/Classes-Objects)
 - [Java OOPs Concepts](https://www.javatpoint.com/java-oops-concepts)
 
 #### Pythonic way
